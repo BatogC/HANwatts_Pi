@@ -1,0 +1,24 @@
+//  Deployment diagram, showing the Roomba, Battery charger and RaspberryPi and the main
+    libs and code components.
+@startuml
+title Deployment diagram RPi and Roomba\nphysical configuration of the system\n
+
+
+node Roomba {
+component SerialLink
+component control
+}
+
+node RapberryPi {
+component Bleutooth
+component command
+component logger
+}
+
+node Laptop {
+component SerialLink
+}
+
+Roomba --- RaspberryPi : Serial
+RaspberryPi --- Laptop : <<wireless>> Wifi
+@enduml

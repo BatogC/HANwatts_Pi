@@ -1,0 +1,3060 @@
+[
+    {
+        "id": "ec06544c.0674a8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "7473c6dc.951318",
+        "type": "sqlitedb",
+        "z": "",
+        "db": "/media/usb/userList",
+        "mode": "RO"
+    },
+    {
+        "id": "eacf9c1b.e4c86",
+        "type": "sqlitedb",
+        "z": "",
+        "db": "/media/DATABASE/modbusData.db",
+        "mode": "RO"
+    },
+    {
+        "id": "c415c421.fc2138",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-custom",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "Gill Sans,Geneva,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#097479",
+                "baseFont": "Arial,Arial,Helvetica,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#4B7930",
+                    "value": "#097479",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#000000",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "Arial,Arial,Helvetica,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Measured Data",
+            "hideToolbar": "false",
+            "allowSwipe": "true",
+            "lockMenu": "false",
+            "allowTempTheme": "false",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 33,
+                "sy": 39,
+                "gx": 10,
+                "gy": 10,
+                "cx": 7,
+                "cy": 7,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "cea0288d.9250e8",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Demonstration",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "dfd14421.0131b8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Phase Voltage",
+        "tab": "cea0288d.9250e8",
+        "order": 1,
+        "disp": false,
+        "width": "8",
+        "collapse": false
+    },
+    {
+        "id": "e476f0d6.52ab",
+        "type": "ui_group",
+        "z": "",
+        "name": "Phase Current",
+        "tab": "cea0288d.9250e8",
+        "order": 2,
+        "disp": false,
+        "width": 8,
+        "collapse": false
+    },
+    {
+        "id": "9268bddf.ab4da",
+        "type": "ui_group",
+        "z": "",
+        "name": "Phase Power",
+        "tab": "cea0288d.9250e8",
+        "order": 3,
+        "disp": false,
+        "width": 8,
+        "collapse": false
+    },
+    {
+        "id": "c7e074e4.034958",
+        "type": "ui_group",
+        "z": "",
+        "name": "Frequency",
+        "tab": "cea0288d.9250e8",
+        "order": 4,
+        "disp": false,
+        "width": 8,
+        "collapse": false
+    },
+    {
+        "id": "63788eed.bddff",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Reserve",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "1c898a3e.e09466",
+        "type": "ui_tab",
+        "z": "",
+        "name": "PV",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "8bcd15fb.5af798",
+        "type": "ui_group",
+        "z": "",
+        "name": "Phase Voltage",
+        "tab": "1c898a3e.e09466",
+        "order": 1,
+        "disp": false,
+        "width": 8,
+        "collapse": false
+    },
+    {
+        "id": "964e7f1.5d5328",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Battery",
+        "icon": "dashboard",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "500a310d.d2a5e",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Grid",
+        "icon": "dashboard",
+        "order": 5,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "d79c6951.4f1ba8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Phase Voltage",
+        "tab": "63788eed.bddff",
+        "order": 1,
+        "disp": false,
+        "width": 8,
+        "collapse": false
+    },
+    {
+        "id": "596d8da.fe2e074",
+        "type": "ui_group",
+        "z": "",
+        "name": "Phase Current",
+        "tab": "63788eed.bddff",
+        "order": 2,
+        "disp": false,
+        "width": 8,
+        "collapse": false
+    },
+    {
+        "id": "c36d1e23.0c203",
+        "type": "ui_group",
+        "z": "",
+        "name": "Phase Power",
+        "tab": "63788eed.bddff",
+        "order": 3,
+        "disp": false,
+        "width": 8,
+        "collapse": false
+    },
+    {
+        "id": "28cbcfdd.3809",
+        "type": "ui_group",
+        "z": "",
+        "name": "Frequency",
+        "tab": "63788eed.bddff",
+        "order": 4,
+        "disp": false,
+        "width": 8,
+        "collapse": false
+    },
+    {
+        "id": "9e5378ec.4d6618",
+        "type": "ui_group",
+        "z": "",
+        "name": "Phase Current",
+        "tab": "1c898a3e.e09466",
+        "order": 2,
+        "disp": false,
+        "width": 8,
+        "collapse": false
+    },
+    {
+        "id": "c9e1a2ff.28bba",
+        "type": "ui_group",
+        "z": "",
+        "name": "Phase Power",
+        "tab": "1c898a3e.e09466",
+        "order": 3,
+        "disp": false,
+        "width": 8,
+        "collapse": false
+    },
+    {
+        "id": "7338e849.a0fa78",
+        "type": "ui_group",
+        "z": "",
+        "name": "Frequency",
+        "tab": "1c898a3e.e09466",
+        "order": 4,
+        "disp": false,
+        "width": 8,
+        "collapse": false
+    },
+    {
+        "id": "a33c6c34.27bb7",
+        "type": "ui_group",
+        "z": "",
+        "name": "Phase Voltage",
+        "tab": "964e7f1.5d5328",
+        "order": 1,
+        "disp": false,
+        "width": 8,
+        "collapse": false
+    },
+    {
+        "id": "1647578d.713058",
+        "type": "ui_group",
+        "z": "",
+        "name": "Phase Current",
+        "tab": "964e7f1.5d5328",
+        "order": 2,
+        "disp": false,
+        "width": 8,
+        "collapse": false
+    },
+    {
+        "id": "b7db0a05.88faf8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Phase Power",
+        "tab": "964e7f1.5d5328",
+        "order": 3,
+        "disp": false,
+        "width": 8,
+        "collapse": false
+    },
+    {
+        "id": "9d4f667a.0986b8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Phase Voltage",
+        "tab": "500a310d.d2a5e",
+        "order": 1,
+        "disp": false,
+        "width": 8,
+        "collapse": false
+    },
+    {
+        "id": "fc3e11ad.58936",
+        "type": "ui_group",
+        "z": "",
+        "name": "Phase Current",
+        "tab": "500a310d.d2a5e",
+        "order": 2,
+        "disp": false,
+        "width": 8,
+        "collapse": false
+    },
+    {
+        "id": "6e68121e.c4427c",
+        "type": "ui_group",
+        "z": "",
+        "name": "Phase Power",
+        "tab": "500a310d.d2a5e",
+        "order": 3,
+        "disp": false,
+        "width": 8,
+        "collapse": false
+    },
+    {
+        "id": "71a695c8.7017ec",
+        "type": "ui_group",
+        "z": "",
+        "name": "Frequency",
+        "tab": "500a310d.d2a5e",
+        "order": 4,
+        "disp": false,
+        "width": 8,
+        "collapse": false
+    },
+    {
+        "id": "9b1d82d.f4ee38",
+        "type": "ui_group",
+        "z": "",
+        "name": "Frequency",
+        "tab": "964e7f1.5d5328",
+        "order": 4,
+        "disp": false,
+        "width": 8,
+        "collapse": false
+    },
+    {
+        "id": "b2756df4.be01e",
+        "type": "sqlite",
+        "z": "ec06544c.0674a8",
+        "mydb": "eacf9c1b.e4c86",
+        "sqlquery": "fixed",
+        "sql": "select * from meter1 LIMIT 20 OFFSET (SELECT COUNT(*) FROM meter1)-20;\n",
+        "name": "MeasuredData",
+        "x": 460,
+        "y": 320,
+        "wires": [
+            [
+                "d9df2d51.ca9c8",
+                "45a2c425.10921c"
+            ]
+        ]
+    },
+    {
+        "id": "d9df2d51.ca9c8",
+        "type": "debug",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 670,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "756e7340.52ef7c",
+        "type": "inject",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "topic": "1",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "30",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 220,
+        "y": 320,
+        "wires": [
+            [
+                "b2756df4.be01e",
+                "b1e43a74.a4b748",
+                "cbf51229.d98f3",
+                "7b23226f.6232ac",
+                "c0304977.9e65a8"
+            ]
+        ]
+    },
+    {
+        "id": "176b6fc1.c64c1",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "dfd14421.0131b8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Voltage phase 1 (V)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "45a2c425.10921c",
+        "type": "function",
+        "z": "ec06544c.0674a8",
+        "name": "Data format 1",
+        "func": " var offset = context.get(\"offset\")||7200;\n if (msg.topic == \"timezone\") {\n     offset =  msg.payload;\n     context.set(\"offset\", offset);\n     return null;\n }\n\n //  \n // Create a data variable   \n //  \n var i = 0;\n var series_V1 = [\"V1\"];  \n var labels_V1 = [\"Data Values\"];  \n var data_V1 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_V1 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].V1 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_V1 += \",\"  \n   } else {  \n     data_V1 += \"]]\"  \n   }  \n }  \n var jsondata_V1 = JSON.parse(data_V1);\n \n var msg_V1 = {\n     payload : [{\"series\": series_V1, \"data\": jsondata_V1, \"labels\": labels_V1}],\n     topic : \"V1\"\n }\n \n var series_V2 = [\"V2\"];  \n var labels_V2 = [\"Data Values\"];  \n var data_V2 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_V2 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].V2 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_V2 += \",\"  \n   } else {  \n     data_V2 += \"]]\"  \n   }  \n }  \n var jsondata_V2 = JSON.parse(data_V2);\n \n var msg_V2 = {\n     payload : [{\"series\": series_V2, \"data\": jsondata_V2, \"labels\": labels_V2}],\n     topic : \"V2\"\n }\n   \n var series_V3 = [\"V3\"];  \n var labels_V3 = [\"Data Values\"];  \n var data_V3 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_V3 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].V3 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_V3 += \",\"  \n   } else {  \n     data_V3 += \"]]\"  \n   }  \n }  \n var jsondata_V3 = JSON.parse(data_V3);\n \n var msg_V3 = {\n     payload : [{\"series\": series_V3, \"data\": jsondata_V3, \"labels\": labels_V3}],\n     topic : \"V3\"\n }\n \n var series_I1 = [\"I1\"];  \n var labels_I1 = [\"Data Values\"];  \n var data_I1 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_I1 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].I1 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_I1 += \",\"  \n   } else {  \n     data_I1 += \"]]\"  \n   }  \n }  \n var jsondata_I1 = JSON.parse(data_I1);\n \n var msg_I1 = {\n     payload : [{\"series\": series_I1, \"data\": jsondata_I1, \"labels\": labels_I1}],\n     topic : \"I1\"\n }\n \n var series_I2 = [\"I2\"];  \n var labels_I2 = [\"Data Values\"];  \n var data_I2 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_I2 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].I2 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_I2 += \",\"  \n   } else {  \n     data_I2 += \"]]\"  \n   }  \n }  \n var jsondata_I2 = JSON.parse(data_I2);\n \n var msg_I2 = {\n     payload : [{\"series\": series_I2, \"data\": jsondata_I2, \"labels\": labels_I2}],\n     topic : \"I2\"\n }\n \n var series_I3= [\"I3\"];  \n var labels_I3 = [\"Data Values\"];  \n var data_I3 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_I3 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].I3 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_I3 += \",\"  \n   } else {  \n     data_I3 += \"]]\"  \n   }  \n }  \n var jsondata_I3 = JSON.parse(data_I3);\n \n var msg_I3 = {\n     payload : [{\"series\": series_I3, \"data\": jsondata_I3, \"labels\": labels_I3}],\n     topic : \"I3\"\n }\n \n var series_P1 = [\"P1\"];  \n var labels_P1 = [\"Data Values\"];  \n var data_P1 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_P1 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].P1 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_P1 += \",\"  \n   } else {  \n     data_P1 += \"]]\"  \n   }  \n }  \n var jsondata_P1 = JSON.parse(data_P1);\n \n var msg_P1 = {\n     payload : [{\"series\": series_P1, \"data\": jsondata_P1, \"labels\": labels_P1}],\n     topic : \"P1\"\n }\n \n var series_P2 = [\"P2\"];  \n var labels_P2 = [\"Data Values\"];  \n var data_P2 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_P2 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].P2 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_P2 += \",\"  \n   } else {  \n     data_P2 += \"]]\"  \n   }  \n }  \n var jsondata_P2 = JSON.parse(data_P2);\n \n var msg_P2 = {\n     payload : [{\"series\": series_P2, \"data\": jsondata_P2, \"labels\": labels_P2}],\n     topic : \"P2\"\n }\n \n var series_P3 = [\"P3\"];  \n var labels_P3 = [\"Data Values\"];  \n var data_P3 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_P3 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].P3 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_P3 += \",\"  \n   } else {  \n     data_P3 += \"]]\"  \n   }  \n }  \n var jsondata_P3 = JSON.parse(data_P3);\n \n var msg_P3 = {\n     payload : [{\"series\": series_P3, \"data\": jsondata_P3, \"labels\": labels_P3}],\n     topic : \"P3\"\n }\n \n //var series_F = [\"F\"];  \n //var labels_F = [\"Data Values\"];  \n \n //var data_F = (msg.payload[(msg.payload).length]).F;\n //var data_F = '50';\n //var jsondata_F = JSON.parse(data_F);\n \n var msg_F = {payload: msg.payload[msg.payload.length - 1].F};\n \n return [msg_V1, msg_V2, msg_V3, msg_I1, msg_I2, msg_I3, msg_P1, msg_P2, msg_P3, msg_F];",
+        "outputs": 10,
+        "noerr": 0,
+        "x": 680,
+        "y": 460,
+        "wires": [
+            [
+                "176b6fc1.c64c1"
+            ],
+            [
+                "e65106f7.0fab48"
+            ],
+            [
+                "2fc3b069.5f4fe"
+            ],
+            [
+                "ead92ea0.e6d2e"
+            ],
+            [
+                "6fba8283.13e14c"
+            ],
+            [
+                "d7654d65.05271"
+            ],
+            [
+                "a2499430.03b828"
+            ],
+            [
+                "52aa455e.ad4bec"
+            ],
+            [
+                "943162b4.9dec6"
+            ],
+            [
+                "c3f1f4ad.0279d8"
+            ]
+        ]
+    },
+    {
+        "id": "e65106f7.0fab48",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "dfd14421.0131b8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Voltage phase 2 (V)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2fc3b069.5f4fe",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "dfd14421.0131b8",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Voltage phase 3 (V)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ead92ea0.e6d2e",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "e476f0d6.52ab",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Current phase 1 (A)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6fba8283.13e14c",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "e476f0d6.52ab",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Current phase 2 (A)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d7654d65.05271",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "e476f0d6.52ab",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Current phase 3 (A)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a2499430.03b828",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "9268bddf.ab4da",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Power phase 1 (W)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "943162b4.9dec6",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "9268bddf.ab4da",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Power phase 3 (W)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "52aa455e.ad4bec",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "9268bddf.ab4da",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Power phase 2 (W)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b1e43a74.a4b748",
+        "type": "sqlite",
+        "z": "ec06544c.0674a8",
+        "mydb": "eacf9c1b.e4c86",
+        "sqlquery": "fixed",
+        "sql": "select * from meter2 LIMIT 20 OFFSET (SELECT COUNT(*) FROM meter2)-20;\n",
+        "name": "MeasuredData",
+        "x": 460,
+        "y": 760,
+        "wires": [
+            [
+                "aabb84ae.aa8d08",
+                "fafbbf0c.a974f"
+            ]
+        ]
+    },
+    {
+        "id": "aabb84ae.aa8d08",
+        "type": "debug",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 670,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "d6123d9a.c50b4",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "d79c6951.4f1ba8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Voltage phase 1 (V)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fafbbf0c.a974f",
+        "type": "function",
+        "z": "ec06544c.0674a8",
+        "name": "Data format 2",
+        "func": " var offset = context.get(\"offset\")||7200;\n if (msg.topic == \"timezone\") {\n     offset =  msg.payload;\n     context.set(\"offset\", offset);\n     return null;\n }\n\n //  \n // Create a data variable   \n //  \n var i = 0;\n var series_V1 = [\"V1\"];  \n var labels_V1 = [\"Data Values\"];  \n var data_V1 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_V1 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].V1 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_V1 += \",\"  \n   } else {  \n     data_V1 += \"]]\"  \n   }  \n }  \n var jsondata_V1 = JSON.parse(data_V1);\n \n var msg_V1 = {\n     payload : [{\"series\": series_V1, \"data\": jsondata_V1, \"labels\": labels_V1}],\n     topic : \"V1\"\n }\n \n var series_V2 = [\"V2\"];  \n var labels_V2 = [\"Data Values\"];  \n var data_V2 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_V2 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].V2 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_V2 += \",\"  \n   } else {  \n     data_V2 += \"]]\"  \n   }  \n }  \n var jsondata_V2 = JSON.parse(data_V2);\n \n var msg_V2 = {\n     payload : [{\"series\": series_V2, \"data\": jsondata_V2, \"labels\": labels_V2}],\n     topic : \"V2\"\n }\n   \n var series_V3 = [\"V3\"];  \n var labels_V3 = [\"Data Values\"];  \n var data_V3 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_V3 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].V3 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_V3 += \",\"  \n   } else {  \n     data_V3 += \"]]\"  \n   }  \n }  \n var jsondata_V3 = JSON.parse(data_V3);\n \n var msg_V3 = {\n     payload : [{\"series\": series_V3, \"data\": jsondata_V3, \"labels\": labels_V3}],\n     topic : \"V3\"\n }\n \n var series_I1 = [\"I1\"];  \n var labels_I1 = [\"Data Values\"];  \n var data_I1 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_I1 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].I1 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_I1 += \",\"  \n   } else {  \n     data_I1 += \"]]\"  \n   }  \n }  \n var jsondata_I1 = JSON.parse(data_I1);\n \n var msg_I1 = {\n     payload : [{\"series\": series_I1, \"data\": jsondata_I1, \"labels\": labels_I1}],\n     topic : \"I1\"\n }\n \n var series_I2 = [\"I2\"];  \n var labels_I2 = [\"Data Values\"];  \n var data_I2 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_I2 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].I2 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_I2 += \",\"  \n   } else {  \n     data_I2 += \"]]\"  \n   }  \n }  \n var jsondata_I2 = JSON.parse(data_I2);\n \n var msg_I2 = {\n     payload : [{\"series\": series_I2, \"data\": jsondata_I2, \"labels\": labels_I2}],\n     topic : \"I2\"\n }\n \n var series_I3= [\"I3\"];  \n var labels_I3 = [\"Data Values\"];  \n var data_I3 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_I3 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].I3 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_I3 += \",\"  \n   } else {  \n     data_I3 += \"]]\"  \n   }  \n }  \n var jsondata_I3 = JSON.parse(data_I3);\n \n var msg_I3 = {\n     payload : [{\"series\": series_I3, \"data\": jsondata_I3, \"labels\": labels_I3}],\n     topic : \"I3\"\n }\n \n var series_P1 = [\"P1\"];  \n var labels_P1 = [\"Data Values\"];  \n var data_P1 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_P1 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].P1 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_P1 += \",\"  \n   } else {  \n     data_P1 += \"]]\"  \n   }  \n }  \n var jsondata_P1 = JSON.parse(data_P1);\n \n var msg_P1 = {\n     payload : [{\"series\": series_P1, \"data\": jsondata_P1, \"labels\": labels_P1}],\n     topic : \"P1\"\n }\n \n var series_P2 = [\"P2\"];  \n var labels_P2 = [\"Data Values\"];  \n var data_P2 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_P2 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].P2 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_P2 += \",\"  \n   } else {  \n     data_P2 += \"]]\"  \n   }  \n }  \n var jsondata_P2 = JSON.parse(data_P2);\n \n var msg_P2 = {\n     payload : [{\"series\": series_P2, \"data\": jsondata_P2, \"labels\": labels_P2}],\n     topic : \"P2\"\n }\n \n var series_P3 = [\"P3\"];  \n var labels_P3 = [\"Data Values\"];  \n var data_P3 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_P3 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].P3 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_P3 += \",\"  \n   } else {  \n     data_P3 += \"]]\"  \n   }  \n }  \n var jsondata_P3 = JSON.parse(data_P3);\n \n var msg_P3 = {\n     payload : [{\"series\": series_P3, \"data\": jsondata_P3, \"labels\": labels_P3}],\n     topic : \"P3\"\n }\n \n //var series_F = [\"F\"];  \n //var labels_F = [\"Data Values\"];  \n \n //var data_F = (msg.payload[(msg.payload).length]).F;\n //var data_F = '50';\n //var jsondata_F = JSON.parse(data_F);\n \n var msg_F = {payload: msg.payload[msg.payload.length - 1].F};\n \n return [msg_V1, msg_V2, msg_V3, msg_I1, msg_I2, msg_I3, msg_P1, msg_P2, msg_P3, msg_F];",
+        "outputs": 10,
+        "noerr": 0,
+        "x": 680,
+        "y": 900,
+        "wires": [
+            [
+                "d6123d9a.c50b4"
+            ],
+            [
+                "751ae2b4.71d1ec"
+            ],
+            [
+                "c7fa5c90.6e932"
+            ],
+            [
+                "d7ec84ca.40dac8"
+            ],
+            [
+                "4c3ffcb9.0619b4"
+            ],
+            [
+                "3598275d.608d78"
+            ],
+            [
+                "df28134d.40c0d"
+            ],
+            [
+                "cf5735d9.b4c358"
+            ],
+            [
+                "fcbd3a2c.1e3968"
+            ],
+            [
+                "cb063c4b.31f4f"
+            ]
+        ]
+    },
+    {
+        "id": "751ae2b4.71d1ec",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "d79c6951.4f1ba8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Voltage phase 2 (V)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c7fa5c90.6e932",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "d79c6951.4f1ba8",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Voltage phase 3 (V)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d7ec84ca.40dac8",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "596d8da.fe2e074",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Current phase 1 (A)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4c3ffcb9.0619b4",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "596d8da.fe2e074",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Current phase 2 (A)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3598275d.608d78",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "596d8da.fe2e074",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Current phase 3 (A)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "df28134d.40c0d",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "c36d1e23.0c203",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Power phase 1 (W)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fcbd3a2c.1e3968",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "c36d1e23.0c203",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Power phase 3 (W)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 1060,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cf5735d9.b4c358",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "c36d1e23.0c203",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Power phase 2 (W)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 1020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cbf51229.d98f3",
+        "type": "sqlite",
+        "z": "ec06544c.0674a8",
+        "mydb": "eacf9c1b.e4c86",
+        "sqlquery": "fixed",
+        "sql": "select * from meter3 LIMIT 20 OFFSET (SELECT COUNT(*) FROM meter3)-20;\n",
+        "name": "MeasuredData",
+        "x": 460,
+        "y": 1200,
+        "wires": [
+            [
+                "cef82e2b.2cbf3",
+                "9d353fd6.57955"
+            ]
+        ]
+    },
+    {
+        "id": "cef82e2b.2cbf3",
+        "type": "debug",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 670,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "b9374f78.bbac4",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "8bcd15fb.5af798",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Voltage phase 1 (V)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 1180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9d353fd6.57955",
+        "type": "function",
+        "z": "ec06544c.0674a8",
+        "name": "Data format 3",
+        "func": " var offset = context.get(\"offset\")||7200;\n if (msg.topic == \"timezone\") {\n     offset =  msg.payload;\n     context.set(\"offset\", offset);\n     return null;\n }\n\n //  \n // Create a data variable   \n //  \n var i = 0;\n var series_V1 = [\"V1\"];  \n var labels_V1 = [\"Data Values\"];  \n var data_V1 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_V1 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].V1 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_V1 += \",\"  \n   } else {  \n     data_V1 += \"]]\"  \n   }  \n }  \n var jsondata_V1 = JSON.parse(data_V1);\n \n var msg_V1 = {\n     payload : [{\"series\": series_V1, \"data\": jsondata_V1, \"labels\": labels_V1}],\n     topic : \"V1\"\n }\n \n var series_V2 = [\"V2\"];  \n var labels_V2 = [\"Data Values\"];  \n var data_V2 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_V2 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].V2 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_V2 += \",\"  \n   } else {  \n     data_V2 += \"]]\"  \n   }  \n }  \n var jsondata_V2 = JSON.parse(data_V2);\n \n var msg_V2 = {\n     payload : [{\"series\": series_V2, \"data\": jsondata_V2, \"labels\": labels_V2}],\n     topic : \"V2\"\n }\n   \n var series_V3 = [\"V3\"];  \n var labels_V3 = [\"Data Values\"];  \n var data_V3 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_V3 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].V3 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_V3 += \",\"  \n   } else {  \n     data_V3 += \"]]\"  \n   }  \n }  \n var jsondata_V3 = JSON.parse(data_V3);\n \n var msg_V3 = {\n     payload : [{\"series\": series_V3, \"data\": jsondata_V3, \"labels\": labels_V3}],\n     topic : \"V3\"\n }\n \n var series_I1 = [\"I1\"];  \n var labels_I1 = [\"Data Values\"];  \n var data_I1 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_I1 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].I1 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_I1 += \",\"  \n   } else {  \n     data_I1 += \"]]\"  \n   }  \n }  \n var jsondata_I1 = JSON.parse(data_I1);\n \n var msg_I1 = {\n     payload : [{\"series\": series_I1, \"data\": jsondata_I1, \"labels\": labels_I1}],\n     topic : \"I1\"\n }\n \n var series_I2 = [\"I2\"];  \n var labels_I2 = [\"Data Values\"];  \n var data_I2 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_I2 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].I2 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_I2 += \",\"  \n   } else {  \n     data_I2 += \"]]\"  \n   }  \n }  \n var jsondata_I2 = JSON.parse(data_I2);\n \n var msg_I2 = {\n     payload : [{\"series\": series_I2, \"data\": jsondata_I2, \"labels\": labels_I2}],\n     topic : \"I2\"\n }\n \n var series_I3= [\"I3\"];  \n var labels_I3 = [\"Data Values\"];  \n var data_I3 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_I3 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].I3 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_I3 += \",\"  \n   } else {  \n     data_I3 += \"]]\"  \n   }  \n }  \n var jsondata_I3 = JSON.parse(data_I3);\n \n var msg_I3 = {\n     payload : [{\"series\": series_I3, \"data\": jsondata_I3, \"labels\": labels_I3}],\n     topic : \"I3\"\n }\n \n var series_P1 = [\"P1\"];  \n var labels_P1 = [\"Data Values\"];  \n var data_P1 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_P1 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].P1 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_P1 += \",\"  \n   } else {  \n     data_P1 += \"]]\"  \n   }  \n }  \n var jsondata_P1 = JSON.parse(data_P1);\n \n var msg_P1 = {\n     payload : [{\"series\": series_P1, \"data\": jsondata_P1, \"labels\": labels_P1}],\n     topic : \"P1\"\n }\n \n var series_P2 = [\"P2\"];  \n var labels_P2 = [\"Data Values\"];  \n var data_P2 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_P2 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].P2 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_P2 += \",\"  \n   } else {  \n     data_P2 += \"]]\"  \n   }  \n }  \n var jsondata_P2 = JSON.parse(data_P2);\n \n var msg_P2 = {\n     payload : [{\"series\": series_P2, \"data\": jsondata_P2, \"labels\": labels_P2}],\n     topic : \"P2\"\n }\n \n var series_P3 = [\"P3\"];  \n var labels_P3 = [\"Data Values\"];  \n var data_P3 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_P3 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].P3 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_P3 += \",\"  \n   } else {  \n     data_P3 += \"]]\"  \n   }  \n }  \n var jsondata_P3 = JSON.parse(data_P3);\n \n var msg_P3 = {\n     payload : [{\"series\": series_P3, \"data\": jsondata_P3, \"labels\": labels_P3}],\n     topic : \"P3\"\n }\n \n //var series_F = [\"F\"];  \n //var labels_F = [\"Data Values\"];  \n \n //var data_F = (msg.payload[(msg.payload).length]).F;\n //var data_F = '50';\n //var jsondata_F = JSON.parse(data_F);\n \n var msg_F = {payload: msg.payload[msg.payload.length - 1].F};\n \n return [msg_V1, msg_V2, msg_V3, msg_I1, msg_I2, msg_I3, msg_P1, msg_P2, msg_P3, msg_F];",
+        "outputs": 10,
+        "noerr": 0,
+        "x": 680,
+        "y": 1340,
+        "wires": [
+            [
+                "b9374f78.bbac4"
+            ],
+            [
+                "a36f330f.3733d"
+            ],
+            [
+                "5b9e36cc.2cabe8"
+            ],
+            [
+                "68d26120.dd5eb"
+            ],
+            [
+                "3e022a1b.5ec666"
+            ],
+            [
+                "17804e83.88dd61"
+            ],
+            [
+                "3a0aa427.d79e4c"
+            ],
+            [
+                "29d71fa2.3ac69"
+            ],
+            [
+                "c36f89de.077bd8"
+            ],
+            [
+                "9a123ebf.2fdea"
+            ]
+        ]
+    },
+    {
+        "id": "a36f330f.3733d",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "8bcd15fb.5af798",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Voltage phase 2 (V)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 1220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5b9e36cc.2cabe8",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "8bcd15fb.5af798",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Voltage phase 3 (V)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 1260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "68d26120.dd5eb",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "9e5378ec.4d6618",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Current phase 1 (A)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 1300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3e022a1b.5ec666",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "9e5378ec.4d6618",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Current phase 2 (A)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 1340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "17804e83.88dd61",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "9e5378ec.4d6618",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Current phase 3 (A)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 1380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3a0aa427.d79e4c",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "c9e1a2ff.28bba",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Power phase 1 (W)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 1420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c36f89de.077bd8",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "c9e1a2ff.28bba",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Power phase 3 (W)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 1500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "29d71fa2.3ac69",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "c9e1a2ff.28bba",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Power phase 2 (W)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 1460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7b23226f.6232ac",
+        "type": "sqlite",
+        "z": "ec06544c.0674a8",
+        "mydb": "eacf9c1b.e4c86",
+        "sqlquery": "fixed",
+        "sql": "select * from meter4 LIMIT 20 OFFSET (SELECT COUNT(*) FROM meter4)-20;\n",
+        "name": "MeasuredData",
+        "x": 460,
+        "y": 1640,
+        "wires": [
+            [
+                "1fa74c03.1df914",
+                "48fdab5a.a3a304"
+            ]
+        ]
+    },
+    {
+        "id": "1fa74c03.1df914",
+        "type": "debug",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 670,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "fbacc53e.558558",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "a33c6c34.27bb7",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Voltage phase 1 (V)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 1620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "48fdab5a.a3a304",
+        "type": "function",
+        "z": "ec06544c.0674a8",
+        "name": "Data format 4",
+        "func": " var offset = context.get(\"offset\")||7200;\n if (msg.topic == \"timezone\") {\n     offset =  msg.payload;\n     context.set(\"offset\", offset);\n     return null;\n }\n\n //  \n // Create a data variable   \n //  \n var i = 0;\n var series_V1 = [\"V1\"];  \n var labels_V1 = [\"Data Values\"];  \n var data_V1 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_V1 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].V1 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_V1 += \",\"  \n   } else {  \n     data_V1 += \"]]\"  \n   }  \n }  \n var jsondata_V1 = JSON.parse(data_V1);\n \n var msg_V1 = {\n     payload : [{\"series\": series_V1, \"data\": jsondata_V1, \"labels\": labels_V1}],\n     topic : \"V1\"\n }\n \n var series_V2 = [\"V2\"];  \n var labels_V2 = [\"Data Values\"];  \n var data_V2 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_V2 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].V2 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_V2 += \",\"  \n   } else {  \n     data_V2 += \"]]\"  \n   }  \n }  \n var jsondata_V2 = JSON.parse(data_V2);\n \n var msg_V2 = {\n     payload : [{\"series\": series_V2, \"data\": jsondata_V2, \"labels\": labels_V2}],\n     topic : \"V2\"\n }\n   \n var series_V3 = [\"V3\"];  \n var labels_V3 = [\"Data Values\"];  \n var data_V3 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_V3 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].V3 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_V3 += \",\"  \n   } else {  \n     data_V3 += \"]]\"  \n   }  \n }  \n var jsondata_V3 = JSON.parse(data_V3);\n \n var msg_V3 = {\n     payload : [{\"series\": series_V3, \"data\": jsondata_V3, \"labels\": labels_V3}],\n     topic : \"V3\"\n }\n \n var series_I1 = [\"I1\"];  \n var labels_I1 = [\"Data Values\"];  \n var data_I1 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_I1 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].I1 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_I1 += \",\"  \n   } else {  \n     data_I1 += \"]]\"  \n   }  \n }  \n var jsondata_I1 = JSON.parse(data_I1);\n \n var msg_I1 = {\n     payload : [{\"series\": series_I1, \"data\": jsondata_I1, \"labels\": labels_I1}],\n     topic : \"I1\"\n }\n \n var series_I2 = [\"I2\"];  \n var labels_I2 = [\"Data Values\"];  \n var data_I2 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_I2 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].I2 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_I2 += \",\"  \n   } else {  \n     data_I2 += \"]]\"  \n   }  \n }  \n var jsondata_I2 = JSON.parse(data_I2);\n \n var msg_I2 = {\n     payload : [{\"series\": series_I2, \"data\": jsondata_I2, \"labels\": labels_I2}],\n     topic : \"I2\"\n }\n \n var series_I3= [\"I3\"];  \n var labels_I3 = [\"Data Values\"];  \n var data_I3 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_I3 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].I3 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_I3 += \",\"  \n   } else {  \n     data_I3 += \"]]\"  \n   }  \n }  \n var jsondata_I3 = JSON.parse(data_I3);\n \n var msg_I3 = {\n     payload : [{\"series\": series_I3, \"data\": jsondata_I3, \"labels\": labels_I3}],\n     topic : \"I3\"\n }\n \n var series_P1 = [\"P1\"];  \n var labels_P1 = [\"Data Values\"];  \n var data_P1 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_P1 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].P1 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_P1 += \",\"  \n   } else {  \n     data_P1 += \"]]\"  \n   }  \n }  \n var jsondata_P1 = JSON.parse(data_P1);\n \n var msg_P1 = {\n     payload : [{\"series\": series_P1, \"data\": jsondata_P1, \"labels\": labels_P1}],\n     topic : \"P1\"\n }\n \n var series_P2 = [\"P2\"];  \n var labels_P2 = [\"Data Values\"];  \n var data_P2 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_P2 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].P2 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_P2 += \",\"  \n   } else {  \n     data_P2 += \"]]\"  \n   }  \n }  \n var jsondata_P2 = JSON.parse(data_P2);\n \n var msg_P2 = {\n     payload : [{\"series\": series_P2, \"data\": jsondata_P2, \"labels\": labels_P2}],\n     topic : \"P2\"\n }\n \n var series_P3 = [\"P3\"];  \n var labels_P3 = [\"Data Values\"];  \n var data_P3 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_P3 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].P3 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_P3 += \",\"  \n   } else {  \n     data_P3 += \"]]\"  \n   }  \n }  \n var jsondata_P3 = JSON.parse(data_P3);\n \n var msg_P3 = {\n     payload : [{\"series\": series_P3, \"data\": jsondata_P3, \"labels\": labels_P3}],\n     topic : \"P3\"\n }\n \n //var series_F = [\"F\"];  \n //var labels_F = [\"Data Values\"];  \n \n //var data_F = (msg.payload[(msg.payload).length]).F;\n //var data_F = '50';\n //var jsondata_F = JSON.parse(data_F);\n \n var msg_F = {payload: msg.payload[msg.payload.length - 1].F};\n \n return [msg_V1, msg_V2, msg_V3, msg_I1, msg_I2, msg_I3, msg_P1, msg_P2, msg_P3, msg_F];",
+        "outputs": 10,
+        "noerr": 0,
+        "x": 680,
+        "y": 1780,
+        "wires": [
+            [
+                "fbacc53e.558558"
+            ],
+            [
+                "ef91fcb9.9204c"
+            ],
+            [
+                "76597ba2.f4a614"
+            ],
+            [
+                "c44668bb.590048"
+            ],
+            [
+                "995b1256.ef55d"
+            ],
+            [
+                "63c45c7e.4e4c14"
+            ],
+            [
+                "2de477af.c8a528"
+            ],
+            [
+                "770c66f1.7bc7f8"
+            ],
+            [
+                "22917cda.404ea4"
+            ],
+            [
+                "b0f41dd2.7f02"
+            ]
+        ]
+    },
+    {
+        "id": "ef91fcb9.9204c",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "a33c6c34.27bb7",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Voltage phase 2 (V)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 1660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "76597ba2.f4a614",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "a33c6c34.27bb7",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Voltage phase 3 (V)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 1700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c44668bb.590048",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "1647578d.713058",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Current phase 1 (A)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 1740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "995b1256.ef55d",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "1647578d.713058",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Current phase 2 (A)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 1780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "63c45c7e.4e4c14",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "1647578d.713058",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Current phase 3 (A)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 1820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2de477af.c8a528",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "b7db0a05.88faf8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Power phase 1 (W)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 1860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "22917cda.404ea4",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "b7db0a05.88faf8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Power phase 3 (W)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 1940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "770c66f1.7bc7f8",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "b7db0a05.88faf8",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Power phase 2 (W)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 1900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c0304977.9e65a8",
+        "type": "sqlite",
+        "z": "ec06544c.0674a8",
+        "mydb": "eacf9c1b.e4c86",
+        "sqlquery": "fixed",
+        "sql": "select * from meter5 LIMIT 20 OFFSET (SELECT COUNT(*) FROM meter5)-20;\n",
+        "name": "MeasuredData",
+        "x": 460,
+        "y": 2080,
+        "wires": [
+            [
+                "4ffdf507.6d074c",
+                "9d882efc.b3045"
+            ]
+        ]
+    },
+    {
+        "id": "4ffdf507.6d074c",
+        "type": "debug",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 670,
+        "y": 2020,
+        "wires": []
+    },
+    {
+        "id": "ac5dec47.73d19",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "9d4f667a.0986b8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Voltage phase 1 (V)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 2060,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9d882efc.b3045",
+        "type": "function",
+        "z": "ec06544c.0674a8",
+        "name": "Data format 5",
+        "func": " var offset = context.get(\"offset\")||7200;\n if (msg.topic == \"timezone\") {\n     offset =  msg.payload;\n     context.set(\"offset\", offset);\n     return null;\n }\n\n //  \n // Create a data variable   \n //  \n var i = 0;\n var series_V1 = [\"V1\"];  \n var labels_V1 = [\"Data Values\"];  \n var data_V1 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_V1 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].V1 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_V1 += \",\"  \n   } else {  \n     data_V1 += \"]]\"  \n   }  \n }  \n var jsondata_V1 = JSON.parse(data_V1);\n \n var msg_V1 = {\n     payload : [{\"series\": series_V1, \"data\": jsondata_V1, \"labels\": labels_V1}],\n     topic : \"V1\"\n }\n \n var series_V2 = [\"V2\"];  \n var labels_V2 = [\"Data Values\"];  \n var data_V2 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_V2 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].V2 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_V2 += \",\"  \n   } else {  \n     data_V2 += \"]]\"  \n   }  \n }  \n var jsondata_V2 = JSON.parse(data_V2);\n \n var msg_V2 = {\n     payload : [{\"series\": series_V2, \"data\": jsondata_V2, \"labels\": labels_V2}],\n     topic : \"V2\"\n }\n   \n var series_V3 = [\"V3\"];  \n var labels_V3 = [\"Data Values\"];  \n var data_V3 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_V3 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].V3 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_V3 += \",\"  \n   } else {  \n     data_V3 += \"]]\"  \n   }  \n }  \n var jsondata_V3 = JSON.parse(data_V3);\n \n var msg_V3 = {\n     payload : [{\"series\": series_V3, \"data\": jsondata_V3, \"labels\": labels_V3}],\n     topic : \"V3\"\n }\n \n var series_I1 = [\"I1\"];  \n var labels_I1 = [\"Data Values\"];  \n var data_I1 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_I1 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].I1 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_I1 += \",\"  \n   } else {  \n     data_I1 += \"]]\"  \n   }  \n }  \n var jsondata_I1 = JSON.parse(data_I1);\n \n var msg_I1 = {\n     payload : [{\"series\": series_I1, \"data\": jsondata_I1, \"labels\": labels_I1}],\n     topic : \"I1\"\n }\n \n var series_I2 = [\"I2\"];  \n var labels_I2 = [\"Data Values\"];  \n var data_I2 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_I2 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].I2 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_I2 += \",\"  \n   } else {  \n     data_I2 += \"]]\"  \n   }  \n }  \n var jsondata_I2 = JSON.parse(data_I2);\n \n var msg_I2 = {\n     payload : [{\"series\": series_I2, \"data\": jsondata_I2, \"labels\": labels_I2}],\n     topic : \"I2\"\n }\n \n var series_I3= [\"I3\"];  \n var labels_I3 = [\"Data Values\"];  \n var data_I3 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_I3 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].I3 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_I3 += \",\"  \n   } else {  \n     data_I3 += \"]]\"  \n   }  \n }  \n var jsondata_I3 = JSON.parse(data_I3);\n \n var msg_I3 = {\n     payload : [{\"series\": series_I3, \"data\": jsondata_I3, \"labels\": labels_I3}],\n     topic : \"I3\"\n }\n \n var series_P1 = [\"P1\"];  \n var labels_P1 = [\"Data Values\"];  \n var data_P1 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_P1 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].P1 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_P1 += \",\"  \n   } else {  \n     data_P1 += \"]]\"  \n   }  \n }  \n var jsondata_P1 = JSON.parse(data_P1);\n \n var msg_P1 = {\n     payload : [{\"series\": series_P1, \"data\": jsondata_P1, \"labels\": labels_P1}],\n     topic : \"P1\"\n }\n \n var series_P2 = [\"P2\"];  \n var labels_P2 = [\"Data Values\"];  \n var data_P2 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_P2 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].P2 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_P2 += \",\"  \n   } else {  \n     data_P2 += \"]]\"  \n   }  \n }  \n var jsondata_P2 = JSON.parse(data_P2);\n \n var msg_P2 = {\n     payload : [{\"series\": series_P2, \"data\": jsondata_P2, \"labels\": labels_P2}],\n     topic : \"P2\"\n }\n \n var series_P3 = [\"P3\"];  \n var labels_P3 = [\"Data Values\"];  \n var data_P3 = \"[[\";  \n   \n for (i=0; i < msg.payload.length; i++) {  \n   data_P3 += '{ \"x\":' + ((offset+parseInt(msg.payload[i].Time))*1000).toString() + ', \"y\":' + msg.payload[i].P3 + '}';  \n   if (i < (msg.payload.length - 1)) {  \n     data_P3 += \",\"  \n   } else {  \n     data_P3 += \"]]\"  \n   }  \n }  \n var jsondata_P3 = JSON.parse(data_P3);\n \n var msg_P3 = {\n     payload : [{\"series\": series_P3, \"data\": jsondata_P3, \"labels\": labels_P3}],\n     topic : \"P3\"\n }\n \n //var series_F = [\"F\"];  \n //var labels_F = [\"Data Values\"];  \n \n //var data_F = (msg.payload[(msg.payload).length]).F;\n //var data_F = '50';\n //var jsondata_F = JSON.parse(data_F);\n \n var msg_F = {payload: msg.payload[msg.payload.length - 1].F};\n \n return [msg_V1, msg_V2, msg_V3, msg_I1, msg_I2, msg_I3, msg_P1, msg_P2, msg_P3, msg_F];",
+        "outputs": 10,
+        "noerr": 0,
+        "x": 680,
+        "y": 2220,
+        "wires": [
+            [
+                "ac5dec47.73d19"
+            ],
+            [
+                "f80a9393.c6893"
+            ],
+            [
+                "5055766c.5f9e78"
+            ],
+            [
+                "5bb25fe8.8029e"
+            ],
+            [
+                "f4daa0a.45bf16"
+            ],
+            [
+                "4953a63c.0f9fa8"
+            ],
+            [
+                "bf046ff2.757d4"
+            ],
+            [
+                "961feca4.a308b"
+            ],
+            [
+                "7b07751b.26882c"
+            ],
+            [
+                "24cf7a1d.2dc8d6"
+            ]
+        ]
+    },
+    {
+        "id": "f80a9393.c6893",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "9d4f667a.0986b8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Voltage phase 2 (V)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 2100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5055766c.5f9e78",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "9d4f667a.0986b8",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Voltage phase 3 (V)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 2140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5bb25fe8.8029e",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "fc3e11ad.58936",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Current phase 1 (A)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 2180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f4daa0a.45bf16",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "fc3e11ad.58936",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Current phase 2 (A)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 2220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4953a63c.0f9fa8",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "fc3e11ad.58936",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Current phase 3 (A)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 2260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bf046ff2.757d4",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "6e68121e.c4427c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Power phase 1 (W)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 2300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7b07751b.26882c",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "6e68121e.c4427c",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Power phase 3 (W)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 2380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "961feca4.a308b",
+        "type": "ui_chart",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "6e68121e.c4427c",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Power phase 2 (W)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 930,
+        "y": 2340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cb063c4b.31f4f",
+        "type": "ui_gauge",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "28cbcfdd.3809",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Frequency",
+        "label": "Hz",
+        "format": "{{value}}",
+        "min": "40.0",
+        "max": "60.0",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 910,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "c3f1f4ad.0279d8",
+        "type": "ui_gauge",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "c7e074e4.034958",
+        "order": 3,
+        "width": "0",
+        "height": "0",
+        "gtype": "gage",
+        "title": "Frequency",
+        "label": "Hz",
+        "format": "{{value}}",
+        "min": "40.0",
+        "max": "60.0",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 910,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "9a123ebf.2fdea",
+        "type": "ui_gauge",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "7338e849.a0fa78",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Frequency",
+        "label": "Hz",
+        "format": "{{value}}",
+        "min": "40.0",
+        "max": "60.0",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 910,
+        "y": 1540,
+        "wires": []
+    },
+    {
+        "id": "b0f41dd2.7f02",
+        "type": "ui_gauge",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "9b1d82d.f4ee38",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Frequency",
+        "label": "Hz",
+        "format": "{{value}}",
+        "min": "40.0",
+        "max": "60.0",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 910,
+        "y": 1980,
+        "wires": []
+    },
+    {
+        "id": "24cf7a1d.2dc8d6",
+        "type": "ui_gauge",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "group": "71a695c8.7017ec",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Frequency",
+        "label": "Hz",
+        "format": "{{value}}",
+        "min": "40.0",
+        "max": "60.0",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 910,
+        "y": 2420,
+        "wires": []
+    },
+    {
+        "id": "948f4354.11792",
+        "type": "ui_dropdown",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "label": "TimeZone",
+        "tooltip": "",
+        "place": "GMT+2",
+        "group": "71a695c8.7017ec",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "GMT+0",
+                "value": 0,
+                "type": "num"
+            },
+            {
+                "label": "GMT+1",
+                "value": 3600,
+                "type": "num"
+            },
+            {
+                "label": "GMT+2",
+                "value": 7200,
+                "type": "num"
+            }
+        ],
+        "payload": "",
+        "topic": "timezone",
+        "x": 440,
+        "y": 2220,
+        "wires": [
+            [
+                "9d882efc.b3045"
+            ]
+        ]
+    },
+    {
+        "id": "d8345273.17736",
+        "type": "ui_dropdown",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "label": "TimeZone",
+        "tooltip": "",
+        "place": "GMT+2",
+        "group": "9b1d82d.f4ee38",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "GMT+0",
+                "value": 0,
+                "type": "num"
+            },
+            {
+                "label": "GMT+1",
+                "value": 3600,
+                "type": "num"
+            },
+            {
+                "label": "GMT+2",
+                "value": 7200,
+                "type": "num"
+            }
+        ],
+        "payload": "",
+        "topic": "timezone",
+        "x": 440,
+        "y": 1780,
+        "wires": [
+            [
+                "48fdab5a.a3a304"
+            ]
+        ]
+    },
+    {
+        "id": "3f8160.e67bbea",
+        "type": "ui_dropdown",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "label": "TimeZone",
+        "tooltip": "",
+        "place": "GMT+2",
+        "group": "7338e849.a0fa78",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "GMT+0",
+                "value": 0,
+                "type": "num"
+            },
+            {
+                "label": "GMT+1",
+                "value": 3600,
+                "type": "num"
+            },
+            {
+                "label": "GMT+2",
+                "value": 7200,
+                "type": "num"
+            }
+        ],
+        "payload": "",
+        "topic": "timezone",
+        "x": 440,
+        "y": 1340,
+        "wires": [
+            [
+                "9d353fd6.57955"
+            ]
+        ]
+    },
+    {
+        "id": "7cbd8b49.efab34",
+        "type": "ui_dropdown",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "label": "TimeZone",
+        "tooltip": "",
+        "place": "GMT+2",
+        "group": "28cbcfdd.3809",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "GMT+0",
+                "value": 0,
+                "type": "num"
+            },
+            {
+                "label": "GMT+1",
+                "value": 3600,
+                "type": "num"
+            },
+            {
+                "label": "GMT+2",
+                "value": 7200,
+                "type": "num"
+            }
+        ],
+        "payload": "",
+        "topic": "timezone",
+        "x": 440,
+        "y": 900,
+        "wires": [
+            [
+                "fafbbf0c.a974f"
+            ]
+        ]
+    },
+    {
+        "id": "1a19bece.1cfb41",
+        "type": "ui_dropdown",
+        "z": "ec06544c.0674a8",
+        "name": "",
+        "label": "TimeZone",
+        "tooltip": "",
+        "place": "GMT+2",
+        "group": "c7e074e4.034958",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "GMT+0",
+                "value": 0,
+                "type": "num"
+            },
+            {
+                "label": "GMT+1",
+                "value": 3600,
+                "type": "num"
+            },
+            {
+                "label": "GMT+2",
+                "value": 7200,
+                "type": "num"
+            }
+        ],
+        "payload": "",
+        "topic": "timezone",
+        "x": 440,
+        "y": 460,
+        "wires": [
+            [
+                "45a2c425.10921c"
+            ]
+        ]
+    }
+]

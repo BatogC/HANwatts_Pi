@@ -1,0 +1,40 @@
+//  Use case diagram, actors, identify subsystems, use <<extend>> and <<include>>.
+@startuml
+title Usecase diagram Roomba\nfunctional view (initial version)\n
+
+left to right direction
+skinparam packageStyle rectangle
+
+actor user
+node Raspberry_Pi
+actor object
+actor battery <<internal>>
+actor bin <<internal>>
+actor display
+actor dirt
+actor charge_docking_station
+ 
+user -- Raspberry_Pi
+
+rectangle Roomba <<system>> {
+  Raspberry_Pi -- (cleaning)
+  Raspberry_Pi -- (spot cleaning)
+  Raspberry_Pi -- (docking)
+
+  bin -- (checking bin)
+  dirt -- (detecting dirt)
+  (checking bin) -right- display
+  (checking battery) -- display
+
+  object -- (moving)
+  charge_docking_station -- (charging battery)
+  charge_docking_station -- (docking)
+  battery -- (checking battery)
+  (cleaning) .> (initialising) : <<include>>
+
+  (checking battery) .> (docking): <<include>>
+  (cleaning) ..> (moving) : <<include>>
+  (spot cleaning) ..> (moving) : <<include>>
+  (docking) .> (charging battery) : <<include>>
+}
+@enduml
