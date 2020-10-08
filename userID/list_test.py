@@ -1,3 +1,4 @@
+import time
 
 data0 = "231.79%230.78%231.00%0.00%0.00%0.00%0.00%231.46%50.01%1601895079%2%No ID%"
 data = "229.86%228.68%226.20%0.00%0.00%14.22%0.00%0.00%50.04%1601897947%1%No ID%"
@@ -20,4 +21,11 @@ UserID = data[index[10]+1:index[11]]
 
 print(V1)
 print(I1)
+
+print(int(round(time.time())))
+
+dataSend = [[V1, V2, V3, I1, I2, I3, P, E, F, UserID, Time]]
+print(dataSend)
+dataSend.append([21, V2, V3, I1, I2, I3, P, E, F, SocketID, Time])
+print(dataSend)
 input()

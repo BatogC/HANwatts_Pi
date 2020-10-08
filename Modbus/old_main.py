@@ -2,13 +2,12 @@ import RPi.GPIO as GPIO
 import serial
 import MIC
 import time
-#import paho.mqtt.client as mqtt
+import paho.mqtt.client as mqtt
 import paho.mqtt.publish as publish
 import paho.mqtt.subscribe as subscribe
 import sqlite3 as lite
 import sys
 import os
-import json
 
 broker = "localhost"
 #broker = "tcp://127.0.0.1"
@@ -91,26 +90,6 @@ while True:
             print(Message)
         else:
             print("Measuring failed. Error code: " + str(reading))
-        #Read REACTIVE POWER
-        reading = meter1.readReactivePower()
-        if (reading == 0):
-            current_time = time.ctime(time.time())
-            Message = current_time + """
-        Q1: %.2f   Q2: %.2f   Q3: %.2f
-        """%(meter1._MIC1__Q1, meter1._MIC1__Q2, meter1._MIC1__Q3)
-            print(Message)
-        else:
-            print("Measuring failed. Error code: " + str(reading))
-        #Read APPARENT POWER
-        reading = meter1.readApparentPower()
-        if (reading == 0):
-            current_time = time.ctime(time.time())
-            Message = current_time + """
-        S1: %.2f   S2: %.2f   S3: %.2f
-        """%(meter1._MIC1__S1, meter1._MIC1__S2, meter1._MIC1__S3)
-            print(Message)
-        else:
-            print("Measuring failed. Error code: " + str(reading))
         #Read FREQUENCY
         reading = meter1.readFrequency()
         if (reading == 0):
@@ -121,13 +100,11 @@ while True:
             print(Message)
         else:
             print("Measuring failed. Error code: " + str(reading))
-        cur.execute("INSERT INTO meter1(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        cur.execute("INSERT INTO meter1(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?)",
                     (int(round(time.time())),
                      meter1._MIC1__V1, meter1._MIC1__V2, meter1._MIC1__V3,
                      meter1._MIC1__I1, meter1._MIC1__I2, meter1._MIC1__I3,
                      meter1._MIC1__P1, meter1._MIC1__P2, meter1._MIC1__P3,
-                     meter1._MIC1__Q1, meter1._MIC1__Q2, meter1._MIC1__Q3,
-                     meter1._MIC1__S1, meter1._MIC1__S2, meter1._MIC1__S3,
                      meter1._MIC1__F))
         con.commit()
     else:
@@ -170,26 +147,6 @@ while True:
             print(Message)
         else:
             print("Measuring failed. Error code: " + str(reading))
-        #Read REACTIVE POWER
-        reading = meter2.readReactivePower()
-        if (reading == 0):
-            current_time = time.ctime(time.time())
-            Message = current_time + """
-        Q1: %.2f   Q2: %.2f   Q3: %.2f
-        """%(meter2._MIC1__Q1, meter2._MIC1__Q2, meter2._MIC1__Q3)
-            print(Message)
-        else:
-            print("Measuring failed. Error code: " + str(reading))
-        #Read APPARENT POWER
-        reading = meter2.readApparentPower()
-        if (reading == 0):
-            current_time = time.ctime(time.time())
-            Message = current_time + """
-        S1: %.2f   S2: %.2f   S3: %.2f
-        """%(meter2._MIC1__S1, meter2._MIC1__S2, meter2._MIC1__S3)
-            print(Message)
-        else:
-            print("Measuring failed. Error code: " + str(reading))
         #Read FREQUENCY
         reading = meter2.readFrequency()
         if (reading == 0):
@@ -200,13 +157,11 @@ while True:
             print(Message)
         else:
             print("Measuring failed. Error code: " + str(reading))
-        cur.execute("INSERT INTO meter2(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        cur.execute("INSERT INTO meter2(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?)",
                     (int(round(time.time())),
                      meter2._MIC1__V1, meter2._MIC1__V2, meter2._MIC1__V3,
                      meter2._MIC1__I1, meter2._MIC1__I2, meter2._MIC1__I3,
                      meter2._MIC1__P1, meter2._MIC1__P2, meter2._MIC1__P3,
-                     meter2._MIC1__Q1, meter2._MIC1__Q2, meter2._MIC1__Q3,
-                     meter2._MIC1__S1, meter2._MIC1__S2, meter2._MIC1__S3,
                      meter2._MIC1__F))
         con.commit()
     else:
@@ -249,26 +204,6 @@ while True:
             print(Message)
         else:
             print("Measuring failed. Error code: " + str(reading))
-        #Read REACTIVE POWER
-        reading = meter3.readReactivePower()
-        if (reading == 0):
-            current_time = time.ctime(time.time())
-            Message = current_time + """
-        Q1: %.2f   Q2: %.2f   Q3: %.2f
-        """%(meter3._MIC1__Q1, meter3._MIC1__Q2, meter3._MIC1__Q3)
-            print(Message)
-        else:
-            print("Measuring failed. Error code: " + str(reading))
-        #Read APPARENT POWER
-        reading = meter3.readApparentPower()
-        if (reading == 0):
-            current_time = time.ctime(time.time())
-            Message = current_time + """
-        S1: %.2f   S2: %.2f   S3: %.2f
-        """%(meter3._MIC1__S1, meter3._MIC1__S2, meter3._MIC1__S3)
-            print(Message)
-        else:
-            print("Measuring failed. Error code: " + str(reading))
         #Read FREQUENCY
         reading = meter3.readFrequency()
         if (reading == 0):
@@ -279,13 +214,11 @@ while True:
             print(Message)
         else:
             print("Measuring failed. Error code: " + str(reading))
-        cur.execute("INSERT INTO meter3(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        cur.execute("INSERT INTO meter3(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?)",
                     (int(round(time.time())),
                      meter3._MIC1__V1, meter3._MIC1__V2, meter3._MIC1__V3,
                      meter3._MIC1__I1, meter3._MIC1__I2, meter3._MIC1__I3,
                      meter3._MIC1__P1, meter3._MIC1__P2, meter3._MIC1__P3,
-                     meter3._MIC1__Q1, meter3._MIC1__Q2, meter3._MIC1__Q3,
-                     meter3._MIC1__S1, meter3._MIC1__S2, meter3._MIC1__S3,
                      meter3._MIC1__F))
         con.commit()
     else:
@@ -328,26 +261,6 @@ while True:
             print(Message)
         else:
             print("Measuring failed. Error code: " + str(reading))
-        #Read REACTIVE POWER
-        reading = meter4.readReactivePower()
-        if (reading == 0):
-            current_time = time.ctime(time.time())
-            Message = current_time + """
-        Q1: %.2f   Q2: %.2f   Q3: %.2f
-        """%(meter4._MIC1__Q1, meter4._MIC1__Q2, meter4._MIC1__Q3)
-            print(Message)
-        else:
-            print("Measuring failed. Error code: " + str(reading))
-        #Read APPARENT POWER
-        reading = meter4.readApparentPower()
-        if (reading == 0):
-            current_time = time.ctime(time.time())
-            Message = current_time + """
-        S1: %.2f   S2: %.2f   S3: %.2f
-        """%(meter4._MIC1__S1, meter4._MIC1__S2, meter4._MIC1__S3)
-            print(Message)
-        else:
-            print("Measuring failed. Error code: " + str(reading))
         #Read FREQUENCY
         reading = meter4.readFrequency()
         if (reading == 0):
@@ -358,13 +271,11 @@ while True:
             print(Message)
         else:
             print("Measuring failed. Error code: " + str(reading))
-        cur.execute("INSERT INTO meter4(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        cur.execute("INSERT INTO meter4(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?)",
                     (int(round(time.time())),
                      meter4._MIC1__V1, meter4._MIC1__V2, meter4._MIC1__V3,
                      meter4._MIC1__I1, meter4._MIC1__I2, meter4._MIC1__I3,
                      meter4._MIC1__P1, meter4._MIC1__P2, meter4._MIC1__P3,
-                     meter4._MIC1__Q1, meter4._MIC1__Q2, meter4._MIC1__Q3,
-                     meter4._MIC1__S1, meter4._MIC1__S2, meter4._MIC1__S3,
                      meter4._MIC1__F))
         con.commit()
     else:
@@ -407,26 +318,6 @@ while True:
             print(Message)
         else:
             print("Measuring failed. Error code: " + str(reading))
-        #Read REACTIVE POWER
-        reading = meter5.readReactivePower()
-        if (reading == 0):
-            current_time = time.ctime(time.time())
-            Message = current_time + """
-        Q1: %.2f   Q2: %.2f   Q3: %.2f
-        """%(meter5._MIC1__Q1, meter5._MIC1__Q2, meter5._MIC1__Q3)
-            print(Message)
-        else:
-            print("Measuring failed. Error code: " + str(reading))
-        #Read APPARENT POWER
-        reading = meter5.readApparentPower()
-        if (reading == 0):
-            current_time = time.ctime(time.time())
-            Message = current_time + """
-        S1: %.2f   S2: %.2f   S3: %.2f
-        """%(meter5._MIC1__S1, meter5._MIC1__S2, meter5._MIC1__S3)
-            print(Message)
-        else:
-            print("Measuring failed. Error code: " + str(reading))
         #Read FREQUENCY
         reading = meter5.readFrequency()
         if (reading == 0):
@@ -437,13 +328,11 @@ while True:
             print(Message)
         else:
             print("Measuring failed. Error code: " + str(reading))
-        cur.execute("INSERT INTO meter5(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        cur.execute("INSERT INTO meter5(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?)",
                     (int(round(time.time())),
                      meter5._MIC1__V1, meter5._MIC1__V2, meter5._MIC1__V3,
                      meter5._MIC1__I1, meter5._MIC1__I2, meter5._MIC1__I3,
                      meter5._MIC1__P1, meter5._MIC1__P2, meter5._MIC1__P3,
-                     meter5._MIC1__Q1, meter5._MIC1__Q2, meter5._MIC1__Q3,
-                     meter5._MIC1__S1, meter5._MIC1__S2, meter5._MIC1__S3,
                      meter5._MIC1__F))
         con.commit()
     else:
@@ -453,41 +342,20 @@ while True:
         dataSend = ""
         cur.execute("SELECT * FROM meter1 ORDER BY No DESC LIMIT 1")
         data = cur.fetchone()
-        dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[17])+'%'+str(data[1])+'%')   
+        dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[11])+'%'+str(data[1])+'%')   
         cur.execute("SELECT * FROM meter2 ORDER BY No DESC LIMIT 1")
         data = cur.fetchone()
-        dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[17])+'%'+str(data[1])+'%')
+        dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[11])+'%'+str(data[1])+'%')
         cur.execute("SELECT * FROM meter3 ORDER BY No DESC LIMIT 1")
         data = cur.fetchone()
-        dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[17])+'%'+str(data[1])+'%')
+        dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[11])+'%'+str(data[1])+'%')
         cur.execute("SELECT * FROM meter4 ORDER BY No DESC LIMIT 1")
         data = cur.fetchone()
-        dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[17])+'%'+str(data[1])+'%')
+        dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[11])+'%'+str(data[1])+'%')
         cur.execute("SELECT * FROM meter5 ORDER BY No DESC LIMIT 1")
         data = cur.fetchone()
-        dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[17])+'%'+str(data[1])+'%')
-
-        ##This works perfectly with json instead of '%'
-        #first
-        #dataSend = [[data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11], data[1]]]
-        #all next appends
-        #dataSend.append([data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11], data[1]])
-        #lastly
-        #dataSend = json.dumps(dataSend)
+        dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[11])+'%'+str(data[1])+'%')
         
-    #Examples of sent messages
-    #0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%1602066287%
-    #0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0%   #Meter2 always shows time=0 for some reason?
-    #229.6%228.9%229.6%5.97%6.03%6.0%1350.0%1350.0%1350.0%50.0%1602066318%
-    #0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%1602066318%
-    #229.7%228.9%229.6%6.42%6.03%6.0%1440.0%1350.0%1350.0%50.0%1602066319%
-        
-    #0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%1602067570%
-    #0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0%
-    #230.3%229.3%230.1%13.86%13.86%13.86%3180.0%3150.0%3180.0%50.0%1602067568%
-    #0.0  %0.0  %0.0  %0.0  %0.0  %0.0  %0.0   %0.0   %0.0   %0.0 %1602067611%
-    #230.4%229.3%230.1%14.91%13.89%13.86%3420.0%3180.0%3180.0%50.0%1602067569%
-      
         print("loop executed")
         publish.single("HANevse/test2", "loop executed", qos= 2, retain=True, hostname=broker, auth={'username':"hanwatts", 'password':"controlsystem"})
         publish.single("HANevse/EnergyMeter", dataSend, qos= 2, retain=True, hostname=broker, auth={'username':"hanwatts", 'password':"controlsystem"})
