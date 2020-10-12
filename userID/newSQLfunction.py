@@ -41,7 +41,8 @@ def SendUser_callback(client, userdata, message):
     #print(message.payload)
     con = lite.connect(path)
     cur = con.cursor()
-    cur.execute('select * from list')
+  111!!!  cur.execute('SELECT * FROM list')   What table should it send?  -Answer = none, this will be removed
+  #probably "SELECT * from car_of_user"
     dataSend = json.dumps( cur.fetchall() )
     #print(dataSend)
     #dataSend = ""
@@ -67,8 +68,8 @@ def Update_callback(client, userdata, message):
     #StartTime = int(data[index[1]+1:index[2]])
     UserId = int(data[0])
     PendingCharger = int(data[1])
-    StartTime = int(data[2])
-    cur.execute("""UPDATE list SET PendingCharger=?, StartTime=? WHERE Id=?""", (PendingCharger, StartTime, UserId))
+    StartTime = int(data[2])       !!! What is the equivalent of PendingCharger in new table? #mailed = if the owner used charger for over 4 hours he gets message
+ 111!!!   cur.execute("""UPDATE list SET PendingCharger=?, StartTime=? WHERE Id=?""", (PendingCharger, StartTime, UserId))
     #cur.execute("UPDATE list SET PendingCharger=? WHERE Id=?", (PendingCharger, UserId))
     #cur.execute("UPDATE list SET StartTime=? WHERE Id=?", (StartTime, UserId))
     con.commmit()
@@ -94,7 +95,7 @@ def photonMeasure_callback(client, userdata, message):
     #F = float(data[index[7]+1:index[8]])
     #Time = int(data[index[8]+1:index[9]])
     #SocketID = int(data[index[9]+1:index[10]])
-    #UserID = data[index[10]+1:index[11]]
+    # UserID = data[index[10]+1:index[11]]
     V1 = float(data[0])
     V2 = float(data[1])
     V3 = float(data[2])
@@ -107,7 +108,7 @@ def photonMeasure_callback(client, userdata, message):
     Time = int(data[9])
     SocketID = int(data[10])
     UserID = data[11]
-    cur.execute("INSERT INTO photonMeasure(UserID, SocketID, V1, V2, V3, I1, I2, I3, P, E, F, Time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)",
+    cur.execute("INSERT INTO measurements(userID, socketId, phase_voltage_L1, phase_voltage_L2, phase_voltage_L3, current_L1, current_L2, current_L3, active_power, energy, frequency, createdAt) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)",
                 (UserID, SocketID, V1, V2, V3, I1, I2, I3, P, E, F, Time))
     con.commit()
     

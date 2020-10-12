@@ -111,6 +111,16 @@ while True:
             print(Message)
         else:
             print("Measuring failed. Error code: " + str(reading))
+        #Read POWER FACTOR
+        reading = meter1.readPowerFactor()
+        if (reading == 0):
+            current_time = time.ctime(time.time())
+            Message = current_time + """
+        S1: %.2f   S2: %.2f   S3: %.2f
+        """%(meter1._MIC1__PF1, meter1._MIC1__PF2, meter1._MIC1__PF3)
+            print(Message)
+        else:
+            print("Measuring failed. Error code: " + str(reading))
         #Read FREQUENCY
         reading = meter1.readFrequency()
         if (reading == 0):
@@ -121,13 +131,14 @@ while True:
             print(Message)
         else:
             print("Measuring failed. Error code: " + str(reading))
-        cur.execute("INSERT INTO meter1(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        cur.execute("INSERT INTO meter1(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, PF1, PF2, PF3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (int(round(time.time())),
                      meter1._MIC1__V1, meter1._MIC1__V2, meter1._MIC1__V3,
                      meter1._MIC1__I1, meter1._MIC1__I2, meter1._MIC1__I3,
                      meter1._MIC1__P1, meter1._MIC1__P2, meter1._MIC1__P3,
                      meter1._MIC1__Q1, meter1._MIC1__Q2, meter1._MIC1__Q3,
                      meter1._MIC1__S1, meter1._MIC1__S2, meter1._MIC1__S3,
+                     meter1._MIC1__PF1, meter1._MIC1__PF2, meter1._MIC1__PF3,
                      meter1._MIC1__F))
         con.commit()
     else:
@@ -190,6 +201,16 @@ while True:
             print(Message)
         else:
             print("Measuring failed. Error code: " + str(reading))
+        #Read POWER FACTOR
+        reading = meter2.readPowerFactor()
+        if (reading == 0):
+            current_time = time.ctime(time.time())
+            Message = current_time + """
+        S1: %.2f   S2: %.2f   S3: %.2f
+        """%(meter2._MIC1__PF1, meter2._MIC1__PF2, meter2._MIC1__PF3)
+            print(Message)
+        else:
+            print("Measuring failed. Error code: " + str(reading))            
         #Read FREQUENCY
         reading = meter2.readFrequency()
         if (reading == 0):
@@ -200,13 +221,14 @@ while True:
             print(Message)
         else:
             print("Measuring failed. Error code: " + str(reading))
-        cur.execute("INSERT INTO meter2(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        cur.execute("INSERT INTO meter2(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, PF1, PF2, PF3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (int(round(time.time())),
                      meter2._MIC1__V1, meter2._MIC1__V2, meter2._MIC1__V3,
                      meter2._MIC1__I1, meter2._MIC1__I2, meter2._MIC1__I3,
                      meter2._MIC1__P1, meter2._MIC1__P2, meter2._MIC1__P3,
                      meter2._MIC1__Q1, meter2._MIC1__Q2, meter2._MIC1__Q3,
                      meter2._MIC1__S1, meter2._MIC1__S2, meter2._MIC1__S3,
+                     meter2._MIC1__PF1, meter2._MIC1__PF2, meter2._MIC1__PF3,
                      meter2._MIC1__F))
         con.commit()
     else:
@@ -269,6 +291,16 @@ while True:
             print(Message)
         else:
             print("Measuring failed. Error code: " + str(reading))
+        #Read POWER FACTOR
+        reading = meter3.readPowerFactor()
+        if (reading == 0):
+            current_time = time.ctime(time.time())
+            Message = current_time + """
+        S1: %.2f   S2: %.2f   S3: %.2f
+        """%(meter3._MIC1__PF1, meter3._MIC1__PF2, meter3._MIC1__PF3)
+            print(Message)
+        else:
+            print("Measuring failed. Error code: " + str(reading))
         #Read FREQUENCY
         reading = meter3.readFrequency()
         if (reading == 0):
@@ -279,13 +311,14 @@ while True:
             print(Message)
         else:
             print("Measuring failed. Error code: " + str(reading))
-        cur.execute("INSERT INTO meter3(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        cur.execute("INSERT INTO meter3(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, PF1, PF2, PF3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (int(round(time.time())),
                      meter3._MIC1__V1, meter3._MIC1__V2, meter3._MIC1__V3,
                      meter3._MIC1__I1, meter3._MIC1__I2, meter3._MIC1__I3,
                      meter3._MIC1__P1, meter3._MIC1__P2, meter3._MIC1__P3,
                      meter3._MIC1__Q1, meter3._MIC1__Q2, meter3._MIC1__Q3,
                      meter3._MIC1__S1, meter3._MIC1__S2, meter3._MIC1__S3,
+                     meter3._MIC1__PF1, meter3._MIC1__PF2, meter3._MIC1__PF3,
                      meter3._MIC1__F))
         con.commit()
     else:
@@ -348,6 +381,16 @@ while True:
             print(Message)
         else:
             print("Measuring failed. Error code: " + str(reading))
+        #Read POWER FACTOR
+        reading = meter4.readPowerFactor()
+        if (reading == 0):
+            current_time = time.ctime(time.time())
+            Message = current_time + """
+        S1: %.2f   S2: %.2f   S3: %.2f
+        """%(meter4._MIC1__PF1, meter4._MIC1__PF2, meter4._MIC1__PF3)
+            print(Message)
+        else:
+            print("Measuring failed. Error code: " + str(reading))
         #Read FREQUENCY
         reading = meter4.readFrequency()
         if (reading == 0):
@@ -358,13 +401,14 @@ while True:
             print(Message)
         else:
             print("Measuring failed. Error code: " + str(reading))
-        cur.execute("INSERT INTO meter4(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        cur.execute("INSERT INTO meter4(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, PF1, PF2, PF3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (int(round(time.time())),
                      meter4._MIC1__V1, meter4._MIC1__V2, meter4._MIC1__V3,
                      meter4._MIC1__I1, meter4._MIC1__I2, meter4._MIC1__I3,
                      meter4._MIC1__P1, meter4._MIC1__P2, meter4._MIC1__P3,
                      meter4._MIC1__Q1, meter4._MIC1__Q2, meter4._MIC1__Q3,
                      meter4._MIC1__S1, meter4._MIC1__S2, meter4._MIC1__S3,
+                     meter4._MIC1__PF1, meter4._MIC1__PF2, meter4._MIC1__PF3,
                      meter4._MIC1__F))
         con.commit()
     else:
@@ -427,6 +471,16 @@ while True:
             print(Message)
         else:
             print("Measuring failed. Error code: " + str(reading))
+        #Read POWER FACTOR
+        reading = meter5.readPowerFactor()
+        if (reading == 0):
+            current_time = time.ctime(time.time())
+            Message = current_time + """
+        S1: %.2f   S2: %.2f   S3: %.2f
+        """%(meter5._MIC1__PF1, meter5._MIC1__PF2, meter5._MIC1__PF3)
+            print(Message)
+        else:
+            print("Measuring failed. Error code: " + str(reading))
         #Read FREQUENCY
         reading = meter5.readFrequency()
         if (reading == 0):
@@ -437,13 +491,14 @@ while True:
             print(Message)
         else:
             print("Measuring failed. Error code: " + str(reading))
-        cur.execute("INSERT INTO meter5(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        cur.execute("INSERT INTO meter5(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, PF1, PF2, PF3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (int(round(time.time())),
                      meter5._MIC1__V1, meter5._MIC1__V2, meter5._MIC1__V3,
                      meter5._MIC1__I1, meter5._MIC1__I2, meter5._MIC1__I3,
                      meter5._MIC1__P1, meter5._MIC1__P2, meter5._MIC1__P3,
                      meter5._MIC1__Q1, meter5._MIC1__Q2, meter5._MIC1__Q3,
                      meter5._MIC1__S1, meter5._MIC1__S2, meter5._MIC1__S3,
+                     meter5._MIC1__PF1, meter5._MIC1__PF2, meter5._MIC1__PF3,
                      meter5._MIC1__F))
         con.commit()
     else:
@@ -453,19 +508,19 @@ while True:
         dataSend = ""
         cur.execute("SELECT * FROM meter1 ORDER BY No DESC LIMIT 1")
         data = cur.fetchone()
-        dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[17])+'%'+str(data[1])+'%')   
+        dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[20])+'%'+str(data[1])+'%')   
         cur.execute("SELECT * FROM meter2 ORDER BY No DESC LIMIT 1")
         data = cur.fetchone()
-        dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[17])+'%'+str(data[1])+'%')
+        dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[20])+'%'+str(data[1])+'%')
         cur.execute("SELECT * FROM meter3 ORDER BY No DESC LIMIT 1")
         data = cur.fetchone()
-        dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[17])+'%'+str(data[1])+'%')
+        dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[20])+'%'+str(data[1])+'%')
         cur.execute("SELECT * FROM meter4 ORDER BY No DESC LIMIT 1")
         data = cur.fetchone()
-        dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[17])+'%'+str(data[1])+'%')
+        dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[20])+'%'+str(data[1])+'%')
         cur.execute("SELECT * FROM meter5 ORDER BY No DESC LIMIT 1")
         data = cur.fetchone()
-        dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[17])+'%'+str(data[1])+'%')
+        dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[20])+'%'+str(data[1])+'%')
 
         ##This works perfectly with json instead of '%'
         #first

@@ -264,6 +264,9 @@ class MIC1:
         self.__S1 = 0.0
         self.__S2 = 0.0
         self.__S3 = 0.0
+        self.__PF1 = 0.0
+        self.__PF2 = 0.0
+        self.__PF3 = 0.0
         self.__F  = 0.0
     
     def readPT1(self):
@@ -745,6 +748,59 @@ class MIC1:
         else:
             print("Transmitting error: Incorrect CRC")
             return CRC_error
+        
+    def readPowerFactor(self):
+        #Calculate CRC16-MODBUS
+        crc16 = crcmod.mkCrcFun(0x18005, rev=True, initCrc = 0xFFFF, xorOut = 0x0000)
+        crc_Tx = ".%4x"%(crc16(serial.to_bytes([self.__Address, 0x03, 0x01, 0x4A, 0x00, 0x03])))
+        #The crc_Tx must include 4 hexadecimal characters.
+        #If crc_Tx =  10, function hex() will return 0xa, which is not expected
+        #Therefore, String format operator was used
+    
+        #Send request
+        GPIO.output(self.__Control, GPIO.HIGH)
+        ser.write(serial.to_bytes([self.__Address, 0x03, 0x01, 0x4A, 0x00, 0x03, int(crc_Tx[3:],16), int(crc_Tx[1:3],16)]))
+    
+        #There is a delay caused by the converter. The program must wait before reading the result
+        sleep(0.01)
+    
+        #Receive data
+        GPIO.output(self.__Control, GPIO.LOW)
+        cnt = 0
+        data_left = ser.inWaiting()
+        while (data_left == 0):
+            #wait for data
+            cnt=cnt+1
+            if (cnt < 50000): #wait for maximum 5 seconds
+                sleep(0.0001)
+                data_left = ser.inWaiting()
+            else:
+                print("Transmitting error: Time out")
+                return Trans_error
+        received_data = ser.read()
+        sleep(0.01)
+        data_left = ser.inWaiting()
+        received_data += ser.read(data_left)
+        
+        if (ord(received_data[0]) != self.__Address):
+            print("Transmitting error: Data corrupted")
+            return Data_error
+        if (len(received_data) != 11):
+            print("Transmitting error: Data corrupted")
+            return Data_error
+        
+        #Check the CRC code
+        crc_cal = hex(crc16(received_data[:9]))
+        crc_Rx = hex(struct.unpack('H',received_data[9:])[0])
+    
+        if crc_cal == crc_Rx:
+            self.__PF1 = float(struct.unpack('h', received_data[4:2:-1])[0])/1000
+            self.__PF2 = float(struct.unpack('h', received_data[6:4:-1])[0])/1000
+            self.__PF3 = float(struct.unpack('h', received_data[8:6:-1])[0])/1000    
+            return No_error
+        else:
+            print("Transmitting error: Incorrect CRC")
+            return CRC_error 
             
     def readFrequency(self):
         #Calculate CRC16-MODBUS
