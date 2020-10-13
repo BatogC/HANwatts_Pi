@@ -655,7 +655,7 @@ class MIC1:
         ser.write(serial.to_bytes([self.__Address, 0x03, 0x01, 0x42, 0x00, 0x03, int(crc_Tx[3:],16), int(crc_Tx[1:3],16)]))
     
         #There is a delay caused by the converter. The program must wait before reading the result
-        sleep(0.01)
+        sleep(0.02)
     
         #Receive data
         GPIO.output(self.__Control, GPIO.LOW)
@@ -671,7 +671,7 @@ class MIC1:
                 print("Transmitting error: Time out")
                 return Trans_error
         received_data = ser.read()
-        sleep(0.01)
+        sleep(0.02)
         data_left = ser.inWaiting()
         received_data += ser.read(data_left)
         
@@ -700,16 +700,17 @@ class MIC1:
         #Calculate CRC16-MODBUS
         crc16 = crcmod.mkCrcFun(0x18005, rev=True, initCrc = 0xFFFF, xorOut = 0x0000)
         crc_Tx = ".%4x"%(crc16(serial.to_bytes([self.__Address, 0x03, 0x01, 0x46, 0x00, 0x03])))
+        crc_Tx = crc_Tx.replace(" ", "0")
         #The crc_Tx must include 4 hexadecimal characters.
-        #If crc_Tx =  10, function hex() will return 0xa, which is not expected
+        #If crc_Tx = 10, function hex() will return 0xa, which is not expected
         #Therefore, String format operator was used
     
         #Send request
         GPIO.output(self.__Control, GPIO.HIGH)
         ser.write(serial.to_bytes([self.__Address, 0x03, 0x01, 0x46, 0x00, 0x03, int(crc_Tx[3:],16), int(crc_Tx[1:3],16)]))
-    
+        
         #There is a delay caused by the converter. The program must wait before reading the result
-        sleep(0.01)
+        sleep(0.02)
     
         #Receive data
         GPIO.output(self.__Control, GPIO.LOW)
@@ -725,7 +726,7 @@ class MIC1:
                 print("Transmitting error: Time out")
                 return Trans_error
         received_data = ser.read()
-        sleep(0.01)
+        sleep(0.02)
         data_left = ser.inWaiting()
         received_data += ser.read(data_left)
         
@@ -741,9 +742,9 @@ class MIC1:
         crc_Rx = hex(struct.unpack('H',received_data[9:])[0])
     
         if crc_cal == crc_Rx:
-            self.__S1 = float(struct.unpack('h', received_data[4:2:-1])[0])*(self.__PT1/self.__PT2)*(self.__CT1/5)
-            self.__S2 = float(struct.unpack('h', received_data[6:4:-1])[0])*(self.__PT1/self.__PT2)*(self.__CT1/5)
-            self.__S3 = float(struct.unpack('h', received_data[8:6:-1])[0])*(self.__PT1/self.__PT2)*(self.__CT1/5)    
+            self.__S1 = float(struct.unpack('H', received_data[4:2:-1])[0])*(self.__PT1/self.__PT2)*(self.__CT1/5)
+            self.__S2 = float(struct.unpack('H', received_data[6:4:-1])[0])*(self.__PT1/self.__PT2)*(self.__CT1/5)
+            self.__S3 = float(struct.unpack('H', received_data[8:6:-1])[0])*(self.__PT1/self.__PT2)*(self.__CT1/5)    
             return No_error
         else:
             print("Transmitting error: Incorrect CRC")
@@ -762,7 +763,7 @@ class MIC1:
         ser.write(serial.to_bytes([self.__Address, 0x03, 0x01, 0x4A, 0x00, 0x03, int(crc_Tx[3:],16), int(crc_Tx[1:3],16)]))
     
         #There is a delay caused by the converter. The program must wait before reading the result
-        sleep(0.01)
+        sleep(0.02)
     
         #Receive data
         GPIO.output(self.__Control, GPIO.LOW)
@@ -778,7 +779,7 @@ class MIC1:
                 print("Transmitting error: Time out")
                 return Trans_error
         received_data = ser.read()
-        sleep(0.01)
+        sleep(0.02)
         data_left = ser.inWaiting()
         received_data += ser.read(data_left)
         

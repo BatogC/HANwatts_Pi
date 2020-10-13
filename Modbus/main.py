@@ -8,13 +8,13 @@ import paho.mqtt.subscribe as subscribe
 import sqlite3 as lite
 import sys
 import os
-import json
+#import json
 
-broker = "localhost"
+#broker = "localhost"
 #broker = "tcp://127.0.0.1"
-#broker = "broker.hivemq.com"
+broker = "broker.hivemq.com"
 #path = "./modbusData.db" #Use internal memory
-path = "/media/usb/modbusData.db" #Use external memory
+path = "/media/DATABASE/modbusData.db" #Use external memory
 con = lite.connect(path)
 cur = con.cursor()
 
@@ -33,7 +33,7 @@ GPIO.setup(control_pin, GPIO.OUT)
 #Announcement
 #client.username_pw_set(username="hanwatts", password="controlsystem")
 #auth={'username':"hanwatts", 'password':"controlsystem"}
-publish.single("HANevse/testmain", "Hello from main", qos= 2, retain=True, hostname=broker, auth={'username':"hanwatts", 'password':"controlsystem"})
+#publish.single("HANevse/testmain", "Hello from main", qos= 2, retain=True, hostname=broker, auth={'username':"hanwatts", 'password':"controlsystem"})
 #publish.single("HANevse/testmain", "Hello from main", hostname=broker)
 
 print("Program was written by P.M.Nhat and C.Batog")
@@ -116,7 +116,7 @@ while True:
         if (reading == 0):
             current_time = time.ctime(time.time())
             Message = current_time + """
-        S1: %.2f   S2: %.2f   S3: %.2f
+        PF1: %.2f   PF2: %.2f   PF3: %.2f
         """%(meter1._MIC1__PF1, meter1._MIC1__PF2, meter1._MIC1__PF3)
             print(Message)
         else:
@@ -206,7 +206,7 @@ while True:
         if (reading == 0):
             current_time = time.ctime(time.time())
             Message = current_time + """
-        S1: %.2f   S2: %.2f   S3: %.2f
+        PF1: %.2f   PF2: %.2f   PF3: %.2f
         """%(meter2._MIC1__PF1, meter2._MIC1__PF2, meter2._MIC1__PF3)
             print(Message)
         else:
@@ -296,7 +296,7 @@ while True:
         if (reading == 0):
             current_time = time.ctime(time.time())
             Message = current_time + """
-        S1: %.2f   S2: %.2f   S3: %.2f
+        PF1: %.2f   PF2: %.2f   PF3: %.2f
         """%(meter3._MIC1__PF1, meter3._MIC1__PF2, meter3._MIC1__PF3)
             print(Message)
         else:
@@ -386,7 +386,7 @@ while True:
         if (reading == 0):
             current_time = time.ctime(time.time())
             Message = current_time + """
-        S1: %.2f   S2: %.2f   S3: %.2f
+        PF1: %.2f   PF2: %.2f   PF3: %.2f
         """%(meter4._MIC1__PF1, meter4._MIC1__PF2, meter4._MIC1__PF3)
             print(Message)
         else:
@@ -476,7 +476,7 @@ while True:
         if (reading == 0):
             current_time = time.ctime(time.time())
             Message = current_time + """
-        S1: %.2f   S2: %.2f   S3: %.2f
+        PF1: %.2f   PF2: %.2f   PF3: %.2f
         """%(meter5._MIC1__PF1, meter5._MIC1__PF2, meter5._MIC1__PF3)
             print(Message)
         else:
@@ -544,8 +544,8 @@ while True:
     #230.4%229.3%230.1%14.91%13.89%13.86%3420.0%3180.0%3180.0%50.0%1602067569%
       
         print("loop executed")
-        publish.single("HANevse/test2", "loop executed", qos= 2, retain=True, hostname=broker, auth={'username':"hanwatts", 'password':"controlsystem"})
-        publish.single("HANevse/EnergyMeter", dataSend, qos= 2, retain=True, hostname=broker, auth={'username':"hanwatts", 'password':"controlsystem"})
+        #publish.single("HANevse/test2", "loop executed", qos= 2, retain=True, hostname=broker, auth={'username':"hanwatts", 'password':"controlsystem"})
+        publish.single("HANevse/EnergyMeter", dataSend, qos= 2, retain=True, hostname=broker)#, auth={'username':"hanwatts", 'password':"controlsystem"})
         
     time_send += 1
     #time.sleep(30)
