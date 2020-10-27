@@ -1,8 +1,9 @@
 import time
 import sqlite3 as lite
 import paho.mqtt.client as mqtt
-import paho.mqtt.publish as publish
-import paho.mqtt.subscribe as subscribe
+#import paho.mqtt.publish as publish
+#import paho.mqtt.subscribe as subscribe
+import json
 
 con = None
 broker = "broker.hivemq.com"
@@ -36,11 +37,20 @@ def on_disconnect(client, userdata, rc):
     else:
         print("Normal disconnection.")
 
+def CheckUser(client, userdata, message):
+    con = lite.connect(path)
+    cur = con.cursor()
+    #cur.execute('select * from list')
+    dataSend = ""
+    
+    
+    client.publish("HANevse/allowUser", dataSend, 2, True)
+
 def SendUser_callback(client, userdata, message):
     #print(message.payload)
     con = lite.connect(path)
     cur = con.cursor()
-    cur.execute('select * from list')
+    cur.execute('SELECT * from list')
 
     data = cur.fetchall()
     dataSend = ""
@@ -56,17 +66,57 @@ def SendUser_callback(client, userdata, message):
 def Update_callback(client, userdata, message):
     con = lite.connect(path)
     cur = con.cursor()
-    data = message.payload
-    index = []
-    for i in range(len(data)):
-        if (data[i] == '%'):
-            index.append(i)
-    UserId = int(data[:index[0]])
-    PendingCharger = int(data[index[0]+1:index[1]])
-    StartTime = int(data[index[1]+1:index[2]])
-    cur.execute("UPDATE list SET PendingCharger=? WHERE Id=?", (PendingCharger, UserId))
-    cur.execute("UPDATE list SET StartTime=? WHERE Id=?", (StartTime, UserId))
+    data = json.loads(message.payload)
+    
+    UserId = str(data.get("UserId")).upper()
+    socketId = int(data.get("Charger"))
+    StartTime = int(data.get("StartTime"))
+    
+    cur.execute("SELECT LastStartOrStop, socketId FROM users WHERE uidTag=? LIMIT 1", (UserId,))
+    dataRef = cur.fetchone() # returns a tuple
+    dataSend = str(socketId) + ";"
+    
+    cur.execute("SELECT socketId FROM users WHERE socketId=? LIMIT 1", (socketId,))
+    socketUsed = cur.fetchone()
+    #The socketUsed can be either None or the socket number, so parsing it can give error without check
+    if socketUsed is not None:
+        socketUsed = socketUsed[0]
+        
+    #This is the filter for checking and preparing the answer to the EV charger
+    if dataRef is not None: # if user ID is in list                       
+        if ((StartTime - dataRef[0]) >= 20): # if last swipe is over 20s ago
+            if (socketUsed == socketId): #if this socket is used now
+                if (socketId == dataRef[1]): # if user swiped at same socket
+                    dataSend += "4" # successfully stop charging
+                    cur.execute("UPDATE users SET socketId=?, LastStartOrStop WHERE uidTag=?", (None, StartTime, UserId))
+                else:
+                    dataSend += "3" # socket is occupied by another user
+            else: #if this socket is free
+                if dataRef[1] is None: #if user was not using any socket
+                    dataSend += "1" # successfully start new charge
+                    cur.execute("UPDATE users SET socketId=?, LastStartOrStop WHERE uidTag=?", (socketId, StartTime, UserId))
+                else:
+                    dataSend += "6" # user already at another socket
+        else: #if swiped less than 20s ago
+            if (socketUsed == socketId): #if this socket is used now
+                if (socketId == dataRef[1]): # if user swiped at same socket
+                    dataSend += "5" # you just started using this socket less than 20s ago
+                else:
+                    dataSend += "3" # socket is occupied by another user
+            else: #if this socket is free
+                if dataRef[1] is None: #if user was not using any socket
+                    dataSend += "2" #charger is free, but you already swiped less than 20s ago
+                else:
+                    dataSend += "6"  # user already at another socket
+    else:
+        dataSend += "7" #you are not in the userlist
+    
+    
+    #cur.execute("UPDATE list SET PendingCharger=? WHERE Id=?", (PendingCharger, UserId))
+    #cur.execute("UPDATE list SET StartTime=? WHERE Id=?", (StartTime, UserId))
     con.commmit()
+    
+    client.publish("HANevse/allowUser", dataSend, 2, True)
 
 def photonMeasure_callback(client, userdata, message):
     con = lite.connect(path)

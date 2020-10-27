@@ -1035,10 +1035,16 @@ CREATE TABLE users (
   LastStartOrStop int NOT NULL DEFAULT 0,
   password varchar,
   Remark varchar,
-  token varchar DEFAULT NULL  CHECK (length(token) <= 45),
+  token varchar DEFAULT NULL CHECK (length(token) <= 45),
   verified int NOT NULL DEFAULT 0,
   email varchar NOT NULL,
-  admin tinyint NOT NULL DEFAULT 0  CHECK (length(admin) == 1)
+  admin tinyint NOT NULL DEFAULT 0  CHECK (length(admin) == 1),
+  socketId tinyint DEFAULT NULL UNIQUE, 
+  FOREIGN KEY (socketId)
+  REFERENCES charging_station_sockets (id) 
+    ON UPDATE CASCADE
+    ON DELETE NO ACTION
+	
 );
 
 INSERT INTO users (id, name, uidTag, hanId, LastStartOrStop, password, Remark, token, verified, email, admin) VALUES
