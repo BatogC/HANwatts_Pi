@@ -33,7 +33,7 @@ print(dataRef)
 #print(dataRef[3])
 #print(type(dataRef[3]))
 
-if dataRef[3] is None:
+if dataRef is None:
     print("compare works")
 else:
     print("can't compare")
@@ -53,6 +53,14 @@ else:
 data = json.loads( "{\"UserId\":\"28 b3 cx\",\"t2\":1234,\"t3\":1234.5,\"t4\":true,\"t5\":false,\"t6\":null, \"t7\" : \"\\\"quoted\\\"\" } ")
 UserId = str(data.get("UserId")).upper()  
 print(UserId)
-    
+
+x = ('UserId', 'Charger', 'StartTime')
+y = "default"
+
+#thisdict = dict.fromkeys(x, y)
+newdict = {'UserId': "BB 77 E3 59", 'Charger': 2, 'StartTime': 1603900707}
+
+print(json.dumps(newdict))
+print(newdict)
     
 input()

@@ -65,7 +65,7 @@ def Update_callback(client, userdata, message):
     StartTime = int(data.get("StartTime"))
     
     cur.execute("SELECT LastStartOrStop, socketId FROM users WHERE uidTag=? LIMIT 1", (UserId,))
-    dataRef = cur.fetchone() # returns a tuple
+    dataUser = cur.fetchone() # returns a tuple
     dataSend = str(socketId) + ";"
     
     cur.execute("SELECT socketId FROM users WHERE socketId=? LIMIT 1", (socketId,))
@@ -75,28 +75,28 @@ def Update_callback(client, userdata, message):
         socketUsed = socketUsed[0]
         
     #This is the filter for checking and preparing the answer to the EV charger
-    if dataRef is not None: # if user ID is in list                       
-        if ((StartTime - dataRef[0]) >= 20): # if last swipe is over 20s ago
+    if dataUser is not None: # if user ID is in list                       
+        if ((StartTime - dataUser[0]) >= 20): # if last swipe is over 20s ago
             if (socketUsed == socketId): #if this socket is used now
-                if (socketId == dataRef[1]): # if user swiped at same socket
+                if (socketId == dataUser[1]): # if user already uses this socket
                     dataSend += "4" # successfully stop charging
-                    cur.execute("UPDATE users SET socketId=?, LastStartOrStop WHERE uidTag=?", (None, StartTime, UserId))
+                    cur.execute("UPDATE users SET socketId=?, LastStartOrStop=? WHERE uidTag=?", (None, StartTime, UserId))
                 else:
-                    dataSend += "3" # socket is occupied by another user
+                    dataSend += "3" # socket is occupied by another user 
             else: #if this socket is free
-                if dataRef[1] is None: #if user was not using any socket
+                if dataUser[1] is None: #if user was not using any socket
                     dataSend += "1" # successfully start new charge
-                    cur.execute("UPDATE users SET socketId=?, LastStartOrStop WHERE uidTag=?", (socketId, StartTime, UserId))
+                    cur.execute("UPDATE users SET socketId=?, LastStartOrStop=? WHERE uidTag=?", (socketId, StartTime, UserId))
                 else:
                     dataSend += "6" # user already at another socket
         else: #if swiped less than 20s ago
             if (socketUsed == socketId): #if this socket is used now
-                if (socketId == dataRef[1]): # if user swiped at same socket
+                if (socketId == dataUser[1]): # if user already uses this socket
                     dataSend += "5" # you just started using this socket less than 20s ago
                 else:
                     dataSend += "3" # socket is occupied by another user
             else: #if this socket is free
-                if dataRef[1] is None: #if user was not using any socket
+                if dataUser[1] is None: #if user was not using any socket
                     dataSend += "2" #charger is free, but you already swiped less than 20s ago
                 else:
                     dataSend += "6"  # user already at another socket
@@ -106,7 +106,7 @@ def Update_callback(client, userdata, message):
     
     #cur.execute("UPDATE list SET PendingCharger=? WHERE Id=?", (PendingCharger, UserId))
     #cur.execute("UPDATE list SET StartTime=? WHERE Id=?", (StartTime, UserId))
-    con.commmit()
+    con.commit()
     
     client.publish("HANevse/allowUser", dataSend, 2, True)
 
