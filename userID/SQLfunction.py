@@ -11,7 +11,8 @@ broker = "broker.hivemq.com"
 #broker = "localhost"
 
 #path = "./userList" #Use internal memory
-path = "/media/DATABASE/userList" #Use external memory
+#path = "/media/DATABASE/userList" #Use external memory
+path = "/home/pi/Documents/sql_databases/new_user_table.sqlite3"
 
 err_cnt = 0
 
@@ -36,15 +37,6 @@ def on_disconnect(client, userdata, rc):
         client.bad_connection_flag = True
     else:
         print("Normal disconnection.")
-
-def CheckUser(client, userdata, message):
-    con = lite.connect(path)
-    cur = con.cursor()
-    #cur.execute('select * from list')
-    dataSend = ""
-    
-    
-    client.publish("HANevse/allowUser", dataSend, 2, True)
 
 def SendUser_callback(client, userdata, message):
     #print(message.payload)
@@ -109,7 +101,7 @@ def Update_callback(client, userdata, message):
                 else:
                     dataSend += "6"  # user already at another socket
     else:
-        dataSend += "7" #you are not in the userlist
+        dataSend += "7" #user not in the userlist
     
     
     #cur.execute("UPDATE list SET PendingCharger=? WHERE Id=?", (PendingCharger, UserId))
@@ -117,6 +109,32 @@ def Update_callback(client, userdata, message):
     con.commmit()
     
     client.publish("HANevse/allowUser", dataSend, 2, True)
+
+def new_photonMeasure_callback(client, userdata, message):
+    con = lite.connect(path)
+    cur = con.cursor()
+    data = json.loads(message.payload)    
+    
+    #V1 = float(data.get("V1"))
+    #V2 = float(data.get("V2"))
+    #V3 = float(data.get("V3"))
+    #I1 = float(data.get("I1"))
+    #I2 = float(data.get("I2"))
+    #I3 = float(data.get("I3"))
+    #P = float(data.get("P"))
+    #E = float(data.get("E"))
+    #F = float(data.get("F"))
+    #Time = int(data.get("Time"))
+    #SocketID = int(data.get("SocketID"))
+    #UserID = str(data.get("UserID"))
+    #cur.execute("INSERT INTO measurements(userID, socketId, phase_voltage_L1, phase_voltage_L2, phase_voltage_L3, current_L1, current_L2, current_L3, active_power, energy, frequency, createdAt) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)",
+    #            (UserID, SocketID, V1, V2, V3, I1, I2, I3, P, E, F, Time))
+    # Or skip all .get() and do them in execute
+    cur.execute("INSERT INTO measurements(userID, socketId, phase_voltage_L1, phase_voltage_L2, phase_voltage_L3, current_L1, current_L2, current_L3, active_power, energy, frequency, createdAt) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)",
+                (str(data["UserID"]), int(data["ScoketID"]), float(data["V1"]), float(data["V2"]), float(data["V3"]), float(data["I1"]), float(data["I2"]), float(data["I3"]), float(data["P"]), float(data["E"]), float(data["F"]), time.strftime('%Y-%m-%d %T', time.localtime(int(data["Time"]) )) ))
+    
+    con.commit()
+
 
 def photonMeasure_callback(client, userdata, message):
     con = lite.connect(path)
@@ -171,7 +189,7 @@ while True:
         if (err_cnt >= 10):
             client.loop_stop()
             client.disconnect()
-            current_time = time.ctime(time.time())
+            current_time = time.ctime()
             print(current_time, "- Client can't connect to broker.\nRestarting client.\n")            
             time.sleep(10)
             client.connect_async(broker, 1883, 60)

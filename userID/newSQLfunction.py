@@ -19,7 +19,7 @@ def on_connect(client, userdata, flags, rc):
     if rc == 0:
         #print("Connection start")
         client.bad_connection_flag = False
-        client.connected_flag = True        
+        client.connected_flag = True
         err_cnt = 0
 
 

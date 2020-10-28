@@ -2,9 +2,11 @@ import time
 import sqlite3 as lite
 import json
 
-#current_time = time.ctime(time.time())
-#print(current_time)
-#print(time.time() )
+current_time = int(time.time())
+print(time.strftime('%Y-%m-%d %T', time.localtime(current_time)) )
+#print(current_time[4:])
+#print(type(current_time))
+print(time.time() )
 #if (int(time.time()) > 1602071734):
 #    print("works")
 #else:
@@ -20,7 +22,7 @@ cur = con.cursor()
     #for i in range(len(data)):
     #    if (data[i] == ';'):
     #       index.append(i)
-UserId = "B0 49 8A 7C"
+UserId = "No ID"
 
 #PendingCharger = data.get("Charger")
 #StartTime = data.get("StartTime")
