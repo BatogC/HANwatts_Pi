@@ -7,7 +7,7 @@ import json
 
 con = None
 broker = "broker.hivemq.com"
-#broker = "192.168.43.249"
+# = "192.168.1.76"
 #broker = "localhost"
 
 #path = "./userList" #Use internal memory
@@ -23,8 +23,8 @@ def on_connect(client, userdata, flags, rc):
         client.connected_flag = True        
         err_cnt = 0
 
-        client.publish("HANevse/testsql", "Hello from SQLfunction",1 ,False)
-        client.subscribe([("HANevse/getUsers", 2), ("HANevse/UpdateUser", 2), ("HANevse/photonMeasure", 2)])
+        client.publish("HANevse1/testsql", "Hello from SQLfunction",1 ,False)
+        client.subscribe([("HANevse1/getUsers", 2), ("HANevse1/updateUser", 2), ("HANevse1/photonMeasure", 2)])
         print("Connected OK")
     else:
         print("Bad connection, RC = ", rc)
@@ -51,18 +51,20 @@ def SendUser_callback(client, userdata, message):
         print(element)
         dataSend += (str(element[0])+'%'+element[1]+'%'+element[2]+'%'+str(element[3])+'%'+element[4]+'%'+str(element[5])+'%'+element[6]+'%'+str(element[7])+'%'+str(element[8])+'%')
     
-    client.publish("HANevse/UserList", dataSend, 2, True)
+    client.publish("HANevse1/UserList", dataSend, 2, False)
     #publish.single("HANevse/UserList", dataSend, hostname=broker)
     #print(dataSend)
 
-def Update_callback(client, userdata, message):
+def update_callback(client, userdata, message):
     con = lite.connect(path)
     cur = con.cursor()
     data = json.loads(message.payload)
+    print(data)
     
     UserId = str(data.get("UserId")).upper()
     socketId = int(data.get("Charger"))
     StartTime = int(data.get("StartTime"))
+    print(UserId)
     
     cur.execute("SELECT LastStartOrStop, socketId FROM users WHERE uidTag=? LIMIT 1", (UserId,))
     dataUser = cur.fetchone() # returns a tuple
@@ -108,7 +110,7 @@ def Update_callback(client, userdata, message):
     #cur.execute("UPDATE list SET StartTime=? WHERE Id=?", (StartTime, UserId))
     con.commit()
     
-    client.publish("HANevse/allowUser", dataSend, 2, True)
+    client.publish("HANevse1/allowUser", dataSend, 0, False)
 
 def new_photonMeasure_callback(client, userdata, message):
     con = lite.connect(path)
@@ -130,8 +132,11 @@ def new_photonMeasure_callback(client, userdata, message):
     #cur.execute("INSERT INTO measurements(userID, socketId, phase_voltage_L1, phase_voltage_L2, phase_voltage_L3, current_L1, current_L2, current_L3, active_power, energy, frequency, createdAt) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)",
     #            (UserID, SocketID, V1, V2, V3, I1, I2, I3, P, E, F, Time))
     # Or skip all .get() and do them in execute
-    cur.execute("INSERT INTO measurements(userID, socketId, phase_voltage_L1, phase_voltage_L2, phase_voltage_L3, current_L1, current_L2, current_L3, active_power, energy, frequency, createdAt) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)",
-                (str(data["UserID"]), int(data["ScoketID"]), float(data["V1"]), float(data["V2"]), float(data["V3"]), float(data["I1"]), float(data["I2"]), float(data["I3"]), float(data["P"]), float(data["E"]), float(data["F"]), time.strftime('%Y-%m-%d %T', time.localtime(int(data["Time"]) )) ))
+   
+   !!needs work because rowId on inserted rows is null and userId is string and not linked to other tables in database
+   
+    cur.execute("INSERT INTO measurements(userId, socketId, phase_voltage_L1, phase_voltage_L2, phase_voltage_L3, current_L1, current_L2, current_L3, active_power, energy, frequency, createdAt) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)",
+                (str(data["UserID"]), int(data["SocketID"]), float(data["V1"]), float(data["V2"]), float(data["V3"]), float(data["I1"]), float(data["I2"]), float(data["I3"]), float(data["P"]), float(data["E"]), float(data["F"]), time.strftime('%Y-%m-%d %T', time.localtime(int(data["Time"]) )) ))
     
     con.commit()
 
@@ -172,9 +177,9 @@ client.on_connect = on_connect
 client.on_disconnect = on_disconnect
 client.connect_async(broker, 1883, 60)
 
-client.message_callback_add("HANevse/getUsers", SendUser_callback)
-client.message_callback_add("HANevse/UpdateUser", Update_callback)
-client.message_callback_add("HANevse/photonMeasure", photonMeasure_callback)
+client.message_callback_add("HANevse1/getUsers", SendUser_callback)
+client.message_callback_add("HANevse1/updateUser", update_callback)
+client.message_callback_add("HANevse1/photonMeasure", new_photonMeasure_callback)
 client.loop_start()
 
 

@@ -1,9 +1,7 @@
-
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
-
 CREATE TABLE cars(
-  id int NOT NULL PRIMARY KEY,
+  id int PRIMARY KEY,
   brand varchar NOT NULL CHECK (length(brand) <= 45),
   type varchar NOT NULL CHECK (length(type) <= 45),
   year smallint NOT NULL CHECK (length(year) = 4),
@@ -12,71 +10,67 @@ CREATE TABLE cars(
   edition varchar DEFAULT NULL,
   imageURL varchar DEFAULT '' 
   );
-
-INSERT INTO cars (id, brand, type, year, batteryCapacity, verified, edition, imageURL)
-VALUES
-(1, 'Nissan', 'Leaf', 2018, 40, 1, NULL, 'https://ev-database.nl/img/auto/Nissan_Leaf_2018/Nissan_Leaf_2018-01.jpg'),
-(2, 'Tesla', 'Model S', 2016, 85, 1, NULL, 'https://ev-database.nl/img/auto/Tesla_Model_S_2016/Tesla_Model_S_2016-01.jpg'),
-(3, 'Tesla', 'Model S', 2015, 85, 1, NULL, 'https://hips.hearstapps.com/amv-prod-cad-assets.s3.amazonaws.com/images/15q2/657948/2015-tesla-model-s-70d-instrumented-test-review-car-and-driver-photo-658384-s-original.jpg'),
-(4, 'Toyota', 'Prius', 2015, 85, 1, NULL, 'https://hips.hearstapps.com/amv-prod-cad-assets.s3.amazonaws.com/images/15q2/657948/2015-toyota-prius-review-car-and-driver-photo-660322-s-original.jpg'),
-(5, 'Renault', 'Zoe', 2017, 41, 1, 'R90', 'https://car-images.bauersecure.com/pagefiles/68546/1040x585/zoeweb-001.jpg'),
-(6, 'Volvo ', 'V60', 2013, 85, 1, NULL, 'https://media2.autokopen.nl/afbeeldingen/volvo-v60-2013-257500-800.jpg'),
-(7, 'Ford', 'C-max energi', 2015, 85, 1, NULL, 'https://icdn2.digitaltrends.com/image/2013-ford-cmax-plugin-front-left-angle-640x640.jpg?ver=1'),
-(8, 'Audi', 'A3', 2013, 85, 1, NULL, 'https://parkers-images.bauersecure.com/pagefiles/202042/cut-out/331x220/audi-a3-sb-01.jpg\r\n'),
-(9, 'Ford', 'C-max energi', 2015, 85, 1, NULL, 'https://icdn2.digitaltrends.com/image/2013-ford-cmax-plugin-front-left-angle-640x640.jpg?ver=1'),
-(10, 'Chevrolet', 'Volt', 2012, 85, 1, NULL, 'https://file.kbb.com/kbb/vehicleimage/housenew/480x360/2012/2012-chevrolet-volt-frontside_chvolt121.jpg'),
-(11, 'Volvo', 'XC-60', 2018, 10.4, 1, 'T8 Twin-Engine', 'https://ev-database.nl/img/auto/Volvo_XC-60/Volvo_XC-60-01.jpg'),
-(12, 'Chevrolet', 'volt', 2013, 85, 1, NULL, 'https://cars.usnews.com/static/images/Auto/custom/12098/2013-Chevrolet-Volt-005-medium.jpg'),
-(13, 'Volkswagen', 'Egolf', 2013, 85, 1, NULL, 'https://media.treehugger.com/assets/images/2012/03/volkswagen-golf-blue-e-motion_1_bkEwC_69.jpeg'),
-(116, 'BMW', '330e', 2015, 7.6, 1, NULL, 'https://media.autoweek.nl/m/8mqy7a0bxrg9_800.jpg'),
-(117, 'BMW', 'X5', 2016, 9, 1, 'xDrive40e', 'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/images/car-reviews/first-drives/legacy/bmw-x40e-ac-003.jpg?itok=tMdX72RY'),
-(118, 'Mercedes', 'GLE 500e Plug-In', 2015, 8.8, 1, NULL, 'https://ev-database.nl/img/auto/Mercedes_GLE_500e_Plug-In/Mercedes_GLE_500e_Plug-In-01.jpg'),
-(119, 'Volkswagen', 'Passat GTE', 2015, 9.9, 1, NULL, 'https://images.autowereld.com/high/108861-volkswagen-passat-gte-2015-10.jpg'),
-(120, 'Volkswagen', 'Passat GTE', 2015, 9.9, 1, 'Variant', 'https://static.autoblog.nl/images/wp2014/volkswagen-passat-gte-variant-550.jpg'),
-(121, 'Volvo', 'XC-90', 2014, 10.4, 1, 'T8 Twin-Engine', 'https://car-images.bauersecure.com/pagefiles/20706/1040x585/volvoxc90_t8_1.jpg'),
-(122, 'Opel', 'Ampera-e', 2017, 60, 1, NULL, 'https://www.carblogger.nl/wp-content/uploads/2017/02/opel-ampera-e-2017-1200x700.jpg'),
-(123, 'Tesla', 'Model X', 2016, 75, 1, '75D', 'https://ev-database.nl/img/auto/Tesla_Model_X/Tesla_Model_X-01.jpg'),
-(124, 'Hyundai', 'IONIQ', 2018, 8.9, 1, 'Plug-in', 'https://cdn.motor1.com/images/mgl/k0rPB/s1/2018-hyundai-ioniq-plug-in-hybrid-why-buy.jpg'),
-(125, 'Hyundai', 'IONIQ', 2017, 30.5, 1, 'Electric', 'https://icdn2.digitaltrends.com/image/2017-hyundai-ioniq-ev-side-angle-640x640.jpg?ver=1'),
-(126, 'Kia', 'Optima', 2016, 9.8, 1, 'Plug-in Hybrid', 'https://ev-database.nl/img/auto/Kia_Optima_Plug-in_Hybrid/Kia_Optima_Plug-in_Hybrid-01.jpg'),
-(127, 'Toyota', 'Prius', 2016, 8.8, 1, 'Plug-in Hybrid', 'https://static.autoblog.nl/images/wp2016/toyota-prius-phev-2016-voor.jpg'),
-(128, 'Tesla', 'Model S', 2016, 75, 1, '75D', 'https://ev-database.nl/img/auto/Tesla_Model_S_2016/Tesla_Model_S_2016-01.jpg'),
-(129, 'Tesla', 'Model S', 2016, 100, 1, 'P100D', 'https://www.dagelijksauto.nl/wp-content/gallery/tesla-model-s-model-x-p100d-ludicrous-2016-nieuwsbericht/Tesla-Model-S-2016-1.jpg'),
-(130, 'Tesla', 'Model X', 2017, 100, 1, 'P100D', 'https://autoweek.com/sites/default/files/styles/gen-1200-675/public/2120x920_mx-city.png'),
-(131, 'Audi', 'A3', 2016, 8.8, 1, 'Sportback E-Tron', 'https://ev-database.nl/img/auto/Audi_A3_Sportback_E-Tron-2016/Audi_A3_Sportback_E-Tron-2016-01.jpg'),
-(132, 'Volkswagen', 'e-Up!', 2014, 18.7, 1, NULL, 'https://media.autoweek.nl/m/m1my6qhbavyh_800.jpg'),
-(133, 'BMW', '740e', 2016, 9.2, 1, NULL, 'https://cdn1.autoexpress.co.uk/sites/autoexpressuk/files/styles/article_main_image/public/2016/07/_bl72029_01.jpg?itok=aCx2RqWC'),
-(134, 'Porsche', 'Panamera 4 E-Hybrid', 2017, 14.1, 1, NULL, 'https://car-images.bauersecure.com/pagefiles/69207/panamera_hybrid_01.jpg'),
-(135, 'Volkswagen', 'e-Golf', 2017, 35.8, 1, NULL, 'https://topgear.nl/thumbs/hd/2017/08/Volkswagen-e-Golf-1.jpg'),
-(136, 'Tesla', 'Model S', 2017, 100, 1, '100D', 'https://www.groen7.nl/files/2017/tesla-model-s-100d-rood.jpg'),
-(137, 'Tesla', 'Model X', 2017, 100, 1, '100D', 'https://www.leasecosts.ca/sites/default/files/styles/car_thumb_big/public/2017-09/tesla_canada_model_x_0.jpg?itok=wR0YCWwR'),
-(138, 'Citroen', 'C-Zero', 2016, 16, 1, NULL, 'https://elektrischeauto.com/wp-content/uploads/2016/11/Citroen-C-zero-1080x640.jpg'),
-(139, 'Peugeot', 'iOn', 2017, 16, 1, NULL, 'https://i.ytimg.com/vi/Bx4fBdXG-_o/maxresdefault.jpg'),
-(140, 'Jaguar', 'I-Pace', 2018, 90, 1, NULL, 'https://topgear.nl/thumbs/hd/2018/03/jaguar-i-pace-2018-5.jpg'),
-(141, 'Renault', 'Kangoo', 2017, 33, 1, 'Maxi ZE 33', 'https://ev-database.nl/img/auto/Renault_Kangoo_Maxi_ZE33/Renault_Kangoo_Maxi_ZE33-01.jpg'),
-(142, 'Citroen', 'E-Berlingo', 2017, 22.5, 1, 'Multispace', 'https://media.autoweek.nl/m/0fsywiqbkkul_800.jpg'),
-(143, 'Peugeot', 'Partner', 2017, 22.5, 1, 'Tepee Electric', 'https://www.groen7.nl/files/2017/partner-tepee-10000.jpg'),
-(145, 'Volkswagen', 'Golf GTE', 2017, 8.7, 1, NULL, 'https://cdn2.autoexpress.co.uk/sites/autoexpressuk/files/2017/03/dsc_3724.jpg'),
-(146, 'Mini', 'Countryman', 2017, 7.6, 1, 'Cooper S E ALL4', 'https://i.ytimg.com/vi/zIv4H46tKzw/maxresdefault.jpg'),
-(147, 'BMW', '530e', 2017, 9.2, 1, 'iPerformance', 'https://topgear.nl/thumbs/hd/2017/06/bmw-530e-iperformance-3.jpg'),
-(148, 'Kia', 'Optima', 2017, 11.3, 1, 'Sportswagon PHEV', 'https://d2t6ms4cjod3h9.cloudfront.net/wp-content/uploads/2017/12/OPTIMA_01.jpg'),
-(149, 'Kia', 'Niro', 2018, 8.9, 1, 'PHEV', 'https://hips.hearstapps.com/amv-prod-cad-assets.s3.amazonaws.com/images/18q1/699327/2018-kia-niro-plug-in-hybrid-test-review-car-and-driver-photo-701589-s-original.jpg?crop=1xw:1xh;center,center&resize=900:*'),
-(150, 'Nissan', 'e-NV200 Evalia', 2018, 40, 1, NULL, 'https://i.ytimg.com/vi/99kpJm03XbI/maxresdefault.jpg'),
-(151, 'Kia', 'Soul EV', 2015, 33, 1, NULL, 'https://car-images.bauersecure.com/pagefiles/11330/k_5023.jpg'),
-(152, 'Hyundai', 'Kona', 2018, 67, 1, 'Electric 64 kWh', 'https://zerauto.nl/wp-content/uploads/sites/2/2018/06/hyundai-kona-electric-prijs-2018-04-640x480.jpg'),
-(153, 'Renault', 'Zoe', 2018, 41, 1, 'R110', 'https://media.renault.nl/wp-content/uploads/2018/02/01-Nieuwe-elektromotor-voor-Renault-ZOE-1170x780.jpg'),
-(154, 'Mitsubishi', 'Outlander PHEV', 2016, 13.8, 1, NULL, 'https://www.driving.co.uk/s3/st-driving-prod/uploads/2015/12/Mitsu.jpg'),
-(155, 'Smart', 'EQ fortwo', 2018, 17.6, 1, 'coupe', 'https://evcompare.io/upload/resize_cache/iblock/a20/1200_800_2/a2045c898c3c371b8d32bcafe74f44a7.jpg'),
-(156, 'Smart', 'EQ fortwo', 2018, 17.6, 1, 'cabrio', 'https://ev-database.nl/img/auto/Smart_cabrio/Smart_cabrio-01.jpg'),
-(157, 'Smart', 'EQ forfour', 2018, 17.6, 1, NULL, 'https://c.slashgear.com/wp-content/uploads/2018/03/smart-eq-forfour-1.jpg'),
-(158, 'Volvo', 'S90', 2018, 10.4, 1, 'T8 Twin-Engine', 'https://ev-database.nl/img/auto/Volvo_S90/Volvo_S90-01.jpg'),
-(159, 'Volvo', 'V90', 2018, 10.4, 1, 'T8 Twin-Engine', 'https://car-images.bauersecure.com/pagefiles/77375/1040x585/volvo_v90_t8_01.jpg'),
-(161, 'Volvo', 'V60', 2018, 10.4, 1, 'T8 Twin-Engine', 'https://d2t6ms4cjod3h9.cloudfront.net/wp-content/uploads/2018/03/IMG_0896.jpg'),
-(162, 'BMW', 'i3', 2018, 42.2, 1, '120 Ah', 'https://www.elektrischeauto.nl/wp-content/uploads/2018/10/BMW_i3_2019-01@2x-1024x576.jpg'),
-(163, 'BMW', '225xe', 2017, 7.6, 1, 'iPerformance', 'https://www.carbuyer.com.sg/cb-content/uploads/2017/10/bmw-225xe-singapore-price-20174.jpg'),
-(164, 'BMW', 'i3s', 2018, 42.2, 1, '120 Ah', 'https://ev-database.nl/img/auto/BMW_i3_2019/BMW_i3_2019-01.jpg'),
-(184, 'Peugeot', 'E-Legend', 2019, 100, 1, '', 'https://www.wsupercars.com/wallpapers/Peugeot/2018-Peugeot-e-Legend-Concept-V3-1080.jpg');
-
+INSERT INTO cars VALUES(1,'Nissan','Leaf',2018,40.0,1,NULL,'https://ev-database.nl/img/auto/Nissan_Leaf_2018/Nissan_Leaf_2018-01.jpg');
+INSERT INTO cars VALUES(2,'Tesla','Model S',2016,85.0,1,NULL,'https://ev-database.nl/img/auto/Tesla_Model_S_2016/Tesla_Model_S_2016-01.jpg');
+INSERT INTO cars VALUES(3,'Tesla','Model S',2015,85.0,1,NULL,'https://hips.hearstapps.com/amv-prod-cad-assets.s3.amazonaws.com/images/15q2/657948/2015-tesla-model-s-70d-instrumented-test-review-car-and-driver-photo-658384-s-original.jpg');
+INSERT INTO cars VALUES(4,'Toyota','Prius',2015,85.0,1,NULL,'https://hips.hearstapps.com/amv-prod-cad-assets.s3.amazonaws.com/images/15q2/657948/2015-toyota-prius-review-car-and-driver-photo-660322-s-original.jpg');
+INSERT INTO cars VALUES(5,'Renault','Zoe',2017,40.999999999999996447,1,'R90','https://car-images.bauersecure.com/pagefiles/68546/1040x585/zoeweb-001.jpg');
+INSERT INTO cars VALUES(6,'Volvo ','V60',2013,85.0,1,NULL,'https://media2.autokopen.nl/afbeeldingen/volvo-v60-2013-257500-800.jpg');
+INSERT INTO cars VALUES(7,'Ford','C-max energi',2015,85.0,1,NULL,'https://icdn2.digitaltrends.com/image/2013-ford-cmax-plugin-front-left-angle-640x640.jpg?ver=1');
+INSERT INTO cars VALUES(8,'Audi','A3',2013,85.0,1,NULL,'https://parkers-images.bauersecure.com/pagefiles/202042/cut-out/331x220/audi-a3-sb-01.jpg\r\n');
+INSERT INTO cars VALUES(9,'Ford','C-max energi',2015,85.0,1,NULL,'https://icdn2.digitaltrends.com/image/2013-ford-cmax-plugin-front-left-angle-640x640.jpg?ver=1');
+INSERT INTO cars VALUES(10,'Chevrolet','Volt',2012,85.0,1,NULL,'https://file.kbb.com/kbb/vehicleimage/housenew/480x360/2012/2012-chevrolet-volt-frontside_chvolt121.jpg');
+INSERT INTO cars VALUES(11,'Volvo','XC-60',2018,10.400000000000000355,1,'T8 Twin-Engine','https://ev-database.nl/img/auto/Volvo_XC-60/Volvo_XC-60-01.jpg');
+INSERT INTO cars VALUES(12,'Chevrolet','volt',2013,85.0,1,NULL,'https://cars.usnews.com/static/images/Auto/custom/12098/2013-Chevrolet-Volt-005-medium.jpg');
+INSERT INTO cars VALUES(13,'Volkswagen','Egolf',2013,85.0,1,NULL,'https://media.treehugger.com/assets/images/2012/03/volkswagen-golf-blue-e-motion_1_bkEwC_69.jpeg');
+INSERT INTO cars VALUES(116,'BMW','330e',2015,7.5999999999999996447,1,NULL,'https://media.autoweek.nl/m/8mqy7a0bxrg9_800.jpg');
+INSERT INTO cars VALUES(117,'BMW','X5',2016,9.0,1,'xDrive40e','https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/images/car-reviews/first-drives/legacy/bmw-x40e-ac-003.jpg?itok=tMdX72RY');
+INSERT INTO cars VALUES(118,'Mercedes','GLE 500e Plug-In',2015,8.8000000000000007105,1,NULL,'https://ev-database.nl/img/auto/Mercedes_GLE_500e_Plug-In/Mercedes_GLE_500e_Plug-In-01.jpg');
+INSERT INTO cars VALUES(119,'Volkswagen','Passat GTE',2015,9.9000000000000003552,1,NULL,'https://images.autowereld.com/high/108861-volkswagen-passat-gte-2015-10.jpg');
+INSERT INTO cars VALUES(120,'Volkswagen','Passat GTE',2015,9.9000000000000003552,1,'Variant','https://static.autoblog.nl/images/wp2014/volkswagen-passat-gte-variant-550.jpg');
+INSERT INTO cars VALUES(121,'Volvo','XC-90',2014,10.400000000000000355,1,'T8 Twin-Engine','https://car-images.bauersecure.com/pagefiles/20706/1040x585/volvoxc90_t8_1.jpg');
+INSERT INTO cars VALUES(122,'Opel','Ampera-e',2017,60.0,1,NULL,'https://www.carblogger.nl/wp-content/uploads/2017/02/opel-ampera-e-2017-1200x700.jpg');
+INSERT INTO cars VALUES(123,'Tesla','Model X',2016,75.0,1,'75D','https://ev-database.nl/img/auto/Tesla_Model_X/Tesla_Model_X-01.jpg');
+INSERT INTO cars VALUES(124,'Hyundai','IONIQ',2018,8.9000000000000003552,1,'Plug-in','https://cdn.motor1.com/images/mgl/k0rPB/s1/2018-hyundai-ioniq-plug-in-hybrid-why-buy.jpg');
+INSERT INTO cars VALUES(125,'Hyundai','IONIQ',2017,30.499999999999998223,1,'Electric','https://icdn2.digitaltrends.com/image/2017-hyundai-ioniq-ev-side-angle-640x640.jpg?ver=1');
+INSERT INTO cars VALUES(126,'Kia','Optima',2016,9.8000000000000007105,1,'Plug-in Hybrid','https://ev-database.nl/img/auto/Kia_Optima_Plug-in_Hybrid/Kia_Optima_Plug-in_Hybrid-01.jpg');
+INSERT INTO cars VALUES(127,'Toyota','Prius',2016,8.8000000000000007105,1,'Plug-in Hybrid','https://static.autoblog.nl/images/wp2016/toyota-prius-phev-2016-voor.jpg');
+INSERT INTO cars VALUES(128,'Tesla','Model S',2016,75.0,1,'75D','https://ev-database.nl/img/auto/Tesla_Model_S_2016/Tesla_Model_S_2016-01.jpg');
+INSERT INTO cars VALUES(129,'Tesla','Model S',2016,100.0,1,'P100D','https://www.dagelijksauto.nl/wp-content/gallery/tesla-model-s-model-x-p100d-ludicrous-2016-nieuwsbericht/Tesla-Model-S-2016-1.jpg');
+INSERT INTO cars VALUES(130,'Tesla','Model X',2017,100.0,1,'P100D','https://autoweek.com/sites/default/files/styles/gen-1200-675/public/2120x920_mx-city.png');
+INSERT INTO cars VALUES(131,'Audi','A3',2016,8.8000000000000007105,1,'Sportback E-Tron','https://ev-database.nl/img/auto/Audi_A3_Sportback_E-Tron-2016/Audi_A3_Sportback_E-Tron-2016-01.jpg');
+INSERT INTO cars VALUES(132,'Volkswagen','e-Up!',2014,18.699999999999999289,1,NULL,'https://media.autoweek.nl/m/m1my6qhbavyh_800.jpg');
+INSERT INTO cars VALUES(133,'BMW','740e',2016,9.1999999999999992894,1,NULL,'https://cdn1.autoexpress.co.uk/sites/autoexpressuk/files/styles/article_main_image/public/2016/07/_bl72029_01.jpg?itok=aCx2RqWC');
+INSERT INTO cars VALUES(134,'Porsche','Panamera 4 E-Hybrid',2017,14.099999999999999644,1,NULL,'https://car-images.bauersecure.com/pagefiles/69207/panamera_hybrid_01.jpg');
+INSERT INTO cars VALUES(135,'Volkswagen','e-Golf',2017,35.799999999999996269,1,NULL,'https://topgear.nl/thumbs/hd/2017/08/Volkswagen-e-Golf-1.jpg');
+INSERT INTO cars VALUES(136,'Tesla','Model S',2017,100.0,1,'100D','https://www.groen7.nl/files/2017/tesla-model-s-100d-rood.jpg');
+INSERT INTO cars VALUES(137,'Tesla','Model X',2017,100.0,1,'100D','https://www.leasecosts.ca/sites/default/files/styles/car_thumb_big/public/2017-09/tesla_canada_model_x_0.jpg?itok=wR0YCWwR');
+INSERT INTO cars VALUES(138,'Citroen','C-Zero',2016,16.000000000000000888,1,NULL,'https://elektrischeauto.com/wp-content/uploads/2016/11/Citroen-C-zero-1080x640.jpg');
+INSERT INTO cars VALUES(139,'Peugeot','iOn',2017,16.000000000000000888,1,NULL,'https://i.ytimg.com/vi/Bx4fBdXG-_o/maxresdefault.jpg');
+INSERT INTO cars VALUES(140,'Jaguar','I-Pace',2018,90.0,1,NULL,'https://topgear.nl/thumbs/hd/2018/03/jaguar-i-pace-2018-5.jpg');
+INSERT INTO cars VALUES(141,'Renault','Kangoo',2017,32.999999999999998223,1,'Maxi ZE 33','https://ev-database.nl/img/auto/Renault_Kangoo_Maxi_ZE33/Renault_Kangoo_Maxi_ZE33-01.jpg');
+INSERT INTO cars VALUES(142,'Citroen','E-Berlingo',2017,22.5,1,'Multispace','https://media.autoweek.nl/m/0fsywiqbkkul_800.jpg');
+INSERT INTO cars VALUES(143,'Peugeot','Partner',2017,22.5,1,'Tepee Electric','https://www.groen7.nl/files/2017/partner-tepee-10000.jpg');
+INSERT INTO cars VALUES(145,'Volkswagen','Golf GTE',2017,8.6999999999999992894,1,NULL,'https://cdn2.autoexpress.co.uk/sites/autoexpressuk/files/2017/03/dsc_3724.jpg');
+INSERT INTO cars VALUES(146,'Mini','Countryman',2017,7.5999999999999996447,1,'Cooper S E ALL4','https://i.ytimg.com/vi/zIv4H46tKzw/maxresdefault.jpg');
+INSERT INTO cars VALUES(147,'BMW','530e',2017,9.1999999999999992894,1,'iPerformance','https://topgear.nl/thumbs/hd/2017/06/bmw-530e-iperformance-3.jpg');
+INSERT INTO cars VALUES(148,'Kia','Optima',2017,11.300000000000001154,1,'Sportswagon PHEV','https://d2t6ms4cjod3h9.cloudfront.net/wp-content/uploads/2017/12/OPTIMA_01.jpg');
+INSERT INTO cars VALUES(149,'Kia','Niro',2018,8.9000000000000003552,1,'PHEV','https://hips.hearstapps.com/amv-prod-cad-assets.s3.amazonaws.com/images/18q1/699327/2018-kia-niro-plug-in-hybrid-test-review-car-and-driver-photo-701589-s-original.jpg?crop=1xw:1xh;center,center&resize=900:*');
+INSERT INTO cars VALUES(150,'Nissan','e-NV200 Evalia',2018,40.0,1,NULL,'https://i.ytimg.com/vi/99kpJm03XbI/maxresdefault.jpg');
+INSERT INTO cars VALUES(151,'Kia','Soul EV',2015,32.999999999999998223,1,NULL,'https://car-images.bauersecure.com/pagefiles/11330/k_5023.jpg');
+INSERT INTO cars VALUES(152,'Hyundai','Kona',2018,67.000000000000001776,1,'Electric 64 kWh','https://zerauto.nl/wp-content/uploads/sites/2/2018/06/hyundai-kona-electric-prijs-2018-04-640x480.jpg');
+INSERT INTO cars VALUES(153,'Renault','Zoe',2018,40.999999999999996447,1,'R110','https://media.renault.nl/wp-content/uploads/2018/02/01-Nieuwe-elektromotor-voor-Renault-ZOE-1170x780.jpg');
+INSERT INTO cars VALUES(154,'Mitsubishi','Outlander PHEV',2016,13.800000000000001065,1,NULL,'https://www.driving.co.uk/s3/st-driving-prod/uploads/2015/12/Mitsu.jpg');
+INSERT INTO cars VALUES(155,'Smart','EQ fortwo',2018,17.600000000000002309,1,'coupe','https://evcompare.io/upload/resize_cache/iblock/a20/1200_800_2/a2045c898c3c371b8d32bcafe74f44a7.jpg');
+INSERT INTO cars VALUES(156,'Smart','EQ fortwo',2018,17.600000000000002309,1,'cabrio','https://ev-database.nl/img/auto/Smart_cabrio/Smart_cabrio-01.jpg');
+INSERT INTO cars VALUES(157,'Smart','EQ forfour',2018,17.600000000000002309,1,NULL,'https://c.slashgear.com/wp-content/uploads/2018/03/smart-eq-forfour-1.jpg');
+INSERT INTO cars VALUES(158,'Volvo','S90',2018,10.400000000000000355,1,'T8 Twin-Engine','https://ev-database.nl/img/auto/Volvo_S90/Volvo_S90-01.jpg');
+INSERT INTO cars VALUES(159,'Volvo','V90',2018,10.400000000000000355,1,'T8 Twin-Engine','https://car-images.bauersecure.com/pagefiles/77375/1040x585/volvo_v90_t8_01.jpg');
+INSERT INTO cars VALUES(161,'Volvo','V60',2018,10.400000000000000355,1,'T8 Twin-Engine','https://d2t6ms4cjod3h9.cloudfront.net/wp-content/uploads/2018/03/IMG_0896.jpg');
+INSERT INTO cars VALUES(162,'BMW','i3',2018,42.200000000000006394,1,'120 Ah','https://www.elektrischeauto.nl/wp-content/uploads/2018/10/BMW_i3_2019-01@2x-1024x576.jpg');
+INSERT INTO cars VALUES(163,'BMW','225xe',2017,7.5999999999999996447,1,'iPerformance','https://www.carbuyer.com.sg/cb-content/uploads/2017/10/bmw-225xe-singapore-price-20174.jpg');
+INSERT INTO cars VALUES(164,'BMW','i3s',2018,42.200000000000006394,1,'120 Ah','https://ev-database.nl/img/auto/BMW_i3_2019/BMW_i3_2019-01.jpg');
+INSERT INTO cars VALUES(184,'Peugeot','E-Legend',2019,100.0,1,'','https://www.wsupercars.com/wallpapers/Peugeot/2018-Peugeot-e-Legend-Concept-V3-1080.jpg');
 CREATE TABLE car_of_user (
   carId int NOT NULL,
   userId int NOT NULL,
@@ -89,60 +83,51 @@ CREATE TABLE car_of_user (
     ON UPDATE CASCADE
     ON DELETE CASCADE
 );
-
-INSERT INTO car_of_user (carId, userId, batteryPercentage, startedAt, mailed) VALUES
-(1, 1, 0, NULL, 0),
-(2, 2, 0, NULL, 0),
-(3, 3, 0, NULL, 0),
-(4, 4, 0, NULL, 0),
-(5, 27, 0, NULL, 0),
-(6, 6, 0, NULL, 0),
-(6, 28, 0, NULL, 0),
-(7, 7, 0, NULL, 0),
-(8, 8, 0, NULL, 0),
-(9, 9, 0, NULL, 0),
-(10, 10, 0, NULL, 0),
-(12, 11, 0, NULL, 0),
-(12, 12, 0, NULL, 0),
-(13, 13, 0, NULL, 0),
-(118, 18, 0, NULL, 0),
-(125, 18, 0, NULL, 0),
-(126, 17, 0, NULL, 0),
-(127, 5, 0, NULL, 0),
-(129, 18, 0, NULL, 0),
-(134, 18, 0, NULL, 0),
-(138, 18, 0, NULL, 0),
-(140, 18, 0, NULL, 0),
-(184, 15, 0, NULL, 0),
-(184, 18, 0, NULL, 0),
-(184, 20, 0, NULL, 0);
-
+INSERT INTO car_of_user VALUES(1,1,0,NULL,0);
+INSERT INTO car_of_user VALUES(2,2,0,NULL,0);
+INSERT INTO car_of_user VALUES(3,3,0,NULL,0);
+INSERT INTO car_of_user VALUES(4,4,0,NULL,0);
+INSERT INTO car_of_user VALUES(5,27,0,NULL,0);
+INSERT INTO car_of_user VALUES(6,6,0,NULL,0);
+INSERT INTO car_of_user VALUES(6,28,0,NULL,0);
+INSERT INTO car_of_user VALUES(7,7,0,NULL,0);
+INSERT INTO car_of_user VALUES(8,8,0,NULL,0);
+INSERT INTO car_of_user VALUES(9,9,0,NULL,0);
+INSERT INTO car_of_user VALUES(10,10,0,NULL,0);
+INSERT INTO car_of_user VALUES(12,11,0,NULL,0);
+INSERT INTO car_of_user VALUES(12,12,0,NULL,0);
+INSERT INTO car_of_user VALUES(13,13,0,NULL,0);
+INSERT INTO car_of_user VALUES(118,18,0,NULL,0);
+INSERT INTO car_of_user VALUES(125,18,0,NULL,0);
+INSERT INTO car_of_user VALUES(126,17,0,NULL,0);
+INSERT INTO car_of_user VALUES(127,5,0,NULL,0);
+INSERT INTO car_of_user VALUES(129,18,0,NULL,0);
+INSERT INTO car_of_user VALUES(134,18,0,NULL,0);
+INSERT INTO car_of_user VALUES(138,18,0,NULL,0);
+INSERT INTO car_of_user VALUES(140,18,0,NULL,0);
+INSERT INTO car_of_user VALUES(184,15,0,NULL,0);
+INSERT INTO car_of_user VALUES(184,18,0,NULL,0);
+INSERT INTO car_of_user VALUES(184,20,0,NULL,0);
 CREATE TABLE charging_stations (
-  id int NOT NULL PRIMARY KEY,
+  id int PRIMARY KEY,
   particleDeviceId varchar NOT NULL UNIQUE CHECK (length(particleDeviceId) <= 45)
 );
-
-INSERT INTO charging_stations (id, particleDeviceId) VALUES
-(1, '340021000c47343233323032'),
-(2, '3f0024001047343438323536');
-
+INSERT INTO charging_stations VALUES(1,'340021000c47343233323032');
+INSERT INTO charging_stations VALUES(2,'3f0024001047343438323536');
 CREATE TABLE charging_station_sockets (
-  id int NOT NULL PRIMARY KEY,
+  id int PRIMARY KEY,
   chargingStationId int DEFAULT NULL,
   FOREIGN KEY (chargingStationId)
   REFERENCES charging_stations (id) 
     ON UPDATE NO ACTION
     ON DELETE NO ACTION
 );
-
-INSERT INTO charging_station_sockets (id, chargingStationId) VALUES
-(1, 1),
-(2, 1),
-(3, 2),
-(4, 2);
-
+INSERT INTO charging_station_sockets VALUES(1,1);
+INSERT INTO charging_station_sockets VALUES(2,1);
+INSERT INTO charging_station_sockets VALUES(3,2);
+INSERT INTO charging_station_sockets VALUES(4,2);
 CREATE TABLE data (
-  id bigint NOT NULL PRIMARY KEY,
+  id bigint PRIMARY KEY,
   sensorID int NOT NULL,
   dateTime datetime NOT NULL,
   unixtime int UNSIGNED NOT NULL,
@@ -150,334 +135,328 @@ CREATE TABLE data (
   avr int NOT NULL,
   max int NOT NULL
 );
-
-INSERT INTO data (id, sensorID, dateTime, unixtime, min, avr, max) VALUES
-(1, 1, '2017-08-01 13:30:52', 1501587052, 0, 82736, 0),
-(2, 1, '2017-08-01 13:31:23', 1501587083, 0, 0, 0),
-(3, 1, '2017-08-01 13:31:54', 1501587114, 0, 200000, 0),
-(4, 1, '2017-08-01 13:32:24', 1501587144, 0, 200000, 0),
-(5, 1, '2017-08-01 13:32:55', 1501587175, 0, 200000, 0),
-(6, 1, '2017-08-01 13:33:25', 1501587205, 0, 200000, 0),
-(7, 1, '2017-08-01 13:33:56', 1501587236, 0, 200000, 0),
-(8, 1, '2017-08-01 13:34:26', 1501587266, 0, 200000, 0),
-(9, 1, '2017-08-01 13:34:57', 1501587297, 0, 200000, 0),
-(10, 1, '2017-08-01 13:36:31', 1501587392, 0, 0, 0),
-(11, 1, '2017-08-01 13:37:02', 1501587423, 0, 129670, 0),
-(12, 1, '2017-08-01 13:37:33', 1501587454, 0, 129811, 0),
-(13, 1, '2017-08-01 13:38:04', 1501587485, 0, 129575, 0),
-(14, 1, '2017-08-01 13:38:34', 1501587515, 0, 129657, 0),
-(15, 1, '2017-08-01 13:39:05', 1501587545, 0, 129621, 0),
-(16, 1, '2017-08-01 13:39:35', 1501587576, 0, 129623, 0),
-(17, 1, '2017-08-01 13:40:06', 1501587607, 0, 129616, 0),
-(18, 1, '2017-08-01 13:40:37', 1501587638, 0, 129805, 0),
-(19, 1, '2017-08-01 13:42:32', 1501587753, 0, 0, 0),
-(20, 1, '2017-08-01 13:43:03', 1501587784, 0, 129670, 0),
-(21, 1, '2017-08-01 13:43:34', 1501587815, 0, 199941, 0),
-(22, 1, '2017-08-01 13:44:05', 1501587846, 0, 200000, 0),
-(23, 1, '2017-08-01 13:44:37', 1501587877, 0, 200000, 0),
-(24, 1, '2017-08-01 13:45:07', 1501587907, 0, 200000, 0),
-(25, 1, '2017-08-01 13:45:37', 1501587937, 0, 200000, 0),
-(26, 1, '2017-08-01 13:46:07', 1501587967, 0, 200000, 0),
-(27, 1, '2017-08-01 13:46:37', 1501587998, 0, 200000, 0),
-(28, 1, '2017-08-01 13:47:09', 1501588029, 0, 200000, 0),
-(29, 1, '2017-08-01 13:47:39', 1501588060, 0, 200000, 0),
-(30, 1, '2017-08-01 13:48:09', 1501588090, 0, 200000, 0),
-(31, 1, '2017-08-01 13:50:42', 1501588243, 0, 0, 200000),
-(32, 1, '2017-08-01 13:51:13', 1501588274, 104078, 152662, 154822),
-(33, 1, '2017-08-01 13:51:44', 1501588305, 144908, 154061, 154676),
-(34, 1, '2017-08-01 13:52:14', 1501588335, 154090, 154411, 154676),
-(35, 1, '2017-08-01 13:52:45', 1501588366, 149206, 154311, 154676),
-(36, 1, '2017-08-01 13:53:16', 1501588397, 151501, 154425, 155067),
-(37, 1, '2017-08-01 13:53:49', 1501588430, 149987, 154407, 154676),
-(38, 1, '2017-08-01 13:54:20', 1501588461, 151746, 154494, 155457),
-(39, 1, '2017-08-01 13:55:10', 1501588510, 0, 0, 155067),
-(40, 1, '2017-08-01 13:55:41', 1501588541, 0, 141204, 200000),
-(41, 1, '2017-08-01 13:56:12', 1501588572, 81904, 196190, 200000),
-(42, 1, '2017-08-01 13:56:43', 1501588603, 200000, 200000, 200000),
-(43, 1, '2017-08-01 13:57:13', 1501588633, 0, 40329, 200000),
-(44, 1, '2017-08-01 13:57:42', 1501588663, 0, 0, 0),
-(45, 1, '2017-08-01 13:58:13', 1501588693, 71452, 187371, 200000),
-(46, 1, '2017-08-01 13:59:33', 1501588773, 200000, 200000, 200000),
-(47, 1, '2017-08-01 14:00:04', 1501588804, 200000, 200000, 200000),
-(48, 1, '2017-08-01 14:00:34', 1501588834, 200000, 200000, 200000),
-(49, 1, '2017-08-01 14:01:05', 1501588865, 109890, 151851, 200000),
-(50, 1, '2017-08-01 14:01:36', 1501588897, 109841, 110471, 110915),
-(51, 1, '2017-08-01 14:02:07', 1501588927, 110280, 110520, 110818),
-(52, 1, '2017-08-01 14:02:38', 1501588958, 110134, 110504, 110769),
-(53, 1, '2017-08-01 14:03:09', 1501588989, 108571, 110463, 111257),
-(54, 1, '2017-08-01 14:03:40', 1501589020, 110183, 110521, 111306),
-(55, 1, '2017-08-01 14:04:11', 1501589052, 110329, 110517, 110866),
-(56, 1, '2017-08-01 14:04:42', 1501589083, 108864, 110429, 110818),
-(57, 1, '2017-08-01 14:05:13', 1501589113, 110183, 110479, 110720),
-(58, 1, '2017-08-01 14:05:44', 1501589144, 107985, 110499, 110866),
-(59, 1, '2017-08-01 14:06:15', 1501589176, 110231, 110580, 110915),
-(60, 1, '2017-08-01 14:06:46', 1501589207, 110183, 110476, 110769),
-(61, 1, '2017-08-01 14:07:17', 1501589238, 109645, 110492, 110720),
-(62, 1, '2017-08-01 14:07:48', 1501589268, 110183, 110523, 110818),
-(63, 1, '2017-08-01 14:08:19', 1501589300, 110280, 110481, 110720),
-(64, 1, '2017-08-01 14:08:50', 1501589331, 110329, 110479, 110671),
-(65, 1, '2017-08-01 14:09:21', 1501589361, 110134, 110456, 110671),
-(66, 1, '2017-08-01 14:09:52', 1501589392, 108131, 110476, 111159),
-(67, 1, '2017-08-01 14:10:23', 1501589424, 110085, 110486, 110915),
-(68, 1, '2017-08-01 14:34:11', 1501590852, 300000, 300000, 300000),
-(69, 1, '2017-08-01 14:34:42', 1501590882, 300000, 300000, 300000),
-(70, 1, '2017-08-01 14:35:13', 1501590913, 300000, 300000, 300000),
-(71, 1, '2017-08-01 14:35:44', 1501590944, 300000, 300000, 300000),
-(72, 1, '2017-08-01 14:36:43', 1501591004, 300000, 300000, 300000),
-(73, 1, '2017-08-01 14:37:14', 1501591035, 300000, 300000, 300000),
-(74, 1, '2017-08-01 14:37:45', 1501591066, 300000, 300000, 300000),
-(75, 1, '2017-08-01 14:38:16', 1501591097, 300000, 300000, 300000),
-(76, 1, '2017-08-01 14:38:47', 1501591128, 300000, 300000, 300000),
-(77, 1, '2017-08-01 14:39:18', 1501591159, 300000, 300000, 300000),
-(78, 1, '2017-08-01 14:39:49', 1501591190, 300000, 300000, 300000),
-(79, 1, '2017-08-01 14:40:20', 1501591221, 300000, 300000, 300000),
-(80, 1, '2017-08-01 14:40:51', 1501591252, 300000, 300000, 300000),
-(81, 1, '2017-08-01 14:41:22', 1501591283, 300000, 300000, 300000),
-(82, 1, '2017-08-01 14:41:53', 1501591314, 300000, 300000, 300000),
-(83, 1, '2017-08-01 14:42:24', 1501591345, 300000, 300000, 300000),
-(84, 1, '2017-08-01 14:42:55', 1501591376, 300000, 300000, 300000),
-(85, 1, '2017-08-01 14:43:26', 1501591407, 300000, 300000, 300000),
-(86, 1, '2017-08-01 14:43:57', 1501591438, 300000, 300000, 300000),
-(87, 1, '2017-08-01 14:44:29', 1501591469, 300000, 300000, 300000),
-(88, 1, '2017-08-01 14:44:59', 1501591500, 300000, 300000, 300000),
-(89, 1, '2017-08-01 14:45:30', 1501591531, 300000, 300000, 300000),
-(90, 2, '2017-08-02 11:12:50', 1501665170, 0, 0, 0),
-(91, 2, '2017-08-02 14:28:03', 1501676883, 0, 1655, 102637),
-(92, 2, '2017-08-02 14:38:02', 1501677483, 0, 0, 0),
-(93, 2, '2017-08-02 15:43:55', 1501681436, 0, 158, 4908),
-(94, 2, '2017-08-02 15:53:55', 1501682036, 0, 636, 4322),
-(95, 2, '2017-08-02 16:05:42', 1501682743, 0, 0, 219),
-(96, 2, '2017-08-02 16:15:42', 1501683342, 0, 3, 1904),
-(97, 4, '2017-08-02 16:22:25', 1501683745, 0, 115296, 120512),
-(98, 2, '2017-08-02 16:27:33', 1501684053, 0, 3, 1172),
-(99, 4, '2017-08-02 16:32:26', 1501684347, 109010, 117441, 119413),
-(100, 2, '2017-08-02 16:37:33', 1501684653, 0, 33, 6080),
-(101, 2, '2017-08-02 16:47:33', 1501685253, 0, 3088, 12893),
-(102, 2, '2017-08-02 16:57:33', 1501685853, 0, 0, 0),
-(103, 2, '2017-08-02 17:13:16', 1501686796, 0, 0, 0),
-(104, 2, '2017-08-02 17:23:16', 1501687396, 0, 0, 0),
-(105, 2, '2017-08-02 17:33:16', 1501687996, 0, 0, 0),
-(106, 2, '2017-08-02 17:43:16', 1501688596, 0, 0, 0),
-(107, 2, '2017-08-02 17:53:16', 1501689196, 0, 0, 0),
-(108, 2, '2017-08-02 18:03:16', 1501689796, 0, 0, 0),
-(109, 2, '2017-08-02 18:13:16', 1501690396, 0, 0, 0),
-(110, 2, '2017-08-02 18:23:16', 1501690996, 0, 0, 0),
-(111, 2, '2017-08-02 18:33:16', 1501691596, 0, 0, 0),
-(112, 2, '2017-08-02 18:43:16', 1501692196, 0, 0, 0),
-(113, 2, '2017-08-02 18:53:16', 1501692796, 0, 0, 0),
-(114, 2, '2017-08-02 19:03:16', 1501693396, 0, 0, 0),
-(115, 2, '2017-08-02 19:13:16', 1501693996, 0, 0, 0),
-(116, 2, '2017-08-02 19:23:16', 1501694596, 0, 0, 0),
-(117, 2, '2017-08-02 19:33:16', 1501695196, 0, 0, 0),
-(118, 2, '2017-08-02 19:43:16', 1501695796, 0, 0, 0),
-(119, 2, '2017-08-02 19:53:16', 1501696396, 0, 0, 0),
-(120, 2, '2017-08-02 20:03:16', 1501696996, 0, 0, 0),
-(121, 2, '2017-08-02 20:13:16', 1501697596, 0, 0, 0),
-(122, 2, '2017-08-02 20:23:16', 1501698196, 0, 0, 0),
-(123, 2, '2017-08-02 20:33:16', 1501698796, 0, 0, 0),
-(124, 2, '2017-08-02 20:43:16', 1501699396, 0, 0, 0),
-(125, 2, '2017-08-02 20:53:16', 1501699996, 0, 0, 0),
-(126, 2, '2017-08-02 21:03:16', 1501700596, 0, 0, 0),
-(127, 2, '2017-08-02 21:13:16', 1501701196, 0, 0, 0),
-(128, 2, '2017-08-02 21:23:16', 1501701796, 0, 0, 0),
-(129, 2, '2017-08-02 21:33:16', 1501702396, 0, 0, 0),
-(130, 2, '2017-08-02 21:43:16', 1501702996, 0, 0, 0),
-(131, 2, '2017-08-02 21:53:16', 1501703596, 0, 0, 0),
-(132, 2, '2017-08-02 22:03:16', 1501704196, 0, 0, 0),
-(133, 2, '2017-08-02 22:13:16', 1501704796, 0, 0, 0),
-(134, 2, '2017-08-02 22:23:16', 1501705396, 0, 0, 0),
-(135, 2, '2017-08-02 22:33:16', 1501705996, 0, 0, 0),
-(136, 2, '2017-08-02 22:43:16', 1501706596, 0, 0, 0),
-(137, 2, '2017-08-02 22:53:16', 1501707196, 0, 0, 0),
-(138, 2, '2017-08-02 23:03:16', 1501707796, 0, 0, 0),
-(139, 2, '2017-08-02 23:13:16', 1501708396, 0, 0, 0),
-(140, 2, '2017-08-02 23:23:16', 1501708996, 0, 0, 0),
-(141, 2, '2017-08-02 23:33:16', 1501709596, 0, 0, 0),
-(142, 2, '2017-08-02 23:43:16', 1501710196, 0, 0, 0),
-(143, 2, '2017-08-02 23:53:16', 1501710796, 0, 0, 0),
-(144, 2, '2017-08-03 00:03:16', 1501711396, 0, 0, 0),
-(145, 2, '2017-08-03 00:13:16', 1501711996, 0, 0, 0),
-(146, 2, '2017-08-03 00:23:16', 1501712596, 0, 0, 0),
-(147, 2, '2017-08-03 00:33:16', 1501713196, 0, 0, 0),
-(148, 2, '2017-08-03 00:43:16', 1501713796, 0, 0, 0),
-(149, 2, '2017-08-03 00:53:16', 1501714396, 0, 0, 0),
-(150, 2, '2017-08-03 01:03:16', 1501714996, 0, 0, 0),
-(151, 2, '2017-08-03 01:13:16', 1501715596, 0, 0, 0),
-(152, 2, '2017-08-03 01:23:16', 1501716196, 0, 0, 0),
-(153, 2, '2017-08-03 01:33:16', 1501716796, 0, 0, 0),
-(154, 2, '2017-08-03 01:43:16', 1501717396, 0, 0, 0),
-(155, 2, '2017-08-03 01:53:16', 1501717996, 0, 0, 0),
-(156, 2, '2017-08-03 02:03:16', 1501718596, 0, 0, 0),
-(157, 2, '2017-08-03 10:15:17', 1501748118, 17069, 18817, 20879),
-(158, 2, '2017-08-03 10:25:18', 1501748719, 17216, 18862, 20439),
-(159, 2, '2017-08-03 11:00:44', 1501750845, 84395, 86221, 87912),
-(160, 2, '2017-08-03 13:47:08', 1501760828, 1245, 72186, 435091),
-(161, 2, '2017-08-03 14:07:11', 1501762031, 1245, 375202, 493186),
-(162, 2, '2017-08-03 14:17:12', 1501762632, 334212, 371299, 376043),
-(163, 2, '2017-08-03 14:27:28', 1501763248, 358974, 371446, 374945),
-(164, 2, '2017-08-03 14:37:32', 1501763852, 366593, 371496, 376043),
-(165, 2, '2017-08-03 14:47:33', 1501764453, 367985, 371460, 376190),
-(166, 2, '2017-08-03 14:57:34', 1501765055, 367179, 371402, 375750),
-(167, 2, '2017-08-03 15:07:35', 1501765655, 355384, 371487, 374432),
-(168, 2, '2017-08-03 15:17:37', 1501766257, 368644, 371422, 376703),
-(169, 2, '2017-08-03 15:37:53', 1501767474, 0, 178819, 252014),
-(170, 2, '2017-08-03 15:57:55', 1501768675, 0, 0, 0),
-(171, 2, '2017-08-03 16:07:57', 1501769277, 0, 0, 0),
-(172, 2, '2017-08-03 16:17:58', 1501769878, 0, 0, 0),
-(173, 2, '2017-08-03 16:27:59', 1501770479, 0, 0, 0),
-(174, 2, '2017-08-03 16:38:00', 1501771080, 0, 0, 0),
-(175, 3, '2017-08-03 16:41:07', 1501771268, 1, 2, 3),
-(176, 3, '2017-08-03 16:42:06', 1501771326, 1, 2, 3),
-(177, 3, '2017-08-03 16:42:09', 1501771330, 1, 2, 3),
-(178, 3, '2017-08-03 16:43:29', 1501771410, 1, 2, 3),
-(179, 3, '2017-08-03 16:43:42', 1501771422, 1, 2, 3),
-(180, 3, '2017-08-03 16:43:43', 1501771424, 1, 2, 3),
-(181, 2, '2017-08-03 16:48:01', 1501771681, 0, 0, 0),
-(182, 2, '2017-08-03 17:02:54', 1501772575, 0, 0, 0),
-(183, 11, '2017-08-03 20:06:15', 1501783575, 0, 3791, 75238),
-(184, 10, '2017-08-04 10:50:28', 1501836629, 96630, 98225, 99706),
-(185, 10, '2017-08-04 11:02:09', 1501837329, 91868, 97350, 97875),
-(186, 10, '2017-08-04 11:12:48', 1501837969, 97728, 99164, 108351),
-(187, 10, '2017-08-04 11:22:49', 1501838570, 90183, 99084, 100366),
-(188, 10, '2017-08-04 11:32:53', 1501839174, 93113, 99106, 111721),
-(189, 10, '2017-08-04 11:42:55', 1501839775, 93333, 99201, 112747),
-(190, 10, '2017-08-04 11:52:55', 1501840376, 0, 96865, 103443),
-(191, 10, '2017-08-04 12:02:56', 1501840977, 89963, 99203, 108351),
-(192, 10, '2017-08-04 12:12:57', 1501841578, 94065, 99184, 106593),
-(193, 10, '2017-08-04 12:22:58', 1501842179, 97948, 99220, 103150),
-(194, 10, '2017-08-04 12:33:00', 1501842780, 93040, 99231, 110695),
-(195, 10, '2017-08-04 12:43:00', 1501843381, 88205, 99143, 100439),
-(196, 10, '2017-08-04 12:53:01', 1501843982, 91721, 99190, 104908),
-(197, 10, '2017-08-04 13:03:02', 1501844583, 95531, 99197, 102271),
-(198, 10, '2017-08-04 13:13:03', 1501845184, 88717, 99219, 106300),
-(199, 10, '2017-08-04 13:23:04', 1501845785, 93333, 99212, 100512),
-(200, 10, '2017-08-04 13:33:05', 1501846386, 86153, 99161, 100146),
-(201, 10, '2017-08-04 13:43:06', 1501846987, 88791, 99260, 109670),
-(202, 10, '2017-08-04 13:53:08', 1501847588, 0, 96438, 100219),
-(203, 10, '2017-08-04 14:03:08', 1501848189, 0, 0, 0),
-(204, 10, '2017-08-04 14:13:09', 1501848790, 0, 0, 0),
-(205, 10, '2017-08-04 14:23:10', 1501849391, 0, 20, 12234),
-(206, 10, '2017-08-04 14:33:12', 1501849992, 0, 0, 0),
-(207, 10, '2017-08-04 14:43:12', 1501850593, 0, 3, 1758),
-(208, 10, '2017-08-04 14:53:13', 1501851194, 0, 0, 0),
-(209, 10, '2017-08-04 15:03:14', 1501851795, 0, 7, 4468),
-(210, 10, '2017-08-04 15:13:16', 1501852396, 0, 0, 0),
-(211, 10, '2017-08-04 15:23:17', 1501852997, 0, 0, 0),
-(212, 10, '2017-08-04 15:33:17', 1501853598, 0, 0, 0),
-(213, 10, '2017-08-04 15:43:19', 1501854199, 0, 0, 0),
-(214, 10, '2017-08-04 15:53:23', 1501854803, 0, 0, 0),
-(215, 10, '2017-08-04 16:03:23', 1501855404, 0, 0, 0),
-(216, 10, '2017-08-04 16:13:25', 1501856005, 0, 3, 1758),
-(217, 10, '2017-08-04 16:23:25', 1501856606, 0, 10, 6227),
-(218, 10, '2017-08-04 16:33:27', 1501857207, 0, 0, 0),
-(219, 10, '2017-08-04 16:43:27', 1501857808, 0, 0, 0),
-(220, 10, '2017-08-04 16:53:27', 1501858408, 0, 0, 0),
-(221, 12, '2017-08-14 09:53:36', 1502697216, 0, 55, 33040),
-(222, 12, '2017-08-14 10:03:37', 1502697817, 0, 0, 0),
-(223, 12, '2017-08-14 10:21:36', 1502698897, 0, 115, 69010),
-(224, 12, '2017-08-14 10:31:37', 1502699498, 0, 0, 0),
-(225, 12, '2017-08-14 10:41:37', 1502700098, 0, 0, 0),
-(226, 12, '2017-08-14 10:51:38', 1502700699, 0, 0, 0),
-(227, 12, '2017-08-14 11:01:39', 1502701300, 0, 0, 0),
-(228, 12, '2017-08-14 11:11:40', 1502701901, 0, 0, 0),
-(229, 12, '2017-08-14 11:21:41', 1502702502, 0, 0, 0),
-(230, 12, '2017-08-14 11:31:42', 1502703103, 0, 0, 0),
-(231, 12, '2017-08-14 11:41:43', 1502703703, 0, 0, 0),
-(232, 12, '2017-08-14 11:51:43', 1502704304, 0, 0, 0),
-(233, 12, '2017-08-14 12:01:44', 1502704905, 0, 0, 0),
-(234, 12, '2017-08-14 12:11:45', 1502705506, 0, 0, 0),
-(235, 12, '2017-08-14 12:21:47', 1502706108, 0, 0, 0),
-(236, 12, '2017-08-14 12:31:52', 1502706712, 0, 0, 0),
-(237, 12, '2017-08-14 12:41:53', 1502707314, 0, 0, 0),
-(238, 12, '2017-08-14 12:51:54', 1502707915, 0, 0, 0),
-(239, 12, '2017-08-14 13:01:55', 1502708516, 0, 0, 0),
-(240, 12, '2017-08-14 13:11:55', 1502709116, 0, 0, 0),
-(241, 12, '2017-08-14 13:21:58', 1502709719, 0, 0, 0),
-(242, 12, '2017-08-14 13:32:02', 1502710322, 0, 0, 0),
-(243, 12, '2017-08-14 13:42:03', 1502710923, 0, 0, 0),
-(244, 12, '2017-08-14 13:52:04', 1502711525, 0, 0, 0),
-(245, 12, '2017-08-14 14:02:05', 1502712126, 0, 0, 0),
-(246, 12, '2017-08-14 14:12:07', 1502712727, 0, 0, 0),
-(247, 12, '2017-08-14 19:01:23', 1502730083, 0, 1759, 105787),
-(248, 12, '2017-08-15 04:50:28', 1502765429, 0, 130, 60146),
-(249, 11, '2017-08-15 10:03:42', 1502784223, 0, 0, 0),
-(250, 13, '2017-08-15 11:19:21', 1502788762, 96703, 98340, 100732),
-(251, 13, '2017-08-15 11:29:23', 1502789363, 95457, 98363, 100512),
-(252, 13, '2017-08-15 11:39:24', 1502789964, 95457, 98108, 101025),
-(253, 13, '2017-08-15 11:49:26', 1502790566, 95677, 98032, 100000),
-(254, 13, '2017-08-15 11:59:26', 1502791167, 95457, 98075, 100659),
-(255, 13, '2017-08-15 12:09:27', 1502791768, 95824, 98033, 100000),
-(256, 13, '2017-08-15 12:19:29', 1502792369, 95238, 98059, 100366),
-(257, 13, '2017-08-15 12:39:35', 1502793576, 95897, 98051, 100073),
-(258, 13, '2017-08-15 12:49:36', 1502794177, 95604, 98071, 101318),
-(259, 13, '2017-08-15 12:59:41', 1502794781, 95531, 98215, 100073),
-(260, 13, '2017-08-15 13:09:55', 1502795395, 96776, 98662, 100366),
-(261, 13, '2017-08-15 13:19:59', 1502796000, 96410, 98658, 100732),
-(262, 13, '2017-08-15 13:34:02', 1502796842, 97216, 98584, 100293),
-(263, 13, '2017-08-15 13:44:12', 1502797453, 0, 93791, 100073),
-(264, 13, '2017-08-15 13:54:12', 1502798053, 97216, 98535, 100146),
-(265, 14, '2017-08-15 13:54:33', 1502798074, 0, 495, 29230),
-(266, 13, '2017-08-15 14:04:13', 1502798654, 97289, 98567, 100805),
-(267, 14, '2017-08-15 14:04:34', 1502798674, 0, 0, 0),
-(268, 13, '2017-08-15 14:14:14', 1502799255, 96556, 98547, 100146),
-(269, 14, '2017-08-15 14:14:35', 1502799276, 0, 0, 0),
-(270, 13, '2017-08-15 14:24:15', 1502799856, 0, 90356, 101025),
-(271, 14, '2017-08-15 14:24:36', 1502799877, 0, 0, 0),
-(272, 13, '2017-08-21 10:42:01', 1503304921, 97069, 98585, 100073),
-(273, 13, '2017-08-21 10:52:02', 1503305522, 96630, 98662, 100439),
-(274, 13, '2017-08-21 11:02:03', 1503306124, 96556, 98627, 101391),
-(275, 13, '2017-08-21 11:12:04', 1503306724, 96923, 98632, 100366),
-(276, 13, '2017-08-21 11:22:05', 1503307325, 97069, 98645, 100293),
-(277, 13, '2017-08-21 11:32:06', 1503307926, 96776, 98663, 100439),
-(278, 13, '2017-08-21 11:42:07', 1503308527, 96043, 98674, 100146),
-(279, 13, '2017-08-21 11:52:08', 1503309129, 96923, 98572, 100146),
-(280, 13, '2017-08-21 12:02:10', 1503309730, 96556, 98559, 99633),
-(281, 13, '2017-08-21 12:06:09', 1503309969, 0, 55003, 75091),
-(282, 13, '2017-08-21 12:10:30', 1503310231, 81172, 82996, 84395),
-(283, 12, '2018-01-17 15:20:20', 1516198820, 0, 184670, 299926),
-(284, 12, '2018-01-17 15:23:34', 1516199014, 0, 124719, 299926),
-(285, 12, '2018-01-17 15:33:34', 1516199614, 0, 145334, 299926),
-(286, 12, '2018-01-17 15:43:34', 1516200214, 0, 138384, 299926),
-(287, 12, '2018-01-17 15:53:34', 1516200814, 0, 118334, 299926),
-(288, 12, '2018-01-17 16:03:34', 1516201414, 0, 156908, 299926),
-(289, 12, '2018-01-17 16:13:34', 1516202014, 0, 75117, 299926),
-(290, 12, '2018-01-17 16:23:34', 1516202614, 0, 18090, 57289),
-(291, 12, '2018-01-17 16:33:34', 1516203214, 0, 19485, 60293),
-(292, 12, '2018-01-17 16:43:34', 1516203814, 0, 103198, 299926),
-(293, 12, '2018-01-17 16:53:34', 1516204414, 0, 138870, 299926),
-(294, 12, '2018-01-17 17:03:34', 1516205014, 0, 153023, 299926),
-(295, 12, '2018-01-17 17:13:34', 1516205614, 0, 141115, 299926),
-(296, 12, '2018-01-17 17:23:34', 1516206214, 0, 158988, 299926);
-
+INSERT INTO data VALUES(1,1,'2017-08-01 13:30:52',1501587052,0,82736,0);
+INSERT INTO data VALUES(2,1,'2017-08-01 13:31:23',1501587083,0,0,0);
+INSERT INTO data VALUES(3,1,'2017-08-01 13:31:54',1501587114,0,200000,0);
+INSERT INTO data VALUES(4,1,'2017-08-01 13:32:24',1501587144,0,200000,0);
+INSERT INTO data VALUES(5,1,'2017-08-01 13:32:55',1501587175,0,200000,0);
+INSERT INTO data VALUES(6,1,'2017-08-01 13:33:25',1501587205,0,200000,0);
+INSERT INTO data VALUES(7,1,'2017-08-01 13:33:56',1501587236,0,200000,0);
+INSERT INTO data VALUES(8,1,'2017-08-01 13:34:26',1501587266,0,200000,0);
+INSERT INTO data VALUES(9,1,'2017-08-01 13:34:57',1501587297,0,200000,0);
+INSERT INTO data VALUES(10,1,'2017-08-01 13:36:31',1501587392,0,0,0);
+INSERT INTO data VALUES(11,1,'2017-08-01 13:37:02',1501587423,0,129670,0);
+INSERT INTO data VALUES(12,1,'2017-08-01 13:37:33',1501587454,0,129811,0);
+INSERT INTO data VALUES(13,1,'2017-08-01 13:38:04',1501587485,0,129575,0);
+INSERT INTO data VALUES(14,1,'2017-08-01 13:38:34',1501587515,0,129657,0);
+INSERT INTO data VALUES(15,1,'2017-08-01 13:39:05',1501587545,0,129621,0);
+INSERT INTO data VALUES(16,1,'2017-08-01 13:39:35',1501587576,0,129623,0);
+INSERT INTO data VALUES(17,1,'2017-08-01 13:40:06',1501587607,0,129616,0);
+INSERT INTO data VALUES(18,1,'2017-08-01 13:40:37',1501587638,0,129805,0);
+INSERT INTO data VALUES(19,1,'2017-08-01 13:42:32',1501587753,0,0,0);
+INSERT INTO data VALUES(20,1,'2017-08-01 13:43:03',1501587784,0,129670,0);
+INSERT INTO data VALUES(21,1,'2017-08-01 13:43:34',1501587815,0,199941,0);
+INSERT INTO data VALUES(22,1,'2017-08-01 13:44:05',1501587846,0,200000,0);
+INSERT INTO data VALUES(23,1,'2017-08-01 13:44:37',1501587877,0,200000,0);
+INSERT INTO data VALUES(24,1,'2017-08-01 13:45:07',1501587907,0,200000,0);
+INSERT INTO data VALUES(25,1,'2017-08-01 13:45:37',1501587937,0,200000,0);
+INSERT INTO data VALUES(26,1,'2017-08-01 13:46:07',1501587967,0,200000,0);
+INSERT INTO data VALUES(27,1,'2017-08-01 13:46:37',1501587998,0,200000,0);
+INSERT INTO data VALUES(28,1,'2017-08-01 13:47:09',1501588029,0,200000,0);
+INSERT INTO data VALUES(29,1,'2017-08-01 13:47:39',1501588060,0,200000,0);
+INSERT INTO data VALUES(30,1,'2017-08-01 13:48:09',1501588090,0,200000,0);
+INSERT INTO data VALUES(31,1,'2017-08-01 13:50:42',1501588243,0,0,200000);
+INSERT INTO data VALUES(32,1,'2017-08-01 13:51:13',1501588274,104078,152662,154822);
+INSERT INTO data VALUES(33,1,'2017-08-01 13:51:44',1501588305,144908,154061,154676);
+INSERT INTO data VALUES(34,1,'2017-08-01 13:52:14',1501588335,154090,154411,154676);
+INSERT INTO data VALUES(35,1,'2017-08-01 13:52:45',1501588366,149206,154311,154676);
+INSERT INTO data VALUES(36,1,'2017-08-01 13:53:16',1501588397,151501,154425,155067);
+INSERT INTO data VALUES(37,1,'2017-08-01 13:53:49',1501588430,149987,154407,154676);
+INSERT INTO data VALUES(38,1,'2017-08-01 13:54:20',1501588461,151746,154494,155457);
+INSERT INTO data VALUES(39,1,'2017-08-01 13:55:10',1501588510,0,0,155067);
+INSERT INTO data VALUES(40,1,'2017-08-01 13:55:41',1501588541,0,141204,200000);
+INSERT INTO data VALUES(41,1,'2017-08-01 13:56:12',1501588572,81904,196190,200000);
+INSERT INTO data VALUES(42,1,'2017-08-01 13:56:43',1501588603,200000,200000,200000);
+INSERT INTO data VALUES(43,1,'2017-08-01 13:57:13',1501588633,0,40329,200000);
+INSERT INTO data VALUES(44,1,'2017-08-01 13:57:42',1501588663,0,0,0);
+INSERT INTO data VALUES(45,1,'2017-08-01 13:58:13',1501588693,71452,187371,200000);
+INSERT INTO data VALUES(46,1,'2017-08-01 13:59:33',1501588773,200000,200000,200000);
+INSERT INTO data VALUES(47,1,'2017-08-01 14:00:04',1501588804,200000,200000,200000);
+INSERT INTO data VALUES(48,1,'2017-08-01 14:00:34',1501588834,200000,200000,200000);
+INSERT INTO data VALUES(49,1,'2017-08-01 14:01:05',1501588865,109890,151851,200000);
+INSERT INTO data VALUES(50,1,'2017-08-01 14:01:36',1501588897,109841,110471,110915);
+INSERT INTO data VALUES(51,1,'2017-08-01 14:02:07',1501588927,110280,110520,110818);
+INSERT INTO data VALUES(52,1,'2017-08-01 14:02:38',1501588958,110134,110504,110769);
+INSERT INTO data VALUES(53,1,'2017-08-01 14:03:09',1501588989,108571,110463,111257);
+INSERT INTO data VALUES(54,1,'2017-08-01 14:03:40',1501589020,110183,110521,111306);
+INSERT INTO data VALUES(55,1,'2017-08-01 14:04:11',1501589052,110329,110517,110866);
+INSERT INTO data VALUES(56,1,'2017-08-01 14:04:42',1501589083,108864,110429,110818);
+INSERT INTO data VALUES(57,1,'2017-08-01 14:05:13',1501589113,110183,110479,110720);
+INSERT INTO data VALUES(58,1,'2017-08-01 14:05:44',1501589144,107985,110499,110866);
+INSERT INTO data VALUES(59,1,'2017-08-01 14:06:15',1501589176,110231,110580,110915);
+INSERT INTO data VALUES(60,1,'2017-08-01 14:06:46',1501589207,110183,110476,110769);
+INSERT INTO data VALUES(61,1,'2017-08-01 14:07:17',1501589238,109645,110492,110720);
+INSERT INTO data VALUES(62,1,'2017-08-01 14:07:48',1501589268,110183,110523,110818);
+INSERT INTO data VALUES(63,1,'2017-08-01 14:08:19',1501589300,110280,110481,110720);
+INSERT INTO data VALUES(64,1,'2017-08-01 14:08:50',1501589331,110329,110479,110671);
+INSERT INTO data VALUES(65,1,'2017-08-01 14:09:21',1501589361,110134,110456,110671);
+INSERT INTO data VALUES(66,1,'2017-08-01 14:09:52',1501589392,108131,110476,111159);
+INSERT INTO data VALUES(67,1,'2017-08-01 14:10:23',1501589424,110085,110486,110915);
+INSERT INTO data VALUES(68,1,'2017-08-01 14:34:11',1501590852,300000,300000,300000);
+INSERT INTO data VALUES(69,1,'2017-08-01 14:34:42',1501590882,300000,300000,300000);
+INSERT INTO data VALUES(70,1,'2017-08-01 14:35:13',1501590913,300000,300000,300000);
+INSERT INTO data VALUES(71,1,'2017-08-01 14:35:44',1501590944,300000,300000,300000);
+INSERT INTO data VALUES(72,1,'2017-08-01 14:36:43',1501591004,300000,300000,300000);
+INSERT INTO data VALUES(73,1,'2017-08-01 14:37:14',1501591035,300000,300000,300000);
+INSERT INTO data VALUES(74,1,'2017-08-01 14:37:45',1501591066,300000,300000,300000);
+INSERT INTO data VALUES(75,1,'2017-08-01 14:38:16',1501591097,300000,300000,300000);
+INSERT INTO data VALUES(76,1,'2017-08-01 14:38:47',1501591128,300000,300000,300000);
+INSERT INTO data VALUES(77,1,'2017-08-01 14:39:18',1501591159,300000,300000,300000);
+INSERT INTO data VALUES(78,1,'2017-08-01 14:39:49',1501591190,300000,300000,300000);
+INSERT INTO data VALUES(79,1,'2017-08-01 14:40:20',1501591221,300000,300000,300000);
+INSERT INTO data VALUES(80,1,'2017-08-01 14:40:51',1501591252,300000,300000,300000);
+INSERT INTO data VALUES(81,1,'2017-08-01 14:41:22',1501591283,300000,300000,300000);
+INSERT INTO data VALUES(82,1,'2017-08-01 14:41:53',1501591314,300000,300000,300000);
+INSERT INTO data VALUES(83,1,'2017-08-01 14:42:24',1501591345,300000,300000,300000);
+INSERT INTO data VALUES(84,1,'2017-08-01 14:42:55',1501591376,300000,300000,300000);
+INSERT INTO data VALUES(85,1,'2017-08-01 14:43:26',1501591407,300000,300000,300000);
+INSERT INTO data VALUES(86,1,'2017-08-01 14:43:57',1501591438,300000,300000,300000);
+INSERT INTO data VALUES(87,1,'2017-08-01 14:44:29',1501591469,300000,300000,300000);
+INSERT INTO data VALUES(88,1,'2017-08-01 14:44:59',1501591500,300000,300000,300000);
+INSERT INTO data VALUES(89,1,'2017-08-01 14:45:30',1501591531,300000,300000,300000);
+INSERT INTO data VALUES(90,2,'2017-08-02 11:12:50',1501665170,0,0,0);
+INSERT INTO data VALUES(91,2,'2017-08-02 14:28:03',1501676883,0,1655,102637);
+INSERT INTO data VALUES(92,2,'2017-08-02 14:38:02',1501677483,0,0,0);
+INSERT INTO data VALUES(93,2,'2017-08-02 15:43:55',1501681436,0,158,4908);
+INSERT INTO data VALUES(94,2,'2017-08-02 15:53:55',1501682036,0,636,4322);
+INSERT INTO data VALUES(95,2,'2017-08-02 16:05:42',1501682743,0,0,219);
+INSERT INTO data VALUES(96,2,'2017-08-02 16:15:42',1501683342,0,3,1904);
+INSERT INTO data VALUES(97,4,'2017-08-02 16:22:25',1501683745,0,115296,120512);
+INSERT INTO data VALUES(98,2,'2017-08-02 16:27:33',1501684053,0,3,1172);
+INSERT INTO data VALUES(99,4,'2017-08-02 16:32:26',1501684347,109010,117441,119413);
+INSERT INTO data VALUES(100,2,'2017-08-02 16:37:33',1501684653,0,33,6080);
+INSERT INTO data VALUES(101,2,'2017-08-02 16:47:33',1501685253,0,3088,12893);
+INSERT INTO data VALUES(102,2,'2017-08-02 16:57:33',1501685853,0,0,0);
+INSERT INTO data VALUES(103,2,'2017-08-02 17:13:16',1501686796,0,0,0);
+INSERT INTO data VALUES(104,2,'2017-08-02 17:23:16',1501687396,0,0,0);
+INSERT INTO data VALUES(105,2,'2017-08-02 17:33:16',1501687996,0,0,0);
+INSERT INTO data VALUES(106,2,'2017-08-02 17:43:16',1501688596,0,0,0);
+INSERT INTO data VALUES(107,2,'2017-08-02 17:53:16',1501689196,0,0,0);
+INSERT INTO data VALUES(108,2,'2017-08-02 18:03:16',1501689796,0,0,0);
+INSERT INTO data VALUES(109,2,'2017-08-02 18:13:16',1501690396,0,0,0);
+INSERT INTO data VALUES(110,2,'2017-08-02 18:23:16',1501690996,0,0,0);
+INSERT INTO data VALUES(111,2,'2017-08-02 18:33:16',1501691596,0,0,0);
+INSERT INTO data VALUES(112,2,'2017-08-02 18:43:16',1501692196,0,0,0);
+INSERT INTO data VALUES(113,2,'2017-08-02 18:53:16',1501692796,0,0,0);
+INSERT INTO data VALUES(114,2,'2017-08-02 19:03:16',1501693396,0,0,0);
+INSERT INTO data VALUES(115,2,'2017-08-02 19:13:16',1501693996,0,0,0);
+INSERT INTO data VALUES(116,2,'2017-08-02 19:23:16',1501694596,0,0,0);
+INSERT INTO data VALUES(117,2,'2017-08-02 19:33:16',1501695196,0,0,0);
+INSERT INTO data VALUES(118,2,'2017-08-02 19:43:16',1501695796,0,0,0);
+INSERT INTO data VALUES(119,2,'2017-08-02 19:53:16',1501696396,0,0,0);
+INSERT INTO data VALUES(120,2,'2017-08-02 20:03:16',1501696996,0,0,0);
+INSERT INTO data VALUES(121,2,'2017-08-02 20:13:16',1501697596,0,0,0);
+INSERT INTO data VALUES(122,2,'2017-08-02 20:23:16',1501698196,0,0,0);
+INSERT INTO data VALUES(123,2,'2017-08-02 20:33:16',1501698796,0,0,0);
+INSERT INTO data VALUES(124,2,'2017-08-02 20:43:16',1501699396,0,0,0);
+INSERT INTO data VALUES(125,2,'2017-08-02 20:53:16',1501699996,0,0,0);
+INSERT INTO data VALUES(126,2,'2017-08-02 21:03:16',1501700596,0,0,0);
+INSERT INTO data VALUES(127,2,'2017-08-02 21:13:16',1501701196,0,0,0);
+INSERT INTO data VALUES(128,2,'2017-08-02 21:23:16',1501701796,0,0,0);
+INSERT INTO data VALUES(129,2,'2017-08-02 21:33:16',1501702396,0,0,0);
+INSERT INTO data VALUES(130,2,'2017-08-02 21:43:16',1501702996,0,0,0);
+INSERT INTO data VALUES(131,2,'2017-08-02 21:53:16',1501703596,0,0,0);
+INSERT INTO data VALUES(132,2,'2017-08-02 22:03:16',1501704196,0,0,0);
+INSERT INTO data VALUES(133,2,'2017-08-02 22:13:16',1501704796,0,0,0);
+INSERT INTO data VALUES(134,2,'2017-08-02 22:23:16',1501705396,0,0,0);
+INSERT INTO data VALUES(135,2,'2017-08-02 22:33:16',1501705996,0,0,0);
+INSERT INTO data VALUES(136,2,'2017-08-02 22:43:16',1501706596,0,0,0);
+INSERT INTO data VALUES(137,2,'2017-08-02 22:53:16',1501707196,0,0,0);
+INSERT INTO data VALUES(138,2,'2017-08-02 23:03:16',1501707796,0,0,0);
+INSERT INTO data VALUES(139,2,'2017-08-02 23:13:16',1501708396,0,0,0);
+INSERT INTO data VALUES(140,2,'2017-08-02 23:23:16',1501708996,0,0,0);
+INSERT INTO data VALUES(141,2,'2017-08-02 23:33:16',1501709596,0,0,0);
+INSERT INTO data VALUES(142,2,'2017-08-02 23:43:16',1501710196,0,0,0);
+INSERT INTO data VALUES(143,2,'2017-08-02 23:53:16',1501710796,0,0,0);
+INSERT INTO data VALUES(144,2,'2017-08-03 00:03:16',1501711396,0,0,0);
+INSERT INTO data VALUES(145,2,'2017-08-03 00:13:16',1501711996,0,0,0);
+INSERT INTO data VALUES(146,2,'2017-08-03 00:23:16',1501712596,0,0,0);
+INSERT INTO data VALUES(147,2,'2017-08-03 00:33:16',1501713196,0,0,0);
+INSERT INTO data VALUES(148,2,'2017-08-03 00:43:16',1501713796,0,0,0);
+INSERT INTO data VALUES(149,2,'2017-08-03 00:53:16',1501714396,0,0,0);
+INSERT INTO data VALUES(150,2,'2017-08-03 01:03:16',1501714996,0,0,0);
+INSERT INTO data VALUES(151,2,'2017-08-03 01:13:16',1501715596,0,0,0);
+INSERT INTO data VALUES(152,2,'2017-08-03 01:23:16',1501716196,0,0,0);
+INSERT INTO data VALUES(153,2,'2017-08-03 01:33:16',1501716796,0,0,0);
+INSERT INTO data VALUES(154,2,'2017-08-03 01:43:16',1501717396,0,0,0);
+INSERT INTO data VALUES(155,2,'2017-08-03 01:53:16',1501717996,0,0,0);
+INSERT INTO data VALUES(156,2,'2017-08-03 02:03:16',1501718596,0,0,0);
+INSERT INTO data VALUES(157,2,'2017-08-03 10:15:17',1501748118,17069,18817,20879);
+INSERT INTO data VALUES(158,2,'2017-08-03 10:25:18',1501748719,17216,18862,20439);
+INSERT INTO data VALUES(159,2,'2017-08-03 11:00:44',1501750845,84395,86221,87912);
+INSERT INTO data VALUES(160,2,'2017-08-03 13:47:08',1501760828,1245,72186,435091);
+INSERT INTO data VALUES(161,2,'2017-08-03 14:07:11',1501762031,1245,375202,493186);
+INSERT INTO data VALUES(162,2,'2017-08-03 14:17:12',1501762632,334212,371299,376043);
+INSERT INTO data VALUES(163,2,'2017-08-03 14:27:28',1501763248,358974,371446,374945);
+INSERT INTO data VALUES(164,2,'2017-08-03 14:37:32',1501763852,366593,371496,376043);
+INSERT INTO data VALUES(165,2,'2017-08-03 14:47:33',1501764453,367985,371460,376190);
+INSERT INTO data VALUES(166,2,'2017-08-03 14:57:34',1501765055,367179,371402,375750);
+INSERT INTO data VALUES(167,2,'2017-08-03 15:07:35',1501765655,355384,371487,374432);
+INSERT INTO data VALUES(168,2,'2017-08-03 15:17:37',1501766257,368644,371422,376703);
+INSERT INTO data VALUES(169,2,'2017-08-03 15:37:53',1501767474,0,178819,252014);
+INSERT INTO data VALUES(170,2,'2017-08-03 15:57:55',1501768675,0,0,0);
+INSERT INTO data VALUES(171,2,'2017-08-03 16:07:57',1501769277,0,0,0);
+INSERT INTO data VALUES(172,2,'2017-08-03 16:17:58',1501769878,0,0,0);
+INSERT INTO data VALUES(173,2,'2017-08-03 16:27:59',1501770479,0,0,0);
+INSERT INTO data VALUES(174,2,'2017-08-03 16:38:00',1501771080,0,0,0);
+INSERT INTO data VALUES(175,3,'2017-08-03 16:41:07',1501771268,1,2,3);
+INSERT INTO data VALUES(176,3,'2017-08-03 16:42:06',1501771326,1,2,3);
+INSERT INTO data VALUES(177,3,'2017-08-03 16:42:09',1501771330,1,2,3);
+INSERT INTO data VALUES(178,3,'2017-08-03 16:43:29',1501771410,1,2,3);
+INSERT INTO data VALUES(179,3,'2017-08-03 16:43:42',1501771422,1,2,3);
+INSERT INTO data VALUES(180,3,'2017-08-03 16:43:43',1501771424,1,2,3);
+INSERT INTO data VALUES(181,2,'2017-08-03 16:48:01',1501771681,0,0,0);
+INSERT INTO data VALUES(182,2,'2017-08-03 17:02:54',1501772575,0,0,0);
+INSERT INTO data VALUES(183,11,'2017-08-03 20:06:15',1501783575,0,3791,75238);
+INSERT INTO data VALUES(184,10,'2017-08-04 10:50:28',1501836629,96630,98225,99706);
+INSERT INTO data VALUES(185,10,'2017-08-04 11:02:09',1501837329,91868,97350,97875);
+INSERT INTO data VALUES(186,10,'2017-08-04 11:12:48',1501837969,97728,99164,108351);
+INSERT INTO data VALUES(187,10,'2017-08-04 11:22:49',1501838570,90183,99084,100366);
+INSERT INTO data VALUES(188,10,'2017-08-04 11:32:53',1501839174,93113,99106,111721);
+INSERT INTO data VALUES(189,10,'2017-08-04 11:42:55',1501839775,93333,99201,112747);
+INSERT INTO data VALUES(190,10,'2017-08-04 11:52:55',1501840376,0,96865,103443);
+INSERT INTO data VALUES(191,10,'2017-08-04 12:02:56',1501840977,89963,99203,108351);
+INSERT INTO data VALUES(192,10,'2017-08-04 12:12:57',1501841578,94065,99184,106593);
+INSERT INTO data VALUES(193,10,'2017-08-04 12:22:58',1501842179,97948,99220,103150);
+INSERT INTO data VALUES(194,10,'2017-08-04 12:33:00',1501842780,93040,99231,110695);
+INSERT INTO data VALUES(195,10,'2017-08-04 12:43:00',1501843381,88205,99143,100439);
+INSERT INTO data VALUES(196,10,'2017-08-04 12:53:01',1501843982,91721,99190,104908);
+INSERT INTO data VALUES(197,10,'2017-08-04 13:03:02',1501844583,95531,99197,102271);
+INSERT INTO data VALUES(198,10,'2017-08-04 13:13:03',1501845184,88717,99219,106300);
+INSERT INTO data VALUES(199,10,'2017-08-04 13:23:04',1501845785,93333,99212,100512);
+INSERT INTO data VALUES(200,10,'2017-08-04 13:33:05',1501846386,86153,99161,100146);
+INSERT INTO data VALUES(201,10,'2017-08-04 13:43:06',1501846987,88791,99260,109670);
+INSERT INTO data VALUES(202,10,'2017-08-04 13:53:08',1501847588,0,96438,100219);
+INSERT INTO data VALUES(203,10,'2017-08-04 14:03:08',1501848189,0,0,0);
+INSERT INTO data VALUES(204,10,'2017-08-04 14:13:09',1501848790,0,0,0);
+INSERT INTO data VALUES(205,10,'2017-08-04 14:23:10',1501849391,0,20,12234);
+INSERT INTO data VALUES(206,10,'2017-08-04 14:33:12',1501849992,0,0,0);
+INSERT INTO data VALUES(207,10,'2017-08-04 14:43:12',1501850593,0,3,1758);
+INSERT INTO data VALUES(208,10,'2017-08-04 14:53:13',1501851194,0,0,0);
+INSERT INTO data VALUES(209,10,'2017-08-04 15:03:14',1501851795,0,7,4468);
+INSERT INTO data VALUES(210,10,'2017-08-04 15:13:16',1501852396,0,0,0);
+INSERT INTO data VALUES(211,10,'2017-08-04 15:23:17',1501852997,0,0,0);
+INSERT INTO data VALUES(212,10,'2017-08-04 15:33:17',1501853598,0,0,0);
+INSERT INTO data VALUES(213,10,'2017-08-04 15:43:19',1501854199,0,0,0);
+INSERT INTO data VALUES(214,10,'2017-08-04 15:53:23',1501854803,0,0,0);
+INSERT INTO data VALUES(215,10,'2017-08-04 16:03:23',1501855404,0,0,0);
+INSERT INTO data VALUES(216,10,'2017-08-04 16:13:25',1501856005,0,3,1758);
+INSERT INTO data VALUES(217,10,'2017-08-04 16:23:25',1501856606,0,10,6227);
+INSERT INTO data VALUES(218,10,'2017-08-04 16:33:27',1501857207,0,0,0);
+INSERT INTO data VALUES(219,10,'2017-08-04 16:43:27',1501857808,0,0,0);
+INSERT INTO data VALUES(220,10,'2017-08-04 16:53:27',1501858408,0,0,0);
+INSERT INTO data VALUES(221,12,'2017-08-14 09:53:36',1502697216,0,55,33040);
+INSERT INTO data VALUES(222,12,'2017-08-14 10:03:37',1502697817,0,0,0);
+INSERT INTO data VALUES(223,12,'2017-08-14 10:21:36',1502698897,0,115,69010);
+INSERT INTO data VALUES(224,12,'2017-08-14 10:31:37',1502699498,0,0,0);
+INSERT INTO data VALUES(225,12,'2017-08-14 10:41:37',1502700098,0,0,0);
+INSERT INTO data VALUES(226,12,'2017-08-14 10:51:38',1502700699,0,0,0);
+INSERT INTO data VALUES(227,12,'2017-08-14 11:01:39',1502701300,0,0,0);
+INSERT INTO data VALUES(228,12,'2017-08-14 11:11:40',1502701901,0,0,0);
+INSERT INTO data VALUES(229,12,'2017-08-14 11:21:41',1502702502,0,0,0);
+INSERT INTO data VALUES(230,12,'2017-08-14 11:31:42',1502703103,0,0,0);
+INSERT INTO data VALUES(231,12,'2017-08-14 11:41:43',1502703703,0,0,0);
+INSERT INTO data VALUES(232,12,'2017-08-14 11:51:43',1502704304,0,0,0);
+INSERT INTO data VALUES(233,12,'2017-08-14 12:01:44',1502704905,0,0,0);
+INSERT INTO data VALUES(234,12,'2017-08-14 12:11:45',1502705506,0,0,0);
+INSERT INTO data VALUES(235,12,'2017-08-14 12:21:47',1502706108,0,0,0);
+INSERT INTO data VALUES(236,12,'2017-08-14 12:31:52',1502706712,0,0,0);
+INSERT INTO data VALUES(237,12,'2017-08-14 12:41:53',1502707314,0,0,0);
+INSERT INTO data VALUES(238,12,'2017-08-14 12:51:54',1502707915,0,0,0);
+INSERT INTO data VALUES(239,12,'2017-08-14 13:01:55',1502708516,0,0,0);
+INSERT INTO data VALUES(240,12,'2017-08-14 13:11:55',1502709116,0,0,0);
+INSERT INTO data VALUES(241,12,'2017-08-14 13:21:58',1502709719,0,0,0);
+INSERT INTO data VALUES(242,12,'2017-08-14 13:32:02',1502710322,0,0,0);
+INSERT INTO data VALUES(243,12,'2017-08-14 13:42:03',1502710923,0,0,0);
+INSERT INTO data VALUES(244,12,'2017-08-14 13:52:04',1502711525,0,0,0);
+INSERT INTO data VALUES(245,12,'2017-08-14 14:02:05',1502712126,0,0,0);
+INSERT INTO data VALUES(246,12,'2017-08-14 14:12:07',1502712727,0,0,0);
+INSERT INTO data VALUES(247,12,'2017-08-14 19:01:23',1502730083,0,1759,105787);
+INSERT INTO data VALUES(248,12,'2017-08-15 04:50:28',1502765429,0,130,60146);
+INSERT INTO data VALUES(249,11,'2017-08-15 10:03:42',1502784223,0,0,0);
+INSERT INTO data VALUES(250,13,'2017-08-15 11:19:21',1502788762,96703,98340,100732);
+INSERT INTO data VALUES(251,13,'2017-08-15 11:29:23',1502789363,95457,98363,100512);
+INSERT INTO data VALUES(252,13,'2017-08-15 11:39:24',1502789964,95457,98108,101025);
+INSERT INTO data VALUES(253,13,'2017-08-15 11:49:26',1502790566,95677,98032,100000);
+INSERT INTO data VALUES(254,13,'2017-08-15 11:59:26',1502791167,95457,98075,100659);
+INSERT INTO data VALUES(255,13,'2017-08-15 12:09:27',1502791768,95824,98033,100000);
+INSERT INTO data VALUES(256,13,'2017-08-15 12:19:29',1502792369,95238,98059,100366);
+INSERT INTO data VALUES(257,13,'2017-08-15 12:39:35',1502793576,95897,98051,100073);
+INSERT INTO data VALUES(258,13,'2017-08-15 12:49:36',1502794177,95604,98071,101318);
+INSERT INTO data VALUES(259,13,'2017-08-15 12:59:41',1502794781,95531,98215,100073);
+INSERT INTO data VALUES(260,13,'2017-08-15 13:09:55',1502795395,96776,98662,100366);
+INSERT INTO data VALUES(261,13,'2017-08-15 13:19:59',1502796000,96410,98658,100732);
+INSERT INTO data VALUES(262,13,'2017-08-15 13:34:02',1502796842,97216,98584,100293);
+INSERT INTO data VALUES(263,13,'2017-08-15 13:44:12',1502797453,0,93791,100073);
+INSERT INTO data VALUES(264,13,'2017-08-15 13:54:12',1502798053,97216,98535,100146);
+INSERT INTO data VALUES(265,14,'2017-08-15 13:54:33',1502798074,0,495,29230);
+INSERT INTO data VALUES(266,13,'2017-08-15 14:04:13',1502798654,97289,98567,100805);
+INSERT INTO data VALUES(267,14,'2017-08-15 14:04:34',1502798674,0,0,0);
+INSERT INTO data VALUES(268,13,'2017-08-15 14:14:14',1502799255,96556,98547,100146);
+INSERT INTO data VALUES(269,14,'2017-08-15 14:14:35',1502799276,0,0,0);
+INSERT INTO data VALUES(270,13,'2017-08-15 14:24:15',1502799856,0,90356,101025);
+INSERT INTO data VALUES(271,14,'2017-08-15 14:24:36',1502799877,0,0,0);
+INSERT INTO data VALUES(272,13,'2017-08-21 10:42:01',1503304921,97069,98585,100073);
+INSERT INTO data VALUES(273,13,'2017-08-21 10:52:02',1503305522,96630,98662,100439);
+INSERT INTO data VALUES(274,13,'2017-08-21 11:02:03',1503306124,96556,98627,101391);
+INSERT INTO data VALUES(275,13,'2017-08-21 11:12:04',1503306724,96923,98632,100366);
+INSERT INTO data VALUES(276,13,'2017-08-21 11:22:05',1503307325,97069,98645,100293);
+INSERT INTO data VALUES(277,13,'2017-08-21 11:32:06',1503307926,96776,98663,100439);
+INSERT INTO data VALUES(278,13,'2017-08-21 11:42:07',1503308527,96043,98674,100146);
+INSERT INTO data VALUES(279,13,'2017-08-21 11:52:08',1503309129,96923,98572,100146);
+INSERT INTO data VALUES(280,13,'2017-08-21 12:02:10',1503309730,96556,98559,99633);
+INSERT INTO data VALUES(281,13,'2017-08-21 12:06:09',1503309969,0,55003,75091);
+INSERT INTO data VALUES(282,13,'2017-08-21 12:10:30',1503310231,81172,82996,84395);
+INSERT INTO data VALUES(283,12,'2018-01-17 15:20:20',1516198820,0,184670,299926);
+INSERT INTO data VALUES(284,12,'2018-01-17 15:23:34',1516199014,0,124719,299926);
+INSERT INTO data VALUES(285,12,'2018-01-17 15:33:34',1516199614,0,145334,299926);
+INSERT INTO data VALUES(286,12,'2018-01-17 15:43:34',1516200214,0,138384,299926);
+INSERT INTO data VALUES(287,12,'2018-01-17 15:53:34',1516200814,0,118334,299926);
+INSERT INTO data VALUES(288,12,'2018-01-17 16:03:34',1516201414,0,156908,299926);
+INSERT INTO data VALUES(289,12,'2018-01-17 16:13:34',1516202014,0,75117,299926);
+INSERT INTO data VALUES(290,12,'2018-01-17 16:23:34',1516202614,0,18090,57289);
+INSERT INTO data VALUES(291,12,'2018-01-17 16:33:34',1516203214,0,19485,60293);
+INSERT INTO data VALUES(292,12,'2018-01-17 16:43:34',1516203814,0,103198,299926);
+INSERT INTO data VALUES(293,12,'2018-01-17 16:53:34',1516204414,0,138870,299926);
+INSERT INTO data VALUES(294,12,'2018-01-17 17:03:34',1516205014,0,153023,299926);
+INSERT INTO data VALUES(295,12,'2018-01-17 17:13:34',1516205614,0,141115,299926);
+INSERT INTO data VALUES(296,12,'2018-01-17 17:23:34',1516206214,0,158988,299926);
 CREATE TABLE error_codes (
   page varchar NOT NULL,
   error int NOT NULL,
   message varchar DEFAULT NULL,
   PRIMARY KEY (page, error)
 );
-
-INSERT INTO error_codes (page, error, message) VALUES
-('battery-fill-in', 202, 'The batterypercentage has succesfully been logged'),
-('battery-fill-in', 401, 'Your token is invalid. Please login again.'),
-('battery-fill-in', 406, 'Your battery percentage could not be logged. \\n Have you selected a vehicle and entered your correct batterypercentage?'),
-('change-user-info', 401, 'You are not authorized to perform this action, did you correctly enter your current password?'),
-('homepage', 400, 'Could not load sockets'),
-('homepage', 408, 'The sockets took too long to load. Please try again later'),
-('login', 401, 'Invalid credentials'),
-('login', 403, 'You have not been verified yet. Please wait till an admin verifies you'),
-('my-cars', 200, 'Your car has successfully been removed'),
-('my-cars', 401, 'Your token is invalid, please login again.'),
-('new-car-form', 202, 'Your car has been created but not yet added to your account. Please wait until an admin verifies your car. '),
-('new-car-form', 401, 'Your token is invalid. Please login again.'),
-('new-car-form', 412, 'Your car could not be created. Have you filled in all the required fields?'),
-('registration', 202, 'Your account has succesfully been created, check your email.'),
-('registration', 409, 'Your HanID or uidTag is already registered.'),
-('registration', 412, 'Your account could not be created. Have you filled in all the required fields?'),
-('verified-cars', 202, 'The car has been added to your account'),
-('verified-cars', 401, 'Your token is invalid. Please login again');
-
+INSERT INTO error_codes VALUES('battery-fill-in',202,'The batterypercentage has succesfully been logged');
+INSERT INTO error_codes VALUES('battery-fill-in',401,'Your token is invalid. Please login again.');
+INSERT INTO error_codes VALUES('battery-fill-in',406,'Your battery percentage could not be logged. \\n Have you selected a vehicle and entered your correct batterypercentage?');
+INSERT INTO error_codes VALUES('change-user-info',401,'You are not authorized to perform this action, did you correctly enter your current password?');
+INSERT INTO error_codes VALUES('homepage',400,'Could not load sockets');
+INSERT INTO error_codes VALUES('homepage',408,'The sockets took too long to load. Please try again later');
+INSERT INTO error_codes VALUES('login',401,'Invalid credentials');
+INSERT INTO error_codes VALUES('login',403,'You have not been verified yet. Please wait till an admin verifies you');
+INSERT INTO error_codes VALUES('my-cars',200,'Your car has successfully been removed');
+INSERT INTO error_codes VALUES('my-cars',401,'Your token is invalid, please login again.');
+INSERT INTO error_codes VALUES('new-car-form',202,'Your car has been created but not yet added to your account. Please wait until an admin verifies your car. ');
+INSERT INTO error_codes VALUES('new-car-form',401,'Your token is invalid. Please login again.');
+INSERT INTO error_codes VALUES('new-car-form',412,'Your car could not be created. Have you filled in all the required fields?');
+INSERT INTO error_codes VALUES('registration',202,'Your account has succesfully been created, check your email.');
+INSERT INTO error_codes VALUES('registration',409,'Your HanID or uidTag is already registered.');
+INSERT INTO error_codes VALUES('registration',412,'Your account could not be created. Have you filled in all the required fields?');
+INSERT INTO error_codes VALUES('verified-cars',202,'The car has been added to your account');
+INSERT INTO error_codes VALUES('verified-cars',401,'Your token is invalid. Please login again');
 CREATE TABLE measurements (
-  id int NOT NULL PRIMARY KEY,
+  id int PRIMARY KEY,
   phase_voltage_L1 float NOT NULL,
   phase_voltage_L2 float NOT NULL,
   phase_voltage_L3 float NOT NULL,
@@ -488,547 +467,544 @@ CREATE TABLE measurements (
   energy float NOT NULL,
   frequency float NOT NULL,
   createdAt datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  SoC float NOT NULL,
+  SoC float,
   socketId int NOT NULL,
-  carId int NOT NULL,
-  userId int NOT NULL,
+  carId int,
+  userId varchar,
   FOREIGN KEY (socketId)
   REFERENCES charging_station_sockets (id) 
     ON UPDATE CASCADE
     ON DELETE CASCADE
 );
-
-INSERT INTO measurements (id, phase_voltage_L1, phase_voltage_L2, phase_voltage_L3, current_L1, current_L2, current_L3, active_power, energy, frequency, createdAt, SoC, socketId, carId, userId) VALUES
-(1, 230, 0, 0, 16, 0, 0, 3700, 0, 50, '2018-03-02 12:20:00', 0, 1, 1, 0),
-(3, 1, 0, 0, 2, 0, 0, 3, 4, 5, '2018-03-02 13:30:01', 0, 1, 2, 0),
-(4, 1, 0, 0, 2, 0, 0, 3, 4, 5, '2018-03-02 13:32:57', 0, 1, 1, 0),
-(5, 1, 0, 0, 2, 0, 0, 3, 4, 5, '2018-03-02 13:33:20', 0, 1, 1, 0),
-(6, 1, 0, 0, 2, 0, 0, 3, 4, 5, '2018-03-02 13:33:41', 0, 1, 2, 0),
-(7, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:37:09', 0, 1, 1, 0),
-(8, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:37:39', 0, 1, 2, 0),
-(9, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:38:10', 0, 1, 2, 0),
-(10, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:38:40', 0, 1, 1, 0),
-(11, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:39:11', 0, 1, 1, 0),
-(12, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:39:41', 0, 1, 1, 0),
-(13, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:40:12', 0, 1, 1, 0),
-(14, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:40:42', 0, 1, 2, 0),
-(15, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:41:13', 0, 1, 2, 0),
-(16, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:41:43', 0, 1, 2, 0),
-(17, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:42:14', 0, 1, 2, 0),
-(18, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:42:44', 0, 1, 2, 0),
-(19, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:43:15', 0, 1, 2, 0),
-(20, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:43:45', 0, 1, 2, 0),
-(21, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:44:16', 0, 1, 1, 0),
-(22, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:44:46', 0, 1, 1, 0),
-(23, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:45:17', 0, 1, 2, 0),
-(24, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:45:47', 0, 1, 1, 0),
-(25, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:46:18', 0, 1, 1, 0),
-(26, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:46:48', 0, 1, 2, 0),
-(27, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:47:19', 0, 1, 1, 0),
-(28, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:47:49', 0, 1, 1, 0),
-(29, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:48:20', 0, 1, 1, 0),
-(30, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:48:50', 0, 1, 1, 0),
-(31, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:49:21', 0, 1, 2, 0),
-(32, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:49:54', 0, 1, 2, 0),
-(33, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:50:25', 0, 1, 1, 0),
-(34, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:50:55', 0, 1, 1, 0),
-(35, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:51:26', 0, 1, 1, 0),
-(36, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:51:56', 0, 1, 1, 0),
-(37, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:52:27', 0, 1, 1, 0),
-(38, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:52:57', 0, 1, 1, 0),
-(39, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:53:28', 0, 1, 1, 0),
-(40, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:53:58', 0, 1, 2, 0),
-(41, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:54:29', 0, 1, 2, 0),
-(42, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:54:59', 0, 1, 1, 0),
-(43, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:55:30', 0, 1, 2, 0),
-(44, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:56:00', 0, 1, 1, 0),
-(45, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:56:31', 0, 1, 2, 0),
-(46, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:57:02', 0, 1, 2, 0),
-(47, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:57:32', 0, 1, 1, 0),
-(48, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:58:03', 0, 1, 2, 0),
-(49, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:58:33', 0, 1, 2, 0),
-(50, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:59:04', 0, 1, 2, 0),
-(51, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 13:59:34', 0, 1, 2, 0),
-(52, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:00:05', 0, 1, 1, 0),
-(53, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:00:35', 0, 1, 1, 0),
-(54, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:01:06', 0, 1, 1, 0),
-(55, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:01:36', 0, 1, 2, 0),
-(56, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:02:07', 0, 1, 1, 0),
-(57, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:02:37', 0, 1, 1, 0),
-(58, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:03:10', 0, 1, 1, 0),
-(59, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:03:41', 0, 1, 1, 0),
-(60, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:04:14', 0, 1, 2, 0),
-(61, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:04:44', 0, 1, 1, 0),
-(62, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:05:15', 0, 1, 2, 0),
-(63, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:05:45', 0, 1, 2, 0),
-(64, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:06:16', 0, 1, 1, 0),
-(65, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:06:46', 0, 1, 2, 0),
-(66, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:07:17', 0, 1, 1, 0),
-(67, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:07:50', 0, 1, 1, 0),
-(68, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:08:20', 0, 1, 1, 0),
-(69, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:08:50', 0, 1, 1, 0),
-(70, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:09:21', 0, 1, 2, 0),
-(71, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:09:51', 0, 1, 1, 0),
-(72, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:10:22', 0, 1, 2, 0),
-(73, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:10:53', 0, 1, 1, 0),
-(74, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:11:23', 0, 1, 1, 0),
-(75, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:11:54', 0, 1, 1, 0),
-(76, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:12:24', 0, 1, 1, 0),
-(77, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:12:55', 0, 1, 2, 0),
-(78, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:13:25', 0, 1, 2, 0),
-(79, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:13:56', 0, 1, 1, 0),
-(80, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:14:26', 0, 1, 2, 0),
-(81, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:14:57', 0, 1, 2, 0),
-(82, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:15:27', 0, 1, 1, 0),
-(83, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:15:58', 0, 1, 1, 0),
-(84, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:16:28', 0, 1, 2, 0),
-(85, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:16:59', 0, 1, 2, 0),
-(86, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:17:29', 0, 1, 2, 0),
-(87, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:18:00', 0, 1, 2, 0),
-(88, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:18:30', 0, 1, 2, 0),
-(89, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:19:01', 0, 1, 2, 0),
-(90, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:19:31', 0, 1, 2, 0),
-(91, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:20:02', 0, 1, 1, 0),
-(92, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:20:32', 0, 1, 1, 0),
-(93, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:21:03', 0, 1, 1, 0),
-(94, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:21:34', 0, 1, 2, 0),
-(95, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:22:05', 0, 1, 1, 0),
-(96, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:22:35', 0, 1, 1, 0),
-(97, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:23:06', 0, 1, 1, 0),
-(98, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:23:36', 0, 1, 1, 0),
-(99, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:24:07', 0, 1, 2, 0),
-(100, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:24:37', 0, 1, 1, 0),
-(101, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:25:08', 0, 1, 1, 0),
-(102, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:25:38', 0, 1, 1, 0),
-(103, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:26:09', 0, 1, 1, 0),
-(104, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:26:39', 0, 1, 2, 0),
-(105, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:27:10', 0, 1, 1, 0),
-(106, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:27:40', 0, 1, 1, 0),
-(107, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:28:11', 0, 1, 1, 0),
-(108, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:28:41', 0, 1, 2, 0),
-(109, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:29:12', 0, 1, 1, 0),
-(110, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:29:42', 0, 1, 1, 0),
-(111, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:30:13', 0, 1, 2, 0),
-(112, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:30:43', 0, 1, 1, 0),
-(113, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:31:16', 0, 1, 1, 0),
-(114, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:31:47', 0, 1, 1, 0),
-(115, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:32:17', 0, 1, 2, 0),
-(116, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:32:48', 0, 1, 1, 0),
-(117, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:33:18', 0, 1, 1, 0),
-(118, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:33:49', 0, 1, 1, 0),
-(119, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:34:19', 0, 1, 2, 0),
-(120, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:34:50', 0, 1, 1, 0),
-(121, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:35:20', 0, 1, 2, 0),
-(122, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:35:51', 0, 1, 1, 0),
-(123, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:36:21', 0, 1, 1, 0),
-(124, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:36:52', 0, 1, 1, 0),
-(125, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:37:22', 0, 1, 2, 0),
-(126, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:37:53', 0, 1, 2, 0),
-(127, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:38:23', 0, 1, 2, 0),
-(128, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:38:54', 0, 1, 1, 0),
-(129, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:39:27', 0, 1, 2, 0),
-(130, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:39:58', 0, 1, 2, 0),
-(131, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:40:28', 0, 1, 2, 0),
-(132, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:40:59', 0, 1, 2, 0),
-(133, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:41:29', 0, 1, 1, 0),
-(134, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:42:00', 0, 1, 2, 0),
-(135, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:42:30', 0, 1, 1, 0),
-(136, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:43:01', 0, 1, 2, 0),
-(137, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:43:31', 0, 1, 2, 0),
-(138, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:44:02', 0, 1, 1, 0),
-(139, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:44:32', 0, 1, 2, 0),
-(140, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:45:03', 0, 1, 2, 0),
-(141, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:45:33', 0, 1, 2, 0),
-(142, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:46:04', 0, 1, 2, 0),
-(143, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:46:34', 0, 1, 1, 0),
-(144, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:47:05', 0, 1, 1, 0),
-(145, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:47:35', 0, 1, 2, 0),
-(146, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:48:06', 0, 1, 2, 0),
-(147, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:48:36', 0, 1, 1, 0),
-(148, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:49:07', 0, 1, 1, 0),
-(149, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:49:37', 0, 1, 1, 0),
-(150, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:50:08', 0, 1, 2, 0),
-(151, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:50:38', 0, 1, 2, 0),
-(152, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:51:09', 0, 1, 1, 0),
-(153, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:51:39', 0, 1, 2, 0),
-(154, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:52:10', 0, 1, 1, 0),
-(155, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:52:40', 0, 1, 2, 0),
-(156, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:53:11', 0, 1, 1, 0),
-(157, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:53:41', 0, 1, 2, 0),
-(158, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:54:12', 0, 1, 2, 0),
-(159, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:54:42', 0, 1, 1, 0),
-(160, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:55:13', 0, 1, 1, 0),
-(161, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:55:43', 0, 1, 2, 0),
-(162, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:56:14', 0, 1, 2, 0),
-(163, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:56:44', 0, 1, 2, 0),
-(164, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:57:15', 0, 1, 1, 0),
-(165, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:57:45', 0, 1, 1, 0),
-(166, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:58:16', 0, 1, 1, 0),
-(167, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:58:46', 0, 1, 1, 0),
-(168, 1, 0, 0, 2, 0, 0, 300, 4, 5, '2018-03-02 14:59:17', 0, 1, 2, 0),
-(169, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:00:15', 0, 1, 1, 0),
-(170, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:00:45', 0, 1, 1, 0),
-(171, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:01:16', 0, 1, 1, 0),
-(172, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:01:46', 0, 1, 1, 0),
-(173, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:02:17', 0, 1, 2, 0),
-(174, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:02:47', 0, 1, 2, 0),
-(175, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:03:18', 0, 1, 2, 0),
-(176, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:03:48', 0, 1, 2, 0),
-(177, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:04:19', 0, 1, 2, 0),
-(178, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:04:49', 0, 1, 2, 0),
-(179, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:05:20', 0, 1, 1, 0),
-(180, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:05:50', 0, 1, 2, 0),
-(181, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:06:21', 0, 1, 1, 0),
-(182, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:06:51', 0, 1, 1, 0),
-(183, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:07:22', 0, 1, 1, 0),
-(184, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:07:52', 0, 1, 2, 0),
-(185, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:08:58', 0, 1, 2, 0),
-(186, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:09:29', 0, 1, 2, 0),
-(187, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:10:02', 0, 1, 1, 0),
-(188, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:10:32', 0, 1, 1, 0),
-(189, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:11:03', 0, 1, 1, 0),
-(190, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:11:33', 0, 1, 2, 0),
-(191, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:12:04', 0, 1, 1, 0),
-(192, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:12:34', 0, 1, 2, 0),
-(193, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:13:05', 0, 1, 2, 0),
-(194, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:13:38', 0, 1, 1, 0),
-(195, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:14:08', 0, 1, 2, 0),
-(196, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:14:39', 0, 1, 2, 0),
-(197, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:15:09', 0, 1, 2, 0),
-(198, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:15:40', 0, 1, 1, 0),
-(199, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:16:10', 0, 1, 2, 0),
-(200, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:16:43', 0, 1, 1, 0),
-(201, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:17:14', 0, 1, 1, 0),
-(202, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:17:44', 0, 1, 1, 0),
-(203, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:18:17', 0, 1, 2, 0),
-(204, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:18:47', 0, 1, 2, 0),
-(205, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:19:18', 0, 1, 1, 0),
-(206, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:19:48', 0, 1, 1, 0),
-(207, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:20:19', 0, 1, 2, 0),
-(208, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:20:49', 0, 1, 1, 0),
-(209, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:21:20', 0, 1, 1, 0),
-(210, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:21:50', 0, 1, 2, 0),
-(211, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:22:21', 0, 1, 1, 0),
-(212, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:22:51', 0, 1, 2, 0),
-(213, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:23:22', 0, 1, 1, 0),
-(214, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:23:52', 0, 1, 1, 0),
-(215, 49.95, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:24:23', 0, 1, 2, 0),
-(216, 50, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:24:56', 0, 1, 2, 0),
-(217, 50, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:25:26', 0, 1, 1, 0),
-(218, 49.95, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:25:56', 0, 1, 2, 0),
-(219, 50, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:26:27', 0, 1, 2, 0),
-(220, 49.95, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:26:58', 0, 1, 2, 0),
-(221, 50, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:27:28', 0, 1, 2, 0),
-(222, 50, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:27:59', 0, 1, 1, 0),
-(223, 49.95, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:28:29', 0, 1, 1, 0),
-(224, 50, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:29:00', 0, 1, 2, 0),
-(225, 50, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:29:30', 0, 1, 1, 0),
-(226, 49.95, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:30:01', 0, 1, 1, 0),
-(227, 49.95, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:30:31', 0, 1, 1, 0),
-(228, 50, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:31:02', 0, 1, 2, 0),
-(229, 49.95, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:31:32', 0, 1, 1, 0),
-(230, 50, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:32:03', 0, 1, 2, 0),
-(231, 49.95, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:32:33', 0, 1, 2, 0),
-(232, 49.95, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:33:04', 0, 1, 2, 0),
-(233, 49.95, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:33:34', 0, 1, 1, 0),
-(234, 50, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:34:05', 0, 1, 1, 0),
-(235, 49.95, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:34:35', 0, 1, 1, 0),
-(236, 49.95, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:35:06', 0, 1, 1, 0),
-(237, 49.95, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:35:36', 0, 1, 1, 0),
-(238, 49.95, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:36:07', 0, 1, 1, 0),
-(239, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:36:37', 0, 1, 2, 0),
-(240, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:37:08', 0, 1, 1, 0),
-(241, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:37:38', 0, 1, 1, 0),
-(242, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:38:09', 0, 1, 2, 0),
-(243, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:38:39', 0, 1, 1, 0),
-(244, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:39:10', 0, 1, 2, 0),
-(245, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:39:40', 0, 1, 1, 0),
-(246, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:40:11', 0, 1, 1, 0),
-(247, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:40:41', 0, 1, 2, 0),
-(248, 49.95, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:41:12', 0, 1, 2, 0),
-(249, 49.95, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:41:42', 0, 1, 2, 0),
-(250, 50, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:42:13', 0, 1, 2, 0),
-(251, 50, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:42:43', 0, 1, 1, 0),
-(252, 50, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:43:14', 0, 1, 1, 0),
-(253, 49.95, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:43:44', 0, 1, 2, 0),
-(254, 50, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:44:15', 0, 1, 2, 0),
-(255, 49.95, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:44:45', 0, 1, 1, 0),
-(256, 49.95, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:45:16', 0, 1, 2, 0),
-(257, 50, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:45:46', 0, 1, 1, 0),
-(258, 50, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:46:17', 0, 1, 1, 0),
-(259, 229.3, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 15:47:28', 0, 1, 1, 0),
-(260, 229.8, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 15:47:58', 0, 1, 2, 0),
-(261, 229.6, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 15:48:29', 0, 1, 2, 0),
-(262, 229.5, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 15:48:59', 0, 1, 2, 0),
-(263, 229.4, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 15:49:30', 0, 1, 1, 0),
-(264, 229.5, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 15:50:00', 0, 1, 2, 0),
-(265, 229.6, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 15:50:31', 0, 1, 1, 0),
-(266, 229.7, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 15:51:01', 0, 1, 2, 0),
-(267, 229.7, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:51:32', 0, 1, 1, 0),
-(268, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:52:02', 0, 1, 1, 0),
-(269, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:52:33', 0, 1, 2, 0),
-(270, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:53:03', 0, 1, 2, 0),
-(271, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:53:34', 0, 1, 2, 0),
-(272, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:54:04', 0, 1, 2, 0),
-(273, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:54:35', 0, 1, 1, 0),
-(274, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:55:05', 0, 1, 2, 0),
-(275, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:55:36', 0, 1, 2, 0),
-(276, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:56:06', 0, 1, 1, 0),
-(277, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:56:37', 0, 1, 2, 0),
-(278, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:57:07', 0, 1, 1, 0),
-(279, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:57:38', 0, 1, 1, 0),
-(280, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:58:09', 0, 1, 1, 0),
-(281, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:58:39', 0, 1, 1, 0),
-(282, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:59:10', 0, 1, 1, 0),
-(283, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 15:59:40', 0, 1, 2, 0),
-(284, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 16:00:11', 0, 1, 2, 0),
-(285, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 16:00:41', 0, 1, 2, 0),
-(286, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 16:01:12', 0, 1, 2, 0),
-(287, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 16:01:42', 0, 1, 1, 0),
-(288, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 16:02:13', 0, 1, 1, 0),
-(289, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 16:02:43', 0, 1, 1, 0),
-(290, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 16:03:14', 0, 1, 1, 0),
-(291, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 16:03:45', 0, 1, 1, 0),
-(292, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 16:04:15', 0, 1, 1, 0),
-(293, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-02 16:04:46', 0, 1, 1, 0),
-(294, 229.2, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:05:16', 0, 1, 1, 0),
-(295, 229.4, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:05:47', 0, 1, 2, 0),
-(296, 229.5, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:06:17', 0, 1, 1, 0),
-(297, 1, 0, 0, 2, 0, 0, 3, 4, 5, '2018-03-02 16:06:41', 0, 1, 1, 0),
-(298, 229.3, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:06:48', 0, 1, 1, 0),
-(299, 229.4, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:07:18', 0, 1, 1, 0),
-(300, 1, 0, 0, 2, 0, 0, 3, 4, 5, '2018-03-02 16:07:30', 0, 1, 1, 0),
-(301, 229.8, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:07:49', 0, 1, 2, 0),
-(302, 1, 0, 0, 2, 0, 0, 3, 4, 5, '2018-03-02 16:07:56', 0, 1, 2, 0),
-(303, 229.5, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:08:19', 0, 1, 1, 0),
-(304, 229.6, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:08:50', 0, 1, 1, 0),
-(305, 229.5, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:09:20', 0, 1, 1, 0),
-(306, 229.4, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:09:51', 0, 1, 2, 0),
-(307, 229.4, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:10:21', 0, 1, 1, 0),
-(308, 229.4, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:10:52', 0, 1, 1, 0),
-(309, 229.3, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:11:22', 0, 1, 2, 0),
-(310, 229.5, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:11:53', 0, 1, 1, 0),
-(311, 229.5, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:12:23', 0, 1, 2, 0),
-(312, 229.7, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:12:54', 0, 1, 1, 0),
-(313, 229.7, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:13:24', 0, 1, 2, 0),
-(314, 229.3, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:13:55', 0, 1, 1, 0),
-(315, 229.5, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:14:25', 0, 1, 1, 0),
-(316, 229.6, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:14:56', 0, 1, 2, 0),
-(317, 229.7, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:15:26', 0, 1, 2, 0),
-(318, 229.4, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:15:57', 0, 1, 1, 0),
-(319, 229.4, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:16:27', 0, 1, 1, 0),
-(320, 229.5, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:16:58', 0, 1, 1, 0),
-(321, 229.2, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:17:28', 0, 1, 1, 0),
-(322, 229.2, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:17:59', 0, 1, 1, 0),
-(323, 229.1, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:18:29', 0, 1, 2, 0),
-(324, 229.3, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:19:00', 0, 1, 2, 0),
-(325, 229.5, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:19:30', 0, 1, 1, 0),
-(326, 229.4, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:20:01', 0, 1, 2, 0),
-(327, 229.5, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:20:31', 0, 1, 1, 0),
-(328, 229.2, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:21:02', 0, 1, 1, 0),
-(329, 229.3, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:21:32', 0, 1, 1, 0),
-(330, 229.4, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:22:03', 0, 1, 1, 0),
-(331, 229.2, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:22:33', 0, 1, 2, 0),
-(332, 229.4, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:23:04', 0, 1, 1, 0),
-(333, 229.4, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:23:34', 0, 1, 1, 0),
-(334, 229.3, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:24:05', 0, 1, 2, 0),
-(335, 229.5, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:24:35', 0, 1, 1, 0),
-(336, 229.4, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:25:08', 0, 1, 2, 0),
-(337, 229, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:25:39', 0, 1, 1, 0),
-(338, 229.2, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:26:09', 0, 1, 1, 0),
-(339, 229.3, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:26:40', 0, 1, 2, 0),
-(340, 229.6, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:27:10', 0, 1, 2, 0),
-(341, 229.9, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:27:41', 0, 1, 2, 0),
-(342, 230, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:28:11', 0, 1, 2, 0),
-(343, 230.2, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:28:42', 0, 1, 2, 0),
-(344, 230.2, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:29:12', 0, 1, 1, 0),
-(345, 230.1, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:29:43', 0, 1, 2, 0),
-(346, 230, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:30:13', 0, 1, 1, 0),
-(347, 230.2, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:30:44', 0, 1, 2, 0),
-(348, 230.5, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:31:14', 0, 1, 1, 0),
-(349, 230.1, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:31:45', 0, 1, 1, 0),
-(350, 230.3, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:32:15', 0, 1, 2, 0),
-(351, 229.8, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:32:46', 0, 1, 2, 0),
-(352, 230, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:33:16', 0, 1, 1, 0),
-(353, 230.3, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:33:49', 0, 1, 1, 0),
-(354, 230.1, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:34:20', 0, 1, 2, 0),
-(355, 230.1, 0, 0, 0, 0, 0, 0, 0, 50.04, '2018-03-02 16:34:50', 0, 1, 1, 0),
-(356, 229.9, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:35:21', 0, 1, 2, 0),
-(357, 229.9, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:35:51', 0, 1, 2, 0),
-(358, 230.4, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:36:22', 0, 1, 2, 0),
-(359, 230.5, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:36:52', 0, 1, 1, 0),
-(360, 230.5, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:37:23', 0, 1, 1, 0),
-(361, 230.2, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:37:56', 0, 1, 1, 0),
-(362, 230.3, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:38:26', 0, 1, 1, 0),
-(363, 230.5, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:38:57', 0, 1, 1, 0),
-(364, 230.4, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:39:28', 0, 1, 1, 0),
-(365, 230.5, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:39:58', 0, 1, 1, 0),
-(366, 230.2, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:40:29', 0, 1, 1, 0),
-(367, 230.2, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:41:01', 0, 1, 1, 0),
-(368, 230.2, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:41:32', 0, 1, 1, 0),
-(369, 230.1, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:42:02', 0, 1, 1, 0),
-(370, 230.3, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:42:33', 0, 1, 1, 0),
-(371, 230.2, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:43:03', 0, 1, 2, 0),
-(372, 230.3, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:43:34', 0, 1, 1, 0),
-(373, 229.9, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:44:04', 0, 1, 1, 0),
-(374, 230.1, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:44:37', 0, 1, 1, 0),
-(375, 230.3, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:45:08', 0, 1, 2, 0),
-(376, 230, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:45:38', 0, 1, 1, 0),
-(377, 230, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:46:09', 0, 1, 1, 0),
-(378, 229.9, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:46:39', 0, 1, 1, 0),
-(379, 230.2, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:48:26', 0, 1, 2, 0),
-(380, 230.5, 0, 0, 0, 0, 0, 0, 0, 50.04, '2018-03-02 16:48:56', 0, 1, 1, 0),
-(381, 230.4, 0, 0, 0, 0, 0, 0, 0, 50.04, '2018-03-02 16:49:27', 0, 1, 1, 0),
-(382, 230.5, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:49:57', 0, 1, 1, 0),
-(383, 230.4, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:50:28', 0, 1, 2, 0),
-(384, 230.2, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:50:58', 0, 1, 1, 0),
-(385, 230.3, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:51:29', 0, 1, 2, 0),
-(386, 230.5, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:51:59', 0, 1, 2, 0),
-(387, 230.3, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:52:30', 0, 1, 1, 0),
-(388, 230.3, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:53:00', 0, 1, 2, 0),
-(389, 230.6, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:53:31', 0, 1, 2, 0),
-(390, 230.4, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:54:01', 0, 1, 2, 0),
-(391, 230.3, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:54:32', 0, 1, 2, 0),
-(392, 230.2, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:55:02', 0, 1, 2, 0),
-(393, 230.3, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:55:33', 0, 1, 1, 0),
-(394, 230.2, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:56:03', 0, 1, 1, 0),
-(395, 230.5, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:56:34', 0, 1, 1, 0),
-(396, 230.7, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:57:04', 0, 1, 1, 0),
-(397, 230.4, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:57:35', 0, 1, 2, 0),
-(398, 230.5, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:58:05', 0, 1, 1, 0),
-(399, 230.3, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 16:58:36', 0, 1, 2, 0),
-(400, 230.1, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:59:06', 0, 1, 1, 0),
-(401, 229.8, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 16:59:37', 0, 1, 1, 0),
-(402, 229.8, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:00:07', 0, 1, 1, 0),
-(403, 229.7, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:00:38', 0, 1, 1, 0),
-(404, 229.7, 0, 0, 0, 0, 0, 0, 0, 50.04, '2018-03-02 17:01:08', 0, 1, 1, 0),
-(405, 229.4, 0, 0, 0, 0, 0, 0, 0, 50.04, '2018-03-02 17:01:39', 0, 1, 1, 0),
-(406, 229.4, 0, 0, 0, 0, 0, 0, 0, 50.04, '2018-03-02 17:02:09', 0, 1, 1, 0),
-(407, 229.1, 0, 0, 0, 0, 0, 0, 0, 50.04, '2018-03-02 17:02:40', 0, 1, 2, 0),
-(408, 229.3, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:03:10', 0, 1, 1, 0),
-(409, 229.2, 0, 0, 0, 0, 0, 0, 0, 50.04, '2018-03-02 17:03:41', 0, 1, 1, 0),
-(410, 229.3, 0, 0, 0, 0, 0, 0, 0, 50.04, '2018-03-02 17:04:11', 0, 1, 1, 0),
-(411, 229.2, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:04:42', 0, 1, 2, 0),
-(412, 229.3, 0, 0, 0, 0, 0, 0, 0, 50.04, '2018-03-02 17:05:12', 0, 1, 2, 0),
-(413, 229, 0, 0, 0, 0, 0, 0, 0, 50.04, '2018-03-02 17:05:43', 0, 1, 1, 0),
-(414, 229.1, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:06:13', 0, 1, 2, 0),
-(415, 228.9, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:06:44', 0, 1, 2, 0),
-(416, 229.2, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:07:15', 0, 1, 1, 0),
-(417, 229.3, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:07:45', 0, 1, 1, 0),
-(418, 229.3, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:08:16', 0, 1, 1, 0),
-(419, 229.7, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:08:46', 0, 1, 1, 0),
-(420, 229.3, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:09:17', 0, 1, 1, 0),
-(421, 228.9, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:09:47', 0, 1, 1, 0),
-(422, 228.8, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:10:18', 0, 1, 2, 0),
-(423, 229.1, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:10:48', 0, 1, 2, 0),
-(424, 229, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 17:11:19', 0, 1, 1, 0),
-(425, 229.2, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:11:49', 0, 1, 1, 0),
-(426, 229.2, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 17:12:20', 0, 1, 2, 0),
-(427, 229, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 17:12:50', 0, 1, 1, 0),
-(428, 229.2, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-02 17:13:21', 0, 1, 1, 0),
-(429, 229, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:13:51', 0, 1, 1, 0),
-(430, 229.1, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:14:22', 0, 1, 1, 0),
-(431, 229.3, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:14:52', 0, 1, 1, 0),
-(432, 229.3, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:15:23', 0, 1, 1, 0),
-(433, 229.3, 0, 0, 0, 0, 0, 0, 0, 50.04, '2018-03-02 17:15:53', 0, 1, 1, 0),
-(434, 229.3, 0, 0, 0, 0, 0, 0, 0, 50.04, '2018-03-02 17:16:24', 0, 1, 2, 0),
-(435, 229.1, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:16:54', 0, 1, 2, 0),
-(436, 229.6, 0, 0, 0, 0, 0, 0, 0, 50.04, '2018-03-02 17:17:25', 0, 1, 2, 0),
-(437, 229.6, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:17:55', 0, 1, 1, 0),
-(438, 229.4, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:18:26', 0, 1, 1, 0),
-(439, 229.4, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:18:56', 0, 1, 1, 0),
-(440, 229.3, 0, 0, 0, 0, 0, 0, 0, 50.04, '2018-03-02 17:19:27', 0, 1, 2, 0),
-(441, 229.3, 0, 0, 0, 0, 0, 0, 0, 50.04, '2018-03-02 17:19:57', 0, 1, 1, 0),
-(442, 229.5, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:20:28', 0, 1, 2, 0),
-(443, 229.4, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:20:58', 0, 1, 1, 0),
-(444, 229.2, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:21:29', 0, 1, 1, 0),
-(445, 229.3, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:21:59', 0, 1, 1, 0),
-(446, 229.2, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:22:30', 0, 1, 1, 0),
-(447, 229.4, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:23:00', 0, 1, 1, 0),
-(448, 229.6, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:23:31', 0, 1, 2, 0),
-(449, 229.2, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:24:01', 0, 1, 1, 0),
-(450, 229.5, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:24:32', 0, 1, 2, 0),
-(451, 229.9, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:25:02', 0, 1, 1, 0),
-(452, 229.6, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-02 17:25:33', 0, 1, 1, 0),
-(453, 1, 0, 0, 2, 0, 0, 3, 4, 5, '2018-03-09 09:24:50', 0, 1, 2, 0),
-(454, 1, 0, 0, 2, 0, 0, 3, 4, 5, '2018-03-09 09:26:11', 0, 1, 2, 0),
-(455, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-09 09:27:21', 0, 1, 2, 0),
-(456, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-09 09:27:51', 0, 1, 2, 0),
-(457, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-09 09:28:22', 0, 1, 2, 0),
-(458, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-09 09:28:52', 0, 1, 2, 0),
-(459, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-09 09:29:23', 0, 1, 1, 0),
-(460, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-09 09:29:53', 0, 1, 2, 0),
-(461, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-09 09:30:24', 0, 1, 2, 0),
-(462, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-09 09:30:54', 0, 1, 1, 0),
-(463, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-09 09:31:25', 0, 1, 2, 0),
-(464, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-09 09:31:55', 0, 1, 1, 0),
-(465, 0, 0, 0, 0, 0, 0, 0, 0, 0, '2018-03-09 09:32:26', 0, 1, 1, 0),
-(466, 230.7, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:32:56', 0, 1, 1, 0),
-(467, 231.4, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:33:27', 0, 1, 2, 0),
-(468, 231.5, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:33:57', 0, 1, 1, 0),
-(469, 231.2, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-09 09:34:28', 0, 1, 2, 0),
-(470, 231.2, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-09 09:34:58', 0, 1, 1, 0),
-(471, 231.1, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:35:29', 0, 1, 2, 0),
-(472, 231.4, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:35:59', 0, 1, 1, 0),
-(473, 231.6, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:36:30', 0, 1, 2, 0),
-(474, 231.6, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:37:00', 0, 1, 2, 0),
-(475, 231.6, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:37:31', 0, 1, 2, 0),
-(476, 231.8, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:38:01', 0, 1, 1, 0),
-(477, 231.5, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:38:32', 0, 1, 2, 0),
-(478, 231.3, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:39:03', 0, 1, 1, 0),
-(479, 231.5, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:39:33', 0, 1, 1, 0),
-(480, 231.9, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:40:04', 0, 1, 1, 0),
-(481, 232, 0, 0, 0, 0, 0, 0, 0, 50.04, '2018-03-09 09:40:34', 0, 1, 2, 0),
-(482, 231.8, 0, 0, 0, 0, 0, 0, 0, 50.04, '2018-03-09 09:41:05', 0, 1, 2, 0),
-(483, 231.5, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:41:35', 0, 1, 1, 0),
-(484, 231.7, 0, 0, 0, 0, 0, 0, 0, 50.04, '2018-03-09 09:42:06', 0, 1, 2, 0),
-(485, 232, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:42:36', 0, 1, 2, 0),
-(486, 232, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:43:07', 0, 1, 2, 0),
-(487, 232.4, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:43:37', 0, 1, 2, 0),
-(488, 232.3, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:44:08', 0, 1, 1, 0),
-(489, 232.4, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-09 09:44:39', 0, 1, 2, 0),
-(490, 232.4, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:45:09', 0, 1, 2, 0),
-(491, 232.6, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:45:40', 0, 1, 2, 0),
-(492, 232.1, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:46:10', 0, 1, 2, 0),
-(493, 231.7, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:46:41', 0, 1, 1, 0),
-(494, 231.9, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:47:11', 0, 1, 1, 0),
-(495, 231.6, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:47:42', 0, 1, 1, 0),
-(496, 231.6, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:48:12', 0, 1, 1, 0),
-(497, 232.1, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:48:43', 0, 1, 1, 0),
-(498, 232.1, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:49:13', 0, 1, 1, 0),
-(499, 231.9, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:49:44', 0, 1, 1, 0),
-(500, 231.6, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-09 09:50:14', 0, 1, 2, 0),
-(501, 231.5, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:50:45', 0, 1, 1, 0),
-(502, 231.8, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-09 09:51:15', 0, 1, 2, 0),
-(503, 232.1, 0, 0, 0, 0, 0, 0, 0, 50.04, '2018-03-09 09:51:46', 0, 1, 2, 0),
-(504, 232.4, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-09 09:52:16', 0, 1, 1, 0),
-(505, 232.2, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-09 09:52:47', 0, 1, 2, 0),
-(506, 231.7, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:53:17', 0, 1, 2, 0),
-(507, 231.8, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:53:48', 0, 1, 1, 0),
-(508, 231.9, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:54:19', 0, 1, 1, 0),
-(509, 231.8, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:54:49', 0, 1, 2, 0),
-(510, 231.1, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:55:20', 0, 1, 1, 0),
-(511, 231.4, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:55:50', 0, 1, 1, 0),
-(512, 230.7, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:56:21', 0, 1, 2, 0),
-(513, 231.6, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:56:51', 0, 1, 1, 0),
-(514, 231.9, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:57:22', 0, 1, 2, 0),
-(515, 231.6, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:57:52', 0, 1, 1, 0),
-(516, 232.1, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:58:23', 0, 1, 1, 0),
-(517, 231, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:58:53', 0, 1, 1, 0),
-(518, 231.7, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 09:59:24', 0, 1, 1, 0),
-(519, 231.8, 0, 0, 0, 0, 0, 0, 0, 50.04, '2018-03-09 09:59:54', 0, 1, 2, 0),
-(520, 232, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 10:00:25', 0, 1, 2, 0),
-(521, 231.8, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 10:00:55', 0, 1, 2, 0),
-(522, 231.8, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 10:01:26', 0, 1, 1, 0),
-(523, 231.8, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-09 10:01:56', 0, 1, 1, 0),
-(524, 232.1, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-09 10:02:27', 0, 1, 1, 0),
-(525, 232.5, 0, 0, 0, 0, 0, 0, 0, 50, '2018-03-09 10:02:57', 0, 1, 2, 0),
-(526, 232.3, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-09 10:03:28', 0, 1, 1, 0),
-(527, 232.2, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-09 10:03:59', 0, 1, 1, 0),
-(528, 232, 0, 0, 0, 0, 0, 0, 0, 49.95, '2018-03-09 10:04:29', 0, 1, 1, 0);
-
+INSERT INTO measurements VALUES(1,229.99999999999998223,0.0,0.0,16.000000000000000888,0.0,0.0,3700.0000000000001776,0.0,50.0,'2018-03-02 12:20:00',0.0,1,1,0);
+INSERT INTO measurements VALUES(3,1.0,0.0,0.0,2.0,0.0,0.0,3.0,4.0,5.0,'2018-03-02 13:30:01',0.0,1,2,0);
+INSERT INTO measurements VALUES(4,1.0,0.0,0.0,2.0,0.0,0.0,3.0,4.0,5.0,'2018-03-02 13:32:57',0.0,1,1,0);
+INSERT INTO measurements VALUES(5,1.0,0.0,0.0,2.0,0.0,0.0,3.0,4.0,5.0,'2018-03-02 13:33:20',0.0,1,1,0);
+INSERT INTO measurements VALUES(6,1.0,0.0,0.0,2.0,0.0,0.0,3.0,4.0,5.0,'2018-03-02 13:33:41',0.0,1,2,0);
+INSERT INTO measurements VALUES(7,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:37:09',0.0,1,1,0);
+INSERT INTO measurements VALUES(8,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:37:39',0.0,1,2,0);
+INSERT INTO measurements VALUES(9,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:38:10',0.0,1,2,0);
+INSERT INTO measurements VALUES(10,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:38:40',0.0,1,1,0);
+INSERT INTO measurements VALUES(11,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:39:11',0.0,1,1,0);
+INSERT INTO measurements VALUES(12,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:39:41',0.0,1,1,0);
+INSERT INTO measurements VALUES(13,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:40:12',0.0,1,1,0);
+INSERT INTO measurements VALUES(14,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:40:42',0.0,1,2,0);
+INSERT INTO measurements VALUES(15,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:41:13',0.0,1,2,0);
+INSERT INTO measurements VALUES(16,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:41:43',0.0,1,2,0);
+INSERT INTO measurements VALUES(17,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:42:14',0.0,1,2,0);
+INSERT INTO measurements VALUES(18,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:42:44',0.0,1,2,0);
+INSERT INTO measurements VALUES(19,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:43:15',0.0,1,2,0);
+INSERT INTO measurements VALUES(20,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:43:45',0.0,1,2,0);
+INSERT INTO measurements VALUES(21,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:44:16',0.0,1,1,0);
+INSERT INTO measurements VALUES(22,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:44:46',0.0,1,1,0);
+INSERT INTO measurements VALUES(23,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:45:17',0.0,1,2,0);
+INSERT INTO measurements VALUES(24,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:45:47',0.0,1,1,0);
+INSERT INTO measurements VALUES(25,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:46:18',0.0,1,1,0);
+INSERT INTO measurements VALUES(26,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:46:48',0.0,1,2,0);
+INSERT INTO measurements VALUES(27,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:47:19',0.0,1,1,0);
+INSERT INTO measurements VALUES(28,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:47:49',0.0,1,1,0);
+INSERT INTO measurements VALUES(29,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:48:20',0.0,1,1,0);
+INSERT INTO measurements VALUES(30,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:48:50',0.0,1,1,0);
+INSERT INTO measurements VALUES(31,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:49:21',0.0,1,2,0);
+INSERT INTO measurements VALUES(32,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:49:54',0.0,1,2,0);
+INSERT INTO measurements VALUES(33,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:50:25',0.0,1,1,0);
+INSERT INTO measurements VALUES(34,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:50:55',0.0,1,1,0);
+INSERT INTO measurements VALUES(35,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:51:26',0.0,1,1,0);
+INSERT INTO measurements VALUES(36,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:51:56',0.0,1,1,0);
+INSERT INTO measurements VALUES(37,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:52:27',0.0,1,1,0);
+INSERT INTO measurements VALUES(38,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:52:57',0.0,1,1,0);
+INSERT INTO measurements VALUES(39,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:53:28',0.0,1,1,0);
+INSERT INTO measurements VALUES(40,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:53:58',0.0,1,2,0);
+INSERT INTO measurements VALUES(41,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:54:29',0.0,1,2,0);
+INSERT INTO measurements VALUES(42,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:54:59',0.0,1,1,0);
+INSERT INTO measurements VALUES(43,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:55:30',0.0,1,2,0);
+INSERT INTO measurements VALUES(44,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:56:00',0.0,1,1,0);
+INSERT INTO measurements VALUES(45,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:56:31',0.0,1,2,0);
+INSERT INTO measurements VALUES(46,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:57:02',0.0,1,2,0);
+INSERT INTO measurements VALUES(47,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:57:32',0.0,1,1,0);
+INSERT INTO measurements VALUES(48,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:58:03',0.0,1,2,0);
+INSERT INTO measurements VALUES(49,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:58:33',0.0,1,2,0);
+INSERT INTO measurements VALUES(50,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:59:04',0.0,1,2,0);
+INSERT INTO measurements VALUES(51,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 13:59:34',0.0,1,2,0);
+INSERT INTO measurements VALUES(52,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:00:05',0.0,1,1,0);
+INSERT INTO measurements VALUES(53,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:00:35',0.0,1,1,0);
+INSERT INTO measurements VALUES(54,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:01:06',0.0,1,1,0);
+INSERT INTO measurements VALUES(55,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:01:36',0.0,1,2,0);
+INSERT INTO measurements VALUES(56,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:02:07',0.0,1,1,0);
+INSERT INTO measurements VALUES(57,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:02:37',0.0,1,1,0);
+INSERT INTO measurements VALUES(58,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:03:10',0.0,1,1,0);
+INSERT INTO measurements VALUES(59,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:03:41',0.0,1,1,0);
+INSERT INTO measurements VALUES(60,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:04:14',0.0,1,2,0);
+INSERT INTO measurements VALUES(61,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:04:44',0.0,1,1,0);
+INSERT INTO measurements VALUES(62,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:05:15',0.0,1,2,0);
+INSERT INTO measurements VALUES(63,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:05:45',0.0,1,2,0);
+INSERT INTO measurements VALUES(64,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:06:16',0.0,1,1,0);
+INSERT INTO measurements VALUES(65,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:06:46',0.0,1,2,0);
+INSERT INTO measurements VALUES(66,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:07:17',0.0,1,1,0);
+INSERT INTO measurements VALUES(67,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:07:50',0.0,1,1,0);
+INSERT INTO measurements VALUES(68,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:08:20',0.0,1,1,0);
+INSERT INTO measurements VALUES(69,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:08:50',0.0,1,1,0);
+INSERT INTO measurements VALUES(70,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:09:21',0.0,1,2,0);
+INSERT INTO measurements VALUES(71,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:09:51',0.0,1,1,0);
+INSERT INTO measurements VALUES(72,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:10:22',0.0,1,2,0);
+INSERT INTO measurements VALUES(73,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:10:53',0.0,1,1,0);
+INSERT INTO measurements VALUES(74,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:11:23',0.0,1,1,0);
+INSERT INTO measurements VALUES(75,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:11:54',0.0,1,1,0);
+INSERT INTO measurements VALUES(76,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:12:24',0.0,1,1,0);
+INSERT INTO measurements VALUES(77,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:12:55',0.0,1,2,0);
+INSERT INTO measurements VALUES(78,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:13:25',0.0,1,2,0);
+INSERT INTO measurements VALUES(79,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:13:56',0.0,1,1,0);
+INSERT INTO measurements VALUES(80,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:14:26',0.0,1,2,0);
+INSERT INTO measurements VALUES(81,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:14:57',0.0,1,2,0);
+INSERT INTO measurements VALUES(82,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:15:27',0.0,1,1,0);
+INSERT INTO measurements VALUES(83,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:15:58',0.0,1,1,0);
+INSERT INTO measurements VALUES(84,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:16:28',0.0,1,2,0);
+INSERT INTO measurements VALUES(85,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:16:59',0.0,1,2,0);
+INSERT INTO measurements VALUES(86,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:17:29',0.0,1,2,0);
+INSERT INTO measurements VALUES(87,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:18:00',0.0,1,2,0);
+INSERT INTO measurements VALUES(88,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:18:30',0.0,1,2,0);
+INSERT INTO measurements VALUES(89,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:19:01',0.0,1,2,0);
+INSERT INTO measurements VALUES(90,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:19:31',0.0,1,2,0);
+INSERT INTO measurements VALUES(91,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:20:02',0.0,1,1,0);
+INSERT INTO measurements VALUES(92,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:20:32',0.0,1,1,0);
+INSERT INTO measurements VALUES(93,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:21:03',0.0,1,1,0);
+INSERT INTO measurements VALUES(94,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:21:34',0.0,1,2,0);
+INSERT INTO measurements VALUES(95,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:22:05',0.0,1,1,0);
+INSERT INTO measurements VALUES(96,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:22:35',0.0,1,1,0);
+INSERT INTO measurements VALUES(97,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:23:06',0.0,1,1,0);
+INSERT INTO measurements VALUES(98,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:23:36',0.0,1,1,0);
+INSERT INTO measurements VALUES(99,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:24:07',0.0,1,2,0);
+INSERT INTO measurements VALUES(100,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:24:37',0.0,1,1,0);
+INSERT INTO measurements VALUES(101,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:25:08',0.0,1,1,0);
+INSERT INTO measurements VALUES(102,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:25:38',0.0,1,1,0);
+INSERT INTO measurements VALUES(103,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:26:09',0.0,1,1,0);
+INSERT INTO measurements VALUES(104,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:26:39',0.0,1,2,0);
+INSERT INTO measurements VALUES(105,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:27:10',0.0,1,1,0);
+INSERT INTO measurements VALUES(106,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:27:40',0.0,1,1,0);
+INSERT INTO measurements VALUES(107,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:28:11',0.0,1,1,0);
+INSERT INTO measurements VALUES(108,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:28:41',0.0,1,2,0);
+INSERT INTO measurements VALUES(109,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:29:12',0.0,1,1,0);
+INSERT INTO measurements VALUES(110,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:29:42',0.0,1,1,0);
+INSERT INTO measurements VALUES(111,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:30:13',0.0,1,2,0);
+INSERT INTO measurements VALUES(112,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:30:43',0.0,1,1,0);
+INSERT INTO measurements VALUES(113,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:31:16',0.0,1,1,0);
+INSERT INTO measurements VALUES(114,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:31:47',0.0,1,1,0);
+INSERT INTO measurements VALUES(115,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:32:17',0.0,1,2,0);
+INSERT INTO measurements VALUES(116,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:32:48',0.0,1,1,0);
+INSERT INTO measurements VALUES(117,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:33:18',0.0,1,1,0);
+INSERT INTO measurements VALUES(118,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:33:49',0.0,1,1,0);
+INSERT INTO measurements VALUES(119,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:34:19',0.0,1,2,0);
+INSERT INTO measurements VALUES(120,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:34:50',0.0,1,1,0);
+INSERT INTO measurements VALUES(121,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:35:20',0.0,1,2,0);
+INSERT INTO measurements VALUES(122,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:35:51',0.0,1,1,0);
+INSERT INTO measurements VALUES(123,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:36:21',0.0,1,1,0);
+INSERT INTO measurements VALUES(124,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:36:52',0.0,1,1,0);
+INSERT INTO measurements VALUES(125,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:37:22',0.0,1,2,0);
+INSERT INTO measurements VALUES(126,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:37:53',0.0,1,2,0);
+INSERT INTO measurements VALUES(127,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:38:23',0.0,1,2,0);
+INSERT INTO measurements VALUES(128,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:38:54',0.0,1,1,0);
+INSERT INTO measurements VALUES(129,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:39:27',0.0,1,2,0);
+INSERT INTO measurements VALUES(130,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:39:58',0.0,1,2,0);
+INSERT INTO measurements VALUES(131,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:40:28',0.0,1,2,0);
+INSERT INTO measurements VALUES(132,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:40:59',0.0,1,2,0);
+INSERT INTO measurements VALUES(133,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:41:29',0.0,1,1,0);
+INSERT INTO measurements VALUES(134,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:42:00',0.0,1,2,0);
+INSERT INTO measurements VALUES(135,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:42:30',0.0,1,1,0);
+INSERT INTO measurements VALUES(136,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:43:01',0.0,1,2,0);
+INSERT INTO measurements VALUES(137,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:43:31',0.0,1,2,0);
+INSERT INTO measurements VALUES(138,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:44:02',0.0,1,1,0);
+INSERT INTO measurements VALUES(139,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:44:32',0.0,1,2,0);
+INSERT INTO measurements VALUES(140,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:45:03',0.0,1,2,0);
+INSERT INTO measurements VALUES(141,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:45:33',0.0,1,2,0);
+INSERT INTO measurements VALUES(142,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:46:04',0.0,1,2,0);
+INSERT INTO measurements VALUES(143,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:46:34',0.0,1,1,0);
+INSERT INTO measurements VALUES(144,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:47:05',0.0,1,1,0);
+INSERT INTO measurements VALUES(145,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:47:35',0.0,1,2,0);
+INSERT INTO measurements VALUES(146,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:48:06',0.0,1,2,0);
+INSERT INTO measurements VALUES(147,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:48:36',0.0,1,1,0);
+INSERT INTO measurements VALUES(148,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:49:07',0.0,1,1,0);
+INSERT INTO measurements VALUES(149,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:49:37',0.0,1,1,0);
+INSERT INTO measurements VALUES(150,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:50:08',0.0,1,2,0);
+INSERT INTO measurements VALUES(151,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:50:38',0.0,1,2,0);
+INSERT INTO measurements VALUES(152,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:51:09',0.0,1,1,0);
+INSERT INTO measurements VALUES(153,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:51:39',0.0,1,2,0);
+INSERT INTO measurements VALUES(154,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:52:10',0.0,1,1,0);
+INSERT INTO measurements VALUES(155,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:52:40',0.0,1,2,0);
+INSERT INTO measurements VALUES(156,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:53:11',0.0,1,1,0);
+INSERT INTO measurements VALUES(157,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:53:41',0.0,1,2,0);
+INSERT INTO measurements VALUES(158,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:54:12',0.0,1,2,0);
+INSERT INTO measurements VALUES(159,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:54:42',0.0,1,1,0);
+INSERT INTO measurements VALUES(160,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:55:13',0.0,1,1,0);
+INSERT INTO measurements VALUES(161,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:55:43',0.0,1,2,0);
+INSERT INTO measurements VALUES(162,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:56:14',0.0,1,2,0);
+INSERT INTO measurements VALUES(163,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:56:44',0.0,1,2,0);
+INSERT INTO measurements VALUES(164,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:57:15',0.0,1,1,0);
+INSERT INTO measurements VALUES(165,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:57:45',0.0,1,1,0);
+INSERT INTO measurements VALUES(166,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:58:16',0.0,1,1,0);
+INSERT INTO measurements VALUES(167,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:58:46',0.0,1,1,0);
+INSERT INTO measurements VALUES(168,1.0,0.0,0.0,2.0,0.0,0.0,300.0,4.0,5.0,'2018-03-02 14:59:17',0.0,1,2,0);
+INSERT INTO measurements VALUES(169,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:00:15',0.0,1,1,0);
+INSERT INTO measurements VALUES(170,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:00:45',0.0,1,1,0);
+INSERT INTO measurements VALUES(171,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:01:16',0.0,1,1,0);
+INSERT INTO measurements VALUES(172,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:01:46',0.0,1,1,0);
+INSERT INTO measurements VALUES(173,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:02:17',0.0,1,2,0);
+INSERT INTO measurements VALUES(174,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:02:47',0.0,1,2,0);
+INSERT INTO measurements VALUES(175,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:03:18',0.0,1,2,0);
+INSERT INTO measurements VALUES(176,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:03:48',0.0,1,2,0);
+INSERT INTO measurements VALUES(177,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:04:19',0.0,1,2,0);
+INSERT INTO measurements VALUES(178,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:04:49',0.0,1,2,0);
+INSERT INTO measurements VALUES(179,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:05:20',0.0,1,1,0);
+INSERT INTO measurements VALUES(180,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:05:50',0.0,1,2,0);
+INSERT INTO measurements VALUES(181,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:06:21',0.0,1,1,0);
+INSERT INTO measurements VALUES(182,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:06:51',0.0,1,1,0);
+INSERT INTO measurements VALUES(183,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:07:22',0.0,1,1,0);
+INSERT INTO measurements VALUES(184,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:07:52',0.0,1,2,0);
+INSERT INTO measurements VALUES(185,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:08:58',0.0,1,2,0);
+INSERT INTO measurements VALUES(186,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:09:29',0.0,1,2,0);
+INSERT INTO measurements VALUES(187,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:10:02',0.0,1,1,0);
+INSERT INTO measurements VALUES(188,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:10:32',0.0,1,1,0);
+INSERT INTO measurements VALUES(189,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:11:03',0.0,1,1,0);
+INSERT INTO measurements VALUES(190,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:11:33',0.0,1,2,0);
+INSERT INTO measurements VALUES(191,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:12:04',0.0,1,1,0);
+INSERT INTO measurements VALUES(192,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:12:34',0.0,1,2,0);
+INSERT INTO measurements VALUES(193,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:13:05',0.0,1,2,0);
+INSERT INTO measurements VALUES(194,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:13:38',0.0,1,1,0);
+INSERT INTO measurements VALUES(195,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:14:08',0.0,1,2,0);
+INSERT INTO measurements VALUES(196,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:14:39',0.0,1,2,0);
+INSERT INTO measurements VALUES(197,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:15:09',0.0,1,2,0);
+INSERT INTO measurements VALUES(198,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:15:40',0.0,1,1,0);
+INSERT INTO measurements VALUES(199,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:16:10',0.0,1,2,0);
+INSERT INTO measurements VALUES(200,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:16:43',0.0,1,1,0);
+INSERT INTO measurements VALUES(201,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:17:14',0.0,1,1,0);
+INSERT INTO measurements VALUES(202,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:17:44',0.0,1,1,0);
+INSERT INTO measurements VALUES(203,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:18:17',0.0,1,2,0);
+INSERT INTO measurements VALUES(204,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:18:47',0.0,1,2,0);
+INSERT INTO measurements VALUES(205,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:19:18',0.0,1,1,0);
+INSERT INTO measurements VALUES(206,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:19:48',0.0,1,1,0);
+INSERT INTO measurements VALUES(207,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:20:19',0.0,1,2,0);
+INSERT INTO measurements VALUES(208,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:20:49',0.0,1,1,0);
+INSERT INTO measurements VALUES(209,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:21:20',0.0,1,1,0);
+INSERT INTO measurements VALUES(210,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:21:50',0.0,1,2,0);
+INSERT INTO measurements VALUES(211,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:22:21',0.0,1,1,0);
+INSERT INTO measurements VALUES(212,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:22:51',0.0,1,2,0);
+INSERT INTO measurements VALUES(213,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:23:22',0.0,1,1,0);
+INSERT INTO measurements VALUES(214,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:23:52',0.0,1,1,0);
+INSERT INTO measurements VALUES(215,49.950000000000001065,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:24:23',0.0,1,2,0);
+INSERT INTO measurements VALUES(216,50.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:24:56',0.0,1,2,0);
+INSERT INTO measurements VALUES(217,50.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:25:26',0.0,1,1,0);
+INSERT INTO measurements VALUES(218,49.950000000000001065,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:25:56',0.0,1,2,0);
+INSERT INTO measurements VALUES(219,50.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:26:27',0.0,1,2,0);
+INSERT INTO measurements VALUES(220,49.950000000000001065,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:26:58',0.0,1,2,0);
+INSERT INTO measurements VALUES(221,50.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:27:28',0.0,1,2,0);
+INSERT INTO measurements VALUES(222,50.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:27:59',0.0,1,1,0);
+INSERT INTO measurements VALUES(223,49.950000000000001065,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:28:29',0.0,1,1,0);
+INSERT INTO measurements VALUES(224,50.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:29:00',0.0,1,2,0);
+INSERT INTO measurements VALUES(225,50.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:29:30',0.0,1,1,0);
+INSERT INTO measurements VALUES(226,49.950000000000001065,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:30:01',0.0,1,1,0);
+INSERT INTO measurements VALUES(227,49.950000000000001065,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:30:31',0.0,1,1,0);
+INSERT INTO measurements VALUES(228,50.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:31:02',0.0,1,2,0);
+INSERT INTO measurements VALUES(229,49.950000000000001065,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:31:32',0.0,1,1,0);
+INSERT INTO measurements VALUES(230,50.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:32:03',0.0,1,2,0);
+INSERT INTO measurements VALUES(231,49.950000000000001065,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:32:33',0.0,1,2,0);
+INSERT INTO measurements VALUES(232,49.950000000000001065,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:33:04',0.0,1,2,0);
+INSERT INTO measurements VALUES(233,49.950000000000001065,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:33:34',0.0,1,1,0);
+INSERT INTO measurements VALUES(234,50.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:34:05',0.0,1,1,0);
+INSERT INTO measurements VALUES(235,49.950000000000001065,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:34:35',0.0,1,1,0);
+INSERT INTO measurements VALUES(236,49.950000000000001065,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:35:06',0.0,1,1,0);
+INSERT INTO measurements VALUES(237,49.950000000000001065,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:35:36',0.0,1,1,0);
+INSERT INTO measurements VALUES(238,49.950000000000001065,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:36:07',0.0,1,1,0);
+INSERT INTO measurements VALUES(239,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:36:37',0.0,1,2,0);
+INSERT INTO measurements VALUES(240,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:37:08',0.0,1,1,0);
+INSERT INTO measurements VALUES(241,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:37:38',0.0,1,1,0);
+INSERT INTO measurements VALUES(242,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:38:09',0.0,1,2,0);
+INSERT INTO measurements VALUES(243,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:38:39',0.0,1,1,0);
+INSERT INTO measurements VALUES(244,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:39:10',0.0,1,2,0);
+INSERT INTO measurements VALUES(245,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:39:40',0.0,1,1,0);
+INSERT INTO measurements VALUES(246,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:40:11',0.0,1,1,0);
+INSERT INTO measurements VALUES(247,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:40:41',0.0,1,2,0);
+INSERT INTO measurements VALUES(248,49.950000000000001065,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:41:12',0.0,1,2,0);
+INSERT INTO measurements VALUES(249,49.950000000000001065,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:41:42',0.0,1,2,0);
+INSERT INTO measurements VALUES(250,50.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:42:13',0.0,1,2,0);
+INSERT INTO measurements VALUES(251,50.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:42:43',0.0,1,1,0);
+INSERT INTO measurements VALUES(252,50.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:43:14',0.0,1,1,0);
+INSERT INTO measurements VALUES(253,49.950000000000001065,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:43:44',0.0,1,2,0);
+INSERT INTO measurements VALUES(254,50.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:44:15',0.0,1,2,0);
+INSERT INTO measurements VALUES(255,49.950000000000001065,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:44:45',0.0,1,1,0);
+INSERT INTO measurements VALUES(256,49.950000000000001065,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:45:16',0.0,1,2,0);
+INSERT INTO measurements VALUES(257,50.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:45:46',0.0,1,1,0);
+INSERT INTO measurements VALUES(258,50.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:46:17',0.0,1,1,0);
+INSERT INTO measurements VALUES(259,229.30000000000001492,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 15:47:28',0.0,1,1,0);
+INSERT INTO measurements VALUES(260,229.80000000000000426,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 15:47:58',0.0,1,2,0);
+INSERT INTO measurements VALUES(261,229.59999999999998188,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 15:48:29',0.0,1,2,0);
+INSERT INTO measurements VALUES(262,229.49999999999999289,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 15:48:59',0.0,1,2,0);
+INSERT INTO measurements VALUES(263,229.4000000000000039,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 15:49:30',0.0,1,1,0);
+INSERT INTO measurements VALUES(264,229.49999999999999289,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 15:50:00',0.0,1,2,0);
+INSERT INTO measurements VALUES(265,229.59999999999998188,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 15:50:31',0.0,1,1,0);
+INSERT INTO measurements VALUES(266,229.69999999999997086,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 15:51:01',0.0,1,2,0);
+INSERT INTO measurements VALUES(267,229.69999999999997086,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:51:32',0.0,1,1,0);
+INSERT INTO measurements VALUES(268,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:52:02',0.0,1,1,0);
+INSERT INTO measurements VALUES(269,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:52:33',0.0,1,2,0);
+INSERT INTO measurements VALUES(270,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:53:03',0.0,1,2,0);
+INSERT INTO measurements VALUES(271,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:53:34',0.0,1,2,0);
+INSERT INTO measurements VALUES(272,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:54:04',0.0,1,2,0);
+INSERT INTO measurements VALUES(273,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:54:35',0.0,1,1,0);
+INSERT INTO measurements VALUES(274,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:55:05',0.0,1,2,0);
+INSERT INTO measurements VALUES(275,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:55:36',0.0,1,2,0);
+INSERT INTO measurements VALUES(276,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:56:06',0.0,1,1,0);
+INSERT INTO measurements VALUES(277,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:56:37',0.0,1,2,0);
+INSERT INTO measurements VALUES(278,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:57:07',0.0,1,1,0);
+INSERT INTO measurements VALUES(279,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:57:38',0.0,1,1,0);
+INSERT INTO measurements VALUES(280,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:58:09',0.0,1,1,0);
+INSERT INTO measurements VALUES(281,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:58:39',0.0,1,1,0);
+INSERT INTO measurements VALUES(282,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:59:10',0.0,1,1,0);
+INSERT INTO measurements VALUES(283,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 15:59:40',0.0,1,2,0);
+INSERT INTO measurements VALUES(284,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 16:00:11',0.0,1,2,0);
+INSERT INTO measurements VALUES(285,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 16:00:41',0.0,1,2,0);
+INSERT INTO measurements VALUES(286,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 16:01:12',0.0,1,2,0);
+INSERT INTO measurements VALUES(287,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 16:01:42',0.0,1,1,0);
+INSERT INTO measurements VALUES(288,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 16:02:13',0.0,1,1,0);
+INSERT INTO measurements VALUES(289,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 16:02:43',0.0,1,1,0);
+INSERT INTO measurements VALUES(290,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 16:03:14',0.0,1,1,0);
+INSERT INTO measurements VALUES(291,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 16:03:45',0.0,1,1,0);
+INSERT INTO measurements VALUES(292,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 16:04:15',0.0,1,1,0);
+INSERT INTO measurements VALUES(293,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-02 16:04:46',0.0,1,1,0);
+INSERT INTO measurements VALUES(294,229.19999999999998152,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:05:16',0.0,1,1,0);
+INSERT INTO measurements VALUES(295,229.4000000000000039,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:05:47',0.0,1,2,0);
+INSERT INTO measurements VALUES(296,229.49999999999999289,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:06:17',0.0,1,1,0);
+INSERT INTO measurements VALUES(297,1.0,0.0,0.0,2.0,0.0,0.0,3.0,4.0,5.0,'2018-03-02 16:06:41',0.0,1,1,0);
+INSERT INTO measurements VALUES(298,229.30000000000001492,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:06:48',0.0,1,1,0);
+INSERT INTO measurements VALUES(299,229.4000000000000039,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:07:18',0.0,1,1,0);
+INSERT INTO measurements VALUES(300,1.0,0.0,0.0,2.0,0.0,0.0,3.0,4.0,5.0,'2018-03-02 16:07:30',0.0,1,1,0);
+INSERT INTO measurements VALUES(301,229.80000000000000426,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:07:49',0.0,1,2,0);
+INSERT INTO measurements VALUES(302,1.0,0.0,0.0,2.0,0.0,0.0,3.0,4.0,5.0,'2018-03-02 16:07:56',0.0,1,2,0);
+INSERT INTO measurements VALUES(303,229.49999999999999289,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:08:19',0.0,1,1,0);
+INSERT INTO measurements VALUES(304,229.59999999999998188,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:08:50',0.0,1,1,0);
+INSERT INTO measurements VALUES(305,229.49999999999999289,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:09:20',0.0,1,1,0);
+INSERT INTO measurements VALUES(306,229.4000000000000039,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:09:51',0.0,1,2,0);
+INSERT INTO measurements VALUES(307,229.4000000000000039,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:10:21',0.0,1,1,0);
+INSERT INTO measurements VALUES(308,229.4000000000000039,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:10:52',0.0,1,1,0);
+INSERT INTO measurements VALUES(309,229.30000000000001492,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:11:22',0.0,1,2,0);
+INSERT INTO measurements VALUES(310,229.49999999999999289,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:11:53',0.0,1,1,0);
+INSERT INTO measurements VALUES(311,229.49999999999999289,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:12:23',0.0,1,2,0);
+INSERT INTO measurements VALUES(312,229.69999999999997086,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:12:54',0.0,1,1,0);
+INSERT INTO measurements VALUES(313,229.69999999999997086,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:13:24',0.0,1,2,0);
+INSERT INTO measurements VALUES(314,229.30000000000001492,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:13:55',0.0,1,1,0);
+INSERT INTO measurements VALUES(315,229.49999999999999289,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:14:25',0.0,1,1,0);
+INSERT INTO measurements VALUES(316,229.59999999999998188,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:14:56',0.0,1,2,0);
+INSERT INTO measurements VALUES(317,229.69999999999997086,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:15:26',0.0,1,2,0);
+INSERT INTO measurements VALUES(318,229.4000000000000039,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:15:57',0.0,1,1,0);
+INSERT INTO measurements VALUES(319,229.4000000000000039,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:16:27',0.0,1,1,0);
+INSERT INTO measurements VALUES(320,229.49999999999999289,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:16:58',0.0,1,1,0);
+INSERT INTO measurements VALUES(321,229.19999999999998152,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:17:28',0.0,1,1,0);
+INSERT INTO measurements VALUES(322,229.19999999999998152,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:17:59',0.0,1,1,0);
+INSERT INTO measurements VALUES(323,229.09999999999999253,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:18:29',0.0,1,2,0);
+INSERT INTO measurements VALUES(324,229.30000000000001492,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:19:00',0.0,1,2,0);
+INSERT INTO measurements VALUES(325,229.49999999999999289,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:19:30',0.0,1,1,0);
+INSERT INTO measurements VALUES(326,229.4000000000000039,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:20:01',0.0,1,2,0);
+INSERT INTO measurements VALUES(327,229.49999999999999289,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:20:31',0.0,1,1,0);
+INSERT INTO measurements VALUES(328,229.19999999999998152,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:21:02',0.0,1,1,0);
+INSERT INTO measurements VALUES(329,229.30000000000001492,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:21:32',0.0,1,1,0);
+INSERT INTO measurements VALUES(330,229.4000000000000039,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:22:03',0.0,1,1,0);
+INSERT INTO measurements VALUES(331,229.19999999999998152,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:22:33',0.0,1,2,0);
+INSERT INTO measurements VALUES(332,229.4000000000000039,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:23:04',0.0,1,1,0);
+INSERT INTO measurements VALUES(333,229.4000000000000039,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:23:34',0.0,1,1,0);
+INSERT INTO measurements VALUES(334,229.30000000000001492,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:24:05',0.0,1,2,0);
+INSERT INTO measurements VALUES(335,229.49999999999999289,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:24:35',0.0,1,1,0);
+INSERT INTO measurements VALUES(336,229.4000000000000039,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:25:08',0.0,1,2,0);
+INSERT INTO measurements VALUES(337,229.00000000000000355,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:25:39',0.0,1,1,0);
+INSERT INTO measurements VALUES(338,229.19999999999998152,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:26:09',0.0,1,1,0);
+INSERT INTO measurements VALUES(339,229.30000000000001492,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:26:40',0.0,1,2,0);
+INSERT INTO measurements VALUES(340,229.59999999999998188,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:27:10',0.0,1,2,0);
+INSERT INTO measurements VALUES(341,229.89999999999999324,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:27:41',0.0,1,2,0);
+INSERT INTO measurements VALUES(342,229.99999999999998223,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:28:11',0.0,1,2,0);
+INSERT INTO measurements VALUES(343,230.20000000000000461,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:28:42',0.0,1,2,0);
+INSERT INTO measurements VALUES(344,230.20000000000000461,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:29:12',0.0,1,1,0);
+INSERT INTO measurements VALUES(345,230.10000000000001563,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:29:43',0.0,1,2,0);
+INSERT INTO measurements VALUES(346,229.99999999999998223,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:30:13',0.0,1,1,0);
+INSERT INTO measurements VALUES(347,230.20000000000000461,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:30:44',0.0,1,2,0);
+INSERT INTO measurements VALUES(348,230.50000000000001598,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:31:14',0.0,1,1,0);
+INSERT INTO measurements VALUES(349,230.10000000000001563,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:31:45',0.0,1,1,0);
+INSERT INTO measurements VALUES(350,230.2999999999999936,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:32:15',0.0,1,2,0);
+INSERT INTO measurements VALUES(351,229.80000000000000426,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:32:46',0.0,1,2,0);
+INSERT INTO measurements VALUES(352,229.99999999999998223,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:33:16',0.0,1,1,0);
+INSERT INTO measurements VALUES(353,230.2999999999999936,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:33:49',0.0,1,1,0);
+INSERT INTO measurements VALUES(354,230.10000000000001563,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:34:20',0.0,1,2,0);
+INSERT INTO measurements VALUES(355,230.10000000000001563,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.039999999999995594,'2018-03-02 16:34:50',0.0,1,1,0);
+INSERT INTO measurements VALUES(356,229.89999999999999324,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:35:21',0.0,1,2,0);
+INSERT INTO measurements VALUES(357,229.89999999999999324,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:35:51',0.0,1,2,0);
+INSERT INTO measurements VALUES(358,230.400000000000027,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:36:22',0.0,1,2,0);
+INSERT INTO measurements VALUES(359,230.50000000000001598,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:36:52',0.0,1,1,0);
+INSERT INTO measurements VALUES(360,230.50000000000001598,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:37:23',0.0,1,1,0);
+INSERT INTO measurements VALUES(361,230.20000000000000461,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:37:56',0.0,1,1,0);
+INSERT INTO measurements VALUES(362,230.2999999999999936,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:38:26',0.0,1,1,0);
+INSERT INTO measurements VALUES(363,230.50000000000001598,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:38:57',0.0,1,1,0);
+INSERT INTO measurements VALUES(364,230.400000000000027,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:39:28',0.0,1,1,0);
+INSERT INTO measurements VALUES(365,230.50000000000001598,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:39:58',0.0,1,1,0);
+INSERT INTO measurements VALUES(366,230.20000000000000461,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:40:29',0.0,1,1,0);
+INSERT INTO measurements VALUES(367,230.20000000000000461,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:41:01',0.0,1,1,0);
+INSERT INTO measurements VALUES(368,230.20000000000000461,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:41:32',0.0,1,1,0);
+INSERT INTO measurements VALUES(369,230.10000000000001563,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:42:02',0.0,1,1,0);
+INSERT INTO measurements VALUES(370,230.2999999999999936,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:42:33',0.0,1,1,0);
+INSERT INTO measurements VALUES(371,230.20000000000000461,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:43:03',0.0,1,2,0);
+INSERT INTO measurements VALUES(372,230.2999999999999936,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:43:34',0.0,1,1,0);
+INSERT INTO measurements VALUES(373,229.89999999999999324,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:44:04',0.0,1,1,0);
+INSERT INTO measurements VALUES(374,230.10000000000001563,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:44:37',0.0,1,1,0);
+INSERT INTO measurements VALUES(375,230.2999999999999936,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:45:08',0.0,1,2,0);
+INSERT INTO measurements VALUES(376,229.99999999999998223,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:45:38',0.0,1,1,0);
+INSERT INTO measurements VALUES(377,229.99999999999998223,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:46:09',0.0,1,1,0);
+INSERT INTO measurements VALUES(378,229.89999999999999324,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:46:39',0.0,1,1,0);
+INSERT INTO measurements VALUES(379,230.20000000000000461,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:48:26',0.0,1,2,0);
+INSERT INTO measurements VALUES(380,230.50000000000001598,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.039999999999995594,'2018-03-02 16:48:56',0.0,1,1,0);
+INSERT INTO measurements VALUES(381,230.400000000000027,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.039999999999995594,'2018-03-02 16:49:27',0.0,1,1,0);
+INSERT INTO measurements VALUES(382,230.50000000000001598,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:49:57',0.0,1,1,0);
+INSERT INTO measurements VALUES(383,230.400000000000027,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:50:28',0.0,1,2,0);
+INSERT INTO measurements VALUES(384,230.20000000000000461,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:50:58',0.0,1,1,0);
+INSERT INTO measurements VALUES(385,230.2999999999999936,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:51:29',0.0,1,2,0);
+INSERT INTO measurements VALUES(386,230.50000000000001598,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:51:59',0.0,1,2,0);
+INSERT INTO measurements VALUES(387,230.2999999999999936,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:52:30',0.0,1,1,0);
+INSERT INTO measurements VALUES(388,230.2999999999999936,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:53:00',0.0,1,2,0);
+INSERT INTO measurements VALUES(389,230.60000000000000497,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:53:31',0.0,1,2,0);
+INSERT INTO measurements VALUES(390,230.400000000000027,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:54:01',0.0,1,2,0);
+INSERT INTO measurements VALUES(391,230.2999999999999936,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:54:32',0.0,1,2,0);
+INSERT INTO measurements VALUES(392,230.20000000000000461,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:55:02',0.0,1,2,0);
+INSERT INTO measurements VALUES(393,230.2999999999999936,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:55:33',0.0,1,1,0);
+INSERT INTO measurements VALUES(394,230.20000000000000461,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:56:03',0.0,1,1,0);
+INSERT INTO measurements VALUES(395,230.50000000000001598,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:56:34',0.0,1,1,0);
+INSERT INTO measurements VALUES(396,230.69999999999999396,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:57:04',0.0,1,1,0);
+INSERT INTO measurements VALUES(397,230.400000000000027,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:57:35',0.0,1,2,0);
+INSERT INTO measurements VALUES(398,230.50000000000001598,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:58:05',0.0,1,1,0);
+INSERT INTO measurements VALUES(399,230.2999999999999936,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 16:58:36',0.0,1,2,0);
+INSERT INTO measurements VALUES(400,230.10000000000001563,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:59:06',0.0,1,1,0);
+INSERT INTO measurements VALUES(401,229.80000000000000426,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 16:59:37',0.0,1,1,0);
+INSERT INTO measurements VALUES(402,229.80000000000000426,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:00:07',0.0,1,1,0);
+INSERT INTO measurements VALUES(403,229.69999999999997086,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:00:38',0.0,1,1,0);
+INSERT INTO measurements VALUES(404,229.69999999999997086,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.039999999999995594,'2018-03-02 17:01:08',0.0,1,1,0);
+INSERT INTO measurements VALUES(405,229.4000000000000039,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.039999999999995594,'2018-03-02 17:01:39',0.0,1,1,0);
+INSERT INTO measurements VALUES(406,229.4000000000000039,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.039999999999995594,'2018-03-02 17:02:09',0.0,1,1,0);
+INSERT INTO measurements VALUES(407,229.09999999999999253,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.039999999999995594,'2018-03-02 17:02:40',0.0,1,2,0);
+INSERT INTO measurements VALUES(408,229.30000000000001492,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:03:10',0.0,1,1,0);
+INSERT INTO measurements VALUES(409,229.19999999999998152,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.039999999999995594,'2018-03-02 17:03:41',0.0,1,1,0);
+INSERT INTO measurements VALUES(410,229.30000000000001492,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.039999999999995594,'2018-03-02 17:04:11',0.0,1,1,0);
+INSERT INTO measurements VALUES(411,229.19999999999998152,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:04:42',0.0,1,2,0);
+INSERT INTO measurements VALUES(412,229.30000000000001492,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.039999999999995594,'2018-03-02 17:05:12',0.0,1,2,0);
+INSERT INTO measurements VALUES(413,229.00000000000000355,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.039999999999995594,'2018-03-02 17:05:43',0.0,1,1,0);
+INSERT INTO measurements VALUES(414,229.09999999999999253,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:06:13',0.0,1,2,0);
+INSERT INTO measurements VALUES(415,228.90000000000001456,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:06:44',0.0,1,2,0);
+INSERT INTO measurements VALUES(416,229.19999999999998152,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:07:15',0.0,1,1,0);
+INSERT INTO measurements VALUES(417,229.30000000000001492,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:07:45',0.0,1,1,0);
+INSERT INTO measurements VALUES(418,229.30000000000001492,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:08:16',0.0,1,1,0);
+INSERT INTO measurements VALUES(419,229.69999999999997086,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:08:46',0.0,1,1,0);
+INSERT INTO measurements VALUES(420,229.30000000000001492,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:09:17',0.0,1,1,0);
+INSERT INTO measurements VALUES(421,228.90000000000001456,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:09:47',0.0,1,1,0);
+INSERT INTO measurements VALUES(422,228.80000000000002557,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:10:18',0.0,1,2,0);
+INSERT INTO measurements VALUES(423,229.09999999999999253,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:10:48',0.0,1,2,0);
+INSERT INTO measurements VALUES(424,229.00000000000000355,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 17:11:19',0.0,1,1,0);
+INSERT INTO measurements VALUES(425,229.19999999999998152,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:11:49',0.0,1,1,0);
+INSERT INTO measurements VALUES(426,229.19999999999998152,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 17:12:20',0.0,1,2,0);
+INSERT INTO measurements VALUES(427,229.00000000000000355,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 17:12:50',0.0,1,1,0);
+INSERT INTO measurements VALUES(428,229.19999999999998152,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-02 17:13:21',0.0,1,1,0);
+INSERT INTO measurements VALUES(429,229.00000000000000355,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:13:51',0.0,1,1,0);
+INSERT INTO measurements VALUES(430,229.09999999999999253,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:14:22',0.0,1,1,0);
+INSERT INTO measurements VALUES(431,229.30000000000001492,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:14:52',0.0,1,1,0);
+INSERT INTO measurements VALUES(432,229.30000000000001492,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:15:23',0.0,1,1,0);
+INSERT INTO measurements VALUES(433,229.30000000000001492,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.039999999999995594,'2018-03-02 17:15:53',0.0,1,1,0);
+INSERT INTO measurements VALUES(434,229.30000000000001492,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.039999999999995594,'2018-03-02 17:16:24',0.0,1,2,0);
+INSERT INTO measurements VALUES(435,229.09999999999999253,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:16:54',0.0,1,2,0);
+INSERT INTO measurements VALUES(436,229.59999999999998188,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.039999999999995594,'2018-03-02 17:17:25',0.0,1,2,0);
+INSERT INTO measurements VALUES(437,229.59999999999998188,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:17:55',0.0,1,1,0);
+INSERT INTO measurements VALUES(438,229.4000000000000039,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:18:26',0.0,1,1,0);
+INSERT INTO measurements VALUES(439,229.4000000000000039,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:18:56',0.0,1,1,0);
+INSERT INTO measurements VALUES(440,229.30000000000001492,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.039999999999995594,'2018-03-02 17:19:27',0.0,1,2,0);
+INSERT INTO measurements VALUES(441,229.30000000000001492,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.039999999999995594,'2018-03-02 17:19:57',0.0,1,1,0);
+INSERT INTO measurements VALUES(442,229.49999999999999289,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:20:28',0.0,1,2,0);
+INSERT INTO measurements VALUES(443,229.4000000000000039,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:20:58',0.0,1,1,0);
+INSERT INTO measurements VALUES(444,229.19999999999998152,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:21:29',0.0,1,1,0);
+INSERT INTO measurements VALUES(445,229.30000000000001492,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:21:59',0.0,1,1,0);
+INSERT INTO measurements VALUES(446,229.19999999999998152,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:22:30',0.0,1,1,0);
+INSERT INTO measurements VALUES(447,229.4000000000000039,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:23:00',0.0,1,1,0);
+INSERT INTO measurements VALUES(448,229.59999999999998188,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:23:31',0.0,1,2,0);
+INSERT INTO measurements VALUES(449,229.19999999999998152,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:24:01',0.0,1,1,0);
+INSERT INTO measurements VALUES(450,229.49999999999999289,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:24:32',0.0,1,2,0);
+INSERT INTO measurements VALUES(451,229.89999999999999324,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:25:02',0.0,1,1,0);
+INSERT INTO measurements VALUES(452,229.59999999999998188,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-02 17:25:33',0.0,1,1,0);
+INSERT INTO measurements VALUES(453,1.0,0.0,0.0,2.0,0.0,0.0,3.0,4.0,5.0,'2018-03-09 09:24:50',0.0,1,2,0);
+INSERT INTO measurements VALUES(454,1.0,0.0,0.0,2.0,0.0,0.0,3.0,4.0,5.0,'2018-03-09 09:26:11',0.0,1,2,0);
+INSERT INTO measurements VALUES(455,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-09 09:27:21',0.0,1,2,0);
+INSERT INTO measurements VALUES(456,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-09 09:27:51',0.0,1,2,0);
+INSERT INTO measurements VALUES(457,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-09 09:28:22',0.0,1,2,0);
+INSERT INTO measurements VALUES(458,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-09 09:28:52',0.0,1,2,0);
+INSERT INTO measurements VALUES(459,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-09 09:29:23',0.0,1,1,0);
+INSERT INTO measurements VALUES(460,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-09 09:29:53',0.0,1,2,0);
+INSERT INTO measurements VALUES(461,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-09 09:30:24',0.0,1,2,0);
+INSERT INTO measurements VALUES(462,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-09 09:30:54',0.0,1,1,0);
+INSERT INTO measurements VALUES(463,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-09 09:31:25',0.0,1,2,0);
+INSERT INTO measurements VALUES(464,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-09 09:31:55',0.0,1,1,0);
+INSERT INTO measurements VALUES(465,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,'2018-03-09 09:32:26',0.0,1,1,0);
+INSERT INTO measurements VALUES(466,230.69999999999999396,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:32:56',0.0,1,1,0);
+INSERT INTO measurements VALUES(467,231.40000000000000568,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:33:27',0.0,1,2,0);
+INSERT INTO measurements VALUES(468,231.49999999999999467,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:33:57',0.0,1,1,0);
+INSERT INTO measurements VALUES(469,231.1999999999999833,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-09 09:34:28',0.0,1,2,0);
+INSERT INTO measurements VALUES(470,231.1999999999999833,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-09 09:34:58',0.0,1,1,0);
+INSERT INTO measurements VALUES(471,231.09999999999999431,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:35:29',0.0,1,2,0);
+INSERT INTO measurements VALUES(472,231.40000000000000568,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:35:59',0.0,1,1,0);
+INSERT INTO measurements VALUES(473,231.59999999999998365,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:36:30',0.0,1,2,0);
+INSERT INTO measurements VALUES(474,231.59999999999998365,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:37:00',0.0,1,2,0);
+INSERT INTO measurements VALUES(475,231.59999999999998365,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:37:31',0.0,1,2,0);
+INSERT INTO measurements VALUES(476,231.80000000000000603,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:38:01',0.0,1,1,0);
+INSERT INTO measurements VALUES(477,231.49999999999999467,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:38:32',0.0,1,2,0);
+INSERT INTO measurements VALUES(478,231.30000000000001669,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:39:03',0.0,1,1,0);
+INSERT INTO measurements VALUES(479,231.49999999999999467,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:39:33',0.0,1,1,0);
+INSERT INTO measurements VALUES(480,231.89999999999999502,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:40:04',0.0,1,1,0);
+INSERT INTO measurements VALUES(481,231.99999999999998401,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.039999999999995594,'2018-03-09 09:40:34',0.0,1,2,0);
+INSERT INTO measurements VALUES(482,231.80000000000000603,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.039999999999995594,'2018-03-09 09:41:05',0.0,1,2,0);
+INSERT INTO measurements VALUES(483,231.49999999999999467,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:41:35',0.0,1,1,0);
+INSERT INTO measurements VALUES(484,231.69999999999997264,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.039999999999995594,'2018-03-09 09:42:06',0.0,1,2,0);
+INSERT INTO measurements VALUES(485,231.99999999999998401,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:42:36',0.0,1,2,0);
+INSERT INTO measurements VALUES(486,231.99999999999998401,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:43:07',0.0,1,2,0);
+INSERT INTO measurements VALUES(487,232.39999999999998436,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:43:37',0.0,1,2,0);
+INSERT INTO measurements VALUES(488,232.29999999999999538,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:44:08',0.0,1,1,0);
+INSERT INTO measurements VALUES(489,232.39999999999998436,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-09 09:44:39',0.0,1,2,0);
+INSERT INTO measurements VALUES(490,232.39999999999998436,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:45:09',0.0,1,2,0);
+INSERT INTO measurements VALUES(491,232.60000000000000675,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:45:40',0.0,1,2,0);
+INSERT INTO measurements VALUES(492,232.09999999999997299,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:46:10',0.0,1,2,0);
+INSERT INTO measurements VALUES(493,231.69999999999997264,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:46:41',0.0,1,1,0);
+INSERT INTO measurements VALUES(494,231.89999999999999502,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:47:11',0.0,1,1,0);
+INSERT INTO measurements VALUES(495,231.59999999999998365,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:47:42',0.0,1,1,0);
+INSERT INTO measurements VALUES(496,231.59999999999998365,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:48:12',0.0,1,1,0);
+INSERT INTO measurements VALUES(497,232.09999999999997299,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:48:43',0.0,1,1,0);
+INSERT INTO measurements VALUES(498,232.09999999999997299,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:49:13',0.0,1,1,0);
+INSERT INTO measurements VALUES(499,231.89999999999999502,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:49:44',0.0,1,1,0);
+INSERT INTO measurements VALUES(500,231.59999999999998365,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-09 09:50:14',0.0,1,2,0);
+INSERT INTO measurements VALUES(501,231.49999999999999467,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:50:45',0.0,1,1,0);
+INSERT INTO measurements VALUES(502,231.80000000000000603,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-09 09:51:15',0.0,1,2,0);
+INSERT INTO measurements VALUES(503,232.09999999999997299,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.039999999999995594,'2018-03-09 09:51:46',0.0,1,2,0);
+INSERT INTO measurements VALUES(504,232.39999999999998436,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-09 09:52:16',0.0,1,1,0);
+INSERT INTO measurements VALUES(505,232.20000000000000639,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-09 09:52:47',0.0,1,2,0);
+INSERT INTO measurements VALUES(506,231.69999999999997264,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:53:17',0.0,1,2,0);
+INSERT INTO measurements VALUES(507,231.80000000000000603,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:53:48',0.0,1,1,0);
+INSERT INTO measurements VALUES(508,231.89999999999999502,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:54:19',0.0,1,1,0);
+INSERT INTO measurements VALUES(509,231.80000000000000603,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:54:49',0.0,1,2,0);
+INSERT INTO measurements VALUES(510,231.09999999999999431,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:55:20',0.0,1,1,0);
+INSERT INTO measurements VALUES(511,231.40000000000000568,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:55:50',0.0,1,1,0);
+INSERT INTO measurements VALUES(512,230.69999999999999396,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:56:21',0.0,1,2,0);
+INSERT INTO measurements VALUES(513,231.59999999999998365,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:56:51',0.0,1,1,0);
+INSERT INTO measurements VALUES(514,231.89999999999999502,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:57:22',0.0,1,2,0);
+INSERT INTO measurements VALUES(515,231.59999999999998365,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:57:52',0.0,1,1,0);
+INSERT INTO measurements VALUES(516,232.09999999999997299,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:58:23',0.0,1,1,0);
+INSERT INTO measurements VALUES(517,231.00000000000000532,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:58:53',0.0,1,1,0);
+INSERT INTO measurements VALUES(518,231.69999999999997264,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 09:59:24',0.0,1,1,0);
+INSERT INTO measurements VALUES(519,231.80000000000000603,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.039999999999995594,'2018-03-09 09:59:54',0.0,1,2,0);
+INSERT INTO measurements VALUES(520,231.99999999999998401,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 10:00:25',0.0,1,2,0);
+INSERT INTO measurements VALUES(521,231.80000000000000603,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 10:00:55',0.0,1,2,0);
+INSERT INTO measurements VALUES(522,231.80000000000000603,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 10:01:26',0.0,1,1,0);
+INSERT INTO measurements VALUES(523,231.80000000000000603,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-09 10:01:56',0.0,1,1,0);
+INSERT INTO measurements VALUES(524,232.09999999999997299,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-09 10:02:27',0.0,1,1,0);
+INSERT INTO measurements VALUES(525,232.50000000000001776,0.0,0.0,0.0,0.0,0.0,0.0,0.0,50.0,'2018-03-09 10:02:57',0.0,1,2,0);
+INSERT INTO measurements VALUES(526,232.29999999999999538,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-09 10:03:28',0.0,1,1,0);
+INSERT INTO measurements VALUES(527,232.20000000000000639,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-09 10:03:59',0.0,1,1,0);
+INSERT INTO measurements VALUES(528,231.99999999999998401,0.0,0.0,0.0,0.0,0.0,0.0,0.0,49.950000000000001065,'2018-03-09 10:04:29',0.0,1,1,0);
 CREATE TABLE users (
-  id int NOT NULL PRIMARY KEY,
+  id int PRIMARY KEY,
   name varchar NOT NULL,
   uidTag varchar NOT NULL UNIQUE CHECK (length(uidTag) <= 45),
   hanId int DEFAULT NULL UNIQUE,
@@ -1046,34 +1022,29 @@ CREATE TABLE users (
     ON DELETE NO ACTION
 	
 );
-
-INSERT INTO users (id, name, uidTag, hanId, LastStartOrStop, password, Remark, token, verified, email, admin) VALUES
-(1, 'Yuri van Geffen', '97 2D 39 5D', 567745, 54, '$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e', '567745', NULL, 1, '', 0),
-(2, 'Trung Nguyen', '04 4E 79 EA FA 4D 80', 567744, 1541761646, '$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e', '1234567890', NULL, 1, '', 0),
-(3, 'Test 1', 'BB 77 E3 59', 0, 1552305521, '$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e', '1234567890', NULL, 1, '', 0),
-(4, 'Test 2', '8E FD B3 89', 1, 1552375671, '$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e', NULL, NULL, 1, '', 0),
-(5, 'Trung Test', '66 FB 67 D9', 2, 1552383791, '$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e', '1234567890', NULL, 1, '', 0),
-(6, 'Menno Merts', '60 8A 8A 7C', 3, 1539787113, '$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e', '1234567890', NULL, 1, '', 0),
-(7, 'Dave Mateman', 'B6 06 DB DB', 4, 1552983009, '$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e', '1234567890', NULL, 1, '', 0),
-(8, 'Boes-Voet Maria', '60 AD 8F 7C', 5, 1550765473, '$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e', '1234567890', NULL, 1, '', 0),
-(9, 'Dave Mateman', '04 81 3C AA 92 31 80', 6, 0, '$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e', '1234567890', NULL, 1, '', 0),
-(10, 'Johan Brussen', '80 41 84 7C', 7, 0, '$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e', NULL, NULL, 1, '', 0),
-(11, 'Grijff Katja', 'B0 49 8A 7C', 8, 0, '$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e', '', NULL, 1, '', 0),
-(12, 'Johan Brussen', '04 1F 51 12 13 3B 80', 9, 0, '$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e', NULL, NULL, 1, '', 0),
-(13, 'Cornelissen Peter', '90 03 8F 7C', 10, 1552978846, '$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e', NULL, NULL, 1, '', 0),
-(14, 'New', '67 1C B6 89', 11, 1548666182, '$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e', NULL, NULL, 1, '', 0),
-(15, 'admin istrator', 'AA BB 11 22', 111111, 0, '$2a$10$NDKQjK/jInEG4kOc.v.Y3OaINkeiJc/veZdaNrOlKjI73CFvzga96', 'Dit is de admin', '623u617k1ja4', 1, 'oose.canterbury@gmail.com', 1),
-(17, 'Joris Huinink', '04 5F 26 F2 80 46 80', 597240, 0, '$2a$10$jwBkXER50miroKbNqQXC4uoKdXILrstTc8G/IOF2aIz61YpRgbNq6', NULL, '804z227p2qt6', 1, 'jorishuinink@hotmail.nl', 1),
-(18, 'Wouter Noordhof', '04 2C 22 52 8A 55 80', 605251, 0, '$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e', NULL, '366v228h8tu0', 1, 'wh.noordhof@student.han.nl', 1),
-(19, 'Dennis Gommer', '04 7F 79 5A 81 46 80', 598695, 0, '$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e', NULL, '846g428y7wc5', 1, 'Dennis.Gommer@outlook.com', 1),
-(20, 'Jasmijn Bartelds', '45 HJ 67 JH', 602898, 0, '$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e', NULL, '596y694a6my5', 1, 'jasmijn.bartelds@hotmail.nl', 0),
-(25, 'Joris Huinink', 'BB EE RR GG EE NN 55', 597241, 0, '$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e', NULL, '366b969x8za2', 1, 'jowjoris@gmail.com', 0),
-(26, 'Arne Brethouwer', 'EV DA TA BA SE', 234567, 0, '$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e', NULL, '154w504y9km5', 1, 'arne@ev-database.org', 0),
-(27, 'JAN VERBEEK', '66 53 D9 DB', 123445, 0, '$2a$10$6URffL6F2RHozY5wNX2WZ.mbO1OB8g9Nva0chM6Q72oM6sGIL8lni', NULL, '741d659r8az6', 1, 'jan.verbeek@han.nl', 0),
-(28, 'VINCENT WIEGEL ', '51 08 94 B9', 987654, 0, '$2a$10$My5DeZVe2DuEct8C83.JYO6u7IUPN.u/K/pK12vMxshzWUfOlSgzO', NULL, '681s331k2oz8', 1, 'vincent.wiegel@han.nl', 0),
-(29, 'RESERVE CARD', '96 A9 08 FD', 443159, 0, '$2a$10$QE7Hqk1OH7Q2L37W5QFpyOR.snK4.tTw0xZKL7AuRtixcuboz.Jd6', NULL, NULL, 1, 'NguyenXuan.Trung@han.nl', 0);
-
+INSERT INTO users VALUES(1,'Yuri van Geffen','97 2D 39 5D',567745,54,'$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e','567745',NULL,1,'',0,2);
+INSERT INTO users VALUES(2,'Trung Nguyen','04 4E 79 EA FA 4D 80',567744,1541761646,'$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e','1234567890',NULL,1,'',0,3);
+INSERT INTO users VALUES(3,'Test 1','BB 77 E3 59',0,1552305521,'$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e','1234567890',NULL,1,'',0,NULL);
+INSERT INTO users VALUES(4,'Test 2','8E FD B3 89',1,1552375671,'$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e',NULL,NULL,1,'',0,NULL);
+INSERT INTO users VALUES(5,'Trung Test','66 FB 67 D9',2,1552383791,'$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e','1234567890',NULL,1,'',0,NULL);
+INSERT INTO users VALUES(6,'Menno Merts','60 8A 8A 7C',3,1539787113,'$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e','1234567890',NULL,1,'',0,NULL);
+INSERT INTO users VALUES(7,'Dave Mateman','B6 06 DB DB',4,1552983009,'$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e','1234567890',NULL,1,'',0,NULL);
+INSERT INTO users VALUES(8,'Boes-Voet Maria','60 AD 8F 7C',5,1550765473,'$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e','1234567890',NULL,1,'',0,NULL);
+INSERT INTO users VALUES(9,'Dave Mateman','04 81 3C AA 92 31 80',6,0,'$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e','1234567890',NULL,1,'',0,NULL);
+INSERT INTO users VALUES(10,'Johan Brussen','80 41 84 7C',7,0,'$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e',NULL,NULL,1,'',0,NULL);
+INSERT INTO users VALUES(11,'Grijff Katja','B0 49 8A 7C',8,0,'$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e','',NULL,1,'',0,NULL);
+INSERT INTO users VALUES(12,'Johan Brussen','04 1F 51 12 13 3B 80',9,0,'$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e',NULL,NULL,1,'',0,NULL);
+INSERT INTO users VALUES(13,'Cornelissen Peter','90 03 8F 7C',10,1552978846,'$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e',NULL,NULL,1,'',0,NULL);
+INSERT INTO users VALUES(14,'New','67 1C B6 89',11,1548666182,'$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e',NULL,NULL,1,'',0,NULL);
+INSERT INTO users VALUES(15,'admin istrator','AA BB 11 22',111111,0,'$2a$10$NDKQjK/jInEG4kOc.v.Y3OaINkeiJc/veZdaNrOlKjI73CFvzga96','Dit is de admin','623u617k1ja4',1,'oose.canterbury@gmail.com',1,NULL);
+INSERT INTO users VALUES(17,'Joris Huinink','04 5F 26 F2 80 46 80',597240,0,'$2a$10$jwBkXER50miroKbNqQXC4uoKdXILrstTc8G/IOF2aIz61YpRgbNq6',NULL,'804z227p2qt6',1,'jorishuinink@hotmail.nl',1,NULL);
+INSERT INTO users VALUES(18,'Wouter Noordhof','04 2C 22 52 8A 55 80',605251,0,'$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e',NULL,'366v228h8tu0',1,'wh.noordhof@student.han.nl',1,NULL);
+INSERT INTO users VALUES(19,'Dennis Gommer','04 7F 79 5A 81 46 80',598695,0,'$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e',NULL,'846g428y7wc5',1,'Dennis.Gommer@outlook.com',1,NULL);
+INSERT INTO users VALUES(20,'Jasmijn Bartelds','45 HJ 67 JH',602898,0,'$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e',NULL,'596y694a6my5',1,'jasmijn.bartelds@hotmail.nl',0,NULL);
+INSERT INTO users VALUES(25,'Joris Huinink','BB EE RR GG EE NN 55',597241,0,'$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e',NULL,'366b969x8za2',1,'jowjoris@gmail.com',0,NULL);
+INSERT INTO users VALUES(26,'Arne Brethouwer','EV DA TA BA SE',234567,0,'$2a$10$oy4.e7SQXBihoXj6teo1VuILpO4b9wcGisF3R7CUC5LFz/esEZG6e',NULL,'154w504y9km5',1,'arne@ev-database.org',0,NULL);
+INSERT INTO users VALUES(27,'JAN VERBEEK','66 53 D9 DB',123445,0,'$2a$10$6URffL6F2RHozY5wNX2WZ.mbO1OB8g9Nva0chM6Q72oM6sGIL8lni',NULL,'741d659r8az6',1,'jan.verbeek@han.nl',0,NULL);
+INSERT INTO users VALUES(28,'VINCENT WIEGEL ','51 08 94 B9',987654,0,'$2a$10$My5DeZVe2DuEct8C83.JYO6u7IUPN.u/K/pK12vMxshzWUfOlSgzO',NULL,'681s331k2oz8',1,'vincent.wiegel@han.nl',0,NULL);
+INSERT INTO users VALUES(29,'RESERVE CARD','96 A9 08 FD',443159,0,'$2a$10$QE7Hqk1OH7Q2L37W5QFpyOR.snK4.tTw0xZKL7AuRtixcuboz.Jd6',NULL,NULL,1,'NguyenXuan.Trung@han.nl',0,NULL);
+INSERT INTO users VALUES(30,'testCard','1F 7E AC 29',443199,0,'$2a$10$QE7Hqk1OH7Q2L37W5QFpyOR.snK4.tTw0xZKL7AuRtixcuboz.Jd6',NULL,NULL,1,'cristian',0,NULL);
 COMMIT;
-
-PRAGMA foreign_keys=ON;
-
