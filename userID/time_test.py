@@ -2,8 +2,8 @@ import time
 import sqlite3 as lite
 import json
 
-current_time = int(time.time())
-print(time.strftime('%Y-%m-%d %T', time.localtime(current_time)) )
+current_time = 1605774041
+print(time.strftime('%Y-%m-%dT%T', time.localtime(current_time)) )
 #print(current_time[4:])
 #print(type(current_time))
 print(time.time() )

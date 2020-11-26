@@ -14,9 +14,20 @@ import os
 #broker = "tcp://127.0.0.1"
 broker = "broker.hivemq.com"
 #path = "./modbusData.db" #Use internal memory
-path = "/media/DATABASE/modbusData.db" #Use external memory
-con = lite.connect(path)
+path_local = "/media/DATABASE/modbusData.db" #Use external memory
+path = "/mnt/dav/Data/modbusData.db" #Use cloud storage
+
+try:
+    con = lite.connect(path)
+except:
+    con = lite.connect(path_local)
+    
 cur = con.cursor()
+
+cur.execute("SELECT * FROM meter5 ORDER BY rowid DESC LIMIT 1")
+dataRef1 = cur.fetchone()
+print(dataRef1)
+
 
 err_cnt = 0
 
@@ -27,8 +38,9 @@ def on_connect(client, userdata, flags, rc):
         client.connected_flag = True        
         err_cnt = 0
 
-        client.publish("HANevse/testmodbus", "Hello from Modbus function", 1,False)
-        print("Connected OK")
+        client.publish("HANevse/testmodbus", "Hello from Modbus function", 1, False)
+        print("Connected OK")       
+        
     else:
         print("Bad connection, RC = ", rc)
         client.bad_connection_flag = True
@@ -567,7 +579,7 @@ while True:
         ##This works perfectly with json instead of '%'
         #first
         #dataSend = [[data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11], data[1]]]
-        #all next appends
+        #all next appends '+='
         #dataSend.append([data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11], data[1]])
         #lastly
         #dataSend = json.dumps(dataSend)
@@ -587,9 +599,9 @@ while True:
       
         print("loop executed")
         #publish.single("HANevse/test2", "loop executed", qos= 2, retain=True, hostname=broker, auth={'username':"hanwatts", 'password':"controlsystem"})
-        #publish.single("HANevse/EnergyMeter", dataSend, qos= 2, retain=True, hostname=broker)#, auth={'username':"hanwatts", 'password':"controlsystem"})
+        #publish.single("HANevse/EnergyMeter", dataSend, qos= 2, retain=False, hostname=broker)#, auth={'username':"hanwatts", 'password':"controlsystem"})
         
-        client.publish("HANevse/EnergyMeter", dataSend,2 , True)
+        client.publish("HANevse/EnergyMeter", dataSend, 2, False)
     
     time_send += 1
     #time.sleep(30)
