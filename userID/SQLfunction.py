@@ -30,8 +30,8 @@ broker = "broker.hivemq.com"
 #broker = "localhost"
 
 #path = "./userList" #Use internal memory - old DB
-path_local = "/media/DATABASE/check_usertable.sqlite3" #Use external memory = new_user_table
-path = "/mnt/dav/Data/check_usertable.sqlite3" #Use cloud storage
+path_local = "/media/DATABASE/usertable.sqlite3" #Use external memory = new_user_table
+path = "/mnt/dav/Data/usertable.sqlite3" #Use cloud storage
 
 try:
     con = lite.connect(path)
@@ -161,31 +161,45 @@ def new_photonMeasure_callback(client, userdata, message):
     cur = con.cursor()
     data = json.loads(message.payload)    
     print(data)
-    #V1 = float(data.get("V1"))
-    #V2 = float(data.get("V2"))
-    #V3 = float(data.get("V3"))
-    #I1 = float(data.get("I1"))
-    #I2 = float(data.get("I2"))
-    #I3 = float(data.get("I3"))
+    V1 = float(data.get("V1"))
+    V2 = float(data.get("V2"))
+    V3 = float(data.get("V3"))
+    I1 = float(data.get("I1"))
+    I2 = float(data.get("I2"))
+    I3 = float(data.get("I3"))
     #P = float(data.get("P"))
     #E = float(data.get("E"))
-    #F = float(data.get("F"))
-    #Time = int(data.get("Time"))
-    #SocketID = int(data.get("SocketID"))
-    #UserID = str(data.get("UserID"))
-    #cur.execute("INSERT INTO measurements(userID, socketId, phase_voltage_L1, phase_voltage_L2, phase_voltage_L3, current_L1, current_L2, current_L3, active_power, energy, frequency, createdAt) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)",
-    #            (UserID, SocketID, V1, V2, V3, I1, I2, I3, P, E, F, Time))
-    # Or skip all .get() and do it in cur.execute
-   
-      
-    cur.execute("INSERT INTO measurements(userId, socketId, V1, V2, V3, I1, I2, I3, P, E, F, Time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)",
-                (str(data["UserID"]).upper(), int(data["SocketID"]), float(data["V1"]), float(data["V2"]), float(data["V3"]), float(data["I1"]), float(data["I2"]), float(data["I3"]), float(data["P"]), float(data["E"]), float(data["F"]), int(data["Time"]) ))
+    F = float(data.get("F"))
+    Time = int(data.get("Time"))
+    SocketID = int(data.get("SocketID"))
+    UserID = str(data.get("UserID"))
     
-    #For old-style database:
-    #cur.execute("INSERT INTO measurements(userId, socketId, phase_voltage_L1, phase_voltage_L2, phase_voltage_L3, current_L1, current_L2, current_L3, active_power, energy, frequency, createdAt) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)",
-     #           (str(data["UserID"]).upper(), int(data["SocketID"]), float(data["V1"]), float(data["V2"]), float(data["V3"]), float(data["I1"]), float(data["I2"]), float(data["I3"]), float(data["P"]), float(data["E"]), float(data["F"]), int(data["Time"]) ))
-   
-    #for readable timestamp use this at end of INSERT: time.strftime('%Y-%m-%d %T', time.localtime(int(data["Time"]) ))
+    cur.execute("SELECT name, rowid FROM users WHERE uidTag = ? ", (UserID,) )
+    dataUser = cur.fetchone()
+    try:
+        dataUser[1]
+    except:
+        print("WARNING: Unauthorized user charging at socket " + str(SocketID))
+        dataUser = ('unknown', 31)                
+    
+    cur.execute("SELECT carId FROM car_of_user WHERE userId = ? ", (dataUser[1],) )
+    carId = cur.fetchone()[0]        
+    
+    cur.execute("SELECT brand || ' ' || type FROM cars WHERE id = ? ", (carId,) )
+    carName = cur.fetchone()[0]
+    
+    cur.execute("INSERT INTO measurements(userId, userName, carId, carName, socketId, V1, V2, V3, I1, I2, I3, F, Time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                (UserID, dataUser[0], carId, carName, SocketID, V1, V2, V3, I1, I2, I3, F, Time))
+    
+    ##Insert with P and E measurements
+    #cur.execute("INSERT INTO measurements(userId, userName, carId, carName, socketId, V1, V2, V3, I1, I2, I3, P, E, F, Time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+    #            (UserID, dataUser[0], carId, carName, SocketID, V1, V2, V3, I1, I2, I3, P, E, F, Time))
+    
+    # Or skip all .get() and do it in cur.execute     
+    #cur.execute("INSERT INTO measurements(userId, socketId, V1, V2, V3, I1, I2, I3, P, E, F, Time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)",
+    #            (str(data["UserID"]).upper(), int(data["SocketID"]), float(data["V1"]), float(data["V2"]), float(data["V3"]), float(data["I1"]), float(data["I2"]), float(data["I3"]), float(data["P"]), float(data["E"]), float(data["F"]), int(data["Time"]) ))
+    
+   #for readable timestamp use this at end of INSERT: time.strftime('%Y-%m-%d %T', time.localtime(int(data["Time"]) ))
     
     con.commit()
 
@@ -221,7 +235,7 @@ def old_photonMeasure_callback(client, userdata, message):
 def send_email():
     con = lite.connect(path)
     cur = con.cursor()
-    cur.execute("SELECT email, rowid FROM users WHERE LastStartOrStop <= ? AND email <> '' AND mailed < 1 AND socketId > 0", ((str(int(time.time()) - DISCONNECT_TIME)),) )
+    cur.execute("SELECT email, rowid FROM users WHERE LastStartOrStop <= ? AND email <> '' AND mailed < 1 AND socketId IS NOT NULL", ((str(int(time.time()) - DISCONNECT_TIME)),) )
     dataRef = cur.fetchall()
     if dataRef is None:
         return
@@ -231,7 +245,8 @@ def send_email():
             server.sendmail(sender_email, element[0], email_message)
             cur.execute("UPDATE users SET mailed = 1 WHERE rowid=?", (element[1],))
             
-    cur.execute("UPDATE users SET mailed = 0 WHERE LastStartOrStop > ? AND mailed > 0 AND socketId IS NULL", ((str(int(time.time()) - DISCONNECT_TIME)),) ) 
+    #cur.execute("UPDATE users SET mailed = 0 WHERE LastStartOrStop > ? AND mailed > 0 AND socketId IS NULL", ((str(int(time.time()) - DISCONNECT_TIME)),) ) 
+    cur.execute("UPDATE users SET mailed = 0 WHERE mailed > 0 AND socketId IS NULL") 
     con.commit()
     
 

@@ -8,7 +8,7 @@ import paho.mqtt.publish as publish
 import sqlite3 as lite
 import sys
 import os
-#import json
+import json
 
 #broker = "localhost"
 #broker = "tcp://127.0.0.1"
@@ -16,6 +16,16 @@ broker = "broker.hivemq.com"
 #path = "./modbusData.db" #Use internal memory
 path_local = "/media/DATABASE/modbusData.db" #Use external memory
 path = "/mnt/dav/Data/modbusData.db" #Use cloud storage
+
+path_local_user = "/media/DATABASE/usertable.sqlite3" #Use external memory
+path_user = "/mnt/dav/Data/usertable.sqlite3" #Use cloud storage
+
+try:
+    con_user = lite.connect(path_user)
+except:
+    con_user = lite.connect(path_local_user)
+cur_user = con_user.cursor()
+
 
 try:
     con = lite.connect(path)
@@ -576,26 +586,36 @@ while True:
         data = cur.fetchone()
         dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[20])+'%'+str(data[1])+'%')
 
-        ##This works perfectly with json instead of '%'
-        #first
-        #dataSend = [[data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11], data[1]]]
-        #all next appends '+='
-        #dataSend.append([data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11], data[1]])
-        #lastly
+        ###This is the new message generator for I and number of used sockets only:
+#         cur.execute("SELECT I1, I2, I3 FROM meter3 ORDER BY No DESC LIMIT 1")
+#         data = cur.fetchone()
+#         dataSend = [[data[0], data[1], data[2]]]
+#         dataSend = {
+#             "I1":data[0],
+#             "I2":data[1],
+#             "I3":data[2],
+#             }
+#         cur_user.execute("SELECT socketId FROM users WHERE socketId IS NOT NULL")
+#         data = cur_user.fetchall()
+#         dataSend.update({"Sockets": len(data)})
+#         dataSend = json.dumps(dataSend)
+        
+        
+        
+        ##Sending all meter data works perfectly with json instead of '%'
+        ##first
+        #dataSend = [[data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[20], data[1]]]
+        ##all next appends '+='
+        #dataSend.append([data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[20], data[1]])
+        ##lastly
         #dataSend = json.dumps(dataSend)
         
-    #Examples of sent messages
+    #Example of sent message
     #0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%1602066287%
-    #0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0%   #Meter2 always shows time=0 for some reason?
+    #0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0%   #Meter2 always shows time=0 because it isnt connected
     #229.6%228.9%229.6%5.97%6.03%6.0%1350.0%1350.0%1350.0%50.0%1602066318%
     #0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%1602066318%
     #229.7%228.9%229.6%6.42%6.03%6.0%1440.0%1350.0%1350.0%50.0%1602066319%
-        
-    #0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%1602067570%
-    #0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0%
-    #230.3%229.3%230.1%13.86%13.86%13.86%3180.0%3150.0%3180.0%50.0%1602067568%
-    #0.0  %0.0  %0.0  %0.0  %0.0  %0.0  %0.0   %0.0   %0.0   %0.0 %1602067611%
-    #230.4%229.3%230.1%14.91%13.89%13.86%3420.0%3180.0%3180.0%50.0%1602067569%
       
         print("loop executed")
         #publish.single("HANevse/test2", "loop executed", qos= 2, retain=True, hostname=broker, auth={'username':"hanwatts", 'password':"controlsystem"})
