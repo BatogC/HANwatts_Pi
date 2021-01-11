@@ -20,23 +20,26 @@ path = "/mnt/dav/Data/modbusData.db" #Use cloud storage
 path_local_user = "/media/DATABASE/usertable.sqlite3" #Use external memory
 path_user = "/mnt/dav/Data/usertable.sqlite3" #Use cloud storage
 
+con_user_local = lite.connect(path_local_user)
+cur_user_local = con_user_local.cursor()
+
 try:
     con_user = lite.connect(path_user)
-except:
-    con_user = lite.connect(path_local_user)
-cur_user = con_user.cursor()
+    cur_user = con_user.cursor()
+except Exception as e:
+    print (e)
 
+con_local = lite.connect(path_local)
+cur_local = con_local.cursor()
 
 try:
     con = lite.connect(path)
-except:
-    con = lite.connect(path_local)
-    
-cur = con.cursor()
-
-cur.execute("SELECT * FROM meter5 ORDER BY rowid DESC LIMIT 1")
-dataRef1 = cur.fetchone()
-print(dataRef1)
+    cur = con.cursor()
+    cur.execute("SELECT * FROM Grid ORDER BY rowid DESC LIMIT 1")
+    dataRef1 = cur.fetchone()
+    print(dataRef1)
+except Exception as e:
+    print (e)
 
 
 err_cnt = 0
@@ -117,7 +120,12 @@ while True:
             time.sleep(10)
             client.connect_async(broker, 1883, 60)
             client.loop_start()
-            
+    try:
+        con = lite.connect(path)
+        cur = con.cursor()
+    except Exception as e:
+        print (e)
+    
     print("E1:")
     #Read PT1, PT2, CT1:
     readingPT1 = meter1.readPT1()
@@ -190,12 +198,25 @@ while True:
         if (reading == 0):
             current_time = time.ctime(time.time())
             Message = current_time + """
-        F: %.2f
+        F: %.3f
         """%(meter1._MIC1__F)
             print(Message)
         else:
             print("Measuring failed. Error code: " + str(reading))
-        cur.execute("INSERT INTO meter1(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, PF1, PF2, PF3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        try:
+            cur.execute("INSERT INTO Demonstration(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, PF1, PF2, PF3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                        (int(round(time.time())),
+                         meter1._MIC1__V1, meter1._MIC1__V2, meter1._MIC1__V3,
+                         meter1._MIC1__I1, meter1._MIC1__I2, meter1._MIC1__I3,
+                         meter1._MIC1__P1, meter1._MIC1__P2, meter1._MIC1__P3,
+                         meter1._MIC1__Q1, meter1._MIC1__Q2, meter1._MIC1__Q3,
+                         meter1._MIC1__S1, meter1._MIC1__S2, meter1._MIC1__S3,
+                         meter1._MIC1__PF1, meter1._MIC1__PF2, meter1._MIC1__PF3,
+                         meter1._MIC1__F))
+            con.commit()
+        except  Exception as e:
+             print (e)
+        cur_local.execute("INSERT INTO Demonstration(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, PF1, PF2, PF3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (int(round(time.time())),
                      meter1._MIC1__V1, meter1._MIC1__V2, meter1._MIC1__V3,
                      meter1._MIC1__I1, meter1._MIC1__I2, meter1._MIC1__I3,
@@ -204,7 +225,7 @@ while True:
                      meter1._MIC1__S1, meter1._MIC1__S2, meter1._MIC1__S3,
                      meter1._MIC1__PF1, meter1._MIC1__PF2, meter1._MIC1__PF3,
                      meter1._MIC1__F))
-        con.commit()
+        con_local.commit()
     else:
         print(">>Reading PT1, PT2, CT1 failed")
     #Read meter 2----------------------------------------------
@@ -280,12 +301,25 @@ while True:
         if (reading == 0):
             current_time = time.ctime(time.time())
             Message = current_time + """
-        F: %.2f
+        F: %.3f
         """%(meter2._MIC1__F)
             print(Message)
         else:
             print("Measuring failed. Error code: " + str(reading))
-        cur.execute("INSERT INTO meter2(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, PF1, PF2, PF3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        try:
+            cur.execute("INSERT INTO Reserve(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, PF1, PF2, PF3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                        (int(round(time.time())),
+                         meter2._MIC1__V1, meter2._MIC1__V2, meter2._MIC1__V3,
+                         meter2._MIC1__I1, meter2._MIC1__I2, meter2._MIC1__I3,
+                         meter2._MIC1__P1, meter2._MIC1__P2, meter2._MIC1__P3,
+                         meter2._MIC1__Q1, meter2._MIC1__Q2, meter2._MIC1__Q3,
+                         meter2._MIC1__S1, meter2._MIC1__S2, meter2._MIC1__S3,
+                         meter2._MIC1__PF1, meter2._MIC1__PF2, meter2._MIC1__PF3,
+                         meter2._MIC1__F))
+            con.commit()
+        except  Exception as e:
+            print (e)
+        cur_local.execute("INSERT INTO Reserve(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, PF1, PF2, PF3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (int(round(time.time())),
                      meter2._MIC1__V1, meter2._MIC1__V2, meter2._MIC1__V3,
                      meter2._MIC1__I1, meter2._MIC1__I2, meter2._MIC1__I3,
@@ -294,7 +328,7 @@ while True:
                      meter2._MIC1__S1, meter2._MIC1__S2, meter2._MIC1__S3,
                      meter2._MIC1__PF1, meter2._MIC1__PF2, meter2._MIC1__PF3,
                      meter2._MIC1__F))
-        con.commit()
+        con_local.commit()
     else:
         print(">>Reading PT1, PT2, CT1 failed")
     #Read meter 3----------------------------------------------
@@ -370,12 +404,25 @@ while True:
         if (reading == 0):
             current_time = time.ctime(time.time())
             Message = current_time + """
-        F: %.2f
+        F: %.3f
         """%(meter3._MIC1__F)
             print(Message)
         else:
             print("Measuring failed. Error code: " + str(reading))
-        cur.execute("INSERT INTO meter3(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, PF1, PF2, PF3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        try:
+            cur.execute("INSERT INTO PV(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, PF1, PF2, PF3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                        (int(round(time.time())),
+                         meter3._MIC1__V1, meter3._MIC1__V2, meter3._MIC1__V3,
+                         meter3._MIC1__I1, meter3._MIC1__I2, meter3._MIC1__I3,
+                         meter3._MIC1__P1, meter3._MIC1__P2, meter3._MIC1__P3,
+                         meter3._MIC1__Q1, meter3._MIC1__Q2, meter3._MIC1__Q3,
+                         meter3._MIC1__S1, meter3._MIC1__S2, meter3._MIC1__S3,
+                         meter3._MIC1__PF1, meter3._MIC1__PF2, meter3._MIC1__PF3,
+                         meter3._MIC1__F))
+            con.commit()
+        except  Exception as e:
+             print (e)
+        cur_local.execute("INSERT INTO PV(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, PF1, PF2, PF3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (int(round(time.time())),
                      meter3._MIC1__V1, meter3._MIC1__V2, meter3._MIC1__V3,
                      meter3._MIC1__I1, meter3._MIC1__I2, meter3._MIC1__I3,
@@ -384,7 +431,7 @@ while True:
                      meter3._MIC1__S1, meter3._MIC1__S2, meter3._MIC1__S3,
                      meter3._MIC1__PF1, meter3._MIC1__PF2, meter3._MIC1__PF3,
                      meter3._MIC1__F))
-        con.commit()
+        con_local.commit()
     else:
         print(">>Reading PT1, PT2, CT1 failed")
     #Read meter 4----------------------------------------------
@@ -460,12 +507,25 @@ while True:
         if (reading == 0):
             current_time = time.ctime(time.time())
             Message = current_time + """
-        F: %.2f
+        F: %.3f
         """%(meter4._MIC1__F)
             print(Message)
         else:
             print("Measuring failed. Error code: " + str(reading))
-        cur.execute("INSERT INTO meter4(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, PF1, PF2, PF3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        try:
+            cur.execute("INSERT INTO Battery(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, PF1, PF2, PF3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                        (int(round(time.time())),
+                         meter4._MIC1__V1, meter4._MIC1__V2, meter4._MIC1__V3,
+                         meter4._MIC1__I1, meter4._MIC1__I2, meter4._MIC1__I3,
+                         meter4._MIC1__P1, meter4._MIC1__P2, meter4._MIC1__P3,
+                         meter4._MIC1__Q1, meter4._MIC1__Q2, meter4._MIC1__Q3,
+                         meter4._MIC1__S1, meter4._MIC1__S2, meter4._MIC1__S3,
+                         meter4._MIC1__PF1, meter4._MIC1__PF2, meter4._MIC1__PF3,
+                         meter4._MIC1__F))
+            con.commit()
+        except  Exception as e:
+             print (e)
+        cur_local.execute("INSERT INTO Battery(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, PF1, PF2, PF3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (int(round(time.time())),
                      meter4._MIC1__V1, meter4._MIC1__V2, meter4._MIC1__V3,
                      meter4._MIC1__I1, meter4._MIC1__I2, meter4._MIC1__I3,
@@ -474,7 +534,7 @@ while True:
                      meter4._MIC1__S1, meter4._MIC1__S2, meter4._MIC1__S3,
                      meter4._MIC1__PF1, meter4._MIC1__PF2, meter4._MIC1__PF3,
                      meter4._MIC1__F))
-        con.commit()
+        con_local.commit()
     else:
         print(">>Reading PT1, PT2, CT1 failed")
     #Read meter 5----------------------------------------------
@@ -550,12 +610,25 @@ while True:
         if (reading == 0):
             current_time = time.ctime(time.time())
             Message = current_time + """
-        F: %.2f
+        F: %.3f
         """%(meter5._MIC1__F)
             print(Message)
         else:
             print("Measuring failed. Error code: " + str(reading))
-        cur.execute("INSERT INTO meter5(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, PF1, PF2, PF3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        try:
+            cur.execute("INSERT INTO Grid(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, PF1, PF2, PF3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                        (int(round(time.time())),
+                         meter5._MIC1__V1, meter5._MIC1__V2, meter5._MIC1__V3,
+                         meter5._MIC1__I1, meter5._MIC1__I2, meter5._MIC1__I3,
+                         meter5._MIC1__P1, meter5._MIC1__P2, meter5._MIC1__P3,
+                         meter5._MIC1__Q1, meter5._MIC1__Q2, meter5._MIC1__Q3,
+                         meter5._MIC1__S1, meter5._MIC1__S2, meter5._MIC1__S3,
+                         meter5._MIC1__PF1, meter5._MIC1__PF2, meter5._MIC1__PF3,
+                         meter5._MIC1__F))
+            con.commit()
+        except  Exception as e:
+             print (e)
+        cur_local.execute("INSERT INTO Grid(Time, V1, V2, V3, I1, I2, I3, P1, P2, P3, Q1, Q2, Q3, S1, S2, S3, PF1, PF2, PF3, F) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     (int(round(time.time())),
                      meter5._MIC1__V1, meter5._MIC1__V2, meter5._MIC1__V3,
                      meter5._MIC1__I1, meter5._MIC1__I2, meter5._MIC1__I3,
@@ -564,41 +637,59 @@ while True:
                      meter5._MIC1__S1, meter5._MIC1__S2, meter5._MIC1__S3,
                      meter5._MIC1__PF1, meter5._MIC1__PF2, meter5._MIC1__PF3,
                      meter5._MIC1__F))
-        con.commit()
+        con_local.commit()
     else:
         print(">>Reading PT1, PT2, CT1 failed")
     #Send data to broker after every 2*30=60s
     if ((time_send%2)==0):
-        dataSend = ""
-        cur.execute("SELECT * FROM meter1 ORDER BY No DESC LIMIT 1")
-        data = cur.fetchone()
-        dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[20])+'%'+str(data[1])+'%')   
-        cur.execute("SELECT * FROM meter2 ORDER BY No DESC LIMIT 1")
-        data = cur.fetchone()
-        dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[20])+'%'+str(data[1])+'%')
-        cur.execute("SELECT * FROM meter3 ORDER BY No DESC LIMIT 1")
-        data = cur.fetchone()
-        dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[20])+'%'+str(data[1])+'%')
-        cur.execute("SELECT * FROM meter4 ORDER BY No DESC LIMIT 1")
-        data = cur.fetchone()
-        dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[20])+'%'+str(data[1])+'%')
-        cur.execute("SELECT * FROM meter5 ORDER BY No DESC LIMIT 1")
-        data = cur.fetchone()
-        dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[20])+'%'+str(data[1])+'%')
+#         dataSend = ""
+#         cur.execute("SELECT * FROM meter1 ORDER BY No DESC LIMIT 1")
+#         data = cur.fetchone()
+#         dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[20])+'%'+str(data[1])+'%')   
+#         cur.execute("SELECT * FROM meter2 ORDER BY No DESC LIMIT 1")
+#         data = cur.fetchone()
+#         dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[20])+'%'+str(data[1])+'%')
+#         cur.execute("SELECT * FROM meter3 ORDER BY No DESC LIMIT 1")
+#         data = cur.fetchone()
+#         dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[20])+'%'+str(data[1])+'%')
+#         cur.execute("SELECT * FROM meter4 ORDER BY No DESC LIMIT 1")
+#         data = cur.fetchone()
+#         dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[20])+'%'+str(data[1])+'%')
+#         cur.execute("SELECT * FROM meter5 ORDER BY No DESC LIMIT 1")
+#         data = cur.fetchone()
+#         dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[20])+'%'+str(data[1])+'%')
 
         ###This is the new message generator for I and number of used sockets only:
-#         cur.execute("SELECT I1, I2, I3 FROM meter3 ORDER BY No DESC LIMIT 1")
-#         data = cur.fetchone()
+        try:
+            cur.execute("SELECT I1, I2, I3 FROM PV ORDER BY No DESC LIMIT 1")
+            data = cur.fetchone()
+            setPoint = (data[0]+data[1]+data[2])
+        
 #         dataSend = [[data[0], data[1], data[2]]]
 #         dataSend = {
 #             "I1":data[0],
 #             "I2":data[1],
 #             "I3":data[2],
 #             }
-#         cur_user.execute("SELECT socketId FROM users WHERE socketId IS NOT NULL")
-#         data = cur_user.fetchall()
+            cur_user.execute("SELECT socketId FROM users WHERE socketId IS NOT NULL")
+            data = cur_user.fetchall()
+        except  Exception as e:
+            print (e)
+            cur_local.execute("SELECT I1, I2, I3 FROM PV ORDER BY No DESC LIMIT 1")
+            data = cur_local.fetchone()
+            setPoint = (data[0]+data[1]+data[2])
+            cur_user_local.execute("SELECT socketId FROM users WHERE socketId IS NOT NULL")
+            data = cur_user_local.fetchall()
 #         dataSend.update({"Sockets": len(data)})
-#         dataSend = json.dumps(dataSend)
+        try:
+            setPoint = int(setPoint / len(data) )
+        except:
+            setPoint = 0
+            
+        dataSend = {
+            "setPoint":setPoint,
+            }
+        dataSend = json.dumps(dataSend)
         
         
         
@@ -621,7 +712,7 @@ while True:
         #publish.single("HANevse/test2", "loop executed", qos= 2, retain=True, hostname=broker, auth={'username':"hanwatts", 'password':"controlsystem"})
         #publish.single("HANevse/EnergyMeter", dataSend, qos= 2, retain=False, hostname=broker)#, auth={'username':"hanwatts", 'password':"controlsystem"})
         
-        client.publish("HANevse/EnergyMeter", dataSend, 2, False)
+        client.publish("HANevse/energyMeter", dataSend, 2, False)
     
     time_send += 1
     #time.sleep(30)

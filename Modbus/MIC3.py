@@ -815,7 +815,7 @@ class MIC1:
         GPIO.output(self.__Control, GPIO.HIGH)
         ser.write(serial.to_bytes([self.__Address, 0x03, 0x01, 0x30, 0x00, 0x01, int(crc_Tx[3:],16), int(crc_Tx[1:3],16)]))
     
-        #There is a delay caused by the converter. The program must wait hbefore reading the result
+        #There is a delay caused by the converter. The program must wait before reading the result
         sleep(0.01)
     
         #Receive data

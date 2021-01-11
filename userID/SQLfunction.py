@@ -33,16 +33,17 @@ broker = "broker.hivemq.com"
 path_local = "/media/DATABASE/usertable.sqlite3" #Use external memory = new_user_table
 path = "/mnt/dav/Data/usertable.sqlite3" #Use cloud storage
 
+con_local = lite.connect(path_local)
+cur_local = con_local.cursor()
+
 try:
     con = lite.connect(path)
-except:
-    path = path_local
-    con = lite.connect(path)
-    
-cur = con.cursor()
-cur.execute("SELECT * FROM measurements ORDER BY rowid DESC LIMIT 1")
-dataRef1 = cur.fetchone()
-print(dataRef1)
+    cur = con.cursor()
+    cur.execute("SELECT * FROM measurements ORDER BY rowid DESC LIMIT 1")
+    dataRef1 = cur.fetchone()
+    print(dataRef1)
+except Exception as e:
+    print (e) 
 
 err_cnt = 0
 
@@ -88,8 +89,13 @@ def on_disconnect(client, userdata, rc):
 #     #print(dataSend)
 
 def update_callback(client, userdata, message):
-    con = lite.connect(path)
-    cur = con.cursor()
+    try:
+        con = lite.connect(path)
+        cur = con.cursor()
+    except Exception as e:
+        print (e)
+    con_local = lite.connect(path_local)
+    cur_local = con_local.cursor()
     data = json.loads(message.payload)
     print(data)
     
@@ -97,47 +103,72 @@ def update_callback(client, userdata, message):
     socketId = int(data.get("Charger"))
     StartTime = int(data.get("StartTime"))
     #print(UserId)
+    try:
+        cur.execute("SELECT LastStartOrStop, socketId, verified FROM users WHERE uidTag=? LIMIT 1", (UserId,))
+        dataUser = cur.fetchone() # returns a tuple
+    except Exception as e:
+        print (e)
+        cur_local.execute("SELECT LastStartOrStop, socketId, verified FROM users WHERE uidTag=? LIMIT 1", (UserId,))
+        dataUser = cur_local.fetchone() # returns a tuple
     
-    cur.execute("SELECT LastStartOrStop, socketId FROM users WHERE uidTag=? LIMIT 1", (UserId,))
-    dataUser = cur.fetchone() # returns a tuple
     dataSend = str(socketId) + ";"
-    
-    cur.execute("SELECT socketId FROM users WHERE socketId=? LIMIT 1", (socketId,))
-    socketUsed = cur.fetchone()
+    try:
+        cur.execute("SELECT socketId FROM users WHERE socketId=? LIMIT 1", (socketId,))
+        socketUsed = cur.fetchone()
+    except Exception as e:
+        print (e)
+        cur_local.execute("SELECT socketId FROM users WHERE socketId=? LIMIT 1", (socketId,))
+        socketUsed = cur_local.fetchone()
     #The socketUsed can be either None or the socket number, so parsing it can give error without check
     if socketUsed is not None:
         socketUsed = socketUsed[0]
         
     #This is the filter for checking and preparing the answer to the EV charger
-    if dataUser is not None: # if user ID is in list                       
-        if ((StartTime - dataUser[0]) >= 20): # if last swipe is over 20s ago
-            if (socketUsed == socketId): #if this socket is used now
-                if (socketId == dataUser[1]): # if user already uses this socket
-                    dataSend += "4" # successfully stop charging
-                    cur.execute("UPDATE users SET socketId=?, LastStartOrStop=? WHERE uidTag=?", (None, StartTime, UserId))
-                else:
-                    dataSend += "3" # socket is occupied by another user 
-            else: #if this socket is free
-                if dataUser[1] is None: #if user was not using any socket
-                    dataSend += "1" # successfully start new charge
-                    cur.execute("UPDATE users SET socketId=?, LastStartOrStop=? WHERE uidTag=?", (socketId, StartTime, UserId))
-                else:
-                    dataSend += "6" # user already at another socket
-        else: #if swiped less than 20s ago
-            if (socketUsed == socketId): #if this socket is used now
-                if (socketId == dataUser[1]): # if user already uses this socket
-                    dataSend += "5" # you just started using this socket less than 20s ago
-                else:
-                    dataSend += "3" # socket is occupied by another user
-            else: #if this socket is free
-                if dataUser[1] is None: #if user was not using any socket
-                    dataSend += "2" #charger is free, but you already swiped less than 20s ago
-                else:
-                    dataSend += "6"  # user already at another socket
+    if dataUser is not None: # if user ID is in list
+        if (dataUser[2] == "true"):
+            if ((StartTime - dataUser[0]) >= 20): # if last swipe is over 20s ago
+                if (socketUsed == socketId): #if this socket is used now
+                    if (socketId == dataUser[1]): # if user already uses this socket
+                        dataSend += "4" # successfully stop charging
+                        try:
+                            cur.execute("UPDATE users SET socketId=?, LastStartOrStop=? WHERE uidTag=?", (None, StartTime, UserId))             
+                        except Exception as e:
+                            print (e)
+                        finally:
+                            cur_local.execute("UPDATE users SET socketId=?, LastStartOrStop=? WHERE uidTag=?", (None, StartTime, UserId))
+                    else:
+                        dataSend += "3" # socket is occupied by another user 
+                else: #if this socket is free
+                    if dataUser[1] is None: #if user was not using any socket
+                        dataSend += "1" # successfully start new charge
+                        try:
+                            cur.execute("UPDATE users SET socketId=?, LastStartOrStop=? WHERE uidTag=?", (socketId, StartTime, UserId))
+                        except Exception as e:
+                            print (e)
+                        finally:
+                            cur_local.execute("UPDATE users SET socketId=?, LastStartOrStop=? WHERE uidTag=?", (socketId, StartTime, UserId))
+                    else:
+                        dataSend += "6" # user already at another socket
+            else: #if swiped less than 20s ago
+                if (socketUsed == socketId): #if this socket is used now
+                    if (socketId == dataUser[1]): # if user already uses this socket
+                        dataSend += "5" # you just started using this socket less than 20s ago
+                    else:
+                        dataSend += "3" # socket is occupied by another user
+                else: #if this socket is free
+                    if dataUser[1] is None: #if user was not using any socket
+                        dataSend += "2" #charger is free, but you already swiped less than 20s ago
+                    else:
+                        dataSend += "6"  # user already at another socket
+        else:
+             dataSend += "7" #user not verified by admin           
     else:
-        dataSend += "7" #user not in the userlist
-    
-    con.commit()
+        dataSend += "8" #user not in the userlist
+    try:
+        con.commit()
+    except Exception as e:
+        print (e)
+    con_local.commit()
     
     client.publish("HANevse/allowUser", dataSend, 0, False)
 
@@ -157,8 +188,13 @@ def update_callback(client, userdata, message):
 #     con.commmit()
 
 def new_photonMeasure_callback(client, userdata, message):
-    con = lite.connect(path)
-    cur = con.cursor()
+    try:
+        con = lite.connect(path)
+        cur = con.cursor()
+    except Exception as e:
+        print (e)
+    con_local = lite.connect(path_local)
+    cur_local = con_local.cursor()
     data = json.loads(message.payload)    
     print(data)
     V1 = float(data.get("V1"))
@@ -172,25 +208,54 @@ def new_photonMeasure_callback(client, userdata, message):
     F = float(data.get("F"))
     Time = int(data.get("Time"))
     SocketID = int(data.get("SocketID"))
-    UserID = str(data.get("UserID"))
+    UserID = str(data.get("UserID")).upper()
     
-    cur.execute("SELECT name, rowid FROM users WHERE uidTag = ? ", (UserID,) )
-    dataUser = cur.fetchone()
+    try:
+        cur.execute("SELECT name, rowid FROM users WHERE uidTag = ? ", (UserID,) )
+        dataUser = cur.fetchone()
+    except Exception as e:
+        print (e)
+        cur_local.execute("SELECT name, rowid FROM users WHERE uidTag = ? ", (UserID,) )
+        dataUser = cur_local.fetchone()
+        
     try:
         dataUser[1]
-    except:
-        print("WARNING: Unauthorized user charging at socket " + str(SocketID))
+    except Exception as e:
+        print (e)
+        print("WARNING: Unauthorized user " + UserID + " charging at socket " + str(SocketID))
         dataUser = ('unknown', 31)                
+    try:
+        cur.execute("SELECT carId FROM car_of_user WHERE userId = ? ", (dataUser[1],) )
+        if (cur.fetchone() is None):
+            carId = 404
+        else:
+            carId = cur.fetchone()[0]        
+    except Exception as e:
+        print (e)
+        cur_local.execute("SELECT carId FROM car_of_user WHERE userId = ? ", (dataUser[1],) )
+        if (cur.fetchone() is None):
+            carId = 404
+        else:
+            carId = cur_local.fetchone()[0]
     
-    cur.execute("SELECT carId FROM car_of_user WHERE userId = ? ", (dataUser[1],) )
-    carId = cur.fetchone()[0]        
-    
-    cur.execute("SELECT brand || ' ' || type FROM cars WHERE id = ? ", (carId,) )
-    carName = cur.fetchone()[0]
-    
-    cur.execute("INSERT INTO measurements(userId, userName, carId, carName, socketId, V1, V2, V3, I1, I2, I3, F, Time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)",
+    try:
+        cur.execute("SELECT brand || ' ' || type FROM cars WHERE id = ? ", (carId,) )
+        carName = cur.fetchone()[0]
+    except Exception as e:
+        print (e)
+        cur_local.execute("SELECT brand || ' ' || type FROM cars WHERE id = ? ", (carId,) )
+        carName = cur_local.fetchone()[0]
+    try:    
+        cur.execute("INSERT INTO measurements(userId, userName, carId, carName, socketId, V1, V2, V3, I1, I2, I3, F, Time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                    (UserID, dataUser[0], carId, carName, SocketID, V1, V2, V3, I1, I2, I3, F, Time))
+        con.commit()
+    except Exception as e:
+        print (e)
+    finally:
+        cur_local.execute("INSERT INTO measurements(userId, userName, carId, carName, socketId, V1, V2, V3, I1, I2, I3, F, Time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)",
                 (UserID, dataUser[0], carId, carName, SocketID, V1, V2, V3, I1, I2, I3, F, Time))
     
+    con_local.commit()
     ##Insert with P and E measurements
     #cur.execute("INSERT INTO measurements(userId, userName, carId, carName, socketId, V1, V2, V3, I1, I2, I3, P, E, F, Time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
     #            (UserID, dataUser[0], carId, carName, SocketID, V1, V2, V3, I1, I2, I3, P, E, F, Time))
@@ -201,7 +266,7 @@ def new_photonMeasure_callback(client, userdata, message):
     
    #for readable timestamp use this at end of INSERT: time.strftime('%Y-%m-%d %T', time.localtime(int(data["Time"]) ))
     
-    con.commit()
+    
 
 
 def old_photonMeasure_callback(client, userdata, message):
@@ -232,23 +297,92 @@ def old_photonMeasure_callback(client, userdata, message):
     con.commit()
     #print(V1)
 
+def send_trung():
+    try:
+        con = lite.connect(path)
+        cur = con.cursor()
+        cur.execute("SELECT rowid FROM measurements WHERE Time <= ? AND Time >= ? LIMIT 1", ((str(int(time.time()) - DISCONNECT_TIME)),(str(int(time.time()) - DISCONNECT_TIME - 29)),) )
+        dataRef = cur.fetchone()
+        if dataRef is None:
+            pass
+        else:
+            cur.execute("SELECT rowid FROM measurements WHERE Time >= ? LIMIT 1", ((str(int(time.time()) - 60)),) )
+            dataRef = cur.fetchone()
+            if dataRef is None:
+                pass
+            else:
+                with smtplib.SMTP_SSL(smtp_server, SSLport, context=email_context) as server:
+                    server.login(sender_email, sender_password)                    
+                    server.sendmail(sender_email, "nguyenxuan.trung@han.nl", email_message)
+    except Exception as e:
+        print (e)
+        con_local = lite.connect(path_local)
+        cur_local = con_local.cursor()
+        cur_local.execute("SELECT rowid FROM measurements WHERE Time <= ? AND Time >= ? LIMIT 1", ((str(int(time.time()) - DISCONNECT_TIME)),(str(int(time.time()) - DISCONNECT_TIME - 29)),) )
+        dataRef = cur_local.fetchone()
+        if dataRef is None:
+            pass
+        else:
+            cur_local.execute("SELECT rowid FROM measurements WHERE Time >= ? LIMIT 1", ((str(int(time.time()) - 60)),) )
+            dataRef = cur_local.fetchone()
+            if dataRef is None:
+                pass
+            else:
+                with smtplib.SMTP_SSL(smtp_server, SSLport, context=email_context) as server:
+                    server.login(sender_email, sender_password)                    
+                    server.sendmail(sender_email, "nguyenxuan.trung@han.nl", email_message)
+            
+#     if dataRef is None:
+#         pass
+#     else:
+#         try:
+#             cur.execute("SELECT rowid FROM measurements WHERE Time >= ? LIMIT 1", ((str(int(time.time()) - 60)),) )
+#             dataRef = cur.fetchone()
+#         except Exception as e:
+#             print (e)
+#             cur_local.execute("SELECT rowid FROM measurements WHERE Time >= ? LIMIT 1", ((str(int(time.time()) - 60)),) )
+#             dataRef = cur_local.fetchone()
+#             
+#         if dataRef is None:
+#             pass
+#         else:
+#             with smtplib.SMTP_SSL(smtp_server, SSLport, context=email_context) as server:
+#                 server.login(sender_email, sender_password)                    
+#                 server.sendmail(sender_email, "nguyenxuan.trung@han.nl", email_message)
+
 def send_email():
-    con = lite.connect(path)
-    cur = con.cursor()
-    cur.execute("SELECT email, rowid FROM users WHERE LastStartOrStop <= ? AND email <> '' AND mailed < 1 AND socketId IS NOT NULL", ((str(int(time.time()) - DISCONNECT_TIME)),) )
-    dataRef = cur.fetchall()
+    
+    con_local = lite.connect(path_local)
+    cur_local = con_local.cursor()
+    try:
+        con = lite.connect(path)
+        cur = con.cursor()
+        cur.execute("SELECT email, rowid FROM users WHERE LastStartOrStop <= ? AND email <> '' AND mailed < 1 AND socketId IS NOT NULL", ((str(int(time.time()) - DISCONNECT_TIME)),) )
+        dataRef = cur.fetchall()
+    except Exception as e:
+        print (e)        
+        cur_local.execute("SELECT email, rowid FROM users WHERE LastStartOrStop <= ? AND email <> '' AND mailed < 1 AND socketId IS NOT NULL", ((str(int(time.time()) - DISCONNECT_TIME)),) )
+        dataRef = cur_local.fetchall()
+        
     if dataRef is None:
         return
     with smtplib.SMTP_SSL(smtp_server, SSLport, context=email_context) as server:
         server.login(sender_email, sender_password)
         for element in dataRef:            
             server.sendmail(sender_email, element[0], email_message)
-            cur.execute("UPDATE users SET mailed = 1 WHERE rowid=?", (element[1],))
-            
+            try:
+                cur.execute("UPDATE users SET mailed = 1 WHERE rowid=?", (element[1],))
+            except Exception as e:
+                print (e)
+            cur_local.execute("UPDATE users SET mailed = 1 WHERE rowid=?", (element[1],))
     #cur.execute("UPDATE users SET mailed = 0 WHERE LastStartOrStop > ? AND mailed > 0 AND socketId IS NULL", ((str(int(time.time()) - DISCONNECT_TIME)),) ) 
-    cur.execute("UPDATE users SET mailed = 0 WHERE mailed > 0 AND socketId IS NULL") 
-    con.commit()
-    
+    try:
+        cur.execute("UPDATE users SET mailed = 0 WHERE mailed > 0 AND socketId IS NULL") 
+        con.commit()
+    except Exception as e:
+        print (e)
+    cur_local.execute("UPDATE users SET mailed = 0 WHERE mailed > 0 AND socketId IS NULL") 
+    con_local.commit()
 
 #setup mqtt
 client = mqtt.Client()
@@ -260,6 +394,7 @@ client.on_disconnect = on_disconnect
 client.connect_async(broker, 1883, 60)
 
 send_email()
+send_trung()
 
 #client.message_callback_add("HANevse/getUsers", SendUser_callback)
 client.message_callback_add("HANevse/updateUser", update_callback)
@@ -287,6 +422,7 @@ while True:
     if (email_cntr > 301):
         email_cntr = 0
         send_email()
+        
     
     
 

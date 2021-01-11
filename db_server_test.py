@@ -85,4 +85,14 @@ con.commit()
 # print(f.read())
 # f.close()
 
+cur.execute("SELECT name, rowid FROM users WHERE uidTag = ? ", ("NO ID",) )
+dataUser = cur.fetchone()
+print(dataUser)
+#try:
+#    print(dataUser[1])
+        
+#     except:
+#         print("WARNING: Unauthorized user charging at socket " + str(SocketID))
+#         dataUser = ('unknown', 31)
+con.commit()
 con.close()

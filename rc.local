@@ -11,14 +11,17 @@
 #
 # By default this script does nothing.
 
-sleep 3
+sleep 4
 # Print the IP address
 _IP=$(hostname -I) || true
 if [ "$_IP" ]; then
   printf "My IP address is %s\n" "$_IP"
 fi
 # Run the userList handler and meters reading on boot
-sudo sh /home/pi/runmosquitto.sh 
-sudo python /home/pi/Documents/Modbus/main.py > /home/pi/Desktop/readinglog.txt 2>&1 &
-sudo python /home/pi/Documents/userID/SQLfunction.py > /home/pi/Desktop/Userlog.txt 2>&1 &
+#sudo sh /home/pi/runmosquitto.sh 
+sudo mount -a
+sleep 3
+sudo python3 /home/pi/Documents/Modbus/main3.py > /home/pi/Desktop/readinglog.txt 2>&1 &
+sudo python3 /home/pi/Documents/userID/SQLfunction.py > /home/pi/Desktop/Userlog.txt 2>&1 &
+sudo sh /home/pi/runNodeRed.sh
 exit 0
