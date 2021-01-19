@@ -1,0 +1,75 @@
+\section{user\+I\+D/\+S\+Q\+Lfunction.py File Reference}
+\label{_s_q_lfunction_8py}\index{user\+I\+D/\+S\+Q\+Lfunction.\+py@{user\+I\+D/\+S\+Q\+Lfunction.\+py}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \textbf{ S\+Q\+Lfunction}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \textbf{ S\+Q\+Lfunction.\+on\+\_\+connect} (client, userdata, flags, rc)
+\begin{DoxyCompactList}\small\item\em Executes on M\+Q\+TT client connect to broker, sets flags and subscribes. \end{DoxyCompactList}\item 
+def \textbf{ S\+Q\+Lfunction.\+on\+\_\+disconnect} (client, userdata, rc)
+\begin{DoxyCompactList}\small\item\em Executes on M\+Q\+TT client disconnect and sets flags. \end{DoxyCompactList}\item 
+def \textbf{ S\+Q\+Lfunction.\+update\+\_\+callback} (client, userdata, message)
+\begin{DoxyCompactList}\small\item\em Callback function that parses R\+F\+ID swipe message from Photon and checks in the DB what to publish as answer Publish output is structured as \char`\"{}1;2\char`\"{} where 1=socket number and 2=answer to Photon. \end{DoxyCompactList}\item 
+def \textbf{ S\+Q\+Lfunction.\+new\+\_\+photon\+Measure\+\_\+callback} (client, userdata, message)
+\begin{DoxyCompactList}\small\item\em New Callback for Photon measurements that parses, checks DB for user data like name and carname, then logs into \textquotesingle{}measurements\textquotesingle{}. \end{DoxyCompactList}\item 
+def \textbf{ S\+Q\+Lfunction.\+old\+\_\+photon\+Measure\+\_\+callback} (client, userdata, message)
+\begin{DoxyCompactList}\small\item\em Old Photon measurements callback that parses \textquotesingle{}\textquotesingle{} separated values. \end{DoxyCompactList}\item 
+def \textbf{ S\+Q\+Lfunction.\+send\+\_\+admin} ()
+\begin{DoxyCompactList}\small\item\em Function to send admin email if one user has been plugged in at a socket for over 4 hours still in beta mode and needs improvements. \end{DoxyCompactList}\item 
+def \textbf{ S\+Q\+Lfunction.\+send\+\_\+email} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ S\+Q\+Lfunction.\+D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+ME} = int(4 $\ast$ 60 $\ast$ 60)
+\begin{DoxyCompactList}\small\item\em Const. \end{DoxyCompactList}\item 
+int \textbf{ S\+Q\+Lfunction.\+email\+\_\+cntr} = 0
+\item 
+int \textbf{ S\+Q\+Lfunction.\+S\+S\+Lport} = 465
+\item 
+string \textbf{ S\+Q\+Lfunction.\+smtp\+\_\+server} = \char`\"{}smtp.\+gmail.\+com\char`\"{}
+\item 
+string \textbf{ S\+Q\+Lfunction.\+sender\+\_\+email} = \char`\"{}tpi97364@gmail.\+com\char`\"{}
+\begin{DoxyCompactList}\small\item\em Email sender address for Pi. \end{DoxyCompactList}\item 
+string \textbf{ S\+Q\+Lfunction.\+receiver\+\_\+email} = \char`\"{}\char`\"{}
+\begin{DoxyCompactList}\small\item\em Holder for email addresses of receivers. \end{DoxyCompactList}\item 
+string \textbf{ S\+Q\+Lfunction.\+sender\+\_\+password} = \char`\"{}controlsystem\char`\"{}
+\begin{DoxyCompactList}\small\item\em Pi email password. \end{DoxyCompactList}\item 
+string \textbf{ S\+Q\+Lfunction.\+email\+\_\+message}
+\begin{DoxyCompactList}\small\item\em Default email message. \end{DoxyCompactList}\item 
+\textbf{ S\+Q\+Lfunction.\+email\+\_\+context} = ssl.\+create\+\_\+default\+\_\+context()
+\item 
+\textbf{ S\+Q\+Lfunction.\+con} = None
+\begin{DoxyCompactList}\small\item\em Initial DB connection check. \end{DoxyCompactList}\item 
+string \textbf{ S\+Q\+Lfunction.\+broker} = \char`\"{}broker.\+hivemq.\+com\char`\"{}
+\begin{DoxyCompactList}\small\item\em M\+Q\+TT broker address. \end{DoxyCompactList}\item 
+string \textbf{ S\+Q\+Lfunction.\+path\+\_\+local} = \char`\"{}/media/D\+A\+T\+A\+B\+A\+SE/usertable.\+sqlite3\char`\"{}
+\begin{DoxyCompactList}\small\item\em Path to users database path = \char`\"{}./user\+List\char`\"{} \#\+Use internal memory -\/ old DB. \end{DoxyCompactList}\item 
+string \textbf{ S\+Q\+Lfunction.\+path} = \char`\"{}/mnt/dav/Data/usertable.\+sqlite3\char`\"{}
+\item 
+\textbf{ S\+Q\+Lfunction.\+con\+\_\+local} = lite.\+connect(path\+\_\+local)
+\item 
+\textbf{ S\+Q\+Lfunction.\+cur\+\_\+local} = con\+\_\+local.\+cursor()
+\item 
+\textbf{ S\+Q\+Lfunction.\+cur} = con.\+cursor()
+\item 
+\textbf{ S\+Q\+Lfunction.\+data\+Ref1} = cur.\+fetchone()
+\item 
+int \textbf{ S\+Q\+Lfunction.\+err\+\_\+cnt} = 0
+\item 
+\textbf{ S\+Q\+Lfunction.\+client} = mqtt.\+Client()
+\item 
+\textbf{ S\+Q\+Lfunction.\+connected\+\_\+flag}
+\item 
+\textbf{ S\+Q\+Lfunction.\+bad\+\_\+connection\+\_\+flag}
+\item 
+\textbf{ S\+Q\+Lfunction.\+on\+\_\+connect}
+\item 
+\textbf{ S\+Q\+Lfunction.\+on\+\_\+disconnect}
+\item 
+\textbf{ S\+Q\+Lfunction.\+current\+\_\+time} = time.\+ctime(time.\+time())
+\end{DoxyCompactItemize}

@@ -1,0 +1,68 @@
+\section{node-\/red-\/1881/node\+\_\+modules/nan/nan\+\_\+string\+\_\+bytes.h File Reference}
+\label{nan__string__bytes_8h}\index{node-\/red-\/1881/node\+\_\+modules/nan/nan\+\_\+string\+\_\+bytes.\+h@{node-\/red-\/1881/node\+\_\+modules/nan/nan\+\_\+string\+\_\+bytes.\+h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \textbf{ imp}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ N\+A\+N\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+B\+Y\+T\+E\+S\+\_\+\+H\+\_\+}
+\item 
+\#define \textbf{ base64\+\_\+encoded\+\_\+size}(size)~((size + 2 -\/ ((size + 2) \% 3)) / 3 $\ast$ 4)
+\item 
+\#define \textbf{ base64\+\_\+encoded\+\_\+size}(size)~((size + 2 -\/ ((size + 2) \% 3)) / 3 $\ast$ 4)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \textbf{ imp\+::contains\+\_\+non\+\_\+ascii\+\_\+slow} (const char $\ast$buf, size\+\_\+t len)
+\item 
+static bool \textbf{ imp\+::contains\+\_\+non\+\_\+ascii} (const char $\ast$src, size\+\_\+t len)
+\item 
+static void \textbf{ imp\+::force\+\_\+ascii\+\_\+slow} (const char $\ast$src, char $\ast$dst, size\+\_\+t len)
+\item 
+static void \textbf{ imp\+::force\+\_\+ascii} (const char $\ast$src, char $\ast$dst, size\+\_\+t len)
+\item 
+static size\+\_\+t \textbf{ imp\+::base64\+\_\+encode} (const char $\ast$src, size\+\_\+t slen, char $\ast$dst, size\+\_\+t dlen)
+\item 
+static size\+\_\+t \textbf{ imp\+::hex\+\_\+encode} (const char $\ast$src, size\+\_\+t slen, char $\ast$dst, size\+\_\+t dlen)
+\item 
+static Local$<$ Value $>$ \textbf{ imp\+::\+Encode} (const char $\ast$buf, size\+\_\+t buflen, enum Encoding encoding)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\label{nan_8h_a9e19737fd05a898145c093fcec84ceec}} 
+\index{nan\+\_\+string\+\_\+bytes.\+h@{nan\+\_\+string\+\_\+bytes.\+h}!base64\+\_\+encoded\+\_\+size@{base64\+\_\+encoded\+\_\+size}}
+\index{base64\+\_\+encoded\+\_\+size@{base64\+\_\+encoded\+\_\+size}!nan\+\_\+string\+\_\+bytes.\+h@{nan\+\_\+string\+\_\+bytes.\+h}}
+\subsubsection{base64\+\_\+encoded\+\_\+size\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define base64\+\_\+encoded\+\_\+size(\begin{DoxyParamCaption}\item[{}]{size }\end{DoxyParamCaption})~((size + 2 -\/ ((size + 2) \% 3)) / 3 $\ast$ 4)}
+
+\mbox{\label{nan__string__bytes_8h_a9e19737fd05a898145c093fcec84ceec}} 
+\index{nan\+\_\+string\+\_\+bytes.\+h@{nan\+\_\+string\+\_\+bytes.\+h}!base64\+\_\+encoded\+\_\+size@{base64\+\_\+encoded\+\_\+size}}
+\index{base64\+\_\+encoded\+\_\+size@{base64\+\_\+encoded\+\_\+size}!nan\+\_\+string\+\_\+bytes.\+h@{nan\+\_\+string\+\_\+bytes.\+h}}
+\subsubsection{base64\+\_\+encoded\+\_\+size\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define base64\+\_\+encoded\+\_\+size(\begin{DoxyParamCaption}\item[{}]{size }\end{DoxyParamCaption})~((size + 2 -\/ ((size + 2) \% 3)) / 3 $\ast$ 4)}
+
+
+
+Definition at line 37 of file nan\+\_\+string\+\_\+bytes.\+h.
+
+
+
+Referenced by imp\+::base64\+\_\+encode(), and imp\+::\+Encode().
+
+\mbox{\label{nan_8h_aee543e380ff7ee831f5d079d4bc92a00}} 
+\index{nan\+\_\+string\+\_\+bytes.\+h@{nan\+\_\+string\+\_\+bytes.\+h}!N\+A\+N\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+B\+Y\+T\+E\+S\+\_\+\+H\+\_\+@{N\+A\+N\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+B\+Y\+T\+E\+S\+\_\+\+H\+\_\+}}
+\index{N\+A\+N\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+B\+Y\+T\+E\+S\+\_\+\+H\+\_\+@{N\+A\+N\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+B\+Y\+T\+E\+S\+\_\+\+H\+\_\+}!nan\+\_\+string\+\_\+bytes.\+h@{nan\+\_\+string\+\_\+bytes.\+h}}
+\subsubsection{N\+A\+N\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+B\+Y\+T\+E\+S\+\_\+\+H\+\_\+}
+{\footnotesize\ttfamily \#define N\+A\+N\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+B\+Y\+T\+E\+S\+\_\+\+H\+\_\+}
+
+
+
+Definition at line 24 of file nan.\+h.
+

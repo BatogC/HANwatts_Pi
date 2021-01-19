@@ -1,0 +1,853 @@
+\section{S\+Q\+Lfunction Namespace Reference}
+\label{namespace_s_q_lfunction}\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \textbf{ on\+\_\+connect} (\textbf{ client}, userdata, flags, rc)
+\begin{DoxyCompactList}\small\item\em Executes on M\+Q\+TT client connect to broker, sets flags and subscribes. \end{DoxyCompactList}\item 
+def \textbf{ on\+\_\+disconnect} (\textbf{ client}, userdata, rc)
+\begin{DoxyCompactList}\small\item\em Executes on M\+Q\+TT client disconnect and sets flags. \end{DoxyCompactList}\item 
+def \textbf{ update\+\_\+callback} (\textbf{ client}, userdata, message)
+\begin{DoxyCompactList}\small\item\em Callback function that parses R\+F\+ID swipe message from Photon and checks in the DB what to publish as answer Publish output is structured as \char`\"{}1;2\char`\"{} where 1=socket number and 2=answer to Photon. \end{DoxyCompactList}\item 
+def \textbf{ new\+\_\+photon\+Measure\+\_\+callback} (\textbf{ client}, userdata, message)
+\begin{DoxyCompactList}\small\item\em New Callback for Photon measurements that parses, checks DB for user data like name and carname, then logs into \textquotesingle{}measurements\textquotesingle{}. \end{DoxyCompactList}\item 
+def \textbf{ old\+\_\+photon\+Measure\+\_\+callback} (\textbf{ client}, userdata, message)
+\begin{DoxyCompactList}\small\item\em Old Photon measurements callback that parses \textquotesingle{}\textquotesingle{} separated values. \end{DoxyCompactList}\item 
+def \textbf{ send\+\_\+admin} ()
+\begin{DoxyCompactList}\small\item\em Function to send admin email if one user has been plugged in at a socket for over 4 hours still in beta mode and needs improvements. \end{DoxyCompactList}\item 
+def \textbf{ send\+\_\+email} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+ME} = int(4 $\ast$ 60 $\ast$ 60)
+\begin{DoxyCompactList}\small\item\em Const. \end{DoxyCompactList}\item 
+int \textbf{ email\+\_\+cntr} = 0
+\item 
+int \textbf{ S\+S\+Lport} = 465
+\item 
+string \textbf{ smtp\+\_\+server} = \char`\"{}smtp.\+gmail.\+com\char`\"{}
+\item 
+string \textbf{ sender\+\_\+email} = \char`\"{}tpi97364@gmail.\+com\char`\"{}
+\begin{DoxyCompactList}\small\item\em Email sender address for Pi. \end{DoxyCompactList}\item 
+string \textbf{ receiver\+\_\+email} = \char`\"{}\char`\"{}
+\begin{DoxyCompactList}\small\item\em Holder for email addresses of receivers. \end{DoxyCompactList}\item 
+string \textbf{ sender\+\_\+password} = \char`\"{}controlsystem\char`\"{}
+\begin{DoxyCompactList}\small\item\em Pi email password. \end{DoxyCompactList}\item 
+string \textbf{ email\+\_\+message}
+\begin{DoxyCompactList}\small\item\em Default email message. \end{DoxyCompactList}\item 
+\textbf{ email\+\_\+context} = ssl.\+create\+\_\+default\+\_\+context()
+\item 
+\textbf{ con} = None
+\begin{DoxyCompactList}\small\item\em Initial DB connection check. \end{DoxyCompactList}\item 
+string \textbf{ broker} = \char`\"{}broker.\+hivemq.\+com\char`\"{}
+\begin{DoxyCompactList}\small\item\em M\+Q\+TT broker address. \end{DoxyCompactList}\item 
+string \textbf{ path\+\_\+local} = \char`\"{}/media/D\+A\+T\+A\+B\+A\+SE/usertable.\+sqlite3\char`\"{}
+\begin{DoxyCompactList}\small\item\em Path to users database path = \char`\"{}./user\+List\char`\"{} \#\+Use internal memory -\/ old DB. \end{DoxyCompactList}\item 
+string \textbf{ path} = \char`\"{}/mnt/dav/Data/usertable.\+sqlite3\char`\"{}
+\item 
+\textbf{ con\+\_\+local} = lite.\+connect(\textbf{ path\+\_\+local})
+\item 
+\textbf{ cur\+\_\+local} = con\+\_\+local.\+cursor()
+\item 
+\textbf{ cur} = con.\+cursor()
+\item 
+\textbf{ data\+Ref1} = cur.\+fetchone()
+\item 
+int \textbf{ err\+\_\+cnt} = 0
+\item 
+\textbf{ client} = mqtt.\+Client()
+\item 
+\textbf{ connected\+\_\+flag}
+\item 
+\textbf{ bad\+\_\+connection\+\_\+flag}
+\item 
+\textbf{ on\+\_\+connect}
+\item 
+\textbf{ on\+\_\+disconnect}
+\item 
+\textbf{ current\+\_\+time} = time.\+ctime(time.\+time())
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\label{namespace_s_q_lfunction_a356dd5906768f7dd778408f466e9f9b4}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!new\+\_\+photon\+Measure\+\_\+callback@{new\+\_\+photon\+Measure\+\_\+callback}}
+\index{new\+\_\+photon\+Measure\+\_\+callback@{new\+\_\+photon\+Measure\+\_\+callback}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{new\+\_\+photon\+Measure\+\_\+callback()}
+{\footnotesize\ttfamily def S\+Q\+Lfunction.\+new\+\_\+photon\+Measure\+\_\+callback (\begin{DoxyParamCaption}\item[{}]{client,  }\item[{}]{userdata,  }\item[{}]{message }\end{DoxyParamCaption})}
+
+
+
+New Callback for Photon measurements that parses, checks DB for user data like name and carname, then logs into \textquotesingle{}measurements\textquotesingle{}. 
+
+
+
+Definition at line 207 of file S\+Q\+Lfunction.\+py.
+
+
+\begin{DoxyCode}
+207 \textcolor{keyword}{def }new_photonMeasure_callback(client, userdata, message):
+208     \textcolor{keywordflow}{try}:
+209         con = lite.connect(path)
+210         cur = con.cursor()
+211     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+212         \textcolor{keywordflow}{print} (e)
+213     con\_local = lite.connect(path\_local)
+214     cur\_local = con\_local.cursor()
+215     data = json.loads(message.payload)    
+216     print(data)
+217     V1 = float(data.get(\textcolor{stringliteral}{"V1"}))
+218     V2 = float(data.get(\textcolor{stringliteral}{"V2"}))
+219     V3 = float(data.get(\textcolor{stringliteral}{"V3"}))
+220     I1 = float(data.get(\textcolor{stringliteral}{"I1"}))
+221     I2 = float(data.get(\textcolor{stringliteral}{"I2"}))
+222     I3 = float(data.get(\textcolor{stringliteral}{"I3"}))
+223     \textcolor{comment}{#P = float(data.get("P"))}
+224     \textcolor{comment}{#E = float(data.get("E"))}
+225     F = float(data.get(\textcolor{stringliteral}{"F"}))
+226     Time = int(data.get(\textcolor{stringliteral}{"Time"}))
+227     SocketID = int(data.get(\textcolor{stringliteral}{"SocketID"}))
+228     UserID = str(data.get(\textcolor{stringliteral}{"UserID"})).upper()
+229     
+230     \textcolor{keywordflow}{try}:
+231         cur.execute(\textcolor{stringliteral}{"SELECT name, rowid FROM users WHERE uidTag = ? "}, (UserID,) )
+232         dataUser = cur.fetchone()
+233     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+234         \textcolor{keywordflow}{print} (e)
+235         cur\_local.execute(\textcolor{stringliteral}{"SELECT name, rowid FROM users WHERE uidTag = ? "}, (UserID,) )
+236         dataUser = cur\_local.fetchone()
+237         
+238     \textcolor{keywordflow}{try}:
+239         dataUser[1]
+240     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+241         \textcolor{keywordflow}{print} (e)
+242         print(\textcolor{stringliteral}{"WARNING: Unauthorized user "} + UserID + \textcolor{stringliteral}{" charging at socket "} + str(SocketID))
+243         dataUser = (\textcolor{stringliteral}{'unknown'}, 31)                
+244     \textcolor{keywordflow}{try}:
+245         cur.execute(\textcolor{stringliteral}{"SELECT carId FROM car\_of\_user WHERE userId = ? "}, (dataUser[1],) )
+246         \textcolor{keywordflow}{if} (cur.fetchone() \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}):
+247             carId = 404
+248         \textcolor{keywordflow}{else}:
+249             carId = cur.fetchone()[0]        
+250     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+251         \textcolor{keywordflow}{print} (e)
+252         cur\_local.execute(\textcolor{stringliteral}{"SELECT carId FROM car\_of\_user WHERE userId = ? "}, (dataUser[1],) )
+253         \textcolor{keywordflow}{if} (cur.fetchone() \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}):
+254             carId = 404
+255         \textcolor{keywordflow}{else}:
+256             carId = cur\_local.fetchone()[0]
+257     
+258     \textcolor{keywordflow}{try}:
+259         cur.execute(\textcolor{stringliteral}{"SELECT brand || ' ' || type FROM cars WHERE id = ? "}, (carId,) )
+260         carName = cur.fetchone()[0]
+261     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+262         \textcolor{keywordflow}{print} (e)
+263         cur\_local.execute(\textcolor{stringliteral}{"SELECT brand || ' ' || type FROM cars WHERE id = ? "}, (carId,) )
+264         carName = cur\_local.fetchone()[0]
+265     \textcolor{keywordflow}{try}:    
+266         cur.execute(\textcolor{stringliteral}{"INSERT INTO measurements(userId, userName, carId, carName, socketId, V1, V2, V3, I1,
+       I2, I3, F, Time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)"},
+267                     (UserID, dataUser[0], carId, carName, SocketID, V1, V2, V3, I1, I2, I3, F, Time))
+268         con.commit()
+269     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+270         \textcolor{keywordflow}{print} (e)
+271     \textcolor{keywordflow}{finally}:
+272         cur\_local.execute(\textcolor{stringliteral}{"INSERT INTO measurements(userId, userName, carId, carName, socketId, V1, V2, V3,
+       I1, I2, I3, F, Time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)"},
+273                 (UserID, dataUser[0], carId, carName, SocketID, V1, V2, V3, I1, I2, I3, F, Time))
+274     
+275     con\_local.commit()
+276     \textcolor{comment}{#-#Insert with P and E measurements}
+277     \textcolor{comment}{#cur.execute("INSERT INTO measurements(userId, userName, carId, carName, socketId, V1, V2, V3, I1, I2,
+       I3, P, E, F, Time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",}
+278     \textcolor{comment}{#            (UserID, dataUser[0], carId, carName, SocketID, V1, V2, V3, I1, I2, I3, P, E, F, Time))}
+279     
+280     \textcolor{comment}{# Or skip all .get() and do it in cur.execute     }
+281     \textcolor{comment}{#cur.execute("INSERT INTO measurements(userId, socketId, V1, V2, V3, I1, I2, I3, P, E, F, Time)
+       VALUES(?,?,?,?,?,?,?,?,?,?,?,?)",}
+282     \textcolor{comment}{#            (str(data["UserID"]).upper(), int(data["SocketID"]), float(data["V1"]), float(data["V2"]),
+       float(data["V3"]), float(data["I1"]), float(data["I2"]), float(data["I3"]), float(data["P"]),
+       float(data["E"]), float(data["F"]), int(data["Time"]) ))}
+283     
+284    \textcolor{comment}{#for readable timestamp use this at end of INSERT: time.strftime('%Y-%m-%d %T',
+       time.localtime(int(data["Time"]) ))}
+285     
+286     
+287 
+\end{DoxyCode}
+\mbox{\label{namespace_s_q_lfunction_ab58c55eebaf8990eb9c810968db1dc50}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!old\+\_\+photon\+Measure\+\_\+callback@{old\+\_\+photon\+Measure\+\_\+callback}}
+\index{old\+\_\+photon\+Measure\+\_\+callback@{old\+\_\+photon\+Measure\+\_\+callback}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{old\+\_\+photon\+Measure\+\_\+callback()}
+{\footnotesize\ttfamily def S\+Q\+Lfunction.\+old\+\_\+photon\+Measure\+\_\+callback (\begin{DoxyParamCaption}\item[{}]{client,  }\item[{}]{userdata,  }\item[{}]{message }\end{DoxyParamCaption})}
+
+
+
+Old Photon measurements callback that parses \textquotesingle{}\textquotesingle{} separated values. 
+
+
+
+Definition at line 289 of file S\+Q\+Lfunction.\+py.
+
+
+\begin{DoxyCode}
+289 \textcolor{keyword}{def }old_photonMeasure_callback(client, userdata, message):
+290     con = lite.connect(path)
+291     cur = con.cursor()
+292     data = message.payload    
+293     data = data.decode(\textcolor{stringliteral}{'UTF-8'})
+294     print(data)
+295     
+296     index = []
+297     \textcolor{keywordflow}{for} i \textcolor{keywordflow}{in} range(len(data)):
+298         \textcolor{keywordflow}{if} (data[i] == \textcolor{stringliteral}{'%'}):
+299             index.append(i)
+300     V1 = float(data[:index[0]])
+301     V2 = float(data[index[0]+1:index[1]])
+302     V3 = float(data[index[1]+1:index[2]])
+303     I1 = float(data[index[2]+1:index[3]])
+304     I2 = float(data[index[3]+1:index[4]])
+305     I3 = float(data[index[4]+1:index[5]])
+306     P = float(data[index[5]+1:index[6]])
+307     E = float(data[index[6]+1:index[7]])
+308     F = float(data[index[7]+1:index[8]])
+309     Time = int(data[index[8]+1:index[9]])
+310     SocketID = int(data[index[9]+1:index[10]])
+311     UserID = data[index[10]+1:index[11]]
+312     cur.execute(\textcolor{stringliteral}{"INSERT INTO photonMeasure(UIDtag, SocketID, V1, V2, V3, I1, I2, I3, P, E, F, Time)
+       VALUES(?,?,?,?,?,?,?,?,?,?,?,?)"},
+313                 (UserID, SocketID, V1, V2, V3, I1, I2, I3, P, E, F, Time))
+314     con.commit()
+315     \textcolor{comment}{#print(V1)}
+316 
+\end{DoxyCode}
+\mbox{\label{namespace_s_q_lfunction_aa9ad8419206f0d4e4281775b4dcbf03d}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!on\+\_\+connect@{on\+\_\+connect}}
+\index{on\+\_\+connect@{on\+\_\+connect}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{on\+\_\+connect()}
+{\footnotesize\ttfamily def S\+Q\+Lfunction.\+on\+\_\+connect (\begin{DoxyParamCaption}\item[{}]{client,  }\item[{}]{userdata,  }\item[{}]{flags,  }\item[{}]{rc }\end{DoxyParamCaption})}
+
+
+
+Executes on M\+Q\+TT client connect to broker, sets flags and subscribes. 
+
+
+
+Definition at line 62 of file S\+Q\+Lfunction.\+py.
+
+
+
+References on\+\_\+connect.
+
+
+\begin{DoxyCode}
+62 \textcolor{keyword}{def }on_connect(client, userdata, flags, rc):
+63     \textcolor{keywordflow}{if} rc == 0:
+64         \textcolor{comment}{#print("Connection start")}
+65         print(path)
+66         client.bad\_connection\_flag = \textcolor{keyword}{False}
+67         client.connected\_flag = \textcolor{keyword}{True}        
+68         err\_cnt = 0
+69 
+70         client.publish(\textcolor{stringliteral}{"HANevse/testsql"}, \textcolor{stringliteral}{"Hello from SQLfunction"},1 ,\textcolor{keyword}{False})
+71 \textcolor{comment}{#        client.subscribe([("HANevse/getUsers", 2), ("HANevse/UpdateUser", 2), ("HANevse/photonMeasure",
+       2)])}
+72         client.subscribe([(\textcolor{stringliteral}{"HANevse/updateUser"}, 2), (\textcolor{stringliteral}{"HANevse/photonMeasure"}, 2)])
+73         print(\textcolor{stringliteral}{"Connected OK"})
+74     \textcolor{keywordflow}{else}:
+75         print(\textcolor{stringliteral}{"Bad connection, RC = "}, rc)
+76         client.bad\_connection\_flag = \textcolor{keyword}{True}
+77 
+\end{DoxyCode}
+\mbox{\label{namespace_s_q_lfunction_a3a3d48b63f188d8357c3422e417a58dc}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!on\+\_\+disconnect@{on\+\_\+disconnect}}
+\index{on\+\_\+disconnect@{on\+\_\+disconnect}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{on\+\_\+disconnect()}
+{\footnotesize\ttfamily def S\+Q\+Lfunction.\+on\+\_\+disconnect (\begin{DoxyParamCaption}\item[{}]{client,  }\item[{}]{userdata,  }\item[{}]{rc }\end{DoxyParamCaption})}
+
+
+
+Executes on M\+Q\+TT client disconnect and sets flags. 
+
+
+
+Definition at line 79 of file S\+Q\+Lfunction.\+py.
+
+
+
+References on\+\_\+disconnect.
+
+
+\begin{DoxyCode}
+79 \textcolor{keyword}{def }on_disconnect(client, userdata, rc):
+80     client.connected\_flag = \textcolor{keyword}{False}
+81     \textcolor{keywordflow}{if} rc != 0:
+82         print(\textcolor{stringliteral}{"Unexpected disconnection."})
+83         client.bad\_connection\_flag = \textcolor{keyword}{True}
+84     \textcolor{keywordflow}{else}:
+85         print(\textcolor{stringliteral}{"Normal disconnection."})
+86 
+87 \textcolor{comment}{# def SendUser\_callback(client, userdata, message):}
+88 \textcolor{comment}{#     #print(message.payload)}
+89 \textcolor{comment}{#     con = lite.connect(path)}
+90 \textcolor{comment}{#     cur = con.cursor()}
+91 \textcolor{comment}{#     cur.execute('select * from list')}
+92 \textcolor{comment}{# }
+93 \textcolor{comment}{#     data = cur.fetchall()}
+94 \textcolor{comment}{#     dataSend = ""}
+95 \textcolor{comment}{# }
+96 \textcolor{comment}{#     for element in data:}
+97 \textcolor{comment}{#         print(element)}
+98 \textcolor{comment}{#         dataSend +=
+       (str(element[0])+'%'+element[1]+'%'+element[2]+'%'+str(element[3])+'%'+element[4]+'%'+str(element[5])+'%'+element[6]+'%'+str(element[7])+'%'+str(element[8])+'%')}
+99 \textcolor{comment}{#     }
+100 \textcolor{comment}{#     client.publish("HANevse/UserList", dataSend, 2, True)}
+101 \textcolor{comment}{#     #publish.single("HANevse/UserList", dataSend, hostname=broker)}
+102 \textcolor{comment}{#     #print(dataSend)}
+103 
+\end{DoxyCode}
+\mbox{\label{namespace_s_q_lfunction_a75af8b1bb1aa60f32418ac7901b0060b}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!send\+\_\+admin@{send\+\_\+admin}}
+\index{send\+\_\+admin@{send\+\_\+admin}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{send\+\_\+admin()}
+{\footnotesize\ttfamily def S\+Q\+Lfunction.\+send\+\_\+admin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function to send admin email if one user has been plugged in at a socket for over 4 hours still in beta mode and needs improvements. 
+
+
+
+Definition at line 319 of file S\+Q\+Lfunction.\+py.
+
+
+\begin{DoxyCode}
+319 \textcolor{keyword}{def }send_admin():
+320     \textcolor{keywordflow}{try}:
+321         con = lite.connect(path)
+322         cur = con.cursor()
+323         cur.execute(\textcolor{stringliteral}{"SELECT rowid FROM measurements WHERE Time <= ? AND Time >= ? LIMIT 1"}, ((str(int(
+      time.time()) - DISCONNECT\_TIME)),(str(int(time.time()) - DISCONNECT\_TIME - 29)),) )
+324         dataRef = cur.fetchone()
+325         \textcolor{keywordflow}{if} dataRef \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}:
+326             \textcolor{keywordflow}{pass}
+327         \textcolor{keywordflow}{else}:
+328             cur.execute(\textcolor{stringliteral}{"SELECT rowid FROM measurements WHERE Time >= ? LIMIT 1"}, ((str(int(time.time()) - 
+      60)),) )
+329             dataRef = cur.fetchone()
+330             \textcolor{keywordflow}{if} dataRef \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}:
+331                 \textcolor{keywordflow}{pass}
+332             \textcolor{keywordflow}{else}:
+333                 with smtplib.SMTP\_SSL(smtp\_server, SSLport, context=email\_context) \textcolor{keyword}{as} server:
+334                     server.login(sender\_email, sender\_password)                    
+335                     server.sendmail(sender\_email, \textcolor{stringliteral}{"nguyenxuan.trung@han.nl"}, email\_message)
+336     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+337         \textcolor{keywordflow}{print} (e)
+338         con\_local = lite.connect(path\_local)
+339         cur\_local = con\_local.cursor()
+340         cur\_local.execute(\textcolor{stringliteral}{"SELECT rowid FROM measurements WHERE Time <= ? AND Time >= ? LIMIT 1"}, ((str(int
+      (time.time()) - DISCONNECT\_TIME)),(str(int(time.time()) - DISCONNECT\_TIME - 29)),) )
+341         dataRef = cur\_local.fetchone()
+342         \textcolor{keywordflow}{if} dataRef \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}:
+343             \textcolor{keywordflow}{pass}
+344         \textcolor{keywordflow}{else}:
+345             cur\_local.execute(\textcolor{stringliteral}{"SELECT rowid FROM measurements WHERE Time >= ? LIMIT 1"}, ((str(int(time.time
+      ()) - 60)),) )
+346             dataRef = cur\_local.fetchone()
+347             \textcolor{keywordflow}{if} dataRef \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}:
+348                 \textcolor{keywordflow}{pass}
+349             \textcolor{keywordflow}{else}:
+350                 with smtplib.SMTP\_SSL(smtp\_server, SSLport, context=email\_context) \textcolor{keyword}{as} server:
+351                     server.login(sender\_email, sender\_password)                    
+352                     server.sendmail(sender\_email, \textcolor{stringliteral}{"nguyenxuan.trung@han.nl"}, email\_message)
+353             
+354 \textcolor{comment}{#     if dataRef is None:}
+355 \textcolor{comment}{#         pass}
+356 \textcolor{comment}{#     else:}
+357 \textcolor{comment}{#         try:}
+358 \textcolor{comment}{#             cur.execute("SELECT rowid FROM measurements WHERE Time >= ? LIMIT 1", ((str(int(time.time())
+       - 60)),) )}
+359 \textcolor{comment}{#             dataRef = cur.fetchone()}
+360 \textcolor{comment}{#         except Exception as e:}
+361 \textcolor{comment}{#             print (e)}
+362 \textcolor{comment}{#             cur\_local.execute("SELECT rowid FROM measurements WHERE Time >= ? LIMIT 1",
+       ((str(int(time.time()) - 60)),) )}
+363 \textcolor{comment}{#             dataRef = cur\_local.fetchone()}
+364 \textcolor{comment}{#             }
+365 \textcolor{comment}{#         if dataRef is None:}
+366 \textcolor{comment}{#             pass}
+367 \textcolor{comment}{#         else:}
+368 \textcolor{comment}{#             with smtplib.SMTP\_SSL(smtp\_server, SSLport, context=email\_context) as server:}
+369 \textcolor{comment}{#                 server.login(sender\_email, sender\_password)                    }
+370 \textcolor{comment}{#                 server.sendmail(sender\_email, "nguyenxuan.trung@han.nl", email\_message)}
+371 
+372 \textcolor{comment}{# Function (executed every 5min) that checks in DB for users charging for over 4 hours ands sends them
+       email to d/c}
+\end{DoxyCode}
+\mbox{\label{namespace_s_q_lfunction_a526fa5bc764d15233b0cc1880fc33f83}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!send\+\_\+email@{send\+\_\+email}}
+\index{send\+\_\+email@{send\+\_\+email}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{send\+\_\+email()}
+{\footnotesize\ttfamily def S\+Q\+Lfunction.\+send\+\_\+email (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 373 of file S\+Q\+Lfunction.\+py.
+
+
+\begin{DoxyCode}
+373 \textcolor{keyword}{def }send_email():
+374     
+375     con\_local = lite.connect(path\_local)
+376     cur\_local = con\_local.cursor()
+377     \textcolor{keywordflow}{try}:
+378         con = lite.connect(path)
+379         cur = con.cursor()
+380         cur.execute(\textcolor{stringliteral}{"SELECT email, rowid FROM users WHERE LastStartOrStop <= ? AND email <> '' AND mailed <
+       1 AND socketId IS NOT NULL"}, ((str(int(time.time()) - DISCONNECT\_TIME)),) )
+381         dataRef = cur.fetchall()
+382     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+383         \textcolor{keywordflow}{print} (e)        
+384         cur\_local.execute(\textcolor{stringliteral}{"SELECT email, rowid FROM users WHERE LastStartOrStop <= ? AND email <> '' AND
+       mailed < 1 AND socketId IS NOT NULL"}, ((str(int(time.time()) - DISCONNECT\_TIME)),) )
+385         dataRef = cur\_local.fetchall()
+386         
+387     \textcolor{keywordflow}{if} dataRef \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}:
+388         \textcolor{keywordflow}{return}
+389     with smtplib.SMTP\_SSL(smtp\_server, SSLport, context=email\_context) \textcolor{keyword}{as} server:
+390         server.login(sender\_email, sender\_password)
+391         \textcolor{keywordflow}{for} element \textcolor{keywordflow}{in} dataRef:            
+392             server.sendmail(sender\_email, element[0], email\_message)
+393             \textcolor{keywordflow}{try}:
+394                 cur.execute(\textcolor{stringliteral}{"UPDATE users SET mailed = 1 WHERE rowid=?"}, (element[1],))
+395             \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+396                 \textcolor{keywordflow}{print} (e)
+397             cur\_local.execute(\textcolor{stringliteral}{"UPDATE users SET mailed = 1 WHERE rowid=?"}, (element[1],))
+398     \textcolor{comment}{#cur.execute("UPDATE users SET mailed = 0 WHERE LastStartOrStop > ? AND mailed > 0 AND socketId IS
+       NULL", ((str(int(time.time()) - DISCONNECT\_TIME)),) ) }
+399     \textcolor{keywordflow}{try}:
+400         cur.execute(\textcolor{stringliteral}{"UPDATE users SET mailed = 0 WHERE mailed > 0 AND socketId IS NULL"}) 
+401         con.commit()
+402     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+403         \textcolor{keywordflow}{print} (e)
+404     cur\_local.execute(\textcolor{stringliteral}{"UPDATE users SET mailed = 0 WHERE mailed > 0 AND socketId IS NULL"}) 
+405     con\_local.commit()
+406 
+407 \textcolor{comment}{#setup mqtt}
+\end{DoxyCode}
+\mbox{\label{namespace_s_q_lfunction_ae16644514ae2cdbf375884361531f691}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!update\+\_\+callback@{update\+\_\+callback}}
+\index{update\+\_\+callback@{update\+\_\+callback}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{update\+\_\+callback()}
+{\footnotesize\ttfamily def S\+Q\+Lfunction.\+update\+\_\+callback (\begin{DoxyParamCaption}\item[{}]{client,  }\item[{}]{userdata,  }\item[{}]{message }\end{DoxyParamCaption})}
+
+
+
+Callback function that parses R\+F\+ID swipe message from Photon and checks in the DB what to publish as answer Publish output is structured as \char`\"{}1;2\char`\"{} where 1=socket number and 2=answer to Photon. 
+
+
+
+Definition at line 106 of file S\+Q\+Lfunction.\+py.
+
+
+\begin{DoxyCode}
+106 \textcolor{keyword}{def }update_callback(client, userdata, message):
+107     \textcolor{keywordflow}{try}:
+108         con = lite.connect(path)
+109         cur = con.cursor()
+110     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+111         \textcolor{keywordflow}{print} (e)
+112     con\_local = lite.connect(path\_local)
+113     cur\_local = con\_local.cursor()
+114     data = json.loads(message.payload)
+115     print(data)
+116     
+117     UserId = str(data.get(\textcolor{stringliteral}{"UserId"})).upper()
+118     socketId = int(data.get(\textcolor{stringliteral}{"Charger"}))
+119     StartTime = int(data.get(\textcolor{stringliteral}{"StartTime"}))
+120     \textcolor{comment}{#print(UserId)}
+121     \textcolor{keywordflow}{try}:
+122         cur.execute(\textcolor{stringliteral}{"SELECT LastStartOrStop, socketId, verified FROM users WHERE uidTag=? LIMIT 1"}, (UserId
+      ,))
+123         dataUser = cur.fetchone() \textcolor{comment}{# returns a tuple}
+124     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+125         \textcolor{keywordflow}{print} (e)
+126         cur\_local.execute(\textcolor{stringliteral}{"SELECT LastStartOrStop, socketId, verified FROM users WHERE uidTag=? LIMIT 1"}, (
+      UserId,))
+127         dataUser = cur\_local.fetchone() \textcolor{comment}{# returns a tuple}
+128     
+129     dataSend = str(socketId) + \textcolor{stringliteral}{";"}
+130     \textcolor{keywordflow}{try}:
+131         cur.execute(\textcolor{stringliteral}{"SELECT socketId FROM users WHERE socketId=? LIMIT 1"}, (socketId,))
+132         socketUsed = cur.fetchone()
+133     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+134         \textcolor{keywordflow}{print} (e)
+135         cur\_local.execute(\textcolor{stringliteral}{"SELECT socketId FROM users WHERE socketId=? LIMIT 1"}, (socketId,))
+136         socketUsed = cur\_local.fetchone()
+137     \textcolor{comment}{#The socketUsed can be either None or the socket number, so parsing it can give error without check}
+138     \textcolor{keywordflow}{if} socketUsed \textcolor{keywordflow}{is} \textcolor{keywordflow}{not} \textcolor{keywordtype}{None}:
+139         socketUsed = socketUsed[0]
+140         
+141     \textcolor{comment}{#This is the filter for checking and preparing the answer to the EV charger}
+142     \textcolor{keywordflow}{if} dataUser \textcolor{keywordflow}{is} \textcolor{keywordflow}{not} \textcolor{keywordtype}{None}: \textcolor{comment}{# if user ID is in list}
+143         \textcolor{keywordflow}{if} (dataUser[2] == \textcolor{stringliteral}{"true"}):
+144             \textcolor{keywordflow}{if} ((StartTime - dataUser[0]) >= 20): \textcolor{comment}{# if last swipe is over 20s ago}
+145                 \textcolor{keywordflow}{if} (socketUsed == socketId): \textcolor{comment}{#if this socket is used now}
+146                     \textcolor{keywordflow}{if} (socketId == dataUser[1]): \textcolor{comment}{# if user already uses this socket}
+147                         dataSend += \textcolor{stringliteral}{"4"} \textcolor{comment}{# successfully stop charging}
+148                         \textcolor{keywordflow}{try}:
+149                             cur.execute(\textcolor{stringliteral}{"UPDATE users SET socketId=?, LastStartOrStop=? WHERE uidTag=?"}, (\textcolor{keywordtype}{
+      None}, StartTime, UserId))             
+150                         \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+151                             \textcolor{keywordflow}{print} (e)
+152                         \textcolor{keywordflow}{finally}:
+153                             cur\_local.execute(\textcolor{stringliteral}{"UPDATE users SET socketId=?, LastStartOrStop=? WHERE
+       uidTag=?"}, (\textcolor{keywordtype}{None}, StartTime, UserId))
+154                     \textcolor{keywordflow}{else}:
+155                         dataSend += \textcolor{stringliteral}{"3"} \textcolor{comment}{# socket is occupied by another user }
+156                 \textcolor{keywordflow}{else}: \textcolor{comment}{#if this socket is free}
+157                     \textcolor{keywordflow}{if} dataUser[1] \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}: \textcolor{comment}{#if user was not using any socket}
+158                         dataSend += \textcolor{stringliteral}{"1"} \textcolor{comment}{# successfully start new charge}
+159                         \textcolor{keywordflow}{try}:
+160                             cur.execute(\textcolor{stringliteral}{"UPDATE users SET socketId=?, LastStartOrStop=? WHERE uidTag=?"}, (
+      socketId, StartTime, UserId))
+161                         \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+162                             \textcolor{keywordflow}{print} (e)
+163                         \textcolor{keywordflow}{finally}:
+164                             cur\_local.execute(\textcolor{stringliteral}{"UPDATE users SET socketId=?, LastStartOrStop=? WHERE
+       uidTag=?"}, (socketId, StartTime, UserId))
+165                     \textcolor{keywordflow}{else}:
+166                         dataSend += \textcolor{stringliteral}{"6"} \textcolor{comment}{# user already at another socket}
+167             \textcolor{keywordflow}{else}: \textcolor{comment}{#if swiped less than 20s ago}
+168                 \textcolor{keywordflow}{if} (socketUsed == socketId): \textcolor{comment}{#if this socket is used now}
+169                     \textcolor{keywordflow}{if} (socketId == dataUser[1]): \textcolor{comment}{# if user already uses this socket}
+170                         dataSend += \textcolor{stringliteral}{"5"} \textcolor{comment}{# you just started using this socket less than 20s ago}
+171                     \textcolor{keywordflow}{else}:
+172                         dataSend += \textcolor{stringliteral}{"3"} \textcolor{comment}{# socket is occupied by another user}
+173                 \textcolor{keywordflow}{else}: \textcolor{comment}{#if this socket is free}
+174                     \textcolor{keywordflow}{if} dataUser[1] \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}: \textcolor{comment}{#if user was not using any socket}
+175                         dataSend += \textcolor{stringliteral}{"2"} \textcolor{comment}{#charger is free, but you already swiped less than 20s ago}
+176                     \textcolor{keywordflow}{else}:
+177                         dataSend += \textcolor{stringliteral}{"6"}  \textcolor{comment}{# user already at another socket}
+178         \textcolor{keywordflow}{else}:
+179              dataSend += \textcolor{stringliteral}{"7"} \textcolor{comment}{#user not verified by admin           }
+180     \textcolor{keywordflow}{else}:
+181         dataSend += \textcolor{stringliteral}{"8"} \textcolor{comment}{#user not in the userlist}
+182     \textcolor{keywordflow}{try}:
+183         con.commit()
+184     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+185         \textcolor{keywordflow}{print} (e)
+186     con\_local.commit()
+187     
+188     client.publish(\textcolor{stringliteral}{"HANevse/allowUser"}, dataSend, 0, \textcolor{keyword}{False})
+189 
+190 \textcolor{comment}{# def Update\_callback(client, userdata, message):}
+191 \textcolor{comment}{#     con = lite.connect(path)}
+192 \textcolor{comment}{#     cur = con.cursor()}
+193 \textcolor{comment}{#     data = message.payload}
+194 \textcolor{comment}{#     index = []}
+195 \textcolor{comment}{#     for i in range(len(data)):}
+196 \textcolor{comment}{#         if (data[i] == '%'):}
+197 \textcolor{comment}{#             index.append(i)}
+198 \textcolor{comment}{#     UserId = int(data[:index[0]])}
+199 \textcolor{comment}{#     PendingCharger = int(data[index[0]+1:index[1]])}
+200 \textcolor{comment}{#     StartTime = int(data[index[1]+1:index[2]])}
+201 \textcolor{comment}{#     cur.execute("UPDATE list SET PendingCharger=? WHERE Id=?", (PendingCharger, UserId))}
+202 \textcolor{comment}{#     cur.execute("UPDATE list SET StartTime=? WHERE Id=?", (StartTime, UserId))}
+203 \textcolor{comment}{#     con.commmit()}
+204 
+205 
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\mbox{\label{namespace_s_q_lfunction_abffdbb58f2363e73ea86ddc83a3893ad}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!bad\+\_\+connection\+\_\+flag@{bad\+\_\+connection\+\_\+flag}}
+\index{bad\+\_\+connection\+\_\+flag@{bad\+\_\+connection\+\_\+flag}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{bad\+\_\+connection\+\_\+flag}
+{\footnotesize\ttfamily S\+Q\+Lfunction.\+bad\+\_\+connection\+\_\+flag}
+
+
+
+Definition at line 411 of file S\+Q\+Lfunction.\+py.
+
+\mbox{\label{namespace_s_q_lfunction_aed5ec64d305ca004c4fe54d51dd36a4e}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!broker@{broker}}
+\index{broker@{broker}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{broker}
+{\footnotesize\ttfamily string S\+Q\+Lfunction.\+broker = \char`\"{}broker.\+hivemq.\+com\char`\"{}}
+
+
+
+M\+Q\+TT broker address. 
+
+
+
+Definition at line 37 of file S\+Q\+Lfunction.\+py.
+
+\mbox{\label{namespace_s_q_lfunction_ac9fb782d6f6dcc44fd19ea1b135ab996}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!client@{client}}
+\index{client@{client}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{client}
+{\footnotesize\ttfamily S\+Q\+Lfunction.\+client = mqtt.\+Client()}
+
+
+
+Definition at line 408 of file S\+Q\+Lfunction.\+py.
+
+\mbox{\label{namespace_s_q_lfunction_a02e42e3457dfb29a0ee1b6252484b0e7}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!con@{con}}
+\index{con@{con}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{con}
+{\footnotesize\ttfamily S\+Q\+Lfunction.\+con = None}
+
+
+
+Initial DB connection check. 
+
+
+
+Definition at line 34 of file S\+Q\+Lfunction.\+py.
+
+\mbox{\label{namespace_s_q_lfunction_af6ef43cf2e7be28e6205af9b355e4943}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!con\+\_\+local@{con\+\_\+local}}
+\index{con\+\_\+local@{con\+\_\+local}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{con\+\_\+local}
+{\footnotesize\ttfamily S\+Q\+Lfunction.\+con\+\_\+local = lite.\+connect(\textbf{ path\+\_\+local})}
+
+
+
+Definition at line 46 of file S\+Q\+Lfunction.\+py.
+
+\mbox{\label{namespace_s_q_lfunction_a513a0e7846b861b6982a0449f46cb6a8}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!connected\+\_\+flag@{connected\+\_\+flag}}
+\index{connected\+\_\+flag@{connected\+\_\+flag}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{connected\+\_\+flag}
+{\footnotesize\ttfamily S\+Q\+Lfunction.\+connected\+\_\+flag}
+
+
+
+Definition at line 410 of file S\+Q\+Lfunction.\+py.
+
+\mbox{\label{namespace_s_q_lfunction_aefa03c2c2ce5f2ab923453e1af7a2201}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!cur@{cur}}
+\index{cur@{cur}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{cur}
+{\footnotesize\ttfamily S\+Q\+Lfunction.\+cur = con.\+cursor()}
+
+
+
+Definition at line 52 of file S\+Q\+Lfunction.\+py.
+
+\mbox{\label{namespace_s_q_lfunction_a808a7ba686f9086b3d4ef7d6a969aceb}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!cur\+\_\+local@{cur\+\_\+local}}
+\index{cur\+\_\+local@{cur\+\_\+local}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{cur\+\_\+local}
+{\footnotesize\ttfamily S\+Q\+Lfunction.\+cur\+\_\+local = con\+\_\+local.\+cursor()}
+
+
+
+Definition at line 47 of file S\+Q\+Lfunction.\+py.
+
+\mbox{\label{namespace_s_q_lfunction_affebcb967a2b844a9e7542f181deacb6}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!current\+\_\+time@{current\+\_\+time}}
+\index{current\+\_\+time@{current\+\_\+time}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{current\+\_\+time}
+{\footnotesize\ttfamily S\+Q\+Lfunction.\+current\+\_\+time = time.\+ctime(time.\+time())}
+
+
+
+Definition at line 437 of file S\+Q\+Lfunction.\+py.
+
+\mbox{\label{namespace_s_q_lfunction_aab5e54d1ed091926790df37c8098f1f7}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!data\+Ref1@{data\+Ref1}}
+\index{data\+Ref1@{data\+Ref1}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{data\+Ref1}
+{\footnotesize\ttfamily S\+Q\+Lfunction.\+data\+Ref1 = cur.\+fetchone()}
+
+
+
+Definition at line 54 of file S\+Q\+Lfunction.\+py.
+
+\mbox{\label{namespace_s_q_lfunction_a68f53c3db854695a6e4a30a3a55594b4}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+ME@{D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+ME}}
+\index{D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+ME@{D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+ME}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+ME}
+{\footnotesize\ttfamily S\+Q\+Lfunction.\+D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+ME = int(4 $\ast$ 60 $\ast$ 60)}
+
+
+
+Const. 
+
+for max time before email is sent to charging user 
+
+Definition at line 13 of file S\+Q\+Lfunction.\+py.
+
+\mbox{\label{namespace_s_q_lfunction_aef9c9d6f38d6ad20fa3572f211e29b04}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!email\+\_\+cntr@{email\+\_\+cntr}}
+\index{email\+\_\+cntr@{email\+\_\+cntr}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{email\+\_\+cntr}
+{\footnotesize\ttfamily int S\+Q\+Lfunction.\+email\+\_\+cntr = 0}
+
+
+
+Definition at line 15 of file S\+Q\+Lfunction.\+py.
+
+\mbox{\label{namespace_s_q_lfunction_a7ec226cfeab195de604b38e8c7b2d0eb}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!email\+\_\+context@{email\+\_\+context}}
+\index{email\+\_\+context@{email\+\_\+context}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{email\+\_\+context}
+{\footnotesize\ttfamily S\+Q\+Lfunction.\+email\+\_\+context = ssl.\+create\+\_\+default\+\_\+context()}
+
+
+
+Definition at line 32 of file S\+Q\+Lfunction.\+py.
+
+\mbox{\label{namespace_s_q_lfunction_ae767f70baa76040d2b29bd6eeefd7bbe}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!email\+\_\+message@{email\+\_\+message}}
+\index{email\+\_\+message@{email\+\_\+message}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{email\+\_\+message}
+{\footnotesize\ttfamily string S\+Q\+Lfunction.\+email\+\_\+message}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+1 =  \textcolor{stringliteral}{"""\(\backslash\)}
+2 \textcolor{stringliteral}{Subject: Unplug car}
+3 \textcolor{stringliteral}{}
+4 \textcolor{stringliteral}{Please unplug your car from the EV charger. Over 4 hours have passed since it was plugged in.}
+5 \textcolor{stringliteral}{}
+6 \textcolor{stringliteral}{This is an automatically generated email. A response to this email will not be read."""}
+\end{DoxyCode}
+
+
+Default email message. 
+
+
+
+Definition at line 25 of file S\+Q\+Lfunction.\+py.
+
+\mbox{\label{namespace_s_q_lfunction_a5964aea00837148a0d731102edf6ac5c}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!err\+\_\+cnt@{err\+\_\+cnt}}
+\index{err\+\_\+cnt@{err\+\_\+cnt}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{err\+\_\+cnt}
+{\footnotesize\ttfamily int S\+Q\+Lfunction.\+err\+\_\+cnt = 0}
+
+
+
+Definition at line 59 of file S\+Q\+Lfunction.\+py.
+
+\mbox{\label{namespace_s_q_lfunction_a215e7090f82fbf0d31fd97be6721389a}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!on\+\_\+connect@{on\+\_\+connect}}
+\index{on\+\_\+connect@{on\+\_\+connect}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{on\+\_\+connect}
+{\footnotesize\ttfamily S\+Q\+Lfunction.\+on\+\_\+connect}
+
+
+
+Definition at line 412 of file S\+Q\+Lfunction.\+py.
+
+
+
+Referenced by on\+\_\+connect().
+
+\mbox{\label{namespace_s_q_lfunction_ab3031ccbbdb3f5a04bd7d66ceb4494c7}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!on\+\_\+disconnect@{on\+\_\+disconnect}}
+\index{on\+\_\+disconnect@{on\+\_\+disconnect}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{on\+\_\+disconnect}
+{\footnotesize\ttfamily S\+Q\+Lfunction.\+on\+\_\+disconnect}
+
+
+
+Definition at line 413 of file S\+Q\+Lfunction.\+py.
+
+
+
+Referenced by on\+\_\+disconnect().
+
+\mbox{\label{namespace_s_q_lfunction_a9239421845b9e0921bad7a2a191f3849}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!path@{path}}
+\index{path@{path}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{path}
+{\footnotesize\ttfamily string S\+Q\+Lfunction.\+path = \char`\"{}/mnt/dav/Data/usertable.\+sqlite3\char`\"{}}
+
+
+
+Definition at line 44 of file S\+Q\+Lfunction.\+py.
+
+\mbox{\label{namespace_s_q_lfunction_a50744e6ca7c6cbd547746acb907f016e}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!path\+\_\+local@{path\+\_\+local}}
+\index{path\+\_\+local@{path\+\_\+local}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{path\+\_\+local}
+{\footnotesize\ttfamily string S\+Q\+Lfunction.\+path\+\_\+local = \char`\"{}/media/D\+A\+T\+A\+B\+A\+SE/usertable.\+sqlite3\char`\"{}}
+
+
+
+Path to users database path = \char`\"{}./user\+List\char`\"{} \#\+Use internal memory -\/ old DB. 
+
+
+
+Definition at line 43 of file S\+Q\+Lfunction.\+py.
+
+\mbox{\label{namespace_s_q_lfunction_a51ebdaf9d64f52b2c266a49020cf12a5}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!receiver\+\_\+email@{receiver\+\_\+email}}
+\index{receiver\+\_\+email@{receiver\+\_\+email}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{receiver\+\_\+email}
+{\footnotesize\ttfamily string S\+Q\+Lfunction.\+receiver\+\_\+email = \char`\"{}\char`\"{}}
+
+
+
+Holder for email addresses of receivers. 
+
+
+
+Definition at line 21 of file S\+Q\+Lfunction.\+py.
+
+\mbox{\label{namespace_s_q_lfunction_ac63d06248a3e41c104ae1290bb403c78}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!sender\+\_\+email@{sender\+\_\+email}}
+\index{sender\+\_\+email@{sender\+\_\+email}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{sender\+\_\+email}
+{\footnotesize\ttfamily string S\+Q\+Lfunction.\+sender\+\_\+email = \char`\"{}tpi97364@gmail.\+com\char`\"{}}
+
+
+
+Email sender address for Pi. 
+
+
+
+Definition at line 19 of file S\+Q\+Lfunction.\+py.
+
+\mbox{\label{namespace_s_q_lfunction_a0d308a95029254ed328ba365861abdf2}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!sender\+\_\+password@{sender\+\_\+password}}
+\index{sender\+\_\+password@{sender\+\_\+password}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{sender\+\_\+password}
+{\footnotesize\ttfamily string S\+Q\+Lfunction.\+sender\+\_\+password = \char`\"{}controlsystem\char`\"{}}
+
+
+
+Pi email password. 
+
+
+
+Definition at line 23 of file S\+Q\+Lfunction.\+py.
+
+\mbox{\label{namespace_s_q_lfunction_afc238002d1e4aeb7f8d2e10d47dfad36}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!smtp\+\_\+server@{smtp\+\_\+server}}
+\index{smtp\+\_\+server@{smtp\+\_\+server}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{smtp\+\_\+server}
+{\footnotesize\ttfamily string S\+Q\+Lfunction.\+smtp\+\_\+server = \char`\"{}smtp.\+gmail.\+com\char`\"{}}
+
+
+
+Definition at line 17 of file S\+Q\+Lfunction.\+py.
+
+\mbox{\label{namespace_s_q_lfunction_a700c01c62cb7f1ed2561f5e640da46cf}} 
+\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!S\+S\+Lport@{S\+S\+Lport}}
+\index{S\+S\+Lport@{S\+S\+Lport}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
+\subsubsection{S\+S\+Lport}
+{\footnotesize\ttfamily int S\+Q\+Lfunction.\+S\+S\+Lport = 465}
+
+
+
+Definition at line 16 of file S\+Q\+Lfunction.\+py.
+

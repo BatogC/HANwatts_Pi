@@ -1,0 +1,242 @@
+\section{node-\/red-\/1881/node\+\_\+modules/nan/nan\+\_\+callbacks.h File Reference}
+\label{nan__callbacks_8h}\index{node-\/red-\/1881/node\+\_\+modules/nan/nan\+\_\+callbacks.\+h@{node-\/red-\/1881/node\+\_\+modules/nan/nan\+\_\+callbacks.\+h}}
+{\ttfamily \#include \char`\"{}nan\+\_\+callbacks\+\_\+pre\+\_\+12\+\_\+inl.\+h\char`\"{}}\newline
+Include dependency graph for nan\+\_\+callbacks.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ Function\+Callback\+Info$<$ T $>$}
+\item 
+class \textbf{ Property\+Callback\+Info$<$ T $>$}
+\item 
+class \textbf{ Global$<$ T $>$}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \textbf{ imp}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ N\+A\+N\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+S\+\_\+\+H\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \textbf{ Function\+Callback}) (const \textbf{ Function\+Callback\+Info}$<$ v8\+::\+Value $>$ \&)
+\item 
+typedef void($\ast$ \textbf{ Getter\+Callback}) (v8\+::\+Local$<$ v8\+::\+String $>$, const \textbf{ Property\+Callback\+Info}$<$ v8\+::\+Value $>$ \&)
+\item 
+typedef void($\ast$ \textbf{ Setter\+Callback}) (v8\+::\+Local$<$ v8\+::\+String $>$, v8\+::\+Local$<$ v8\+::\+Value $>$, const \textbf{ Property\+Callback\+Info}$<$ void $>$ \&)
+\item 
+typedef void($\ast$ \textbf{ Property\+Getter\+Callback}) (v8\+::\+Local$<$ v8\+::\+String $>$, const \textbf{ Property\+Callback\+Info}$<$ v8\+::\+Value $>$ \&)
+\item 
+typedef void($\ast$ \textbf{ Property\+Setter\+Callback}) (v8\+::\+Local$<$ v8\+::\+String $>$, v8\+::\+Local$<$ v8\+::\+Value $>$, const \textbf{ Property\+Callback\+Info}$<$ v8\+::\+Value $>$ \&)
+\item 
+typedef void($\ast$ \textbf{ Property\+Enumerator\+Callback}) (const \textbf{ Property\+Callback\+Info}$<$ v8\+::\+Array $>$ \&)
+\item 
+typedef void($\ast$ \textbf{ Property\+Deleter\+Callback}) (v8\+::\+Local$<$ v8\+::\+String $>$, const \textbf{ Property\+Callback\+Info}$<$ v8\+::\+Boolean $>$ \&)
+\item 
+typedef void($\ast$ \textbf{ Property\+Query\+Callback}) (v8\+::\+Local$<$ v8\+::\+String $>$, const \textbf{ Property\+Callback\+Info}$<$ v8\+::\+Integer $>$ \&)
+\item 
+typedef void($\ast$ \textbf{ Index\+Getter\+Callback}) (uint32\+\_\+t, const \textbf{ Property\+Callback\+Info}$<$ v8\+::\+Value $>$ \&)
+\item 
+typedef void($\ast$ \textbf{ Index\+Setter\+Callback}) (uint32\+\_\+t, v8\+::\+Local$<$ v8\+::\+Value $>$, const \textbf{ Property\+Callback\+Info}$<$ v8\+::\+Value $>$ \&)
+\item 
+typedef void($\ast$ \textbf{ Index\+Enumerator\+Callback}) (const \textbf{ Property\+Callback\+Info}$<$ v8\+::\+Array $>$ \&)
+\item 
+typedef void($\ast$ \textbf{ Index\+Deleter\+Callback}) (uint32\+\_\+t, const \textbf{ Property\+Callback\+Info}$<$ v8\+::\+Boolean $>$ \&)
+\item 
+typedef void($\ast$ \textbf{ Index\+Query\+Callback}) (uint32\+\_\+t, const \textbf{ Property\+Callback\+Info}$<$ v8\+::\+Integer $>$ \&)
+\item 
+typedef v8\+::\+Local$<$ v8\+::\+Accessor\+Signature $>$ \textbf{ imp\+::\+Sig}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const int \textbf{ imp\+::k\+Data\+Index} = 0
+\item 
+static const int \textbf{ imp\+::k\+Function\+Index} = 1
+\item 
+static const int \textbf{ imp\+::k\+Function\+Field\+Count} = 2
+\item 
+static const int \textbf{ imp\+::k\+Getter\+Index} = 1
+\item 
+static const int \textbf{ imp\+::k\+Setter\+Index} = 2
+\item 
+static const int \textbf{ imp\+::k\+Accessor\+Field\+Count} = 3
+\item 
+static const int \textbf{ imp\+::k\+Property\+Getter\+Index} = 1
+\item 
+static const int \textbf{ imp\+::k\+Property\+Setter\+Index} = 2
+\item 
+static const int \textbf{ imp\+::k\+Property\+Enumerator\+Index} = 3
+\item 
+static const int \textbf{ imp\+::k\+Property\+Deleter\+Index} = 4
+\item 
+static const int \textbf{ imp\+::k\+Property\+Query\+Index} = 5
+\item 
+static const int \textbf{ imp\+::k\+Property\+Field\+Count} = 6
+\item 
+static const int \textbf{ imp\+::k\+Index\+Property\+Getter\+Index} = 1
+\item 
+static const int \textbf{ imp\+::k\+Index\+Property\+Setter\+Index} = 2
+\item 
+static const int \textbf{ imp\+::k\+Index\+Property\+Enumerator\+Index} = 3
+\item 
+static const int \textbf{ imp\+::k\+Index\+Property\+Deleter\+Index} = 4
+\item 
+static const int \textbf{ imp\+::k\+Index\+Property\+Query\+Index} = 5
+\item 
+static const int \textbf{ imp\+::k\+Index\+Property\+Field\+Count} = 6
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\label{nan_8h_a5d00305da4565a87539cc73e5b3e75f2}} 
+\index{nan\+\_\+callbacks.\+h@{nan\+\_\+callbacks.\+h}!N\+A\+N\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+S\+\_\+\+H\+\_\+@{N\+A\+N\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+S\+\_\+\+H\+\_\+}}
+\index{N\+A\+N\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+S\+\_\+\+H\+\_\+@{N\+A\+N\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+S\+\_\+\+H\+\_\+}!nan\+\_\+callbacks.\+h@{nan\+\_\+callbacks.\+h}}
+\subsubsection{N\+A\+N\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+S\+\_\+\+H\+\_\+}
+{\footnotesize\ttfamily \#define N\+A\+N\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K\+S\+\_\+\+H\+\_\+}
+
+
+
+Definition at line 11 of file nan.\+h.
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\label{nan__callbacks_8h_ae2fca5bfeddc3f8b16442f0e1361acb0}} 
+\index{nan\+\_\+callbacks.\+h@{nan\+\_\+callbacks.\+h}!Function\+Callback@{Function\+Callback}}
+\index{Function\+Callback@{Function\+Callback}!nan\+\_\+callbacks.\+h@{nan\+\_\+callbacks.\+h}}
+\subsubsection{Function\+Callback}
+{\footnotesize\ttfamily typedef void($\ast$ Function\+Callback) (const \textbf{ Function\+Callback\+Info}$<$ v8\+::\+Value $>$ \&)}
+
+
+
+Definition at line 16 of file nan\+\_\+callbacks.\+h.
+
+\mbox{\label{nan__callbacks_8h_a2907a43d00e1c3044e039f30e755b76b}} 
+\index{nan\+\_\+callbacks.\+h@{nan\+\_\+callbacks.\+h}!Getter\+Callback@{Getter\+Callback}}
+\index{Getter\+Callback@{Getter\+Callback}!nan\+\_\+callbacks.\+h@{nan\+\_\+callbacks.\+h}}
+\subsubsection{Getter\+Callback}
+{\footnotesize\ttfamily typedef void($\ast$ Getter\+Callback) (v8\+::\+Local$<$ v8\+::\+String $>$, const \textbf{ Property\+Callback\+Info}$<$ v8\+::\+Value $>$ \&)}
+
+
+
+Definition at line 18 of file nan\+\_\+callbacks.\+h.
+
+\mbox{\label{nan__callbacks_8h_ab3cf861ea4ee2776eb426d07a1c72ea5}} 
+\index{nan\+\_\+callbacks.\+h@{nan\+\_\+callbacks.\+h}!Index\+Deleter\+Callback@{Index\+Deleter\+Callback}}
+\index{Index\+Deleter\+Callback@{Index\+Deleter\+Callback}!nan\+\_\+callbacks.\+h@{nan\+\_\+callbacks.\+h}}
+\subsubsection{Index\+Deleter\+Callback}
+{\footnotesize\ttfamily typedef void($\ast$ Index\+Deleter\+Callback) (uint32\+\_\+t, const \textbf{ Property\+Callback\+Info}$<$ v8\+::\+Boolean $>$ \&)}
+
+
+
+Definition at line 47 of file nan\+\_\+callbacks.\+h.
+
+\mbox{\label{nan__callbacks_8h_ae03f3ed6f988ddebc06aa476ae131ee9}} 
+\index{nan\+\_\+callbacks.\+h@{nan\+\_\+callbacks.\+h}!Index\+Enumerator\+Callback@{Index\+Enumerator\+Callback}}
+\index{Index\+Enumerator\+Callback@{Index\+Enumerator\+Callback}!nan\+\_\+callbacks.\+h@{nan\+\_\+callbacks.\+h}}
+\subsubsection{Index\+Enumerator\+Callback}
+{\footnotesize\ttfamily typedef void($\ast$ Index\+Enumerator\+Callback) (const \textbf{ Property\+Callback\+Info}$<$ v8\+::\+Array $>$ \&)}
+
+
+
+Definition at line 46 of file nan\+\_\+callbacks.\+h.
+
+\mbox{\label{nan__callbacks_8h_aab2bc4aa0ccb3b65a88d175934f6e860}} 
+\index{nan\+\_\+callbacks.\+h@{nan\+\_\+callbacks.\+h}!Index\+Getter\+Callback@{Index\+Getter\+Callback}}
+\index{Index\+Getter\+Callback@{Index\+Getter\+Callback}!nan\+\_\+callbacks.\+h@{nan\+\_\+callbacks.\+h}}
+\subsubsection{Index\+Getter\+Callback}
+{\footnotesize\ttfamily typedef void($\ast$ Index\+Getter\+Callback) (uint32\+\_\+t, const \textbf{ Property\+Callback\+Info}$<$ v8\+::\+Value $>$ \&)}
+
+
+
+Definition at line 38 of file nan\+\_\+callbacks.\+h.
+
+\mbox{\label{nan__callbacks_8h_a5f4f90c948d45ff30f721de5abaa5378}} 
+\index{nan\+\_\+callbacks.\+h@{nan\+\_\+callbacks.\+h}!Index\+Query\+Callback@{Index\+Query\+Callback}}
+\index{Index\+Query\+Callback@{Index\+Query\+Callback}!nan\+\_\+callbacks.\+h@{nan\+\_\+callbacks.\+h}}
+\subsubsection{Index\+Query\+Callback}
+{\footnotesize\ttfamily typedef void($\ast$ Index\+Query\+Callback) (uint32\+\_\+t, const \textbf{ Property\+Callback\+Info}$<$ v8\+::\+Integer $>$ \&)}
+
+
+
+Definition at line 50 of file nan\+\_\+callbacks.\+h.
+
+\mbox{\label{nan__callbacks_8h_a831245c53d53746c45ee641be8f6b76b}} 
+\index{nan\+\_\+callbacks.\+h@{nan\+\_\+callbacks.\+h}!Index\+Setter\+Callback@{Index\+Setter\+Callback}}
+\index{Index\+Setter\+Callback@{Index\+Setter\+Callback}!nan\+\_\+callbacks.\+h@{nan\+\_\+callbacks.\+h}}
+\subsubsection{Index\+Setter\+Callback}
+{\footnotesize\ttfamily typedef void($\ast$ Index\+Setter\+Callback) (uint32\+\_\+t, v8\+::\+Local$<$ v8\+::\+Value $>$, const \textbf{ Property\+Callback\+Info}$<$ v8\+::\+Value $>$ \&)}
+
+
+
+Definition at line 41 of file nan\+\_\+callbacks.\+h.
+
+\mbox{\label{nan__callbacks_8h_a956d573636aae9243078093a6dd1fbd0}} 
+\index{nan\+\_\+callbacks.\+h@{nan\+\_\+callbacks.\+h}!Property\+Deleter\+Callback@{Property\+Deleter\+Callback}}
+\index{Property\+Deleter\+Callback@{Property\+Deleter\+Callback}!nan\+\_\+callbacks.\+h@{nan\+\_\+callbacks.\+h}}
+\subsubsection{Property\+Deleter\+Callback}
+{\footnotesize\ttfamily typedef void($\ast$ Property\+Deleter\+Callback) (v8\+::\+Local$<$ v8\+::\+String $>$, const \textbf{ Property\+Callback\+Info}$<$ v8\+::\+Boolean $>$ \&)}
+
+
+
+Definition at line 32 of file nan\+\_\+callbacks.\+h.
+
+\mbox{\label{nan__callbacks_8h_afb49cbe6047c500993ea6d9d65fa30ef}} 
+\index{nan\+\_\+callbacks.\+h@{nan\+\_\+callbacks.\+h}!Property\+Enumerator\+Callback@{Property\+Enumerator\+Callback}}
+\index{Property\+Enumerator\+Callback@{Property\+Enumerator\+Callback}!nan\+\_\+callbacks.\+h@{nan\+\_\+callbacks.\+h}}
+\subsubsection{Property\+Enumerator\+Callback}
+{\footnotesize\ttfamily typedef void($\ast$ Property\+Enumerator\+Callback) (const \textbf{ Property\+Callback\+Info}$<$ v8\+::\+Array $>$ \&)}
+
+
+
+Definition at line 31 of file nan\+\_\+callbacks.\+h.
+
+\mbox{\label{nan__callbacks_8h_acd92e0404dadebfe37dd6ce47b8d2ade}} 
+\index{nan\+\_\+callbacks.\+h@{nan\+\_\+callbacks.\+h}!Property\+Getter\+Callback@{Property\+Getter\+Callback}}
+\index{Property\+Getter\+Callback@{Property\+Getter\+Callback}!nan\+\_\+callbacks.\+h@{nan\+\_\+callbacks.\+h}}
+\subsubsection{Property\+Getter\+Callback}
+{\footnotesize\ttfamily typedef void($\ast$ Property\+Getter\+Callback) (v8\+::\+Local$<$ v8\+::\+String $>$, const \textbf{ Property\+Callback\+Info}$<$ v8\+::\+Value $>$ \&)}
+
+
+
+Definition at line 23 of file nan\+\_\+callbacks.\+h.
+
+\mbox{\label{nan__callbacks_8h_a498c40b44efef77f8650f830833858e9}} 
+\index{nan\+\_\+callbacks.\+h@{nan\+\_\+callbacks.\+h}!Property\+Query\+Callback@{Property\+Query\+Callback}}
+\index{Property\+Query\+Callback@{Property\+Query\+Callback}!nan\+\_\+callbacks.\+h@{nan\+\_\+callbacks.\+h}}
+\subsubsection{Property\+Query\+Callback}
+{\footnotesize\ttfamily typedef void($\ast$ Property\+Query\+Callback) (v8\+::\+Local$<$ v8\+::\+String $>$, const \textbf{ Property\+Callback\+Info}$<$ v8\+::\+Integer $>$ \&)}
+
+
+
+Definition at line 35 of file nan\+\_\+callbacks.\+h.
+
+\mbox{\label{nan__callbacks_8h_ac1c9a8159ab72a70425b35b6add4578e}} 
+\index{nan\+\_\+callbacks.\+h@{nan\+\_\+callbacks.\+h}!Property\+Setter\+Callback@{Property\+Setter\+Callback}}
+\index{Property\+Setter\+Callback@{Property\+Setter\+Callback}!nan\+\_\+callbacks.\+h@{nan\+\_\+callbacks.\+h}}
+\subsubsection{Property\+Setter\+Callback}
+{\footnotesize\ttfamily typedef void($\ast$ Property\+Setter\+Callback) (v8\+::\+Local$<$ v8\+::\+String $>$, v8\+::\+Local$<$ v8\+::\+Value $>$, const \textbf{ Property\+Callback\+Info}$<$ v8\+::\+Value $>$ \&)}
+
+
+
+Definition at line 26 of file nan\+\_\+callbacks.\+h.
+
+\mbox{\label{nan__callbacks_8h_a1cb8e08feb5bf4c01283eaeff8b704ec}} 
+\index{nan\+\_\+callbacks.\+h@{nan\+\_\+callbacks.\+h}!Setter\+Callback@{Setter\+Callback}}
+\index{Setter\+Callback@{Setter\+Callback}!nan\+\_\+callbacks.\+h@{nan\+\_\+callbacks.\+h}}
+\subsubsection{Setter\+Callback}
+{\footnotesize\ttfamily typedef void($\ast$ Setter\+Callback) (v8\+::\+Local$<$ v8\+::\+String $>$, v8\+::\+Local$<$ v8\+::\+Value $>$, const \textbf{ Property\+Callback\+Info}$<$ void $>$ \&)}
+
+
+
+Definition at line 19 of file nan\+\_\+callbacks.\+h.
+

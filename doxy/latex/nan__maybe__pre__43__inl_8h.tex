@@ -1,0 +1,690 @@
+\section{node-\/red-\/1881/node\+\_\+modules/nan/nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.h File Reference}
+\label{nan__maybe__pre__43__inl_8h}\index{node-\/red-\/1881/node\+\_\+modules/nan/nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{node-\/red-\/1881/node\+\_\+modules/nan/nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+{\ttfamily \#include \char`\"{}nan\+\_\+define\+\_\+own\+\_\+property\+\_\+helper.\+h\char`\"{}}\newline
+Include dependency graph for nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ Maybe\+Local$<$ T $>$}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ N\+A\+N\+\_\+\+M\+A\+Y\+B\+E\+\_\+\+P\+R\+E\+\_\+43\+\_\+\+I\+N\+L\+\_\+\+H\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Maybe\+Local}$<$ v8\+::\+String $>$ \textbf{ To\+Detail\+String} (v8\+::\+Handle$<$ v8\+::\+Value $>$ val)
+\item 
+\textbf{ Maybe\+Local}$<$ v8\+::\+Uint32 $>$ \textbf{ To\+Array\+Index} (v8\+::\+Handle$<$ v8\+::\+Value $>$ val)
+\item 
+Maybe$<$ bool $>$ \textbf{ Equals} (v8\+::\+Handle$<$ v8\+::\+Value $>$ a, v8\+::\+Handle$<$ v8\+::\+Value $>$(b))
+\item 
+\textbf{ Maybe\+Local}$<$ v8\+::\+Object $>$ \textbf{ New\+Instance} (v8\+::\+Handle$<$ v8\+::\+Function $>$ h)
+\item 
+\textbf{ Maybe\+Local}$<$ v8\+::\+Object $>$ \textbf{ New\+Instance} (v8\+::\+Local$<$ v8\+::\+Function $>$ h, int argc, v8\+::\+Local$<$ v8\+::\+Value $>$ argv[$\,$])
+\item 
+\textbf{ Maybe\+Local}$<$ v8\+::\+Object $>$ \textbf{ New\+Instance} (v8\+::\+Handle$<$ v8\+::\+Object\+Template $>$ h)
+\item 
+\textbf{ Maybe\+Local}$<$ v8\+::\+Function $>$ \textbf{ Get\+Function} (v8\+::\+Handle$<$ v8\+::\+Function\+Template $>$ t)
+\item 
+Maybe$<$ bool $>$ \textbf{ Set} (v8\+::\+Handle$<$ v8\+::\+Object $>$ obj, v8\+::\+Handle$<$ v8\+::\+Value $>$ key, v8\+::\+Handle$<$ v8\+::\+Value $>$ value)
+\item 
+Maybe$<$ bool $>$ \textbf{ Set} (v8\+::\+Handle$<$ v8\+::\+Object $>$ obj, uint32\+\_\+t index, v8\+::\+Handle$<$ v8\+::\+Value $>$ value)
+\item 
+Maybe$<$ bool $>$ \textbf{ Define\+Own\+Property} (v8\+::\+Handle$<$ v8\+::\+Object $>$ obj, v8\+::\+Handle$<$ v8\+::\+String $>$ key, v8\+::\+Handle$<$ v8\+::\+Value $>$ value, v8\+::\+Property\+Attribute attribs=v8\+::\+None)
+\item 
+\textbf{ N\+A\+N\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED} Maybe$<$ bool $>$ \textbf{ Force\+Set} (v8\+::\+Handle$<$ v8\+::\+Object $>$ obj, v8\+::\+Handle$<$ v8\+::\+Value $>$ key, v8\+::\+Handle$<$ v8\+::\+Value $>$ value, v8\+::\+Property\+Attribute attribs=v8\+::\+None)
+\item 
+\textbf{ Maybe\+Local}$<$ v8\+::\+Value $>$ \textbf{ Get} (v8\+::\+Handle$<$ v8\+::\+Object $>$ obj, v8\+::\+Handle$<$ v8\+::\+Value $>$ key)
+\item 
+\textbf{ Maybe\+Local}$<$ v8\+::\+Value $>$ \textbf{ Get} (v8\+::\+Handle$<$ v8\+::\+Object $>$ obj, uint32\+\_\+t index)
+\item 
+Maybe$<$ v8\+::\+Property\+Attribute $>$ \textbf{ Get\+Property\+Attributes} (v8\+::\+Handle$<$ v8\+::\+Object $>$ obj, v8\+::\+Handle$<$ v8\+::\+Value $>$ key)
+\item 
+Maybe$<$ bool $>$ \textbf{ Has} (v8\+::\+Handle$<$ v8\+::\+Object $>$ obj, v8\+::\+Handle$<$ v8\+::\+String $>$ key)
+\item 
+Maybe$<$ bool $>$ \textbf{ Has} (v8\+::\+Handle$<$ v8\+::\+Object $>$ obj, uint32\+\_\+t index)
+\item 
+Maybe$<$ bool $>$ \textbf{ Delete} (v8\+::\+Handle$<$ v8\+::\+Object $>$ obj, v8\+::\+Handle$<$ v8\+::\+String $>$ key)
+\item 
+Maybe$<$ bool $>$ \textbf{ Delete} (v8\+::\+Handle$<$ v8\+::\+Object $>$ obj, uint32\+\_\+t index)
+\item 
+\textbf{ Maybe\+Local}$<$ v8\+::\+Array $>$ \textbf{ Get\+Property\+Names} (v8\+::\+Handle$<$ v8\+::\+Object $>$ obj)
+\item 
+\textbf{ Maybe\+Local}$<$ v8\+::\+Array $>$ \textbf{ Get\+Own\+Property\+Names} (v8\+::\+Handle$<$ v8\+::\+Object $>$ obj)
+\item 
+Maybe$<$ bool $>$ \textbf{ Set\+Prototype} (v8\+::\+Handle$<$ v8\+::\+Object $>$ obj, v8\+::\+Handle$<$ v8\+::\+Value $>$ prototype)
+\item 
+\textbf{ Maybe\+Local}$<$ v8\+::\+String $>$ \textbf{ Object\+Proto\+To\+String} (v8\+::\+Handle$<$ v8\+::\+Object $>$ obj)
+\item 
+Maybe$<$ bool $>$ \textbf{ Has\+Own\+Property} (v8\+::\+Handle$<$ v8\+::\+Object $>$ obj, v8\+::\+Handle$<$ v8\+::\+String $>$ key)
+\item 
+Maybe$<$ bool $>$ \textbf{ Has\+Real\+Named\+Property} (v8\+::\+Handle$<$ v8\+::\+Object $>$ obj, v8\+::\+Handle$<$ v8\+::\+String $>$ key)
+\item 
+Maybe$<$ bool $>$ \textbf{ Has\+Real\+Indexed\+Property} (v8\+::\+Handle$<$ v8\+::\+Object $>$ obj, uint32\+\_\+t index)
+\item 
+Maybe$<$ bool $>$ \textbf{ Has\+Real\+Named\+Callback\+Property} (v8\+::\+Handle$<$ v8\+::\+Object $>$ obj, v8\+::\+Handle$<$ v8\+::\+String $>$ key)
+\item 
+\textbf{ Maybe\+Local}$<$ v8\+::\+Value $>$ \textbf{ Get\+Real\+Named\+Property\+In\+Prototype\+Chain} (v8\+::\+Handle$<$ v8\+::\+Object $>$ obj, v8\+::\+Handle$<$ v8\+::\+String $>$ key)
+\item 
+\textbf{ Maybe\+Local}$<$ v8\+::\+Value $>$ \textbf{ Get\+Real\+Named\+Property} (v8\+::\+Handle$<$ v8\+::\+Object $>$ obj, v8\+::\+Handle$<$ v8\+::\+String $>$ key)
+\item 
+\textbf{ Maybe\+Local}$<$ v8\+::\+Value $>$ \textbf{ Call\+As\+Function} (v8\+::\+Handle$<$ v8\+::\+Object $>$ obj, v8\+::\+Handle$<$ v8\+::\+Object $>$ recv, int argc, v8\+::\+Handle$<$ v8\+::\+Value $>$ argv[$\,$])
+\item 
+\textbf{ Maybe\+Local}$<$ v8\+::\+Value $>$ \textbf{ Call\+As\+Constructor} (v8\+::\+Handle$<$ v8\+::\+Object $>$ obj, int argc, v8\+::\+Local$<$ v8\+::\+Value $>$ argv[$\,$])
+\item 
+\textbf{ Maybe\+Local}$<$ v8\+::\+String $>$ \textbf{ Get\+Source\+Line} (v8\+::\+Handle$<$ v8\+::\+Message $>$ msg)
+\item 
+Maybe$<$ int $>$ \textbf{ Get\+Line\+Number} (v8\+::\+Handle$<$ v8\+::\+Message $>$ msg)
+\item 
+Maybe$<$ int $>$ \textbf{ Get\+Start\+Column} (v8\+::\+Handle$<$ v8\+::\+Message $>$ msg)
+\item 
+Maybe$<$ int $>$ \textbf{ Get\+End\+Column} (v8\+::\+Handle$<$ v8\+::\+Message $>$ msg)
+\item 
+\textbf{ Maybe\+Local}$<$ v8\+::\+Object $>$ \textbf{ Clone\+Element\+At} (v8\+::\+Handle$<$ v8\+::\+Array $>$ array, uint32\+\_\+t index)
+\item 
+\textbf{ Maybe\+Local}$<$ v8\+::\+Value $>$ \textbf{ Call} (v8\+::\+Local$<$ v8\+::\+Function $>$ fun, v8\+::\+Local$<$ v8\+::\+Object $>$ recv, int argc, v8\+::\+Local$<$ v8\+::\+Value $>$ argv[$\,$])
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\label{nan_8h_ae616f2de329899dcfa607bc3788e69e5}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!N\+A\+N\+\_\+\+M\+A\+Y\+B\+E\+\_\+\+P\+R\+E\+\_\+43\+\_\+\+I\+N\+L\+\_\+\+H\+\_\+@{N\+A\+N\+\_\+\+M\+A\+Y\+B\+E\+\_\+\+P\+R\+E\+\_\+43\+\_\+\+I\+N\+L\+\_\+\+H\+\_\+}}
+\index{N\+A\+N\+\_\+\+M\+A\+Y\+B\+E\+\_\+\+P\+R\+E\+\_\+43\+\_\+\+I\+N\+L\+\_\+\+H\+\_\+@{N\+A\+N\+\_\+\+M\+A\+Y\+B\+E\+\_\+\+P\+R\+E\+\_\+43\+\_\+\+I\+N\+L\+\_\+\+H\+\_\+}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{N\+A\+N\+\_\+\+M\+A\+Y\+B\+E\+\_\+\+P\+R\+E\+\_\+43\+\_\+\+I\+N\+L\+\_\+\+H\+\_\+}
+{\footnotesize\ttfamily \#define N\+A\+N\+\_\+\+M\+A\+Y\+B\+E\+\_\+\+P\+R\+E\+\_\+43\+\_\+\+I\+N\+L\+\_\+\+H\+\_\+}
+
+
+
+Definition at line 11 of file nan.\+h.
+
+
+
+\subsection{Function Documentation}
+\mbox{\label{nan__maybe__pre__43__inl_8h_a039813a5e5f26556ff53cf377e36e5d3}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Call@{Call}}
+\index{Call@{Call}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Call()}
+{\footnotesize\ttfamily \textbf{ Maybe\+Local}$<$v8\+::\+Value$>$ Call (\begin{DoxyParamCaption}\item[{v8\+::\+Local$<$ v8\+::\+Function $>$}]{fun,  }\item[{v8\+::\+Local$<$ v8\+::\+Object $>$}]{recv,  }\item[{int}]{argc,  }\item[{v8\+::\+Local$<$ v8\+::\+Value $>$}]{argv[$\,$] }\end{DoxyParamCaption})}
+
+
+
+Definition at line 260 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+264                              \{
+265   \textcolor{keywordflow}{return} MaybeLocal<v8::Value>(fun->Call(recv, argc, argv));
+266 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_a163b88905f1bbcef12d8068bf9034516}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Call\+As\+Constructor@{Call\+As\+Constructor}}
+\index{Call\+As\+Constructor@{Call\+As\+Constructor}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Call\+As\+Constructor()}
+{\footnotesize\ttfamily \textbf{ Maybe\+Local}$<$v8\+::\+Value$>$ Call\+As\+Constructor (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Object $>$}]{obj,  }\item[{int}]{argc,  }\item[{v8\+::\+Local$<$ v8\+::\+Value $>$}]{argv[$\,$] }\end{DoxyParamCaption})}
+
+
+
+Definition at line 230 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+233                              \{
+234   \textcolor{keywordflow}{return} MaybeLocal<v8::Value>(obj->CallAsConstructor(argc, argv));
+235 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_a8ebee52126ebffe8993d6a9be8ff8a4c}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Call\+As\+Function@{Call\+As\+Function}}
+\index{Call\+As\+Function@{Call\+As\+Function}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Call\+As\+Function()}
+{\footnotesize\ttfamily \textbf{ Maybe\+Local}$<$v8\+::\+Value$>$ Call\+As\+Function (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Object $>$}]{obj,  }\item[{v8\+::\+Handle$<$ v8\+::\+Object $>$}]{recv,  }\item[{int}]{argc,  }\item[{v8\+::\+Handle$<$ v8\+::\+Value $>$}]{argv[$\,$] }\end{DoxyParamCaption})}
+
+
+
+Definition at line 222 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+226                               \{
+227   \textcolor{keywordflow}{return} MaybeLocal<v8::Value>(obj->CallAsFunction(recv, argc, argv));
+228 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_a3ad6deb9065d99407d4be90208bddc0e}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Clone\+Element\+At@{Clone\+Element\+At}}
+\index{Clone\+Element\+At@{Clone\+Element\+At}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Clone\+Element\+At()}
+{\footnotesize\ttfamily \textbf{ Maybe\+Local}$<$v8\+::\+Object$>$ Clone\+Element\+At (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Array $>$}]{array,  }\item[{uint32\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+
+
+Definition at line 254 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+256                     \{
+257   \textcolor{keywordflow}{return} MaybeLocal<v8::Object>(array->CloneElementAt(index));
+258 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_a545b79091560bf957d6ef124f5bc74b3}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Define\+Own\+Property@{Define\+Own\+Property}}
+\index{Define\+Own\+Property@{Define\+Own\+Property}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Define\+Own\+Property()}
+{\footnotesize\ttfamily Maybe$<$bool$>$ Define\+Own\+Property (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Object $>$}]{obj,  }\item[{v8\+::\+Handle$<$ v8\+::\+String $>$}]{key,  }\item[{v8\+::\+Handle$<$ v8\+::\+Value $>$}]{value,  }\item[{v8\+::\+Property\+Attribute}]{attribs = {\ttfamily v8\+:\+:None} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 105 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+
+References imp\+::\+Define\+Own\+Property\+Helper().
+
+
+\begin{DoxyCode}
+109                                           \{
+110   v8::PropertyAttribute current = obj->GetPropertyAttributes(key);
+111   \textcolor{keywordflow}{return} imp::DefineOwnPropertyHelper(current, obj, key, value, attribs);
+112 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_aaf4750f3880975364e48a1997c0d6a41}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Delete@{Delete}}
+\index{Delete@{Delete}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Delete()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Maybe$<$bool$>$ Delete (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Object $>$}]{obj,  }\item[{v8\+::\+Handle$<$ v8\+::\+String $>$}]{key }\end{DoxyParamCaption})}
+
+
+
+Definition at line 152 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+154                             \{
+155   \textcolor{keywordflow}{return} Just<bool>(obj->Delete(key));
+156 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_ad5a07b800846ecfe04efb0449e75e0b4}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Delete@{Delete}}
+\index{Delete@{Delete}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Delete()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Maybe$<$bool$>$ Delete (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Object $>$}]{obj,  }\item[{uint32\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+
+
+Definition at line 158 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+160                     \{
+161   \textcolor{keywordflow}{return} Just<bool>(obj->Delete(index));
+162 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_a47ad902ee351507e3470becb343033ff}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Equals@{Equals}}
+\index{Equals@{Equals}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Equals()}
+{\footnotesize\ttfamily Maybe$<$bool$>$ Equals (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Value $>$}]{a,  }\item[{v8\+::\+Handle$<$ v8\+::\+Value $>$}]{b }\end{DoxyParamCaption})}
+
+
+
+Definition at line 62 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+62                                                               \{
+63   \textcolor{keywordflow}{return} Just<bool>(a->Equals(b));
+64 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_a92e3e4025704368f3ac123e506df1a6c}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Force\+Set@{Force\+Set}}
+\index{Force\+Set@{Force\+Set}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Force\+Set()}
+{\footnotesize\ttfamily \textbf{ N\+A\+N\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED} Maybe$<$bool$>$ Force\+Set (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Object $>$}]{obj,  }\item[{v8\+::\+Handle$<$ v8\+::\+Value $>$}]{key,  }\item[{v8\+::\+Handle$<$ v8\+::\+Value $>$}]{value,  }\item[{v8\+::\+Property\+Attribute}]{attribs = {\ttfamily v8\+:\+:None} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 114 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+118                                           \{
+119   \textcolor{keywordflow}{return} Just<bool>(obj->ForceSet(key, value, attribs));
+120 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_a11fba5a078c978006d34fa9da0a3afb3}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Get@{Get}}
+\index{Get@{Get}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Get()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \textbf{ Maybe\+Local}$<$v8\+::\+Value$>$ Get (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Object $>$}]{obj,  }\item[{v8\+::\+Handle$<$ v8\+::\+Value $>$}]{key }\end{DoxyParamCaption})}
+
+
+
+Definition at line 122 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+124                            \{
+125   \textcolor{keywordflow}{return} MaybeLocal<v8::Value>(obj->Get(key));
+126 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_ab993921df16898055684b08fecd8b3db}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Get@{Get}}
+\index{Get@{Get}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Get()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \textbf{ Maybe\+Local}$<$v8\+::\+Value$>$ Get (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Object $>$}]{obj,  }\item[{uint32\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+
+
+Definition at line 128 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+130                     \{
+131   \textcolor{keywordflow}{return} MaybeLocal<v8::Value>(obj->Get(index));
+132 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_af6c285debe9b1a7fde7c95b3df8d6ce5}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Get\+End\+Column@{Get\+End\+Column}}
+\index{Get\+End\+Column@{Get\+End\+Column}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Get\+End\+Column()}
+{\footnotesize\ttfamily Maybe$<$int$>$ Get\+End\+Column (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Message $>$}]{msg }\end{DoxyParamCaption})}
+
+
+
+Definition at line 250 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+250                                                         \{
+251   \textcolor{keywordflow}{return} Just<int>(msg->GetEndColumn());
+252 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_aa7bf4ec7f87c7a55959e067c22643093}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Get\+Function@{Get\+Function}}
+\index{Get\+Function@{Get\+Function}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Get\+Function()}
+{\footnotesize\ttfamily \textbf{ Maybe\+Local}$<$v8\+::\+Function$>$ Get\+Function (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Function\+Template $>$}]{t }\end{DoxyParamCaption})}
+
+
+
+Definition at line 85 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+85                                                                    \{
+86   \textcolor{keywordflow}{return} MaybeLocal<v8::Function>(t->GetFunction());
+87 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_afd898d16d1b7a794eb02338226e2d87e}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Get\+Line\+Number@{Get\+Line\+Number}}
+\index{Get\+Line\+Number@{Get\+Line\+Number}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Get\+Line\+Number()}
+{\footnotesize\ttfamily Maybe$<$int$>$ Get\+Line\+Number (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Message $>$}]{msg }\end{DoxyParamCaption})}
+
+
+
+Definition at line 242 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+242                                                          \{
+243   \textcolor{keywordflow}{return} Just<int>(msg->GetLineNumber());
+244 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_aaa1efa68b7c513cd3801b9936eda72d6}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Get\+Own\+Property\+Names@{Get\+Own\+Property\+Names}}
+\index{Get\+Own\+Property\+Names@{Get\+Own\+Property\+Names}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Get\+Own\+Property\+Names()}
+{\footnotesize\ttfamily \textbf{ Maybe\+Local}$<$v8\+::\+Array$>$ Get\+Own\+Property\+Names (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Object $>$}]{obj }\end{DoxyParamCaption})}
+
+
+
+Definition at line 170 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+170                                                                 \{
+171   \textcolor{keywordflow}{return} MaybeLocal<v8::Array>(obj->GetOwnPropertyNames());
+172 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_a4af4d4eed9212b3948508afaeff4dc90}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Get\+Property\+Attributes@{Get\+Property\+Attributes}}
+\index{Get\+Property\+Attributes@{Get\+Property\+Attributes}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Get\+Property\+Attributes()}
+{\footnotesize\ttfamily Maybe$<$v8\+::\+Property\+Attribute$>$ Get\+Property\+Attributes (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Object $>$}]{obj,  }\item[{v8\+::\+Handle$<$ v8\+::\+Value $>$}]{key }\end{DoxyParamCaption})}
+
+
+
+Definition at line 134 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+136                            \{
+137   \textcolor{keywordflow}{return} Just<v8::PropertyAttribute>(obj->GetPropertyAttributes(key));
+138 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_ad1997c8685b9ddb2a092091e68dfdd95}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Get\+Property\+Names@{Get\+Property\+Names}}
+\index{Get\+Property\+Names@{Get\+Property\+Names}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Get\+Property\+Names()}
+{\footnotesize\ttfamily \textbf{ Maybe\+Local}$<$v8\+::\+Array$>$ Get\+Property\+Names (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Object $>$}]{obj }\end{DoxyParamCaption})}
+
+
+
+Definition at line 165 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+165                                                              \{
+166   \textcolor{keywordflow}{return} MaybeLocal<v8::Array>(obj->GetPropertyNames());
+167 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_a80c83a8f1fb40671b0be574256d4552e}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Get\+Real\+Named\+Property@{Get\+Real\+Named\+Property}}
+\index{Get\+Real\+Named\+Property@{Get\+Real\+Named\+Property}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Get\+Real\+Named\+Property()}
+{\footnotesize\ttfamily \textbf{ Maybe\+Local}$<$v8\+::\+Value$>$ Get\+Real\+Named\+Property (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Object $>$}]{obj,  }\item[{v8\+::\+Handle$<$ v8\+::\+String $>$}]{key }\end{DoxyParamCaption})}
+
+
+
+Definition at line 216 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+218                             \{
+219   \textcolor{keywordflow}{return} MaybeLocal<v8::Value>(obj->GetRealNamedProperty(key));
+220 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_a79786fddbeb85136cfa68276ca9f8c10}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Get\+Real\+Named\+Property\+In\+Prototype\+Chain@{Get\+Real\+Named\+Property\+In\+Prototype\+Chain}}
+\index{Get\+Real\+Named\+Property\+In\+Prototype\+Chain@{Get\+Real\+Named\+Property\+In\+Prototype\+Chain}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Get\+Real\+Named\+Property\+In\+Prototype\+Chain()}
+{\footnotesize\ttfamily \textbf{ Maybe\+Local}$<$v8\+::\+Value$>$ Get\+Real\+Named\+Property\+In\+Prototype\+Chain (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Object $>$}]{obj,  }\item[{v8\+::\+Handle$<$ v8\+::\+String $>$}]{key }\end{DoxyParamCaption})}
+
+
+
+Definition at line 209 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+211                             \{
+212   \textcolor{keywordflow}{return} MaybeLocal<v8::Value>(
+213       obj->GetRealNamedPropertyInPrototypeChain(key));
+214 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_a87638d801f9a222e62d3806bd209b87e}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Get\+Source\+Line@{Get\+Source\+Line}}
+\index{Get\+Source\+Line@{Get\+Source\+Line}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Get\+Source\+Line()}
+{\footnotesize\ttfamily \textbf{ Maybe\+Local}$<$v8\+::\+String$>$ Get\+Source\+Line (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Message $>$}]{msg }\end{DoxyParamCaption})}
+
+
+
+Definition at line 238 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+238                                                             \{
+239   \textcolor{keywordflow}{return} MaybeLocal<v8::String>(msg->GetSourceLine());
+240 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_aa2a6f3cc380952bc26a101e694b90cd8}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Get\+Start\+Column@{Get\+Start\+Column}}
+\index{Get\+Start\+Column@{Get\+Start\+Column}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Get\+Start\+Column()}
+{\footnotesize\ttfamily Maybe$<$int$>$ Get\+Start\+Column (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Message $>$}]{msg }\end{DoxyParamCaption})}
+
+
+
+Definition at line 246 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+246                                                           \{
+247   \textcolor{keywordflow}{return} Just<int>(msg->GetStartColumn());
+248 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_a933222f602d5bd7efd7cd8c8f962c32e}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Has@{Has}}
+\index{Has@{Has}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Has()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Maybe$<$bool$>$ Has (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Object $>$}]{obj,  }\item[{v8\+::\+Handle$<$ v8\+::\+String $>$}]{key }\end{DoxyParamCaption})}
+
+
+
+Definition at line 140 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+142                             \{
+143   \textcolor{keywordflow}{return} Just<bool>(obj->Has(key));
+144 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_ab2ea293dd877175a2f3408d5a14310b1}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Has@{Has}}
+\index{Has@{Has}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Has()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Maybe$<$bool$>$ Has (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Object $>$}]{obj,  }\item[{uint32\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+
+
+Definition at line 146 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+148                     \{
+149   \textcolor{keywordflow}{return} Just<bool>(obj->Has(index));
+150 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_a40e88849399ba58bc913343cda0c5e38}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Has\+Own\+Property@{Has\+Own\+Property}}
+\index{Has\+Own\+Property@{Has\+Own\+Property}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Has\+Own\+Property()}
+{\footnotesize\ttfamily Maybe$<$bool$>$ Has\+Own\+Property (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Object $>$}]{obj,  }\item[{v8\+::\+Handle$<$ v8\+::\+String $>$}]{key }\end{DoxyParamCaption})}
+
+
+
+Definition at line 185 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+187                             \{
+188   \textcolor{keywordflow}{return} Just<bool>(obj->HasOwnProperty(key));
+189 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_a613dca1c736bd7d15a44e7dccbde3d8c}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Has\+Real\+Indexed\+Property@{Has\+Real\+Indexed\+Property}}
+\index{Has\+Real\+Indexed\+Property@{Has\+Real\+Indexed\+Property}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Has\+Real\+Indexed\+Property()}
+{\footnotesize\ttfamily Maybe$<$bool$>$ Has\+Real\+Indexed\+Property (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Object $>$}]{obj,  }\item[{uint32\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+
+
+Definition at line 197 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+199                     \{
+200   \textcolor{keywordflow}{return} Just<bool>(obj->HasRealIndexedProperty(index));
+201 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_a5803f8a26eb69cd7ba85471f09c4d551}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Has\+Real\+Named\+Callback\+Property@{Has\+Real\+Named\+Callback\+Property}}
+\index{Has\+Real\+Named\+Callback\+Property@{Has\+Real\+Named\+Callback\+Property}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Has\+Real\+Named\+Callback\+Property()}
+{\footnotesize\ttfamily Maybe$<$bool$>$ Has\+Real\+Named\+Callback\+Property (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Object $>$}]{obj,  }\item[{v8\+::\+Handle$<$ v8\+::\+String $>$}]{key }\end{DoxyParamCaption})}
+
+
+
+Definition at line 203 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+205                             \{
+206   \textcolor{keywordflow}{return} Just<bool>(obj->HasRealNamedCallbackProperty(key));
+207 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_ad04ac79b1545064884b4fcfcd979b349}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Has\+Real\+Named\+Property@{Has\+Real\+Named\+Property}}
+\index{Has\+Real\+Named\+Property@{Has\+Real\+Named\+Property}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Has\+Real\+Named\+Property()}
+{\footnotesize\ttfamily Maybe$<$bool$>$ Has\+Real\+Named\+Property (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Object $>$}]{obj,  }\item[{v8\+::\+Handle$<$ v8\+::\+String $>$}]{key }\end{DoxyParamCaption})}
+
+
+
+Definition at line 191 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+193                             \{
+194   \textcolor{keywordflow}{return} Just<bool>(obj->HasRealNamedProperty(key));
+195 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_aef3a3b968410885184a32804e08b294e}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!New\+Instance@{New\+Instance}}
+\index{New\+Instance@{New\+Instance}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{New\+Instance()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \textbf{ Maybe\+Local}$<$v8\+::\+Object$>$ New\+Instance (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Function $>$}]{h }\end{DoxyParamCaption})}
+
+
+
+Definition at line 67 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+67                                                          \{
+68   \textcolor{keywordflow}{return} MaybeLocal<v8::Object>(h->NewInstance());
+69 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_a6dc33c09ee8a0a78a8cb0fef44fb15a9}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!New\+Instance@{New\+Instance}}
+\index{New\+Instance@{New\+Instance}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{New\+Instance()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \textbf{ Maybe\+Local}$<$v8\+::\+Object$>$ New\+Instance (\begin{DoxyParamCaption}\item[{v8\+::\+Local$<$ v8\+::\+Function $>$}]{h,  }\item[{int}]{argc,  }\item[{v8\+::\+Local$<$ v8\+::\+Value $>$}]{argv[$\,$] }\end{DoxyParamCaption})}
+
+
+
+Definition at line 72 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+75                                \{
+76   \textcolor{keywordflow}{return} MaybeLocal<v8::Object>(h->NewInstance(argc, argv));
+77 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_a9130bd29eb76553fffd1deec07f12985}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!New\+Instance@{New\+Instance}}
+\index{New\+Instance@{New\+Instance}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{New\+Instance()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \textbf{ Maybe\+Local}$<$v8\+::\+Object$>$ New\+Instance (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Object\+Template $>$}]{h }\end{DoxyParamCaption})}
+
+
+
+Definition at line 80 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+80                                                                \{
+81   \textcolor{keywordflow}{return} MaybeLocal<v8::Object>(h->NewInstance());
+82 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_a004ee56644144ee7b762267e3408fa5f}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Object\+Proto\+To\+String@{Object\+Proto\+To\+String}}
+\index{Object\+Proto\+To\+String@{Object\+Proto\+To\+String}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Object\+Proto\+To\+String()}
+{\footnotesize\ttfamily \textbf{ Maybe\+Local}$<$v8\+::\+String$>$ Object\+Proto\+To\+String (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Object $>$}]{obj }\end{DoxyParamCaption})}
+
+
+
+Definition at line 180 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+181                             \{
+182   \textcolor{keywordflow}{return} MaybeLocal<v8::String>(obj->ObjectProtoToString());
+183 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_acefeb30f03bf5fb54df2b1b06ab49918}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Set@{Set}}
+\index{Set@{Set}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Set()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Maybe$<$bool$>$ Set (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Object $>$}]{obj,  }\item[{v8\+::\+Handle$<$ v8\+::\+Value $>$}]{key,  }\item[{v8\+::\+Handle$<$ v8\+::\+Value $>$}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 89 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+92                              \{
+93   \textcolor{keywordflow}{return} Just<bool>(obj->Set(key, value));
+94 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_ab5ac0f372a05fcb2dcd75c1501b7229a}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Set@{Set}}
+\index{Set@{Set}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Set()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Maybe$<$bool$>$ Set (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Object $>$}]{obj,  }\item[{uint32\+\_\+t}]{index,  }\item[{v8\+::\+Handle$<$ v8\+::\+Value $>$}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 96 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+99                              \{
+100   \textcolor{keywordflow}{return} Just<bool>(obj->Set(index, value));
+101 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_a869ccb3507889b12d4d59462f0a2ecc1}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!Set\+Prototype@{Set\+Prototype}}
+\index{Set\+Prototype@{Set\+Prototype}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{Set\+Prototype()}
+{\footnotesize\ttfamily Maybe$<$bool$>$ Set\+Prototype (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Object $>$}]{obj,  }\item[{v8\+::\+Handle$<$ v8\+::\+Value $>$}]{prototype }\end{DoxyParamCaption})}
+
+
+
+Definition at line 174 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+176                                  \{
+177   \textcolor{keywordflow}{return} Just<bool>(obj->SetPrototype(prototype));
+178 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_a5216a945dd4f764490df4f97eaa791d8}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!To\+Array\+Index@{To\+Array\+Index}}
+\index{To\+Array\+Index@{To\+Array\+Index}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{To\+Array\+Index()}
+{\footnotesize\ttfamily \textbf{ Maybe\+Local}$<$v8\+::\+Uint32$>$ To\+Array\+Index (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Value $>$}]{val }\end{DoxyParamCaption})}
+
+
+
+Definition at line 57 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+57                                                          \{
+58   \textcolor{keywordflow}{return} MaybeLocal<v8::Uint32>(val->ToArrayIndex());
+59 \}
+\end{DoxyCode}
+\mbox{\label{nan__maybe__pre__43__inl_8h_a7e5ed73b1615644ee427b6cdcabce87a}} 
+\index{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}!To\+Detail\+String@{To\+Detail\+String}}
+\index{To\+Detail\+String@{To\+Detail\+String}!nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h@{nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h}}
+\subsubsection{To\+Detail\+String()}
+{\footnotesize\ttfamily \textbf{ Maybe\+Local}$<$v8\+::\+String$>$ To\+Detail\+String (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ v8\+::\+Value $>$}]{val }\end{DoxyParamCaption})}
+
+
+
+Definition at line 52 of file nan\+\_\+maybe\+\_\+pre\+\_\+43\+\_\+inl.\+h.
+
+
+\begin{DoxyCode}
+52                                                            \{
+53   \textcolor{keywordflow}{return} MaybeLocal<v8::String>(val->ToDetailString());
+54 \}
+\end{DoxyCode}

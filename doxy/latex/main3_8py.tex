@@ -1,0 +1,89 @@
+\section{Modbus/main3.py File Reference}
+\label{main3_8py}\index{Modbus/main3.\+py@{Modbus/main3.\+py}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \textbf{ main3}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \textbf{ main3.\+on\+\_\+connect} (client, userdata, flags, rc)
+\begin{DoxyCompactList}\small\item\em Executes on M\+Q\+TT client connect to broker and sets flags. \end{DoxyCompactList}\item 
+def \textbf{ main3.\+on\+\_\+disconnect} (client, userdata, rc)
+\begin{DoxyCompactList}\small\item\em Executes on M\+Q\+TT client disconnect and sets flags. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \textbf{ main3.\+broker} = \char`\"{}broker.\+hivemq.\+com\char`\"{}
+\begin{DoxyCompactList}\small\item\em M\+Q\+TT broker. \end{DoxyCompactList}\item 
+string \textbf{ main3.\+path\+\_\+local} = \char`\"{}/media/D\+A\+T\+A\+B\+A\+SE/modbus\+Data.\+db\char`\"{}
+\begin{DoxyCompactList}\small\item\em Path for modbus database. \end{DoxyCompactList}\item 
+string \textbf{ main3.\+path} = \char`\"{}/mnt/dav/Data/modbus\+Data.\+db\char`\"{}
+\item 
+string \textbf{ main3.\+path\+\_\+local\+\_\+user} = \char`\"{}/media/D\+A\+T\+A\+B\+A\+SE/usertable.\+sqlite3\char`\"{}
+\begin{DoxyCompactList}\small\item\em Path for users database. \end{DoxyCompactList}\item 
+string \textbf{ main3.\+path\+\_\+user} = \char`\"{}/mnt/dav/Data/usertable.\+sqlite3\char`\"{}
+\item 
+\textbf{ main3.\+con\+\_\+user\+\_\+local} = lite.\+connect(path\+\_\+local\+\_\+user)
+\item 
+\textbf{ main3.\+cur\+\_\+user\+\_\+local} = con\+\_\+user\+\_\+local.\+cursor()
+\item 
+\textbf{ main3.\+con\+\_\+user} = lite.\+connect(path\+\_\+user)
+\begin{DoxyCompactList}\small\item\em Initial DB connection check. \end{DoxyCompactList}\item 
+\textbf{ main3.\+cur\+\_\+user} = con\+\_\+user.\+cursor()
+\item 
+\textbf{ main3.\+con\+\_\+local} = lite.\+connect(path\+\_\+local)
+\item 
+\textbf{ main3.\+cur\+\_\+local} = con\+\_\+local.\+cursor()
+\item 
+\textbf{ main3.\+con} = lite.\+connect(path)
+\item 
+\textbf{ main3.\+cur} = con.\+cursor()
+\item 
+\textbf{ main3.\+data\+Ref1} = cur.\+fetchone()
+\item 
+int \textbf{ main3.\+err\+\_\+cnt} = 0
+\item 
+\textbf{ main3.\+client} = mqtt.\+Client()
+\item 
+\textbf{ main3.\+connected\+\_\+flag}
+\item 
+\textbf{ main3.\+bad\+\_\+connection\+\_\+flag}
+\item 
+\textbf{ main3.\+on\+\_\+connect}
+\item 
+\textbf{ main3.\+on\+\_\+disconnect}
+\item 
+int \textbf{ main3.\+control\+\_\+pin} = 18
+\item 
+\textbf{ main3.\+meter1} = M\+I\+C.\+M\+I\+C1(0x01, control\+\_\+pin)
+\begin{DoxyCompactList}\small\item\em Initializes meter. \end{DoxyCompactList}\item 
+\textbf{ main3.\+meter2} = M\+I\+C.\+M\+I\+C1(0x02, control\+\_\+pin)
+\item 
+\textbf{ main3.\+meter3} = M\+I\+C.\+M\+I\+C1(0x03, control\+\_\+pin)
+\item 
+\textbf{ main3.\+meter4} = M\+I\+C.\+M\+I\+C1(0x04, control\+\_\+pin)
+\item 
+\textbf{ main3.\+meter5} = M\+I\+C.\+M\+I\+C1(0x05, control\+\_\+pin)
+\item 
+int \textbf{ main3.\+time\+\_\+send} = 1
+\item 
+\textbf{ main3.\+current\+\_\+time} = time.\+ctime(time.\+time())
+\item 
+\textbf{ main3.\+reading\+P\+T1} = meter1.\+read\+P\+T1()
+\item 
+\textbf{ main3.\+reading\+P\+T2} = meter1.\+read\+P\+T2()
+\item 
+\textbf{ main3.\+reading\+C\+T1} = meter1.\+read\+C\+T1()
+\item 
+\textbf{ main3.\+reading} = meter1.\+read\+Phase\+Voltage()
+\item 
+string \textbf{ main3.\+Message}
+\item 
+\textbf{ main3.\+data} = cur.\+fetchone()
+\item 
+tuple \textbf{ main3.\+set\+Point} = (data[0]+data[1]+data[2])
+\item 
+dictionary \textbf{ main3.\+data\+Send}
+\end{DoxyCompactItemize}

@@ -4,23 +4,24 @@ import serial
 import RPi.GPIO as GPIO
 from time import sleep
 
-#This library is made for reading MIC/MIC2 energy meter with a MAX485 module
-#MIC2 only read data from registers. This is not the correct value.
+##This library is made for reading MIC/MIC2 energy meters with a MAX485 module
+#MIC2 only reads data from registers. This is not the correct value.
 #To calculate correct value, PT1, PT2, CT1 need to be read. Please take MIC1 as an example
 
 #UART configuration
 #MIC2: 8-bit data, no parity, 1 stop bit, 19200 BAUD
 #ser = serial.Serial("/dev/ttyS0", 9200)
 
-#MIC1: 8-bit data, no parity, 1 stop bit, 38400 BAUD
+##MIC1: 8-bit data, no parity, 1 stop bit, 38400 BAUD
 ser = serial.Serial("/dev/ttyS0", 38400)
 
-#return code:
+#return codes:
 Data_error  = -3
 CRC_error   = -2
 Trans_error = -1
 No_error    = 0
 
+## Unused class for MIC2 energy meter; it is missing the PT!, PT2, CT1 control variables
 class MIC2:
     def __init__(self, Id, Control):
         self.__Control = Control
@@ -241,7 +242,9 @@ class MIC2:
             return CRC_error
 #---------------------------------END OF MIC2------------------------------------
 #--------------------------------------------------------------------------------
-  
+
+
+## Class for reading Modbus data from MIC1 energy meter
 class MIC1:
     def __init__(self, Id, Control):
         self.__Control = Control
@@ -269,6 +272,7 @@ class MIC1:
         self.__PF3 = 0.0
         self.__F  = 0.0
     
+    ## Reads PT1 variable needed for all other calculations
     def readPT1(self):
         #Calculate CRC16-MODBUS
         crc16 = crcmod.mkCrcFun(0x18005, rev=True, initCrc = 0xFFFF, xorOut = 0x0000)
@@ -335,6 +339,7 @@ class MIC1:
             print("Transmitting error: Incorrect CRC")
             return CRC_error
     
+    ## Reads PT2 variable needed for all other calculations
     def readPT2(self):
         #Calculate CRC16-MODBUS
         crc16 = crcmod.mkCrcFun(0x18005, rev=True, initCrc = 0xFFFF, xorOut = 0x0000)
@@ -400,7 +405,8 @@ class MIC1:
         else:
             print("Transmitting error: Incorrect CRC")
             return CRC_error
-    
+            
+    ## Reads CT1 variable needed for all other calculations
     def readCT1(self):
         #Calculate CRC16-MODBUS
         crc16 = crcmod.mkCrcFun(0x18005, rev=True, initCrc = 0xFFFF, xorOut = 0x0000)
@@ -467,6 +473,7 @@ class MIC1:
             print("Transmitting error: Incorrect CRC")
             return CRC_error
     
+    ## Reads and calculates phase Voltages with the help of PT1 and PT2
     def readPhaseVoltage(self):
         #Calculate CRC16-MODBUS
         crc16 = crcmod.mkCrcFun(0x18005, rev=True, initCrc = 0xFFFF, xorOut = 0x0000)
@@ -535,6 +542,7 @@ class MIC1:
             print("Transmitting error: Incorrect CRC")
             return CRC_error
             
+    ## Reads and calculates phase Currents with the help of CT1
     def readPhaseCurrent(self):
         #Calculate CRC16-MODBUS
         crc16 = crcmod.mkCrcFun(0x18005, rev=True, initCrc = 0xFFFF, xorOut = 0x0000)
@@ -588,6 +596,7 @@ class MIC1:
             print("Transmitting error: Incorrect CRC")
             return CRC_error
             
+    ## Reads and calculates phase Power values with the help of PT1, PT2, CT1
     def readPhasePower(self):
         #Calculate CRC16-MODBUS
         crc16 = crcmod.mkCrcFun(0x18005, rev=True, initCrc = 0xFFFF, xorOut = 0x0000)
@@ -641,7 +650,7 @@ class MIC1:
             print("Transmitting error: Incorrect CRC")
             return CRC_error
 
-        
+    ## Reads and calculates Reactive Power (Q) values with the help of PT1, PT2, CT1
     def readReactivePower(self):
         #Calculate CRC16-MODBUS
         crc16 = crcmod.mkCrcFun(0x18005, rev=True, initCrc = 0xFFFF, xorOut = 0x0000)
@@ -695,7 +704,8 @@ class MIC1:
             print("Transmitting error: Incorrect CRC")
             return CRC_error
         
-        
+    ## Reads and calculates Apparent Power (S) values with the help of PT1, PT2, CT1   
+    # This function is diferent because the CRC value overflows and is to be edited to not error
     def readApparentPower(self):
         #Calculate CRC16-MODBUS
         crc16 = crcmod.mkCrcFun(0x18005, rev=True, initCrc = 0xFFFF, xorOut = 0x0000)
@@ -749,7 +759,8 @@ class MIC1:
         else:
             print("Transmitting error: Incorrect CRC")
             return CRC_error
-        
+    
+    ## Reads and calculates Power Factors (PF)
     def readPowerFactor(self):
         #Calculate CRC16-MODBUS
         crc16 = crcmod.mkCrcFun(0x18005, rev=True, initCrc = 0xFFFF, xorOut = 0x0000)
@@ -802,7 +813,8 @@ class MIC1:
         else:
             print("Transmitting error: Incorrect CRC")
             return CRC_error 
-            
+   
+    ## Reads and calculates Frequency (F)       
     def readFrequency(self):
         #Calculate CRC16-MODBUS
         crc16 = crcmod.mkCrcFun(0x18005, rev=True, initCrc = 0xFFFF, xorOut = 0x0000)

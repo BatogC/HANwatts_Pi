@@ -1,0 +1,13 @@
+The Raspberry Pi subsystem software\+: The folder Modbus contains Modbus network-\/related files, while the user\+ID contains the M\+Q\+TT network and users database-\/related files. The programs are written in Python 3.\+7. \subsection*{Welcome to the project!}
+
+\paragraph*{{\ttfamily /\+Modbus} folder\+:}
+
+This is the source folder that contains the firmware files for the Modbus part of the Pi. The \textquotesingle{}\doxyref{main3.\+py}{p.}{main3_8py}\textquotesingle{} is the main script run at boot. \textquotesingle{}\doxyref{M\+I\+C3.\+py}{p.}{_m_i_c3_8py}\textquotesingle{} is the updated Python 3.\+7 library that contains the M\+I\+C1 and M\+I\+C2 energy meter classes and member functions needed by \textquotesingle{}\doxyref{main3.\+py}{p.}{main3_8py}\textquotesingle{}.
+
+\paragraph*{{\ttfamily /user\+ID} folder\+:}
+
+This is the source folder that contains the firmware files for the M\+Q\+TT and user DB part of the Pi. The \textquotesingle{}\doxyref{S\+Q\+Lfunction.\+py}{p.}{_s_q_lfunction_8py}\textquotesingle{} is the main script run at boot.
+
+\subsection*{Executing the scripts}
+
+These programs are to be run from bash with \textquotesingle{}python3 $<$filename$>$\textquotesingle{}. They are normally run at boot concurrently from their respective .sh scripts. 

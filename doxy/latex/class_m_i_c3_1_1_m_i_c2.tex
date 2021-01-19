@@ -1,0 +1,542 @@
+\section{M\+I\+C3.\+M\+I\+C2 Class Reference}
+\label{class_m_i_c3_1_1_m_i_c2}\index{M\+I\+C3.\+M\+I\+C2@{M\+I\+C3.\+M\+I\+C2}}
+
+
+Unused class for \doxyref{M\+I\+C2}{p.}{class_m_i_c3_1_1_m_i_c2} energy meter; it is missing the P\+T!, P\+T2, C\+T1 control variables.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \textbf{ \+\_\+\+\_\+init\+\_\+\+\_\+} (self, Id, Control)
+\item 
+def \textbf{ read\+Phase\+Voltage} (self)
+\item 
+def \textbf{ read\+Phase\+Current} (self)
+\item 
+def \textbf{ read\+Phase\+Power} (self)
+\item 
+def \textbf{ read\+Frequency} (self)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ \+\_\+\+\_\+\+Control}
+\item 
+\textbf{ \+\_\+\+\_\+\+Address}
+\item 
+\textbf{ \+\_\+\+\_\+\+V1}
+\item 
+\textbf{ \+\_\+\+\_\+\+V2}
+\item 
+\textbf{ \+\_\+\+\_\+\+V3}
+\item 
+\textbf{ \+\_\+\+\_\+\+I1}
+\item 
+\textbf{ \+\_\+\+\_\+\+I2}
+\item 
+\textbf{ \+\_\+\+\_\+\+I3}
+\item 
+\textbf{ \+\_\+\+\_\+\+P1}
+\item 
+\textbf{ \+\_\+\+\_\+\+P2}
+\item 
+\textbf{ \+\_\+\+\_\+\+P3}
+\item 
+\textbf{ \+\_\+\+\_\+F}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Unused class for \doxyref{M\+I\+C2}{p.}{class_m_i_c3_1_1_m_i_c2} energy meter; it is missing the P\+T!, P\+T2, C\+T1 control variables. 
+
+Definition at line 25 of file M\+I\+C3.\+py.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_m_i_c3_1_1_m_i_c2_a4db1a4c2894be1d777ab454027cade4a}} 
+\index{M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}}
+\subsubsection{\+\_\+\+\_\+init\+\_\+\+\_\+()}
+{\footnotesize\ttfamily def M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{Id,  }\item[{}]{Control }\end{DoxyParamCaption})}
+
+
+
+Definition at line 26 of file M\+I\+C3.\+py.
+
+
+\begin{DoxyCode}
+26     \textcolor{keyword}{def }\_\_init\_\_(self, Id, Control):
+27         self.\_\_Control = Control
+28         self.\_\_Address = Id
+29         self.\_\_V1 = 0
+30         self.\_\_V2 = 0
+31         self.\_\_V3 = 0
+32         self.\_\_I1 = 0
+33         self.\_\_I2 = 0
+34         self.\_\_I3 = 0
+35         self.\_\_P1 = 0
+36         self.\_\_P2 = 0
+37         self.\_\_P3 = 0
+38         self.\_\_F  = 0
+39         
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_m_i_c3_1_1_m_i_c2_acb035c98c0276bf264a1b33e05bae4dd}} 
+\index{M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}!read\+Frequency@{read\+Frequency}}
+\index{read\+Frequency@{read\+Frequency}!M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}}
+\subsubsection{read\+Frequency()}
+{\footnotesize\ttfamily def M\+I\+C3.\+M\+I\+C2.\+read\+Frequency (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 196 of file M\+I\+C3.\+py.
+
+
+
+References M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+Address, M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+Control, and M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+F.
+
+
+\begin{DoxyCode}
+196     \textcolor{keyword}{def }readFrequency(self):
+197         \textcolor{comment}{#Calculate CRC16-MODBUS}
+198         crc16 = crcmod.mkCrcFun(0x18005, rev=\textcolor{keyword}{True}, initCrc = 0xFFFF, xorOut = 0x0000)
+199         crc\_Tx = \textcolor{stringliteral}{".%4x"}%(crc16(serial.to\_bytes([self.\_\_Address, 0x03, 0x40, 0x00, 0x00, 0x02])))
+200         \textcolor{comment}{#The crc\_Tx must include 4 hexadecimal characters.}
+201         \textcolor{comment}{#If crc\_Tx =  10, function hex() will return 0xa, which is not expected}
+202         \textcolor{comment}{#Therefore, String format operator was used}
+203     
+204         \textcolor{comment}{#Send request}
+205         GPIO.output(self.\_\_Control, GPIO.HIGH)
+206         ser.write(serial.to\_bytes([self.\_\_Address, 0x03, 0x40, 0x00, 0x00, 0x02, int(crc\_Tx[3:],16), int(
+      crc\_Tx[1:3],16)]))
+207     
+208         \textcolor{comment}{#There is a delay caused by the converter. The program must wait before reading the result}
+209         sleep(0.004)
+210     
+211         \textcolor{comment}{#Receive data}
+212         GPIO.output(self.\_\_Control, GPIO.LOW)
+213         cnt = 0
+214         data\_left = ser.inWaiting()
+215         \textcolor{keywordflow}{while} (data\_left == 0):
+216             \textcolor{comment}{#wait for data}
+217             cnt=cnt+1
+218             \textcolor{keywordflow}{if} (cnt < 50000): \textcolor{comment}{#wait for maximum 5 seconds}
+219                 sleep(0.0001)
+220                 data\_left = ser.inWaiting()
+221             \textcolor{keywordflow}{else}:
+222                 print(\textcolor{stringliteral}{"Transmitting error: Time out"})
+223                 \textcolor{keywordflow}{return} Trans\_error
+224         received\_data = ser.read()
+225         sleep(0.01)
+226         data\_left = ser.inWaiting()
+227         received\_data += ser.read(data\_left)
+228         
+229         \textcolor{keywordflow}{if} ((received\_data[0]) != self.\_\_Address):
+230             print(\textcolor{stringliteral}{"Transmitting error: Data corrupted"})
+231             \textcolor{keywordflow}{return} Data\_error
+232     
+233         \textcolor{comment}{#Check the CRC code}
+234         crc\_cal = hex(crc16(received\_data[:7]))
+235         crc\_Rx = hex(struct.unpack(\textcolor{stringliteral}{'H'},received\_data[7:])[0])
+236     
+237         \textcolor{keywordflow}{if} crc\_cal == crc\_Rx:
+238             self.\_\_F = struct.unpack(\textcolor{stringliteral}{'f'}, received\_data[6:2:-1])[0]    
+239             \textcolor{keywordflow}{return} No\_error
+240         \textcolor{keywordflow}{else}:
+241             print(\textcolor{stringliteral}{"Transmitting error: Incorrect CRC"})
+242             \textcolor{keywordflow}{return} CRC\_error
+243 \textcolor{comment}{#---------------------------------END OF MIC2------------------------------------}
+244 \textcolor{comment}{#--------------------------------------------------------------------------------}
+245 
+246 
+\end{DoxyCode}
+\mbox{\label{class_m_i_c3_1_1_m_i_c2_a28cc6d8bef6e4861272cc9a3398d3833}} 
+\index{M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}!read\+Phase\+Current@{read\+Phase\+Current}}
+\index{read\+Phase\+Current@{read\+Phase\+Current}!M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}}
+\subsubsection{read\+Phase\+Current()}
+{\footnotesize\ttfamily def M\+I\+C3.\+M\+I\+C2.\+read\+Phase\+Current (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 96 of file M\+I\+C3.\+py.
+
+
+
+References M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+Address, M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+Control, M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+I1, M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+I2, and M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+I3.
+
+
+\begin{DoxyCode}
+96     \textcolor{keyword}{def }readPhaseCurrent(self):
+97         \textcolor{comment}{#Calculate CRC16-MODBUS}
+98         crc16 = crcmod.mkCrcFun(0x18005, rev=\textcolor{keyword}{True}, initCrc = 0xFFFF, xorOut = 0x0000)
+99         crc\_Tx = \textcolor{stringliteral}{".%4x"}%(crc16(serial.to\_bytes([self.\_\_Address, 0x03, 0x40, 0x12, 0x00, 0x06])))
+100         \textcolor{comment}{#The crc\_Tx must include 4 hexadecimal characters.}
+101         \textcolor{comment}{#If crc\_Tx =  10, function hex() will return 0xa, which is not expected}
+102         \textcolor{comment}{#Therefore, String format operator was used}
+103     
+104         \textcolor{comment}{#Send request}
+105         GPIO.output(self.\_\_Control, GPIO.HIGH)
+106         ser.write(serial.to\_bytes([self.\_\_Address, 0x03, 0x40, 0x12, 0x00, 0x06, int(crc\_Tx[3:],16), int(
+      crc\_Tx[1:3],16)]))
+107     
+108         \textcolor{comment}{#There is a delay caused by the converter. The program must wait before reading the result}
+109         sleep(0.004)
+110     
+111         \textcolor{comment}{#Receive data}
+112         GPIO.output(self.\_\_Control, GPIO.LOW)
+113         cnt = 0
+114         data\_left = ser.inWaiting()
+115         \textcolor{keywordflow}{while} (data\_left == 0):
+116             \textcolor{comment}{#wait for data}
+117             cnt=cnt+1
+118             \textcolor{keywordflow}{if} (cnt < 50000): \textcolor{comment}{#wait for maximum 5 seconds}
+119                 sleep(0.0001)
+120                 data\_left = ser.inWaiting()
+121             \textcolor{keywordflow}{else}:
+122                 print(\textcolor{stringliteral}{"Transmitting error: Time out"})
+123                 \textcolor{keywordflow}{return} Trans\_error
+124         received\_data = ser.read()
+125         sleep(0.01)
+126         data\_left = ser.inWaiting()
+127         received\_data += ser.read(data\_left)
+128         
+129         \textcolor{keywordflow}{if} ((received\_data[0]) != self.\_\_Address):
+130             print(\textcolor{stringliteral}{"Transmitting error: Data corrupted"})
+131             \textcolor{keywordflow}{return} Data\_error
+132     
+133         \textcolor{comment}{#Check the CRC code}
+134         crc\_cal = hex(crc16(received\_data[:15]))
+135         crc\_Rx = hex(struct.unpack(\textcolor{stringliteral}{'H'},received\_data[15:])[0])
+136     
+137         \textcolor{keywordflow}{if} crc\_cal == crc\_Rx:
+138             self.\_\_I1 = struct.unpack(\textcolor{stringliteral}{'f'}, received\_data[6:2:-1])[0]
+139             self.\_\_I2 = struct.unpack(\textcolor{stringliteral}{'f'}, received\_data[10:6:-1])[0]
+140             self.\_\_I3 = struct.unpack(\textcolor{stringliteral}{'f'}, received\_data[14:10:-1])[0]      
+141             \textcolor{keywordflow}{return} No\_error
+142         \textcolor{keywordflow}{else}:
+143             print(\textcolor{stringliteral}{"Transmitting error: Incorrect CRC"})
+144             \textcolor{keywordflow}{return} CRC\_error
+145             
+\end{DoxyCode}
+\mbox{\label{class_m_i_c3_1_1_m_i_c2_a028b7ceca700f09e99db7f559224a914}} 
+\index{M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}!read\+Phase\+Power@{read\+Phase\+Power}}
+\index{read\+Phase\+Power@{read\+Phase\+Power}!M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}}
+\subsubsection{read\+Phase\+Power()}
+{\footnotesize\ttfamily def M\+I\+C3.\+M\+I\+C2.\+read\+Phase\+Power (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 146 of file M\+I\+C3.\+py.
+
+
+
+References M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+Address, M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+Control, M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+P1, M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+P2, and M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+P3.
+
+
+\begin{DoxyCode}
+146     \textcolor{keyword}{def }readPhasePower(self):
+147         \textcolor{comment}{#Calculate CRC16-MODBUS}
+148         crc16 = crcmod.mkCrcFun(0x18005, rev=\textcolor{keyword}{True}, initCrc = 0xFFFF, xorOut = 0x0000)
+149         crc\_Tx = \textcolor{stringliteral}{".%4x"}%(crc16(serial.to\_bytes([self.\_\_Address, 0x03, 0x40, 0x1c, 0x00, 0x06])))
+150         \textcolor{comment}{#The crc\_Tx must include 4 hexadecimal characters.}
+151         \textcolor{comment}{#If crc\_Tx =  10, function hex() will return 0xa, which is not expected}
+152         \textcolor{comment}{#Therefore, String format operator was used}
+153     
+154         \textcolor{comment}{#Send request}
+155         GPIO.output(self.\_\_Control, GPIO.HIGH)
+156         ser.write(serial.to\_bytes([self.\_\_Address, 0x03, 0x40, 0x1c, 0x00, 0x06, int(crc\_Tx[3:],16), int(
+      crc\_Tx[1:3],16)]))
+157     
+158         \textcolor{comment}{#There is a delay caused by the converter. The program must wait before reading the result}
+159         sleep(0.004)
+160     
+161         \textcolor{comment}{#Receive data}
+162         GPIO.output(self.\_\_Control, GPIO.LOW)
+163         cnt = 0
+164         data\_left = ser.inWaiting()
+165         \textcolor{keywordflow}{while} (data\_left == 0):
+166             \textcolor{comment}{#wait for data}
+167             cnt=cnt+1
+168             \textcolor{keywordflow}{if} (cnt < 50000): \textcolor{comment}{#wait for maximum 5 seconds}
+169                 sleep(0.0001)
+170                 data\_left = ser.inWaiting()
+171             \textcolor{keywordflow}{else}:
+172                 print(\textcolor{stringliteral}{"Transmitting error: Time out"})
+173                 \textcolor{keywordflow}{return} Trans\_error
+174         received\_data = ser.read()
+175         sleep(0.01)
+176         data\_left = ser.inWaiting()
+177         received\_data += ser.read(data\_left)
+178         
+179         \textcolor{keywordflow}{if} ((received\_data[0]) != self.\_\_Address):
+180             print(\textcolor{stringliteral}{"Transmitting error: Data corrupted"})
+181             \textcolor{keywordflow}{return} Data\_error
+182     
+183         \textcolor{comment}{#Check the CRC code}
+184         crc\_cal = hex(crc16(received\_data[:15]))
+185         crc\_Rx = hex(struct.unpack(\textcolor{stringliteral}{'H'},received\_data[15:])[0])
+186     
+187         \textcolor{keywordflow}{if} crc\_cal == crc\_Rx:
+188             self.\_\_P1 = struct.unpack(\textcolor{stringliteral}{'f'}, received\_data[6:2:-1])[0]
+189             self.\_\_P2 = struct.unpack(\textcolor{stringliteral}{'f'}, received\_data[10:6:-1])[0]
+190             self.\_\_P3 = struct.unpack(\textcolor{stringliteral}{'f'}, received\_data[14:10:-1])[0]       
+191             \textcolor{keywordflow}{return} No\_error
+192         \textcolor{keywordflow}{else}:
+193             print(\textcolor{stringliteral}{"Transmitting error: Incorrect CRC"})
+194             \textcolor{keywordflow}{return} CRC\_error
+195 
+\end{DoxyCode}
+\mbox{\label{class_m_i_c3_1_1_m_i_c2_aa7db63e0fb9c6b1be36d0617c76707c0}} 
+\index{M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}!read\+Phase\+Voltage@{read\+Phase\+Voltage}}
+\index{read\+Phase\+Voltage@{read\+Phase\+Voltage}!M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}}
+\subsubsection{read\+Phase\+Voltage()}
+{\footnotesize\ttfamily def M\+I\+C3.\+M\+I\+C2.\+read\+Phase\+Voltage (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Definition at line 40 of file M\+I\+C3.\+py.
+
+
+
+References M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+Address, M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+Control, M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+V1, M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+V2, and M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+V3.
+
+
+\begin{DoxyCode}
+40     \textcolor{keyword}{def }readPhaseVoltage(self):
+41         \textcolor{comment}{#Calculate CRC16-MODBUS}
+42         crc16 = crcmod.mkCrcFun(0x18005, rev=\textcolor{keyword}{True}, initCrc = 0xFFFF, xorOut = 0x0000)
+43         crc\_Tx = \textcolor{stringliteral}{".%4x"}%(crc16(serial.to\_bytes([self.\_\_Address, 0x03, 0x40, 0x02, 0x00, 0x06])))
+44         \textcolor{comment}{#The crc\_Tx must include 4 hexadecimal characters.}
+45         \textcolor{comment}{#If crc\_Tx =  10, function hex() will return 0xa, which is not expected}
+46         \textcolor{comment}{#Therefore, String format operator was used}
+47     
+48         \textcolor{comment}{#Send request}
+49         GPIO.output(self.\_\_Control, GPIO.HIGH)
+50         ser.write(serial.to\_bytes([self.\_\_Address, 0x03, 0x40, 0x02, 0x00, 0x06, int(crc\_Tx[3:],16), int(
+      crc\_Tx[1:3],16)]))
+51     
+52         \textcolor{comment}{#There is a delay caused by the converter. The program must wait before reading the result}
+53         sleep(0.004)
+54     
+55         \textcolor{comment}{#Receive data}
+56         GPIO.output(self.\_\_Control, GPIO.LOW)
+57         cnt = 0
+58         data\_left = ser.inWaiting()
+59         \textcolor{keywordflow}{while} (data\_left == 0):
+60             \textcolor{comment}{#wait for data}
+61             cnt=cnt+1
+62             \textcolor{keywordflow}{if} (cnt < 50000): \textcolor{comment}{#wait for maximum 5 seconds}
+63                 sleep(0.0001)
+64                 data\_left = ser.inWaiting()
+65             \textcolor{keywordflow}{else}:
+66                 print(\textcolor{stringliteral}{"Transmitting error: Time out"})
+67                 \textcolor{keywordflow}{return} Trans\_error
+68     
+69         received\_data = ser.read()
+70         sleep(0.01)
+71         data\_left = ser.inWaiting()
+72         received\_data += ser.read(data\_left)
+73         
+74         \textcolor{keywordflow}{if} ((received\_data[0]) != self.\_\_Address):
+75             print(\textcolor{stringliteral}{"Transmitting error: Data corrupted"})
+76             \textcolor{keywordflow}{return} Data\_error
+77         
+78         \textcolor{comment}{#Check the CRC code}
+79         crc\_cal = hex(crc16(received\_data[:15]))
+80         
+81         \textcolor{comment}{#print (crc\_cal) #use for debugging only}
+82     
+83         crc\_Rx = hex(struct.unpack(\textcolor{stringliteral}{'H'},received\_data[15:])[0])
+84     
+85         \textcolor{comment}{#print (crc\_Rx) #use for degugging only}
+86     
+87         \textcolor{keywordflow}{if} crc\_cal == crc\_Rx:
+88             self.\_\_V1 = struct.unpack(\textcolor{stringliteral}{'f'}, received\_data[6:2:-1])[0]
+89             self.\_\_V2 = struct.unpack(\textcolor{stringliteral}{'f'}, received\_data[10:6:-1])[0]
+90             self.\_\_V3 = struct.unpack(\textcolor{stringliteral}{'f'}, received\_data[14:10:-1])[0]
+91             \textcolor{keywordflow}{return} No\_error
+92         \textcolor{keywordflow}{else}:
+93             print(\textcolor{stringliteral}{"Transmitting error: Incorrect CRC"})
+94             \textcolor{keywordflow}{return} CRC\_error
+95             
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_m_i_c3_1_1_m_i_c2_a7f0c5c34946f815efc1c4b3befdf3cca}} 
+\index{M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}!\+\_\+\+\_\+\+Address@{\+\_\+\+\_\+\+Address}}
+\index{\+\_\+\+\_\+\+Address@{\+\_\+\+\_\+\+Address}!M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}}
+\subsubsection{\+\_\+\+\_\+\+Address}
+{\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+Address\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 28 of file M\+I\+C3.\+py.
+
+
+
+Referenced by M\+I\+C3.\+M\+I\+C1.\+read\+Apparent\+Power(), M\+I\+C3.\+M\+I\+C1.\+read\+C\+T1(), M\+I\+C3.\+M\+I\+C2.\+read\+Frequency(), M\+I\+C3.\+M\+I\+C1.\+read\+Frequency(), M\+I\+C3.\+M\+I\+C2.\+read\+Phase\+Current(), M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Current(), M\+I\+C3.\+M\+I\+C2.\+read\+Phase\+Power(), M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Power(), M\+I\+C3.\+M\+I\+C2.\+read\+Phase\+Voltage(), M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Voltage(), M\+I\+C3.\+M\+I\+C1.\+read\+Power\+Factor(), M\+I\+C3.\+M\+I\+C1.\+read\+P\+T1(), M\+I\+C3.\+M\+I\+C1.\+read\+P\+T2(), and M\+I\+C3.\+M\+I\+C1.\+read\+Reactive\+Power().
+
+\mbox{\label{class_m_i_c3_1_1_m_i_c2_afc569cfb2ed2703bf1d6c6e0c7ba26ba}} 
+\index{M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}!\+\_\+\+\_\+\+Control@{\+\_\+\+\_\+\+Control}}
+\index{\+\_\+\+\_\+\+Control@{\+\_\+\+\_\+\+Control}!M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}}
+\subsubsection{\+\_\+\+\_\+\+Control}
+{\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+Control\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 27 of file M\+I\+C3.\+py.
+
+
+
+Referenced by M\+I\+C3.\+M\+I\+C1.\+read\+Apparent\+Power(), M\+I\+C3.\+M\+I\+C1.\+read\+C\+T1(), M\+I\+C3.\+M\+I\+C2.\+read\+Frequency(), M\+I\+C3.\+M\+I\+C1.\+read\+Frequency(), M\+I\+C3.\+M\+I\+C2.\+read\+Phase\+Current(), M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Current(), M\+I\+C3.\+M\+I\+C2.\+read\+Phase\+Power(), M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Power(), M\+I\+C3.\+M\+I\+C2.\+read\+Phase\+Voltage(), M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Voltage(), M\+I\+C3.\+M\+I\+C1.\+read\+Power\+Factor(), M\+I\+C3.\+M\+I\+C1.\+read\+P\+T1(), M\+I\+C3.\+M\+I\+C1.\+read\+P\+T2(), and M\+I\+C3.\+M\+I\+C1.\+read\+Reactive\+Power().
+
+\mbox{\label{class_m_i_c3_1_1_m_i_c2_af4f02067aa2b0631aa7fbe60406a86cf}} 
+\index{M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}!\+\_\+\+\_\+F@{\+\_\+\+\_\+F}}
+\index{\+\_\+\+\_\+F@{\+\_\+\+\_\+F}!M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}}
+\subsubsection{\+\_\+\+\_\+F}
+{\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+F\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 38 of file M\+I\+C3.\+py.
+
+
+
+Referenced by M\+I\+C3.\+M\+I\+C2.\+read\+Frequency(), and M\+I\+C3.\+M\+I\+C1.\+read\+Frequency().
+
+\mbox{\label{class_m_i_c3_1_1_m_i_c2_a74b954717f248d73546151a9166a5be0}} 
+\index{M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}!\+\_\+\+\_\+\+I1@{\+\_\+\+\_\+\+I1}}
+\index{\+\_\+\+\_\+\+I1@{\+\_\+\+\_\+\+I1}!M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}}
+\subsubsection{\+\_\+\+\_\+\+I1}
+{\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+I1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 32 of file M\+I\+C3.\+py.
+
+
+
+Referenced by M\+I\+C3.\+M\+I\+C2.\+read\+Phase\+Current(), and M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Current().
+
+\mbox{\label{class_m_i_c3_1_1_m_i_c2_a2064b33aac2b5b381773b402844bc1c9}} 
+\index{M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}!\+\_\+\+\_\+\+I2@{\+\_\+\+\_\+\+I2}}
+\index{\+\_\+\+\_\+\+I2@{\+\_\+\+\_\+\+I2}!M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}}
+\subsubsection{\+\_\+\+\_\+\+I2}
+{\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+I2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 33 of file M\+I\+C3.\+py.
+
+
+
+Referenced by M\+I\+C3.\+M\+I\+C2.\+read\+Phase\+Current(), and M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Current().
+
+\mbox{\label{class_m_i_c3_1_1_m_i_c2_acf85310ab7fbbcd0cc6ff324b3bca413}} 
+\index{M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}!\+\_\+\+\_\+\+I3@{\+\_\+\+\_\+\+I3}}
+\index{\+\_\+\+\_\+\+I3@{\+\_\+\+\_\+\+I3}!M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}}
+\subsubsection{\+\_\+\+\_\+\+I3}
+{\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+I3\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 34 of file M\+I\+C3.\+py.
+
+
+
+Referenced by M\+I\+C3.\+M\+I\+C2.\+read\+Phase\+Current(), and M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Current().
+
+\mbox{\label{class_m_i_c3_1_1_m_i_c2_a12cf23df00894de4d94cbb1d03e36479}} 
+\index{M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}!\+\_\+\+\_\+\+P1@{\+\_\+\+\_\+\+P1}}
+\index{\+\_\+\+\_\+\+P1@{\+\_\+\+\_\+\+P1}!M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}}
+\subsubsection{\+\_\+\+\_\+\+P1}
+{\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+P1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 35 of file M\+I\+C3.\+py.
+
+
+
+Referenced by M\+I\+C3.\+M\+I\+C2.\+read\+Phase\+Power(), and M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Power().
+
+\mbox{\label{class_m_i_c3_1_1_m_i_c2_a5f62cbed2b0b741f6e0f19ae35b12a0c}} 
+\index{M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}!\+\_\+\+\_\+\+P2@{\+\_\+\+\_\+\+P2}}
+\index{\+\_\+\+\_\+\+P2@{\+\_\+\+\_\+\+P2}!M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}}
+\subsubsection{\+\_\+\+\_\+\+P2}
+{\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+P2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 36 of file M\+I\+C3.\+py.
+
+
+
+Referenced by M\+I\+C3.\+M\+I\+C2.\+read\+Phase\+Power(), and M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Power().
+
+\mbox{\label{class_m_i_c3_1_1_m_i_c2_a3f20e10a3906e6928e59d63c99c06268}} 
+\index{M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}!\+\_\+\+\_\+\+P3@{\+\_\+\+\_\+\+P3}}
+\index{\+\_\+\+\_\+\+P3@{\+\_\+\+\_\+\+P3}!M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}}
+\subsubsection{\+\_\+\+\_\+\+P3}
+{\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+P3\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 37 of file M\+I\+C3.\+py.
+
+
+
+Referenced by M\+I\+C3.\+M\+I\+C2.\+read\+Phase\+Power(), and M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Power().
+
+\mbox{\label{class_m_i_c3_1_1_m_i_c2_a308673703d47470ffa470ef7038cf6d3}} 
+\index{M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}!\+\_\+\+\_\+\+V1@{\+\_\+\+\_\+\+V1}}
+\index{\+\_\+\+\_\+\+V1@{\+\_\+\+\_\+\+V1}!M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}}
+\subsubsection{\+\_\+\+\_\+\+V1}
+{\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+V1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 29 of file M\+I\+C3.\+py.
+
+
+
+Referenced by M\+I\+C3.\+M\+I\+C2.\+read\+Phase\+Voltage(), and M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Voltage().
+
+\mbox{\label{class_m_i_c3_1_1_m_i_c2_a62869229c9de79f24a61d8a1043256e6}} 
+\index{M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}!\+\_\+\+\_\+\+V2@{\+\_\+\+\_\+\+V2}}
+\index{\+\_\+\+\_\+\+V2@{\+\_\+\+\_\+\+V2}!M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}}
+\subsubsection{\+\_\+\+\_\+\+V2}
+{\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+V2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 30 of file M\+I\+C3.\+py.
+
+
+
+Referenced by M\+I\+C3.\+M\+I\+C2.\+read\+Phase\+Voltage(), and M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Voltage().
+
+\mbox{\label{class_m_i_c3_1_1_m_i_c2_aa35ac9a7cf922516057a46c213685997}} 
+\index{M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}!\+\_\+\+\_\+\+V3@{\+\_\+\+\_\+\+V3}}
+\index{\+\_\+\+\_\+\+V3@{\+\_\+\+\_\+\+V3}!M\+I\+C3\+::\+M\+I\+C2@{M\+I\+C3\+::\+M\+I\+C2}}
+\subsubsection{\+\_\+\+\_\+\+V3}
+{\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+V3\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 31 of file M\+I\+C3.\+py.
+
+
+
+Referenced by M\+I\+C3.\+M\+I\+C2.\+read\+Phase\+Voltage(), and M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Voltage().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Modbus/\textbf{ M\+I\+C3.\+py}\end{DoxyCompactItemize}

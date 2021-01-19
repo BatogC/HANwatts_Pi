@@ -1,0 +1,146 @@
+\section{node-\/red-\/1881/node\+\_\+modules/nan/nan\+\_\+converters.h File Reference}
+\label{nan__converters_8h}\index{node-\/red-\/1881/node\+\_\+modules/nan/nan\+\_\+converters.\+h@{node-\/red-\/1881/node\+\_\+modules/nan/nan\+\_\+converters.\+h}}
+{\ttfamily \#include \char`\"{}nan\+\_\+converters\+\_\+pre\+\_\+43\+\_\+inl.\+h\char`\"{}}\newline
+Include dependency graph for nan\+\_\+converters.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ imp\+::\+To\+Factory\+Base$<$ T $>$}
+\item 
+struct \textbf{ imp\+::\+Value\+Factory\+Base$<$ T $>$}
+\item 
+struct \textbf{ imp\+::\+To\+Factory$<$ T $>$}
+\item 
+struct \textbf{ imp\+::\+To\+Factory$<$ v8\+::\+Function $>$}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \textbf{ imp}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ N\+A\+N\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+S\+\_\+\+H\+\_\+}
+\item 
+\#define \textbf{ X}(T\+Y\+PE)
+\item 
+\#define \textbf{ X}(T\+Y\+PE)
+\item 
+\#define \textbf{ X}(T\+Y\+PE)
+\item 
+\#define \textbf{ X}(T\+Y\+PE)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\\textbf{ imp\+::\+To\+Factory}$<$ T $>$\+::return\+\_\+t \textbf{ To} (v8\+::\+Local$<$ v8\+::\+Value $>$ val)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\label{nan_8h_ab0f01f486e0cabae47538987abdce0aa}} 
+\index{nan\+\_\+converters.\+h@{nan\+\_\+converters.\+h}!N\+A\+N\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+S\+\_\+\+H\+\_\+@{N\+A\+N\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+S\+\_\+\+H\+\_\+}}
+\index{N\+A\+N\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+S\+\_\+\+H\+\_\+@{N\+A\+N\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+S\+\_\+\+H\+\_\+}!nan\+\_\+converters.\+h@{nan\+\_\+converters.\+h}}
+\subsubsection{N\+A\+N\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+S\+\_\+\+H\+\_\+}
+{\footnotesize\ttfamily \#define N\+A\+N\+\_\+\+C\+O\+N\+V\+E\+R\+T\+E\+R\+S\+\_\+\+H\+\_\+}
+
+
+
+Definition at line 11 of file nan.\+h.
+
+\mbox{\label{nan_8h_ad9853fca332475faf665e45daaff16ab}} 
+\index{nan\+\_\+converters.\+h@{nan\+\_\+converters.\+h}!X@{X}}
+\index{X@{X}!nan\+\_\+converters.\+h@{nan\+\_\+converters.\+h}}
+\subsubsection{X\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \#define X(\begin{DoxyParamCaption}\item[{}]{T\+Y\+PE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keyword}{template}<>                                                                 \(\backslash\)
+    struct ToFactory<v8::TYPE> : ToFactoryBase<v8::TYPE> \{                     \(\backslash\)
+      static \textcolor{keyword}{inline} return\_t convert(v8::Local<v8::Value> val);                \(\backslash\)
+    \};
+\end{DoxyCode}
+
+
+Definition at line 1282 of file nan.\+h.
+
+
+
+Referenced by sqlite3\+\_\+expert\+\_\+destroy(), and sqlite3\+Key\+Info\+Alloc().
+
+\mbox{\label{nan__converters_8h_ad9853fca332475faf665e45daaff16ab}} 
+\index{nan\+\_\+converters.\+h@{nan\+\_\+converters.\+h}!X@{X}}
+\index{X@{X}!nan\+\_\+converters.\+h@{nan\+\_\+converters.\+h}}
+\subsubsection{X\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \#define X(\begin{DoxyParamCaption}\item[{}]{T\+Y\+PE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keyword}{template}<>                                                                 \(\backslash\)
+    struct ToFactory<v8::TYPE> : ToFactoryBase<v8::TYPE> \{                     \(\backslash\)
+      static \textcolor{keyword}{inline} return\_t convert(v8::Local<v8::Value> val);                \(\backslash\)
+    \};
+\end{DoxyCode}
+
+
+Definition at line 28 of file nan\+\_\+converters.\+h.
+
+\mbox{\label{nan_8h_ad9853fca332475faf665e45daaff16ab}} 
+\index{nan\+\_\+converters.\+h@{nan\+\_\+converters.\+h}!X@{X}}
+\index{X@{X}!nan\+\_\+converters.\+h@{nan\+\_\+converters.\+h}}
+\subsubsection{X\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \#define X(\begin{DoxyParamCaption}\item[{}]{T\+Y\+PE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keyword}{template}<>                                                                 \(\backslash\)
+    struct ToFactory<TYPE> : ValueFactoryBase<TYPE> \{                          \(\backslash\)
+      static \textcolor{keyword}{inline} return\_t convert(v8::Local<v8::Value> val);                \(\backslash\)
+    \};
+\end{DoxyCode}
+
+
+Definition at line 1282 of file nan.\+h.
+
+\mbox{\label{nan__converters_8h_ad9853fca332475faf665e45daaff16ab}} 
+\index{nan\+\_\+converters.\+h@{nan\+\_\+converters.\+h}!X@{X}}
+\index{X@{X}!nan\+\_\+converters.\+h@{nan\+\_\+converters.\+h}}
+\subsubsection{X\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \#define X(\begin{DoxyParamCaption}\item[{}]{T\+Y\+PE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keyword}{template}<>                                                                 \(\backslash\)
+    struct ToFactory<TYPE> : ValueFactoryBase<TYPE> \{                          \(\backslash\)
+      static \textcolor{keyword}{inline} return\_t convert(v8::Local<v8::Value> val);                \(\backslash\)
+    \};
+\end{DoxyCode}
+
+
+Definition at line 28 of file nan\+\_\+converters.\+h.
+
+
+
+\subsection{Function Documentation}
+\mbox{\label{nan__converters_8h_a3cbe776970696ef5533fed06a4fe86f4}} 
+\index{nan\+\_\+converters.\+h@{nan\+\_\+converters.\+h}!To@{To}}
+\index{To@{To}!nan\+\_\+converters.\+h@{nan\+\_\+converters.\+h}}
+\subsubsection{To()}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\textbf{ imp\+::\+To\+Factory}$<$T$>$\+::return\+\_\+t To (\begin{DoxyParamCaption}\item[{v8\+::\+Local$<$ v8\+::\+Value $>$}]{val }\end{DoxyParamCaption})}
+
+
+
+Definition at line 61 of file nan\+\_\+converters.\+h.
+
+
+\begin{DoxyCode}
+61                                                           \{
+62   \textcolor{keywordflow}{return} imp::ToFactory<T>::convert(val);
+63 \}
+\end{DoxyCode}

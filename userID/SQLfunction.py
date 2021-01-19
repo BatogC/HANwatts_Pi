@@ -1,3 +1,6 @@
+## Program that manages the MQTT network on the Pi side
+
+
 import time
 import sqlite3 as lite
 import paho.mqtt.client as mqtt
@@ -6,15 +9,19 @@ import paho.mqtt.client as mqtt
 import json
 import smtplib, ssl
 
-#const. for max time before email is sent to charging user
+## Const. for max time before email is sent to charging user
 DISCONNECT_TIME = int(4 * 60 * 60) # 4 hours
 
 email_cntr = 0
 SSLport = 465  # For SSL
 smtp_server = "smtp.gmail.com"
+## Email sender address for Pi
 sender_email = "tpi97364@gmail.com"  # Enter your address
+## Holder for email addresses of receivers
 receiver_email = ""  # Enter receiver address
+## Pi email password
 sender_password = "controlsystem" #input("Type your password and press enter: ")
+## Default email message
 email_message = """\
 Subject: Unplug car
 
@@ -25,10 +32,13 @@ This is an automatically generated email. A response to this email will not be r
 email_context = ssl.create_default_context()
 
 con = None
+
+## MQTT broker address
 broker = "broker.hivemq.com"
 #broker = "192.168.43.249"
 #broker = "localhost"
 
+## Path to users database
 #path = "./userList" #Use internal memory - old DB
 path_local = "/media/DATABASE/usertable.sqlite3" #Use external memory = new_user_table
 path = "/mnt/dav/Data/usertable.sqlite3" #Use cloud storage
@@ -36,6 +46,7 @@ path = "/mnt/dav/Data/usertable.sqlite3" #Use cloud storage
 con_local = lite.connect(path_local)
 cur_local = con_local.cursor()
 
+## Initial DB connection check
 try:
     con = lite.connect(path)
     cur = con.cursor()
@@ -47,6 +58,7 @@ except Exception as e:
 
 err_cnt = 0
 
+## Executes on MQTT client connect to broker, sets flags and subscribes
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
         #print("Connection start")
@@ -62,7 +74,8 @@ def on_connect(client, userdata, flags, rc):
     else:
         print("Bad connection, RC = ", rc)
         client.bad_connection_flag = True
-        
+
+## Executes on MQTT client disconnect and sets flags        
 def on_disconnect(client, userdata, rc):
     client.connected_flag = False
     if rc != 0:
@@ -88,6 +101,8 @@ def on_disconnect(client, userdata, rc):
 #     #publish.single("HANevse/UserList", dataSend, hostname=broker)
 #     #print(dataSend)
 
+## Callback function that parses RFID swipe message from Photon and checks in the DB what to publish as answer
+# Publish output is structured as "1;2" where 1=socket number and 2=answer to Photon
 def update_callback(client, userdata, message):
     try:
         con = lite.connect(path)
@@ -187,6 +202,8 @@ def update_callback(client, userdata, message):
 #     cur.execute("UPDATE list SET StartTime=? WHERE Id=?", (StartTime, UserId))
 #     con.commmit()
 
+
+## New Callback for Photon measurements that parses, checks DB for user data like name and carname, then logs into 'measurements'
 def new_photonMeasure_callback(client, userdata, message):
     try:
         con = lite.connect(path)
@@ -256,7 +273,7 @@ def new_photonMeasure_callback(client, userdata, message):
                 (UserID, dataUser[0], carId, carName, SocketID, V1, V2, V3, I1, I2, I3, F, Time))
     
     con_local.commit()
-    ##Insert with P and E measurements
+    #-#Insert with P and E measurements
     #cur.execute("INSERT INTO measurements(userId, userName, carId, carName, socketId, V1, V2, V3, I1, I2, I3, P, E, F, Time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
     #            (UserID, dataUser[0], carId, carName, SocketID, V1, V2, V3, I1, I2, I3, P, E, F, Time))
     
@@ -268,7 +285,7 @@ def new_photonMeasure_callback(client, userdata, message):
     
     
 
-
+## Old Photon measurements callback that parses '%' separated values
 def old_photonMeasure_callback(client, userdata, message):
     con = lite.connect(path)
     cur = con.cursor()
@@ -297,7 +314,9 @@ def old_photonMeasure_callback(client, userdata, message):
     con.commit()
     #print(V1)
 
-def send_trung():
+## Function to send admin email if one user has been plugged in at a socket for over 4 hours
+# still in beta mode and needs improvements
+def send_admin():
     try:
         con = lite.connect(path)
         cur = con.cursor()
@@ -350,6 +369,7 @@ def send_trung():
 #                 server.login(sender_email, sender_password)                    
 #                 server.sendmail(sender_email, "nguyenxuan.trung@han.nl", email_message)
 
+# Function (executed every 5min) that checks in DB for users charging for over 4 hours ands sends them email to d/c
 def send_email():
     
     con_local = lite.connect(path_local)
@@ -394,7 +414,7 @@ client.on_disconnect = on_disconnect
 client.connect_async(broker, 1883, 60)
 
 send_email()
-send_trung()
+send_admin()
 
 #client.message_callback_add("HANevse/getUsers", SendUser_callback)
 client.message_callback_add("HANevse/updateUser", update_callback)
@@ -403,9 +423,10 @@ client.loop_start()
 
 
 #client.publish("HANevse/testsql", "Hello from SQLfunction")
-## publish.single gives connection error if ran too early
+#- publish.single gives connection error if ran too early
 #publish.single("HANevse/testsql", "Hello from SQLfunction", hostname=broker)
-   
+
+#-# Main loop that checks if MQTT client disconnectd to send_email() should be run   
 while True:
     time.sleep(1)
     if (client.bad_connection_flag == True):

@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['send_5femail',['send_email',['../namespace_s_q_lfunction.html#a526fa5bc764d15233b0cc1880fc33f83',1,'SQLfunction.send_email()'],['../namespace_s_q_lfunction0.html#a15fafbd51d5b5450a61dbe5b8476f34e',1,'SQLfunction0.send_email()']]],
+  ['send_5ftrung',['send_trung',['../namespace_s_q_lfunction.html#a2cbf102b8c88ada7d202cbfb0b2ba3b4',1,'SQLfunction.send_trung()'],['../namespace_s_q_lfunction0.html#ab417fd6714305987eaee04fc959f0f17',1,'SQLfunction0.send_trung()']]],
+  ['sender_5femail',['sender_email',['../namespace_s_q_lfunction.html#ac63d06248a3e41c104ae1290bb403c78',1,'SQLfunction.sender_email()'],['../namespace_s_q_lfunction0.html#ab8feea4f96d3fac4208e9eb36584803d',1,'SQLfunction0.sender_email()']]],
+  ['sender_5fpassword',['sender_password',['../namespace_s_q_lfunction.html#a0d308a95029254ed328ba365861abdf2',1,'SQLfunction.sender_password()'],['../namespace_s_q_lfunction0.html#aa1116be30f93f9a4a67b49ad586b477e',1,'SQLfunction0.sender_password()']]],
+  ['senduser_5fcallback',['SendUser_callback',['../namespacea_s_q_lfunction.html#ae474ee228c976aa102f3cf304049adbe',1,'aSQLfunction.SendUser_callback()'],['../namespacenew_s_q_lfunction.html#a5b54ae39d8acb0f95bc88737494fcab3',1,'newSQLfunction.SendUser_callback()'],['../namespace_s_q_lfunction__old.html#aa533f7ad86dfa0481f6e1b21a38ce057',1,'SQLfunction_old.SendUser_callback()']]],
+  ['ser',['ser',['../namespace_m_i_c3.html#a03a346fcfeb9c95caef3868437487b46',1,'MIC3']]],
+  ['setpoint',['setPoint',['../namespacemain3.html#a248f67a00d1a70af3906de327bd341e2',1,'main3']]],
+  ['smtp_5fserver',['smtp_server',['../namespace_s_q_lfunction.html#afc238002d1e4aeb7f8d2e10d47dfad36',1,'SQLfunction.smtp_server()'],['../namespace_s_q_lfunction0.html#ab3dced66a9775c45598296b3e0f20384',1,'SQLfunction0.smtp_server()']]],
+  ['socketid',['SocketID',['../namespacelist__test.html#a9f5034fb29277ae8c07fe9908ea52673',1,'list_test.SocketID()'],['../namespacetime__test.html#a26c65864996d01ed5f6e2cb6c637f539',1,'time_test.SocketID()']]],
+  ['sqlfunction',['SQLfunction',['../namespace_s_q_lfunction.html',1,'']]],
+  ['sqlfunction_2epy',['SQLfunction.py',['../_s_q_lfunction_8py.html',1,'']]],
+  ['sqlfunction0',['SQLfunction0',['../namespace_s_q_lfunction0.html',1,'']]],
+  ['sqlfunction0_2epy',['SQLfunction0.py',['../_s_q_lfunction0_8py.html',1,'']]],
+  ['sqlfunction_5fold',['SQLfunction_old',['../namespace_s_q_lfunction__old.html',1,'']]],
+  ['sqlfunction_5fold_2epy',['SQLfunction_old.py',['../_s_q_lfunction__old_8py.html',1,'']]],
+  ['sslport',['SSLport',['../namespace_s_q_lfunction.html#a700c01c62cb7f1ed2561f5e640da46cf',1,'SQLfunction.SSLport()'],['../namespace_s_q_lfunction0.html#a4f79b287bc6d361c461836921fb01ee8',1,'SQLfunction0.SSLport()']]]
+];

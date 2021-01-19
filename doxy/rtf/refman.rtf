@@ -1,0 +1,4419 @@
+{\rtf1\ansi\ansicpg1252\uc1 \deff0\deflang1033\deflangfe1033
+{\fonttbl {\f0\froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}
+{\f1\fswiss\fcharset0\fprq2{\*\panose 020b0604020202020204}Arial;}
+{\f2\fmodern\fcharset0\fprq1{\*\panose 02070309020205020404}Courier New;}
+{\f3\froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+}
+{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}
+{\stylesheet
+{\widctlpar\adjustright \fs20\cgrid \snext0 Normal;}
+{\paperw11900\paperh16840\margl1800\margr1800\margt1440\margb1440\gutter0\ltrsect}
+{\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid \sbasedon0 \snext0 heading 1;}
+{\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid \sbasedon0 \snext0 heading 2;}
+{\s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid \sbasedon0 \snext0 heading 3;}
+{\s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext0 heading 4;}{\*\cs10 \additive Default Paragraph Font;}
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext0 heading 5;}{\*\cs10 \additive Default Paragraph Font;}
+{\s15\qc\sb240\sa60\widctlpar\outlinelevel0\adjustright \b\f1\fs32\kerning28\cgrid \sbasedon0 \snext15 Title;}
+{\s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid \sbasedon0 \snext16 Subtitle;}
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid \sbasedon0 \snext17 BodyText;}
+{\s18\widctlpar\fs22\cgrid \sbasedon0 \snext18 DenseText;}
+{\s28\widctlpar\tqc\tx4320\tqr\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext28 header;}
+{\s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid \sbasedon0 \snext29 footer;}
+{\s30\li360\sa60\sb120\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext30 GroupHeader;}
+{\s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext41 Code Example 0;}
+{\s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext42 Code Example 1;}
+{\s42\li720\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext43 Code Example 2;}
+{\s43\li1080\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext44 Code Example 3;}
+{\s44\li1440\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext45 Code Example 4;}
+{\s45\li1800\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext46 Code Example 5;}
+{\s46\li2160\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext47 Code Example 6;}
+{\s47\li2520\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext48 Code Example 7;}
+{\s48\li2880\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext49 Code Example 8;}
+{\s49\li3240\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext49 Code Example 9;}
+{\s50\li0\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext51 List Continue 0;}
+{\s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext52 List Continue 1;}
+{\s52\li720\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext53 List Continue 2;}
+{\s53\li1080\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext54 List Continue 3;}
+{\s54\li1440\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext55 List Continue 4;}
+{\s55\li1800\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext56 List Continue 5;}
+{\s56\li2160\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext57 List Continue 6;}
+{\s57\li2520\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext58 List Continue 7;}
+{\s58\li2880\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext59 List Continue 8;}
+{\s59\li3240\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext59 List Continue 9;}
+{\s60\li0\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext61 DescContinue 0;}
+{\s61\li360\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext62 DescContinue 1;}
+{\s62\li720\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext63 DescContinue 2;}
+{\s63\li1080\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext64 DescContinue 3;}
+{\s64\li1440\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext65 DescContinue 4;}
+{\s65\li1800\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext66 DescContinue 5;}
+{\s66\li2160\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext67 DescContinue 6;}
+{\s67\li2520\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext68 DescContinue 7;}
+{\s68\li2880\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext69 DescContinue 8;}
+{\s69\li3240\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext69 DescContinue 9;}
+{\s70\li0\sa30\sb30\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext81 LatexTOC 0;}
+{\s71\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext82 LatexTOC 1;}
+{\s72\li720\sa24\sb24\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext83 LatexTOC 2;}
+{\s73\li1080\sa21\sb21\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext84 LatexTOC 3;}
+{\s74\li1440\sa18\sb18\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext85 LatexTOC 4;}
+{\s75\li1800\sa15\sb15\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext86 LatexTOC 5;}
+{\s76\li2160\sa12\sb12\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext87 LatexTOC 6;}
+{\s77\li2520\sa9\sb9\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext88 LatexTOC 7;}
+{\s78\li2880\sa6\sb6\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext89 LatexTOC 8;}
+{\s79\li3240\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext89 LatexTOC 9;}
+{\s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext81 \sautoupd List Bullet 0;}
+{\s81\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls2\adjustright \fs20\cgrid \sbasedon0 \snext82 \sautoupd List Bullet 1;}
+{\s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid \sbasedon0 \snext83 \sautoupd List Bullet 2;}
+{\s83\fi-360\li1440\widctlpar\jclisttab\tx1440{\*\pn \pnlvlbody\ilvl0\ls4\pnrnot0\pndec }\ls4\adjustright \fs20\cgrid \sbasedon0 \snext84 \sautoupd List Bullet 3;}
+{\s84\fi-360\li1800\widctlpar\jclisttab\tx1800{\*\pn \pnlvlbody\ilvl0\ls5\pnrnot0\pndec }\ls5\adjustright \fs20\cgrid \sbasedon0 \snext85 \sautoupd List Bullet 4;}
+{\s85\fi-360\li2160\widctlpar\jclisttab\tx2160{\*\pn \pnlvlbody\ilvl0\ls6\pnrnot0\pndec }\ls6\adjustright \fs20\cgrid \sbasedon0 \snext86 \sautoupd List Bullet 5;}
+{\s86\fi-360\li2520\widctlpar\jclisttab\tx2520{\*\pn \pnlvlbody\ilvl0\ls7\pnrnot0\pndec }\ls7\adjustright \fs20\cgrid \sbasedon0 \snext87 \sautoupd List Bullet 6;}
+{\s87\fi-360\li2880\widctlpar\jclisttab\tx2880{\*\pn \pnlvlbody\ilvl0\ls8\pnrnot0\pndec }\ls8\adjustright \fs20\cgrid \sbasedon0 \snext88 \sautoupd List Bullet 7;}
+{\s88\fi-360\li3240\widctlpar\jclisttab\tx3240{\*\pn \pnlvlbody\ilvl0\ls9\pnrnot0\pndec }\ls9\adjustright \fs20\cgrid \sbasedon0 \snext89 \sautoupd List Bullet 8;}
+{\s89\fi-360\li3600\widctlpar\jclisttab\tx3600{\*\pn \pnlvlbody\ilvl0\ls10\pnrnot0\pndec }\ls10\adjustright \fs20\cgrid \sbasedon0 \snext89 \sautoupd List Bullet 9;}
+{\s90\fi-360\li360\widctlpar\fs20\cgrid \sbasedon0 \snext91 \sautoupd List Enum 0;}
+{\s91\fi-360\li720\widctlpar\fs20\cgrid \sbasedon0 \snext92 \sautoupd List Enum 1;}
+{\s92\fi-360\li1080\widctlpar\fs20\cgrid \sbasedon0 \snext93 \sautoupd List Enum 2;}
+{\s93\fi-360\li1440\widctlpar\fs20\cgrid \sbasedon0 \snext94 \sautoupd List Enum 3;}
+{\s94\fi-360\li1800\widctlpar\fs20\cgrid \sbasedon0 \snext95 \sautoupd List Enum 4;}
+{\s95\fi-360\li2160\widctlpar\fs20\cgrid \sbasedon0 \snext96 \sautoupd List Enum 5;}
+{\s96\fi-360\li2520\widctlpar\fs20\cgrid \sbasedon0 \snext96 \sautoupd List Enum 5;}
+{\s97\fi-360\li2880\widctlpar\fs20\cgrid \sbasedon0 \snext98 \sautoupd List Enum 7;}
+{\s98\fi-360\li3240\widctlpar\fs20\cgrid \sbasedon0 \snext99 \sautoupd List Enum 8;}
+{\s99\fi-360\li3600\widctlpar\fs20\cgrid \sbasedon0 \snext99 \sautoupd List Enum 9;}
+}
+{\info 
+{\title {\comment Raspberry Pi software  {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+2.0 \par
+}}Raspberry Pi software}
+{\comment Generated byDoxgyen. }
+{\creatim \yr2021\mo1\dy19\hr15\min18\sec13}
+}\pard\plain 
+\sectd\pgnlcrm
+{\footer \s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid {\chpgn}}
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+\vertalc\qc\par\par\par\par\par\par\par
+\pard\plain \s15\qc\sb240\sa60\widctlpar\outlinelevel0\adjustright \b\f1\fs32\kerning28\cgrid 
+{\field\fldedit {\*\fldinst TITLE \\*MERGEFORMAT}{\fldrslt Raspberry Pi software}}\par
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+\par
+\par\par\par\par\par\par\par\par\par\par\par\par
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+{\field\fldedit {\*\fldinst AUTHOR \\*MERGEFORMAT}{\fldrslt AUTHOR}}\par
+Version 2.0\par{\field\fldedit {\*\fldinst CREATEDATE \\*MERGEFORMAT}{\fldrslt Tue Jan 19 2021 }}\par
+\page\page\vertalt
+\pard\plain 
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid Table of Contents\par
+\pard\plain \par
+{\field\fldedit {\*\fldinst TOC \\f \\*MERGEFORMAT}{\fldrslt Table of contents}}\par
+\pard\plain 
+\sect \sbkpage \pgndec \pgnrestart
+\sect \sectd \sbknone
+{\footer \s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid {\chpgn}}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+Raspberry Pi code{\tc \v Raspberry Pi code}\par \pard\plain 
+{\bkmkstart AAAAAAAAFH}
+{\bkmkend AAAAAAAAFH}
+\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+The Raspberry Pi subsystem software: The folder Modbus contains Modbus network-related files, while the userID contains the MQTT network and users database-related files. The programs are written in Python 3.7. {\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {\tc\tcl4 Welcome to the project!} \par}
+{\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {\tc\tcl4 {\f2 /Modbus}  folder:} \par}
+This is the source folder that contains the firmware files for the Modbus part of the Pi. The '{\b main3.py}' is the main script run at boot. '{\b MIC3.py}' is the updated Python 3.7 library that contains the MIC1 and MIC2 energy meter classes and member functions needed by '{\b main3.py}'.\par
+{\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {\tc\tcl4 {\f2 /userID}  folder:} \par}
+This is the source folder that contains the firmware files for the MQTT and user DB part of the Pi. The '{\b SQLfunction.py}' is the main script run at boot.\par
+{\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {\tc\tcl4 Executing the scripts} \par}
+These programs are to be run from bash with 'python3 <filename>'. They are normally run at boot concurrently from their respective .sh scripts. \par
+}}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+Namespace Index\par \pard\plain 
+{\tc \v Namespace Index}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Packages\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Here are the packages with brief descriptions (if available):}
+{
+\par
+\pard\plain \s71\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+{\b {\b main3} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAE \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b MIC3} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAABR \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b SQLfunction} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAADZ \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+\par}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+Class Index\par \pard\plain 
+{\tc \v Class Index}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Class List\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Here are the classes, structs, unions and interfaces with brief descriptions:}
+{
+\par
+\pard\plain \s71\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+{\b {\b MIC3.MIC1} ({\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Class for reading Modbus data from {\b MIC1} energy meter })} \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAABX \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b MIC3.MIC2} ({\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Unused class for {\b MIC2} energy meter; it is missing the PT!, PT2, CT1 control variables })} \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAADH \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+\par}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+File Index\par \pard\plain 
+{\tc \v File Index}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+File List\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Here is a list of all files with brief descriptions:}
+{
+\par
+\pard\plain \s71\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+{\b Modbus/{\b main3.py} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAA \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b Modbus/{\b MIC3.py} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAB \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b userID/{\b SQLfunction.py} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAD \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+\par}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+Namespace Documentation\par \pard\plain 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+main3 Namespace Reference\par \pard\plain 
+{\tc\tcl2 \v main3}
+{\xe \v main3}
+{\bkmkstart AAAAAAAAAE}
+{\bkmkend AAAAAAAAAE}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b on_connect} ({\b client}, userdata, flags, rc)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Executes on MQTT client connect to broker and sets flags. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b on_disconnect} ({\b client}, userdata, rc)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Executes on MQTT client disconnect and sets flags. }{
+}\par
+}}
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variables\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+string {\b broker} = "broker.hivemq.com"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+MQTT broker. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+string {\b path_local} = "/media/DATABASE/modbusData.db"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Path for modbus database. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+string {\b path} = "/mnt/dav/Data/modbusData.db"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+string {\b path_local_user} = "/media/DATABASE/usertable.sqlite3"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Path for users database. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+string {\b path_user} = "/mnt/dav/Data/usertable.sqlite3"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b con_user_local} = lite.connect({\b path_local_user})\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b cur_user_local} = con_user_local.cursor()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b con_user} = lite.connect({\b path_user})\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Initial DB connection check. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b cur_user} = con_user.cursor()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b con_local} = lite.connect({\b path_local})\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b cur_local} = con_local.cursor()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b con} = lite.connect({\b path})\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b cur} = con.cursor()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b dataRef1} = cur.fetchone()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b err_cnt} = 0\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b client} = mqtt.Client()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b connected_flag}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b bad_connection_flag}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b on_connect}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b on_disconnect}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b control_pin} = 18\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b meter1} = MIC.MIC1(0x01, control_pin)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Initializes meter. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b meter2} = MIC.MIC1(0x02, control_pin)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b meter3} = MIC.MIC1(0x03, control_pin)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b meter4} = MIC.MIC1(0x04, control_pin)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b meter5} = MIC.MIC1(0x05, control_pin)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b time_send} = 1\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b current_time} = time.ctime(time.time())\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b readingPT1} = meter1.readPT1()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b readingPT2} = meter1.readPT2()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b readingCT1} = meter1.readCT1()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b reading} = meter1.readPhaseVoltage()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+string {\b Message}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b data} = cur.fetchone()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+tuple {\b setPoint} = ({\b data}[0]+{\b data}[1]+{\b data}[2])\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+dictionary {\b dataSend}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Function Documentation\par
+\pard\plain 
+{\xe \v on_connect\:main3}
+{\xe \v main3\:on_connect}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def main3.on_connect (  {\i client},   {\i userdata},   {\i flags},   {\i rc})}}
+\par
+{\bkmkstart AAAAAAAAAF}
+{\bkmkend AAAAAAAAAF}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Executes on MQTT client connect to broker and sets flags. }}\par
+{
+Definition at line 58 of file main3.py.}\par
+{
+References on_connect.}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid    58 def on_connect(client, userdata, flags, rc):\par
+   59     if rc == 0:\par
+   60         #print("Connection start")\par
+   61         client.bad_connection_flag = False\par
+   62         client.connected_flag = True        \par
+   63         err_cnt = 0\par
+   64 \par
+   65         client.publish("HANevse/testmodbus", "Hello from Modbus function", 1, False)\par
+   66         print("Connected OK")       \par
+   67         \par
+   68     else:\par
+   69         print("Bad connection, RC = ", rc)\par
+   70         client.bad_connection_flag = True\par
+   71 \par
+}
+}
+{\xe \v on_disconnect\:main3}
+{\xe \v main3\:on_disconnect}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def main3.on_disconnect (  {\i client},   {\i userdata},   {\i rc})}}
+\par
+{\bkmkstart AAAAAAAAAG}
+{\bkmkend AAAAAAAAAG}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Executes on MQTT client disconnect and sets flags. }}\par
+{
+Definition at line 73 of file main3.py.}\par
+{
+References on_disconnect.}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid    73 def on_disconnect(client, userdata, rc):\par
+   74     client.connected_flag = False\par
+   75     if rc != 0:\par
+   76         print("Unexpected disconnection.")\par
+   77         client.bad_connection_flag = True\par
+   78     else:\par
+   79         print("Normal disconnection.")\par
+   80 \par
+}
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variable Documentation\par
+\pard\plain 
+{\xe \v bad_connection_flag\:main3}
+{\xe \v main3\:bad_connection_flag}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+main3.bad_connection_flag}}
+\par
+{\bkmkstart AAAAAAAAAH}
+{\bkmkend AAAAAAAAAH}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 84 of file main3.py.}\par
+}
+{\xe \v broker\:main3}
+{\xe \v main3\:broker}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+string main3.broker = "broker.hivemq.com"}}
+\par
+{\bkmkstart AAAAAAAAAI}
+{\bkmkend AAAAAAAAAI}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+MQTT broker. }}\par
+{
+Definition at line 20 of file main3.py.}\par
+}
+{\xe \v client\:main3}
+{\xe \v main3\:client}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+main3.client = mqtt.Client()}}
+\par
+{\bkmkstart AAAAAAAAAJ}
+{\bkmkend AAAAAAAAAJ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 81 of file main3.py.}\par
+}
+{\xe \v con\:main3}
+{\xe \v main3\:con}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+main3.con = lite.connect({\b path})}}
+\par
+{\bkmkstart AAAAAAAAAK}
+{\bkmkend AAAAAAAAAK}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 46 of file main3.py.}\par
+}
+{\xe \v con_local\:main3}
+{\xe \v main3\:con_local}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+main3.con_local = lite.connect({\b path_local})}}
+\par
+{\bkmkstart AAAAAAAAAL}
+{\bkmkend AAAAAAAAAL}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 42 of file main3.py.}\par
+}
+{\xe \v con_user\:main3}
+{\xe \v main3\:con_user}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+main3.con_user = lite.connect({\b path_user})}}
+\par
+{\bkmkstart AAAAAAAAAM}
+{\bkmkend AAAAAAAAAM}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Initial DB connection check. }}\par
+{
+Definition at line 37 of file main3.py.}\par
+}
+{\xe \v con_user_local\:main3}
+{\xe \v main3\:con_user_local}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+main3.con_user_local = lite.connect({\b path_local_user})}}
+\par
+{\bkmkstart AAAAAAAAAN}
+{\bkmkend AAAAAAAAAN}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 32 of file main3.py.}\par
+}
+{\xe \v connected_flag\:main3}
+{\xe \v main3\:connected_flag}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+main3.connected_flag}}
+\par
+{\bkmkstart AAAAAAAAAO}
+{\bkmkend AAAAAAAAAO}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 83 of file main3.py.}\par
+}
+{\xe \v control_pin\:main3}
+{\xe \v main3\:control_pin}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+int main3.control_pin = 18}}
+\par
+{\bkmkstart AAAAAAAAAP}
+{\bkmkend AAAAAAAAAP}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 90 of file main3.py.}\par
+}
+{\xe \v cur\:main3}
+{\xe \v main3\:cur}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+main3.cur = con.cursor()}}
+\par
+{\bkmkstart AAAAAAAAAQ}
+{\bkmkend AAAAAAAAAQ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 47 of file main3.py.}\par
+}
+{\xe \v cur_local\:main3}
+{\xe \v main3\:cur_local}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+main3.cur_local = con_local.cursor()}}
+\par
+{\bkmkstart AAAAAAAAAR}
+{\bkmkend AAAAAAAAAR}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 43 of file main3.py.}\par
+}
+{\xe \v cur_user\:main3}
+{\xe \v main3\:cur_user}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+main3.cur_user = con_user.cursor()}}
+\par
+{\bkmkstart AAAAAAAAAS}
+{\bkmkend AAAAAAAAAS}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 38 of file main3.py.}\par
+}
+{\xe \v cur_user_local\:main3}
+{\xe \v main3\:cur_user_local}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+main3.cur_user_local = con_user_local.cursor()}}
+\par
+{\bkmkstart AAAAAAAAAT}
+{\bkmkend AAAAAAAAAT}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 33 of file main3.py.}\par
+}
+{\xe \v current_time\:main3}
+{\xe \v main3\:current_time}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+main3.current_time = time.ctime(time.time())}}
+\par
+{\bkmkstart AAAAAAAAAU}
+{\bkmkend AAAAAAAAAU}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 131 of file main3.py.}\par
+}
+{\xe \v data\:main3}
+{\xe \v main3\:data}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+main3.data = cur.fetchone()}}
+\par
+{\bkmkstart AAAAAAAAAV}
+{\bkmkend AAAAAAAAAV}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 678 of file main3.py.}\par
+}
+{\xe \v dataRef1\:main3}
+{\xe \v main3\:dataRef1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+main3.dataRef1 = cur.fetchone()}}
+\par
+{\bkmkstart AAAAAAAAAW}
+{\bkmkend AAAAAAAAAW}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 49 of file main3.py.}\par
+}
+{\xe \v dataSend\:main3}
+{\xe \v main3\:dataSend}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+main3.dataSend}}
+\par
+{\bkmkstart AAAAAAAAAX}
+{\bkmkend AAAAAAAAAX}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\b Initial value:}{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid     1 =  \{\par
+    2             "setPoint":setPoint,\par
+    3             \}\par
+}
+{
+Definition at line 702 of file main3.py.}\par
+}
+{\xe \v err_cnt\:main3}
+{\xe \v main3\:err_cnt}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+int main3.err_cnt = 0}}
+\par
+{\bkmkstart AAAAAAAAAY}
+{\bkmkend AAAAAAAAAY}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 55 of file main3.py.}\par
+}
+{\xe \v Message\:main3}
+{\xe \v main3\:Message}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+string main3.Message}}
+\par
+{\bkmkstart AAAAAAAAAZ}
+{\bkmkend AAAAAAAAAZ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\b Initial value:}{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid     1 =  current_time + """\par
+    2         V1: %.2f   V2: %.2f   V3: %.2f\par
+    3         """%(meter1._MIC1__V1, meter1._MIC1__V2, meter1._MIC1__V3)\par
+}
+{
+Definition at line 153 of file main3.py.}\par
+}
+{\xe \v meter1\:main3}
+{\xe \v main3\:meter1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+main3.meter1 = MIC.MIC1(0x01, control_pin)}}
+\par
+{\bkmkstart AAAAAAAABA}
+{\bkmkend AAAAAAAABA}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Initializes meter. }}\par
+{
+Definition at line 115 of file main3.py.}\par
+}
+{\xe \v meter2\:main3}
+{\xe \v main3\:meter2}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+main3.meter2 = MIC.MIC1(0x02, control_pin)}}
+\par
+{\bkmkstart AAAAAAAABB}
+{\bkmkend AAAAAAAABB}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 116 of file main3.py.}\par
+}
+{\xe \v meter3\:main3}
+{\xe \v main3\:meter3}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+main3.meter3 = MIC.MIC1(0x03, control_pin)}}
+\par
+{\bkmkstart AAAAAAAABC}
+{\bkmkend AAAAAAAABC}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 117 of file main3.py.}\par
+}
+{\xe \v meter4\:main3}
+{\xe \v main3\:meter4}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+main3.meter4 = MIC.MIC1(0x04, control_pin)}}
+\par
+{\bkmkstart AAAAAAAABD}
+{\bkmkend AAAAAAAABD}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 118 of file main3.py.}\par
+}
+{\xe \v meter5\:main3}
+{\xe \v main3\:meter5}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+main3.meter5 = MIC.MIC1(0x05, control_pin)}}
+\par
+{\bkmkstart AAAAAAAABE}
+{\bkmkend AAAAAAAABE}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 119 of file main3.py.}\par
+}
+{\xe \v on_connect\:main3}
+{\xe \v main3\:on_connect}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+main3.on_connect}}
+\par
+{\bkmkstart AAAAAAAABF}
+{\bkmkend AAAAAAAABF}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 85 of file main3.py.}\par
+{
+Referenced by on_connect().}\par
+}
+{\xe \v on_disconnect\:main3}
+{\xe \v main3\:on_disconnect}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+main3.on_disconnect}}
+\par
+{\bkmkstart AAAAAAAABG}
+{\bkmkend AAAAAAAABG}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 86 of file main3.py.}\par
+{
+Referenced by on_disconnect().}\par
+}
+{\xe \v path\:main3}
+{\xe \v main3\:path}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+string main3.path = "/mnt/dav/Data/modbusData.db"}}
+\par
+{\bkmkstart AAAAAAAABH}
+{\bkmkend AAAAAAAABH}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 26 of file main3.py.}\par
+}
+{\xe \v path_local\:main3}
+{\xe \v main3\:path_local}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+string main3.path_local = "/media/DATABASE/modbusData.db"}}
+\par
+{\bkmkstart AAAAAAAABI}
+{\bkmkend AAAAAAAABI}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Path for modbus database. }}\par
+{
+Definition at line 25 of file main3.py.}\par
+}
+{\xe \v path_local_user\:main3}
+{\xe \v main3\:path_local_user}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+string main3.path_local_user = "/media/DATABASE/usertable.sqlite3"}}
+\par
+{\bkmkstart AAAAAAAABJ}
+{\bkmkend AAAAAAAABJ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Path for users database. }}\par
+{
+Definition at line 29 of file main3.py.}\par
+}
+{\xe \v path_user\:main3}
+{\xe \v main3\:path_user}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+string main3.path_user = "/mnt/dav/Data/usertable.sqlite3"}}
+\par
+{\bkmkstart AAAAAAAABK}
+{\bkmkend AAAAAAAABK}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 30 of file main3.py.}\par
+}
+{\xe \v reading\:main3}
+{\xe \v main3\:reading}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+main3.reading = meter1.readPhaseVoltage()}}
+\par
+{\bkmkstart AAAAAAAABL}
+{\bkmkend AAAAAAAABL}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 150 of file main3.py.}\par
+}
+{\xe \v readingCT1\:main3}
+{\xe \v main3\:readingCT1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+main3.readingCT1 = meter1.readCT1()}}
+\par
+{\bkmkstart AAAAAAAABM}
+{\bkmkend AAAAAAAABM}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 146 of file main3.py.}\par
+}
+{\xe \v readingPT1\:main3}
+{\xe \v main3\:readingPT1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+main3.readingPT1 = meter1.readPT1()}}
+\par
+{\bkmkstart AAAAAAAABN}
+{\bkmkend AAAAAAAABN}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 144 of file main3.py.}\par
+}
+{\xe \v readingPT2\:main3}
+{\xe \v main3\:readingPT2}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+main3.readingPT2 = meter1.readPT2()}}
+\par
+{\bkmkstart AAAAAAAABO}
+{\bkmkend AAAAAAAABO}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 145 of file main3.py.}\par
+}
+{\xe \v setPoint\:main3}
+{\xe \v main3\:setPoint}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+int main3.setPoint = ({\b data}[0]+{\b data}[1]+{\b data}[2])}}
+\par
+{\bkmkstart AAAAAAAABP}
+{\bkmkend AAAAAAAABP}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 679 of file main3.py.}\par
+}
+{\xe \v time_send\:main3}
+{\xe \v main3\:time_send}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+int main3.time_send = 1}}
+\par
+{\bkmkstart AAAAAAAABQ}
+{\bkmkend AAAAAAAABQ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 122 of file main3.py.}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+MIC3 Namespace Reference\par \pard\plain 
+{\tc\tcl2 \v MIC3}
+{\xe \v MIC3}
+{\bkmkstart AAAAAAAABR}
+{\bkmkend AAAAAAAABR}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Classes\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+class {\b MIC1}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Class for reading Modbus data from {\b MIC1} energy meter. }}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+class {\b MIC2}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Unused class for {\b MIC2} energy meter; it is missing the PT!, PT2, CT1 control variables. }}}
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variables\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b ser} = serial.Serial("/dev/ttyS0", 38400)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+This library is made for reading MIC/MIC2 energy meters with a MAX485 module {\b MIC2} only reads data from registers. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b Data_error} = -3\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b CRC_error} = -2\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b Trans_error} = -1\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b No_error} = 0\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variable Documentation\par
+\pard\plain 
+{\xe \v CRC_error\:MIC3}
+{\xe \v MIC3\:CRC_error}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+int MIC3.CRC_error = -2}}
+\par
+{\bkmkstart AAAAAAAABS}
+{\bkmkend AAAAAAAABS}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 20 of file MIC3.py.}\par
+}
+{\xe \v Data_error\:MIC3}
+{\xe \v MIC3\:Data_error}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+int MIC3.Data_error = -3}}
+\par
+{\bkmkstart AAAAAAAABT}
+{\bkmkend AAAAAAAABT}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 19 of file MIC3.py.}\par
+}
+{\xe \v No_error\:MIC3}
+{\xe \v MIC3\:No_error}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+int MIC3.No_error = 0}}
+\par
+{\bkmkstart AAAAAAAABU}
+{\bkmkend AAAAAAAABU}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 22 of file MIC3.py.}\par
+}
+{\xe \v ser\:MIC3}
+{\xe \v MIC3\:ser}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.ser = serial.Serial("/dev/ttyS0", 38400)}}
+\par
+{\bkmkstart AAAAAAAABV}
+{\bkmkend AAAAAAAABV}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+This library is made for reading MIC/MIC2 energy meters with a MAX485 module {\b MIC2} only reads data from registers. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+This is not the correct value. To calculate correct value, PT1, PT2, CT1 need to be read. Please take {\b MIC1} as an example {\b MIC1}: 8-bit data, no parity, 1 stop bit, 38400 BAUD \par
+}{
+Definition at line 16 of file MIC3.py.}\par
+}
+{\xe \v Trans_error\:MIC3}
+{\xe \v MIC3\:Trans_error}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+int MIC3.Trans_error = -1}}
+\par
+{\bkmkstart AAAAAAAABW}
+{\bkmkend AAAAAAAABW}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 21 of file MIC3.py.}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+SQLfunction Namespace Reference\par \pard\plain 
+{\tc\tcl2 \v SQLfunction}
+{\xe \v SQLfunction}
+{\bkmkstart AAAAAAAADZ}
+{\bkmkend AAAAAAAADZ}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b on_connect} ({\b client}, userdata, flags, rc)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Executes on MQTT client connect to broker, sets flags and subscribes. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b on_disconnect} ({\b client}, userdata, rc)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Executes on MQTT client disconnect and sets flags. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b update_callback} ({\b client}, userdata, message)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Callback function that parses RFID swipe message from Photon and checks in the DB what to publish as answer Publish output is structured as "1;2" where 1=socket number and 2=answer to Photon. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b new_photonMeasure_callback} ({\b client}, userdata, message)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+New Callback for Photon measurements that parses, checks DB for user data like name and carname, then logs into 'measurements'. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b old_photonMeasure_callback} ({\b client}, userdata, message)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Old Photon measurements callback that parses '' separated values. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b send_admin} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Function to send admin email if one user has been plugged in at a socket for over 4 hours still in beta mode and needs improvements. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b send_email} ()\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variables\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b DISCONNECT_TIME} = int(4 * 60 * 60)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Const. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b email_cntr} = 0\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b SSLport} = 465\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+string {\b smtp_server} = "smtp.gmail.com"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+string {\b sender_email} = "tpi97364@gmail.com"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Email sender address for Pi. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+string {\b receiver_email} = ""\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Holder for email addresses of receivers. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+string {\b sender_password} = "controlsystem"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Pi email password. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+string {\b email_message}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Default email message. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b email_context} = ssl.create_default_context()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b con} = None\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Initial DB connection check. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+string {\b broker} = "broker.hivemq.com"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+MQTT broker address. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+string {\b path_local} = "/media/DATABASE/usertable.sqlite3"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Path to users database path = "./userList" #Use internal memory - old DB. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+string {\b path} = "/mnt/dav/Data/usertable.sqlite3"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b con_local} = lite.connect({\b path_local})\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b cur_local} = con_local.cursor()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b cur} = con.cursor()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b dataRef1} = cur.fetchone()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b err_cnt} = 0\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b client} = mqtt.Client()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b connected_flag}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b bad_connection_flag}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b on_connect}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b on_disconnect}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b current_time} = time.ctime(time.time())\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Function Documentation\par
+\pard\plain 
+{\xe \v new_photonMeasure_callback\:SQLfunction}
+{\xe \v SQLfunction\:new_photonMeasure_callback}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def SQLfunction.new_photonMeasure_callback (  {\i client},   {\i userdata},   {\i message})}}
+\par
+{\bkmkstart AAAAAAAAEA}
+{\bkmkend AAAAAAAAEA}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+New Callback for Photon measurements that parses, checks DB for user data like name and carname, then logs into 'measurements'. }}\par
+{
+Definition at line 207 of file SQLfunction.py.}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid   207 def new_photonMeasure_callback(client, userdata, message):\par
+  208     try:\par
+  209         con = lite.connect(path)\par
+  210         cur = con.cursor()\par
+  211     except Exception as e:\par
+  212         print (e)\par
+  213     con_local = lite.connect(path_local)\par
+  214     cur_local = con_local.cursor()\par
+  215     data = json.loads(message.payload)    \par
+  216     print(data)\par
+  217     V1 = float(data.get("V1"))\par
+  218     V2 = float(data.get("V2"))\par
+  219     V3 = float(data.get("V3"))\par
+  220     I1 = float(data.get("I1"))\par
+  221     I2 = float(data.get("I2"))\par
+  222     I3 = float(data.get("I3"))\par
+  223     #P = float(data.get("P"))\par
+  224     #E = float(data.get("E"))\par
+  225     F = float(data.get("F"))\par
+  226     Time = int(data.get("Time"))\par
+  227     SocketID = int(data.get("SocketID"))\par
+  228     UserID = str(data.get("UserID")).upper()\par
+  229     \par
+  230     try:\par
+  231         cur.execute("SELECT name, rowid FROM users WHERE uidTag = ? ", (UserID,) )\par
+  232         dataUser = cur.fetchone()\par
+  233     except Exception as e:\par
+  234         print (e)\par
+  235         cur_local.execute("SELECT name, rowid FROM users WHERE uidTag = ? ", (UserID,) )\par
+  236         dataUser = cur_local.fetchone()\par
+  237         \par
+  238     try:\par
+  239         dataUser[1]\par
+  240     except Exception as e:\par
+  241         print (e)\par
+  242         print("WARNING: Unauthorized user " + UserID + " charging at socket " + str(SocketID))\par
+  243         dataUser = ('unknown', 31)                \par
+  244     try:\par
+  245         cur.execute("SELECT carId FROM car_of_user WHERE userId = ? ", (dataUser[1],) )\par
+  246         if (cur.fetchone() is None):\par
+  247             carId = 404\par
+  248         else:\par
+  249             carId = cur.fetchone()[0]        \par
+  250     except Exception as e:\par
+  251         print (e)\par
+  252         cur_local.execute("SELECT carId FROM car_of_user WHERE userId = ? ", (dataUser[1],) )\par
+  253         if (cur.fetchone() is None):\par
+  254             carId = 404\par
+  255         else:\par
+  256             carId = cur_local.fetchone()[0]\par
+  257     \par
+  258     try:\par
+  259         cur.execute("SELECT brand || ' ' || type FROM cars WHERE id = ? ", (carId,) )\par
+  260         carName = cur.fetchone()[0]\par
+  261     except Exception as e:\par
+  262         print (e)\par
+  263         cur_local.execute("SELECT brand || ' ' || type FROM cars WHERE id = ? ", (carId,) )\par
+  264         carName = cur_local.fetchone()[0]\par
+  265     try:    \par
+  266         cur.execute("INSERT INTO measurements(userId, userName, carId, carName, socketId, V1, V2, V3, I1, I2, I3, F, Time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)",\par
+  267                     (UserID, dataUser[0], carId, carName, SocketID, V1, V2, V3, I1, I2, I3, F, Time))\par
+  268         con.commit()\par
+  269     except Exception as e:\par
+  270         print (e)\par
+  271     finally:\par
+  272         cur_local.execute("INSERT INTO measurements(userId, userName, carId, carName, socketId, V1, V2, V3, I1, I2, I3, F, Time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)",\par
+  273                 (UserID, dataUser[0], carId, carName, SocketID, V1, V2, V3, I1, I2, I3, F, Time))\par
+  274     \par
+  275     con_local.commit()\par
+  276     #-#Insert with P and E measurements\par
+  277     #cur.execute("INSERT INTO measurements(userId, userName, carId, carName, socketId, V1, V2, V3, I1, I2, I3, P, E, F, Time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",\par
+  278     #            (UserID, dataUser[0], carId, carName, SocketID, V1, V2, V3, I1, I2, I3, P, E, F, Time))\par
+  279     \par
+  280     # Or skip all .get() and do it in cur.execute     \par
+  281     #cur.execute("INSERT INTO measurements(userId, socketId, V1, V2, V3, I1, I2, I3, P, E, F, Time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)",\par
+  282     #            (str(data["UserID"]).upper(), int(data["SocketID"]), float(data["V1"]), float(data["V2"]), float(data["V3"]), float(data["I1"]), float(data["I2"]), float(data["I3"]), float(data["P"]), float(data["E"]), float(data["F"]), int(data["Time"]) ))\par
+  283     \par
+  284    #for readable timestamp use this at end of INSERT: time.strftime('%Y-%m-%d %T', time.localtime(int(data["Time"]) ))\par
+  285     \par
+  286     \par
+  287 \par
+}
+}
+{\xe \v old_photonMeasure_callback\:SQLfunction}
+{\xe \v SQLfunction\:old_photonMeasure_callback}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def SQLfunction.old_photonMeasure_callback (  {\i client},   {\i userdata},   {\i message})}}
+\par
+{\bkmkstart AAAAAAAAEB}
+{\bkmkend AAAAAAAAEB}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Old Photon measurements callback that parses '' separated values. }}\par
+{
+Definition at line 289 of file SQLfunction.py.}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid   289 def old_photonMeasure_callback(client, userdata, message):\par
+  290     con = lite.connect(path)\par
+  291     cur = con.cursor()\par
+  292     data = message.payload    \par
+  293     data = data.decode('UTF-8')\par
+  294     print(data)\par
+  295     \par
+  296     index = []\par
+  297     for i in range(len(data)):\par
+  298         if (data[i] == '%'):\par
+  299             index.append(i)\par
+  300     V1 = float(data[:index[0]])\par
+  301     V2 = float(data[index[0]+1:index[1]])\par
+  302     V3 = float(data[index[1]+1:index[2]])\par
+  303     I1 = float(data[index[2]+1:index[3]])\par
+  304     I2 = float(data[index[3]+1:index[4]])\par
+  305     I3 = float(data[index[4]+1:index[5]])\par
+  306     P = float(data[index[5]+1:index[6]])\par
+  307     E = float(data[index[6]+1:index[7]])\par
+  308     F = float(data[index[7]+1:index[8]])\par
+  309     Time = int(data[index[8]+1:index[9]])\par
+  310     SocketID = int(data[index[9]+1:index[10]])\par
+  311     UserID = data[index[10]+1:index[11]]\par
+  312     cur.execute("INSERT INTO photonMeasure(UIDtag, SocketID, V1, V2, V3, I1, I2, I3, P, E, F, Time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)",\par
+  313                 (UserID, SocketID, V1, V2, V3, I1, I2, I3, P, E, F, Time))\par
+  314     con.commit()\par
+  315     #print(V1)\par
+  316 \par
+}
+}
+{\xe \v on_connect\:SQLfunction}
+{\xe \v SQLfunction\:on_connect}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def SQLfunction.on_connect (  {\i client},   {\i userdata},   {\i flags},   {\i rc})}}
+\par
+{\bkmkstart AAAAAAAAEC}
+{\bkmkend AAAAAAAAEC}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Executes on MQTT client connect to broker, sets flags and subscribes. }}\par
+{
+Definition at line 62 of file SQLfunction.py.}\par
+{
+References on_connect.}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid    62 def on_connect(client, userdata, flags, rc):\par
+   63     if rc == 0:\par
+   64         #print("Connection start")\par
+   65         print(path)\par
+   66         client.bad_connection_flag = False\par
+   67         client.connected_flag = True        \par
+   68         err_cnt = 0\par
+   69 \par
+   70         client.publish("HANevse/testsql", "Hello from SQLfunction",1 ,False)\par
+   71 #        client.subscribe([("HANevse/getUsers", 2), ("HANevse/UpdateUser", 2), ("HANevse/photonMeasure", 2)])\par
+   72         client.subscribe([("HANevse/updateUser", 2), ("HANevse/photonMeasure", 2)])\par
+   73         print("Connected OK")\par
+   74     else:\par
+   75         print("Bad connection, RC = ", rc)\par
+   76         client.bad_connection_flag = True\par
+   77 \par
+}
+}
+{\xe \v on_disconnect\:SQLfunction}
+{\xe \v SQLfunction\:on_disconnect}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def SQLfunction.on_disconnect (  {\i client},   {\i userdata},   {\i rc})}}
+\par
+{\bkmkstart AAAAAAAAED}
+{\bkmkend AAAAAAAAED}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Executes on MQTT client disconnect and sets flags. }}\par
+{
+Definition at line 79 of file SQLfunction.py.}\par
+{
+References on_disconnect.}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid    79 def on_disconnect(client, userdata, rc):\par
+   80     client.connected_flag = False\par
+   81     if rc != 0:\par
+   82         print("Unexpected disconnection.")\par
+   83         client.bad_connection_flag = True\par
+   84     else:\par
+   85         print("Normal disconnection.")\par
+   86 \par
+   87 # def SendUser_callback(client, userdata, message):\par
+   88 #     #print(message.payload)\par
+   89 #     con = lite.connect(path)\par
+   90 #     cur = con.cursor()\par
+   91 #     cur.execute('select * from list')\par
+   92 # \par
+   93 #     data = cur.fetchall()\par
+   94 #     dataSend = ""\par
+   95 # \par
+   96 #     for element in data:\par
+   97 #         print(element)\par
+   98 #         dataSend += (str(element[0])+'%'+element[1]+'%'+element[2]+'%'+str(element[3])+'%'+element[4]+'%'+str(element[5])+'%'+element[6]+'%'+str(element[7])+'%'+str(element[8])+'%')\par
+   99 #     \par
+  100 #     client.publish("HANevse/UserList", dataSend, 2, True)\par
+  101 #     #publish.single("HANevse/UserList", dataSend, hostname=broker)\par
+  102 #     #print(dataSend)\par
+  103 \par
+}
+}
+{\xe \v send_admin\:SQLfunction}
+{\xe \v SQLfunction\:send_admin}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def SQLfunction.send_admin ()}}
+\par
+{\bkmkstart AAAAAAAAEE}
+{\bkmkend AAAAAAAAEE}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Function to send admin email if one user has been plugged in at a socket for over 4 hours still in beta mode and needs improvements. }}\par
+{
+Definition at line 319 of file SQLfunction.py.}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid   319 def send_admin():\par
+  320     try:\par
+  321         con = lite.connect(path)\par
+  322         cur = con.cursor()\par
+  323         cur.execute("SELECT rowid FROM measurements WHERE Time <= ? AND Time >= ? LIMIT 1", ((str(int(time.time()) - DISCONNECT_TIME)),(str(int(time.time()) - DISCONNECT_TIME - 29)),) )\par
+  324         dataRef = cur.fetchone()\par
+  325         if dataRef is None:\par
+  326             pass\par
+  327         else:\par
+  328             cur.execute("SELECT rowid FROM measurements WHERE Time >= ? LIMIT 1", ((str(int(time.time()) - 60)),) )\par
+  329             dataRef = cur.fetchone()\par
+  330             if dataRef is None:\par
+  331                 pass\par
+  332             else:\par
+  333                 with smtplib.SMTP_SSL(smtp_server, SSLport, context=email_context) as server:\par
+  334                     server.login(sender_email, sender_password)                    \par
+  335                     server.sendmail(sender_email, "nguyenxuan.trung@han.nl", email_message)\par
+  336     except Exception as e:\par
+  337         print (e)\par
+  338         con_local = lite.connect(path_local)\par
+  339         cur_local = con_local.cursor()\par
+  340         cur_local.execute("SELECT rowid FROM measurements WHERE Time <= ? AND Time >= ? LIMIT 1", ((str(int(time.time()) - DISCONNECT_TIME)),(str(int(time.time()) - DISCONNECT_TIME - 29)),) )\par
+  341         dataRef = cur_local.fetchone()\par
+  342         if dataRef is None:\par
+  343             pass\par
+  344         else:\par
+  345             cur_local.execute("SELECT rowid FROM measurements WHERE Time >= ? LIMIT 1", ((str(int(time.time()) - 60)),) )\par
+  346             dataRef = cur_local.fetchone()\par
+  347             if dataRef is None:\par
+  348                 pass\par
+  349             else:\par
+  350                 with smtplib.SMTP_SSL(smtp_server, SSLport, context=email_context) as server:\par
+  351                     server.login(sender_email, sender_password)                    \par
+  352                     server.sendmail(sender_email, "nguyenxuan.trung@han.nl", email_message)\par
+  353             \par
+  354 #     if dataRef is None:\par
+  355 #         pass\par
+  356 #     else:\par
+  357 #         try:\par
+  358 #             cur.execute("SELECT rowid FROM measurements WHERE Time >= ? LIMIT 1", ((str(int(time.time()) - 60)),) )\par
+  359 #             dataRef = cur.fetchone()\par
+  360 #         except Exception as e:\par
+  361 #             print (e)\par
+  362 #             cur_local.execute("SELECT rowid FROM measurements WHERE Time >= ? LIMIT 1", ((str(int(time.time()) - 60)),) )\par
+  363 #             dataRef = cur_local.fetchone()\par
+  364 #             \par
+  365 #         if dataRef is None:\par
+  366 #             pass\par
+  367 #         else:\par
+  368 #             with smtplib.SMTP_SSL(smtp_server, SSLport, context=email_context) as server:\par
+  369 #                 server.login(sender_email, sender_password)                    \par
+  370 #                 server.sendmail(sender_email, "nguyenxuan.trung@han.nl", email_message)\par
+  371 \par
+  372 # Function (executed every 5min) that checks in DB for users charging for over 4 hours ands sends them email to d/c\par
+}
+}
+{\xe \v send_email\:SQLfunction}
+{\xe \v SQLfunction\:send_email}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def SQLfunction.send_email ()}}
+\par
+{\bkmkstart AAAAAAAAEF}
+{\bkmkend AAAAAAAAEF}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 373 of file SQLfunction.py.}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid   373 def send_email():\par
+  374     \par
+  375     con_local = lite.connect(path_local)\par
+  376     cur_local = con_local.cursor()\par
+  377     try:\par
+  378         con = lite.connect(path)\par
+  379         cur = con.cursor()\par
+  380         cur.execute("SELECT email, rowid FROM users WHERE LastStartOrStop <= ? AND email <> '' AND mailed < 1 AND socketId IS NOT NULL", ((str(int(time.time()) - DISCONNECT_TIME)),) )\par
+  381         dataRef = cur.fetchall()\par
+  382     except Exception as e:\par
+  383         print (e)        \par
+  384         cur_local.execute("SELECT email, rowid FROM users WHERE LastStartOrStop <= ? AND email <> '' AND mailed < 1 AND socketId IS NOT NULL", ((str(int(time.time()) - DISCONNECT_TIME)),) )\par
+  385         dataRef = cur_local.fetchall()\par
+  386         \par
+  387     if dataRef is None:\par
+  388         return\par
+  389     with smtplib.SMTP_SSL(smtp_server, SSLport, context=email_context) as server:\par
+  390         server.login(sender_email, sender_password)\par
+  391         for element in dataRef:            \par
+  392             server.sendmail(sender_email, element[0], email_message)\par
+  393             try:\par
+  394                 cur.execute("UPDATE users SET mailed = 1 WHERE rowid=?", (element[1],))\par
+  395             except Exception as e:\par
+  396                 print (e)\par
+  397             cur_local.execute("UPDATE users SET mailed = 1 WHERE rowid=?", (element[1],))\par
+  398     #cur.execute("UPDATE users SET mailed = 0 WHERE LastStartOrStop > ? AND mailed > 0 AND socketId IS NULL", ((str(int(time.time()) - DISCONNECT_TIME)),) ) \par
+  399     try:\par
+  400         cur.execute("UPDATE users SET mailed = 0 WHERE mailed > 0 AND socketId IS NULL") \par
+  401         con.commit()\par
+  402     except Exception as e:\par
+  403         print (e)\par
+  404     cur_local.execute("UPDATE users SET mailed = 0 WHERE mailed > 0 AND socketId IS NULL") \par
+  405     con_local.commit()\par
+  406 \par
+  407 #setup mqtt\par
+}
+}
+{\xe \v update_callback\:SQLfunction}
+{\xe \v SQLfunction\:update_callback}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def SQLfunction.update_callback (  {\i client},   {\i userdata},   {\i message})}}
+\par
+{\bkmkstart AAAAAAAAEG}
+{\bkmkend AAAAAAAAEG}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Callback function that parses RFID swipe message from Photon and checks in the DB what to publish as answer Publish output is structured as "1;2" where 1=socket number and 2=answer to Photon. }}\par
+{
+Definition at line 106 of file SQLfunction.py.}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid   106 def update_callback(client, userdata, message):\par
+  107     try:\par
+  108         con = lite.connect(path)\par
+  109         cur = con.cursor()\par
+  110     except Exception as e:\par
+  111         print (e)\par
+  112     con_local = lite.connect(path_local)\par
+  113     cur_local = con_local.cursor()\par
+  114     data = json.loads(message.payload)\par
+  115     print(data)\par
+  116     \par
+  117     UserId = str(data.get("UserId")).upper()\par
+  118     socketId = int(data.get("Charger"))\par
+  119     StartTime = int(data.get("StartTime"))\par
+  120     #print(UserId)\par
+  121     try:\par
+  122         cur.execute("SELECT LastStartOrStop, socketId, verified FROM users WHERE uidTag=? LIMIT 1", (UserId,))\par
+  123         dataUser = cur.fetchone() # returns a tuple\par
+  124     except Exception as e:\par
+  125         print (e)\par
+  126         cur_local.execute("SELECT LastStartOrStop, socketId, verified FROM users WHERE uidTag=? LIMIT 1", (UserId,))\par
+  127         dataUser = cur_local.fetchone() # returns a tuple\par
+  128     \par
+  129     dataSend = str(socketId) + ";"\par
+  130     try:\par
+  131         cur.execute("SELECT socketId FROM users WHERE socketId=? LIMIT 1", (socketId,))\par
+  132         socketUsed = cur.fetchone()\par
+  133     except Exception as e:\par
+  134         print (e)\par
+  135         cur_local.execute("SELECT socketId FROM users WHERE socketId=? LIMIT 1", (socketId,))\par
+  136         socketUsed = cur_local.fetchone()\par
+  137     #The socketUsed can be either None or the socket number, so parsing it can give error without check\par
+  138     if socketUsed is not None:\par
+  139         socketUsed = socketUsed[0]\par
+  140         \par
+  141     #This is the filter for checking and preparing the answer to the EV charger\par
+  142     if dataUser is not None: # if user ID is in list\par
+  143         if (dataUser[2] == "true"):\par
+  144             if ((StartTime - dataUser[0]) >= 20): # if last swipe is over 20s ago\par
+  145                 if (socketUsed == socketId): #if this socket is used now\par
+  146                     if (socketId == dataUser[1]): # if user already uses this socket\par
+  147                         dataSend += "4" # successfully stop charging\par
+  148                         try:\par
+  149                             cur.execute("UPDATE users SET socketId=?, LastStartOrStop=? WHERE uidTag=?", (None, StartTime, UserId))             \par
+  150                         except Exception as e:\par
+  151                             print (e)\par
+  152                         finally:\par
+  153                             cur_local.execute("UPDATE users SET socketId=?, LastStartOrStop=? WHERE uidTag=?", (None, StartTime, UserId))\par
+  154                     else:\par
+  155                         dataSend += "3" # socket is occupied by another user \par
+  156                 else: #if this socket is free\par
+  157                     if dataUser[1] is None: #if user was not using any socket\par
+  158                         dataSend += "1" # successfully start new charge\par
+  159                         try:\par
+  160                             cur.execute("UPDATE users SET socketId=?, LastStartOrStop=? WHERE uidTag=?", (socketId, StartTime, UserId))\par
+  161                         except Exception as e:\par
+  162                             print (e)\par
+  163                         finally:\par
+  164                             cur_local.execute("UPDATE users SET socketId=?, LastStartOrStop=? WHERE uidTag=?", (socketId, StartTime, UserId))\par
+  165                     else:\par
+  166                         dataSend += "6" # user already at another socket\par
+  167             else: #if swiped less than 20s ago\par
+  168                 if (socketUsed == socketId): #if this socket is used now\par
+  169                     if (socketId == dataUser[1]): # if user already uses this socket\par
+  170                         dataSend += "5" # you just started using this socket less than 20s ago\par
+  171                     else:\par
+  172                         dataSend += "3" # socket is occupied by another user\par
+  173                 else: #if this socket is free\par
+  174                     if dataUser[1] is None: #if user was not using any socket\par
+  175                         dataSend += "2" #charger is free, but you already swiped less than 20s ago\par
+  176                     else:\par
+  177                         dataSend += "6"  # user already at another socket\par
+  178         else:\par
+  179              dataSend += "7" #user not verified by admin           \par
+  180     else:\par
+  181         dataSend += "8" #user not in the userlist\par
+  182     try:\par
+  183         con.commit()\par
+  184     except Exception as e:\par
+  185         print (e)\par
+  186     con_local.commit()\par
+  187     \par
+  188     client.publish("HANevse/allowUser", dataSend, 0, False)\par
+  189 \par
+  190 # def Update_callback(client, userdata, message):\par
+  191 #     con = lite.connect(path)\par
+  192 #     cur = con.cursor()\par
+  193 #     data = message.payload\par
+  194 #     index = []\par
+  195 #     for i in range(len(data)):\par
+  196 #         if (data[i] == '%'):\par
+  197 #             index.append(i)\par
+  198 #     UserId = int(data[:index[0]])\par
+  199 #     PendingCharger = int(data[index[0]+1:index[1]])\par
+  200 #     StartTime = int(data[index[1]+1:index[2]])\par
+  201 #     cur.execute("UPDATE list SET PendingCharger=? WHERE Id=?", (PendingCharger, UserId))\par
+  202 #     cur.execute("UPDATE list SET StartTime=? WHERE Id=?", (StartTime, UserId))\par
+  203 #     con.commmit()\par
+  204 \par
+  205 \par
+}
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variable Documentation\par
+\pard\plain 
+{\xe \v bad_connection_flag\:SQLfunction}
+{\xe \v SQLfunction\:bad_connection_flag}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SQLfunction.bad_connection_flag}}
+\par
+{\bkmkstart AAAAAAAAEH}
+{\bkmkend AAAAAAAAEH}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 411 of file SQLfunction.py.}\par
+}
+{\xe \v broker\:SQLfunction}
+{\xe \v SQLfunction\:broker}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+string SQLfunction.broker = "broker.hivemq.com"}}
+\par
+{\bkmkstart AAAAAAAAEI}
+{\bkmkend AAAAAAAAEI}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+MQTT broker address. }}\par
+{
+Definition at line 37 of file SQLfunction.py.}\par
+}
+{\xe \v client\:SQLfunction}
+{\xe \v SQLfunction\:client}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SQLfunction.client = mqtt.Client()}}
+\par
+{\bkmkstart AAAAAAAAEJ}
+{\bkmkend AAAAAAAAEJ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 408 of file SQLfunction.py.}\par
+}
+{\xe \v con\:SQLfunction}
+{\xe \v SQLfunction\:con}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SQLfunction.con = None}}
+\par
+{\bkmkstart AAAAAAAAEK}
+{\bkmkend AAAAAAAAEK}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Initial DB connection check. }}\par
+{
+Definition at line 34 of file SQLfunction.py.}\par
+}
+{\xe \v con_local\:SQLfunction}
+{\xe \v SQLfunction\:con_local}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SQLfunction.con_local = lite.connect({\b path_local})}}
+\par
+{\bkmkstart AAAAAAAAEL}
+{\bkmkend AAAAAAAAEL}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 46 of file SQLfunction.py.}\par
+}
+{\xe \v connected_flag\:SQLfunction}
+{\xe \v SQLfunction\:connected_flag}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SQLfunction.connected_flag}}
+\par
+{\bkmkstart AAAAAAAAEM}
+{\bkmkend AAAAAAAAEM}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 410 of file SQLfunction.py.}\par
+}
+{\xe \v cur\:SQLfunction}
+{\xe \v SQLfunction\:cur}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SQLfunction.cur = con.cursor()}}
+\par
+{\bkmkstart AAAAAAAAEN}
+{\bkmkend AAAAAAAAEN}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 52 of file SQLfunction.py.}\par
+}
+{\xe \v cur_local\:SQLfunction}
+{\xe \v SQLfunction\:cur_local}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SQLfunction.cur_local = con_local.cursor()}}
+\par
+{\bkmkstart AAAAAAAAEO}
+{\bkmkend AAAAAAAAEO}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 47 of file SQLfunction.py.}\par
+}
+{\xe \v current_time\:SQLfunction}
+{\xe \v SQLfunction\:current_time}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SQLfunction.current_time = time.ctime(time.time())}}
+\par
+{\bkmkstart AAAAAAAAEP}
+{\bkmkend AAAAAAAAEP}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 437 of file SQLfunction.py.}\par
+}
+{\xe \v dataRef1\:SQLfunction}
+{\xe \v SQLfunction\:dataRef1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SQLfunction.dataRef1 = cur.fetchone()}}
+\par
+{\bkmkstart AAAAAAAAEQ}
+{\bkmkend AAAAAAAAEQ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 54 of file SQLfunction.py.}\par
+}
+{\xe \v DISCONNECT_TIME\:SQLfunction}
+{\xe \v SQLfunction\:DISCONNECT_TIME}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SQLfunction.DISCONNECT_TIME = int(4 * 60 * 60)}}
+\par
+{\bkmkstart AAAAAAAAER}
+{\bkmkend AAAAAAAAER}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Const. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+for max time before email is sent to charging user \par
+}{
+Definition at line 13 of file SQLfunction.py.}\par
+}
+{\xe \v email_cntr\:SQLfunction}
+{\xe \v SQLfunction\:email_cntr}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+int SQLfunction.email_cntr = 0}}
+\par
+{\bkmkstart AAAAAAAAES}
+{\bkmkend AAAAAAAAES}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 15 of file SQLfunction.py.}\par
+}
+{\xe \v email_context\:SQLfunction}
+{\xe \v SQLfunction\:email_context}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SQLfunction.email_context = ssl.create_default_context()}}
+\par
+{\bkmkstart AAAAAAAAET}
+{\bkmkend AAAAAAAAET}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 32 of file SQLfunction.py.}\par
+}
+{\xe \v email_message\:SQLfunction}
+{\xe \v SQLfunction\:email_message}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+string SQLfunction.email_message}}
+\par
+{\bkmkstart AAAAAAAAEU}
+{\bkmkend AAAAAAAAEU}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\b Initial value:}{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid     1 =  """\\\par
+    2 Subject: Unplug car\par
+    3 \par
+    4 Please unplug your car from the EV charger. Over 4 hours have passed since it was plugged in.\par
+    5 \par
+    6 This is an automatically generated email. A response to this email will not be read."""\par
+}
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Default email message. }}\par
+{
+Definition at line 25 of file SQLfunction.py.}\par
+}
+{\xe \v err_cnt\:SQLfunction}
+{\xe \v SQLfunction\:err_cnt}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+int SQLfunction.err_cnt = 0}}
+\par
+{\bkmkstart AAAAAAAAEV}
+{\bkmkend AAAAAAAAEV}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 59 of file SQLfunction.py.}\par
+}
+{\xe \v on_connect\:SQLfunction}
+{\xe \v SQLfunction\:on_connect}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SQLfunction.on_connect}}
+\par
+{\bkmkstart AAAAAAAAEW}
+{\bkmkend AAAAAAAAEW}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 412 of file SQLfunction.py.}\par
+{
+Referenced by on_connect().}\par
+}
+{\xe \v on_disconnect\:SQLfunction}
+{\xe \v SQLfunction\:on_disconnect}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+SQLfunction.on_disconnect}}
+\par
+{\bkmkstart AAAAAAAAEX}
+{\bkmkend AAAAAAAAEX}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 413 of file SQLfunction.py.}\par
+{
+Referenced by on_disconnect().}\par
+}
+{\xe \v path\:SQLfunction}
+{\xe \v SQLfunction\:path}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+string SQLfunction.path = "/mnt/dav/Data/usertable.sqlite3"}}
+\par
+{\bkmkstart AAAAAAAAEY}
+{\bkmkend AAAAAAAAEY}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 44 of file SQLfunction.py.}\par
+}
+{\xe \v path_local\:SQLfunction}
+{\xe \v SQLfunction\:path_local}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+string SQLfunction.path_local = "/media/DATABASE/usertable.sqlite3"}}
+\par
+{\bkmkstart AAAAAAAAEZ}
+{\bkmkend AAAAAAAAEZ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Path to users database path = "./userList" #Use internal memory - old DB. }}\par
+{
+Definition at line 43 of file SQLfunction.py.}\par
+}
+{\xe \v receiver_email\:SQLfunction}
+{\xe \v SQLfunction\:receiver_email}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+string SQLfunction.receiver_email = ""}}
+\par
+{\bkmkstart AAAAAAAAFA}
+{\bkmkend AAAAAAAAFA}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Holder for email addresses of receivers. }}\par
+{
+Definition at line 21 of file SQLfunction.py.}\par
+}
+{\xe \v sender_email\:SQLfunction}
+{\xe \v SQLfunction\:sender_email}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+string SQLfunction.sender_email = "tpi97364@gmail.com"}}
+\par
+{\bkmkstart AAAAAAAAFB}
+{\bkmkend AAAAAAAAFB}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Email sender address for Pi. }}\par
+{
+Definition at line 19 of file SQLfunction.py.}\par
+}
+{\xe \v sender_password\:SQLfunction}
+{\xe \v SQLfunction\:sender_password}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+string SQLfunction.sender_password = "controlsystem"}}
+\par
+{\bkmkstart AAAAAAAAFC}
+{\bkmkend AAAAAAAAFC}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Pi email password. }}\par
+{
+Definition at line 23 of file SQLfunction.py.}\par
+}
+{\xe \v smtp_server\:SQLfunction}
+{\xe \v SQLfunction\:smtp_server}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+string SQLfunction.smtp_server = "smtp.gmail.com"}}
+\par
+{\bkmkstart AAAAAAAAFD}
+{\bkmkend AAAAAAAAFD}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 17 of file SQLfunction.py.}\par
+}
+{\xe \v SSLport\:SQLfunction}
+{\xe \v SQLfunction\:SSLport}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+int SQLfunction.SSLport = 465}}
+\par
+{\bkmkstart AAAAAAAAFE}
+{\bkmkend AAAAAAAAFE}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 16 of file SQLfunction.py.}\par
+}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+Class Documentation{\tc \v Class Documentation}
+\par \pard\plain 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+MIC3.MIC1 Class Reference\par \pard\plain 
+{\tc\tcl2 \v MIC3.MIC1}
+{\xe \v MIC3.MIC1}
+{\bkmkstart AAAAAAAABX}
+{\bkmkend AAAAAAAABX}
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Class for reading Modbus data from {\b MIC1} energy meter. }}\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Member Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b __init__} (self, Id, Control)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b readPT1} (self)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Reads PT1 variable needed for all other calculations. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b readPT2} (self)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Reads PT2 variable needed for all other calculations. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b readCT1} (self)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Reads CT1 variable needed for all other calculations. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b readPhaseVoltage} (self)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Reads and calculates phase Voltages with the help of PT1 and PT2. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b readPhaseCurrent} (self)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Reads and calculates phase Currents with the help of CT1. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b readPhasePower} (self)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Reads and calculates phase Power values with the help of PT1, PT2, CT1. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b readReactivePower} (self)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Reads and calculates Reactive Power (Q) values with the help of PT1, PT2, CT1. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b readApparentPower} (self)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Reads and calculates Apparent Power (S) values with the help of PT1, PT2, CT1 This function is diferent because the CRC value overflows and is to be edited to not error. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b readPowerFactor} (self)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Reads and calculates Power Factors (PF) }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b readFrequency} (self)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Reads and calculates Frequency (F) }{
+}\par
+}}
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Private Attributes\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __Control}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __Address}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __PT1}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __PT2}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __CT1}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __V1}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __V2}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __V3}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __I1}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __I2}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __I3}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __P1}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __P2}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __P3}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __Q1}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __Q2}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __Q3}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __S1}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __S2}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __S3}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __PF1}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __PF2}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __PF3}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __F}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Class for reading Modbus data from {\b MIC1} energy meter. \par
+}{
+Definition at line 248 of file MIC3.py.}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Constructor & Destructor Documentation\par
+\pard\plain 
+{\xe \v __init__\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:__init__}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def MIC3.MIC1.__init__ (  {\i self},   {\i Id},   {\i Control})}}
+\par
+{\bkmkstart AAAAAAAABY}
+{\bkmkend AAAAAAAABY}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 249 of file MIC3.py.}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid   249     def __init__(self, Id, Control):\par
+  250         self.__Control = Control\par
+  251         self.__Address = Id\par
+  252         self.__PT1 = 1.0\par
+  253         self.__PT2 = 1.0\par
+  254         self.__CT1 = 1.0\par
+  255         self.__V1 = 0.0\par
+  256         self.__V2 = 0.0\par
+  257         self.__V3 = 0.0\par
+  258         self.__I1 = 0.0\par
+  259         self.__I2 = 0.0\par
+  260         self.__I3 = 0.0\par
+  261         self.__P1 = 0.0\par
+  262         self.__P2 = 0.0\par
+  263         self.__P3 = 0.0\par
+  264         self.__Q1 = 0.0\par
+  265         self.__Q2 = 0.0\par
+  266         self.__Q3 = 0.0\par
+  267         self.__S1 = 0.0\par
+  268         self.__S2 = 0.0\par
+  269         self.__S3 = 0.0\par
+  270         self.__PF1 = 0.0\par
+  271         self.__PF2 = 0.0\par
+  272         self.__PF3 = 0.0\par
+  273         self.__F  = 0.0\par
+  274     \par
+}
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Function Documentation\par
+\pard\plain 
+{\xe \v readApparentPower\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:readApparentPower}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def MIC3.MIC1.readApparentPower (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAABZ}
+{\bkmkend AAAAAAAABZ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Reads and calculates Apparent Power (S) values with the help of PT1, PT2, CT1 This function is diferent because the CRC value overflows and is to be edited to not error. }}\par
+{
+Definition at line 709 of file MIC3.py.}\par
+{
+References MIC3.MIC2.__Address, MIC3.MIC1.__Address, MIC3.MIC2.__Control, MIC3.MIC1.__Control, MIC3.MIC1.__CT1, MIC3.MIC1.__PT1, MIC3.MIC1.__PT2, MIC3.MIC1.__S1, MIC3.MIC1.__S2, and MIC3.MIC1.__S3.}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid   709     def readApparentPower(self):\par
+  710         #Calculate CRC16-MODBUS\par
+  711         crc16 = crcmod.mkCrcFun(0x18005, rev=True, initCrc = 0xFFFF, xorOut = 0x0000)\par
+  712         crc_Tx = ".%4x"%(crc16(serial.to_bytes([self.__Address, 0x03, 0x01, 0x46, 0x00, 0x03])))\par
+  713         crc_Tx = crc_Tx.replace(" ", "0")\par
+  714         #The crc_Tx must include 4 hexadecimal characters.\par
+  715         #If crc_Tx = 10, function hex() will return 0xa, which is not expected\par
+  716         #Therefore, String format operator was used\par
+  717     \par
+  718         #Send request\par
+  719         GPIO.output(self.__Control, GPIO.HIGH)\par
+  720         ser.write(serial.to_bytes([self.__Address, 0x03, 0x01, 0x46, 0x00, 0x03, int(crc_Tx[3:],16), int(crc_Tx[1:3],16)]))\par
+  721         \par
+  722         #There is a delay caused by the converter. The program must wait before reading the result\par
+  723         sleep(0.02)\par
+  724     \par
+  725         #Receive data\par
+  726         GPIO.output(self.__Control, GPIO.LOW)\par
+  727         cnt = 0\par
+  728         data_left = ser.inWaiting()\par
+  729         while (data_left == 0):\par
+  730             #wait for data\par
+  731             cnt=cnt+1\par
+  732             if (cnt < 50000): #wait for maximum 5 seconds\par
+  733                 sleep(0.0001)\par
+  734                 data_left = ser.inWaiting()\par
+  735             else:\par
+  736                 print("Transmitting error: Time out")\par
+  737                 return Trans_error\par
+  738         received_data = ser.read()\par
+  739         sleep(0.02)\par
+  740         data_left = ser.inWaiting()\par
+  741         received_data += ser.read(data_left)\par
+  742         \par
+  743         if ((received_data[0]) != self.__Address):\par
+  744             print("Transmitting error: Data corrupted")\par
+  745             return Data_error\par
+  746         if (len(received_data) != 11):\par
+  747             print("Transmitting error: Data corrupted")\par
+  748             return Data_error\par
+  749         \par
+  750         #Check the CRC code\par
+  751         crc_cal = hex(crc16(received_data[:9]))\par
+  752         crc_Rx = hex(struct.unpack('H',received_data[9:])[0])\par
+  753     \par
+  754         if crc_cal == crc_Rx:\par
+  755             self.__S1 = float(struct.unpack('H', received_data[4:2:-1])[0])*(self.__PT1/self.__PT2)*(self.__CT1/5)\par
+  756             self.__S2 = float(struct.unpack('H', received_data[6:4:-1])[0])*(self.__PT1/self.__PT2)*(self.__CT1/5)\par
+  757             self.__S3 = float(struct.unpack('H', received_data[8:6:-1])[0])*(self.__PT1/self.__PT2)*(self.__CT1/5)    \par
+  758             return No_error\par
+  759         else:\par
+  760             print("Transmitting error: Incorrect CRC")\par
+  761             return CRC_error\par
+  762     \par
+}
+}
+{\xe \v readCT1\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:readCT1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def MIC3.MIC1.readCT1 (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAACA}
+{\bkmkend AAAAAAAACA}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Reads CT1 variable needed for all other calculations. }}\par
+{
+Definition at line 410 of file MIC3.py.}\par
+{
+References MIC3.MIC2.__Address, MIC3.MIC1.__Address, MIC3.MIC2.__Control, MIC3.MIC1.__Control, and MIC3.MIC1.__CT1.}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid   410     def readCT1(self):\par
+  411         #Calculate CRC16-MODBUS\par
+  412         crc16 = crcmod.mkCrcFun(0x18005, rev=True, initCrc = 0xFFFF, xorOut = 0x0000)\par
+  413         crc_Tx = ".%4x"%(crc16(serial.to_bytes([self.__Address, 0x03, 0x01, 0x08, 0x00, 0x01])))\par
+  414         #The crc_Tx must include 4 hexadecimal characters.\par
+  415         #If crc_Tx =  10, function hex() will return 0xa, which is not expected\par
+  416         #Therefore, String format operator was used\par
+  417     \par
+  418         #Send request\par
+  419         GPIO.output(self.__Control, GPIO.HIGH)\par
+  420         ser.write(serial.to_bytes([self.__Address, 0x03, 0x01, 0x08, 0x00, 0x01, int(crc_Tx[3:],16), int(crc_Tx[1:3],16)]))\par
+  421     \par
+  422         #There is a delay caused by the converter. The program must wait before reading the result\par
+  423         sleep(0.01)\par
+  424     \par
+  425         #Receive data\par
+  426         GPIO.output(self.__Control, GPIO.LOW)\par
+  427         cnt = 0\par
+  428         data_left = ser.inWaiting()\par
+  429         while (data_left == 0):\par
+  430             #wait for data\par
+  431             cnt=cnt+1\par
+  432             if (cnt < 50000): #wait for maximum 5 seconds\par
+  433                 sleep(0.0001)\par
+  434                 data_left = ser.inWaiting()\par
+  435             else:\par
+  436                 print("Transmitting error: Time out")\par
+  437                 return Trans_error\par
+  438     \par
+  439         received_data = ser.read()\par
+  440         sleep(0.01)\par
+  441         data_left = ser.inWaiting()\par
+  442         received_data += ser.read(data_left)\par
+  443         \par
+  444         #Check if the data is correct\par
+  445         if ((received_data[0]) != self.__Address):\par
+  446             print("Transmitting error: Data corrupted")\par
+  447             return Data_error\par
+  448         if (len(received_data) != 7):\par
+  449             print("Transmitting error: Data corrupted")\par
+  450             return Data_error\par
+  451         \par
+  452         #Check the CRC code\par
+  453         crc_cal = hex(crc16(received_data[:5]))\par
+  454 \par
+  455         #DEBUG ONLY-----------------------------------------------\par
+  456         #retval = ""\par
+  457         #for character in received_data:\par
+  458         #    retval += ('0123456789ABCDEF'[int((character)/16)])\par
+  459         #    retval += ('0123456789ABCDEF'[int((character)%16)])\par
+  460         #    retval += ':'\par
+  461         #print (retval[:-1])\par
+  462         #print (crc_cal) #use for debugging only\par
+  463         #---------------------------------------------------------\par
+  464     \par
+  465         crc_Rx = hex(struct.unpack('H',received_data[5:])[0])\par
+  466     \par
+  467         #print (crc_Rx) #use for degugging only\par
+  468     \par
+  469         if crc_cal == crc_Rx:\par
+  470             self.__CT1 = float(struct.unpack('H', received_data[4:2:-1])[0])\par
+  471             return No_error\par
+  472         else:\par
+  473             print("Transmitting error: Incorrect CRC")\par
+  474             return CRC_error\par
+  475     \par
+}
+}
+{\xe \v readFrequency\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:readFrequency}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def MIC3.MIC1.readFrequency (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAACB}
+{\bkmkend AAAAAAAACB}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Reads and calculates Frequency (F) }}\par
+{
+Definition at line 818 of file MIC3.py.}\par
+{
+References MIC3.MIC2.__Address, MIC3.MIC1.__Address, MIC3.MIC2.__Control, MIC3.MIC1.__Control, MIC3.MIC2.__F, and MIC3.MIC1.__F.}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid   818     def readFrequency(self):\par
+  819         #Calculate CRC16-MODBUS\par
+  820         crc16 = crcmod.mkCrcFun(0x18005, rev=True, initCrc = 0xFFFF, xorOut = 0x0000)\par
+  821         crc_Tx = ".%4x"%(crc16(serial.to_bytes([self.__Address, 0x03, 0x01, 0x30, 0x00, 0x01])))\par
+  822         #The crc_Tx must include 4 hexadecimal characters.\par
+  823         #If crc_Tx =  10, function hex() will return 0xa, which is not expected\par
+  824         #Therefore, String format operator was used\par
+  825     \par
+  826         #Send request\par
+  827         GPIO.output(self.__Control, GPIO.HIGH)\par
+  828         ser.write(serial.to_bytes([self.__Address, 0x03, 0x01, 0x30, 0x00, 0x01, int(crc_Tx[3:],16), int(crc_Tx[1:3],16)]))\par
+  829     \par
+  830         #There is a delay caused by the converter. The program must wait before reading the result\par
+  831         sleep(0.01)\par
+  832     \par
+  833         #Receive data\par
+  834         GPIO.output(self.__Control, GPIO.LOW)\par
+  835         cnt = 0\par
+  836         data_left = ser.inWaiting()\par
+  837         while (data_left == 0):\par
+  838             #wait for data\par
+  839             cnt=cnt+1\par
+  840             if (cnt < 50000): #wait for maximum 5 seconds\par
+  841                 sleep(0.0001)\par
+  842                 data_left = ser.inWaiting()\par
+  843             else:\par
+  844                 print("Transmitting error: Time out")\par
+  845                 return Trans_error\par
+  846         received_data = ser.read()\par
+  847         sleep(0.01)\par
+  848         data_left = ser.inWaiting()\par
+  849         received_data += ser.read(data_left)\par
+  850         \par
+  851         #DEBUG ONLY-----------------------------------------------\par
+  852         #retval = ""\par
+  853         #for character in received_data:\par
+  854         #    retval += ('0123456789ABCDEF'[int((character)/16)])\par
+  855         #    retval += ('0123456789ABCDEF'[int((character)%16)])\par
+  856         #    retval += ':'\par
+  857         #print (retval[:-1])\par
+  858         #print (crc_cal) #use for debugging only\par
+  859         #---------------------------------------------------------\par
+  860 \par
+  861         if ((received_data[0]) != self.__Address):\par
+  862             print("Transmitting error: Data corrupted")\par
+  863             return Data_error\par
+  864         if (len(received_data) != 7):\par
+  865             print("Transmitting error: Data corrupted")\par
+  866             return Data_error\par
+  867     \par
+  868         #Check the CRC code\par
+  869         crc_cal = hex(crc16(received_data[:5]))\par
+  870         crc_Rx = hex(struct.unpack('H',received_data[5:])[0])\par
+  871         \par
+  872         if crc_cal == crc_Rx:\par
+  873             self.__F = float(struct.unpack('H', received_data[4:2:-1])[0])/100    \par
+  874             return No_error\par
+  875         else:\par
+  876             print("Transmitting error: Incorrect CRC")\par
+  877             return CRC_error\par
+  878 #---------------------------------END OF MIC1------------------------------------\par
+  879 #--------------------------------------------------------------------------------\par
+  880 }
+}
+{\xe \v readPhaseCurrent\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:readPhaseCurrent}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def MIC3.MIC1.readPhaseCurrent (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAACC}
+{\bkmkend AAAAAAAACC}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Reads and calculates phase Currents with the help of CT1. }}\par
+{
+Definition at line 546 of file MIC3.py.}\par
+{
+References MIC3.MIC2.__Address, MIC3.MIC1.__Address, MIC3.MIC2.__Control, MIC3.MIC1.__Control, MIC3.MIC1.__CT1, MIC3.MIC2.__I1, MIC3.MIC1.__I1, MIC3.MIC2.__I2, MIC3.MIC1.__I2, MIC3.MIC2.__I3, and MIC3.MIC1.__I3.}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid   546     def readPhaseCurrent(self):\par
+  547         #Calculate CRC16-MODBUS\par
+  548         crc16 = crcmod.mkCrcFun(0x18005, rev=True, initCrc = 0xFFFF, xorOut = 0x0000)\par
+  549         crc_Tx = ".%4x"%(crc16(serial.to_bytes([self.__Address, 0x03, 0x01, 0x39, 0x00, 0x03])))\par
+  550         #The crc_Tx must include 4 hexadecimal characters.\par
+  551         #If crc_Tx =  10, function hex() will return 0xa, which is not expected\par
+  552         #Therefore, String format operator was used\par
+  553     \par
+  554         #Send request\par
+  555         GPIO.output(self.__Control, GPIO.HIGH)\par
+  556         ser.write(serial.to_bytes([self.__Address, 0x03, 0x01, 0x39, 0x00, 0x03, int(crc_Tx[3:],16), int(crc_Tx[1:3],16)]))\par
+  557     \par
+  558         #There is a delay caused by the converter. The program must wait before reading the result\par
+  559         sleep(0.01)\par
+  560     \par
+  561         #Receive data\par
+  562         GPIO.output(self.__Control, GPIO.LOW)\par
+  563         cnt = 0\par
+  564         data_left = ser.inWaiting()\par
+  565         while (data_left == 0):\par
+  566             #wait for data\par
+  567             cnt=cnt+1\par
+  568             if (cnt < 50000): #wait for maximum 5 seconds\par
+  569                 sleep(0.0001)\par
+  570                 data_left = ser.inWaiting()\par
+  571             else:\par
+  572                 print("Transmitting error: Time out")\par
+  573                 return Trans_error\par
+  574         received_data = ser.read()\par
+  575         sleep(0.01)\par
+  576         data_left = ser.inWaiting()\par
+  577         received_data += ser.read(data_left)\par
+  578         \par
+  579         if ((received_data[0]) != self.__Address):\par
+  580             print("Transmitting error: Data corrupted")\par
+  581             return Data_error\par
+  582         if (len(received_data) != 11):\par
+  583             print("Transmitting error: Data corrupted")\par
+  584             return Data_error\par
+  585     \par
+  586         #Check the CRC code\par
+  587         crc_cal = hex(crc16(received_data[:9]))\par
+  588         crc_Rx = hex(struct.unpack('H',received_data[9:])[0])\par
+  589     \par
+  590         if crc_cal == crc_Rx:\par
+  591             self.__I1 = float(struct.unpack('H', received_data[4:2:-1])[0])*(self.__CT1/5)/1000\par
+  592             self.__I2 = float(struct.unpack('H', received_data[6:4:-1])[0])*(self.__CT1/5)/1000\par
+  593             self.__I3 = float(struct.unpack('H', received_data[8:6:-1])[0])*(self.__CT1/5)/1000   \par
+  594             return No_error\par
+  595         else:\par
+  596             print("Transmitting error: Incorrect CRC")\par
+  597             return CRC_error\par
+  598             \par
+}
+}
+{\xe \v readPhasePower\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:readPhasePower}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def MIC3.MIC1.readPhasePower (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAACD}
+{\bkmkend AAAAAAAACD}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Reads and calculates phase Power values with the help of PT1, PT2, CT1. }}\par
+{
+Definition at line 600 of file MIC3.py.}\par
+{
+References MIC3.MIC2.__Address, MIC3.MIC1.__Address, MIC3.MIC2.__Control, MIC3.MIC1.__Control, MIC3.MIC1.__CT1, MIC3.MIC2.__P1, MIC3.MIC1.__P1, MIC3.MIC2.__P2, MIC3.MIC1.__P2, MIC3.MIC2.__P3, MIC3.MIC1.__P3, MIC3.MIC1.__PT1, and MIC3.MIC1.__PT2.}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid   600     def readPhasePower(self):\par
+  601         #Calculate CRC16-MODBUS\par
+  602         crc16 = crcmod.mkCrcFun(0x18005, rev=True, initCrc = 0xFFFF, xorOut = 0x0000)\par
+  603         crc_Tx = ".%4x"%(crc16(serial.to_bytes([self.__Address, 0x03, 0x01, 0x3E, 0x00, 0x03])))\par
+  604         #The crc_Tx must include 4 hexadecimal characters.\par
+  605         #If crc_Tx =  10, function hex() will return 0xa, which is not expected\par
+  606         #Therefore, String format operator was used\par
+  607     \par
+  608         #Send request\par
+  609         GPIO.output(self.__Control, GPIO.HIGH)\par
+  610         ser.write(serial.to_bytes([self.__Address, 0x03, 0x01, 0x3E, 0x00, 0x03, int(crc_Tx[3:],16), int(crc_Tx[1:3],16)]))\par
+  611     \par
+  612         #There is a delay caused by the converter. The program must wait before reading the result\par
+  613         sleep(0.01)\par
+  614     \par
+  615         #Receive data\par
+  616         GPIO.output(self.__Control, GPIO.LOW)\par
+  617         cnt = 0\par
+  618         data_left = ser.inWaiting()\par
+  619         while (data_left == 0):\par
+  620             #wait for data\par
+  621             cnt=cnt+1\par
+  622             if (cnt < 50000): #wait for maximum 5 seconds\par
+  623                 sleep(0.0001)\par
+  624                 data_left = ser.inWaiting()\par
+  625             else:\par
+  626                 print("Transmitting error: Time out")\par
+  627                 return Trans_error\par
+  628         received_data = ser.read()\par
+  629         sleep(0.01)\par
+  630         data_left = ser.inWaiting()\par
+  631         received_data += ser.read(data_left)\par
+  632         \par
+  633         if ((received_data[0]) != self.__Address):\par
+  634             print("Transmitting error: Data corrupted")\par
+  635             return Data_error\par
+  636         if (len(received_data) != 11):\par
+  637             print("Transmitting error: Data corrupted")\par
+  638             return Data_error\par
+  639         \par
+  640         #Check the CRC code\par
+  641         crc_cal = hex(crc16(received_data[:9]))\par
+  642         crc_Rx = hex(struct.unpack('H',received_data[9:])[0])\par
+  643     \par
+  644         if crc_cal == crc_Rx:\par
+  645             self.__P1 = float(struct.unpack('h', received_data[4:2:-1])[0])*(self.__PT1/self.__PT2)*(self.__CT1/5)\par
+  646             self.__P2 = float(struct.unpack('h', received_data[6:4:-1])[0])*(self.__PT1/self.__PT2)*(self.__CT1/5)\par
+  647             self.__P3 = float(struct.unpack('h', received_data[8:6:-1])[0])*(self.__PT1/self.__PT2)*(self.__CT1/5)    \par
+  648             return No_error\par
+  649         else:\par
+  650             print("Transmitting error: Incorrect CRC")\par
+  651             return CRC_error\par
+  652 \par
+}
+}
+{\xe \v readPhaseVoltage\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:readPhaseVoltage}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def MIC3.MIC1.readPhaseVoltage (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAACE}
+{\bkmkend AAAAAAAACE}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Reads and calculates phase Voltages with the help of PT1 and PT2. }}\par
+{
+Definition at line 477 of file MIC3.py.}\par
+{
+References MIC3.MIC2.__Address, MIC3.MIC1.__Address, MIC3.MIC2.__Control, MIC3.MIC1.__Control, MIC3.MIC1.__PT1, MIC3.MIC1.__PT2, MIC3.MIC2.__V1, MIC3.MIC1.__V1, MIC3.MIC2.__V2, MIC3.MIC1.__V2, MIC3.MIC2.__V3, and MIC3.MIC1.__V3.}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid   477     def readPhaseVoltage(self):\par
+  478         #Calculate CRC16-MODBUS\par
+  479         crc16 = crcmod.mkCrcFun(0x18005, rev=True, initCrc = 0xFFFF, xorOut = 0x0000)\par
+  480         crc_Tx = ".%4x"%(crc16(serial.to_bytes([self.__Address, 0x03, 0x01, 0x31, 0x00, 0x03])))\par
+  481         #The crc_Tx must include 4 hexadecimal characters.\par
+  482         #If crc_Tx =  10, function hex() will return 0xa, which is not expected\par
+  483         #Therefore, String format operator was used\par
+  484     \par
+  485         #Send request\par
+  486         GPIO.output(self.__Control, GPIO.HIGH)\par
+  487         ser.write(serial.to_bytes([self.__Address, 0x03, 0x01, 0x31, 0x00, 0x03, int(crc_Tx[3:],16), int(crc_Tx[1:3],16)]))\par
+  488     \par
+  489         #There is a delay caused by the converter. The program must wait before reading the result\par
+  490         sleep(0.01)\par
+  491     \par
+  492         #Receive data\par
+  493         GPIO.output(self.__Control, GPIO.LOW)\par
+  494         cnt = 0\par
+  495         data_left = ser.inWaiting()\par
+  496         while (data_left == 0):\par
+  497             #wait for data\par
+  498             cnt=cnt+1\par
+  499             if (cnt < 50000): #wait for maximum 5 seconds\par
+  500                 sleep(0.0001)\par
+  501                 data_left = ser.inWaiting()\par
+  502             else:\par
+  503                 print("Transmitting error: Time out")\par
+  504                 return Trans_error\par
+  505     \par
+  506         received_data = ser.read()\par
+  507         sleep(0.01)\par
+  508         data_left = ser.inWaiting()\par
+  509         received_data += ser.read(data_left)\par
+  510         \par
+  511         #Check if the data is correct\par
+  512         if ((received_data[0]) != self.__Address):\par
+  513             print("Transmitting error: Data corrupted")\par
+  514             return Data_error\par
+  515         if (len(received_data) != 11):\par
+  516             print("Transmitting error: Data corrupted")\par
+  517             return Data_error\par
+  518         \par
+  519         #Check the CRC code\par
+  520         crc_cal = hex(crc16(received_data[:9]))\par
+  521 \par
+  522         #DEBUG ONLY-----------------------------------------------\par
+  523         #retval = ""\par
+  524         #for character in received_data:\par
+  525         #    retval += ('0123456789ABCDEF'[int((character)/16)])\par
+  526         #    retval += ('0123456789ABCDEF'[int((character)%16)])\par
+  527         #    retval += ':'\par
+  528         #print (retval[:-1])\par
+  529         #print (crc_cal) #use for debugging only\par
+  530         #---------------------------------------------------------\par
+  531     \par
+  532         crc_Rx = hex(struct.unpack('H',received_data[9:])[0])\par
+  533     \par
+  534         #print (crc_Rx) #use for degugging only\par
+  535     \par
+  536         if crc_cal == crc_Rx:\par
+  537             self.__V1 = float(struct.unpack('H', received_data[4:2:-1])[0])*(self.__PT1/self.__PT2)/10\par
+  538             self.__V2 = float(struct.unpack('H', received_data[6:4:-1])[0])*(self.__PT1/self.__PT2)/10\par
+  539             self.__V3 = float(struct.unpack('H', received_data[8:6:-1])[0])*(self.__PT1/self.__PT2)/10\par
+  540             return No_error\par
+  541         else:\par
+  542             print("Transmitting error: Incorrect CRC")\par
+  543             return CRC_error\par
+  544             \par
+}
+}
+{\xe \v readPowerFactor\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:readPowerFactor}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def MIC3.MIC1.readPowerFactor (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAACF}
+{\bkmkend AAAAAAAACF}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Reads and calculates Power Factors (PF) }}\par
+{
+Definition at line 764 of file MIC3.py.}\par
+{
+References MIC3.MIC2.__Address, MIC3.MIC1.__Address, MIC3.MIC2.__Control, MIC3.MIC1.__Control, MIC3.MIC1.__PF1, MIC3.MIC1.__PF2, and MIC3.MIC1.__PF3.}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid   764     def readPowerFactor(self):\par
+  765         #Calculate CRC16-MODBUS\par
+  766         crc16 = crcmod.mkCrcFun(0x18005, rev=True, initCrc = 0xFFFF, xorOut = 0x0000)\par
+  767         crc_Tx = ".%4x"%(crc16(serial.to_bytes([self.__Address, 0x03, 0x01, 0x4A, 0x00, 0x03])))\par
+  768         #The crc_Tx must include 4 hexadecimal characters.\par
+  769         #If crc_Tx =  10, function hex() will return 0xa, which is not expected\par
+  770         #Therefore, String format operator was used\par
+  771     \par
+  772         #Send request\par
+  773         GPIO.output(self.__Control, GPIO.HIGH)\par
+  774         ser.write(serial.to_bytes([self.__Address, 0x03, 0x01, 0x4A, 0x00, 0x03, int(crc_Tx[3:],16), int(crc_Tx[1:3],16)]))\par
+  775     \par
+  776         #There is a delay caused by the converter. The program must wait before reading the result\par
+  777         sleep(0.02)\par
+  778     \par
+  779         #Receive data\par
+  780         GPIO.output(self.__Control, GPIO.LOW)\par
+  781         cnt = 0\par
+  782         data_left = ser.inWaiting()\par
+  783         while (data_left == 0):\par
+  784             #wait for data\par
+  785             cnt=cnt+1\par
+  786             if (cnt < 50000): #wait for maximum 5 seconds\par
+  787                 sleep(0.0001)\par
+  788                 data_left = ser.inWaiting()\par
+  789             else:\par
+  790                 print("Transmitting error: Time out")\par
+  791                 return Trans_error\par
+  792         received_data = ser.read()\par
+  793         sleep(0.02)\par
+  794         data_left = ser.inWaiting()\par
+  795         received_data += ser.read(data_left)\par
+  796         \par
+  797         if ((received_data[0]) != self.__Address):\par
+  798             print("Transmitting error: Data corrupted")\par
+  799             return Data_error\par
+  800         if (len(received_data) != 11):\par
+  801             print("Transmitting error: Data corrupted")\par
+  802             return Data_error\par
+  803         \par
+  804         #Check the CRC code\par
+  805         crc_cal = hex(crc16(received_data[:9]))\par
+  806         crc_Rx = hex(struct.unpack('H',received_data[9:])[0])\par
+  807     \par
+  808         if crc_cal == crc_Rx:\par
+  809             self.__PF1 = float(struct.unpack('h', received_data[4:2:-1])[0])/1000\par
+  810             self.__PF2 = float(struct.unpack('h', received_data[6:4:-1])[0])/1000\par
+  811             self.__PF3 = float(struct.unpack('h', received_data[8:6:-1])[0])/1000    \par
+  812             return No_error\par
+  813         else:\par
+  814             print("Transmitting error: Incorrect CRC")\par
+  815             return CRC_error \par
+  816    \par
+}
+}
+{\xe \v readPT1\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:readPT1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def MIC3.MIC1.readPT1 (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAACG}
+{\bkmkend AAAAAAAACG}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Reads PT1 variable needed for all other calculations. }}\par
+{
+Definition at line 276 of file MIC3.py.}\par
+{
+References MIC3.MIC2.__Address, MIC3.MIC1.__Address, MIC3.MIC2.__Control, MIC3.MIC1.__Control, and MIC3.MIC1.__PT1.}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid   276     def readPT1(self):\par
+  277         #Calculate CRC16-MODBUS\par
+  278         crc16 = crcmod.mkCrcFun(0x18005, rev=True, initCrc = 0xFFFF, xorOut = 0x0000)\par
+  279         crc_Tx = ".%4x"%(crc16(serial.to_bytes([self.__Address, 0x03, 0x01, 0x05, 0x00, 0x02])))\par
+  280         #The crc_Tx must include 4 hexadecimal characters.\par
+  281         #If crc_Tx =  10, function hex() will return 0xa, which is not expected\par
+  282         #Therefore, String format operator was used\par
+  283     \par
+  284         #Send request\par
+  285         GPIO.output(self.__Control, GPIO.HIGH)\par
+  286         ser.write(serial.to_bytes([self.__Address, 0x03, 0x01, 0x05, 0x00, 0x02, int(crc_Tx[3:],16), int(crc_Tx[1:3],16)]))\par
+  287     \par
+  288         #There is a delay caused by the converter. The program must wait before reading the result\par
+  289         sleep(0.01)\par
+  290     \par
+  291         #Receive data\par
+  292         GPIO.output(self.__Control, GPIO.LOW)\par
+  293         cnt = 0\par
+  294         data_left = ser.inWaiting()\par
+  295         while (data_left == 0):\par
+  296             #wait for data\par
+  297             cnt=cnt+1\par
+  298             if (cnt < 50000): #wait for maximum 5 seconds\par
+  299                 sleep(0.0001)\par
+  300                 data_left = ser.inWaiting()\par
+  301             else:\par
+  302                 print("Transmitting error: Time out")\par
+  303                 return Trans_error\par
+  304     \par
+  305         received_data = ser.read()\par
+  306         sleep(0.01)\par
+  307         data_left = ser.inWaiting()\par
+  308         received_data += ser.read(data_left)\par
+  309         \par
+  310         #Check if the data is correct\par
+  311         if ((received_data[0]) != self.__Address):\par
+  312             print("Transmitting error: Data corrupted")\par
+  313             return Data_error\par
+  314         if (len(received_data) != 9):\par
+  315             print("Transmitting error: Data corrupted")\par
+  316             return Data_error\par
+  317         \par
+  318         #Check the CRC code\par
+  319         crc_cal = hex(crc16(received_data[:7]))\par
+  320 \par
+  321         #DEBUG ONLY-----------------------------------------------\par
+  322         #retval = ""\par
+  323         #for character in received_data:\par
+  324         #    retval += ('0123456789ABCDEF'[int((character)/16)])\par
+  325         #    retval += ('0123456789ABCDEF'[int((character)%16)])\par
+  326         #    retval += ':'\par
+  327         #print (retval[:-1])\par
+  328         #print (crc_cal) #use for debugging only\par
+  329         #---------------------------------------------------------\par
+  330     \par
+  331         crc_Rx = hex(struct.unpack('H',received_data[7:])[0])\par
+  332     \par
+  333         #print (crc_Rx) #use for degugging only\par
+  334     \par
+  335         if crc_cal == crc_Rx:\par
+  336             self.__PT1 = float(struct.unpack('I', received_data[6:2:-1])[0])\par
+  337             return No_error\par
+  338         else:\par
+  339             print("Transmitting error: Incorrect CRC")\par
+  340             return CRC_error\par
+  341     \par
+}
+}
+{\xe \v readPT2\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:readPT2}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def MIC3.MIC1.readPT2 (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAACH}
+{\bkmkend AAAAAAAACH}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Reads PT2 variable needed for all other calculations. }}\par
+{
+Definition at line 343 of file MIC3.py.}\par
+{
+References MIC3.MIC2.__Address, MIC3.MIC1.__Address, MIC3.MIC2.__Control, MIC3.MIC1.__Control, and MIC3.MIC1.__PT2.}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid   343     def readPT2(self):\par
+  344         #Calculate CRC16-MODBUS\par
+  345         crc16 = crcmod.mkCrcFun(0x18005, rev=True, initCrc = 0xFFFF, xorOut = 0x0000)\par
+  346         crc_Tx = ".%4x"%(crc16(serial.to_bytes([self.__Address, 0x03, 0x01, 0x07, 0x00, 0x01])))\par
+  347         #The crc_Tx must include 4 hexadecimal characters.\par
+  348         #If crc_Tx =  10, function hex() will return 0xa, which is not expected\par
+  349         #Therefore, String format operator was used\par
+  350     \par
+  351         #Send request\par
+  352         GPIO.output(self.__Control, GPIO.HIGH)\par
+  353         ser.write(serial.to_bytes([self.__Address, 0x03, 0x01, 0x07, 0x00, 0x01, int(crc_Tx[3:],16), int(crc_Tx[1:3],16)]))\par
+  354     \par
+  355         #There is a delay caused by the converter. The program must wait before reading the result\par
+  356         sleep(0.01)\par
+  357     \par
+  358         #Receive data\par
+  359         GPIO.output(self.__Control, GPIO.LOW)\par
+  360         cnt = 0\par
+  361         data_left = ser.inWaiting()\par
+  362         while (data_left == 0):\par
+  363             #wait for data\par
+  364             cnt=cnt+1\par
+  365             if (cnt < 50000): #wait for maximum 5 seconds\par
+  366                 sleep(0.0001)\par
+  367                 data_left = ser.inWaiting()\par
+  368             else:\par
+  369                 print("Transmitting error: Time out")\par
+  370                 return Trans_error\par
+  371     \par
+  372         received_data = ser.read()\par
+  373         sleep(0.01)\par
+  374         data_left = ser.inWaiting()\par
+  375         received_data += ser.read(data_left)\par
+  376         \par
+  377         #Check if the data is correct\par
+  378         if ((received_data[0]) != self.__Address):\par
+  379             print("Transmitting error: Data corrupted")\par
+  380             return Data_error\par
+  381         if (len(received_data) != 7):\par
+  382             print("Transmitting error: Data corrupted")\par
+  383             return Data_error\par
+  384         \par
+  385         #Check the CRC code\par
+  386         crc_cal = hex(crc16(received_data[:5]))\par
+  387 \par
+  388         #DEBUG ONLY-----------------------------------------------\par
+  389         #retval = ""\par
+  390         #for character in received_data:\par
+  391         #    retval += ('0123456789ABCDEF'[int((character)/16)])\par
+  392         #    retval += ('0123456789ABCDEF'[int((character)%16)])\par
+  393         #    retval += ':'\par
+  394         #print (retval[:-1])\par
+  395         #print (crc_cal) #use for debugging only\par
+  396         #---------------------------------------------------------\par
+  397     \par
+  398         crc_Rx = hex(struct.unpack('H',received_data[5:])[0])\par
+  399     \par
+  400         #print (crc_Rx) #use for degugging only\par
+  401     \par
+  402         if crc_cal == crc_Rx:\par
+  403             self.__PT2 = float(struct.unpack('H', received_data[4:2:-1])[0])\par
+  404             return No_error\par
+  405         else:\par
+  406             print("Transmitting error: Incorrect CRC")\par
+  407             return CRC_error\par
+  408             \par
+}
+}
+{\xe \v readReactivePower\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:readReactivePower}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def MIC3.MIC1.readReactivePower (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAACI}
+{\bkmkend AAAAAAAACI}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Reads and calculates Reactive Power (Q) values with the help of PT1, PT2, CT1. }}\par
+{
+Definition at line 654 of file MIC3.py.}\par
+{
+References MIC3.MIC2.__Address, MIC3.MIC1.__Address, MIC3.MIC2.__Control, MIC3.MIC1.__Control, MIC3.MIC1.__CT1, MIC3.MIC1.__PT1, MIC3.MIC1.__PT2, MIC3.MIC1.__Q1, MIC3.MIC1.__Q2, and MIC3.MIC1.__Q3.}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid   654     def readReactivePower(self):\par
+  655         #Calculate CRC16-MODBUS\par
+  656         crc16 = crcmod.mkCrcFun(0x18005, rev=True, initCrc = 0xFFFF, xorOut = 0x0000)\par
+  657         crc_Tx = ".%4x"%(crc16(serial.to_bytes([self.__Address, 0x03, 0x01, 0x42, 0x00, 0x03])))\par
+  658         #The crc_Tx must include 4 hexadecimal characters.\par
+  659         #If crc_Tx =  10, function hex() will return 0xa, which is not expected\par
+  660         #Therefore, String format operator was used\par
+  661     \par
+  662         #Send request\par
+  663         GPIO.output(self.__Control, GPIO.HIGH)\par
+  664         ser.write(serial.to_bytes([self.__Address, 0x03, 0x01, 0x42, 0x00, 0x03, int(crc_Tx[3:],16), int(crc_Tx[1:3],16)]))\par
+  665     \par
+  666         #There is a delay caused by the converter. The program must wait before reading the result\par
+  667         sleep(0.02)\par
+  668     \par
+  669         #Receive data\par
+  670         GPIO.output(self.__Control, GPIO.LOW)\par
+  671         cnt = 0\par
+  672         data_left = ser.inWaiting()\par
+  673         while (data_left == 0):\par
+  674             #wait for data\par
+  675             cnt=cnt+1\par
+  676             if (cnt < 50000): #wait for maximum 5 seconds\par
+  677                 sleep(0.0001)\par
+  678                 data_left = ser.inWaiting()\par
+  679             else:\par
+  680                 print("Transmitting error: Time out")\par
+  681                 return Trans_error\par
+  682         received_data = ser.read()\par
+  683         sleep(0.02)\par
+  684         data_left = ser.inWaiting()\par
+  685         received_data += ser.read(data_left)\par
+  686         \par
+  687         if ((received_data[0]) != self.__Address):\par
+  688             print("Transmitting error: Data corrupted")\par
+  689             return Data_error\par
+  690         if (len(received_data) != 11):\par
+  691             print("Transmitting error: Data corrupted")\par
+  692             return Data_error\par
+  693         \par
+  694         #Check the CRC code\par
+  695         crc_cal = hex(crc16(received_data[:9]))\par
+  696         crc_Rx = hex(struct.unpack('H',received_data[9:])[0])\par
+  697     \par
+  698         if crc_cal == crc_Rx:\par
+  699             self.__Q1 = float(struct.unpack('h', received_data[4:2:-1])[0])*(self.__PT1/self.__PT2)*(self.__CT1/5)\par
+  700             self.__Q2 = float(struct.unpack('h', received_data[6:4:-1])[0])*(self.__PT1/self.__PT2)*(self.__CT1/5)\par
+  701             self.__Q3 = float(struct.unpack('h', received_data[8:6:-1])[0])*(self.__PT1/self.__PT2)*(self.__CT1/5)    \par
+  702             return No_error\par
+  703         else:\par
+  704             print("Transmitting error: Incorrect CRC")\par
+  705             return CRC_error\par
+  706         \par
+}
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Data Documentation\par
+\pard\plain 
+{\xe \v __Address\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:__Address}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC1.__Address{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAACJ}
+{\bkmkend AAAAAAAACJ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 251 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC1.readApparentPower(), MIC3.MIC1.readCT1(), MIC3.MIC1.readFrequency(), MIC3.MIC1.readPhaseCurrent(), MIC3.MIC1.readPhasePower(), MIC3.MIC1.readPhaseVoltage(), MIC3.MIC1.readPowerFactor(), MIC3.MIC1.readPT1(), MIC3.MIC1.readPT2(), and MIC3.MIC1.readReactivePower().}\par
+}
+{\xe \v __Control\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:__Control}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC1.__Control{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAACK}
+{\bkmkend AAAAAAAACK}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 250 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC1.readApparentPower(), MIC3.MIC1.readCT1(), MIC3.MIC1.readFrequency(), MIC3.MIC1.readPhaseCurrent(), MIC3.MIC1.readPhasePower(), MIC3.MIC1.readPhaseVoltage(), MIC3.MIC1.readPowerFactor(), MIC3.MIC1.readPT1(), MIC3.MIC1.readPT2(), and MIC3.MIC1.readReactivePower().}\par
+}
+{\xe \v __CT1\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:__CT1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC1.__CT1{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAACL}
+{\bkmkend AAAAAAAACL}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 254 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC1.readApparentPower(), MIC3.MIC1.readCT1(), MIC3.MIC1.readPhaseCurrent(), MIC3.MIC1.readPhasePower(), and MIC3.MIC1.readReactivePower().}\par
+}
+{\xe \v __F\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:__F}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC1.__F{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAACM}
+{\bkmkend AAAAAAAACM}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 273 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC1.readFrequency().}\par
+}
+{\xe \v __I1\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:__I1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC1.__I1{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAACN}
+{\bkmkend AAAAAAAACN}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 258 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC1.readPhaseCurrent().}\par
+}
+{\xe \v __I2\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:__I2}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC1.__I2{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAACO}
+{\bkmkend AAAAAAAACO}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 259 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC1.readPhaseCurrent().}\par
+}
+{\xe \v __I3\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:__I3}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC1.__I3{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAACP}
+{\bkmkend AAAAAAAACP}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 260 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC1.readPhaseCurrent().}\par
+}
+{\xe \v __P1\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:__P1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC1.__P1{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAACQ}
+{\bkmkend AAAAAAAACQ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 261 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC1.readPhasePower().}\par
+}
+{\xe \v __P2\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:__P2}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC1.__P2{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAACR}
+{\bkmkend AAAAAAAACR}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 262 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC1.readPhasePower().}\par
+}
+{\xe \v __P3\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:__P3}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC1.__P3{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAACS}
+{\bkmkend AAAAAAAACS}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 263 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC1.readPhasePower().}\par
+}
+{\xe \v __PF1\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:__PF1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC1.__PF1{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAACT}
+{\bkmkend AAAAAAAACT}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 270 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC1.readPowerFactor().}\par
+}
+{\xe \v __PF2\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:__PF2}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC1.__PF2{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAACU}
+{\bkmkend AAAAAAAACU}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 271 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC1.readPowerFactor().}\par
+}
+{\xe \v __PF3\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:__PF3}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC1.__PF3{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAACV}
+{\bkmkend AAAAAAAACV}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 272 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC1.readPowerFactor().}\par
+}
+{\xe \v __PT1\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:__PT1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC1.__PT1{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAACW}
+{\bkmkend AAAAAAAACW}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 252 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC1.readApparentPower(), MIC3.MIC1.readPhasePower(), MIC3.MIC1.readPhaseVoltage(), MIC3.MIC1.readPT1(), and MIC3.MIC1.readReactivePower().}\par
+}
+{\xe \v __PT2\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:__PT2}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC1.__PT2{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAACX}
+{\bkmkend AAAAAAAACX}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 253 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC1.readApparentPower(), MIC3.MIC1.readPhasePower(), MIC3.MIC1.readPhaseVoltage(), MIC3.MIC1.readPT2(), and MIC3.MIC1.readReactivePower().}\par
+}
+{\xe \v __Q1\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:__Q1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC1.__Q1{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAACY}
+{\bkmkend AAAAAAAACY}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 264 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC1.readReactivePower().}\par
+}
+{\xe \v __Q2\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:__Q2}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC1.__Q2{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAACZ}
+{\bkmkend AAAAAAAACZ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 265 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC1.readReactivePower().}\par
+}
+{\xe \v __Q3\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:__Q3}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC1.__Q3{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAADA}
+{\bkmkend AAAAAAAADA}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 266 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC1.readReactivePower().}\par
+}
+{\xe \v __S1\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:__S1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC1.__S1{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAADB}
+{\bkmkend AAAAAAAADB}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 267 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC1.readApparentPower().}\par
+}
+{\xe \v __S2\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:__S2}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC1.__S2{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAADC}
+{\bkmkend AAAAAAAADC}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 268 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC1.readApparentPower().}\par
+}
+{\xe \v __S3\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:__S3}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC1.__S3{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAADD}
+{\bkmkend AAAAAAAADD}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 269 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC1.readApparentPower().}\par
+}
+{\xe \v __V1\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:__V1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC1.__V1{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAADE}
+{\bkmkend AAAAAAAADE}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 255 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC1.readPhaseVoltage().}\par
+}
+{\xe \v __V2\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:__V2}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC1.__V2{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAADF}
+{\bkmkend AAAAAAAADF}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 256 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC1.readPhaseVoltage().}\par
+}
+{\xe \v __V3\:MIC3::MIC1}
+{\xe \v MIC3::MIC1\:__V3}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC1.__V3{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAADG}
+{\bkmkend AAAAAAAADG}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 257 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC1.readPhaseVoltage().}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this class was generated from the following file:{\par
+\pard\plain \s81\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls2\adjustright \fs20\cgrid 
+Modbus/{\b MIC3.py}\par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+MIC3.MIC2 Class Reference\par \pard\plain 
+{\tc\tcl2 \v MIC3.MIC2}
+{\xe \v MIC3.MIC2}
+{\bkmkstart AAAAAAAADH}
+{\bkmkend AAAAAAAADH}
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Unused class for {\b MIC2} energy meter; it is missing the PT!, PT2, CT1 control variables. }}\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Member Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b __init__} (self, Id, Control)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b readPhaseVoltage} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b readPhaseCurrent} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b readPhasePower} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b readFrequency} (self)\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Private Attributes\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __Control}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __Address}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __V1}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __V2}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __V3}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __I1}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __I2}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __I3}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __P1}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __P2}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __P3}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b __F}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Unused class for {\b MIC2} energy meter; it is missing the PT!, PT2, CT1 control variables. \par
+}{
+Definition at line 25 of file MIC3.py.}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Constructor & Destructor Documentation\par
+\pard\plain 
+{\xe \v __init__\:MIC3::MIC2}
+{\xe \v MIC3::MIC2\:__init__}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def MIC3.MIC2.__init__ (  {\i self},   {\i Id},   {\i Control})}}
+\par
+{\bkmkstart AAAAAAAADI}
+{\bkmkend AAAAAAAADI}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 26 of file MIC3.py.}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid    26     def __init__(self, Id, Control):\par
+   27         self.__Control = Control\par
+   28         self.__Address = Id\par
+   29         self.__V1 = 0\par
+   30         self.__V2 = 0\par
+   31         self.__V3 = 0\par
+   32         self.__I1 = 0\par
+   33         self.__I2 = 0\par
+   34         self.__I3 = 0\par
+   35         self.__P1 = 0\par
+   36         self.__P2 = 0\par
+   37         self.__P3 = 0\par
+   38         self.__F  = 0\par
+   39         \par
+}
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Function Documentation\par
+\pard\plain 
+{\xe \v readFrequency\:MIC3::MIC2}
+{\xe \v MIC3::MIC2\:readFrequency}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def MIC3.MIC2.readFrequency (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAADJ}
+{\bkmkend AAAAAAAADJ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 196 of file MIC3.py.}\par
+{
+References MIC3.MIC2.__Address, MIC3.MIC2.__Control, and MIC3.MIC2.__F.}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid   196     def readFrequency(self):\par
+  197         #Calculate CRC16-MODBUS\par
+  198         crc16 = crcmod.mkCrcFun(0x18005, rev=True, initCrc = 0xFFFF, xorOut = 0x0000)\par
+  199         crc_Tx = ".%4x"%(crc16(serial.to_bytes([self.__Address, 0x03, 0x40, 0x00, 0x00, 0x02])))\par
+  200         #The crc_Tx must include 4 hexadecimal characters.\par
+  201         #If crc_Tx =  10, function hex() will return 0xa, which is not expected\par
+  202         #Therefore, String format operator was used\par
+  203     \par
+  204         #Send request\par
+  205         GPIO.output(self.__Control, GPIO.HIGH)\par
+  206         ser.write(serial.to_bytes([self.__Address, 0x03, 0x40, 0x00, 0x00, 0x02, int(crc_Tx[3:],16), int(crc_Tx[1:3],16)]))\par
+  207     \par
+  208         #There is a delay caused by the converter. The program must wait before reading the result\par
+  209         sleep(0.004)\par
+  210     \par
+  211         #Receive data\par
+  212         GPIO.output(self.__Control, GPIO.LOW)\par
+  213         cnt = 0\par
+  214         data_left = ser.inWaiting()\par
+  215         while (data_left == 0):\par
+  216             #wait for data\par
+  217             cnt=cnt+1\par
+  218             if (cnt < 50000): #wait for maximum 5 seconds\par
+  219                 sleep(0.0001)\par
+  220                 data_left = ser.inWaiting()\par
+  221             else:\par
+  222                 print("Transmitting error: Time out")\par
+  223                 return Trans_error\par
+  224         received_data = ser.read()\par
+  225         sleep(0.01)\par
+  226         data_left = ser.inWaiting()\par
+  227         received_data += ser.read(data_left)\par
+  228         \par
+  229         if ((received_data[0]) != self.__Address):\par
+  230             print("Transmitting error: Data corrupted")\par
+  231             return Data_error\par
+  232     \par
+  233         #Check the CRC code\par
+  234         crc_cal = hex(crc16(received_data[:7]))\par
+  235         crc_Rx = hex(struct.unpack('H',received_data[7:])[0])\par
+  236     \par
+  237         if crc_cal == crc_Rx:\par
+  238             self.__F = struct.unpack('f', received_data[6:2:-1])[0]    \par
+  239             return No_error\par
+  240         else:\par
+  241             print("Transmitting error: Incorrect CRC")\par
+  242             return CRC_error\par
+  243 #---------------------------------END OF MIC2------------------------------------\par
+  244 #--------------------------------------------------------------------------------\par
+  245 \par
+  246 \par
+}
+}
+{\xe \v readPhaseCurrent\:MIC3::MIC2}
+{\xe \v MIC3::MIC2\:readPhaseCurrent}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def MIC3.MIC2.readPhaseCurrent (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAADK}
+{\bkmkend AAAAAAAADK}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 96 of file MIC3.py.}\par
+{
+References MIC3.MIC2.__Address, MIC3.MIC2.__Control, MIC3.MIC2.__I1, MIC3.MIC2.__I2, and MIC3.MIC2.__I3.}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid    96     def readPhaseCurrent(self):\par
+   97         #Calculate CRC16-MODBUS\par
+   98         crc16 = crcmod.mkCrcFun(0x18005, rev=True, initCrc = 0xFFFF, xorOut = 0x0000)\par
+   99         crc_Tx = ".%4x"%(crc16(serial.to_bytes([self.__Address, 0x03, 0x40, 0x12, 0x00, 0x06])))\par
+  100         #The crc_Tx must include 4 hexadecimal characters.\par
+  101         #If crc_Tx =  10, function hex() will return 0xa, which is not expected\par
+  102         #Therefore, String format operator was used\par
+  103     \par
+  104         #Send request\par
+  105         GPIO.output(self.__Control, GPIO.HIGH)\par
+  106         ser.write(serial.to_bytes([self.__Address, 0x03, 0x40, 0x12, 0x00, 0x06, int(crc_Tx[3:],16), int(crc_Tx[1:3],16)]))\par
+  107     \par
+  108         #There is a delay caused by the converter. The program must wait before reading the result\par
+  109         sleep(0.004)\par
+  110     \par
+  111         #Receive data\par
+  112         GPIO.output(self.__Control, GPIO.LOW)\par
+  113         cnt = 0\par
+  114         data_left = ser.inWaiting()\par
+  115         while (data_left == 0):\par
+  116             #wait for data\par
+  117             cnt=cnt+1\par
+  118             if (cnt < 50000): #wait for maximum 5 seconds\par
+  119                 sleep(0.0001)\par
+  120                 data_left = ser.inWaiting()\par
+  121             else:\par
+  122                 print("Transmitting error: Time out")\par
+  123                 return Trans_error\par
+  124         received_data = ser.read()\par
+  125         sleep(0.01)\par
+  126         data_left = ser.inWaiting()\par
+  127         received_data += ser.read(data_left)\par
+  128         \par
+  129         if ((received_data[0]) != self.__Address):\par
+  130             print("Transmitting error: Data corrupted")\par
+  131             return Data_error\par
+  132     \par
+  133         #Check the CRC code\par
+  134         crc_cal = hex(crc16(received_data[:15]))\par
+  135         crc_Rx = hex(struct.unpack('H',received_data[15:])[0])\par
+  136     \par
+  137         if crc_cal == crc_Rx:\par
+  138             self.__I1 = struct.unpack('f', received_data[6:2:-1])[0]\par
+  139             self.__I2 = struct.unpack('f', received_data[10:6:-1])[0]\par
+  140             self.__I3 = struct.unpack('f', received_data[14:10:-1])[0]      \par
+  141             return No_error\par
+  142         else:\par
+  143             print("Transmitting error: Incorrect CRC")\par
+  144             return CRC_error\par
+  145             \par
+}
+}
+{\xe \v readPhasePower\:MIC3::MIC2}
+{\xe \v MIC3::MIC2\:readPhasePower}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def MIC3.MIC2.readPhasePower (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAADL}
+{\bkmkend AAAAAAAADL}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 146 of file MIC3.py.}\par
+{
+References MIC3.MIC2.__Address, MIC3.MIC2.__Control, MIC3.MIC2.__P1, MIC3.MIC2.__P2, and MIC3.MIC2.__P3.}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid   146     def readPhasePower(self):\par
+  147         #Calculate CRC16-MODBUS\par
+  148         crc16 = crcmod.mkCrcFun(0x18005, rev=True, initCrc = 0xFFFF, xorOut = 0x0000)\par
+  149         crc_Tx = ".%4x"%(crc16(serial.to_bytes([self.__Address, 0x03, 0x40, 0x1c, 0x00, 0x06])))\par
+  150         #The crc_Tx must include 4 hexadecimal characters.\par
+  151         #If crc_Tx =  10, function hex() will return 0xa, which is not expected\par
+  152         #Therefore, String format operator was used\par
+  153     \par
+  154         #Send request\par
+  155         GPIO.output(self.__Control, GPIO.HIGH)\par
+  156         ser.write(serial.to_bytes([self.__Address, 0x03, 0x40, 0x1c, 0x00, 0x06, int(crc_Tx[3:],16), int(crc_Tx[1:3],16)]))\par
+  157     \par
+  158         #There is a delay caused by the converter. The program must wait before reading the result\par
+  159         sleep(0.004)\par
+  160     \par
+  161         #Receive data\par
+  162         GPIO.output(self.__Control, GPIO.LOW)\par
+  163         cnt = 0\par
+  164         data_left = ser.inWaiting()\par
+  165         while (data_left == 0):\par
+  166             #wait for data\par
+  167             cnt=cnt+1\par
+  168             if (cnt < 50000): #wait for maximum 5 seconds\par
+  169                 sleep(0.0001)\par
+  170                 data_left = ser.inWaiting()\par
+  171             else:\par
+  172                 print("Transmitting error: Time out")\par
+  173                 return Trans_error\par
+  174         received_data = ser.read()\par
+  175         sleep(0.01)\par
+  176         data_left = ser.inWaiting()\par
+  177         received_data += ser.read(data_left)\par
+  178         \par
+  179         if ((received_data[0]) != self.__Address):\par
+  180             print("Transmitting error: Data corrupted")\par
+  181             return Data_error\par
+  182     \par
+  183         #Check the CRC code\par
+  184         crc_cal = hex(crc16(received_data[:15]))\par
+  185         crc_Rx = hex(struct.unpack('H',received_data[15:])[0])\par
+  186     \par
+  187         if crc_cal == crc_Rx:\par
+  188             self.__P1 = struct.unpack('f', received_data[6:2:-1])[0]\par
+  189             self.__P2 = struct.unpack('f', received_data[10:6:-1])[0]\par
+  190             self.__P3 = struct.unpack('f', received_data[14:10:-1])[0]       \par
+  191             return No_error\par
+  192         else:\par
+  193             print("Transmitting error: Incorrect CRC")\par
+  194             return CRC_error\par
+  195 \par
+}
+}
+{\xe \v readPhaseVoltage\:MIC3::MIC2}
+{\xe \v MIC3::MIC2\:readPhaseVoltage}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def MIC3.MIC2.readPhaseVoltage (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAADM}
+{\bkmkend AAAAAAAADM}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 40 of file MIC3.py.}\par
+{
+References MIC3.MIC2.__Address, MIC3.MIC2.__Control, MIC3.MIC2.__V1, MIC3.MIC2.__V2, and MIC3.MIC2.__V3.}\par
+{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid    40     def readPhaseVoltage(self):\par
+   41         #Calculate CRC16-MODBUS\par
+   42         crc16 = crcmod.mkCrcFun(0x18005, rev=True, initCrc = 0xFFFF, xorOut = 0x0000)\par
+   43         crc_Tx = ".%4x"%(crc16(serial.to_bytes([self.__Address, 0x03, 0x40, 0x02, 0x00, 0x06])))\par
+   44         #The crc_Tx must include 4 hexadecimal characters.\par
+   45         #If crc_Tx =  10, function hex() will return 0xa, which is not expected\par
+   46         #Therefore, String format operator was used\par
+   47     \par
+   48         #Send request\par
+   49         GPIO.output(self.__Control, GPIO.HIGH)\par
+   50         ser.write(serial.to_bytes([self.__Address, 0x03, 0x40, 0x02, 0x00, 0x06, int(crc_Tx[3:],16), int(crc_Tx[1:3],16)]))\par
+   51     \par
+   52         #There is a delay caused by the converter. The program must wait before reading the result\par
+   53         sleep(0.004)\par
+   54     \par
+   55         #Receive data\par
+   56         GPIO.output(self.__Control, GPIO.LOW)\par
+   57         cnt = 0\par
+   58         data_left = ser.inWaiting()\par
+   59         while (data_left == 0):\par
+   60             #wait for data\par
+   61             cnt=cnt+1\par
+   62             if (cnt < 50000): #wait for maximum 5 seconds\par
+   63                 sleep(0.0001)\par
+   64                 data_left = ser.inWaiting()\par
+   65             else:\par
+   66                 print("Transmitting error: Time out")\par
+   67                 return Trans_error\par
+   68     \par
+   69         received_data = ser.read()\par
+   70         sleep(0.01)\par
+   71         data_left = ser.inWaiting()\par
+   72         received_data += ser.read(data_left)\par
+   73         \par
+   74         if ((received_data[0]) != self.__Address):\par
+   75             print("Transmitting error: Data corrupted")\par
+   76             return Data_error\par
+   77         \par
+   78         #Check the CRC code\par
+   79         crc_cal = hex(crc16(received_data[:15]))\par
+   80         \par
+   81         #print (crc_cal) #use for debugging only\par
+   82     \par
+   83         crc_Rx = hex(struct.unpack('H',received_data[15:])[0])\par
+   84     \par
+   85         #print (crc_Rx) #use for degugging only\par
+   86     \par
+   87         if crc_cal == crc_Rx:\par
+   88             self.__V1 = struct.unpack('f', received_data[6:2:-1])[0]\par
+   89             self.__V2 = struct.unpack('f', received_data[10:6:-1])[0]\par
+   90             self.__V3 = struct.unpack('f', received_data[14:10:-1])[0]\par
+   91             return No_error\par
+   92         else:\par
+   93             print("Transmitting error: Incorrect CRC")\par
+   94             return CRC_error\par
+   95             \par
+}
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Data Documentation\par
+\pard\plain 
+{\xe \v __Address\:MIC3::MIC2}
+{\xe \v MIC3::MIC2\:__Address}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC2.__Address{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAADN}
+{\bkmkend AAAAAAAADN}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 28 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC1.readApparentPower(), MIC3.MIC1.readCT1(), MIC3.MIC2.readFrequency(), MIC3.MIC1.readFrequency(), MIC3.MIC2.readPhaseCurrent(), MIC3.MIC1.readPhaseCurrent(), MIC3.MIC2.readPhasePower(), MIC3.MIC1.readPhasePower(), MIC3.MIC2.readPhaseVoltage(), MIC3.MIC1.readPhaseVoltage(), MIC3.MIC1.readPowerFactor(), MIC3.MIC1.readPT1(), MIC3.MIC1.readPT2(), and MIC3.MIC1.readReactivePower().}\par
+}
+{\xe \v __Control\:MIC3::MIC2}
+{\xe \v MIC3::MIC2\:__Control}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC2.__Control{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAADO}
+{\bkmkend AAAAAAAADO}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 27 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC1.readApparentPower(), MIC3.MIC1.readCT1(), MIC3.MIC2.readFrequency(), MIC3.MIC1.readFrequency(), MIC3.MIC2.readPhaseCurrent(), MIC3.MIC1.readPhaseCurrent(), MIC3.MIC2.readPhasePower(), MIC3.MIC1.readPhasePower(), MIC3.MIC2.readPhaseVoltage(), MIC3.MIC1.readPhaseVoltage(), MIC3.MIC1.readPowerFactor(), MIC3.MIC1.readPT1(), MIC3.MIC1.readPT2(), and MIC3.MIC1.readReactivePower().}\par
+}
+{\xe \v __F\:MIC3::MIC2}
+{\xe \v MIC3::MIC2\:__F}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC2.__F{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAADP}
+{\bkmkend AAAAAAAADP}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 38 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC2.readFrequency(), and MIC3.MIC1.readFrequency().}\par
+}
+{\xe \v __I1\:MIC3::MIC2}
+{\xe \v MIC3::MIC2\:__I1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC2.__I1{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAADQ}
+{\bkmkend AAAAAAAADQ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 32 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC2.readPhaseCurrent(), and MIC3.MIC1.readPhaseCurrent().}\par
+}
+{\xe \v __I2\:MIC3::MIC2}
+{\xe \v MIC3::MIC2\:__I2}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC2.__I2{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAADR}
+{\bkmkend AAAAAAAADR}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 33 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC2.readPhaseCurrent(), and MIC3.MIC1.readPhaseCurrent().}\par
+}
+{\xe \v __I3\:MIC3::MIC2}
+{\xe \v MIC3::MIC2\:__I3}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC2.__I3{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAADS}
+{\bkmkend AAAAAAAADS}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 34 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC2.readPhaseCurrent(), and MIC3.MIC1.readPhaseCurrent().}\par
+}
+{\xe \v __P1\:MIC3::MIC2}
+{\xe \v MIC3::MIC2\:__P1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC2.__P1{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAADT}
+{\bkmkend AAAAAAAADT}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 35 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC2.readPhasePower(), and MIC3.MIC1.readPhasePower().}\par
+}
+{\xe \v __P2\:MIC3::MIC2}
+{\xe \v MIC3::MIC2\:__P2}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC2.__P2{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAADU}
+{\bkmkend AAAAAAAADU}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 36 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC2.readPhasePower(), and MIC3.MIC1.readPhasePower().}\par
+}
+{\xe \v __P3\:MIC3::MIC2}
+{\xe \v MIC3::MIC2\:__P3}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC2.__P3{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAADV}
+{\bkmkend AAAAAAAADV}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 37 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC2.readPhasePower(), and MIC3.MIC1.readPhasePower().}\par
+}
+{\xe \v __V1\:MIC3::MIC2}
+{\xe \v MIC3::MIC2\:__V1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC2.__V1{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAADW}
+{\bkmkend AAAAAAAADW}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 29 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC2.readPhaseVoltage(), and MIC3.MIC1.readPhaseVoltage().}\par
+}
+{\xe \v __V2\:MIC3::MIC2}
+{\xe \v MIC3::MIC2\:__V2}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC2.__V2{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAADX}
+{\bkmkend AAAAAAAADX}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 30 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC2.readPhaseVoltage(), and MIC3.MIC1.readPhaseVoltage().}\par
+}
+{\xe \v __V3\:MIC3::MIC2}
+{\xe \v MIC3::MIC2\:__V3}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+MIC3.MIC2.__V3{\f2 [private]}}}
+\par
+{\bkmkstart AAAAAAAADY}
+{\bkmkend AAAAAAAADY}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+Definition at line 31 of file MIC3.py.}\par
+{
+Referenced by MIC3.MIC2.readPhaseVoltage(), and MIC3.MIC1.readPhaseVoltage().}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this class was generated from the following file:{\par
+\pard\plain \s81\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls2\adjustright \fs20\cgrid 
+Modbus/{\b MIC3.py}\par
+}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+File Documentation{\tc \v File Documentation}
+\par \pard\plain 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Modbus/main3.py File Reference\par \pard\plain 
+{\tc\tcl2 \v Modbus/main3.py}
+{\xe \v Modbus/main3.py}
+{\bkmkstart AAAAAAAAAA}
+{\bkmkend AAAAAAAAAA}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Namespaces\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+ {\b main3}\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b main3.on_connect} (client, userdata, flags, rc)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Executes on MQTT client connect to broker and sets flags. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b main3.on_disconnect} (client, userdata, rc)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Executes on MQTT client disconnect and sets flags. }{
+}\par
+}}
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variables\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+string {\b main3.broker} = "broker.hivemq.com"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+MQTT broker. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+string {\b main3.path_local} = "/media/DATABASE/modbusData.db"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Path for modbus database. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+string {\b main3.path} = "/mnt/dav/Data/modbusData.db"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+string {\b main3.path_local_user} = "/media/DATABASE/usertable.sqlite3"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Path for users database. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+string {\b main3.path_user} = "/mnt/dav/Data/usertable.sqlite3"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b main3.con_user_local} = lite.connect(path_local_user)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b main3.cur_user_local} = con_user_local.cursor()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b main3.con_user} = lite.connect(path_user)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Initial DB connection check. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b main3.cur_user} = con_user.cursor()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b main3.con_local} = lite.connect(path_local)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b main3.cur_local} = con_local.cursor()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b main3.con} = lite.connect(path)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b main3.cur} = con.cursor()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b main3.dataRef1} = cur.fetchone()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b main3.err_cnt} = 0\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b main3.client} = mqtt.Client()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b main3.connected_flag}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b main3.bad_connection_flag}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b main3.on_connect}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b main3.on_disconnect}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b main3.control_pin} = 18\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b main3.meter1} = MIC.MIC1(0x01, control_pin)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Initializes meter. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b main3.meter2} = MIC.MIC1(0x02, control_pin)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b main3.meter3} = MIC.MIC1(0x03, control_pin)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b main3.meter4} = MIC.MIC1(0x04, control_pin)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b main3.meter5} = MIC.MIC1(0x05, control_pin)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b main3.time_send} = 1\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b main3.current_time} = time.ctime(time.time())\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b main3.readingPT1} = meter1.readPT1()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b main3.readingPT2} = meter1.readPT2()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b main3.readingCT1} = meter1.readCT1()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b main3.reading} = meter1.readPhaseVoltage()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+string {\b main3.Message}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b main3.data} = cur.fetchone()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+tuple {\b main3.setPoint} = (data[0]+data[1]+data[2])\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+dictionary {\b main3.dataSend}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Modbus/MIC3.py File Reference\par \pard\plain 
+{\tc\tcl2 \v Modbus/MIC3.py}
+{\xe \v Modbus/MIC3.py}
+{\bkmkstart AAAAAAAAAB}
+{\bkmkend AAAAAAAAAB}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Classes\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+class {\b MIC3.MIC2}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Unused class for {\b MIC2} energy meter; it is missing the PT!, PT2, CT1 control variables. }}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+class {\b MIC3.MIC1}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Class for reading Modbus data from {\b MIC1} energy meter. }}}
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Namespaces\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+ {\b MIC3}\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variables\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b MIC3.ser} = serial.Serial("/dev/ttyS0", 38400)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+This library is made for reading MIC/MIC2 energy meters with a MAX485 module {\b MIC2} only reads data from registers. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b MIC3.Data_error} = -3\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b MIC3.CRC_error} = -2\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b MIC3.Trans_error} = -1\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b MIC3.No_error} = 0\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+README.md File Reference\par \pard\plain 
+{\tc\tcl2 \v README.md}
+{\xe \v README.md}
+{\bkmkstart AAAAAAAAAC}
+{\bkmkend AAAAAAAAAC}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+userID/SQLfunction.py File Reference\par \pard\plain 
+{\tc\tcl2 \v userID/SQLfunction.py}
+{\xe \v userID/SQLfunction.py}
+{\bkmkstart AAAAAAAAAD}
+{\bkmkend AAAAAAAAAD}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Namespaces\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+ {\b SQLfunction}\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b SQLfunction.on_connect} (client, userdata, flags, rc)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Executes on MQTT client connect to broker, sets flags and subscribes. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b SQLfunction.on_disconnect} (client, userdata, rc)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Executes on MQTT client disconnect and sets flags. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b SQLfunction.update_callback} (client, userdata, message)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Callback function that parses RFID swipe message from Photon and checks in the DB what to publish as answer Publish output is structured as "1;2" where 1=socket number and 2=answer to Photon. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b SQLfunction.new_photonMeasure_callback} (client, userdata, message)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+New Callback for Photon measurements that parses, checks DB for user data like name and carname, then logs into 'measurements'. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b SQLfunction.old_photonMeasure_callback} (client, userdata, message)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Old Photon measurements callback that parses '' separated values. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b SQLfunction.send_admin} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Function to send admin email if one user has been plugged in at a socket for over 4 hours still in beta mode and needs improvements. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b SQLfunction.send_email} ()\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variables\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b SQLfunction.DISCONNECT_TIME} = int(4 * 60 * 60)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Const. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b SQLfunction.email_cntr} = 0\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b SQLfunction.SSLport} = 465\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+string {\b SQLfunction.smtp_server} = "smtp.gmail.com"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+string {\b SQLfunction.sender_email} = "tpi97364@gmail.com"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Email sender address for Pi. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+string {\b SQLfunction.receiver_email} = ""\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Holder for email addresses of receivers. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+string {\b SQLfunction.sender_password} = "controlsystem"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Pi email password. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+string {\b SQLfunction.email_message}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Default email message. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b SQLfunction.email_context} = ssl.create_default_context()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b SQLfunction.con} = None\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Initial DB connection check. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+string {\b SQLfunction.broker} = "broker.hivemq.com"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+MQTT broker address. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+string {\b SQLfunction.path_local} = "/media/DATABASE/usertable.sqlite3"\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Path to users database path = "./userList" #Use internal memory - old DB. }{
+}\par
+}}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+string {\b SQLfunction.path} = "/mnt/dav/Data/usertable.sqlite3"\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b SQLfunction.con_local} = lite.connect(path_local)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b SQLfunction.cur_local} = con_local.cursor()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b SQLfunction.cur} = con.cursor()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b SQLfunction.dataRef1} = cur.fetchone()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b SQLfunction.err_cnt} = 0\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b SQLfunction.client} = mqtt.Client()\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b SQLfunction.connected_flag}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b SQLfunction.bad_connection_flag}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b SQLfunction.on_connect}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b SQLfunction.on_disconnect}\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b SQLfunction.current_time} = time.ctime(time.time())\par
+}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid Index\par 
+\pard\plain 
+{\tc \v Index}
+{\field\fldedit {\*\fldinst INDEX \\c2 \\*MERGEFORMAT}{\fldrslt INDEX}}
+}

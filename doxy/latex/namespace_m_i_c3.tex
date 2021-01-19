@@ -1,0 +1,79 @@
+\section{M\+I\+C3 Namespace Reference}
+\label{namespace_m_i_c3}\index{M\+I\+C3@{M\+I\+C3}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ M\+I\+C1}
+\begin{DoxyCompactList}\small\item\em Class for reading Modbus data from \doxyref{M\+I\+C1}{p.}{class_m_i_c3_1_1_m_i_c1} energy meter. \end{DoxyCompactList}\item 
+class \textbf{ M\+I\+C2}
+\begin{DoxyCompactList}\small\item\em Unused class for \doxyref{M\+I\+C2}{p.}{class_m_i_c3_1_1_m_i_c2} energy meter; it is missing the P\+T!, P\+T2, C\+T1 control variables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ ser} = serial.\+Serial(\char`\"{}/dev/tty\+S0\char`\"{}, 38400)
+\begin{DoxyCompactList}\small\item\em This library is made for reading M\+I\+C/\+M\+I\+C2 energy meters with a M\+A\+X485 module \doxyref{M\+I\+C2}{p.}{class_m_i_c3_1_1_m_i_c2} only reads data from registers. \end{DoxyCompactList}\item 
+int \textbf{ Data\+\_\+error} = -\/3
+\item 
+int \textbf{ C\+R\+C\+\_\+error} = -\/2
+\item 
+int \textbf{ Trans\+\_\+error} = -\/1
+\item 
+int \textbf{ No\+\_\+error} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\mbox{\label{namespace_m_i_c3_a1e02fce86341ebf194b77443e1617549}} 
+\index{M\+I\+C3@{M\+I\+C3}!C\+R\+C\+\_\+error@{C\+R\+C\+\_\+error}}
+\index{C\+R\+C\+\_\+error@{C\+R\+C\+\_\+error}!M\+I\+C3@{M\+I\+C3}}
+\subsubsection{C\+R\+C\+\_\+error}
+{\footnotesize\ttfamily int M\+I\+C3.\+C\+R\+C\+\_\+error = -\/2}
+
+
+
+Definition at line 20 of file M\+I\+C3.\+py.
+
+\mbox{\label{namespace_m_i_c3_a3e09291b9db0e529175f2c563a444764}} 
+\index{M\+I\+C3@{M\+I\+C3}!Data\+\_\+error@{Data\+\_\+error}}
+\index{Data\+\_\+error@{Data\+\_\+error}!M\+I\+C3@{M\+I\+C3}}
+\subsubsection{Data\+\_\+error}
+{\footnotesize\ttfamily int M\+I\+C3.\+Data\+\_\+error = -\/3}
+
+
+
+Definition at line 19 of file M\+I\+C3.\+py.
+
+\mbox{\label{namespace_m_i_c3_a0ce9f24ca1c79bb3f000fbeef910ba5a}} 
+\index{M\+I\+C3@{M\+I\+C3}!No\+\_\+error@{No\+\_\+error}}
+\index{No\+\_\+error@{No\+\_\+error}!M\+I\+C3@{M\+I\+C3}}
+\subsubsection{No\+\_\+error}
+{\footnotesize\ttfamily int M\+I\+C3.\+No\+\_\+error = 0}
+
+
+
+Definition at line 22 of file M\+I\+C3.\+py.
+
+\mbox{\label{namespace_m_i_c3_a03a346fcfeb9c95caef3868437487b46}} 
+\index{M\+I\+C3@{M\+I\+C3}!ser@{ser}}
+\index{ser@{ser}!M\+I\+C3@{M\+I\+C3}}
+\subsubsection{ser}
+{\footnotesize\ttfamily M\+I\+C3.\+ser = serial.\+Serial(\char`\"{}/dev/tty\+S0\char`\"{}, 38400)}
+
+
+
+This library is made for reading M\+I\+C/\+M\+I\+C2 energy meters with a M\+A\+X485 module \doxyref{M\+I\+C2}{p.}{class_m_i_c3_1_1_m_i_c2} only reads data from registers. 
+
+This is not the correct value. To calculate correct value, P\+T1, P\+T2, C\+T1 need to be read. Please take \doxyref{M\+I\+C1}{p.}{class_m_i_c3_1_1_m_i_c1} as an example \doxyref{M\+I\+C1}{p.}{class_m_i_c3_1_1_m_i_c1}\+: 8-\/bit data, no parity, 1 stop bit, 38400 B\+A\+UD 
+
+Definition at line 16 of file M\+I\+C3.\+py.
+
+\mbox{\label{namespace_m_i_c3_a1fbc497007a26c1b2dbea6d293611157}} 
+\index{M\+I\+C3@{M\+I\+C3}!Trans\+\_\+error@{Trans\+\_\+error}}
+\index{Trans\+\_\+error@{Trans\+\_\+error}!M\+I\+C3@{M\+I\+C3}}
+\subsubsection{Trans\+\_\+error}
+{\footnotesize\ttfamily int M\+I\+C3.\+Trans\+\_\+error = -\/1}
+
+
+
+Definition at line 21 of file M\+I\+C3.\+py.
+

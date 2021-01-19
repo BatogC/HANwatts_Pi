@@ -1,0 +1,75 @@
+\section{user\+I\+D/\+S\+Q\+Lfunction0.py File Reference}
+\label{_s_q_lfunction0_8py}\index{user\+I\+D/\+S\+Q\+Lfunction0.\+py@{user\+I\+D/\+S\+Q\+Lfunction0.\+py}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \textbf{ S\+Q\+Lfunction0}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \textbf{ S\+Q\+Lfunction0.\+on\+\_\+connect} (client, userdata, flags, rc)
+\item 
+def \textbf{ S\+Q\+Lfunction0.\+on\+\_\+disconnect} (client, userdata, rc)
+\item 
+def \textbf{ S\+Q\+Lfunction0.\+update\+\_\+callback} (client, userdata, message)
+\item 
+def \textbf{ S\+Q\+Lfunction0.\+new\+\_\+photon\+Measure\+\_\+callback} (client, userdata, message)
+\item 
+def \textbf{ S\+Q\+Lfunction0.\+old\+\_\+photon\+Measure\+\_\+callback} (client, userdata, message)
+\item 
+def \textbf{ S\+Q\+Lfunction0.\+send\+\_\+trung} ()
+\item 
+def \textbf{ S\+Q\+Lfunction0.\+send\+\_\+email} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ S\+Q\+Lfunction0.\+D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+ME} = int(4 $\ast$ 60 $\ast$ 60)
+\item 
+int \textbf{ S\+Q\+Lfunction0.\+email\+\_\+cntr} = 0
+\item 
+int \textbf{ S\+Q\+Lfunction0.\+S\+S\+Lport} = 465
+\item 
+string \textbf{ S\+Q\+Lfunction0.\+smtp\+\_\+server} = \char`\"{}smtp.\+gmail.\+com\char`\"{}
+\item 
+string \textbf{ S\+Q\+Lfunction0.\+sender\+\_\+email} = \char`\"{}tpi97364@gmail.\+com\char`\"{}
+\item 
+string \textbf{ S\+Q\+Lfunction0.\+receiver\+\_\+email} = \char`\"{}\char`\"{}
+\item 
+string \textbf{ S\+Q\+Lfunction0.\+sender\+\_\+password} = \char`\"{}controlsystem\char`\"{}
+\item 
+string \textbf{ S\+Q\+Lfunction0.\+email\+\_\+message}
+\item 
+\textbf{ S\+Q\+Lfunction0.\+email\+\_\+context} = ssl.\+create\+\_\+default\+\_\+context()
+\item 
+\textbf{ S\+Q\+Lfunction0.\+con} = None
+\item 
+string \textbf{ S\+Q\+Lfunction0.\+broker} = \char`\"{}broker.\+hivemq.\+com\char`\"{}
+\item 
+string \textbf{ S\+Q\+Lfunction0.\+path\+\_\+local} = \char`\"{}/media/D\+A\+T\+A\+B\+A\+SE/usertable.\+sqlite3\char`\"{}
+\item 
+string \textbf{ S\+Q\+Lfunction0.\+path} = \char`\"{}/mnt/dav/Data/usertable.\+sqlite3\char`\"{}
+\item 
+\textbf{ S\+Q\+Lfunction0.\+con\+\_\+local} = lite.\+connect(path\+\_\+local)
+\item 
+\textbf{ S\+Q\+Lfunction0.\+cur\+\_\+local} = con\+\_\+local.\+cursor()
+\item 
+\textbf{ S\+Q\+Lfunction0.\+cur} = con.\+cursor()
+\item 
+\textbf{ S\+Q\+Lfunction0.\+data\+Ref1} = cur.\+fetchone()
+\item 
+int \textbf{ S\+Q\+Lfunction0.\+err\+\_\+cnt} = 0
+\item 
+\textbf{ S\+Q\+Lfunction0.\+client} = mqtt.\+Client()
+\item 
+\textbf{ S\+Q\+Lfunction0.\+connected\+\_\+flag}
+\item 
+\textbf{ S\+Q\+Lfunction0.\+bad\+\_\+connection\+\_\+flag}
+\item 
+\textbf{ S\+Q\+Lfunction0.\+on\+\_\+connect}
+\item 
+\textbf{ S\+Q\+Lfunction0.\+on\+\_\+disconnect}
+\item 
+\textbf{ S\+Q\+Lfunction0.\+current\+\_\+time} = time.\+ctime(time.\+time())
+\begin{DoxyCompactList}\small\item\em publish.\+single gives connection error if ran too early publish.\+single(\char`\"{}\+H\+A\+Nevse/testsql\char`\"{}, \char`\"{}\+Hello from S\+Q\+Lfunction\char`\"{}, hostname=broker) \end{DoxyCompactList}\end{DoxyCompactItemize}

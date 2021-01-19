@@ -1,0 +1,125 @@
+\section{node-\/red-\/1881/node\+\_\+modules/nan/nan\+\_\+implementation\+\_\+pre\+\_\+12\+\_\+inl.h File Reference}
+\label{nan__implementation__pre__12__inl_8h}\index{node-\/red-\/1881/node\+\_\+modules/nan/nan\+\_\+implementation\+\_\+pre\+\_\+12\+\_\+inl.\+h@{node-\/red-\/1881/node\+\_\+modules/nan/nan\+\_\+implementation\+\_\+pre\+\_\+12\+\_\+inl.\+h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \textbf{ imp}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ N\+A\+N\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+N\+\_\+\+P\+R\+E\+\_\+12\+\_\+\+I\+N\+L\+\_\+\+H\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\v8\+::\+Local$<$ T $>$ \textbf{ New} (v8\+::\+Handle$<$ T $>$ h)
+\item 
+{\footnotesize template$<$typename T $>$ }\\v8\+::\+Local$<$ T $>$ \textbf{ New} (v8\+::\+Persistent$<$ T $>$ const \&p)
+\item 
+{\footnotesize template$<$typename T , typename M $>$ }\\v8\+::\+Local$<$ T $>$ \textbf{ New} (\textbf{ Persistent}$<$ T, M $>$ const \&p)
+\item 
+{\footnotesize template$<$typename T $>$ }\\v8\+::\+Local$<$ T $>$ \textbf{ New} (\textbf{ Global}$<$ T $>$ const \&p)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\label{nan_8h_a2a5a17b6185ac635a47387bea3203d69}} 
+\index{nan\+\_\+implementation\+\_\+pre\+\_\+12\+\_\+inl.\+h@{nan\+\_\+implementation\+\_\+pre\+\_\+12\+\_\+inl.\+h}!N\+A\+N\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+N\+\_\+\+P\+R\+E\+\_\+12\+\_\+\+I\+N\+L\+\_\+\+H\+\_\+@{N\+A\+N\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+N\+\_\+\+P\+R\+E\+\_\+12\+\_\+\+I\+N\+L\+\_\+\+H\+\_\+}}
+\index{N\+A\+N\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+N\+\_\+\+P\+R\+E\+\_\+12\+\_\+\+I\+N\+L\+\_\+\+H\+\_\+@{N\+A\+N\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+N\+\_\+\+P\+R\+E\+\_\+12\+\_\+\+I\+N\+L\+\_\+\+H\+\_\+}!nan\+\_\+implementation\+\_\+pre\+\_\+12\+\_\+inl.\+h@{nan\+\_\+implementation\+\_\+pre\+\_\+12\+\_\+inl.\+h}}
+\subsubsection{N\+A\+N\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+N\+\_\+\+P\+R\+E\+\_\+12\+\_\+\+I\+N\+L\+\_\+\+H\+\_\+}
+{\footnotesize\ttfamily \#define N\+A\+N\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+N\+\_\+\+P\+R\+E\+\_\+12\+\_\+\+I\+N\+L\+\_\+\+H\+\_\+}
+
+
+
+Definition at line 11 of file nan.\+h.
+
+
+
+\subsection{Function Documentation}
+\mbox{\label{nan__implementation__pre__12__inl_8h_a2f87e1e28fad93cb713d76d3cdd15e69}} 
+\index{nan\+\_\+implementation\+\_\+pre\+\_\+12\+\_\+inl.\+h@{nan\+\_\+implementation\+\_\+pre\+\_\+12\+\_\+inl.\+h}!New@{New}}
+\index{New@{New}!nan\+\_\+implementation\+\_\+pre\+\_\+12\+\_\+inl.\+h@{nan\+\_\+implementation\+\_\+pre\+\_\+12\+\_\+inl.\+h}}
+\subsubsection{New()\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+v8\+::\+Local$<$T$>$ New (\begin{DoxyParamCaption}\item[{v8\+::\+Handle$<$ T $>$}]{h }\end{DoxyParamCaption})}
+
+
+
+Definition at line 244 of file nan\+\_\+implementation\+\_\+pre\+\_\+12\+\_\+inl.\+h.
+
+
+
+Referenced by New().
+
+
+\begin{DoxyCode}
+244                                      \{
+245   \textcolor{keywordflow}{return} v8::Local<T>::New(h);
+246 \}
+\end{DoxyCode}
+\mbox{\label{nan__implementation__pre__12__inl_8h_a7b20f161216cdbaecddf9ffe95219686}} 
+\index{nan\+\_\+implementation\+\_\+pre\+\_\+12\+\_\+inl.\+h@{nan\+\_\+implementation\+\_\+pre\+\_\+12\+\_\+inl.\+h}!New@{New}}
+\index{New@{New}!nan\+\_\+implementation\+\_\+pre\+\_\+12\+\_\+inl.\+h@{nan\+\_\+implementation\+\_\+pre\+\_\+12\+\_\+inl.\+h}}
+\subsubsection{New()\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+v8\+::\+Local$<$T$>$ New (\begin{DoxyParamCaption}\item[{v8\+::\+Persistent$<$ T $>$ const \&}]{p }\end{DoxyParamCaption})}
+
+
+
+Definition at line 249 of file nan\+\_\+implementation\+\_\+pre\+\_\+12\+\_\+inl.\+h.
+
+
+
+References New().
+
+
+\begin{DoxyCode}
+249                                                 \{
+250   \textcolor{keywordflow}{return} v8::Local<T>::New(p);
+251 \}
+\end{DoxyCode}
+\mbox{\label{nan__implementation__pre__12__inl_8h_a4c6a402f49f0cb9574fa28e93691c423}} 
+\index{nan\+\_\+implementation\+\_\+pre\+\_\+12\+\_\+inl.\+h@{nan\+\_\+implementation\+\_\+pre\+\_\+12\+\_\+inl.\+h}!New@{New}}
+\index{New@{New}!nan\+\_\+implementation\+\_\+pre\+\_\+12\+\_\+inl.\+h@{nan\+\_\+implementation\+\_\+pre\+\_\+12\+\_\+inl.\+h}}
+\subsubsection{New()\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename T , typename M $>$ \\
+v8\+::\+Local$<$T$>$ New (\begin{DoxyParamCaption}\item[{\textbf{ Persistent}$<$ T, M $>$ const \&}]{p }\end{DoxyParamCaption})}
+
+
+
+Definition at line 254 of file nan\+\_\+implementation\+\_\+pre\+\_\+12\+\_\+inl.\+h.
+
+
+
+References New().
+
+
+\begin{DoxyCode}
+254                                                  \{
+255   \textcolor{keywordflow}{return} v8::Local<T>::New(p.persistent);
+256 \}
+\end{DoxyCode}
+\mbox{\label{nan__implementation__pre__12__inl_8h_a2c93beb386312e1982816de2fede732f}} 
+\index{nan\+\_\+implementation\+\_\+pre\+\_\+12\+\_\+inl.\+h@{nan\+\_\+implementation\+\_\+pre\+\_\+12\+\_\+inl.\+h}!New@{New}}
+\index{New@{New}!nan\+\_\+implementation\+\_\+pre\+\_\+12\+\_\+inl.\+h@{nan\+\_\+implementation\+\_\+pre\+\_\+12\+\_\+inl.\+h}}
+\subsubsection{New()\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+v8\+::\+Local$<$T$>$ New (\begin{DoxyParamCaption}\item[{\textbf{ Global}$<$ T $>$ const \&}]{p }\end{DoxyParamCaption})}
+
+
+
+Definition at line 259 of file nan\+\_\+implementation\+\_\+pre\+\_\+12\+\_\+inl.\+h.
+
+
+
+References New().
+
+
+\begin{DoxyCode}
+259                                           \{
+260   \textcolor{keywordflow}{return} v8::Local<T>::New(p.persistent);
+261 \}
+\end{DoxyCode}

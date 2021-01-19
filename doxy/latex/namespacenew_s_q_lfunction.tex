@@ -1,0 +1,331 @@
+\section{new\+S\+Q\+Lfunction Namespace Reference}
+\label{namespacenew_s_q_lfunction}\index{new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \textbf{ on\+\_\+connect} (\textbf{ client}, userdata, flags, rc)
+\item 
+def \textbf{ on\+\_\+disconnect} (\textbf{ client}, userdata, rc)
+\item 
+def \textbf{ Send\+User\+\_\+callback} (\textbf{ client}, userdata, message)
+\item 
+def \textbf{ Update\+\_\+callback} (\textbf{ client}, userdata, message)
+\item 
+def \textbf{ photon\+Measure\+\_\+callback} (\textbf{ client}, userdata, message)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ con} = None
+\item 
+string \textbf{ broker} = \char`\"{}broker.\+hivemq.\+com\char`\"{}
+\item 
+string \textbf{ path} = \char`\"{}/media/usb/user\+List\char`\"{}
+\item 
+int \textbf{ err\+\_\+cnt} = 0
+\item 
+\textbf{ client} = mqtt.\+Client()
+\item 
+\textbf{ connected\+\_\+flag}
+\item 
+\textbf{ bad\+\_\+connection\+\_\+flag}
+\item 
+\textbf{ on\+\_\+connect}
+\item 
+\textbf{ on\+\_\+disconnect}
+\item 
+\textbf{ current\+\_\+time} = time.\+ctime(time.\+time())
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\label{namespacenew_s_q_lfunction_aaded697e62b5f212c4a23aa73861e93d}} 
+\index{new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}!on\+\_\+connect@{on\+\_\+connect}}
+\index{on\+\_\+connect@{on\+\_\+connect}!new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}}
+\subsubsection{on\+\_\+connect()}
+{\footnotesize\ttfamily def new\+S\+Q\+Lfunction.\+on\+\_\+connect (\begin{DoxyParamCaption}\item[{}]{client,  }\item[{}]{userdata,  }\item[{}]{flags,  }\item[{}]{rc }\end{DoxyParamCaption})}
+
+
+
+Definition at line 18 of file new\+S\+Q\+Lfunction.\+py.
+
+
+
+References on\+\_\+connect.
+
+
+\begin{DoxyCode}
+18 \textcolor{keyword}{def }on_connect(client, userdata, flags, rc):
+19     \textcolor{keywordflow}{if} rc == 0:
+20         \textcolor{comment}{#print("Connection start")}
+21         client.bad\_connection\_flag = \textcolor{keyword}{False}
+22         client.connected\_flag = \textcolor{keyword}{True}
+23         err\_cnt = 0
+24 
+25 
+26         client.subscribe([(\textcolor{stringliteral}{"HANevse/getUsers"}, 2), (\textcolor{stringliteral}{"HANevse/UpdateUser"}, 2), (\textcolor{stringliteral}{"HANevse/photonMeasure"}, 2)]
+      )
+27         print(\textcolor{stringliteral}{"Connected OK"})
+28     \textcolor{keywordflow}{else}:
+29         print(\textcolor{stringliteral}{"Bad connection, RC = "}, rc)
+30         client.bad\_connection\_flag = \textcolor{keyword}{True}
+31         
+\end{DoxyCode}
+\mbox{\label{namespacenew_s_q_lfunction_ad73cc775d0991d270d805d09414bd2f0}} 
+\index{new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}!on\+\_\+disconnect@{on\+\_\+disconnect}}
+\index{on\+\_\+disconnect@{on\+\_\+disconnect}!new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}}
+\subsubsection{on\+\_\+disconnect()}
+{\footnotesize\ttfamily def new\+S\+Q\+Lfunction.\+on\+\_\+disconnect (\begin{DoxyParamCaption}\item[{}]{client,  }\item[{}]{userdata,  }\item[{}]{rc }\end{DoxyParamCaption})}
+
+
+
+Definition at line 32 of file new\+S\+Q\+Lfunction.\+py.
+
+
+
+References on\+\_\+disconnect.
+
+
+\begin{DoxyCode}
+32 \textcolor{keyword}{def }on_disconnect(client, userdata, rc):
+33     client.connected\_flag = \textcolor{keyword}{False}
+34     \textcolor{keywordflow}{if} rc != 0:
+35         print(\textcolor{stringliteral}{"Unexpected disconnection."})
+36         client.bad\_connection\_flag = \textcolor{keyword}{True}
+37     \textcolor{keywordflow}{else}:
+38         print(\textcolor{stringliteral}{"Normal disconnection."})
+39 
+\end{DoxyCode}
+\mbox{\label{namespacenew_s_q_lfunction_afe7ab223f1c9a368d97f6fe0a6565c92}} 
+\index{new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}!photon\+Measure\+\_\+callback@{photon\+Measure\+\_\+callback}}
+\index{photon\+Measure\+\_\+callback@{photon\+Measure\+\_\+callback}!new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}}
+\subsubsection{photon\+Measure\+\_\+callback()}
+{\footnotesize\ttfamily def new\+S\+Q\+Lfunction.\+photon\+Measure\+\_\+callback (\begin{DoxyParamCaption}\item[{}]{client,  }\item[{}]{userdata,  }\item[{}]{message }\end{DoxyParamCaption})}
+
+
+
+Definition at line 77 of file new\+S\+Q\+Lfunction.\+py.
+
+
+\begin{DoxyCode}
+77 \textcolor{keyword}{def }photonMeasure_callback(client, userdata, message):
+78     con = lite.connect(path)
+79     cur = con.cursor()
+80     data = json.loads(message.payload) 
+81     \textcolor{comment}{#data = data.decode('UTF-8')}
+82     \textcolor{comment}{#print(data)}
+83     \textcolor{comment}{#index = []}
+84     \textcolor{comment}{#for i in range(len(data)):}
+85     \textcolor{comment}{#    if (data[i] == '%'):}
+86     \textcolor{comment}{#        index.append(i)}
+87     \textcolor{comment}{#V1 = float(data[:index[0]])}
+88     \textcolor{comment}{#V2 = float(data[index[0]+1:index[1]])}
+89     \textcolor{comment}{#V3 = float(data[index[1]+1:index[2]])}
+90     \textcolor{comment}{#I1 = float(data[index[2]+1:index[3]])}
+91     \textcolor{comment}{#I2 = float(data[index[3]+1:index[4]])}
+92     \textcolor{comment}{#I3 = float(data[index[4]+1:index[5]])}
+93     \textcolor{comment}{#P = float(data[index[5]+1:index[6]])}
+94     \textcolor{comment}{#E = float(data[index[6]+1:index[7]])}
+95     \textcolor{comment}{#F = float(data[index[7]+1:index[8]])}
+96     \textcolor{comment}{#Time = int(data[index[8]+1:index[9]])}
+97     \textcolor{comment}{#SocketID = int(data[index[9]+1:index[10]])}
+98     \textcolor{comment}{# UserID = data[index[10]+1:index[11]]}
+99     V1 = float(data[0])
+100     V2 = float(data[1])
+101     V3 = float(data[2])
+102     I1 = float(data[3])
+103     I2 = float(data[4])
+104     I3 = float(data[5])
+105     P = float(data[6])
+106     E = float(data[7])
+107     F = float(data[8])
+108     Time = int(data[9])
+109     SocketID = int(data[10])
+110     UserID = data[11]
+111     cur.execute(\textcolor{stringliteral}{"INSERT INTO measurements(userID, socketId, phase\_voltage\_L1, phase\_voltage\_L2,
+       phase\_voltage\_L3, current\_L1, current\_L2, current\_L3, active\_power, energy, frequency, createdAt)
+       VALUES(?,?,?,?,?,?,?,?,?,?,?,?)"},
+112                 (UserID, SocketID, V1, V2, V3, I1, I2, I3, P, E, F, Time))
+113     con.commit()
+114     
+115 
+116 \textcolor{comment}{#setup mqtt}
+\end{DoxyCode}
+\mbox{\label{namespacenew_s_q_lfunction_a5b54ae39d8acb0f95bc88737494fcab3}} 
+\index{new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}!Send\+User\+\_\+callback@{Send\+User\+\_\+callback}}
+\index{Send\+User\+\_\+callback@{Send\+User\+\_\+callback}!new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}}
+\subsubsection{Send\+User\+\_\+callback()}
+{\footnotesize\ttfamily def new\+S\+Q\+Lfunction.\+Send\+User\+\_\+callback (\begin{DoxyParamCaption}\item[{}]{client,  }\item[{}]{userdata,  }\item[{}]{message }\end{DoxyParamCaption})}
+
+
+
+Definition at line 40 of file new\+S\+Q\+Lfunction.\+py.
+
+
+\begin{DoxyCode}
+40 \textcolor{keyword}{def }SendUser_callback(client, userdata, message):
+41     \textcolor{comment}{#print(message.payload)}
+42     con = lite.connect(path)
+43     cur = con.cursor()
+44   111!!!  cur.execute(\textcolor{stringliteral}{'SELECT * FROM list'})   What table should it send?  -Answer = none, this will be 
+      removed
+45   \textcolor{comment}{#probably "SELECT * from car\_of\_user"}
+46     dataSend = json.dumps( cur.fetchall() )
+47     \textcolor{comment}{#print(dataSend)}
+48     \textcolor{comment}{#dataSend = ""}
+49 
+50     \textcolor{comment}{#for element in data:}
+51      \textcolor{comment}{#   print(element)}
+52      \textcolor{comment}{#   dataSend +=
+       (str(element[0])+'%'+element[1]+'%'+element[2]+'%'+str(element[3])+'%'+element[4]+'%'+str(element[5])+'%'+element[6]+'%'+str(element[7])+'%'+str(element[8])+'%')}
+53     
+54     client.publish(\textcolor{stringliteral}{"HANevse/UserList2"}, dataSend, 2, \textcolor{keyword}{True})
+55     \textcolor{comment}{#publish.single("HANevse/UserList", dataSend, hostname=broker)}
+56     print(dataSend)
+57 
+\end{DoxyCode}
+\mbox{\label{namespacenew_s_q_lfunction_ad4184b18b1191045866f65d2890bfd4f}} 
+\index{new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}!Update\+\_\+callback@{Update\+\_\+callback}}
+\index{Update\+\_\+callback@{Update\+\_\+callback}!new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}}
+\subsubsection{Update\+\_\+callback()}
+{\footnotesize\ttfamily def new\+S\+Q\+Lfunction.\+Update\+\_\+callback (\begin{DoxyParamCaption}\item[{}]{client,  }\item[{}]{userdata,  }\item[{}]{message }\end{DoxyParamCaption})}
+
+
+
+Definition at line 58 of file new\+S\+Q\+Lfunction.\+py.
+
+
+\begin{DoxyCode}
+58 \textcolor{keyword}{def }Update_callback(client, userdata, message):
+59     con = lite.connect(path)
+60     cur = con.cursor()
+61     data = json.loads(message.payload)
+62     
+63     \textcolor{comment}{#for i in range(len(data)):}
+64      \textcolor{comment}{#   if (data[i] == '%'):}
+65      \textcolor{comment}{#       index.append(i)}
+66     \textcolor{comment}{#UserId = int(data[:index[0]])}
+67     \textcolor{comment}{#PendingCharger = int(data[index[0]+1:index[1]])}
+68     \textcolor{comment}{#StartTime = int(data[index[1]+1:index[2]])}
+69     UserId = int(data[0])
+70     PendingCharger = int(data[1])
+71     StartTime = int(data[2])       !!! What \textcolor{keywordflow}{is} the equivalent of PendingCharger \textcolor{keywordflow}{in} new table? \textcolor{comment}{#mailed = if
+       the owner used charger for over 4 hours he gets message}
+72  111!!!   cur.execute(\textcolor{stringliteral}{"""UPDATE list SET PendingCharger=?, StartTime=? WHERE Id=?"""}, (PendingCharger, 
+      StartTime, UserId))
+73     \textcolor{comment}{#cur.execute("UPDATE list SET PendingCharger=? WHERE Id=?", (PendingCharger, UserId))}
+74     \textcolor{comment}{#cur.execute("UPDATE list SET StartTime=? WHERE Id=?", (StartTime, UserId))}
+75     con.commmit()
+76 
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\mbox{\label{namespacenew_s_q_lfunction_ac4efbd3ef10ee435d5c6b5d47db6892c}} 
+\index{new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}!bad\+\_\+connection\+\_\+flag@{bad\+\_\+connection\+\_\+flag}}
+\index{bad\+\_\+connection\+\_\+flag@{bad\+\_\+connection\+\_\+flag}!new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}}
+\subsubsection{bad\+\_\+connection\+\_\+flag}
+{\footnotesize\ttfamily new\+S\+Q\+Lfunction.\+bad\+\_\+connection\+\_\+flag}
+
+
+
+Definition at line 120 of file new\+S\+Q\+Lfunction.\+py.
+
+\mbox{\label{namespacenew_s_q_lfunction_ac0da2be5da44e94020517f488c9cc63b}} 
+\index{new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}!broker@{broker}}
+\index{broker@{broker}!new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}}
+\subsubsection{broker}
+{\footnotesize\ttfamily string new\+S\+Q\+Lfunction.\+broker = \char`\"{}broker.\+hivemq.\+com\char`\"{}}
+
+
+
+Definition at line 9 of file new\+S\+Q\+Lfunction.\+py.
+
+\mbox{\label{namespacenew_s_q_lfunction_a72483d3a9c8f0f84183ad8f1ff6179ba}} 
+\index{new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}!client@{client}}
+\index{client@{client}!new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}}
+\subsubsection{client}
+{\footnotesize\ttfamily new\+S\+Q\+Lfunction.\+client = mqtt.\+Client()}
+
+
+
+Definition at line 117 of file new\+S\+Q\+Lfunction.\+py.
+
+\mbox{\label{namespacenew_s_q_lfunction_aff12de9d9c9f4f2a1e7b0c25802f2b4e}} 
+\index{new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}!con@{con}}
+\index{con@{con}!new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}}
+\subsubsection{con}
+{\footnotesize\ttfamily new\+S\+Q\+Lfunction.\+con = None}
+
+
+
+Definition at line 8 of file new\+S\+Q\+Lfunction.\+py.
+
+\mbox{\label{namespacenew_s_q_lfunction_aa4a81804ce71009e658e235be88585b6}} 
+\index{new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}!connected\+\_\+flag@{connected\+\_\+flag}}
+\index{connected\+\_\+flag@{connected\+\_\+flag}!new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}}
+\subsubsection{connected\+\_\+flag}
+{\footnotesize\ttfamily new\+S\+Q\+Lfunction.\+connected\+\_\+flag}
+
+
+
+Definition at line 119 of file new\+S\+Q\+Lfunction.\+py.
+
+\mbox{\label{namespacenew_s_q_lfunction_adfa9bcad6f16b7e387b309e5474b4339}} 
+\index{new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}!current\+\_\+time@{current\+\_\+time}}
+\index{current\+\_\+time@{current\+\_\+time}!new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}}
+\subsubsection{current\+\_\+time}
+{\footnotesize\ttfamily new\+S\+Q\+Lfunction.\+current\+\_\+time = time.\+ctime(time.\+time())}
+
+
+
+Definition at line 140 of file new\+S\+Q\+Lfunction.\+py.
+
+\mbox{\label{namespacenew_s_q_lfunction_a5646bbcdcb8af7f59ef07e67be4b5123}} 
+\index{new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}!err\+\_\+cnt@{err\+\_\+cnt}}
+\index{err\+\_\+cnt@{err\+\_\+cnt}!new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}}
+\subsubsection{err\+\_\+cnt}
+{\footnotesize\ttfamily int new\+S\+Q\+Lfunction.\+err\+\_\+cnt = 0}
+
+
+
+Definition at line 16 of file new\+S\+Q\+Lfunction.\+py.
+
+\mbox{\label{namespacenew_s_q_lfunction_a60173f053fd09edda1002eda3129ec1d}} 
+\index{new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}!on\+\_\+connect@{on\+\_\+connect}}
+\index{on\+\_\+connect@{on\+\_\+connect}!new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}}
+\subsubsection{on\+\_\+connect}
+{\footnotesize\ttfamily new\+S\+Q\+Lfunction.\+on\+\_\+connect}
+
+
+
+Definition at line 121 of file new\+S\+Q\+Lfunction.\+py.
+
+
+
+Referenced by on\+\_\+connect().
+
+\mbox{\label{namespacenew_s_q_lfunction_a6348dc01dd526416fe62109dce7a5150}} 
+\index{new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}!on\+\_\+disconnect@{on\+\_\+disconnect}}
+\index{on\+\_\+disconnect@{on\+\_\+disconnect}!new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}}
+\subsubsection{on\+\_\+disconnect}
+{\footnotesize\ttfamily new\+S\+Q\+Lfunction.\+on\+\_\+disconnect}
+
+
+
+Definition at line 122 of file new\+S\+Q\+Lfunction.\+py.
+
+
+
+Referenced by on\+\_\+disconnect().
+
+\mbox{\label{namespacenew_s_q_lfunction_a4bfb90e062abf64339ef98dfde3658e7}} 
+\index{new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}!path@{path}}
+\index{path@{path}!new\+S\+Q\+Lfunction@{new\+S\+Q\+Lfunction}}
+\subsubsection{path}
+{\footnotesize\ttfamily string new\+S\+Q\+Lfunction.\+path = \char`\"{}/media/usb/user\+List\char`\"{}}
+
+
+
+Definition at line 14 of file new\+S\+Q\+Lfunction.\+py.
+

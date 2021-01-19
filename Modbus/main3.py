@@ -1,3 +1,6 @@
+## Program that manages the Modbus network on the Pi side
+
+
 import RPi.GPIO as GPIO
 import serial
 import MIC3 as MIC
@@ -10,19 +13,26 @@ import sys
 import os
 import json
 
+## MQTT broker
+
 #broker = "localhost"
 #broker = "tcp://127.0.0.1"
 broker = "broker.hivemq.com"
+
+##Path for modbus database
+
 #path = "./modbusData.db" #Use internal memory
 path_local = "/media/DATABASE/modbusData.db" #Use external memory
 path = "/mnt/dav/Data/modbusData.db" #Use cloud storage
 
+##Path for users database
 path_local_user = "/media/DATABASE/usertable.sqlite3" #Use external memory
 path_user = "/mnt/dav/Data/usertable.sqlite3" #Use cloud storage
 
 con_user_local = lite.connect(path_local_user)
 cur_user_local = con_user_local.cursor()
 
+## Initial DB connection check
 try:
     con_user = lite.connect(path_user)
     cur_user = con_user.cursor()
@@ -44,6 +54,7 @@ except Exception as e:
 
 err_cnt = 0
 
+## Executes on MQTT client connect to broker and sets flags
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
         #print("Connection start")
@@ -57,7 +68,8 @@ def on_connect(client, userdata, flags, rc):
     else:
         print("Bad connection, RC = ", rc)
         client.bad_connection_flag = True
-        
+
+## Executes on MQTT client disconnect and sets flags
 def on_disconnect(client, userdata, rc):
     client.connected_flag = False
     if rc != 0:
@@ -99,7 +111,7 @@ print("MODBUS slave: MIC1")
 
 #Declare slave(s)
 #meter1 = MIC.MIC2(0x01, control_pin)
-
+## Initializes meter
 meter1 = MIC.MIC1(0x01, control_pin)
 meter2 = MIC.MIC1(0x02, control_pin)
 meter3 = MIC.MIC1(0x03, control_pin)
@@ -109,6 +121,7 @@ meter5 = MIC.MIC1(0x05, control_pin)
 #count to send new data after 1 min
 time_send = 1
 
+#-# Main loop to check if MQTT client is connected, then take and log measurements from each meter, then send Current sepoint for Photons
 while True:
     if (client.bad_connection_flag == True):
         err_cnt += 1
@@ -659,7 +672,7 @@ while True:
 #         data = cur.fetchone()
 #         dataSend += (str(data[2])+'%'+str(data[3])+'%'+str(data[4])+'%'+str(data[5])+'%'+str(data[6])+'%'+str(data[7])+'%'+str(data[8])+'%'+str(data[9])+'%'+str(data[10])+'%'+str(data[20])+'%'+str(data[1])+'%')
 
-        ###This is the new message generator for I and number of used sockets only:
+        #-#New setpoint message generator for Current and number of used sockets only:
         try:
             cur.execute("SELECT I1, I2, I3 FROM PV ORDER BY No DESC LIMIT 1")
             data = cur.fetchone()
@@ -693,15 +706,15 @@ while True:
         
         
         
-        ##Sending all meter data works perfectly with json instead of '%'
-        ##first
+        #-#Sending all meter data works perfectly with json instead of '%'
+        #-#first
         #dataSend = [[data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[20], data[1]]]
-        ##all next appends '+='
+        #-#all next appends '+='
         #dataSend.append([data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[20], data[1]])
-        ##lastly
+        #-#lastly
         #dataSend = json.dumps(dataSend)
         
-    #Example of sent message
+    #Example of old sent message
     #0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%1602066287%
     #0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0.0%0%   #Meter2 always shows time=0 because it isnt connected
     #229.6%228.9%229.6%5.97%6.03%6.0%1350.0%1350.0%1350.0%50.0%1602066318%
