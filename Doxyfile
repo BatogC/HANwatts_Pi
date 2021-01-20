@@ -875,7 +875,38 @@ RECURSIVE              = YES
 # Note that relative paths are relative to the directory from which doxygen is
 # run.
 
-EXCLUDE                = 
+EXCLUDE                = db_cleanup_test.py \
+                         db_server_test.py \
+                         email_test.py \
+                         mosquitto.conf \
+                         new_modbusData.db \
+                         NodeRED_GUI.json \
+                         passwords \
+                         rc.local \
+                         root_crontab \
+                         runDBreset.sh \
+                         runmosquitto.sh \
+                         runNodeRed.sh \
+                         webdav_test.py \
+                         IoTHub \
+                         node-red-1881 \
+                         rpi_clone \
+                         RS458_UART \
+                         sql_databases \
+                         TestMQTT \
+                         Modbus/crc_test.py \
+                         Modbus/main.py \
+                         Modbus/main3_0.py \
+                         Modbus/MIC.py \
+                         Modbus/MIC.pyc \
+                         Modbus/old_main.py \
+                         userID/aSQLfunction.py \
+                         userID/list_test.py \
+                         userID/newSQLfunction.py \
+                         userID/SQLfunction0.py \
+                         userID/SQLfunction_old.py \
+                         userID/time_test.py \
+                         userID/userList
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
 # directories that are symbolic links (a Unix file system feature) are excluded
