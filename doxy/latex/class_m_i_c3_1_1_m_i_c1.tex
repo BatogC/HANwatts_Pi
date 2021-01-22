@@ -1,100 +1,100 @@
-\section{M\+I\+C3.\+M\+I\+C1 Class Reference}
+\hypertarget{class_m_i_c3_1_1_m_i_c1}{}\section{M\+I\+C3.\+M\+I\+C1 Class Reference}
 \label{class_m_i_c3_1_1_m_i_c1}\index{M\+I\+C3.\+M\+I\+C1@{M\+I\+C3.\+M\+I\+C1}}
 
 
-Class for reading Modbus data from \doxyref{M\+I\+C1}{p.}{class_m_i_c3_1_1_m_i_c1} energy meter.  
+Class for reading Modbus data from \hyperlink{class_m_i_c3_1_1_m_i_c1}{M\+I\+C1} energy meter.  
 
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \textbf{ \+\_\+\+\_\+init\+\_\+\+\_\+} (self, Id, Control)
+def \hyperlink{class_m_i_c3_1_1_m_i_c1_a4da84973f93568b4d4434906a2290d39}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, Id, Control)
 \item 
-def \textbf{ read\+P\+T1} (self)
+def \hyperlink{class_m_i_c3_1_1_m_i_c1_a452c39aafd6a6091eb4a6d1f96cfc159}{read\+P\+T1} (self)
 \begin{DoxyCompactList}\small\item\em Reads P\+T1 variable needed for all other calculations. \end{DoxyCompactList}\item 
-def \textbf{ read\+P\+T2} (self)
+def \hyperlink{class_m_i_c3_1_1_m_i_c1_a965d6b2d1f557741c6361814f7b7be3f}{read\+P\+T2} (self)
 \begin{DoxyCompactList}\small\item\em Reads P\+T2 variable needed for all other calculations. \end{DoxyCompactList}\item 
-def \textbf{ read\+C\+T1} (self)
+def \hyperlink{class_m_i_c3_1_1_m_i_c1_a09827187550f80e18fae9d5684925dae}{read\+C\+T1} (self)
 \begin{DoxyCompactList}\small\item\em Reads C\+T1 variable needed for all other calculations. \end{DoxyCompactList}\item 
-def \textbf{ read\+Phase\+Voltage} (self)
+def \hyperlink{class_m_i_c3_1_1_m_i_c1_a8a192d8b14144c07ce83081d88541432}{read\+Phase\+Voltage} (self)
 \begin{DoxyCompactList}\small\item\em Reads and calculates phase Voltages with the help of P\+T1 and P\+T2. \end{DoxyCompactList}\item 
-def \textbf{ read\+Phase\+Current} (self)
+def \hyperlink{class_m_i_c3_1_1_m_i_c1_a0972a5f5492a0c9845d28063214a1882}{read\+Phase\+Current} (self)
 \begin{DoxyCompactList}\small\item\em Reads and calculates phase Currents with the help of C\+T1. \end{DoxyCompactList}\item 
-def \textbf{ read\+Phase\+Power} (self)
+def \hyperlink{class_m_i_c3_1_1_m_i_c1_a2cb7738a71fa4b3782ad6df585ed288a}{read\+Phase\+Power} (self)
 \begin{DoxyCompactList}\small\item\em Reads and calculates phase Power values with the help of P\+T1, P\+T2, C\+T1. \end{DoxyCompactList}\item 
-def \textbf{ read\+Reactive\+Power} (self)
+def \hyperlink{class_m_i_c3_1_1_m_i_c1_a8d7c0913d3999f6f7737d6ffc56383a3}{read\+Reactive\+Power} (self)
 \begin{DoxyCompactList}\small\item\em Reads and calculates Reactive Power (Q) values with the help of P\+T1, P\+T2, C\+T1. \end{DoxyCompactList}\item 
-def \textbf{ read\+Apparent\+Power} (self)
+def \hyperlink{class_m_i_c3_1_1_m_i_c1_a1dfae003c1d98bdda449416f6108926e}{read\+Apparent\+Power} (self)
 \begin{DoxyCompactList}\small\item\em Reads and calculates Apparent Power (S) values with the help of P\+T1, P\+T2, C\+T1 This function is diferent because the C\+RC value overflows and is to be edited to not error. \end{DoxyCompactList}\item 
-def \textbf{ read\+Power\+Factor} (self)
+def \hyperlink{class_m_i_c3_1_1_m_i_c1_afd04a6d0187293021a5f4f7d853ea447}{read\+Power\+Factor} (self)
 \begin{DoxyCompactList}\small\item\em Reads and calculates Power Factors (PF) \end{DoxyCompactList}\item 
-def \textbf{ read\+Frequency} (self)
+def \hyperlink{class_m_i_c3_1_1_m_i_c1_a4a72cfbf9d28d2810fd45c5ea3158f5d}{read\+Frequency} (self)
 \begin{DoxyCompactList}\small\item\em Reads and calculates Frequency (F) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\textbf{ \+\_\+\+\_\+\+Control}
+\hyperlink{class_m_i_c3_1_1_m_i_c1_a925ca2e301860fe9aa378350534b161f}{\+\_\+\+\_\+\+Control}
 \item 
-\textbf{ \+\_\+\+\_\+\+Address}
+\hyperlink{class_m_i_c3_1_1_m_i_c1_a41c7912044a1237fba1a97e5c3ce7af1}{\+\_\+\+\_\+\+Address}
 \item 
-\textbf{ \+\_\+\+\_\+\+P\+T1}
+\hyperlink{class_m_i_c3_1_1_m_i_c1_a0202879a9a20c6db9fab96bf2bc2665a}{\+\_\+\+\_\+\+P\+T1}
 \item 
-\textbf{ \+\_\+\+\_\+\+P\+T2}
+\hyperlink{class_m_i_c3_1_1_m_i_c1_a27404fde06ca91ba97fed1afe1305a4c}{\+\_\+\+\_\+\+P\+T2}
 \item 
-\textbf{ \+\_\+\+\_\+\+C\+T1}
+\hyperlink{class_m_i_c3_1_1_m_i_c1_aaa1e6791e5fb9881e4c0bb7fdba94a1f}{\+\_\+\+\_\+\+C\+T1}
 \item 
-\textbf{ \+\_\+\+\_\+\+V1}
+\hyperlink{class_m_i_c3_1_1_m_i_c1_a808ae0455f68a6e35d5cf646f2ed5bed}{\+\_\+\+\_\+\+V1}
 \item 
-\textbf{ \+\_\+\+\_\+\+V2}
+\hyperlink{class_m_i_c3_1_1_m_i_c1_aa931212b1077630e0d00a7521b9ba7ef}{\+\_\+\+\_\+\+V2}
 \item 
-\textbf{ \+\_\+\+\_\+\+V3}
+\hyperlink{class_m_i_c3_1_1_m_i_c1_ac14c988b04364214b6846226e31d7416}{\+\_\+\+\_\+\+V3}
 \item 
-\textbf{ \+\_\+\+\_\+\+I1}
+\hyperlink{class_m_i_c3_1_1_m_i_c1_aa9c7409f828f138464d9a3993b5f963e}{\+\_\+\+\_\+\+I1}
 \item 
-\textbf{ \+\_\+\+\_\+\+I2}
+\hyperlink{class_m_i_c3_1_1_m_i_c1_a17b42cbaf99e99320ef96d929239cf44}{\+\_\+\+\_\+\+I2}
 \item 
-\textbf{ \+\_\+\+\_\+\+I3}
+\hyperlink{class_m_i_c3_1_1_m_i_c1_ada54499b12ef8714e2e359d69a5a9a37}{\+\_\+\+\_\+\+I3}
 \item 
-\textbf{ \+\_\+\+\_\+\+P1}
+\hyperlink{class_m_i_c3_1_1_m_i_c1_ad9d7c288a2f535a91f01fdb7f688f9cc}{\+\_\+\+\_\+\+P1}
 \item 
-\textbf{ \+\_\+\+\_\+\+P2}
+\hyperlink{class_m_i_c3_1_1_m_i_c1_ac4bbfbf696790ea59be3e8153089107e}{\+\_\+\+\_\+\+P2}
 \item 
-\textbf{ \+\_\+\+\_\+\+P3}
+\hyperlink{class_m_i_c3_1_1_m_i_c1_a584aaa23ae37f473e718ac005c95be6e}{\+\_\+\+\_\+\+P3}
 \item 
-\textbf{ \+\_\+\+\_\+\+Q1}
+\hyperlink{class_m_i_c3_1_1_m_i_c1_accfdf53475991f816e00e89be6011df5}{\+\_\+\+\_\+\+Q1}
 \item 
-\textbf{ \+\_\+\+\_\+\+Q2}
+\hyperlink{class_m_i_c3_1_1_m_i_c1_aa52fd24601379190142365d2e94ed3bc}{\+\_\+\+\_\+\+Q2}
 \item 
-\textbf{ \+\_\+\+\_\+\+Q3}
+\hyperlink{class_m_i_c3_1_1_m_i_c1_afcffecd5fd8a2b410326e3d5ba79c78e}{\+\_\+\+\_\+\+Q3}
 \item 
-\textbf{ \+\_\+\+\_\+\+S1}
+\hyperlink{class_m_i_c3_1_1_m_i_c1_a6bcbbf706089333c946aa4965af8e656}{\+\_\+\+\_\+\+S1}
 \item 
-\textbf{ \+\_\+\+\_\+\+S2}
+\hyperlink{class_m_i_c3_1_1_m_i_c1_ab89d273cd8a7d1f0fe67a701e9e54f82}{\+\_\+\+\_\+\+S2}
 \item 
-\textbf{ \+\_\+\+\_\+\+S3}
+\hyperlink{class_m_i_c3_1_1_m_i_c1_af5f14575962daa8e627bc9fdf673b253}{\+\_\+\+\_\+\+S3}
 \item 
-\textbf{ \+\_\+\+\_\+\+P\+F1}
+\hyperlink{class_m_i_c3_1_1_m_i_c1_a2eb1458e0c349707753186002063859b}{\+\_\+\+\_\+\+P\+F1}
 \item 
-\textbf{ \+\_\+\+\_\+\+P\+F2}
+\hyperlink{class_m_i_c3_1_1_m_i_c1_a6bd93a47ffd2e1440f00ea82e1b26f65}{\+\_\+\+\_\+\+P\+F2}
 \item 
-\textbf{ \+\_\+\+\_\+\+P\+F3}
+\hyperlink{class_m_i_c3_1_1_m_i_c1_a0cedb48c21b85171b2f8f316afa59a85}{\+\_\+\+\_\+\+P\+F3}
 \item 
-\textbf{ \+\_\+\+\_\+F}
+\hyperlink{class_m_i_c3_1_1_m_i_c1_ac24e1bb43a234d3545bd9dea897ee7f8}{\+\_\+\+\_\+F}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Class for reading Modbus data from \doxyref{M\+I\+C1}{p.}{class_m_i_c3_1_1_m_i_c1} energy meter. 
+Class for reading Modbus data from \hyperlink{class_m_i_c3_1_1_m_i_c1}{M\+I\+C1} energy meter. 
 
 Definition at line 248 of file M\+I\+C3.\+py.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_a4da84973f93568b4d4434906a2290d39}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_a4da84973f93568b4d4434906a2290d39}\label{class_m_i_c3_1_1_m_i_c1_a4da84973f93568b4d4434906a2290d39}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
 \index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{\+\_\+\+\_\+init\+\_\+\+\_\+()}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
 {\footnotesize\ttfamily def M\+I\+C3.\+M\+I\+C1.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{Id,  }\item[{}]{Control }\end{DoxyParamCaption})}
 
 
@@ -133,10 +133,10 @@ Definition at line 249 of file M\+I\+C3.\+py.
 
 
 \subsection{Member Function Documentation}
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_a1dfae003c1d98bdda449416f6108926e}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_a1dfae003c1d98bdda449416f6108926e}\label{class_m_i_c3_1_1_m_i_c1_a1dfae003c1d98bdda449416f6108926e}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!read\+Apparent\+Power@{read\+Apparent\+Power}}
 \index{read\+Apparent\+Power@{read\+Apparent\+Power}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{read\+Apparent\+Power()}
+\subsubsection{\texorpdfstring{read\+Apparent\+Power()}{readApparentPower()}}
 {\footnotesize\ttfamily def M\+I\+C3.\+M\+I\+C1.\+read\+Apparent\+Power (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
 
@@ -212,10 +212,10 @@ References M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+Address, M\+I\+C3.\+M\+I\+C1.\+\_\+
 761             \textcolor{keywordflow}{return} CRC\_error
 762     
 \end{DoxyCode}
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_a09827187550f80e18fae9d5684925dae}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_a09827187550f80e18fae9d5684925dae}\label{class_m_i_c3_1_1_m_i_c1_a09827187550f80e18fae9d5684925dae}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!read\+C\+T1@{read\+C\+T1}}
 \index{read\+C\+T1@{read\+C\+T1}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{read\+C\+T1()}
+\subsubsection{\texorpdfstring{read\+C\+T1()}{readCT1()}}
 {\footnotesize\ttfamily def M\+I\+C3.\+M\+I\+C1.\+read\+C\+T1 (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
 
@@ -300,10 +300,10 @@ References M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+Address, M\+I\+C3.\+M\+I\+C1.\+\_\+
 474             \textcolor{keywordflow}{return} CRC\_error
 475     
 \end{DoxyCode}
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_a4a72cfbf9d28d2810fd45c5ea3158f5d}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_a4a72cfbf9d28d2810fd45c5ea3158f5d}\label{class_m_i_c3_1_1_m_i_c1_a4a72cfbf9d28d2810fd45c5ea3158f5d}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!read\+Frequency@{read\+Frequency}}
 \index{read\+Frequency@{read\+Frequency}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{read\+Frequency()}
+\subsubsection{\texorpdfstring{read\+Frequency()}{readFrequency()}}
 {\footnotesize\ttfamily def M\+I\+C3.\+M\+I\+C1.\+read\+Frequency (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
 
@@ -384,10 +384,10 @@ References M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+Address, M\+I\+C3.\+M\+I\+C1.\+\_\+
 878 \textcolor{comment}{#---------------------------------END OF MIC1------------------------------------}
 879 \textcolor{comment}{#--------------------------------------------------------------------------------}
 880 \end{DoxyCode}
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_a0972a5f5492a0c9845d28063214a1882}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_a0972a5f5492a0c9845d28063214a1882}\label{class_m_i_c3_1_1_m_i_c1_a0972a5f5492a0c9845d28063214a1882}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!read\+Phase\+Current@{read\+Phase\+Current}}
 \index{read\+Phase\+Current@{read\+Phase\+Current}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{read\+Phase\+Current()}
+\subsubsection{\texorpdfstring{read\+Phase\+Current()}{readPhaseCurrent()}}
 {\footnotesize\ttfamily def M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Current (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
 
@@ -459,10 +459,10 @@ References M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+Address, M\+I\+C3.\+M\+I\+C1.\+\_\+
 597             \textcolor{keywordflow}{return} CRC\_error
 598             
 \end{DoxyCode}
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_a2cb7738a71fa4b3782ad6df585ed288a}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_a2cb7738a71fa4b3782ad6df585ed288a}\label{class_m_i_c3_1_1_m_i_c1_a2cb7738a71fa4b3782ad6df585ed288a}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!read\+Phase\+Power@{read\+Phase\+Power}}
 \index{read\+Phase\+Power@{read\+Phase\+Power}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{read\+Phase\+Power()}
+\subsubsection{\texorpdfstring{read\+Phase\+Power()}{readPhasePower()}}
 {\footnotesize\ttfamily def M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Power (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
 
@@ -537,10 +537,10 @@ References M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+Address, M\+I\+C3.\+M\+I\+C1.\+\_\+
 651             \textcolor{keywordflow}{return} CRC\_error
 652 
 \end{DoxyCode}
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_a8a192d8b14144c07ce83081d88541432}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_a8a192d8b14144c07ce83081d88541432}\label{class_m_i_c3_1_1_m_i_c1_a8a192d8b14144c07ce83081d88541432}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!read\+Phase\+Voltage@{read\+Phase\+Voltage}}
 \index{read\+Phase\+Voltage@{read\+Phase\+Voltage}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{read\+Phase\+Voltage()}
+\subsubsection{\texorpdfstring{read\+Phase\+Voltage()}{readPhaseVoltage()}}
 {\footnotesize\ttfamily def M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Voltage (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
 
@@ -627,10 +627,10 @@ References M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+Address, M\+I\+C3.\+M\+I\+C1.\+\_\+
 543             \textcolor{keywordflow}{return} CRC\_error
 544             
 \end{DoxyCode}
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_afd04a6d0187293021a5f4f7d853ea447}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_afd04a6d0187293021a5f4f7d853ea447}\label{class_m_i_c3_1_1_m_i_c1_afd04a6d0187293021a5f4f7d853ea447}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!read\+Power\+Factor@{read\+Power\+Factor}}
 \index{read\+Power\+Factor@{read\+Power\+Factor}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{read\+Power\+Factor()}
+\subsubsection{\texorpdfstring{read\+Power\+Factor()}{readPowerFactor()}}
 {\footnotesize\ttfamily def M\+I\+C3.\+M\+I\+C1.\+read\+Power\+Factor (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
 
@@ -702,10 +702,10 @@ References M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+Address, M\+I\+C3.\+M\+I\+C1.\+\_\+
 815             \textcolor{keywordflow}{return} CRC\_error 
 816    
 \end{DoxyCode}
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_a452c39aafd6a6091eb4a6d1f96cfc159}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_a452c39aafd6a6091eb4a6d1f96cfc159}\label{class_m_i_c3_1_1_m_i_c1_a452c39aafd6a6091eb4a6d1f96cfc159}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!read\+P\+T1@{read\+P\+T1}}
 \index{read\+P\+T1@{read\+P\+T1}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{read\+P\+T1()}
+\subsubsection{\texorpdfstring{read\+P\+T1()}{readPT1()}}
 {\footnotesize\ttfamily def M\+I\+C3.\+M\+I\+C1.\+read\+P\+T1 (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
 
@@ -790,10 +790,10 @@ References M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+Address, M\+I\+C3.\+M\+I\+C1.\+\_\+
 340             \textcolor{keywordflow}{return} CRC\_error
 341     
 \end{DoxyCode}
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_a965d6b2d1f557741c6361814f7b7be3f}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_a965d6b2d1f557741c6361814f7b7be3f}\label{class_m_i_c3_1_1_m_i_c1_a965d6b2d1f557741c6361814f7b7be3f}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!read\+P\+T2@{read\+P\+T2}}
 \index{read\+P\+T2@{read\+P\+T2}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{read\+P\+T2()}
+\subsubsection{\texorpdfstring{read\+P\+T2()}{readPT2()}}
 {\footnotesize\ttfamily def M\+I\+C3.\+M\+I\+C1.\+read\+P\+T2 (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
 
@@ -878,10 +878,10 @@ References M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+Address, M\+I\+C3.\+M\+I\+C1.\+\_\+
 407             \textcolor{keywordflow}{return} CRC\_error
 408             
 \end{DoxyCode}
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_a8d7c0913d3999f6f7737d6ffc56383a3}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_a8d7c0913d3999f6f7737d6ffc56383a3}\label{class_m_i_c3_1_1_m_i_c1_a8d7c0913d3999f6f7737d6ffc56383a3}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!read\+Reactive\+Power@{read\+Reactive\+Power}}
 \index{read\+Reactive\+Power@{read\+Reactive\+Power}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{read\+Reactive\+Power()}
+\subsubsection{\texorpdfstring{read\+Reactive\+Power()}{readReactivePower()}}
 {\footnotesize\ttfamily def M\+I\+C3.\+M\+I\+C1.\+read\+Reactive\+Power (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
 
 
@@ -959,10 +959,10 @@ References M\+I\+C3.\+M\+I\+C2.\+\_\+\+\_\+\+Address, M\+I\+C3.\+M\+I\+C1.\+\_\+
 
 
 \subsection{Member Data Documentation}
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_a41c7912044a1237fba1a97e5c3ce7af1}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_a41c7912044a1237fba1a97e5c3ce7af1}\label{class_m_i_c3_1_1_m_i_c1_a41c7912044a1237fba1a97e5c3ce7af1}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!\+\_\+\+\_\+\+Address@{\+\_\+\+\_\+\+Address}}
 \index{\+\_\+\+\_\+\+Address@{\+\_\+\+\_\+\+Address}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{\+\_\+\+\_\+\+Address}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+Address}{\_\_Address}}
 {\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C1.\+\_\+\+\_\+\+Address\hspace{0.3cm}{\ttfamily [private]}}
 
 
@@ -973,10 +973,10 @@ Definition at line 251 of file M\+I\+C3.\+py.
 
 Referenced by M\+I\+C3.\+M\+I\+C1.\+read\+Apparent\+Power(), M\+I\+C3.\+M\+I\+C1.\+read\+C\+T1(), M\+I\+C3.\+M\+I\+C1.\+read\+Frequency(), M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Current(), M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Power(), M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Voltage(), M\+I\+C3.\+M\+I\+C1.\+read\+Power\+Factor(), M\+I\+C3.\+M\+I\+C1.\+read\+P\+T1(), M\+I\+C3.\+M\+I\+C1.\+read\+P\+T2(), and M\+I\+C3.\+M\+I\+C1.\+read\+Reactive\+Power().
 
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_a925ca2e301860fe9aa378350534b161f}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_a925ca2e301860fe9aa378350534b161f}\label{class_m_i_c3_1_1_m_i_c1_a925ca2e301860fe9aa378350534b161f}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!\+\_\+\+\_\+\+Control@{\+\_\+\+\_\+\+Control}}
 \index{\+\_\+\+\_\+\+Control@{\+\_\+\+\_\+\+Control}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{\+\_\+\+\_\+\+Control}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+Control}{\_\_Control}}
 {\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C1.\+\_\+\+\_\+\+Control\hspace{0.3cm}{\ttfamily [private]}}
 
 
@@ -987,10 +987,10 @@ Definition at line 250 of file M\+I\+C3.\+py.
 
 Referenced by M\+I\+C3.\+M\+I\+C1.\+read\+Apparent\+Power(), M\+I\+C3.\+M\+I\+C1.\+read\+C\+T1(), M\+I\+C3.\+M\+I\+C1.\+read\+Frequency(), M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Current(), M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Power(), M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Voltage(), M\+I\+C3.\+M\+I\+C1.\+read\+Power\+Factor(), M\+I\+C3.\+M\+I\+C1.\+read\+P\+T1(), M\+I\+C3.\+M\+I\+C1.\+read\+P\+T2(), and M\+I\+C3.\+M\+I\+C1.\+read\+Reactive\+Power().
 
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_aaa1e6791e5fb9881e4c0bb7fdba94a1f}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_aaa1e6791e5fb9881e4c0bb7fdba94a1f}\label{class_m_i_c3_1_1_m_i_c1_aaa1e6791e5fb9881e4c0bb7fdba94a1f}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!\+\_\+\+\_\+\+C\+T1@{\+\_\+\+\_\+\+C\+T1}}
 \index{\+\_\+\+\_\+\+C\+T1@{\+\_\+\+\_\+\+C\+T1}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{\+\_\+\+\_\+\+C\+T1}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+C\+T1}{\_\_CT1}}
 {\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C1.\+\_\+\+\_\+\+C\+T1\hspace{0.3cm}{\ttfamily [private]}}
 
 
@@ -1001,10 +1001,10 @@ Definition at line 254 of file M\+I\+C3.\+py.
 
 Referenced by M\+I\+C3.\+M\+I\+C1.\+read\+Apparent\+Power(), M\+I\+C3.\+M\+I\+C1.\+read\+C\+T1(), M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Current(), M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Power(), and M\+I\+C3.\+M\+I\+C1.\+read\+Reactive\+Power().
 
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_ac24e1bb43a234d3545bd9dea897ee7f8}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_ac24e1bb43a234d3545bd9dea897ee7f8}\label{class_m_i_c3_1_1_m_i_c1_ac24e1bb43a234d3545bd9dea897ee7f8}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!\+\_\+\+\_\+F@{\+\_\+\+\_\+F}}
 \index{\+\_\+\+\_\+F@{\+\_\+\+\_\+F}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{\+\_\+\+\_\+F}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+F}{\_\_F}}
 {\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C1.\+\_\+\+\_\+F\hspace{0.3cm}{\ttfamily [private]}}
 
 
@@ -1015,10 +1015,10 @@ Definition at line 273 of file M\+I\+C3.\+py.
 
 Referenced by M\+I\+C3.\+M\+I\+C1.\+read\+Frequency().
 
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_aa9c7409f828f138464d9a3993b5f963e}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_aa9c7409f828f138464d9a3993b5f963e}\label{class_m_i_c3_1_1_m_i_c1_aa9c7409f828f138464d9a3993b5f963e}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!\+\_\+\+\_\+\+I1@{\+\_\+\+\_\+\+I1}}
 \index{\+\_\+\+\_\+\+I1@{\+\_\+\+\_\+\+I1}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{\+\_\+\+\_\+\+I1}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+I1}{\_\_I1}}
 {\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C1.\+\_\+\+\_\+\+I1\hspace{0.3cm}{\ttfamily [private]}}
 
 
@@ -1029,10 +1029,10 @@ Definition at line 258 of file M\+I\+C3.\+py.
 
 Referenced by M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Current().
 
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_a17b42cbaf99e99320ef96d929239cf44}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_a17b42cbaf99e99320ef96d929239cf44}\label{class_m_i_c3_1_1_m_i_c1_a17b42cbaf99e99320ef96d929239cf44}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!\+\_\+\+\_\+\+I2@{\+\_\+\+\_\+\+I2}}
 \index{\+\_\+\+\_\+\+I2@{\+\_\+\+\_\+\+I2}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{\+\_\+\+\_\+\+I2}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+I2}{\_\_I2}}
 {\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C1.\+\_\+\+\_\+\+I2\hspace{0.3cm}{\ttfamily [private]}}
 
 
@@ -1043,10 +1043,10 @@ Definition at line 259 of file M\+I\+C3.\+py.
 
 Referenced by M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Current().
 
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_ada54499b12ef8714e2e359d69a5a9a37}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_ada54499b12ef8714e2e359d69a5a9a37}\label{class_m_i_c3_1_1_m_i_c1_ada54499b12ef8714e2e359d69a5a9a37}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!\+\_\+\+\_\+\+I3@{\+\_\+\+\_\+\+I3}}
 \index{\+\_\+\+\_\+\+I3@{\+\_\+\+\_\+\+I3}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{\+\_\+\+\_\+\+I3}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+I3}{\_\_I3}}
 {\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C1.\+\_\+\+\_\+\+I3\hspace{0.3cm}{\ttfamily [private]}}
 
 
@@ -1057,10 +1057,10 @@ Definition at line 260 of file M\+I\+C3.\+py.
 
 Referenced by M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Current().
 
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_ad9d7c288a2f535a91f01fdb7f688f9cc}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_ad9d7c288a2f535a91f01fdb7f688f9cc}\label{class_m_i_c3_1_1_m_i_c1_ad9d7c288a2f535a91f01fdb7f688f9cc}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!\+\_\+\+\_\+\+P1@{\+\_\+\+\_\+\+P1}}
 \index{\+\_\+\+\_\+\+P1@{\+\_\+\+\_\+\+P1}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{\+\_\+\+\_\+\+P1}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+P1}{\_\_P1}}
 {\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C1.\+\_\+\+\_\+\+P1\hspace{0.3cm}{\ttfamily [private]}}
 
 
@@ -1071,10 +1071,10 @@ Definition at line 261 of file M\+I\+C3.\+py.
 
 Referenced by M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Power().
 
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_ac4bbfbf696790ea59be3e8153089107e}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_ac4bbfbf696790ea59be3e8153089107e}\label{class_m_i_c3_1_1_m_i_c1_ac4bbfbf696790ea59be3e8153089107e}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!\+\_\+\+\_\+\+P2@{\+\_\+\+\_\+\+P2}}
 \index{\+\_\+\+\_\+\+P2@{\+\_\+\+\_\+\+P2}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{\+\_\+\+\_\+\+P2}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+P2}{\_\_P2}}
 {\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C1.\+\_\+\+\_\+\+P2\hspace{0.3cm}{\ttfamily [private]}}
 
 
@@ -1085,10 +1085,10 @@ Definition at line 262 of file M\+I\+C3.\+py.
 
 Referenced by M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Power().
 
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_a584aaa23ae37f473e718ac005c95be6e}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_a584aaa23ae37f473e718ac005c95be6e}\label{class_m_i_c3_1_1_m_i_c1_a584aaa23ae37f473e718ac005c95be6e}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!\+\_\+\+\_\+\+P3@{\+\_\+\+\_\+\+P3}}
 \index{\+\_\+\+\_\+\+P3@{\+\_\+\+\_\+\+P3}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{\+\_\+\+\_\+\+P3}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+P3}{\_\_P3}}
 {\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C1.\+\_\+\+\_\+\+P3\hspace{0.3cm}{\ttfamily [private]}}
 
 
@@ -1099,10 +1099,10 @@ Definition at line 263 of file M\+I\+C3.\+py.
 
 Referenced by M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Power().
 
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_a2eb1458e0c349707753186002063859b}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_a2eb1458e0c349707753186002063859b}\label{class_m_i_c3_1_1_m_i_c1_a2eb1458e0c349707753186002063859b}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!\+\_\+\+\_\+\+P\+F1@{\+\_\+\+\_\+\+P\+F1}}
 \index{\+\_\+\+\_\+\+P\+F1@{\+\_\+\+\_\+\+P\+F1}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{\+\_\+\+\_\+\+P\+F1}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+P\+F1}{\_\_PF1}}
 {\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C1.\+\_\+\+\_\+\+P\+F1\hspace{0.3cm}{\ttfamily [private]}}
 
 
@@ -1113,10 +1113,10 @@ Definition at line 270 of file M\+I\+C3.\+py.
 
 Referenced by M\+I\+C3.\+M\+I\+C1.\+read\+Power\+Factor().
 
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_a6bd93a47ffd2e1440f00ea82e1b26f65}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_a6bd93a47ffd2e1440f00ea82e1b26f65}\label{class_m_i_c3_1_1_m_i_c1_a6bd93a47ffd2e1440f00ea82e1b26f65}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!\+\_\+\+\_\+\+P\+F2@{\+\_\+\+\_\+\+P\+F2}}
 \index{\+\_\+\+\_\+\+P\+F2@{\+\_\+\+\_\+\+P\+F2}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{\+\_\+\+\_\+\+P\+F2}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+P\+F2}{\_\_PF2}}
 {\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C1.\+\_\+\+\_\+\+P\+F2\hspace{0.3cm}{\ttfamily [private]}}
 
 
@@ -1127,10 +1127,10 @@ Definition at line 271 of file M\+I\+C3.\+py.
 
 Referenced by M\+I\+C3.\+M\+I\+C1.\+read\+Power\+Factor().
 
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_a0cedb48c21b85171b2f8f316afa59a85}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_a0cedb48c21b85171b2f8f316afa59a85}\label{class_m_i_c3_1_1_m_i_c1_a0cedb48c21b85171b2f8f316afa59a85}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!\+\_\+\+\_\+\+P\+F3@{\+\_\+\+\_\+\+P\+F3}}
 \index{\+\_\+\+\_\+\+P\+F3@{\+\_\+\+\_\+\+P\+F3}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{\+\_\+\+\_\+\+P\+F3}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+P\+F3}{\_\_PF3}}
 {\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C1.\+\_\+\+\_\+\+P\+F3\hspace{0.3cm}{\ttfamily [private]}}
 
 
@@ -1141,10 +1141,10 @@ Definition at line 272 of file M\+I\+C3.\+py.
 
 Referenced by M\+I\+C3.\+M\+I\+C1.\+read\+Power\+Factor().
 
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_a0202879a9a20c6db9fab96bf2bc2665a}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_a0202879a9a20c6db9fab96bf2bc2665a}\label{class_m_i_c3_1_1_m_i_c1_a0202879a9a20c6db9fab96bf2bc2665a}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!\+\_\+\+\_\+\+P\+T1@{\+\_\+\+\_\+\+P\+T1}}
 \index{\+\_\+\+\_\+\+P\+T1@{\+\_\+\+\_\+\+P\+T1}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{\+\_\+\+\_\+\+P\+T1}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+P\+T1}{\_\_PT1}}
 {\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C1.\+\_\+\+\_\+\+P\+T1\hspace{0.3cm}{\ttfamily [private]}}
 
 
@@ -1155,10 +1155,10 @@ Definition at line 252 of file M\+I\+C3.\+py.
 
 Referenced by M\+I\+C3.\+M\+I\+C1.\+read\+Apparent\+Power(), M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Power(), M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Voltage(), M\+I\+C3.\+M\+I\+C1.\+read\+P\+T1(), and M\+I\+C3.\+M\+I\+C1.\+read\+Reactive\+Power().
 
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_a27404fde06ca91ba97fed1afe1305a4c}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_a27404fde06ca91ba97fed1afe1305a4c}\label{class_m_i_c3_1_1_m_i_c1_a27404fde06ca91ba97fed1afe1305a4c}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!\+\_\+\+\_\+\+P\+T2@{\+\_\+\+\_\+\+P\+T2}}
 \index{\+\_\+\+\_\+\+P\+T2@{\+\_\+\+\_\+\+P\+T2}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{\+\_\+\+\_\+\+P\+T2}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+P\+T2}{\_\_PT2}}
 {\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C1.\+\_\+\+\_\+\+P\+T2\hspace{0.3cm}{\ttfamily [private]}}
 
 
@@ -1169,10 +1169,10 @@ Definition at line 253 of file M\+I\+C3.\+py.
 
 Referenced by M\+I\+C3.\+M\+I\+C1.\+read\+Apparent\+Power(), M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Power(), M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Voltage(), M\+I\+C3.\+M\+I\+C1.\+read\+P\+T2(), and M\+I\+C3.\+M\+I\+C1.\+read\+Reactive\+Power().
 
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_accfdf53475991f816e00e89be6011df5}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_accfdf53475991f816e00e89be6011df5}\label{class_m_i_c3_1_1_m_i_c1_accfdf53475991f816e00e89be6011df5}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!\+\_\+\+\_\+\+Q1@{\+\_\+\+\_\+\+Q1}}
 \index{\+\_\+\+\_\+\+Q1@{\+\_\+\+\_\+\+Q1}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{\+\_\+\+\_\+\+Q1}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+Q1}{\_\_Q1}}
 {\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C1.\+\_\+\+\_\+\+Q1\hspace{0.3cm}{\ttfamily [private]}}
 
 
@@ -1183,10 +1183,10 @@ Definition at line 264 of file M\+I\+C3.\+py.
 
 Referenced by M\+I\+C3.\+M\+I\+C1.\+read\+Reactive\+Power().
 
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_aa52fd24601379190142365d2e94ed3bc}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_aa52fd24601379190142365d2e94ed3bc}\label{class_m_i_c3_1_1_m_i_c1_aa52fd24601379190142365d2e94ed3bc}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!\+\_\+\+\_\+\+Q2@{\+\_\+\+\_\+\+Q2}}
 \index{\+\_\+\+\_\+\+Q2@{\+\_\+\+\_\+\+Q2}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{\+\_\+\+\_\+\+Q2}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+Q2}{\_\_Q2}}
 {\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C1.\+\_\+\+\_\+\+Q2\hspace{0.3cm}{\ttfamily [private]}}
 
 
@@ -1197,10 +1197,10 @@ Definition at line 265 of file M\+I\+C3.\+py.
 
 Referenced by M\+I\+C3.\+M\+I\+C1.\+read\+Reactive\+Power().
 
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_afcffecd5fd8a2b410326e3d5ba79c78e}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_afcffecd5fd8a2b410326e3d5ba79c78e}\label{class_m_i_c3_1_1_m_i_c1_afcffecd5fd8a2b410326e3d5ba79c78e}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!\+\_\+\+\_\+\+Q3@{\+\_\+\+\_\+\+Q3}}
 \index{\+\_\+\+\_\+\+Q3@{\+\_\+\+\_\+\+Q3}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{\+\_\+\+\_\+\+Q3}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+Q3}{\_\_Q3}}
 {\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C1.\+\_\+\+\_\+\+Q3\hspace{0.3cm}{\ttfamily [private]}}
 
 
@@ -1211,10 +1211,10 @@ Definition at line 266 of file M\+I\+C3.\+py.
 
 Referenced by M\+I\+C3.\+M\+I\+C1.\+read\+Reactive\+Power().
 
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_a6bcbbf706089333c946aa4965af8e656}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_a6bcbbf706089333c946aa4965af8e656}\label{class_m_i_c3_1_1_m_i_c1_a6bcbbf706089333c946aa4965af8e656}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!\+\_\+\+\_\+\+S1@{\+\_\+\+\_\+\+S1}}
 \index{\+\_\+\+\_\+\+S1@{\+\_\+\+\_\+\+S1}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{\+\_\+\+\_\+\+S1}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+S1}{\_\_S1}}
 {\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C1.\+\_\+\+\_\+\+S1\hspace{0.3cm}{\ttfamily [private]}}
 
 
@@ -1225,10 +1225,10 @@ Definition at line 267 of file M\+I\+C3.\+py.
 
 Referenced by M\+I\+C3.\+M\+I\+C1.\+read\+Apparent\+Power().
 
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_ab89d273cd8a7d1f0fe67a701e9e54f82}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_ab89d273cd8a7d1f0fe67a701e9e54f82}\label{class_m_i_c3_1_1_m_i_c1_ab89d273cd8a7d1f0fe67a701e9e54f82}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!\+\_\+\+\_\+\+S2@{\+\_\+\+\_\+\+S2}}
 \index{\+\_\+\+\_\+\+S2@{\+\_\+\+\_\+\+S2}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{\+\_\+\+\_\+\+S2}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+S2}{\_\_S2}}
 {\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C1.\+\_\+\+\_\+\+S2\hspace{0.3cm}{\ttfamily [private]}}
 
 
@@ -1239,10 +1239,10 @@ Definition at line 268 of file M\+I\+C3.\+py.
 
 Referenced by M\+I\+C3.\+M\+I\+C1.\+read\+Apparent\+Power().
 
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_af5f14575962daa8e627bc9fdf673b253}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_af5f14575962daa8e627bc9fdf673b253}\label{class_m_i_c3_1_1_m_i_c1_af5f14575962daa8e627bc9fdf673b253}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!\+\_\+\+\_\+\+S3@{\+\_\+\+\_\+\+S3}}
 \index{\+\_\+\+\_\+\+S3@{\+\_\+\+\_\+\+S3}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{\+\_\+\+\_\+\+S3}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+S3}{\_\_S3}}
 {\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C1.\+\_\+\+\_\+\+S3\hspace{0.3cm}{\ttfamily [private]}}
 
 
@@ -1253,10 +1253,10 @@ Definition at line 269 of file M\+I\+C3.\+py.
 
 Referenced by M\+I\+C3.\+M\+I\+C1.\+read\+Apparent\+Power().
 
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_a808ae0455f68a6e35d5cf646f2ed5bed}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_a808ae0455f68a6e35d5cf646f2ed5bed}\label{class_m_i_c3_1_1_m_i_c1_a808ae0455f68a6e35d5cf646f2ed5bed}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!\+\_\+\+\_\+\+V1@{\+\_\+\+\_\+\+V1}}
 \index{\+\_\+\+\_\+\+V1@{\+\_\+\+\_\+\+V1}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{\+\_\+\+\_\+\+V1}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+V1}{\_\_V1}}
 {\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C1.\+\_\+\+\_\+\+V1\hspace{0.3cm}{\ttfamily [private]}}
 
 
@@ -1267,10 +1267,10 @@ Definition at line 255 of file M\+I\+C3.\+py.
 
 Referenced by M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Voltage().
 
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_aa931212b1077630e0d00a7521b9ba7ef}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_aa931212b1077630e0d00a7521b9ba7ef}\label{class_m_i_c3_1_1_m_i_c1_aa931212b1077630e0d00a7521b9ba7ef}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!\+\_\+\+\_\+\+V2@{\+\_\+\+\_\+\+V2}}
 \index{\+\_\+\+\_\+\+V2@{\+\_\+\+\_\+\+V2}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{\+\_\+\+\_\+\+V2}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+V2}{\_\_V2}}
 {\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C1.\+\_\+\+\_\+\+V2\hspace{0.3cm}{\ttfamily [private]}}
 
 
@@ -1281,10 +1281,10 @@ Definition at line 256 of file M\+I\+C3.\+py.
 
 Referenced by M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Voltage().
 
-\mbox{\label{class_m_i_c3_1_1_m_i_c1_ac14c988b04364214b6846226e31d7416}} 
+\mbox{\Hypertarget{class_m_i_c3_1_1_m_i_c1_ac14c988b04364214b6846226e31d7416}\label{class_m_i_c3_1_1_m_i_c1_ac14c988b04364214b6846226e31d7416}} 
 \index{M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}!\+\_\+\+\_\+\+V3@{\+\_\+\+\_\+\+V3}}
 \index{\+\_\+\+\_\+\+V3@{\+\_\+\+\_\+\+V3}!M\+I\+C3\+::\+M\+I\+C1@{M\+I\+C3\+::\+M\+I\+C1}}
-\subsubsection{\+\_\+\+\_\+\+V3}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+V3}{\_\_V3}}
 {\footnotesize\ttfamily M\+I\+C3.\+M\+I\+C1.\+\_\+\+\_\+\+V3\hspace{0.3cm}{\ttfamily [private]}}
 
 
@@ -1299,4 +1299,4 @@ Referenced by M\+I\+C3.\+M\+I\+C1.\+read\+Phase\+Voltage().
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Modbus/\textbf{ M\+I\+C3.\+py}\end{DoxyCompactItemize}
+Modbus/\hyperlink{_m_i_c3_8py}{M\+I\+C3.\+py}\end{DoxyCompactItemize}

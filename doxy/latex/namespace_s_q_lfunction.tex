@@ -1,80 +1,80 @@
-\section{S\+Q\+Lfunction Namespace Reference}
+\hypertarget{namespace_s_q_lfunction}{}\section{S\+Q\+Lfunction Namespace Reference}
 \label{namespace_s_q_lfunction}\index{S\+Q\+Lfunction@{S\+Q\+Lfunction}}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \textbf{ on\+\_\+connect} (\textbf{ client}, userdata, flags, rc)
+def \hyperlink{namespace_s_q_lfunction_aa9ad8419206f0d4e4281775b4dcbf03d}{on\+\_\+connect} (\hyperlink{namespace_s_q_lfunction_ac9fb782d6f6dcc44fd19ea1b135ab996}{client}, userdata, flags, rc)
 \begin{DoxyCompactList}\small\item\em Executes on M\+Q\+TT client connect to broker, sets flags and subscribes. \end{DoxyCompactList}\item 
-def \textbf{ on\+\_\+disconnect} (\textbf{ client}, userdata, rc)
+def \hyperlink{namespace_s_q_lfunction_a3a3d48b63f188d8357c3422e417a58dc}{on\+\_\+disconnect} (\hyperlink{namespace_s_q_lfunction_ac9fb782d6f6dcc44fd19ea1b135ab996}{client}, userdata, rc)
 \begin{DoxyCompactList}\small\item\em Executes on M\+Q\+TT client disconnect and sets flags. \end{DoxyCompactList}\item 
-def \textbf{ update\+\_\+callback} (\textbf{ client}, userdata, message)
+def \hyperlink{namespace_s_q_lfunction_ae16644514ae2cdbf375884361531f691}{update\+\_\+callback} (\hyperlink{namespace_s_q_lfunction_ac9fb782d6f6dcc44fd19ea1b135ab996}{client}, userdata, message)
 \begin{DoxyCompactList}\small\item\em Callback function that parses R\+F\+ID swipe message from Photon and checks in the DB what to publish as answer Publish output is structured as \char`\"{}1;2\char`\"{} where 1=socket number and 2=answer to Photon. \end{DoxyCompactList}\item 
-def \textbf{ new\+\_\+photon\+Measure\+\_\+callback} (\textbf{ client}, userdata, message)
+def \hyperlink{namespace_s_q_lfunction_a356dd5906768f7dd778408f466e9f9b4}{new\+\_\+photon\+Measure\+\_\+callback} (\hyperlink{namespace_s_q_lfunction_ac9fb782d6f6dcc44fd19ea1b135ab996}{client}, userdata, message)
 \begin{DoxyCompactList}\small\item\em New Callback for Photon measurements that parses, checks DB for user data like name and carname, then logs into \textquotesingle{}measurements\textquotesingle{}. \end{DoxyCompactList}\item 
-def \textbf{ old\+\_\+photon\+Measure\+\_\+callback} (\textbf{ client}, userdata, message)
+def \hyperlink{namespace_s_q_lfunction_ab58c55eebaf8990eb9c810968db1dc50}{old\+\_\+photon\+Measure\+\_\+callback} (\hyperlink{namespace_s_q_lfunction_ac9fb782d6f6dcc44fd19ea1b135ab996}{client}, userdata, message)
 \begin{DoxyCompactList}\small\item\em Old Photon measurements callback that parses \textquotesingle{}\textquotesingle{} separated values. \end{DoxyCompactList}\item 
-def \textbf{ send\+\_\+admin} ()
+def \hyperlink{namespace_s_q_lfunction_a75af8b1bb1aa60f32418ac7901b0060b}{send\+\_\+admin} ()
 \begin{DoxyCompactList}\small\item\em Function to send admin email if one user has been plugged in at a socket for over 4 hours still in beta mode and needs improvements. \end{DoxyCompactList}\item 
-def \textbf{ send\+\_\+email} ()
+def \hyperlink{namespace_s_q_lfunction_a526fa5bc764d15233b0cc1880fc33f83}{send\+\_\+email} ()
 \end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\textbf{ D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+ME} = int(4 $\ast$ 60 $\ast$ 60)
+\hyperlink{namespace_s_q_lfunction_a68f53c3db854695a6e4a30a3a55594b4}{D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+ME} = int(4 $\ast$ 60 $\ast$ 60)
 \begin{DoxyCompactList}\small\item\em Const. \end{DoxyCompactList}\item 
-int \textbf{ email\+\_\+cntr} = 0
+int \hyperlink{namespace_s_q_lfunction_aef9c9d6f38d6ad20fa3572f211e29b04}{email\+\_\+cntr} = 0
 \item 
-int \textbf{ S\+S\+Lport} = 465
+int \hyperlink{namespace_s_q_lfunction_a700c01c62cb7f1ed2561f5e640da46cf}{S\+S\+Lport} = 465
 \item 
-string \textbf{ smtp\+\_\+server} = \char`\"{}smtp.\+gmail.\+com\char`\"{}
+string \hyperlink{namespace_s_q_lfunction_afc238002d1e4aeb7f8d2e10d47dfad36}{smtp\+\_\+server} = \char`\"{}smtp.\+gmail.\+com\char`\"{}
 \item 
-string \textbf{ sender\+\_\+email} = \char`\"{}tpi97364@gmail.\+com\char`\"{}
+string \hyperlink{namespace_s_q_lfunction_ac63d06248a3e41c104ae1290bb403c78}{sender\+\_\+email} = \char`\"{}tpi97364@gmail.\+com\char`\"{}
 \begin{DoxyCompactList}\small\item\em Email sender address for Pi. \end{DoxyCompactList}\item 
-string \textbf{ receiver\+\_\+email} = \char`\"{}\char`\"{}
+string \hyperlink{namespace_s_q_lfunction_a51ebdaf9d64f52b2c266a49020cf12a5}{receiver\+\_\+email} = \char`\"{}\char`\"{}
 \begin{DoxyCompactList}\small\item\em Holder for email addresses of receivers. \end{DoxyCompactList}\item 
-string \textbf{ sender\+\_\+password} = \char`\"{}controlsystem\char`\"{}
+string \hyperlink{namespace_s_q_lfunction_a0d308a95029254ed328ba365861abdf2}{sender\+\_\+password} = \char`\"{}controlsystem\char`\"{}
 \begin{DoxyCompactList}\small\item\em Pi email password. \end{DoxyCompactList}\item 
-string \textbf{ email\+\_\+message}
+string \hyperlink{namespace_s_q_lfunction_ae767f70baa76040d2b29bd6eeefd7bbe}{email\+\_\+message}
 \begin{DoxyCompactList}\small\item\em Default email message. \end{DoxyCompactList}\item 
-\textbf{ email\+\_\+context} = ssl.\+create\+\_\+default\+\_\+context()
+\hyperlink{namespace_s_q_lfunction_a7ec226cfeab195de604b38e8c7b2d0eb}{email\+\_\+context} = ssl.\+create\+\_\+default\+\_\+context()
 \item 
-\textbf{ con} = None
+\hyperlink{namespace_s_q_lfunction_a02e42e3457dfb29a0ee1b6252484b0e7}{con} = None
 \begin{DoxyCompactList}\small\item\em Initial DB connection check. \end{DoxyCompactList}\item 
-string \textbf{ broker} = \char`\"{}broker.\+hivemq.\+com\char`\"{}
+string \hyperlink{namespace_s_q_lfunction_aed5ec64d305ca004c4fe54d51dd36a4e}{broker} = \char`\"{}broker.\+hivemq.\+com\char`\"{}
 \begin{DoxyCompactList}\small\item\em M\+Q\+TT broker address. \end{DoxyCompactList}\item 
-string \textbf{ path\+\_\+local} = \char`\"{}/media/D\+A\+T\+A\+B\+A\+SE/usertable.\+sqlite3\char`\"{}
+string \hyperlink{namespace_s_q_lfunction_a50744e6ca7c6cbd547746acb907f016e}{path\+\_\+local} = \char`\"{}/media/D\+A\+T\+A\+B\+A\+SE/usertable.\+sqlite3\char`\"{}
 \begin{DoxyCompactList}\small\item\em Path to users database path = \char`\"{}./user\+List\char`\"{} \#\+Use internal memory -\/ old DB. \end{DoxyCompactList}\item 
-string \textbf{ path} = \char`\"{}/mnt/dav/Data/usertable.\+sqlite3\char`\"{}
+string \hyperlink{namespace_s_q_lfunction_a9239421845b9e0921bad7a2a191f3849}{path} = \char`\"{}/mnt/dav/Data/usertable.\+sqlite3\char`\"{}
 \item 
-\textbf{ con\+\_\+local} = lite.\+connect(\textbf{ path\+\_\+local})
+\hyperlink{namespace_s_q_lfunction_af6ef43cf2e7be28e6205af9b355e4943}{con\+\_\+local} = lite.\+connect(\hyperlink{namespace_s_q_lfunction_a50744e6ca7c6cbd547746acb907f016e}{path\+\_\+local})
 \item 
-\textbf{ cur\+\_\+local} = con\+\_\+local.\+cursor()
+\hyperlink{namespace_s_q_lfunction_a808a7ba686f9086b3d4ef7d6a969aceb}{cur\+\_\+local} = con\+\_\+local.\+cursor()
 \item 
-\textbf{ cur} = con.\+cursor()
+\hyperlink{namespace_s_q_lfunction_aefa03c2c2ce5f2ab923453e1af7a2201}{cur} = con.\+cursor()
 \item 
-\textbf{ data\+Ref1} = cur.\+fetchone()
+\hyperlink{namespace_s_q_lfunction_aab5e54d1ed091926790df37c8098f1f7}{data\+Ref1} = cur.\+fetchone()
 \item 
-int \textbf{ err\+\_\+cnt} = 0
+int \hyperlink{namespace_s_q_lfunction_a5964aea00837148a0d731102edf6ac5c}{err\+\_\+cnt} = 0
 \item 
-\textbf{ client} = mqtt.\+Client()
+\hyperlink{namespace_s_q_lfunction_ac9fb782d6f6dcc44fd19ea1b135ab996}{client} = mqtt.\+Client()
 \item 
-\textbf{ connected\+\_\+flag}
+\hyperlink{namespace_s_q_lfunction_a513a0e7846b861b6982a0449f46cb6a8}{connected\+\_\+flag}
 \item 
-\textbf{ bad\+\_\+connection\+\_\+flag}
+\hyperlink{namespace_s_q_lfunction_abffdbb58f2363e73ea86ddc83a3893ad}{bad\+\_\+connection\+\_\+flag}
 \item 
-\textbf{ on\+\_\+connect}
+\hyperlink{namespace_s_q_lfunction_a215e7090f82fbf0d31fd97be6721389a}{on\+\_\+connect}
 \item 
-\textbf{ on\+\_\+disconnect}
+\hyperlink{namespace_s_q_lfunction_ab3031ccbbdb3f5a04bd7d66ceb4494c7}{on\+\_\+disconnect}
 \item 
-\textbf{ current\+\_\+time} = time.\+ctime(time.\+time())
+\hyperlink{namespace_s_q_lfunction_affebcb967a2b844a9e7542f181deacb6}{current\+\_\+time} = time.\+ctime(time.\+time())
 \end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\label{namespace_s_q_lfunction_a356dd5906768f7dd778408f466e9f9b4}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_a356dd5906768f7dd778408f466e9f9b4}\label{namespace_s_q_lfunction_a356dd5906768f7dd778408f466e9f9b4}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!new\+\_\+photon\+Measure\+\_\+callback@{new\+\_\+photon\+Measure\+\_\+callback}}
 \index{new\+\_\+photon\+Measure\+\_\+callback@{new\+\_\+photon\+Measure\+\_\+callback}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{new\+\_\+photon\+Measure\+\_\+callback()}
+\subsubsection{\texorpdfstring{new\+\_\+photon\+Measure\+\_\+callback()}{new\_photonMeasure\_callback()}}
 {\footnotesize\ttfamily def S\+Q\+Lfunction.\+new\+\_\+photon\+Measure\+\_\+callback (\begin{DoxyParamCaption}\item[{}]{client,  }\item[{}]{userdata,  }\item[{}]{message }\end{DoxyParamCaption})}
 
 
@@ -87,7 +87,7 @@ Definition at line 207 of file S\+Q\+Lfunction.\+py.
 
 
 \begin{DoxyCode}
-207 \textcolor{keyword}{def }new_photonMeasure_callback(client, userdata, message):
+207 \textcolor{keyword}{def }\hyperlink{namespace_s_q_lfunction_a356dd5906768f7dd778408f466e9f9b4}{new\_photonMeasure\_callback}(client, userdata, message):
 208     \textcolor{keywordflow}{try}:
 209         con = lite.connect(path)
 210         cur = con.cursor()
@@ -176,10 +176,10 @@ Definition at line 207 of file S\+Q\+Lfunction.\+py.
 286     
 287 
 \end{DoxyCode}
-\mbox{\label{namespace_s_q_lfunction_ab58c55eebaf8990eb9c810968db1dc50}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_ab58c55eebaf8990eb9c810968db1dc50}\label{namespace_s_q_lfunction_ab58c55eebaf8990eb9c810968db1dc50}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!old\+\_\+photon\+Measure\+\_\+callback@{old\+\_\+photon\+Measure\+\_\+callback}}
 \index{old\+\_\+photon\+Measure\+\_\+callback@{old\+\_\+photon\+Measure\+\_\+callback}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{old\+\_\+photon\+Measure\+\_\+callback()}
+\subsubsection{\texorpdfstring{old\+\_\+photon\+Measure\+\_\+callback()}{old\_photonMeasure\_callback()}}
 {\footnotesize\ttfamily def S\+Q\+Lfunction.\+old\+\_\+photon\+Measure\+\_\+callback (\begin{DoxyParamCaption}\item[{}]{client,  }\item[{}]{userdata,  }\item[{}]{message }\end{DoxyParamCaption})}
 
 
@@ -192,7 +192,7 @@ Definition at line 289 of file S\+Q\+Lfunction.\+py.
 
 
 \begin{DoxyCode}
-289 \textcolor{keyword}{def }old_photonMeasure_callback(client, userdata, message):
+289 \textcolor{keyword}{def }\hyperlink{namespace_s_q_lfunction_ab58c55eebaf8990eb9c810968db1dc50}{old\_photonMeasure\_callback}(client, userdata, message):
 290     con = lite.connect(path)
 291     cur = con.cursor()
 292     data = message.payload    
@@ -222,10 +222,10 @@ Definition at line 289 of file S\+Q\+Lfunction.\+py.
 315     \textcolor{comment}{#print(V1)}
 316 
 \end{DoxyCode}
-\mbox{\label{namespace_s_q_lfunction_aa9ad8419206f0d4e4281775b4dcbf03d}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_aa9ad8419206f0d4e4281775b4dcbf03d}\label{namespace_s_q_lfunction_aa9ad8419206f0d4e4281775b4dcbf03d}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!on\+\_\+connect@{on\+\_\+connect}}
 \index{on\+\_\+connect@{on\+\_\+connect}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{on\+\_\+connect()}
+\subsubsection{\texorpdfstring{on\+\_\+connect()}{on\_connect()}}
 {\footnotesize\ttfamily def S\+Q\+Lfunction.\+on\+\_\+connect (\begin{DoxyParamCaption}\item[{}]{client,  }\item[{}]{userdata,  }\item[{}]{flags,  }\item[{}]{rc }\end{DoxyParamCaption})}
 
 
@@ -242,7 +242,7 @@ References on\+\_\+connect.
 
 
 \begin{DoxyCode}
-62 \textcolor{keyword}{def }on_connect(client, userdata, flags, rc):
+62 \textcolor{keyword}{def }\hyperlink{namespace_s_q_lfunction_a215e7090f82fbf0d31fd97be6721389a}{on\_connect}(client, userdata, flags, rc):
 63     \textcolor{keywordflow}{if} rc == 0:
 64         \textcolor{comment}{#print("Connection start")}
 65         print(path)
@@ -260,10 +260,10 @@ References on\+\_\+connect.
 76         client.bad\_connection\_flag = \textcolor{keyword}{True}
 77 
 \end{DoxyCode}
-\mbox{\label{namespace_s_q_lfunction_a3a3d48b63f188d8357c3422e417a58dc}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_a3a3d48b63f188d8357c3422e417a58dc}\label{namespace_s_q_lfunction_a3a3d48b63f188d8357c3422e417a58dc}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!on\+\_\+disconnect@{on\+\_\+disconnect}}
 \index{on\+\_\+disconnect@{on\+\_\+disconnect}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{on\+\_\+disconnect()}
+\subsubsection{\texorpdfstring{on\+\_\+disconnect()}{on\_disconnect()}}
 {\footnotesize\ttfamily def S\+Q\+Lfunction.\+on\+\_\+disconnect (\begin{DoxyParamCaption}\item[{}]{client,  }\item[{}]{userdata,  }\item[{}]{rc }\end{DoxyParamCaption})}
 
 
@@ -280,7 +280,7 @@ References on\+\_\+disconnect.
 
 
 \begin{DoxyCode}
-79 \textcolor{keyword}{def }on_disconnect(client, userdata, rc):
+79 \textcolor{keyword}{def }\hyperlink{namespace_s_q_lfunction_ab3031ccbbdb3f5a04bd7d66ceb4494c7}{on\_disconnect}(client, userdata, rc):
 80     client.connected\_flag = \textcolor{keyword}{False}
 81     \textcolor{keywordflow}{if} rc != 0:
 82         print(\textcolor{stringliteral}{"Unexpected disconnection."})
@@ -307,10 +307,10 @@ References on\+\_\+disconnect.
 102 \textcolor{comment}{#     #print(dataSend)}
 103 
 \end{DoxyCode}
-\mbox{\label{namespace_s_q_lfunction_a75af8b1bb1aa60f32418ac7901b0060b}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_a75af8b1bb1aa60f32418ac7901b0060b}\label{namespace_s_q_lfunction_a75af8b1bb1aa60f32418ac7901b0060b}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!send\+\_\+admin@{send\+\_\+admin}}
 \index{send\+\_\+admin@{send\+\_\+admin}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{send\+\_\+admin()}
+\subsubsection{\texorpdfstring{send\+\_\+admin()}{send\_admin()}}
 {\footnotesize\ttfamily def S\+Q\+Lfunction.\+send\+\_\+admin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
@@ -323,7 +323,7 @@ Definition at line 319 of file S\+Q\+Lfunction.\+py.
 
 
 \begin{DoxyCode}
-319 \textcolor{keyword}{def }send_admin():
+319 \textcolor{keyword}{def }\hyperlink{namespace_s_q_lfunction_a75af8b1bb1aa60f32418ac7901b0060b}{send\_admin}():
 320     \textcolor{keywordflow}{try}:
 321         con = lite.connect(path)
 322         cur = con.cursor()
@@ -385,10 +385,10 @@ Definition at line 319 of file S\+Q\+Lfunction.\+py.
 372 \textcolor{comment}{# Function (executed every 5min) that checks in DB for users charging for over 4 hours ands sends them
        email to d/c}
 \end{DoxyCode}
-\mbox{\label{namespace_s_q_lfunction_a526fa5bc764d15233b0cc1880fc33f83}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_a526fa5bc764d15233b0cc1880fc33f83}\label{namespace_s_q_lfunction_a526fa5bc764d15233b0cc1880fc33f83}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!send\+\_\+email@{send\+\_\+email}}
 \index{send\+\_\+email@{send\+\_\+email}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{send\+\_\+email()}
+\subsubsection{\texorpdfstring{send\+\_\+email()}{send\_email()}}
 {\footnotesize\ttfamily def S\+Q\+Lfunction.\+send\+\_\+email (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
@@ -397,7 +397,7 @@ Definition at line 373 of file S\+Q\+Lfunction.\+py.
 
 
 \begin{DoxyCode}
-373 \textcolor{keyword}{def }send_email():
+373 \textcolor{keyword}{def }\hyperlink{namespace_s_q_lfunction_a526fa5bc764d15233b0cc1880fc33f83}{send\_email}():
 374     
 375     con\_local = lite.connect(path\_local)
 376     cur\_local = con\_local.cursor()
@@ -436,10 +436,10 @@ Definition at line 373 of file S\+Q\+Lfunction.\+py.
 406 
 407 \textcolor{comment}{#setup mqtt}
 \end{DoxyCode}
-\mbox{\label{namespace_s_q_lfunction_ae16644514ae2cdbf375884361531f691}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_ae16644514ae2cdbf375884361531f691}\label{namespace_s_q_lfunction_ae16644514ae2cdbf375884361531f691}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!update\+\_\+callback@{update\+\_\+callback}}
 \index{update\+\_\+callback@{update\+\_\+callback}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{update\+\_\+callback()}
+\subsubsection{\texorpdfstring{update\+\_\+callback()}{update\_callback()}}
 {\footnotesize\ttfamily def S\+Q\+Lfunction.\+update\+\_\+callback (\begin{DoxyParamCaption}\item[{}]{client,  }\item[{}]{userdata,  }\item[{}]{message }\end{DoxyParamCaption})}
 
 
@@ -452,7 +452,7 @@ Definition at line 106 of file S\+Q\+Lfunction.\+py.
 
 
 \begin{DoxyCode}
-106 \textcolor{keyword}{def }update_callback(client, userdata, message):
+106 \textcolor{keyword}{def }\hyperlink{namespace_s_q_lfunction_ae16644514ae2cdbf375884361531f691}{update\_callback}(client, userdata, message):
 107     \textcolor{keywordflow}{try}:
 108         con = lite.connect(path)
 109         cur = con.cursor()
@@ -562,20 +562,20 @@ Definition at line 106 of file S\+Q\+Lfunction.\+py.
 
 
 \subsection{Variable Documentation}
-\mbox{\label{namespace_s_q_lfunction_abffdbb58f2363e73ea86ddc83a3893ad}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_abffdbb58f2363e73ea86ddc83a3893ad}\label{namespace_s_q_lfunction_abffdbb58f2363e73ea86ddc83a3893ad}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!bad\+\_\+connection\+\_\+flag@{bad\+\_\+connection\+\_\+flag}}
 \index{bad\+\_\+connection\+\_\+flag@{bad\+\_\+connection\+\_\+flag}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{bad\+\_\+connection\+\_\+flag}
+\subsubsection{\texorpdfstring{bad\+\_\+connection\+\_\+flag}{bad\_connection\_flag}}
 {\footnotesize\ttfamily S\+Q\+Lfunction.\+bad\+\_\+connection\+\_\+flag}
 
 
 
 Definition at line 411 of file S\+Q\+Lfunction.\+py.
 
-\mbox{\label{namespace_s_q_lfunction_aed5ec64d305ca004c4fe54d51dd36a4e}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_aed5ec64d305ca004c4fe54d51dd36a4e}\label{namespace_s_q_lfunction_aed5ec64d305ca004c4fe54d51dd36a4e}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!broker@{broker}}
 \index{broker@{broker}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{broker}
+\subsubsection{\texorpdfstring{broker}{broker}}
 {\footnotesize\ttfamily string S\+Q\+Lfunction.\+broker = \char`\"{}broker.\+hivemq.\+com\char`\"{}}
 
 
@@ -586,20 +586,20 @@ M\+Q\+TT broker address.
 
 Definition at line 37 of file S\+Q\+Lfunction.\+py.
 
-\mbox{\label{namespace_s_q_lfunction_ac9fb782d6f6dcc44fd19ea1b135ab996}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_ac9fb782d6f6dcc44fd19ea1b135ab996}\label{namespace_s_q_lfunction_ac9fb782d6f6dcc44fd19ea1b135ab996}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!client@{client}}
 \index{client@{client}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{client}
+\subsubsection{\texorpdfstring{client}{client}}
 {\footnotesize\ttfamily S\+Q\+Lfunction.\+client = mqtt.\+Client()}
 
 
 
 Definition at line 408 of file S\+Q\+Lfunction.\+py.
 
-\mbox{\label{namespace_s_q_lfunction_a02e42e3457dfb29a0ee1b6252484b0e7}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_a02e42e3457dfb29a0ee1b6252484b0e7}\label{namespace_s_q_lfunction_a02e42e3457dfb29a0ee1b6252484b0e7}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!con@{con}}
 \index{con@{con}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{con}
+\subsubsection{\texorpdfstring{con}{con}}
 {\footnotesize\ttfamily S\+Q\+Lfunction.\+con = None}
 
 
@@ -610,70 +610,70 @@ Initial DB connection check.
 
 Definition at line 34 of file S\+Q\+Lfunction.\+py.
 
-\mbox{\label{namespace_s_q_lfunction_af6ef43cf2e7be28e6205af9b355e4943}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_af6ef43cf2e7be28e6205af9b355e4943}\label{namespace_s_q_lfunction_af6ef43cf2e7be28e6205af9b355e4943}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!con\+\_\+local@{con\+\_\+local}}
 \index{con\+\_\+local@{con\+\_\+local}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{con\+\_\+local}
-{\footnotesize\ttfamily S\+Q\+Lfunction.\+con\+\_\+local = lite.\+connect(\textbf{ path\+\_\+local})}
+\subsubsection{\texorpdfstring{con\+\_\+local}{con\_local}}
+{\footnotesize\ttfamily S\+Q\+Lfunction.\+con\+\_\+local = lite.\+connect(\hyperlink{namespace_s_q_lfunction_a50744e6ca7c6cbd547746acb907f016e}{path\+\_\+local})}
 
 
 
 Definition at line 46 of file S\+Q\+Lfunction.\+py.
 
-\mbox{\label{namespace_s_q_lfunction_a513a0e7846b861b6982a0449f46cb6a8}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_a513a0e7846b861b6982a0449f46cb6a8}\label{namespace_s_q_lfunction_a513a0e7846b861b6982a0449f46cb6a8}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!connected\+\_\+flag@{connected\+\_\+flag}}
 \index{connected\+\_\+flag@{connected\+\_\+flag}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{connected\+\_\+flag}
+\subsubsection{\texorpdfstring{connected\+\_\+flag}{connected\_flag}}
 {\footnotesize\ttfamily S\+Q\+Lfunction.\+connected\+\_\+flag}
 
 
 
 Definition at line 410 of file S\+Q\+Lfunction.\+py.
 
-\mbox{\label{namespace_s_q_lfunction_aefa03c2c2ce5f2ab923453e1af7a2201}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_aefa03c2c2ce5f2ab923453e1af7a2201}\label{namespace_s_q_lfunction_aefa03c2c2ce5f2ab923453e1af7a2201}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!cur@{cur}}
 \index{cur@{cur}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{cur}
+\subsubsection{\texorpdfstring{cur}{cur}}
 {\footnotesize\ttfamily S\+Q\+Lfunction.\+cur = con.\+cursor()}
 
 
 
 Definition at line 52 of file S\+Q\+Lfunction.\+py.
 
-\mbox{\label{namespace_s_q_lfunction_a808a7ba686f9086b3d4ef7d6a969aceb}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_a808a7ba686f9086b3d4ef7d6a969aceb}\label{namespace_s_q_lfunction_a808a7ba686f9086b3d4ef7d6a969aceb}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!cur\+\_\+local@{cur\+\_\+local}}
 \index{cur\+\_\+local@{cur\+\_\+local}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{cur\+\_\+local}
+\subsubsection{\texorpdfstring{cur\+\_\+local}{cur\_local}}
 {\footnotesize\ttfamily S\+Q\+Lfunction.\+cur\+\_\+local = con\+\_\+local.\+cursor()}
 
 
 
 Definition at line 47 of file S\+Q\+Lfunction.\+py.
 
-\mbox{\label{namespace_s_q_lfunction_affebcb967a2b844a9e7542f181deacb6}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_affebcb967a2b844a9e7542f181deacb6}\label{namespace_s_q_lfunction_affebcb967a2b844a9e7542f181deacb6}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!current\+\_\+time@{current\+\_\+time}}
 \index{current\+\_\+time@{current\+\_\+time}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{current\+\_\+time}
+\subsubsection{\texorpdfstring{current\+\_\+time}{current\_time}}
 {\footnotesize\ttfamily S\+Q\+Lfunction.\+current\+\_\+time = time.\+ctime(time.\+time())}
 
 
 
 Definition at line 437 of file S\+Q\+Lfunction.\+py.
 
-\mbox{\label{namespace_s_q_lfunction_aab5e54d1ed091926790df37c8098f1f7}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_aab5e54d1ed091926790df37c8098f1f7}\label{namespace_s_q_lfunction_aab5e54d1ed091926790df37c8098f1f7}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!data\+Ref1@{data\+Ref1}}
 \index{data\+Ref1@{data\+Ref1}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{data\+Ref1}
+\subsubsection{\texorpdfstring{data\+Ref1}{dataRef1}}
 {\footnotesize\ttfamily S\+Q\+Lfunction.\+data\+Ref1 = cur.\+fetchone()}
 
 
 
 Definition at line 54 of file S\+Q\+Lfunction.\+py.
 
-\mbox{\label{namespace_s_q_lfunction_a68f53c3db854695a6e4a30a3a55594b4}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_a68f53c3db854695a6e4a30a3a55594b4}\label{namespace_s_q_lfunction_a68f53c3db854695a6e4a30a3a55594b4}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+ME@{D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+ME}}
 \index{D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+ME@{D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+ME}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+ME}
+\subsubsection{\texorpdfstring{D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+ME}{DISCONNECT\_TIME}}
 {\footnotesize\ttfamily S\+Q\+Lfunction.\+D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+ME = int(4 $\ast$ 60 $\ast$ 60)}
 
 
@@ -684,30 +684,30 @@ for max time before email is sent to charging user
 
 Definition at line 13 of file S\+Q\+Lfunction.\+py.
 
-\mbox{\label{namespace_s_q_lfunction_aef9c9d6f38d6ad20fa3572f211e29b04}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_aef9c9d6f38d6ad20fa3572f211e29b04}\label{namespace_s_q_lfunction_aef9c9d6f38d6ad20fa3572f211e29b04}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!email\+\_\+cntr@{email\+\_\+cntr}}
 \index{email\+\_\+cntr@{email\+\_\+cntr}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{email\+\_\+cntr}
+\subsubsection{\texorpdfstring{email\+\_\+cntr}{email\_cntr}}
 {\footnotesize\ttfamily int S\+Q\+Lfunction.\+email\+\_\+cntr = 0}
 
 
 
 Definition at line 15 of file S\+Q\+Lfunction.\+py.
 
-\mbox{\label{namespace_s_q_lfunction_a7ec226cfeab195de604b38e8c7b2d0eb}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_a7ec226cfeab195de604b38e8c7b2d0eb}\label{namespace_s_q_lfunction_a7ec226cfeab195de604b38e8c7b2d0eb}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!email\+\_\+context@{email\+\_\+context}}
 \index{email\+\_\+context@{email\+\_\+context}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{email\+\_\+context}
+\subsubsection{\texorpdfstring{email\+\_\+context}{email\_context}}
 {\footnotesize\ttfamily S\+Q\+Lfunction.\+email\+\_\+context = ssl.\+create\+\_\+default\+\_\+context()}
 
 
 
 Definition at line 32 of file S\+Q\+Lfunction.\+py.
 
-\mbox{\label{namespace_s_q_lfunction_ae767f70baa76040d2b29bd6eeefd7bbe}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_ae767f70baa76040d2b29bd6eeefd7bbe}\label{namespace_s_q_lfunction_ae767f70baa76040d2b29bd6eeefd7bbe}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!email\+\_\+message@{email\+\_\+message}}
 \index{email\+\_\+message@{email\+\_\+message}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{email\+\_\+message}
+\subsubsection{\texorpdfstring{email\+\_\+message}{email\_message}}
 {\footnotesize\ttfamily string S\+Q\+Lfunction.\+email\+\_\+message}
 
 {\bfseries Initial value\+:}
@@ -727,20 +727,20 @@ Default email message.
 
 Definition at line 25 of file S\+Q\+Lfunction.\+py.
 
-\mbox{\label{namespace_s_q_lfunction_a5964aea00837148a0d731102edf6ac5c}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_a5964aea00837148a0d731102edf6ac5c}\label{namespace_s_q_lfunction_a5964aea00837148a0d731102edf6ac5c}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!err\+\_\+cnt@{err\+\_\+cnt}}
 \index{err\+\_\+cnt@{err\+\_\+cnt}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{err\+\_\+cnt}
+\subsubsection{\texorpdfstring{err\+\_\+cnt}{err\_cnt}}
 {\footnotesize\ttfamily int S\+Q\+Lfunction.\+err\+\_\+cnt = 0}
 
 
 
 Definition at line 59 of file S\+Q\+Lfunction.\+py.
 
-\mbox{\label{namespace_s_q_lfunction_a215e7090f82fbf0d31fd97be6721389a}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_a215e7090f82fbf0d31fd97be6721389a}\label{namespace_s_q_lfunction_a215e7090f82fbf0d31fd97be6721389a}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!on\+\_\+connect@{on\+\_\+connect}}
 \index{on\+\_\+connect@{on\+\_\+connect}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{on\+\_\+connect}
+\subsubsection{\texorpdfstring{on\+\_\+connect}{on\_connect}}
 {\footnotesize\ttfamily S\+Q\+Lfunction.\+on\+\_\+connect}
 
 
@@ -751,10 +751,10 @@ Definition at line 412 of file S\+Q\+Lfunction.\+py.
 
 Referenced by on\+\_\+connect().
 
-\mbox{\label{namespace_s_q_lfunction_ab3031ccbbdb3f5a04bd7d66ceb4494c7}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_ab3031ccbbdb3f5a04bd7d66ceb4494c7}\label{namespace_s_q_lfunction_ab3031ccbbdb3f5a04bd7d66ceb4494c7}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!on\+\_\+disconnect@{on\+\_\+disconnect}}
 \index{on\+\_\+disconnect@{on\+\_\+disconnect}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{on\+\_\+disconnect}
+\subsubsection{\texorpdfstring{on\+\_\+disconnect}{on\_disconnect}}
 {\footnotesize\ttfamily S\+Q\+Lfunction.\+on\+\_\+disconnect}
 
 
@@ -765,20 +765,20 @@ Definition at line 413 of file S\+Q\+Lfunction.\+py.
 
 Referenced by on\+\_\+disconnect().
 
-\mbox{\label{namespace_s_q_lfunction_a9239421845b9e0921bad7a2a191f3849}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_a9239421845b9e0921bad7a2a191f3849}\label{namespace_s_q_lfunction_a9239421845b9e0921bad7a2a191f3849}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!path@{path}}
 \index{path@{path}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{path}
+\subsubsection{\texorpdfstring{path}{path}}
 {\footnotesize\ttfamily string S\+Q\+Lfunction.\+path = \char`\"{}/mnt/dav/Data/usertable.\+sqlite3\char`\"{}}
 
 
 
 Definition at line 44 of file S\+Q\+Lfunction.\+py.
 
-\mbox{\label{namespace_s_q_lfunction_a50744e6ca7c6cbd547746acb907f016e}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_a50744e6ca7c6cbd547746acb907f016e}\label{namespace_s_q_lfunction_a50744e6ca7c6cbd547746acb907f016e}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!path\+\_\+local@{path\+\_\+local}}
 \index{path\+\_\+local@{path\+\_\+local}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{path\+\_\+local}
+\subsubsection{\texorpdfstring{path\+\_\+local}{path\_local}}
 {\footnotesize\ttfamily string S\+Q\+Lfunction.\+path\+\_\+local = \char`\"{}/media/D\+A\+T\+A\+B\+A\+SE/usertable.\+sqlite3\char`\"{}}
 
 
@@ -789,10 +789,10 @@ Path to users database path = \char`\"{}./user\+List\char`\"{} \#\+Use internal 
 
 Definition at line 43 of file S\+Q\+Lfunction.\+py.
 
-\mbox{\label{namespace_s_q_lfunction_a51ebdaf9d64f52b2c266a49020cf12a5}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_a51ebdaf9d64f52b2c266a49020cf12a5}\label{namespace_s_q_lfunction_a51ebdaf9d64f52b2c266a49020cf12a5}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!receiver\+\_\+email@{receiver\+\_\+email}}
 \index{receiver\+\_\+email@{receiver\+\_\+email}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{receiver\+\_\+email}
+\subsubsection{\texorpdfstring{receiver\+\_\+email}{receiver\_email}}
 {\footnotesize\ttfamily string S\+Q\+Lfunction.\+receiver\+\_\+email = \char`\"{}\char`\"{}}
 
 
@@ -803,10 +803,10 @@ Holder for email addresses of receivers.
 
 Definition at line 21 of file S\+Q\+Lfunction.\+py.
 
-\mbox{\label{namespace_s_q_lfunction_ac63d06248a3e41c104ae1290bb403c78}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_ac63d06248a3e41c104ae1290bb403c78}\label{namespace_s_q_lfunction_ac63d06248a3e41c104ae1290bb403c78}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!sender\+\_\+email@{sender\+\_\+email}}
 \index{sender\+\_\+email@{sender\+\_\+email}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{sender\+\_\+email}
+\subsubsection{\texorpdfstring{sender\+\_\+email}{sender\_email}}
 {\footnotesize\ttfamily string S\+Q\+Lfunction.\+sender\+\_\+email = \char`\"{}tpi97364@gmail.\+com\char`\"{}}
 
 
@@ -817,10 +817,10 @@ Email sender address for Pi.
 
 Definition at line 19 of file S\+Q\+Lfunction.\+py.
 
-\mbox{\label{namespace_s_q_lfunction_a0d308a95029254ed328ba365861abdf2}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_a0d308a95029254ed328ba365861abdf2}\label{namespace_s_q_lfunction_a0d308a95029254ed328ba365861abdf2}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!sender\+\_\+password@{sender\+\_\+password}}
 \index{sender\+\_\+password@{sender\+\_\+password}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{sender\+\_\+password}
+\subsubsection{\texorpdfstring{sender\+\_\+password}{sender\_password}}
 {\footnotesize\ttfamily string S\+Q\+Lfunction.\+sender\+\_\+password = \char`\"{}controlsystem\char`\"{}}
 
 
@@ -831,20 +831,20 @@ Pi email password.
 
 Definition at line 23 of file S\+Q\+Lfunction.\+py.
 
-\mbox{\label{namespace_s_q_lfunction_afc238002d1e4aeb7f8d2e10d47dfad36}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_afc238002d1e4aeb7f8d2e10d47dfad36}\label{namespace_s_q_lfunction_afc238002d1e4aeb7f8d2e10d47dfad36}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!smtp\+\_\+server@{smtp\+\_\+server}}
 \index{smtp\+\_\+server@{smtp\+\_\+server}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{smtp\+\_\+server}
+\subsubsection{\texorpdfstring{smtp\+\_\+server}{smtp\_server}}
 {\footnotesize\ttfamily string S\+Q\+Lfunction.\+smtp\+\_\+server = \char`\"{}smtp.\+gmail.\+com\char`\"{}}
 
 
 
 Definition at line 17 of file S\+Q\+Lfunction.\+py.
 
-\mbox{\label{namespace_s_q_lfunction_a700c01c62cb7f1ed2561f5e640da46cf}} 
+\mbox{\Hypertarget{namespace_s_q_lfunction_a700c01c62cb7f1ed2561f5e640da46cf}\label{namespace_s_q_lfunction_a700c01c62cb7f1ed2561f5e640da46cf}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!S\+S\+Lport@{S\+S\+Lport}}
 \index{S\+S\+Lport@{S\+S\+Lport}!S\+Q\+Lfunction@{S\+Q\+Lfunction}}
-\subsubsection{S\+S\+Lport}
+\subsubsection{\texorpdfstring{S\+S\+Lport}{SSLport}}
 {\footnotesize\ttfamily int S\+Q\+Lfunction.\+S\+S\+Lport = 465}
 
 

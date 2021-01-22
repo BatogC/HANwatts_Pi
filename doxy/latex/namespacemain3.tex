@@ -1,94 +1,94 @@
-\section{main3 Namespace Reference}
+\hypertarget{namespacemain3}{}\section{main3 Namespace Reference}
 \label{namespacemain3}\index{main3@{main3}}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \textbf{ on\+\_\+connect} (\textbf{ client}, userdata, flags, rc)
+def \hyperlink{namespacemain3_a5c75165294c699dccf20a3a5105d1c83}{on\+\_\+connect} (\hyperlink{namespacemain3_ac22ae978a8b5a446c25462949448abe9}{client}, userdata, flags, rc)
 \begin{DoxyCompactList}\small\item\em Executes on M\+Q\+TT client connect to broker and sets flags. \end{DoxyCompactList}\item 
-def \textbf{ on\+\_\+disconnect} (\textbf{ client}, userdata, rc)
+def \hyperlink{namespacemain3_a18d6f3292241050eec8b3891f834ad5d}{on\+\_\+disconnect} (\hyperlink{namespacemain3_ac22ae978a8b5a446c25462949448abe9}{client}, userdata, rc)
 \begin{DoxyCompactList}\small\item\em Executes on M\+Q\+TT client disconnect and sets flags. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-string \textbf{ broker} = \char`\"{}broker.\+hivemq.\+com\char`\"{}
+string \hyperlink{namespacemain3_afdf3bec321b3b9107003c09223640e80}{broker} = \char`\"{}broker.\+hivemq.\+com\char`\"{}
 \begin{DoxyCompactList}\small\item\em M\+Q\+TT broker. \end{DoxyCompactList}\item 
-string \textbf{ path\+\_\+local} = \char`\"{}/media/D\+A\+T\+A\+B\+A\+SE/modbus\+Data.\+db\char`\"{}
+string \hyperlink{namespacemain3_a8e2441fb4fc06f2788b1864358403339}{path\+\_\+local} = \char`\"{}/media/D\+A\+T\+A\+B\+A\+SE/modbus\+Data.\+db\char`\"{}
 \begin{DoxyCompactList}\small\item\em Path for modbus database. \end{DoxyCompactList}\item 
-string \textbf{ path} = \char`\"{}/mnt/dav/Data/modbus\+Data.\+db\char`\"{}
+string \hyperlink{namespacemain3_a94593883ff80bece1776244df08104a1}{path} = \char`\"{}/mnt/dav/Data/modbus\+Data.\+db\char`\"{}
 \item 
-string \textbf{ path\+\_\+local\+\_\+user} = \char`\"{}/media/D\+A\+T\+A\+B\+A\+SE/usertable.\+sqlite3\char`\"{}
+string \hyperlink{namespacemain3_ab90723267d7b609bc02469c11db32a64}{path\+\_\+local\+\_\+user} = \char`\"{}/media/D\+A\+T\+A\+B\+A\+SE/usertable.\+sqlite3\char`\"{}
 \begin{DoxyCompactList}\small\item\em Path for users database. \end{DoxyCompactList}\item 
-string \textbf{ path\+\_\+user} = \char`\"{}/mnt/dav/Data/usertable.\+sqlite3\char`\"{}
+string \hyperlink{namespacemain3_a7e2fe5acbb746b4190127a6d04b418ed}{path\+\_\+user} = \char`\"{}/mnt/dav/Data/usertable.\+sqlite3\char`\"{}
 \item 
-\textbf{ con\+\_\+user\+\_\+local} = lite.\+connect(\textbf{ path\+\_\+local\+\_\+user})
+\hyperlink{namespacemain3_a693b4f7c34d4957bdd692bbb2ec9775f}{con\+\_\+user\+\_\+local} = lite.\+connect(\hyperlink{namespacemain3_ab90723267d7b609bc02469c11db32a64}{path\+\_\+local\+\_\+user})
 \item 
-\textbf{ cur\+\_\+user\+\_\+local} = con\+\_\+user\+\_\+local.\+cursor()
+\hyperlink{namespacemain3_a2fa22d0a5dd912937396dd96363ff968}{cur\+\_\+user\+\_\+local} = con\+\_\+user\+\_\+local.\+cursor()
 \item 
-\textbf{ con\+\_\+user} = lite.\+connect(\textbf{ path\+\_\+user})
+\hyperlink{namespacemain3_a53e03f12882bc3b99c9324b7814074ec}{con\+\_\+user} = lite.\+connect(\hyperlink{namespacemain3_a7e2fe5acbb746b4190127a6d04b418ed}{path\+\_\+user})
 \begin{DoxyCompactList}\small\item\em Initial DB connection check. \end{DoxyCompactList}\item 
-\textbf{ cur\+\_\+user} = con\+\_\+user.\+cursor()
+\hyperlink{namespacemain3_aac45a371e86ea7af1ea340ec4e0f95a9}{cur\+\_\+user} = con\+\_\+user.\+cursor()
 \item 
-\textbf{ con\+\_\+local} = lite.\+connect(\textbf{ path\+\_\+local})
+\hyperlink{namespacemain3_ac151e893e4ce2a34734073cf06c5f84a}{con\+\_\+local} = lite.\+connect(\hyperlink{namespacemain3_a8e2441fb4fc06f2788b1864358403339}{path\+\_\+local})
 \item 
-\textbf{ cur\+\_\+local} = con\+\_\+local.\+cursor()
+\hyperlink{namespacemain3_a25fd8974a655b4dc7bed362d3406bec3}{cur\+\_\+local} = con\+\_\+local.\+cursor()
 \item 
-\textbf{ con} = lite.\+connect(\textbf{ path})
+\hyperlink{namespacemain3_a4a9ab88fdf3f5bfc0803104c30ddfc98}{con} = lite.\+connect(\hyperlink{namespacemain3_a94593883ff80bece1776244df08104a1}{path})
 \item 
-\textbf{ cur} = con.\+cursor()
+\hyperlink{namespacemain3_a4a9cd088c1387b19bfaa89ed31b577c2}{cur} = con.\+cursor()
 \item 
-\textbf{ data\+Ref1} = cur.\+fetchone()
+\hyperlink{namespacemain3_a49b33cac6f362fbef2ac40a65b883fde}{data\+Ref1} = cur.\+fetchone()
 \item 
-int \textbf{ err\+\_\+cnt} = 0
+int \hyperlink{namespacemain3_a7c241739211f5cb7ee0dcde96902c843}{err\+\_\+cnt} = 0
 \item 
-\textbf{ client} = mqtt.\+Client()
+\hyperlink{namespacemain3_ac22ae978a8b5a446c25462949448abe9}{client} = mqtt.\+Client()
 \item 
-\textbf{ connected\+\_\+flag}
+\hyperlink{namespacemain3_ad437a0de30e4b6dfc9d354c3d56e43ac}{connected\+\_\+flag}
 \item 
-\textbf{ bad\+\_\+connection\+\_\+flag}
+\hyperlink{namespacemain3_ab4939f18edc72dec9e72dfa3ec2f026b}{bad\+\_\+connection\+\_\+flag}
 \item 
-\textbf{ on\+\_\+connect}
+\hyperlink{namespacemain3_a750e986d76cf0b4ce563501efc1d8f74}{on\+\_\+connect}
 \item 
-\textbf{ on\+\_\+disconnect}
+\hyperlink{namespacemain3_afecee61e71845eda2bab29e6c6d4f91c}{on\+\_\+disconnect}
 \item 
-int \textbf{ control\+\_\+pin} = 18
+int \hyperlink{namespacemain3_a71b20202aeb60b168b1dcee86f9d0d2a}{control\+\_\+pin} = 18
 \item 
-\textbf{ meter1} = M\+I\+C.\+M\+I\+C1(0x01, control\+\_\+pin)
+\hyperlink{namespacemain3_a6a802b14dd2a75c3e2b040097e50711a}{meter1} = M\+I\+C.\+M\+I\+C1(0x01, control\+\_\+pin)
 \begin{DoxyCompactList}\small\item\em Initializes meter. \end{DoxyCompactList}\item 
-\textbf{ meter2} = M\+I\+C.\+M\+I\+C1(0x02, control\+\_\+pin)
+\hyperlink{namespacemain3_aa252e5a293824baa2daad9b2dbef9b11}{meter2} = M\+I\+C.\+M\+I\+C1(0x02, control\+\_\+pin)
 \item 
-\textbf{ meter3} = M\+I\+C.\+M\+I\+C1(0x03, control\+\_\+pin)
+\hyperlink{namespacemain3_a70657f222edd8805f6f49ad404bd875a}{meter3} = M\+I\+C.\+M\+I\+C1(0x03, control\+\_\+pin)
 \item 
-\textbf{ meter4} = M\+I\+C.\+M\+I\+C1(0x04, control\+\_\+pin)
+\hyperlink{namespacemain3_a80e6d1df977908ba5ce55b4beb384ce6}{meter4} = M\+I\+C.\+M\+I\+C1(0x04, control\+\_\+pin)
 \item 
-\textbf{ meter5} = M\+I\+C.\+M\+I\+C1(0x05, control\+\_\+pin)
+\hyperlink{namespacemain3_aeda58cee300f9fae14d6fc3ca9891847}{meter5} = M\+I\+C.\+M\+I\+C1(0x05, control\+\_\+pin)
 \item 
-int \textbf{ time\+\_\+send} = 1
+int \hyperlink{namespacemain3_aefc1f762f0a9b87f47694cb1310cd460}{time\+\_\+send} = 1
 \item 
-\textbf{ current\+\_\+time} = time.\+ctime(time.\+time())
+\hyperlink{namespacemain3_aa03fad60889e4cdf61e6898d8ef9617e}{current\+\_\+time} = time.\+ctime(time.\+time())
 \item 
-\textbf{ reading\+P\+T1} = meter1.\+read\+P\+T1()
+\hyperlink{namespacemain3_a66971b3af77d619b5249162539add371}{reading\+P\+T1} = meter1.\+read\+P\+T1()
 \item 
-\textbf{ reading\+P\+T2} = meter1.\+read\+P\+T2()
+\hyperlink{namespacemain3_a77f2179ee84347784f243bf150c0e373}{reading\+P\+T2} = meter1.\+read\+P\+T2()
 \item 
-\textbf{ reading\+C\+T1} = meter1.\+read\+C\+T1()
+\hyperlink{namespacemain3_ad4596b47de04ad652b165f8a319cc003}{reading\+C\+T1} = meter1.\+read\+C\+T1()
 \item 
-\textbf{ reading} = meter1.\+read\+Phase\+Voltage()
+\hyperlink{namespacemain3_a34f71711d9f071c11a4574c8d3cef88d}{reading} = meter1.\+read\+Phase\+Voltage()
 \item 
-string \textbf{ Message}
+string \hyperlink{namespacemain3_a43f4efe6baf7e0cc4db121fab5cb163b}{Message}
 \item 
-\textbf{ data} = cur.\+fetchone()
+\hyperlink{namespacemain3_af3b593054c807ee934bbbca0f4964a15}{data} = cur.\+fetchone()
 \item 
-tuple \textbf{ set\+Point} = (\textbf{ data}[0]+\textbf{ data}[1]+\textbf{ data}[2])
+tuple \hyperlink{namespacemain3_a248f67a00d1a70af3906de327bd341e2}{set\+Point} = (\hyperlink{namespacemain3_af3b593054c807ee934bbbca0f4964a15}{data}\mbox{[}0\mbox{]}+\hyperlink{namespacemain3_af3b593054c807ee934bbbca0f4964a15}{data}\mbox{[}1\mbox{]}+\hyperlink{namespacemain3_af3b593054c807ee934bbbca0f4964a15}{data}\mbox{[}2\mbox{]})
 \item 
-dictionary \textbf{ data\+Send}
+dictionary \hyperlink{namespacemain3_a5c3879d90e71304ff78e672fe925e10a}{data\+Send}
 \end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\label{namespacemain3_a5c75165294c699dccf20a3a5105d1c83}} 
+\mbox{\Hypertarget{namespacemain3_a5c75165294c699dccf20a3a5105d1c83}\label{namespacemain3_a5c75165294c699dccf20a3a5105d1c83}} 
 \index{main3@{main3}!on\+\_\+connect@{on\+\_\+connect}}
 \index{on\+\_\+connect@{on\+\_\+connect}!main3@{main3}}
-\subsubsection{on\+\_\+connect()}
+\subsubsection{\texorpdfstring{on\+\_\+connect()}{on\_connect()}}
 {\footnotesize\ttfamily def main3.\+on\+\_\+connect (\begin{DoxyParamCaption}\item[{}]{client,  }\item[{}]{userdata,  }\item[{}]{flags,  }\item[{}]{rc }\end{DoxyParamCaption})}
 
 
@@ -105,7 +105,7 @@ References on\+\_\+connect.
 
 
 \begin{DoxyCode}
-58 \textcolor{keyword}{def }on_connect(client, userdata, flags, rc):
+58 \textcolor{keyword}{def }\hyperlink{namespace_s_q_lfunction_a215e7090f82fbf0d31fd97be6721389a}{on\_connect}(client, userdata, flags, rc):
 59     \textcolor{keywordflow}{if} rc == 0:
 60         \textcolor{comment}{#print("Connection start")}
 61         client.bad\_connection\_flag = \textcolor{keyword}{False}
@@ -120,10 +120,10 @@ References on\+\_\+connect.
 70         client.bad\_connection\_flag = \textcolor{keyword}{True}
 71 
 \end{DoxyCode}
-\mbox{\label{namespacemain3_a18d6f3292241050eec8b3891f834ad5d}} 
+\mbox{\Hypertarget{namespacemain3_a18d6f3292241050eec8b3891f834ad5d}\label{namespacemain3_a18d6f3292241050eec8b3891f834ad5d}} 
 \index{main3@{main3}!on\+\_\+disconnect@{on\+\_\+disconnect}}
 \index{on\+\_\+disconnect@{on\+\_\+disconnect}!main3@{main3}}
-\subsubsection{on\+\_\+disconnect()}
+\subsubsection{\texorpdfstring{on\+\_\+disconnect()}{on\_disconnect()}}
 {\footnotesize\ttfamily def main3.\+on\+\_\+disconnect (\begin{DoxyParamCaption}\item[{}]{client,  }\item[{}]{userdata,  }\item[{}]{rc }\end{DoxyParamCaption})}
 
 
@@ -140,7 +140,7 @@ References on\+\_\+disconnect.
 
 
 \begin{DoxyCode}
-73 \textcolor{keyword}{def }on_disconnect(client, userdata, rc):
+73 \textcolor{keyword}{def }\hyperlink{namespace_s_q_lfunction_ab3031ccbbdb3f5a04bd7d66ceb4494c7}{on\_disconnect}(client, userdata, rc):
 74     client.connected\_flag = \textcolor{keyword}{False}
 75     \textcolor{keywordflow}{if} rc != 0:
 76         print(\textcolor{stringliteral}{"Unexpected disconnection."})
@@ -152,20 +152,20 @@ References on\+\_\+disconnect.
 
 
 \subsection{Variable Documentation}
-\mbox{\label{namespacemain3_ab4939f18edc72dec9e72dfa3ec2f026b}} 
+\mbox{\Hypertarget{namespacemain3_ab4939f18edc72dec9e72dfa3ec2f026b}\label{namespacemain3_ab4939f18edc72dec9e72dfa3ec2f026b}} 
 \index{main3@{main3}!bad\+\_\+connection\+\_\+flag@{bad\+\_\+connection\+\_\+flag}}
 \index{bad\+\_\+connection\+\_\+flag@{bad\+\_\+connection\+\_\+flag}!main3@{main3}}
-\subsubsection{bad\+\_\+connection\+\_\+flag}
+\subsubsection{\texorpdfstring{bad\+\_\+connection\+\_\+flag}{bad\_connection\_flag}}
 {\footnotesize\ttfamily main3.\+bad\+\_\+connection\+\_\+flag}
 
 
 
 Definition at line 84 of file main3.\+py.
 
-\mbox{\label{namespacemain3_afdf3bec321b3b9107003c09223640e80}} 
+\mbox{\Hypertarget{namespacemain3_afdf3bec321b3b9107003c09223640e80}\label{namespacemain3_afdf3bec321b3b9107003c09223640e80}} 
 \index{main3@{main3}!broker@{broker}}
 \index{broker@{broker}!main3@{main3}}
-\subsubsection{broker}
+\subsubsection{\texorpdfstring{broker}{broker}}
 {\footnotesize\ttfamily string main3.\+broker = \char`\"{}broker.\+hivemq.\+com\char`\"{}}
 
 
@@ -176,41 +176,41 @@ M\+Q\+TT broker.
 
 Definition at line 20 of file main3.\+py.
 
-\mbox{\label{namespacemain3_ac22ae978a8b5a446c25462949448abe9}} 
+\mbox{\Hypertarget{namespacemain3_ac22ae978a8b5a446c25462949448abe9}\label{namespacemain3_ac22ae978a8b5a446c25462949448abe9}} 
 \index{main3@{main3}!client@{client}}
 \index{client@{client}!main3@{main3}}
-\subsubsection{client}
+\subsubsection{\texorpdfstring{client}{client}}
 {\footnotesize\ttfamily main3.\+client = mqtt.\+Client()}
 
 
 
 Definition at line 81 of file main3.\+py.
 
-\mbox{\label{namespacemain3_a4a9ab88fdf3f5bfc0803104c30ddfc98}} 
+\mbox{\Hypertarget{namespacemain3_a4a9ab88fdf3f5bfc0803104c30ddfc98}\label{namespacemain3_a4a9ab88fdf3f5bfc0803104c30ddfc98}} 
 \index{main3@{main3}!con@{con}}
 \index{con@{con}!main3@{main3}}
-\subsubsection{con}
-{\footnotesize\ttfamily main3.\+con = lite.\+connect(\textbf{ path})}
+\subsubsection{\texorpdfstring{con}{con}}
+{\footnotesize\ttfamily main3.\+con = lite.\+connect(\hyperlink{namespacemain3_a94593883ff80bece1776244df08104a1}{path})}
 
 
 
 Definition at line 46 of file main3.\+py.
 
-\mbox{\label{namespacemain3_ac151e893e4ce2a34734073cf06c5f84a}} 
+\mbox{\Hypertarget{namespacemain3_ac151e893e4ce2a34734073cf06c5f84a}\label{namespacemain3_ac151e893e4ce2a34734073cf06c5f84a}} 
 \index{main3@{main3}!con\+\_\+local@{con\+\_\+local}}
 \index{con\+\_\+local@{con\+\_\+local}!main3@{main3}}
-\subsubsection{con\+\_\+local}
-{\footnotesize\ttfamily main3.\+con\+\_\+local = lite.\+connect(\textbf{ path\+\_\+local})}
+\subsubsection{\texorpdfstring{con\+\_\+local}{con\_local}}
+{\footnotesize\ttfamily main3.\+con\+\_\+local = lite.\+connect(\hyperlink{namespacemain3_a8e2441fb4fc06f2788b1864358403339}{path\+\_\+local})}
 
 
 
 Definition at line 42 of file main3.\+py.
 
-\mbox{\label{namespacemain3_a53e03f12882bc3b99c9324b7814074ec}} 
+\mbox{\Hypertarget{namespacemain3_a53e03f12882bc3b99c9324b7814074ec}\label{namespacemain3_a53e03f12882bc3b99c9324b7814074ec}} 
 \index{main3@{main3}!con\+\_\+user@{con\+\_\+user}}
 \index{con\+\_\+user@{con\+\_\+user}!main3@{main3}}
-\subsubsection{con\+\_\+user}
-{\footnotesize\ttfamily main3.\+con\+\_\+user = lite.\+connect(\textbf{ path\+\_\+user})}
+\subsubsection{\texorpdfstring{con\+\_\+user}{con\_user}}
+{\footnotesize\ttfamily main3.\+con\+\_\+user = lite.\+connect(\hyperlink{namespacemain3_a7e2fe5acbb746b4190127a6d04b418ed}{path\+\_\+user})}
 
 
 
@@ -220,110 +220,110 @@ Initial DB connection check.
 
 Definition at line 37 of file main3.\+py.
 
-\mbox{\label{namespacemain3_a693b4f7c34d4957bdd692bbb2ec9775f}} 
+\mbox{\Hypertarget{namespacemain3_a693b4f7c34d4957bdd692bbb2ec9775f}\label{namespacemain3_a693b4f7c34d4957bdd692bbb2ec9775f}} 
 \index{main3@{main3}!con\+\_\+user\+\_\+local@{con\+\_\+user\+\_\+local}}
 \index{con\+\_\+user\+\_\+local@{con\+\_\+user\+\_\+local}!main3@{main3}}
-\subsubsection{con\+\_\+user\+\_\+local}
-{\footnotesize\ttfamily main3.\+con\+\_\+user\+\_\+local = lite.\+connect(\textbf{ path\+\_\+local\+\_\+user})}
+\subsubsection{\texorpdfstring{con\+\_\+user\+\_\+local}{con\_user\_local}}
+{\footnotesize\ttfamily main3.\+con\+\_\+user\+\_\+local = lite.\+connect(\hyperlink{namespacemain3_ab90723267d7b609bc02469c11db32a64}{path\+\_\+local\+\_\+user})}
 
 
 
 Definition at line 32 of file main3.\+py.
 
-\mbox{\label{namespacemain3_ad437a0de30e4b6dfc9d354c3d56e43ac}} 
+\mbox{\Hypertarget{namespacemain3_ad437a0de30e4b6dfc9d354c3d56e43ac}\label{namespacemain3_ad437a0de30e4b6dfc9d354c3d56e43ac}} 
 \index{main3@{main3}!connected\+\_\+flag@{connected\+\_\+flag}}
 \index{connected\+\_\+flag@{connected\+\_\+flag}!main3@{main3}}
-\subsubsection{connected\+\_\+flag}
+\subsubsection{\texorpdfstring{connected\+\_\+flag}{connected\_flag}}
 {\footnotesize\ttfamily main3.\+connected\+\_\+flag}
 
 
 
 Definition at line 83 of file main3.\+py.
 
-\mbox{\label{namespacemain3_a71b20202aeb60b168b1dcee86f9d0d2a}} 
+\mbox{\Hypertarget{namespacemain3_a71b20202aeb60b168b1dcee86f9d0d2a}\label{namespacemain3_a71b20202aeb60b168b1dcee86f9d0d2a}} 
 \index{main3@{main3}!control\+\_\+pin@{control\+\_\+pin}}
 \index{control\+\_\+pin@{control\+\_\+pin}!main3@{main3}}
-\subsubsection{control\+\_\+pin}
+\subsubsection{\texorpdfstring{control\+\_\+pin}{control\_pin}}
 {\footnotesize\ttfamily int main3.\+control\+\_\+pin = 18}
 
 
 
 Definition at line 90 of file main3.\+py.
 
-\mbox{\label{namespacemain3_a4a9cd088c1387b19bfaa89ed31b577c2}} 
+\mbox{\Hypertarget{namespacemain3_a4a9cd088c1387b19bfaa89ed31b577c2}\label{namespacemain3_a4a9cd088c1387b19bfaa89ed31b577c2}} 
 \index{main3@{main3}!cur@{cur}}
 \index{cur@{cur}!main3@{main3}}
-\subsubsection{cur}
+\subsubsection{\texorpdfstring{cur}{cur}}
 {\footnotesize\ttfamily main3.\+cur = con.\+cursor()}
 
 
 
 Definition at line 47 of file main3.\+py.
 
-\mbox{\label{namespacemain3_a25fd8974a655b4dc7bed362d3406bec3}} 
+\mbox{\Hypertarget{namespacemain3_a25fd8974a655b4dc7bed362d3406bec3}\label{namespacemain3_a25fd8974a655b4dc7bed362d3406bec3}} 
 \index{main3@{main3}!cur\+\_\+local@{cur\+\_\+local}}
 \index{cur\+\_\+local@{cur\+\_\+local}!main3@{main3}}
-\subsubsection{cur\+\_\+local}
+\subsubsection{\texorpdfstring{cur\+\_\+local}{cur\_local}}
 {\footnotesize\ttfamily main3.\+cur\+\_\+local = con\+\_\+local.\+cursor()}
 
 
 
 Definition at line 43 of file main3.\+py.
 
-\mbox{\label{namespacemain3_aac45a371e86ea7af1ea340ec4e0f95a9}} 
+\mbox{\Hypertarget{namespacemain3_aac45a371e86ea7af1ea340ec4e0f95a9}\label{namespacemain3_aac45a371e86ea7af1ea340ec4e0f95a9}} 
 \index{main3@{main3}!cur\+\_\+user@{cur\+\_\+user}}
 \index{cur\+\_\+user@{cur\+\_\+user}!main3@{main3}}
-\subsubsection{cur\+\_\+user}
+\subsubsection{\texorpdfstring{cur\+\_\+user}{cur\_user}}
 {\footnotesize\ttfamily main3.\+cur\+\_\+user = con\+\_\+user.\+cursor()}
 
 
 
 Definition at line 38 of file main3.\+py.
 
-\mbox{\label{namespacemain3_a2fa22d0a5dd912937396dd96363ff968}} 
+\mbox{\Hypertarget{namespacemain3_a2fa22d0a5dd912937396dd96363ff968}\label{namespacemain3_a2fa22d0a5dd912937396dd96363ff968}} 
 \index{main3@{main3}!cur\+\_\+user\+\_\+local@{cur\+\_\+user\+\_\+local}}
 \index{cur\+\_\+user\+\_\+local@{cur\+\_\+user\+\_\+local}!main3@{main3}}
-\subsubsection{cur\+\_\+user\+\_\+local}
+\subsubsection{\texorpdfstring{cur\+\_\+user\+\_\+local}{cur\_user\_local}}
 {\footnotesize\ttfamily main3.\+cur\+\_\+user\+\_\+local = con\+\_\+user\+\_\+local.\+cursor()}
 
 
 
 Definition at line 33 of file main3.\+py.
 
-\mbox{\label{namespacemain3_aa03fad60889e4cdf61e6898d8ef9617e}} 
+\mbox{\Hypertarget{namespacemain3_aa03fad60889e4cdf61e6898d8ef9617e}\label{namespacemain3_aa03fad60889e4cdf61e6898d8ef9617e}} 
 \index{main3@{main3}!current\+\_\+time@{current\+\_\+time}}
 \index{current\+\_\+time@{current\+\_\+time}!main3@{main3}}
-\subsubsection{current\+\_\+time}
+\subsubsection{\texorpdfstring{current\+\_\+time}{current\_time}}
 {\footnotesize\ttfamily main3.\+current\+\_\+time = time.\+ctime(time.\+time())}
 
 
 
 Definition at line 131 of file main3.\+py.
 
-\mbox{\label{namespacemain3_af3b593054c807ee934bbbca0f4964a15}} 
+\mbox{\Hypertarget{namespacemain3_af3b593054c807ee934bbbca0f4964a15}\label{namespacemain3_af3b593054c807ee934bbbca0f4964a15}} 
 \index{main3@{main3}!data@{data}}
 \index{data@{data}!main3@{main3}}
-\subsubsection{data}
+\subsubsection{\texorpdfstring{data}{data}}
 {\footnotesize\ttfamily main3.\+data = cur.\+fetchone()}
 
 
 
 Definition at line 678 of file main3.\+py.
 
-\mbox{\label{namespacemain3_a49b33cac6f362fbef2ac40a65b883fde}} 
+\mbox{\Hypertarget{namespacemain3_a49b33cac6f362fbef2ac40a65b883fde}\label{namespacemain3_a49b33cac6f362fbef2ac40a65b883fde}} 
 \index{main3@{main3}!data\+Ref1@{data\+Ref1}}
 \index{data\+Ref1@{data\+Ref1}!main3@{main3}}
-\subsubsection{data\+Ref1}
+\subsubsection{\texorpdfstring{data\+Ref1}{dataRef1}}
 {\footnotesize\ttfamily main3.\+data\+Ref1 = cur.\+fetchone()}
 
 
 
 Definition at line 49 of file main3.\+py.
 
-\mbox{\label{namespacemain3_a5c3879d90e71304ff78e672fe925e10a}} 
+\mbox{\Hypertarget{namespacemain3_a5c3879d90e71304ff78e672fe925e10a}\label{namespacemain3_a5c3879d90e71304ff78e672fe925e10a}} 
 \index{main3@{main3}!data\+Send@{data\+Send}}
 \index{data\+Send@{data\+Send}!main3@{main3}}
-\subsubsection{data\+Send}
+\subsubsection{\texorpdfstring{data\+Send}{dataSend}}
 {\footnotesize\ttfamily main3.\+data\+Send}
 
 {\bfseries Initial value\+:}
@@ -336,20 +336,20 @@ Definition at line 49 of file main3.\+py.
 
 Definition at line 702 of file main3.\+py.
 
-\mbox{\label{namespacemain3_a7c241739211f5cb7ee0dcde96902c843}} 
+\mbox{\Hypertarget{namespacemain3_a7c241739211f5cb7ee0dcde96902c843}\label{namespacemain3_a7c241739211f5cb7ee0dcde96902c843}} 
 \index{main3@{main3}!err\+\_\+cnt@{err\+\_\+cnt}}
 \index{err\+\_\+cnt@{err\+\_\+cnt}!main3@{main3}}
-\subsubsection{err\+\_\+cnt}
+\subsubsection{\texorpdfstring{err\+\_\+cnt}{err\_cnt}}
 {\footnotesize\ttfamily int main3.\+err\+\_\+cnt = 0}
 
 
 
 Definition at line 55 of file main3.\+py.
 
-\mbox{\label{namespacemain3_a43f4efe6baf7e0cc4db121fab5cb163b}} 
+\mbox{\Hypertarget{namespacemain3_a43f4efe6baf7e0cc4db121fab5cb163b}\label{namespacemain3_a43f4efe6baf7e0cc4db121fab5cb163b}} 
 \index{main3@{main3}!Message@{Message}}
 \index{Message@{Message}!main3@{main3}}
-\subsubsection{Message}
+\subsubsection{\texorpdfstring{Message}{Message}}
 {\footnotesize\ttfamily string main3.\+Message}
 
 {\bfseries Initial value\+:}
@@ -362,10 +362,10 @@ Definition at line 55 of file main3.\+py.
 
 Definition at line 153 of file main3.\+py.
 
-\mbox{\label{namespacemain3_a6a802b14dd2a75c3e2b040097e50711a}} 
+\mbox{\Hypertarget{namespacemain3_a6a802b14dd2a75c3e2b040097e50711a}\label{namespacemain3_a6a802b14dd2a75c3e2b040097e50711a}} 
 \index{main3@{main3}!meter1@{meter1}}
 \index{meter1@{meter1}!main3@{main3}}
-\subsubsection{meter1}
+\subsubsection{\texorpdfstring{meter1}{meter1}}
 {\footnotesize\ttfamily main3.\+meter1 = M\+I\+C.\+M\+I\+C1(0x01, control\+\_\+pin)}
 
 
@@ -376,50 +376,50 @@ Initializes meter.
 
 Definition at line 115 of file main3.\+py.
 
-\mbox{\label{namespacemain3_aa252e5a293824baa2daad9b2dbef9b11}} 
+\mbox{\Hypertarget{namespacemain3_aa252e5a293824baa2daad9b2dbef9b11}\label{namespacemain3_aa252e5a293824baa2daad9b2dbef9b11}} 
 \index{main3@{main3}!meter2@{meter2}}
 \index{meter2@{meter2}!main3@{main3}}
-\subsubsection{meter2}
+\subsubsection{\texorpdfstring{meter2}{meter2}}
 {\footnotesize\ttfamily main3.\+meter2 = M\+I\+C.\+M\+I\+C1(0x02, control\+\_\+pin)}
 
 
 
 Definition at line 116 of file main3.\+py.
 
-\mbox{\label{namespacemain3_a70657f222edd8805f6f49ad404bd875a}} 
+\mbox{\Hypertarget{namespacemain3_a70657f222edd8805f6f49ad404bd875a}\label{namespacemain3_a70657f222edd8805f6f49ad404bd875a}} 
 \index{main3@{main3}!meter3@{meter3}}
 \index{meter3@{meter3}!main3@{main3}}
-\subsubsection{meter3}
+\subsubsection{\texorpdfstring{meter3}{meter3}}
 {\footnotesize\ttfamily main3.\+meter3 = M\+I\+C.\+M\+I\+C1(0x03, control\+\_\+pin)}
 
 
 
 Definition at line 117 of file main3.\+py.
 
-\mbox{\label{namespacemain3_a80e6d1df977908ba5ce55b4beb384ce6}} 
+\mbox{\Hypertarget{namespacemain3_a80e6d1df977908ba5ce55b4beb384ce6}\label{namespacemain3_a80e6d1df977908ba5ce55b4beb384ce6}} 
 \index{main3@{main3}!meter4@{meter4}}
 \index{meter4@{meter4}!main3@{main3}}
-\subsubsection{meter4}
+\subsubsection{\texorpdfstring{meter4}{meter4}}
 {\footnotesize\ttfamily main3.\+meter4 = M\+I\+C.\+M\+I\+C1(0x04, control\+\_\+pin)}
 
 
 
 Definition at line 118 of file main3.\+py.
 
-\mbox{\label{namespacemain3_aeda58cee300f9fae14d6fc3ca9891847}} 
+\mbox{\Hypertarget{namespacemain3_aeda58cee300f9fae14d6fc3ca9891847}\label{namespacemain3_aeda58cee300f9fae14d6fc3ca9891847}} 
 \index{main3@{main3}!meter5@{meter5}}
 \index{meter5@{meter5}!main3@{main3}}
-\subsubsection{meter5}
+\subsubsection{\texorpdfstring{meter5}{meter5}}
 {\footnotesize\ttfamily main3.\+meter5 = M\+I\+C.\+M\+I\+C1(0x05, control\+\_\+pin)}
 
 
 
 Definition at line 119 of file main3.\+py.
 
-\mbox{\label{namespacemain3_a750e986d76cf0b4ce563501efc1d8f74}} 
+\mbox{\Hypertarget{namespacemain3_a750e986d76cf0b4ce563501efc1d8f74}\label{namespacemain3_a750e986d76cf0b4ce563501efc1d8f74}} 
 \index{main3@{main3}!on\+\_\+connect@{on\+\_\+connect}}
 \index{on\+\_\+connect@{on\+\_\+connect}!main3@{main3}}
-\subsubsection{on\+\_\+connect}
+\subsubsection{\texorpdfstring{on\+\_\+connect}{on\_connect}}
 {\footnotesize\ttfamily main3.\+on\+\_\+connect}
 
 
@@ -430,10 +430,10 @@ Definition at line 85 of file main3.\+py.
 
 Referenced by on\+\_\+connect().
 
-\mbox{\label{namespacemain3_afecee61e71845eda2bab29e6c6d4f91c}} 
+\mbox{\Hypertarget{namespacemain3_afecee61e71845eda2bab29e6c6d4f91c}\label{namespacemain3_afecee61e71845eda2bab29e6c6d4f91c}} 
 \index{main3@{main3}!on\+\_\+disconnect@{on\+\_\+disconnect}}
 \index{on\+\_\+disconnect@{on\+\_\+disconnect}!main3@{main3}}
-\subsubsection{on\+\_\+disconnect}
+\subsubsection{\texorpdfstring{on\+\_\+disconnect}{on\_disconnect}}
 {\footnotesize\ttfamily main3.\+on\+\_\+disconnect}
 
 
@@ -444,20 +444,20 @@ Definition at line 86 of file main3.\+py.
 
 Referenced by on\+\_\+disconnect().
 
-\mbox{\label{namespacemain3_a94593883ff80bece1776244df08104a1}} 
+\mbox{\Hypertarget{namespacemain3_a94593883ff80bece1776244df08104a1}\label{namespacemain3_a94593883ff80bece1776244df08104a1}} 
 \index{main3@{main3}!path@{path}}
 \index{path@{path}!main3@{main3}}
-\subsubsection{path}
+\subsubsection{\texorpdfstring{path}{path}}
 {\footnotesize\ttfamily string main3.\+path = \char`\"{}/mnt/dav/Data/modbus\+Data.\+db\char`\"{}}
 
 
 
 Definition at line 26 of file main3.\+py.
 
-\mbox{\label{namespacemain3_a8e2441fb4fc06f2788b1864358403339}} 
+\mbox{\Hypertarget{namespacemain3_a8e2441fb4fc06f2788b1864358403339}\label{namespacemain3_a8e2441fb4fc06f2788b1864358403339}} 
 \index{main3@{main3}!path\+\_\+local@{path\+\_\+local}}
 \index{path\+\_\+local@{path\+\_\+local}!main3@{main3}}
-\subsubsection{path\+\_\+local}
+\subsubsection{\texorpdfstring{path\+\_\+local}{path\_local}}
 {\footnotesize\ttfamily string main3.\+path\+\_\+local = \char`\"{}/media/D\+A\+T\+A\+B\+A\+SE/modbus\+Data.\+db\char`\"{}}
 
 
@@ -468,10 +468,10 @@ Path for modbus database.
 
 Definition at line 25 of file main3.\+py.
 
-\mbox{\label{namespacemain3_ab90723267d7b609bc02469c11db32a64}} 
+\mbox{\Hypertarget{namespacemain3_ab90723267d7b609bc02469c11db32a64}\label{namespacemain3_ab90723267d7b609bc02469c11db32a64}} 
 \index{main3@{main3}!path\+\_\+local\+\_\+user@{path\+\_\+local\+\_\+user}}
 \index{path\+\_\+local\+\_\+user@{path\+\_\+local\+\_\+user}!main3@{main3}}
-\subsubsection{path\+\_\+local\+\_\+user}
+\subsubsection{\texorpdfstring{path\+\_\+local\+\_\+user}{path\_local\_user}}
 {\footnotesize\ttfamily string main3.\+path\+\_\+local\+\_\+user = \char`\"{}/media/D\+A\+T\+A\+B\+A\+SE/usertable.\+sqlite3\char`\"{}}
 
 
@@ -482,70 +482,70 @@ Path for users database.
 
 Definition at line 29 of file main3.\+py.
 
-\mbox{\label{namespacemain3_a7e2fe5acbb746b4190127a6d04b418ed}} 
+\mbox{\Hypertarget{namespacemain3_a7e2fe5acbb746b4190127a6d04b418ed}\label{namespacemain3_a7e2fe5acbb746b4190127a6d04b418ed}} 
 \index{main3@{main3}!path\+\_\+user@{path\+\_\+user}}
 \index{path\+\_\+user@{path\+\_\+user}!main3@{main3}}
-\subsubsection{path\+\_\+user}
+\subsubsection{\texorpdfstring{path\+\_\+user}{path\_user}}
 {\footnotesize\ttfamily string main3.\+path\+\_\+user = \char`\"{}/mnt/dav/Data/usertable.\+sqlite3\char`\"{}}
 
 
 
 Definition at line 30 of file main3.\+py.
 
-\mbox{\label{namespacemain3_a34f71711d9f071c11a4574c8d3cef88d}} 
+\mbox{\Hypertarget{namespacemain3_a34f71711d9f071c11a4574c8d3cef88d}\label{namespacemain3_a34f71711d9f071c11a4574c8d3cef88d}} 
 \index{main3@{main3}!reading@{reading}}
 \index{reading@{reading}!main3@{main3}}
-\subsubsection{reading}
+\subsubsection{\texorpdfstring{reading}{reading}}
 {\footnotesize\ttfamily main3.\+reading = meter1.\+read\+Phase\+Voltage()}
 
 
 
 Definition at line 150 of file main3.\+py.
 
-\mbox{\label{namespacemain3_ad4596b47de04ad652b165f8a319cc003}} 
+\mbox{\Hypertarget{namespacemain3_ad4596b47de04ad652b165f8a319cc003}\label{namespacemain3_ad4596b47de04ad652b165f8a319cc003}} 
 \index{main3@{main3}!reading\+C\+T1@{reading\+C\+T1}}
 \index{reading\+C\+T1@{reading\+C\+T1}!main3@{main3}}
-\subsubsection{reading\+C\+T1}
+\subsubsection{\texorpdfstring{reading\+C\+T1}{readingCT1}}
 {\footnotesize\ttfamily main3.\+reading\+C\+T1 = meter1.\+read\+C\+T1()}
 
 
 
 Definition at line 146 of file main3.\+py.
 
-\mbox{\label{namespacemain3_a66971b3af77d619b5249162539add371}} 
+\mbox{\Hypertarget{namespacemain3_a66971b3af77d619b5249162539add371}\label{namespacemain3_a66971b3af77d619b5249162539add371}} 
 \index{main3@{main3}!reading\+P\+T1@{reading\+P\+T1}}
 \index{reading\+P\+T1@{reading\+P\+T1}!main3@{main3}}
-\subsubsection{reading\+P\+T1}
+\subsubsection{\texorpdfstring{reading\+P\+T1}{readingPT1}}
 {\footnotesize\ttfamily main3.\+reading\+P\+T1 = meter1.\+read\+P\+T1()}
 
 
 
 Definition at line 144 of file main3.\+py.
 
-\mbox{\label{namespacemain3_a77f2179ee84347784f243bf150c0e373}} 
+\mbox{\Hypertarget{namespacemain3_a77f2179ee84347784f243bf150c0e373}\label{namespacemain3_a77f2179ee84347784f243bf150c0e373}} 
 \index{main3@{main3}!reading\+P\+T2@{reading\+P\+T2}}
 \index{reading\+P\+T2@{reading\+P\+T2}!main3@{main3}}
-\subsubsection{reading\+P\+T2}
+\subsubsection{\texorpdfstring{reading\+P\+T2}{readingPT2}}
 {\footnotesize\ttfamily main3.\+reading\+P\+T2 = meter1.\+read\+P\+T2()}
 
 
 
 Definition at line 145 of file main3.\+py.
 
-\mbox{\label{namespacemain3_a248f67a00d1a70af3906de327bd341e2}} 
+\mbox{\Hypertarget{namespacemain3_a248f67a00d1a70af3906de327bd341e2}\label{namespacemain3_a248f67a00d1a70af3906de327bd341e2}} 
 \index{main3@{main3}!set\+Point@{set\+Point}}
 \index{set\+Point@{set\+Point}!main3@{main3}}
-\subsubsection{set\+Point}
-{\footnotesize\ttfamily int main3.\+set\+Point = (\textbf{ data}[0]+\textbf{ data}[1]+\textbf{ data}[2])}
+\subsubsection{\texorpdfstring{set\+Point}{setPoint}}
+{\footnotesize\ttfamily int main3.\+set\+Point = (\hyperlink{namespacemain3_af3b593054c807ee934bbbca0f4964a15}{data}\mbox{[}0\mbox{]}+\hyperlink{namespacemain3_af3b593054c807ee934bbbca0f4964a15}{data}\mbox{[}1\mbox{]}+\hyperlink{namespacemain3_af3b593054c807ee934bbbca0f4964a15}{data}\mbox{[}2\mbox{]})}
 
 
 
 Definition at line 679 of file main3.\+py.
 
-\mbox{\label{namespacemain3_aefc1f762f0a9b87f47694cb1310cd460}} 
+\mbox{\Hypertarget{namespacemain3_aefc1f762f0a9b87f47694cb1310cd460}\label{namespacemain3_aefc1f762f0a9b87f47694cb1310cd460}} 
 \index{main3@{main3}!time\+\_\+send@{time\+\_\+send}}
 \index{time\+\_\+send@{time\+\_\+send}!main3@{main3}}
-\subsubsection{time\+\_\+send}
+\subsubsection{\texorpdfstring{time\+\_\+send}{time\_send}}
 {\footnotesize\ttfamily int main3.\+time\+\_\+send = 1}
 
 
