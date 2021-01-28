@@ -8,6 +8,7 @@ import paho.mqtt.client as mqtt
 #import paho.mqtt.subscribe as subscribe
 import json
 import smtplib, ssl
+import requests
 
 ## Const. for max time before email is sent to charging user
 DISCONNECT_TIME = int(4 * 60 * 60) # 4 hours
@@ -386,6 +387,13 @@ def send_email():
         
     if dataRef is None:
         return
+    url = "http://www.kite.com"
+    timeout = 5
+    try:
+        request = requests.get(url, timeout=timeout)
+        print("Connected to the Internet")
+    except (requests.ConnectionError, requests.Timeout) as exception:
+        return
     with smtplib.SMTP_SSL(smtp_server, SSLport, context=email_context) as server:
         server.login(sender_email, sender_password)
         for element in dataRef:            
@@ -413,8 +421,9 @@ client.on_connect = on_connect
 client.on_disconnect = on_disconnect
 client.connect_async(broker, 1883, 60)
 
-send_email()
+
 send_admin()
+send_email()
 
 #client.message_callback_add("HANevse/getUsers", SendUser_callback)
 client.message_callback_add("HANevse/updateUser", update_callback)
@@ -444,7 +453,3 @@ while True:
         email_cntr = 0
         send_email()
         
-    
-    
-
-
