@@ -83,98 +83,98 @@ New Callback for Photon measurements that parses, checks DB for user data like n
 
 
 
-Definition at line 207 of file S\+Q\+Lfunction.\+py.
+Definition at line 208 of file S\+Q\+Lfunction.\+py.
 
 
 \begin{DoxyCode}
-207 \textcolor{keyword}{def }\hyperlink{namespace_s_q_lfunction_a356dd5906768f7dd778408f466e9f9b4}{new\_photonMeasure\_callback}(client, userdata, message):
-208     \textcolor{keywordflow}{try}:
-209         con = lite.connect(path)
-210         cur = con.cursor()
-211     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
-212         \textcolor{keywordflow}{print} (e)
-213     con\_local = lite.connect(path\_local)
-214     cur\_local = con\_local.cursor()
-215     data = json.loads(message.payload)    
-216     print(data)
-217     V1 = float(data.get(\textcolor{stringliteral}{"V1"}))
-218     V2 = float(data.get(\textcolor{stringliteral}{"V2"}))
-219     V3 = float(data.get(\textcolor{stringliteral}{"V3"}))
-220     I1 = float(data.get(\textcolor{stringliteral}{"I1"}))
-221     I2 = float(data.get(\textcolor{stringliteral}{"I2"}))
-222     I3 = float(data.get(\textcolor{stringliteral}{"I3"}))
-223     \textcolor{comment}{#P = float(data.get("P"))}
-224     \textcolor{comment}{#E = float(data.get("E"))}
-225     F = float(data.get(\textcolor{stringliteral}{"F"}))
-226     Time = int(data.get(\textcolor{stringliteral}{"Time"}))
-227     SocketID = int(data.get(\textcolor{stringliteral}{"SocketID"}))
-228     UserID = str(data.get(\textcolor{stringliteral}{"UserID"})).upper()
-229     
-230     \textcolor{keywordflow}{try}:
-231         cur.execute(\textcolor{stringliteral}{"SELECT name, rowid FROM users WHERE uidTag = ? "}, (UserID,) )
-232         dataUser = cur.fetchone()
-233     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
-234         \textcolor{keywordflow}{print} (e)
-235         cur\_local.execute(\textcolor{stringliteral}{"SELECT name, rowid FROM users WHERE uidTag = ? "}, (UserID,) )
-236         dataUser = cur\_local.fetchone()
-237         
-238     \textcolor{keywordflow}{try}:
-239         dataUser[1]
-240     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
-241         \textcolor{keywordflow}{print} (e)
-242         print(\textcolor{stringliteral}{"WARNING: Unauthorized user "} + UserID + \textcolor{stringliteral}{" charging at socket "} + str(SocketID))
-243         dataUser = (\textcolor{stringliteral}{'unknown'}, 31)                
-244     \textcolor{keywordflow}{try}:
-245         cur.execute(\textcolor{stringliteral}{"SELECT carId FROM car\_of\_user WHERE userId = ? "}, (dataUser[1],) )
-246         \textcolor{keywordflow}{if} (cur.fetchone() \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}):
-247             carId = 404
-248         \textcolor{keywordflow}{else}:
-249             carId = cur.fetchone()[0]        
-250     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
-251         \textcolor{keywordflow}{print} (e)
-252         cur\_local.execute(\textcolor{stringliteral}{"SELECT carId FROM car\_of\_user WHERE userId = ? "}, (dataUser[1],) )
-253         \textcolor{keywordflow}{if} (cur.fetchone() \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}):
-254             carId = 404
-255         \textcolor{keywordflow}{else}:
-256             carId = cur\_local.fetchone()[0]
-257     
-258     \textcolor{keywordflow}{try}:
-259         cur.execute(\textcolor{stringliteral}{"SELECT brand || ' ' || type FROM cars WHERE id = ? "}, (carId,) )
-260         carName = cur.fetchone()[0]
-261     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
-262         \textcolor{keywordflow}{print} (e)
-263         cur\_local.execute(\textcolor{stringliteral}{"SELECT brand || ' ' || type FROM cars WHERE id = ? "}, (carId,) )
-264         carName = cur\_local.fetchone()[0]
-265     \textcolor{keywordflow}{try}:    
-266         cur.execute(\textcolor{stringliteral}{"INSERT INTO measurements(userId, userName, carId, carName, socketId, V1, V2, V3, I1,
+208 \textcolor{keyword}{def }\hyperlink{namespace_s_q_lfunction_a356dd5906768f7dd778408f466e9f9b4}{new\_photonMeasure\_callback}(client, userdata, message):
+209     \textcolor{keywordflow}{try}:
+210         con = lite.connect(path)
+211         cur = con.cursor()
+212     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+213         \textcolor{keywordflow}{print} (e)
+214     con\_local = lite.connect(path\_local)
+215     cur\_local = con\_local.cursor()
+216     data = json.loads(message.payload)    
+217     print(data)
+218     V1 = float(data.get(\textcolor{stringliteral}{"V1"}))
+219     V2 = float(data.get(\textcolor{stringliteral}{"V2"}))
+220     V3 = float(data.get(\textcolor{stringliteral}{"V3"}))
+221     I1 = float(data.get(\textcolor{stringliteral}{"I1"}))
+222     I2 = float(data.get(\textcolor{stringliteral}{"I2"}))
+223     I3 = float(data.get(\textcolor{stringliteral}{"I3"}))
+224     \textcolor{comment}{#P = float(data.get("P"))}
+225     \textcolor{comment}{#E = float(data.get("E"))}
+226     F = float(data.get(\textcolor{stringliteral}{"F"}))
+227     Time = int(data.get(\textcolor{stringliteral}{"Time"}))
+228     SocketID = int(data.get(\textcolor{stringliteral}{"SocketID"}))
+229     UserID = str(data.get(\textcolor{stringliteral}{"UserID"})).upper()
+230     
+231     \textcolor{keywordflow}{try}:
+232         cur.execute(\textcolor{stringliteral}{"SELECT name, rowid FROM users WHERE uidTag = ? "}, (UserID,) )
+233         dataUser = cur.fetchone()
+234     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+235         \textcolor{keywordflow}{print} (e)
+236         cur\_local.execute(\textcolor{stringliteral}{"SELECT name, rowid FROM users WHERE uidTag = ? "}, (UserID,) )
+237         dataUser = cur\_local.fetchone()
+238         
+239     \textcolor{keywordflow}{try}:
+240         dataUser[1]
+241     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+242         \textcolor{keywordflow}{print} (e)
+243         print(\textcolor{stringliteral}{"WARNING: Unauthorized user "} + UserID + \textcolor{stringliteral}{" charging at socket "} + str(SocketID))
+244         dataUser = (\textcolor{stringliteral}{'unknown'}, 31)                
+245     \textcolor{keywordflow}{try}:
+246         cur.execute(\textcolor{stringliteral}{"SELECT carId FROM car\_of\_user WHERE userId = ? "}, (dataUser[1],) )
+247         \textcolor{keywordflow}{if} (cur.fetchone() \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}):
+248             carId = 404
+249         \textcolor{keywordflow}{else}:
+250             carId = cur.fetchone()[0]        
+251     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+252         \textcolor{keywordflow}{print} (e)
+253         cur\_local.execute(\textcolor{stringliteral}{"SELECT carId FROM car\_of\_user WHERE userId = ? "}, (dataUser[1],) )
+254         \textcolor{keywordflow}{if} (cur.fetchone() \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}):
+255             carId = 404
+256         \textcolor{keywordflow}{else}:
+257             carId = cur\_local.fetchone()[0]
+258     
+259     \textcolor{keywordflow}{try}:
+260         cur.execute(\textcolor{stringliteral}{"SELECT brand || ' ' || type FROM cars WHERE id = ? "}, (carId,) )
+261         carName = cur.fetchone()[0]
+262     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+263         \textcolor{keywordflow}{print} (e)
+264         cur\_local.execute(\textcolor{stringliteral}{"SELECT brand || ' ' || type FROM cars WHERE id = ? "}, (carId,) )
+265         carName = cur\_local.fetchone()[0]
+266     \textcolor{keywordflow}{try}:    
+267         cur.execute(\textcolor{stringliteral}{"INSERT INTO measurements(userId, userName, carId, carName, socketId, V1, V2, V3, I1,
        I2, I3, F, Time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)"},
-267                     (UserID, dataUser[0], carId, carName, SocketID, V1, V2, V3, I1, I2, I3, F, Time))
-268         con.commit()
-269     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
-270         \textcolor{keywordflow}{print} (e)
-271     \textcolor{keywordflow}{finally}:
-272         cur\_local.execute(\textcolor{stringliteral}{"INSERT INTO measurements(userId, userName, carId, carName, socketId, V1, V2, V3,
+268                     (UserID, dataUser[0], carId, carName, SocketID, V1, V2, V3, I1, I2, I3, F, Time))
+269         con.commit()
+270     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+271         \textcolor{keywordflow}{print} (e)
+272     \textcolor{keywordflow}{finally}:
+273         cur\_local.execute(\textcolor{stringliteral}{"INSERT INTO measurements(userId, userName, carId, carName, socketId, V1, V2, V3,
        I1, I2, I3, F, Time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)"},
-273                 (UserID, dataUser[0], carId, carName, SocketID, V1, V2, V3, I1, I2, I3, F, Time))
-274     
-275     con\_local.commit()
-276     \textcolor{comment}{#-#Insert with P and E measurements}
-277     \textcolor{comment}{#cur.execute("INSERT INTO measurements(userId, userName, carId, carName, socketId, V1, V2, V3, I1, I2,
+274                 (UserID, dataUser[0], carId, carName, SocketID, V1, V2, V3, I1, I2, I3, F, Time))
+275     
+276     con\_local.commit()
+277     \textcolor{comment}{#-#Insert with P and E measurements}
+278     \textcolor{comment}{#cur.execute("INSERT INTO measurements(userId, userName, carId, carName, socketId, V1, V2, V3, I1, I2,
        I3, P, E, F, Time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",}
-278     \textcolor{comment}{#            (UserID, dataUser[0], carId, carName, SocketID, V1, V2, V3, I1, I2, I3, P, E, F, Time))}
-279     
-280     \textcolor{comment}{# Or skip all .get() and do it in cur.execute     }
-281     \textcolor{comment}{#cur.execute("INSERT INTO measurements(userId, socketId, V1, V2, V3, I1, I2, I3, P, E, F, Time)
+279     \textcolor{comment}{#            (UserID, dataUser[0], carId, carName, SocketID, V1, V2, V3, I1, I2, I3, P, E, F, Time))}
+280     
+281     \textcolor{comment}{# Or skip all .get() and do it in cur.execute     }
+282     \textcolor{comment}{#cur.execute("INSERT INTO measurements(userId, socketId, V1, V2, V3, I1, I2, I3, P, E, F, Time)
        VALUES(?,?,?,?,?,?,?,?,?,?,?,?)",}
-282     \textcolor{comment}{#            (str(data["UserID"]).upper(), int(data["SocketID"]), float(data["V1"]), float(data["V2"]),
+283     \textcolor{comment}{#            (str(data["UserID"]).upper(), int(data["SocketID"]), float(data["V1"]), float(data["V2"]),
        float(data["V3"]), float(data["I1"]), float(data["I2"]), float(data["I3"]), float(data["P"]),
        float(data["E"]), float(data["F"]), int(data["Time"]) ))}
-283     
-284    \textcolor{comment}{#for readable timestamp use this at end of INSERT: time.strftime('%Y-%m-%d %T',
+284     
+285    \textcolor{comment}{#for readable timestamp use this at end of INSERT: time.strftime('%Y-%m-%d %T',
        time.localtime(int(data["Time"]) ))}
-285     
 286     
-287 
+287     
+288 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespace_s_q_lfunction_ab58c55eebaf8990eb9c810968db1dc50}\label{namespace_s_q_lfunction_ab58c55eebaf8990eb9c810968db1dc50}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!old\+\_\+photon\+Measure\+\_\+callback@{old\+\_\+photon\+Measure\+\_\+callback}}
@@ -188,39 +188,39 @@ Old Photon measurements callback that parses \textquotesingle{}\textquotesingle{
 
 
 
-Definition at line 289 of file S\+Q\+Lfunction.\+py.
+Definition at line 290 of file S\+Q\+Lfunction.\+py.
 
 
 \begin{DoxyCode}
-289 \textcolor{keyword}{def }\hyperlink{namespace_s_q_lfunction_ab58c55eebaf8990eb9c810968db1dc50}{old\_photonMeasure\_callback}(client, userdata, message):
-290     con = lite.connect(path)
-291     cur = con.cursor()
-292     data = message.payload    
-293     data = data.decode(\textcolor{stringliteral}{'UTF-8'})
-294     print(data)
-295     
-296     index = []
-297     \textcolor{keywordflow}{for} i \textcolor{keywordflow}{in} range(len(data)):
-298         \textcolor{keywordflow}{if} (data[i] == \textcolor{stringliteral}{'%'}):
-299             index.append(i)
-300     V1 = float(data[:index[0]])
-301     V2 = float(data[index[0]+1:index[1]])
-302     V3 = float(data[index[1]+1:index[2]])
-303     I1 = float(data[index[2]+1:index[3]])
-304     I2 = float(data[index[3]+1:index[4]])
-305     I3 = float(data[index[4]+1:index[5]])
-306     P = float(data[index[5]+1:index[6]])
-307     E = float(data[index[6]+1:index[7]])
-308     F = float(data[index[7]+1:index[8]])
-309     Time = int(data[index[8]+1:index[9]])
-310     SocketID = int(data[index[9]+1:index[10]])
-311     UserID = data[index[10]+1:index[11]]
-312     cur.execute(\textcolor{stringliteral}{"INSERT INTO photonMeasure(UIDtag, SocketID, V1, V2, V3, I1, I2, I3, P, E, F, Time)
+290 \textcolor{keyword}{def }\hyperlink{namespace_s_q_lfunction_ab58c55eebaf8990eb9c810968db1dc50}{old\_photonMeasure\_callback}(client, userdata, message):
+291     con = lite.connect(path)
+292     cur = con.cursor()
+293     data = message.payload    
+294     data = data.decode(\textcolor{stringliteral}{'UTF-8'})
+295     print(data)
+296     
+297     index = []
+298     \textcolor{keywordflow}{for} i \textcolor{keywordflow}{in} range(len(data)):
+299         \textcolor{keywordflow}{if} (data[i] == \textcolor{stringliteral}{'%'}):
+300             index.append(i)
+301     V1 = float(data[:index[0]])
+302     V2 = float(data[index[0]+1:index[1]])
+303     V3 = float(data[index[1]+1:index[2]])
+304     I1 = float(data[index[2]+1:index[3]])
+305     I2 = float(data[index[3]+1:index[4]])
+306     I3 = float(data[index[4]+1:index[5]])
+307     P = float(data[index[5]+1:index[6]])
+308     E = float(data[index[6]+1:index[7]])
+309     F = float(data[index[7]+1:index[8]])
+310     Time = int(data[index[8]+1:index[9]])
+311     SocketID = int(data[index[9]+1:index[10]])
+312     UserID = data[index[10]+1:index[11]]
+313     cur.execute(\textcolor{stringliteral}{"INSERT INTO photonMeasure(UIDtag, SocketID, V1, V2, V3, I1, I2, I3, P, E, F, Time)
        VALUES(?,?,?,?,?,?,?,?,?,?,?,?)"},
-313                 (UserID, SocketID, V1, V2, V3, I1, I2, I3, P, E, F, Time))
-314     con.commit()
-315     \textcolor{comment}{#print(V1)}
-316 
+314                 (UserID, SocketID, V1, V2, V3, I1, I2, I3, P, E, F, Time))
+315     con.commit()
+316     \textcolor{comment}{#print(V1)}
+317 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespace_s_q_lfunction_aa9ad8419206f0d4e4281775b4dcbf03d}\label{namespace_s_q_lfunction_aa9ad8419206f0d4e4281775b4dcbf03d}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!on\+\_\+connect@{on\+\_\+connect}}
@@ -234,7 +234,7 @@ Executes on M\+Q\+TT client connect to broker, sets flags and subscribes.
 
 
 
-Definition at line 62 of file S\+Q\+Lfunction.\+py.
+Definition at line 63 of file S\+Q\+Lfunction.\+py.
 
 
 
@@ -242,23 +242,23 @@ References on\+\_\+connect.
 
 
 \begin{DoxyCode}
-62 \textcolor{keyword}{def }\hyperlink{namespace_s_q_lfunction_a215e7090f82fbf0d31fd97be6721389a}{on\_connect}(client, userdata, flags, rc):
-63     \textcolor{keywordflow}{if} rc == 0:
-64         \textcolor{comment}{#print("Connection start")}
-65         print(path)
-66         client.bad\_connection\_flag = \textcolor{keyword}{False}
-67         client.connected\_flag = \textcolor{keyword}{True}        
-68         err\_cnt = 0
-69 
-70         client.publish(\textcolor{stringliteral}{"HANevse/testsql"}, \textcolor{stringliteral}{"Hello from SQLfunction"},1 ,\textcolor{keyword}{False})
-71 \textcolor{comment}{#        client.subscribe([("HANevse/getUsers", 2), ("HANevse/UpdateUser", 2), ("HANevse/photonMeasure",
+63 \textcolor{keyword}{def }\hyperlink{namespace_s_q_lfunction_a215e7090f82fbf0d31fd97be6721389a}{on\_connect}(client, userdata, flags, rc):
+64     \textcolor{keywordflow}{if} rc == 0:
+65         \textcolor{comment}{#print("Connection start")}
+66         print(path)
+67         client.bad\_connection\_flag = \textcolor{keyword}{False}
+68         client.connected\_flag = \textcolor{keyword}{True}        
+69         err\_cnt = 0
+70 
+71         client.publish(\textcolor{stringliteral}{"HANevse/testsql"}, \textcolor{stringliteral}{"Hello from SQLfunction"},1 ,\textcolor{keyword}{False})
+72 \textcolor{comment}{#        client.subscribe([("HANevse/getUsers", 2), ("HANevse/UpdateUser", 2), ("HANevse/photonMeasure",
        2)])}
-72         client.subscribe([(\textcolor{stringliteral}{"HANevse/updateUser"}, 2), (\textcolor{stringliteral}{"HANevse/photonMeasure"}, 2)])
-73         print(\textcolor{stringliteral}{"Connected OK"})
-74     \textcolor{keywordflow}{else}:
-75         print(\textcolor{stringliteral}{"Bad connection, RC = "}, rc)
-76         client.bad\_connection\_flag = \textcolor{keyword}{True}
-77 
+73         client.subscribe([(\textcolor{stringliteral}{"HANevse/updateUser"}, 2), (\textcolor{stringliteral}{"HANevse/photonMeasure"}, 2)])
+74         print(\textcolor{stringliteral}{"Connected OK"})
+75     \textcolor{keywordflow}{else}:
+76         print(\textcolor{stringliteral}{"Bad connection, RC = "}, rc)
+77         client.bad\_connection\_flag = \textcolor{keyword}{True}
+78 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespace_s_q_lfunction_a3a3d48b63f188d8357c3422e417a58dc}\label{namespace_s_q_lfunction_a3a3d48b63f188d8357c3422e417a58dc}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!on\+\_\+disconnect@{on\+\_\+disconnect}}
@@ -272,7 +272,7 @@ Executes on M\+Q\+TT client disconnect and sets flags.
 
 
 
-Definition at line 79 of file S\+Q\+Lfunction.\+py.
+Definition at line 80 of file S\+Q\+Lfunction.\+py.
 
 
 
@@ -280,32 +280,32 @@ References on\+\_\+disconnect.
 
 
 \begin{DoxyCode}
-79 \textcolor{keyword}{def }\hyperlink{namespace_s_q_lfunction_ab3031ccbbdb3f5a04bd7d66ceb4494c7}{on\_disconnect}(client, userdata, rc):
-80     client.connected\_flag = \textcolor{keyword}{False}
-81     \textcolor{keywordflow}{if} rc != 0:
-82         print(\textcolor{stringliteral}{"Unexpected disconnection."})
-83         client.bad\_connection\_flag = \textcolor{keyword}{True}
-84     \textcolor{keywordflow}{else}:
-85         print(\textcolor{stringliteral}{"Normal disconnection."})
-86 
-87 \textcolor{comment}{# def SendUser\_callback(client, userdata, message):}
-88 \textcolor{comment}{#     #print(message.payload)}
-89 \textcolor{comment}{#     con = lite.connect(path)}
-90 \textcolor{comment}{#     cur = con.cursor()}
-91 \textcolor{comment}{#     cur.execute('select * from list')}
-92 \textcolor{comment}{# }
-93 \textcolor{comment}{#     data = cur.fetchall()}
-94 \textcolor{comment}{#     dataSend = ""}
-95 \textcolor{comment}{# }
-96 \textcolor{comment}{#     for element in data:}
-97 \textcolor{comment}{#         print(element)}
-98 \textcolor{comment}{#         dataSend +=
+80 \textcolor{keyword}{def }\hyperlink{namespace_s_q_lfunction_ab3031ccbbdb3f5a04bd7d66ceb4494c7}{on\_disconnect}(client, userdata, rc):
+81     client.connected\_flag = \textcolor{keyword}{False}
+82     \textcolor{keywordflow}{if} rc != 0:
+83         print(\textcolor{stringliteral}{"Unexpected disconnection."})
+84         client.bad\_connection\_flag = \textcolor{keyword}{True}
+85     \textcolor{keywordflow}{else}:
+86         print(\textcolor{stringliteral}{"Normal disconnection."})
+87 
+88 \textcolor{comment}{# def SendUser\_callback(client, userdata, message):}
+89 \textcolor{comment}{#     #print(message.payload)}
+90 \textcolor{comment}{#     con = lite.connect(path)}
+91 \textcolor{comment}{#     cur = con.cursor()}
+92 \textcolor{comment}{#     cur.execute('select * from list')}
+93 \textcolor{comment}{# }
+94 \textcolor{comment}{#     data = cur.fetchall()}
+95 \textcolor{comment}{#     dataSend = ""}
+96 \textcolor{comment}{# }
+97 \textcolor{comment}{#     for element in data:}
+98 \textcolor{comment}{#         print(element)}
+99 \textcolor{comment}{#         dataSend +=
        (str(element[0])+'%'+element[1]+'%'+element[2]+'%'+str(element[3])+'%'+element[4]+'%'+str(element[5])+'%'+element[6]+'%'+str(element[7])+'%'+str(element[8])+'%')}
-99 \textcolor{comment}{#     }
-100 \textcolor{comment}{#     client.publish("HANevse/UserList", dataSend, 2, True)}
-101 \textcolor{comment}{#     #publish.single("HANevse/UserList", dataSend, hostname=broker)}
-102 \textcolor{comment}{#     #print(dataSend)}
-103 
+100 \textcolor{comment}{#     }
+101 \textcolor{comment}{#     client.publish("HANevse/UserList", dataSend, 2, True)}
+102 \textcolor{comment}{#     #publish.single("HANevse/UserList", dataSend, hostname=broker)}
+103 \textcolor{comment}{#     #print(dataSend)}
+104 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespace_s_q_lfunction_a75af8b1bb1aa60f32418ac7901b0060b}\label{namespace_s_q_lfunction_a75af8b1bb1aa60f32418ac7901b0060b}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!send\+\_\+admin@{send\+\_\+admin}}
@@ -319,70 +319,70 @@ Function to send admin email if one user has been plugged in at a socket for ove
 
 
 
-Definition at line 319 of file S\+Q\+Lfunction.\+py.
+Definition at line 320 of file S\+Q\+Lfunction.\+py.
 
 
 \begin{DoxyCode}
-319 \textcolor{keyword}{def }\hyperlink{namespace_s_q_lfunction_a75af8b1bb1aa60f32418ac7901b0060b}{send\_admin}():
-320     \textcolor{keywordflow}{try}:
-321         con = lite.connect(path)
-322         cur = con.cursor()
-323         cur.execute(\textcolor{stringliteral}{"SELECT rowid FROM measurements WHERE Time <= ? AND Time >= ? LIMIT 1"}, ((str(int(
+320 \textcolor{keyword}{def }\hyperlink{namespace_s_q_lfunction_a75af8b1bb1aa60f32418ac7901b0060b}{send\_admin}():
+321     \textcolor{keywordflow}{try}:
+322         con = lite.connect(path)
+323         cur = con.cursor()
+324         cur.execute(\textcolor{stringliteral}{"SELECT rowid FROM measurements WHERE Time <= ? AND Time >= ? LIMIT 1"}, ((str(int(
       time.time()) - DISCONNECT\_TIME)),(str(int(time.time()) - DISCONNECT\_TIME - 29)),) )
-324         dataRef = cur.fetchone()
-325         \textcolor{keywordflow}{if} dataRef \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}:
-326             \textcolor{keywordflow}{pass}
-327         \textcolor{keywordflow}{else}:
-328             cur.execute(\textcolor{stringliteral}{"SELECT rowid FROM measurements WHERE Time >= ? LIMIT 1"}, ((str(int(time.time()) - 
+325         dataRef = cur.fetchone()
+326         \textcolor{keywordflow}{if} dataRef \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}:
+327             \textcolor{keywordflow}{pass}
+328         \textcolor{keywordflow}{else}:
+329             cur.execute(\textcolor{stringliteral}{"SELECT rowid FROM measurements WHERE Time >= ? LIMIT 1"}, ((str(int(time.time()) - 
       60)),) )
-329             dataRef = cur.fetchone()
-330             \textcolor{keywordflow}{if} dataRef \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}:
-331                 \textcolor{keywordflow}{pass}
-332             \textcolor{keywordflow}{else}:
-333                 with smtplib.SMTP\_SSL(smtp\_server, SSLport, context=email\_context) \textcolor{keyword}{as} server:
-334                     server.login(sender\_email, sender\_password)                    
-335                     server.sendmail(sender\_email, \textcolor{stringliteral}{"nguyenxuan.trung@han.nl"}, email\_message)
-336     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
-337         \textcolor{keywordflow}{print} (e)
-338         con\_local = lite.connect(path\_local)
-339         cur\_local = con\_local.cursor()
-340         cur\_local.execute(\textcolor{stringliteral}{"SELECT rowid FROM measurements WHERE Time <= ? AND Time >= ? LIMIT 1"}, ((str(int
+330             dataRef = cur.fetchone()
+331             \textcolor{keywordflow}{if} dataRef \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}:
+332                 \textcolor{keywordflow}{pass}
+333             \textcolor{keywordflow}{else}:
+334                 with smtplib.SMTP\_SSL(smtp\_server, SSLport, context=email\_context) \textcolor{keyword}{as} server:
+335                     server.login(sender\_email, sender\_password)                    
+336                     server.sendmail(sender\_email, \textcolor{stringliteral}{"nguyenxuan.trung@han.nl"}, email\_message)
+337     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+338         \textcolor{keywordflow}{print} (e)
+339         con\_local = lite.connect(path\_local)
+340         cur\_local = con\_local.cursor()
+341         cur\_local.execute(\textcolor{stringliteral}{"SELECT rowid FROM measurements WHERE Time <= ? AND Time >= ? LIMIT 1"}, ((str(int
       (time.time()) - DISCONNECT\_TIME)),(str(int(time.time()) - DISCONNECT\_TIME - 29)),) )
-341         dataRef = cur\_local.fetchone()
-342         \textcolor{keywordflow}{if} dataRef \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}:
-343             \textcolor{keywordflow}{pass}
-344         \textcolor{keywordflow}{else}:
-345             cur\_local.execute(\textcolor{stringliteral}{"SELECT rowid FROM measurements WHERE Time >= ? LIMIT 1"}, ((str(int(time.time
+342         dataRef = cur\_local.fetchone()
+343         \textcolor{keywordflow}{if} dataRef \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}:
+344             \textcolor{keywordflow}{pass}
+345         \textcolor{keywordflow}{else}:
+346             cur\_local.execute(\textcolor{stringliteral}{"SELECT rowid FROM measurements WHERE Time >= ? LIMIT 1"}, ((str(int(time.time
       ()) - 60)),) )
-346             dataRef = cur\_local.fetchone()
-347             \textcolor{keywordflow}{if} dataRef \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}:
-348                 \textcolor{keywordflow}{pass}
-349             \textcolor{keywordflow}{else}:
-350                 with smtplib.SMTP\_SSL(smtp\_server, SSLport, context=email\_context) \textcolor{keyword}{as} server:
-351                     server.login(sender\_email, sender\_password)                    
-352                     server.sendmail(sender\_email, \textcolor{stringliteral}{"nguyenxuan.trung@han.nl"}, email\_message)
-353             
-354 \textcolor{comment}{#     if dataRef is None:}
-355 \textcolor{comment}{#         pass}
-356 \textcolor{comment}{#     else:}
-357 \textcolor{comment}{#         try:}
-358 \textcolor{comment}{#             cur.execute("SELECT rowid FROM measurements WHERE Time >= ? LIMIT 1", ((str(int(time.time())
+347             dataRef = cur\_local.fetchone()
+348             \textcolor{keywordflow}{if} dataRef \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}:
+349                 \textcolor{keywordflow}{pass}
+350             \textcolor{keywordflow}{else}:
+351                 with smtplib.SMTP\_SSL(smtp\_server, SSLport, context=email\_context) \textcolor{keyword}{as} server:
+352                     server.login(sender\_email, sender\_password)                    
+353                     server.sendmail(sender\_email, \textcolor{stringliteral}{"nguyenxuan.trung@han.nl"}, email\_message)
+354             
+355 \textcolor{comment}{#     if dataRef is None:}
+356 \textcolor{comment}{#         pass}
+357 \textcolor{comment}{#     else:}
+358 \textcolor{comment}{#         try:}
+359 \textcolor{comment}{#             cur.execute("SELECT rowid FROM measurements WHERE Time >= ? LIMIT 1", ((str(int(time.time())
        - 60)),) )}
-359 \textcolor{comment}{#             dataRef = cur.fetchone()}
-360 \textcolor{comment}{#         except Exception as e:}
-361 \textcolor{comment}{#             print (e)}
-362 \textcolor{comment}{#             cur\_local.execute("SELECT rowid FROM measurements WHERE Time >= ? LIMIT 1",
+360 \textcolor{comment}{#             dataRef = cur.fetchone()}
+361 \textcolor{comment}{#         except Exception as e:}
+362 \textcolor{comment}{#             print (e)}
+363 \textcolor{comment}{#             cur\_local.execute("SELECT rowid FROM measurements WHERE Time >= ? LIMIT 1",
        ((str(int(time.time()) - 60)),) )}
-363 \textcolor{comment}{#             dataRef = cur\_local.fetchone()}
-364 \textcolor{comment}{#             }
-365 \textcolor{comment}{#         if dataRef is None:}
-366 \textcolor{comment}{#             pass}
-367 \textcolor{comment}{#         else:}
-368 \textcolor{comment}{#             with smtplib.SMTP\_SSL(smtp\_server, SSLport, context=email\_context) as server:}
-369 \textcolor{comment}{#                 server.login(sender\_email, sender\_password)                    }
-370 \textcolor{comment}{#                 server.sendmail(sender\_email, "nguyenxuan.trung@han.nl", email\_message)}
-371 
-372 \textcolor{comment}{# Function (executed every 5min) that checks in DB for users charging for over 4 hours ands sends them
+364 \textcolor{comment}{#             dataRef = cur\_local.fetchone()}
+365 \textcolor{comment}{#             }
+366 \textcolor{comment}{#         if dataRef is None:}
+367 \textcolor{comment}{#             pass}
+368 \textcolor{comment}{#         else:}
+369 \textcolor{comment}{#             with smtplib.SMTP\_SSL(smtp\_server, SSLport, context=email\_context) as server:}
+370 \textcolor{comment}{#                 server.login(sender\_email, sender\_password)                    }
+371 \textcolor{comment}{#                 server.sendmail(sender\_email, "nguyenxuan.trung@han.nl", email\_message)}
+372 
+373 \textcolor{comment}{# Function (executed every 5min) that checks in DB for users charging for over 4 hours ands sends them
        email to d/c}
 \end{DoxyCode}
 \mbox{\Hypertarget{namespace_s_q_lfunction_a526fa5bc764d15233b0cc1880fc33f83}\label{namespace_s_q_lfunction_a526fa5bc764d15233b0cc1880fc33f83}} 
@@ -393,48 +393,55 @@ Definition at line 319 of file S\+Q\+Lfunction.\+py.
 
 
 
-Definition at line 373 of file S\+Q\+Lfunction.\+py.
+Definition at line 374 of file S\+Q\+Lfunction.\+py.
 
 
 \begin{DoxyCode}
-373 \textcolor{keyword}{def }\hyperlink{namespace_s_q_lfunction_a526fa5bc764d15233b0cc1880fc33f83}{send\_email}():
-374     
-375     con\_local = lite.connect(path\_local)
-376     cur\_local = con\_local.cursor()
-377     \textcolor{keywordflow}{try}:
-378         con = lite.connect(path)
-379         cur = con.cursor()
-380         cur.execute(\textcolor{stringliteral}{"SELECT email, rowid FROM users WHERE LastStartOrStop <= ? AND email <> '' AND mailed <
+374 \textcolor{keyword}{def }\hyperlink{namespace_s_q_lfunction_a526fa5bc764d15233b0cc1880fc33f83}{send\_email}():
+375     
+376     con\_local = lite.connect(path\_local)
+377     cur\_local = con\_local.cursor()
+378     \textcolor{keywordflow}{try}:
+379         con = lite.connect(path)
+380         cur = con.cursor()
+381         cur.execute(\textcolor{stringliteral}{"SELECT email, rowid FROM users WHERE LastStartOrStop <= ? AND email <> '' AND mailed <
        1 AND socketId IS NOT NULL"}, ((str(int(time.time()) - DISCONNECT\_TIME)),) )
-381         dataRef = cur.fetchall()
-382     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
-383         \textcolor{keywordflow}{print} (e)        
-384         cur\_local.execute(\textcolor{stringliteral}{"SELECT email, rowid FROM users WHERE LastStartOrStop <= ? AND email <> '' AND
+382         dataRef = cur.fetchall()
+383     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+384         \textcolor{keywordflow}{print} (e)        
+385         cur\_local.execute(\textcolor{stringliteral}{"SELECT email, rowid FROM users WHERE LastStartOrStop <= ? AND email <> '' AND
        mailed < 1 AND socketId IS NOT NULL"}, ((str(int(time.time()) - DISCONNECT\_TIME)),) )
-385         dataRef = cur\_local.fetchall()
-386         
-387     \textcolor{keywordflow}{if} dataRef \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}:
-388         \textcolor{keywordflow}{return}
-389     with smtplib.SMTP\_SSL(smtp\_server, SSLport, context=email\_context) \textcolor{keyword}{as} server:
-390         server.login(sender\_email, sender\_password)
-391         \textcolor{keywordflow}{for} element \textcolor{keywordflow}{in} dataRef:            
-392             server.sendmail(sender\_email, element[0], email\_message)
-393             \textcolor{keywordflow}{try}:
-394                 cur.execute(\textcolor{stringliteral}{"UPDATE users SET mailed = 1 WHERE rowid=?"}, (element[1],))
-395             \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
-396                 \textcolor{keywordflow}{print} (e)
-397             cur\_local.execute(\textcolor{stringliteral}{"UPDATE users SET mailed = 1 WHERE rowid=?"}, (element[1],))
-398     \textcolor{comment}{#cur.execute("UPDATE users SET mailed = 0 WHERE LastStartOrStop > ? AND mailed > 0 AND socketId IS
+386         dataRef = cur\_local.fetchall()
+387         
+388     \textcolor{keywordflow}{if} dataRef \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}:
+389         \textcolor{keywordflow}{return}
+390     url = \textcolor{stringliteral}{"http://www.kite.com"}
+391     timeout = 5
+392     \textcolor{keywordflow}{try}:
+393         request = requests.get(url, timeout=timeout)
+394         print(\textcolor{stringliteral}{"Connected to the Internet"})
+395     \textcolor{keywordflow}{except} (requests.ConnectionError, requests.Timeout) \textcolor{keyword}{as} exception:
+396         \textcolor{keywordflow}{return}
+397     with smtplib.SMTP\_SSL(smtp\_server, SSLport, context=email\_context) \textcolor{keyword}{as} server:
+398         server.login(sender\_email, sender\_password)
+399         \textcolor{keywordflow}{for} element \textcolor{keywordflow}{in} dataRef:            
+400             server.sendmail(sender\_email, element[0], email\_message)
+401             \textcolor{keywordflow}{try}:
+402                 cur.execute(\textcolor{stringliteral}{"UPDATE users SET mailed = 1 WHERE rowid=?"}, (element[1],))
+403             \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+404                 \textcolor{keywordflow}{print} (e)
+405             cur\_local.execute(\textcolor{stringliteral}{"UPDATE users SET mailed = 1 WHERE rowid=?"}, (element[1],))
+406     \textcolor{comment}{#cur.execute("UPDATE users SET mailed = 0 WHERE LastStartOrStop > ? AND mailed > 0 AND socketId IS
        NULL", ((str(int(time.time()) - DISCONNECT\_TIME)),) ) }
-399     \textcolor{keywordflow}{try}:
-400         cur.execute(\textcolor{stringliteral}{"UPDATE users SET mailed = 0 WHERE mailed > 0 AND socketId IS NULL"}) 
-401         con.commit()
-402     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
-403         \textcolor{keywordflow}{print} (e)
-404     cur\_local.execute(\textcolor{stringliteral}{"UPDATE users SET mailed = 0 WHERE mailed > 0 AND socketId IS NULL"}) 
-405     con\_local.commit()
-406 
-407 \textcolor{comment}{#setup mqtt}
+407     \textcolor{keywordflow}{try}:
+408         cur.execute(\textcolor{stringliteral}{"UPDATE users SET mailed = 0 WHERE mailed > 0 AND socketId IS NULL"}) 
+409         con.commit()
+410     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+411         \textcolor{keywordflow}{print} (e)
+412     cur\_local.execute(\textcolor{stringliteral}{"UPDATE users SET mailed = 0 WHERE mailed > 0 AND socketId IS NULL"}) 
+413     con\_local.commit()
+414 
+415 \textcolor{comment}{#setup mqtt}
 \end{DoxyCode}
 \mbox{\Hypertarget{namespace_s_q_lfunction_ae16644514ae2cdbf375884361531f691}\label{namespace_s_q_lfunction_ae16644514ae2cdbf375884361531f691}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!update\+\_\+callback@{update\+\_\+callback}}
@@ -448,116 +455,116 @@ Callback function that parses R\+F\+ID swipe message from Photon and checks in t
 
 
 
-Definition at line 106 of file S\+Q\+Lfunction.\+py.
+Definition at line 107 of file S\+Q\+Lfunction.\+py.
 
 
 \begin{DoxyCode}
-106 \textcolor{keyword}{def }\hyperlink{namespace_s_q_lfunction_ae16644514ae2cdbf375884361531f691}{update\_callback}(client, userdata, message):
-107     \textcolor{keywordflow}{try}:
-108         con = lite.connect(path)
-109         cur = con.cursor()
-110     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
-111         \textcolor{keywordflow}{print} (e)
-112     con\_local = lite.connect(path\_local)
-113     cur\_local = con\_local.cursor()
-114     data = json.loads(message.payload)
-115     print(data)
-116     
-117     UserId = str(data.get(\textcolor{stringliteral}{"UserId"})).upper()
-118     socketId = int(data.get(\textcolor{stringliteral}{"Charger"}))
-119     StartTime = int(data.get(\textcolor{stringliteral}{"StartTime"}))
-120     \textcolor{comment}{#print(UserId)}
-121     \textcolor{keywordflow}{try}:
-122         cur.execute(\textcolor{stringliteral}{"SELECT LastStartOrStop, socketId, verified FROM users WHERE uidTag=? LIMIT 1"}, (UserId
+107 \textcolor{keyword}{def }\hyperlink{namespace_s_q_lfunction_ae16644514ae2cdbf375884361531f691}{update\_callback}(client, userdata, message):
+108     \textcolor{keywordflow}{try}:
+109         con = lite.connect(path)
+110         cur = con.cursor()
+111     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+112         \textcolor{keywordflow}{print} (e)
+113     con\_local = lite.connect(path\_local)
+114     cur\_local = con\_local.cursor()
+115     data = json.loads(message.payload)
+116     print(data)
+117     
+118     UserId = str(data.get(\textcolor{stringliteral}{"UserId"})).upper()
+119     socketId = int(data.get(\textcolor{stringliteral}{"Charger"}))
+120     StartTime = int(data.get(\textcolor{stringliteral}{"StartTime"}))
+121     \textcolor{comment}{#print(UserId)}
+122     \textcolor{keywordflow}{try}:
+123         cur.execute(\textcolor{stringliteral}{"SELECT LastStartOrStop, socketId, verified FROM users WHERE uidTag=? LIMIT 1"}, (UserId
       ,))
-123         dataUser = cur.fetchone() \textcolor{comment}{# returns a tuple}
-124     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
-125         \textcolor{keywordflow}{print} (e)
-126         cur\_local.execute(\textcolor{stringliteral}{"SELECT LastStartOrStop, socketId, verified FROM users WHERE uidTag=? LIMIT 1"}, (
+124         dataUser = cur.fetchone() \textcolor{comment}{# returns a tuple}
+125     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+126         \textcolor{keywordflow}{print} (e)
+127         cur\_local.execute(\textcolor{stringliteral}{"SELECT LastStartOrStop, socketId, verified FROM users WHERE uidTag=? LIMIT 1"}, (
       UserId,))
-127         dataUser = cur\_local.fetchone() \textcolor{comment}{# returns a tuple}
-128     
-129     dataSend = str(socketId) + \textcolor{stringliteral}{";"}
-130     \textcolor{keywordflow}{try}:
-131         cur.execute(\textcolor{stringliteral}{"SELECT socketId FROM users WHERE socketId=? LIMIT 1"}, (socketId,))
-132         socketUsed = cur.fetchone()
-133     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
-134         \textcolor{keywordflow}{print} (e)
-135         cur\_local.execute(\textcolor{stringliteral}{"SELECT socketId FROM users WHERE socketId=? LIMIT 1"}, (socketId,))
-136         socketUsed = cur\_local.fetchone()
-137     \textcolor{comment}{#The socketUsed can be either None or the socket number, so parsing it can give error without check}
-138     \textcolor{keywordflow}{if} socketUsed \textcolor{keywordflow}{is} \textcolor{keywordflow}{not} \textcolor{keywordtype}{None}:
-139         socketUsed = socketUsed[0]
-140         
-141     \textcolor{comment}{#This is the filter for checking and preparing the answer to the EV charger}
-142     \textcolor{keywordflow}{if} dataUser \textcolor{keywordflow}{is} \textcolor{keywordflow}{not} \textcolor{keywordtype}{None}: \textcolor{comment}{# if user ID is in list}
-143         \textcolor{keywordflow}{if} (dataUser[2] == \textcolor{stringliteral}{"true"}):
-144             \textcolor{keywordflow}{if} ((StartTime - dataUser[0]) >= 20): \textcolor{comment}{# if last swipe is over 20s ago}
-145                 \textcolor{keywordflow}{if} (socketUsed == socketId): \textcolor{comment}{#if this socket is used now}
-146                     \textcolor{keywordflow}{if} (socketId == dataUser[1]): \textcolor{comment}{# if user already uses this socket}
-147                         dataSend += \textcolor{stringliteral}{"4"} \textcolor{comment}{# successfully stop charging}
-148                         \textcolor{keywordflow}{try}:
-149                             cur.execute(\textcolor{stringliteral}{"UPDATE users SET socketId=?, LastStartOrStop=? WHERE uidTag=?"}, (\textcolor{keywordtype}{
+128         dataUser = cur\_local.fetchone() \textcolor{comment}{# returns a tuple}
+129     
+130     dataSend = str(socketId) + \textcolor{stringliteral}{";"}
+131     \textcolor{keywordflow}{try}:
+132         cur.execute(\textcolor{stringliteral}{"SELECT socketId FROM users WHERE socketId=? LIMIT 1"}, (socketId,))
+133         socketUsed = cur.fetchone()
+134     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+135         \textcolor{keywordflow}{print} (e)
+136         cur\_local.execute(\textcolor{stringliteral}{"SELECT socketId FROM users WHERE socketId=? LIMIT 1"}, (socketId,))
+137         socketUsed = cur\_local.fetchone()
+138     \textcolor{comment}{#The socketUsed can be either None or the socket number, so parsing it can give error without check}
+139     \textcolor{keywordflow}{if} socketUsed \textcolor{keywordflow}{is} \textcolor{keywordflow}{not} \textcolor{keywordtype}{None}:
+140         socketUsed = socketUsed[0]
+141         
+142     \textcolor{comment}{#This is the filter for checking and preparing the answer to the EV charger}
+143     \textcolor{keywordflow}{if} dataUser \textcolor{keywordflow}{is} \textcolor{keywordflow}{not} \textcolor{keywordtype}{None}: \textcolor{comment}{# if user ID is in list}
+144         \textcolor{keywordflow}{if} (dataUser[2] == \textcolor{stringliteral}{"true"}):
+145             \textcolor{keywordflow}{if} ((StartTime - dataUser[0]) >= 20): \textcolor{comment}{# if last swipe is over 20s ago}
+146                 \textcolor{keywordflow}{if} (socketUsed == socketId): \textcolor{comment}{#if this socket is used now}
+147                     \textcolor{keywordflow}{if} (socketId == dataUser[1]): \textcolor{comment}{# if user already uses this socket}
+148                         dataSend += \textcolor{stringliteral}{"4"} \textcolor{comment}{# successfully stop charging}
+149                         \textcolor{keywordflow}{try}:
+150                             cur.execute(\textcolor{stringliteral}{"UPDATE users SET socketId=?, LastStartOrStop=? WHERE uidTag=?"}, (\textcolor{keywordtype}{
       None}, StartTime, UserId))             
-150                         \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
-151                             \textcolor{keywordflow}{print} (e)
-152                         \textcolor{keywordflow}{finally}:
-153                             cur\_local.execute(\textcolor{stringliteral}{"UPDATE users SET socketId=?, LastStartOrStop=? WHERE
+151                         \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+152                             \textcolor{keywordflow}{print} (e)
+153                         \textcolor{keywordflow}{finally}:
+154                             cur\_local.execute(\textcolor{stringliteral}{"UPDATE users SET socketId=?, LastStartOrStop=? WHERE
        uidTag=?"}, (\textcolor{keywordtype}{None}, StartTime, UserId))
-154                     \textcolor{keywordflow}{else}:
-155                         dataSend += \textcolor{stringliteral}{"3"} \textcolor{comment}{# socket is occupied by another user }
-156                 \textcolor{keywordflow}{else}: \textcolor{comment}{#if this socket is free}
-157                     \textcolor{keywordflow}{if} dataUser[1] \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}: \textcolor{comment}{#if user was not using any socket}
-158                         dataSend += \textcolor{stringliteral}{"1"} \textcolor{comment}{# successfully start new charge}
-159                         \textcolor{keywordflow}{try}:
-160                             cur.execute(\textcolor{stringliteral}{"UPDATE users SET socketId=?, LastStartOrStop=? WHERE uidTag=?"}, (
+155                     \textcolor{keywordflow}{else}:
+156                         dataSend += \textcolor{stringliteral}{"3"} \textcolor{comment}{# socket is occupied by another user }
+157                 \textcolor{keywordflow}{else}: \textcolor{comment}{#if this socket is free}
+158                     \textcolor{keywordflow}{if} dataUser[1] \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}: \textcolor{comment}{#if user was not using any socket}
+159                         dataSend += \textcolor{stringliteral}{"1"} \textcolor{comment}{# successfully start new charge}
+160                         \textcolor{keywordflow}{try}:
+161                             cur.execute(\textcolor{stringliteral}{"UPDATE users SET socketId=?, LastStartOrStop=? WHERE uidTag=?"}, (
       socketId, StartTime, UserId))
-161                         \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
-162                             \textcolor{keywordflow}{print} (e)
-163                         \textcolor{keywordflow}{finally}:
-164                             cur\_local.execute(\textcolor{stringliteral}{"UPDATE users SET socketId=?, LastStartOrStop=? WHERE
+162                         \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+163                             \textcolor{keywordflow}{print} (e)
+164                         \textcolor{keywordflow}{finally}:
+165                             cur\_local.execute(\textcolor{stringliteral}{"UPDATE users SET socketId=?, LastStartOrStop=? WHERE
        uidTag=?"}, (socketId, StartTime, UserId))
-165                     \textcolor{keywordflow}{else}:
-166                         dataSend += \textcolor{stringliteral}{"6"} \textcolor{comment}{# user already at another socket}
-167             \textcolor{keywordflow}{else}: \textcolor{comment}{#if swiped less than 20s ago}
-168                 \textcolor{keywordflow}{if} (socketUsed == socketId): \textcolor{comment}{#if this socket is used now}
-169                     \textcolor{keywordflow}{if} (socketId == dataUser[1]): \textcolor{comment}{# if user already uses this socket}
-170                         dataSend += \textcolor{stringliteral}{"5"} \textcolor{comment}{# you just started using this socket less than 20s ago}
-171                     \textcolor{keywordflow}{else}:
-172                         dataSend += \textcolor{stringliteral}{"3"} \textcolor{comment}{# socket is occupied by another user}
-173                 \textcolor{keywordflow}{else}: \textcolor{comment}{#if this socket is free}
-174                     \textcolor{keywordflow}{if} dataUser[1] \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}: \textcolor{comment}{#if user was not using any socket}
-175                         dataSend += \textcolor{stringliteral}{"2"} \textcolor{comment}{#charger is free, but you already swiped less than 20s ago}
-176                     \textcolor{keywordflow}{else}:
-177                         dataSend += \textcolor{stringliteral}{"6"}  \textcolor{comment}{# user already at another socket}
-178         \textcolor{keywordflow}{else}:
-179              dataSend += \textcolor{stringliteral}{"7"} \textcolor{comment}{#user not verified by admin           }
-180     \textcolor{keywordflow}{else}:
-181         dataSend += \textcolor{stringliteral}{"8"} \textcolor{comment}{#user not in the userlist}
-182     \textcolor{keywordflow}{try}:
-183         con.commit()
-184     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
-185         \textcolor{keywordflow}{print} (e)
-186     con\_local.commit()
-187     
-188     client.publish(\textcolor{stringliteral}{"HANevse/allowUser"}, dataSend, 0, \textcolor{keyword}{False})
-189 
-190 \textcolor{comment}{# def Update\_callback(client, userdata, message):}
-191 \textcolor{comment}{#     con = lite.connect(path)}
-192 \textcolor{comment}{#     cur = con.cursor()}
-193 \textcolor{comment}{#     data = message.payload}
-194 \textcolor{comment}{#     index = []}
-195 \textcolor{comment}{#     for i in range(len(data)):}
-196 \textcolor{comment}{#         if (data[i] == '%'):}
-197 \textcolor{comment}{#             index.append(i)}
-198 \textcolor{comment}{#     UserId = int(data[:index[0]])}
-199 \textcolor{comment}{#     PendingCharger = int(data[index[0]+1:index[1]])}
-200 \textcolor{comment}{#     StartTime = int(data[index[1]+1:index[2]])}
-201 \textcolor{comment}{#     cur.execute("UPDATE list SET PendingCharger=? WHERE Id=?", (PendingCharger, UserId))}
-202 \textcolor{comment}{#     cur.execute("UPDATE list SET StartTime=? WHERE Id=?", (StartTime, UserId))}
-203 \textcolor{comment}{#     con.commmit()}
-204 
+166                     \textcolor{keywordflow}{else}:
+167                         dataSend += \textcolor{stringliteral}{"6"} \textcolor{comment}{# user already at another socket}
+168             \textcolor{keywordflow}{else}: \textcolor{comment}{#if swiped less than 20s ago}
+169                 \textcolor{keywordflow}{if} (socketUsed == socketId): \textcolor{comment}{#if this socket is used now}
+170                     \textcolor{keywordflow}{if} (socketId == dataUser[1]): \textcolor{comment}{# if user already uses this socket}
+171                         dataSend += \textcolor{stringliteral}{"5"} \textcolor{comment}{# you just started using this socket less than 20s ago}
+172                     \textcolor{keywordflow}{else}:
+173                         dataSend += \textcolor{stringliteral}{"3"} \textcolor{comment}{# socket is occupied by another user}
+174                 \textcolor{keywordflow}{else}: \textcolor{comment}{#if this socket is free}
+175                     \textcolor{keywordflow}{if} dataUser[1] \textcolor{keywordflow}{is} \textcolor{keywordtype}{None}: \textcolor{comment}{#if user was not using any socket}
+176                         dataSend += \textcolor{stringliteral}{"2"} \textcolor{comment}{#charger is free, but you already swiped less than 20s ago}
+177                     \textcolor{keywordflow}{else}:
+178                         dataSend += \textcolor{stringliteral}{"6"}  \textcolor{comment}{# user already at another socket}
+179         \textcolor{keywordflow}{else}:
+180              dataSend += \textcolor{stringliteral}{"7"} \textcolor{comment}{#user not verified by admin           }
+181     \textcolor{keywordflow}{else}:
+182         dataSend += \textcolor{stringliteral}{"8"} \textcolor{comment}{#user not in the userlist}
+183     \textcolor{keywordflow}{try}:
+184         con.commit()
+185     \textcolor{keywordflow}{except} Exception \textcolor{keyword}{as} e:
+186         \textcolor{keywordflow}{print} (e)
+187     con\_local.commit()
+188     
+189     client.publish(\textcolor{stringliteral}{"HANevse/allowUser"}, dataSend, 0, \textcolor{keyword}{False})
+190 
+191 \textcolor{comment}{# def Update\_callback(client, userdata, message):}
+192 \textcolor{comment}{#     con = lite.connect(path)}
+193 \textcolor{comment}{#     cur = con.cursor()}
+194 \textcolor{comment}{#     data = message.payload}
+195 \textcolor{comment}{#     index = []}
+196 \textcolor{comment}{#     for i in range(len(data)):}
+197 \textcolor{comment}{#         if (data[i] == '%'):}
+198 \textcolor{comment}{#             index.append(i)}
+199 \textcolor{comment}{#     UserId = int(data[:index[0]])}
+200 \textcolor{comment}{#     PendingCharger = int(data[index[0]+1:index[1]])}
+201 \textcolor{comment}{#     StartTime = int(data[index[1]+1:index[2]])}
+202 \textcolor{comment}{#     cur.execute("UPDATE list SET PendingCharger=? WHERE Id=?", (PendingCharger, UserId))}
+203 \textcolor{comment}{#     cur.execute("UPDATE list SET StartTime=? WHERE Id=?", (StartTime, UserId))}
+204 \textcolor{comment}{#     con.commmit()}
 205 
+206 
 \end{DoxyCode}
 
 
@@ -570,7 +577,7 @@ Definition at line 106 of file S\+Q\+Lfunction.\+py.
 
 
 
-Definition at line 411 of file S\+Q\+Lfunction.\+py.
+Definition at line 419 of file S\+Q\+Lfunction.\+py.
 
 \mbox{\Hypertarget{namespace_s_q_lfunction_aed5ec64d305ca004c4fe54d51dd36a4e}\label{namespace_s_q_lfunction_aed5ec64d305ca004c4fe54d51dd36a4e}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!broker@{broker}}
@@ -584,7 +591,7 @@ M\+Q\+TT broker address.
 
 
 
-Definition at line 37 of file S\+Q\+Lfunction.\+py.
+Definition at line 38 of file S\+Q\+Lfunction.\+py.
 
 \mbox{\Hypertarget{namespace_s_q_lfunction_ac9fb782d6f6dcc44fd19ea1b135ab996}\label{namespace_s_q_lfunction_ac9fb782d6f6dcc44fd19ea1b135ab996}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!client@{client}}
@@ -594,7 +601,7 @@ Definition at line 37 of file S\+Q\+Lfunction.\+py.
 
 
 
-Definition at line 408 of file S\+Q\+Lfunction.\+py.
+Definition at line 416 of file S\+Q\+Lfunction.\+py.
 
 \mbox{\Hypertarget{namespace_s_q_lfunction_a02e42e3457dfb29a0ee1b6252484b0e7}\label{namespace_s_q_lfunction_a02e42e3457dfb29a0ee1b6252484b0e7}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!con@{con}}
@@ -608,7 +615,7 @@ Initial DB connection check.
 
 
 
-Definition at line 34 of file S\+Q\+Lfunction.\+py.
+Definition at line 35 of file S\+Q\+Lfunction.\+py.
 
 \mbox{\Hypertarget{namespace_s_q_lfunction_af6ef43cf2e7be28e6205af9b355e4943}\label{namespace_s_q_lfunction_af6ef43cf2e7be28e6205af9b355e4943}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!con\+\_\+local@{con\+\_\+local}}
@@ -618,7 +625,7 @@ Definition at line 34 of file S\+Q\+Lfunction.\+py.
 
 
 
-Definition at line 46 of file S\+Q\+Lfunction.\+py.
+Definition at line 47 of file S\+Q\+Lfunction.\+py.
 
 \mbox{\Hypertarget{namespace_s_q_lfunction_a513a0e7846b861b6982a0449f46cb6a8}\label{namespace_s_q_lfunction_a513a0e7846b861b6982a0449f46cb6a8}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!connected\+\_\+flag@{connected\+\_\+flag}}
@@ -628,7 +635,7 @@ Definition at line 46 of file S\+Q\+Lfunction.\+py.
 
 
 
-Definition at line 410 of file S\+Q\+Lfunction.\+py.
+Definition at line 418 of file S\+Q\+Lfunction.\+py.
 
 \mbox{\Hypertarget{namespace_s_q_lfunction_aefa03c2c2ce5f2ab923453e1af7a2201}\label{namespace_s_q_lfunction_aefa03c2c2ce5f2ab923453e1af7a2201}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!cur@{cur}}
@@ -638,7 +645,7 @@ Definition at line 410 of file S\+Q\+Lfunction.\+py.
 
 
 
-Definition at line 52 of file S\+Q\+Lfunction.\+py.
+Definition at line 53 of file S\+Q\+Lfunction.\+py.
 
 \mbox{\Hypertarget{namespace_s_q_lfunction_a808a7ba686f9086b3d4ef7d6a969aceb}\label{namespace_s_q_lfunction_a808a7ba686f9086b3d4ef7d6a969aceb}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!cur\+\_\+local@{cur\+\_\+local}}
@@ -648,7 +655,7 @@ Definition at line 52 of file S\+Q\+Lfunction.\+py.
 
 
 
-Definition at line 47 of file S\+Q\+Lfunction.\+py.
+Definition at line 48 of file S\+Q\+Lfunction.\+py.
 
 \mbox{\Hypertarget{namespace_s_q_lfunction_affebcb967a2b844a9e7542f181deacb6}\label{namespace_s_q_lfunction_affebcb967a2b844a9e7542f181deacb6}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!current\+\_\+time@{current\+\_\+time}}
@@ -658,7 +665,7 @@ Definition at line 47 of file S\+Q\+Lfunction.\+py.
 
 
 
-Definition at line 437 of file S\+Q\+Lfunction.\+py.
+Definition at line 446 of file S\+Q\+Lfunction.\+py.
 
 \mbox{\Hypertarget{namespace_s_q_lfunction_aab5e54d1ed091926790df37c8098f1f7}\label{namespace_s_q_lfunction_aab5e54d1ed091926790df37c8098f1f7}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!data\+Ref1@{data\+Ref1}}
@@ -668,7 +675,7 @@ Definition at line 437 of file S\+Q\+Lfunction.\+py.
 
 
 
-Definition at line 54 of file S\+Q\+Lfunction.\+py.
+Definition at line 55 of file S\+Q\+Lfunction.\+py.
 
 \mbox{\Hypertarget{namespace_s_q_lfunction_a68f53c3db854695a6e4a30a3a55594b4}\label{namespace_s_q_lfunction_a68f53c3db854695a6e4a30a3a55594b4}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+ME@{D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+ME}}
@@ -682,7 +689,7 @@ Const.
 
 for max time before email is sent to charging user 
 
-Definition at line 13 of file S\+Q\+Lfunction.\+py.
+Definition at line 14 of file S\+Q\+Lfunction.\+py.
 
 \mbox{\Hypertarget{namespace_s_q_lfunction_aef9c9d6f38d6ad20fa3572f211e29b04}\label{namespace_s_q_lfunction_aef9c9d6f38d6ad20fa3572f211e29b04}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!email\+\_\+cntr@{email\+\_\+cntr}}
@@ -692,7 +699,7 @@ Definition at line 13 of file S\+Q\+Lfunction.\+py.
 
 
 
-Definition at line 15 of file S\+Q\+Lfunction.\+py.
+Definition at line 16 of file S\+Q\+Lfunction.\+py.
 
 \mbox{\Hypertarget{namespace_s_q_lfunction_a7ec226cfeab195de604b38e8c7b2d0eb}\label{namespace_s_q_lfunction_a7ec226cfeab195de604b38e8c7b2d0eb}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!email\+\_\+context@{email\+\_\+context}}
@@ -702,7 +709,7 @@ Definition at line 15 of file S\+Q\+Lfunction.\+py.
 
 
 
-Definition at line 32 of file S\+Q\+Lfunction.\+py.
+Definition at line 33 of file S\+Q\+Lfunction.\+py.
 
 \mbox{\Hypertarget{namespace_s_q_lfunction_ae767f70baa76040d2b29bd6eeefd7bbe}\label{namespace_s_q_lfunction_ae767f70baa76040d2b29bd6eeefd7bbe}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!email\+\_\+message@{email\+\_\+message}}
@@ -725,7 +732,7 @@ Default email message.
 
 
 
-Definition at line 25 of file S\+Q\+Lfunction.\+py.
+Definition at line 26 of file S\+Q\+Lfunction.\+py.
 
 \mbox{\Hypertarget{namespace_s_q_lfunction_a5964aea00837148a0d731102edf6ac5c}\label{namespace_s_q_lfunction_a5964aea00837148a0d731102edf6ac5c}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!err\+\_\+cnt@{err\+\_\+cnt}}
@@ -735,7 +742,7 @@ Definition at line 25 of file S\+Q\+Lfunction.\+py.
 
 
 
-Definition at line 59 of file S\+Q\+Lfunction.\+py.
+Definition at line 60 of file S\+Q\+Lfunction.\+py.
 
 \mbox{\Hypertarget{namespace_s_q_lfunction_a215e7090f82fbf0d31fd97be6721389a}\label{namespace_s_q_lfunction_a215e7090f82fbf0d31fd97be6721389a}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!on\+\_\+connect@{on\+\_\+connect}}
@@ -745,7 +752,7 @@ Definition at line 59 of file S\+Q\+Lfunction.\+py.
 
 
 
-Definition at line 412 of file S\+Q\+Lfunction.\+py.
+Definition at line 420 of file S\+Q\+Lfunction.\+py.
 
 
 
@@ -759,7 +766,7 @@ Referenced by on\+\_\+connect().
 
 
 
-Definition at line 413 of file S\+Q\+Lfunction.\+py.
+Definition at line 421 of file S\+Q\+Lfunction.\+py.
 
 
 
@@ -773,7 +780,7 @@ Referenced by on\+\_\+disconnect().
 
 
 
-Definition at line 44 of file S\+Q\+Lfunction.\+py.
+Definition at line 45 of file S\+Q\+Lfunction.\+py.
 
 \mbox{\Hypertarget{namespace_s_q_lfunction_a50744e6ca7c6cbd547746acb907f016e}\label{namespace_s_q_lfunction_a50744e6ca7c6cbd547746acb907f016e}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!path\+\_\+local@{path\+\_\+local}}
@@ -787,7 +794,7 @@ Path to users database path = \char`\"{}./user\+List\char`\"{} \#\+Use internal 
 
 
 
-Definition at line 43 of file S\+Q\+Lfunction.\+py.
+Definition at line 44 of file S\+Q\+Lfunction.\+py.
 
 \mbox{\Hypertarget{namespace_s_q_lfunction_a51ebdaf9d64f52b2c266a49020cf12a5}\label{namespace_s_q_lfunction_a51ebdaf9d64f52b2c266a49020cf12a5}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!receiver\+\_\+email@{receiver\+\_\+email}}
@@ -801,7 +808,7 @@ Holder for email addresses of receivers.
 
 
 
-Definition at line 21 of file S\+Q\+Lfunction.\+py.
+Definition at line 22 of file S\+Q\+Lfunction.\+py.
 
 \mbox{\Hypertarget{namespace_s_q_lfunction_ac63d06248a3e41c104ae1290bb403c78}\label{namespace_s_q_lfunction_ac63d06248a3e41c104ae1290bb403c78}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!sender\+\_\+email@{sender\+\_\+email}}
@@ -815,7 +822,7 @@ Email sender address for Pi.
 
 
 
-Definition at line 19 of file S\+Q\+Lfunction.\+py.
+Definition at line 20 of file S\+Q\+Lfunction.\+py.
 
 \mbox{\Hypertarget{namespace_s_q_lfunction_a0d308a95029254ed328ba365861abdf2}\label{namespace_s_q_lfunction_a0d308a95029254ed328ba365861abdf2}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!sender\+\_\+password@{sender\+\_\+password}}
@@ -829,7 +836,7 @@ Pi email password.
 
 
 
-Definition at line 23 of file S\+Q\+Lfunction.\+py.
+Definition at line 24 of file S\+Q\+Lfunction.\+py.
 
 \mbox{\Hypertarget{namespace_s_q_lfunction_afc238002d1e4aeb7f8d2e10d47dfad36}\label{namespace_s_q_lfunction_afc238002d1e4aeb7f8d2e10d47dfad36}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!smtp\+\_\+server@{smtp\+\_\+server}}
@@ -839,7 +846,7 @@ Definition at line 23 of file S\+Q\+Lfunction.\+py.
 
 
 
-Definition at line 17 of file S\+Q\+Lfunction.\+py.
+Definition at line 18 of file S\+Q\+Lfunction.\+py.
 
 \mbox{\Hypertarget{namespace_s_q_lfunction_a700c01c62cb7f1ed2561f5e640da46cf}\label{namespace_s_q_lfunction_a700c01c62cb7f1ed2561f5e640da46cf}} 
 \index{S\+Q\+Lfunction@{S\+Q\+Lfunction}!S\+S\+Lport@{S\+S\+Lport}}
@@ -849,5 +856,5 @@ Definition at line 17 of file S\+Q\+Lfunction.\+py.
 
 
 
-Definition at line 16 of file S\+Q\+Lfunction.\+py.
+Definition at line 17 of file S\+Q\+Lfunction.\+py.
 

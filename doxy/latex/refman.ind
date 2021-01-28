@@ -1,0 +1,386 @@
+\begin{theindex}
+
+  \item {\+\_\+\+\_\+F}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{46}
+    \subitem {M\+I\+C3\+::\+M\+I\+C2}, \hyperpage{56}
+  \item {\+\_\+\+\_\+\+Address}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{45}
+    \subitem {M\+I\+C3\+::\+M\+I\+C2}, \hyperpage{55}
+  \item {\+\_\+\+\_\+\+C\+T1}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{45}
+  \item {\+\_\+\+\_\+\+Control}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{45}
+    \subitem {M\+I\+C3\+::\+M\+I\+C2}, \hyperpage{56}
+  \item {\+\_\+\+\_\+\+I1}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{46}
+    \subitem {M\+I\+C3\+::\+M\+I\+C2}, \hyperpage{56}
+  \item {\+\_\+\+\_\+\+I2}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{46}
+    \subitem {M\+I\+C3\+::\+M\+I\+C2}, \hyperpage{56}
+  \item {\+\_\+\+\_\+\+I3}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{46}
+    \subitem {M\+I\+C3\+::\+M\+I\+C2}, \hyperpage{56}
+  \item {\+\_\+\+\_\+\+P1}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{46}
+    \subitem {M\+I\+C3\+::\+M\+I\+C2}, \hyperpage{57}
+  \item {\+\_\+\+\_\+\+P2}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{47}
+    \subitem {M\+I\+C3\+::\+M\+I\+C2}, \hyperpage{57}
+  \item {\+\_\+\+\_\+\+P3}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{47}
+    \subitem {M\+I\+C3\+::\+M\+I\+C2}, \hyperpage{57}
+  \item {\+\_\+\+\_\+\+P\+F1}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{47}
+  \item {\+\_\+\+\_\+\+P\+F2}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{47}
+  \item {\+\_\+\+\_\+\+P\+F3}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{47}
+  \item {\+\_\+\+\_\+\+P\+T1}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{48}
+  \item {\+\_\+\+\_\+\+P\+T2}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{48}
+  \item {\+\_\+\+\_\+\+Q1}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{48}
+  \item {\+\_\+\+\_\+\+Q2}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{48}
+  \item {\+\_\+\+\_\+\+Q3}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{48}
+  \item {\+\_\+\+\_\+\+S1}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{49}
+  \item {\+\_\+\+\_\+\+S2}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{49}
+  \item {\+\_\+\+\_\+\+S3}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{49}
+  \item {\+\_\+\+\_\+\+V1}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{49}
+    \subitem {M\+I\+C3\+::\+M\+I\+C2}, \hyperpage{57}
+  \item {\+\_\+\+\_\+\+V2}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{49}
+    \subitem {M\+I\+C3\+::\+M\+I\+C2}, \hyperpage{57}
+  \item {\+\_\+\+\_\+\+V3}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{50}
+    \subitem {M\+I\+C3\+::\+M\+I\+C2}, \hyperpage{58}
+  \item {\+\_\+\+\_\+init\+\_\+\+\_\+}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{32}
+    \subitem {M\+I\+C3\+::\+M\+I\+C2}, \hyperpage{51}
+
+  \indexspace
+
+  \item {bad\+\_\+connection\+\_\+flag}
+    \subitem {main3}, \hyperpage{11}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{26}
+  \item {broker}
+    \subitem {main3}, \hyperpage{11}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{26}
+
+  \indexspace
+
+  \item {C\+R\+C\+\_\+error}
+    \subitem {M\+I\+C3}, \hyperpage{18}
+  \item {client}
+    \subitem {main3}, \hyperpage{11}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{26}
+  \item {con}
+    \subitem {main3}, \hyperpage{11}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{26}
+  \item {con\+\_\+local}
+    \subitem {main3}, \hyperpage{12}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{26}
+  \item {con\+\_\+user}
+    \subitem {main3}, \hyperpage{12}
+  \item {con\+\_\+user\+\_\+local}
+    \subitem {main3}, \hyperpage{12}
+  \item {connected\+\_\+flag}
+    \subitem {main3}, \hyperpage{12}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{27}
+  \item {control\+\_\+pin}
+    \subitem {main3}, \hyperpage{12}
+  \item {cur}
+    \subitem {main3}, \hyperpage{12}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{27}
+  \item {cur\+\_\+local}
+    \subitem {main3}, \hyperpage{13}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{27}
+  \item {cur\+\_\+user}
+    \subitem {main3}, \hyperpage{13}
+  \item {cur\+\_\+user\+\_\+local}
+    \subitem {main3}, \hyperpage{13}
+  \item {current\+\_\+time}
+    \subitem {main3}, \hyperpage{13}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{27}
+
+  \indexspace
+
+  \item {D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+ME}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{27}
+  \item {data}
+    \subitem {main3}, \hyperpage{13}
+  \item {Data\+\_\+error}
+    \subitem {M\+I\+C3}, \hyperpage{18}
+  \item {data\+Ref1}
+    \subitem {main3}, \hyperpage{13}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{27}
+  \item {data\+Send}
+    \subitem {main3}, \hyperpage{14}
+
+  \indexspace
+
+  \item {email\+\_\+cntr}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{28}
+  \item {email\+\_\+context}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{28}
+  \item {email\+\_\+message}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{28}
+  \item {err\+\_\+cnt}
+    \subitem {main3}, \hyperpage{14}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{28}
+
+  \indexspace
+
+  \item {M\+I\+C3}, \hyperpage{17}
+    \subitem {C\+R\+C\+\_\+error}, \hyperpage{18}
+    \subitem {Data\+\_\+error}, \hyperpage{18}
+    \subitem {No\+\_\+error}, \hyperpage{18}
+    \subitem {ser}, \hyperpage{18}
+    \subitem {Trans\+\_\+error}, \hyperpage{18}
+  \item {M\+I\+C3.\+M\+I\+C1}, \hyperpage{31}
+  \item {M\+I\+C3.\+M\+I\+C2}, \hyperpage{50}
+  \item {M\+I\+C3\+::\+M\+I\+C1}
+    \subitem {\+\_\+\+\_\+F}, \hyperpage{46}
+    \subitem {\+\_\+\+\_\+\+Address}, \hyperpage{45}
+    \subitem {\+\_\+\+\_\+\+C\+T1}, \hyperpage{45}
+    \subitem {\+\_\+\+\_\+\+Control}, \hyperpage{45}
+    \subitem {\+\_\+\+\_\+\+I1}, \hyperpage{46}
+    \subitem {\+\_\+\+\_\+\+I2}, \hyperpage{46}
+    \subitem {\+\_\+\+\_\+\+I3}, \hyperpage{46}
+    \subitem {\+\_\+\+\_\+\+P1}, \hyperpage{46}
+    \subitem {\+\_\+\+\_\+\+P2}, \hyperpage{47}
+    \subitem {\+\_\+\+\_\+\+P3}, \hyperpage{47}
+    \subitem {\+\_\+\+\_\+\+P\+F1}, \hyperpage{47}
+    \subitem {\+\_\+\+\_\+\+P\+F2}, \hyperpage{47}
+    \subitem {\+\_\+\+\_\+\+P\+F3}, \hyperpage{47}
+    \subitem {\+\_\+\+\_\+\+P\+T1}, \hyperpage{48}
+    \subitem {\+\_\+\+\_\+\+P\+T2}, \hyperpage{48}
+    \subitem {\+\_\+\+\_\+\+Q1}, \hyperpage{48}
+    \subitem {\+\_\+\+\_\+\+Q2}, \hyperpage{48}
+    \subitem {\+\_\+\+\_\+\+Q3}, \hyperpage{48}
+    \subitem {\+\_\+\+\_\+\+S1}, \hyperpage{49}
+    \subitem {\+\_\+\+\_\+\+S2}, \hyperpage{49}
+    \subitem {\+\_\+\+\_\+\+S3}, \hyperpage{49}
+    \subitem {\+\_\+\+\_\+\+V1}, \hyperpage{49}
+    \subitem {\+\_\+\+\_\+\+V2}, \hyperpage{49}
+    \subitem {\+\_\+\+\_\+\+V3}, \hyperpage{50}
+    \subitem {\+\_\+\+\_\+init\+\_\+\+\_\+}, \hyperpage{32}
+    \subitem {read\+Apparent\+Power}, \hyperpage{33}
+    \subitem {read\+C\+T1}, \hyperpage{34}
+    \subitem {read\+Frequency}, \hyperpage{35}
+    \subitem {read\+P\+T1}, \hyperpage{41}
+    \subitem {read\+P\+T2}, \hyperpage{42}
+    \subitem {read\+Phase\+Current}, \hyperpage{37}
+    \subitem {read\+Phase\+Power}, \hyperpage{38}
+    \subitem {read\+Phase\+Voltage}, \hyperpage{39}
+    \subitem {read\+Power\+Factor}, \hyperpage{40}
+    \subitem {read\+Reactive\+Power}, \hyperpage{44}
+  \item {M\+I\+C3\+::\+M\+I\+C2}
+    \subitem {\+\_\+\+\_\+F}, \hyperpage{56}
+    \subitem {\+\_\+\+\_\+\+Address}, \hyperpage{55}
+    \subitem {\+\_\+\+\_\+\+Control}, \hyperpage{56}
+    \subitem {\+\_\+\+\_\+\+I1}, \hyperpage{56}
+    \subitem {\+\_\+\+\_\+\+I2}, \hyperpage{56}
+    \subitem {\+\_\+\+\_\+\+I3}, \hyperpage{56}
+    \subitem {\+\_\+\+\_\+\+P1}, \hyperpage{57}
+    \subitem {\+\_\+\+\_\+\+P2}, \hyperpage{57}
+    \subitem {\+\_\+\+\_\+\+P3}, \hyperpage{57}
+    \subitem {\+\_\+\+\_\+\+V1}, \hyperpage{57}
+    \subitem {\+\_\+\+\_\+\+V2}, \hyperpage{57}
+    \subitem {\+\_\+\+\_\+\+V3}, \hyperpage{58}
+    \subitem {\+\_\+\+\_\+init\+\_\+\+\_\+}, \hyperpage{51}
+    \subitem {read\+Frequency}, \hyperpage{51}
+    \subitem {read\+Phase\+Current}, \hyperpage{52}
+    \subitem {read\+Phase\+Power}, \hyperpage{53}
+    \subitem {read\+Phase\+Voltage}, \hyperpage{54}
+  \item {main3}, \hyperpage{9}
+    \subitem {bad\+\_\+connection\+\_\+flag}, \hyperpage{11}
+    \subitem {broker}, \hyperpage{11}
+    \subitem {client}, \hyperpage{11}
+    \subitem {con}, \hyperpage{11}
+    \subitem {con\+\_\+local}, \hyperpage{12}
+    \subitem {con\+\_\+user}, \hyperpage{12}
+    \subitem {con\+\_\+user\+\_\+local}, \hyperpage{12}
+    \subitem {connected\+\_\+flag}, \hyperpage{12}
+    \subitem {control\+\_\+pin}, \hyperpage{12}
+    \subitem {cur}, \hyperpage{12}
+    \subitem {cur\+\_\+local}, \hyperpage{13}
+    \subitem {cur\+\_\+user}, \hyperpage{13}
+    \subitem {cur\+\_\+user\+\_\+local}, \hyperpage{13}
+    \subitem {current\+\_\+time}, \hyperpage{13}
+    \subitem {data}, \hyperpage{13}
+    \subitem {data\+Ref1}, \hyperpage{13}
+    \subitem {data\+Send}, \hyperpage{14}
+    \subitem {err\+\_\+cnt}, \hyperpage{14}
+    \subitem {Message}, \hyperpage{14}
+    \subitem {meter1}, \hyperpage{14}
+    \subitem {meter2}, \hyperpage{14}
+    \subitem {meter3}, \hyperpage{15}
+    \subitem {meter4}, \hyperpage{15}
+    \subitem {meter5}, \hyperpage{15}
+    \subitem {on\+\_\+connect}, \hyperpage{10}, \hyperpage{15}
+    \subitem {on\+\_\+disconnect}, \hyperpage{10}, \hyperpage{15}
+    \subitem {path}, \hyperpage{15}
+    \subitem {path\+\_\+local}, \hyperpage{16}
+    \subitem {path\+\_\+local\+\_\+user}, \hyperpage{16}
+    \subitem {path\+\_\+user}, \hyperpage{16}
+    \subitem {reading}, \hyperpage{16}
+    \subitem {reading\+C\+T1}, \hyperpage{16}
+    \subitem {reading\+P\+T1}, \hyperpage{16}
+    \subitem {reading\+P\+T2}, \hyperpage{17}
+    \subitem {set\+Point}, \hyperpage{17}
+    \subitem {time\+\_\+send}, \hyperpage{17}
+  \item {Message}
+    \subitem {main3}, \hyperpage{14}
+  \item {meter1}
+    \subitem {main3}, \hyperpage{14}
+  \item {meter2}
+    \subitem {main3}, \hyperpage{14}
+  \item {meter3}
+    \subitem {main3}, \hyperpage{15}
+  \item {meter4}
+    \subitem {main3}, \hyperpage{15}
+  \item {meter5}
+    \subitem {main3}, \hyperpage{15}
+  \item {Modbus/\+M\+I\+C3.\+py}, \hyperpage{60}
+  \item {Modbus/main3.\+py}, \hyperpage{59}
+
+  \indexspace
+
+  \item {new\+\_\+photon\+Measure\+\_\+callback}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{20}
+  \item {No\+\_\+error}
+    \subitem {M\+I\+C3}, \hyperpage{18}
+
+  \indexspace
+
+  \item {old\+\_\+photon\+Measure\+\_\+callback}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{21}
+  \item {on\+\_\+connect}
+    \subitem {main3}, \hyperpage{10}, \hyperpage{15}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{21}, \hyperpage{28}
+  \item {on\+\_\+disconnect}
+    \subitem {main3}, \hyperpage{10}, \hyperpage{15}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{22}, \hyperpage{29}
+
+  \indexspace
+
+  \item {path}
+    \subitem {main3}, \hyperpage{15}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{29}
+  \item {path\+\_\+local}
+    \subitem {main3}, \hyperpage{16}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{29}
+  \item {path\+\_\+local\+\_\+user}
+    \subitem {main3}, \hyperpage{16}
+  \item {path\+\_\+user}
+    \subitem {main3}, \hyperpage{16}
+
+  \indexspace
+
+  \item {R\+E\+A\+D\+M\+E.\+md}, \hyperpage{61}
+  \item {read\+Apparent\+Power}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{33}
+  \item {read\+C\+T1}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{34}
+  \item {read\+Frequency}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{35}
+    \subitem {M\+I\+C3\+::\+M\+I\+C2}, \hyperpage{51}
+  \item {read\+P\+T1}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{41}
+  \item {read\+P\+T2}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{42}
+  \item {read\+Phase\+Current}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{37}
+    \subitem {M\+I\+C3\+::\+M\+I\+C2}, \hyperpage{52}
+  \item {read\+Phase\+Power}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{38}
+    \subitem {M\+I\+C3\+::\+M\+I\+C2}, \hyperpage{53}
+  \item {read\+Phase\+Voltage}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{39}
+    \subitem {M\+I\+C3\+::\+M\+I\+C2}, \hyperpage{54}
+  \item {read\+Power\+Factor}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{40}
+  \item {read\+Reactive\+Power}
+    \subitem {M\+I\+C3\+::\+M\+I\+C1}, \hyperpage{44}
+  \item {reading}
+    \subitem {main3}, \hyperpage{16}
+  \item {reading\+C\+T1}
+    \subitem {main3}, \hyperpage{16}
+  \item {reading\+P\+T1}
+    \subitem {main3}, \hyperpage{16}
+  \item {reading\+P\+T2}
+    \subitem {main3}, \hyperpage{17}
+  \item {receiver\+\_\+email}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{29}
+
+  \indexspace
+
+  \item {S\+Q\+Lfunction}, \hyperpage{19}
+    \subitem {bad\+\_\+connection\+\_\+flag}, \hyperpage{26}
+    \subitem {broker}, \hyperpage{26}
+    \subitem {client}, \hyperpage{26}
+    \subitem {con}, \hyperpage{26}
+    \subitem {con\+\_\+local}, \hyperpage{26}
+    \subitem {connected\+\_\+flag}, \hyperpage{27}
+    \subitem {cur}, \hyperpage{27}
+    \subitem {cur\+\_\+local}, \hyperpage{27}
+    \subitem {current\+\_\+time}, \hyperpage{27}
+    \subitem {D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+I\+ME}, 
+		\hyperpage{27}
+    \subitem {data\+Ref1}, \hyperpage{27}
+    \subitem {email\+\_\+cntr}, \hyperpage{28}
+    \subitem {email\+\_\+context}, \hyperpage{28}
+    \subitem {email\+\_\+message}, \hyperpage{28}
+    \subitem {err\+\_\+cnt}, \hyperpage{28}
+    \subitem {new\+\_\+photon\+Measure\+\_\+callback}, \hyperpage{20}
+    \subitem {old\+\_\+photon\+Measure\+\_\+callback}, \hyperpage{21}
+    \subitem {on\+\_\+connect}, \hyperpage{21}, \hyperpage{28}
+    \subitem {on\+\_\+disconnect}, \hyperpage{22}, \hyperpage{29}
+    \subitem {path}, \hyperpage{29}
+    \subitem {path\+\_\+local}, \hyperpage{29}
+    \subitem {receiver\+\_\+email}, \hyperpage{29}
+    \subitem {S\+S\+Lport}, \hyperpage{30}
+    \subitem {send\+\_\+admin}, \hyperpage{22}
+    \subitem {send\+\_\+email}, \hyperpage{23}
+    \subitem {sender\+\_\+email}, \hyperpage{29}
+    \subitem {sender\+\_\+password}, \hyperpage{30}
+    \subitem {smtp\+\_\+server}, \hyperpage{30}
+    \subitem {update\+\_\+callback}, \hyperpage{24}
+  \item {S\+S\+Lport}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{30}
+  \item {send\+\_\+admin}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{22}
+  \item {send\+\_\+email}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{23}
+  \item {sender\+\_\+email}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{29}
+  \item {sender\+\_\+password}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{30}
+  \item {ser}
+    \subitem {M\+I\+C3}, \hyperpage{18}
+  \item {set\+Point}
+    \subitem {main3}, \hyperpage{17}
+  \item {smtp\+\_\+server}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{30}
+
+  \indexspace
+
+  \item {time\+\_\+send}
+    \subitem {main3}, \hyperpage{17}
+  \item {Trans\+\_\+error}
+    \subitem {M\+I\+C3}, \hyperpage{18}
+
+  \indexspace
+
+  \item {update\+\_\+callback}
+    \subitem {S\+Q\+Lfunction}, \hyperpage{24}
+  \item {user\+I\+D/\+S\+Q\+Lfunction.\+py}, \hyperpage{61}
+
+\end{theindex}
